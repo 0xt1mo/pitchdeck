@@ -1,0 +1,48 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+agentic-chatbot-main
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.env
+.env.production
+*.pdf
+
+# Claude Code analysis artifacts
+ANALYSIS_INDEX.md
+COVERAGE_MATRIX_SUMMARY.md
+TEST_ANALYSIS_*.txt
+TEST_ANALYSIS_*.md
+TEST_COVERAGE_ANALYSIS.md
+TEST_FINDINGS_SUMMARY.md
+TEST_GAPS_RECOMMENDATIONS.md
+TEST_IMPROVEMENTS.md
+TEST_QUICK_REFERENCE.txt
+docs/RECOMMENDED_TEST_CASES.md
+docs/TESTING_ROADMAP.md
+docs/TEST_*.md
+
+# Large media files
+*.webm
+
+# Local Netlify folder
+.netlify
