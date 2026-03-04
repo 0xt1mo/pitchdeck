@@ -4,22 +4,26 @@ import unicityLogoUrl from '/UnicityLogo.svg';
 
 const problems = [
   {
-    no: 'DISCOVERY',
+    no: 'LIMITED DISCOVERY',
+    noPrefix: false,
     lines: ["Agents can't find each other", '10,000 unused MCP servers'],
     delay: 0.6,
   },
   {
     no: 'SECURITY',
-    lines: ["It's Windows 95 in 1995", 'Major untapped threat surfaces'],
+    noPrefix: true,
+    lines: ["It's Windows 95 in 1995", 'Major unprotected threat surfaces'],
     delay: 0.9,
   },
   {
-    no: 'TRANSACTIONS',
-    lines: ['Friction is too high', "Agents can't pay or be paid"],
+    no: 'TRANSACTION FRICTION',
+    noPrefix: false,
+    lines: ['Shared ledgers were built for human not machine finance'],
     delay: 1.2,
   },
   {
     no: 'AUTONOMY',
+    noPrefix: true,
     lines: ['Humans required in the loop'],
     delay: 1.5,
   },
@@ -94,7 +98,7 @@ export function ProblemSlide() {
                 className="group relative"
               >
                 {/* Card */}
-                <div className="relative rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm p-5 sm:p-6 lg:p-8 h-full">
+                <div className="relative rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm p-5 sm:p-6 lg:p-8 h-full transition-all duration-300 hover:border-red-500/30 hover:bg-red-500/[0.06] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(239,68,68,0.1)]">
                   {/* Animated warning pulse border */}
                   <motion.div
                     className="absolute inset-0 rounded-2xl pointer-events-none"
@@ -127,7 +131,7 @@ export function ProblemSlide() {
                     className="text-[#fefefe] text-lg sm:text-2xl lg:text-3xl tracking-wide relative z-10"
                     style={{ fontFamily: "'Anton', sans-serif" }}
                   >
-                    <span className="text-red-400/90">NO</span>{' '}
+                    {p.noPrefix && <><span className="text-red-400/90">NO</span>{' '}</>}
                     {p.no}
                   </h3>
 

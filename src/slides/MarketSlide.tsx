@@ -75,7 +75,7 @@ export function MarketSlide() {
             className="mt-3 text-[#fefefe]/70 text-xs sm:text-sm lg:text-base max-w-2xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            The biggest market shift since the internet — and it's wide open
+            The market is certain. The infrastructure isn't.
           </motion.p>
         </div>
 

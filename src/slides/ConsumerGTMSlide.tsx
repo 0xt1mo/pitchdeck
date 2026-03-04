@@ -21,7 +21,7 @@ export function ConsumerGTMSlide() {
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Go To Market
+            Product
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -30,8 +30,8 @@ export function ConsumerGTMSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            CONSUMER{' '}
-            <span className="text-orange-400">GTM</span>
+            PRODUCT{' '}
+            <span className="text-orange-400">CONSUMER</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}

@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin } from 'lucide-react';
-import { DiscordIcon, XIcon } from '../components/icons/SocialIcons';
 import unicityLogoUrl from '/UnicityLogo.svg';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 
@@ -20,6 +18,7 @@ export function TitleSlide({ onNext }: { onNext?: () => void }) {
       <div className="absolute inset-0 w-full h-full z-0">
         <video
           className="w-full h-full object-cover"
+          style={{ transform: 'scale(1.15)' }}
           autoPlay
           muted
           loop
@@ -142,28 +141,8 @@ export function TitleSlide({ onNext }: { onNext?: () => void }) {
           </div>
         </div>
 
-        {/* ── Bottom: Social icons ── */}
-        <div className="shrink-0 flex items-center justify-center gap-6 sm:gap-8 pb-6 sm:pb-8 lg:pb-[60px]">
-          {[
-            { href: 'https://x.com/unicity_labs', icon: <XIcon className="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px]" />, label: 'X' },
-            { href: 'https://discord.com/invite/PGzNZT5uVp', icon: <DiscordIcon className="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px]" />, label: 'Discord' },
-            { href: 'https://github.com/unicity-sphere/sphere', icon: <Github className="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px]" />, label: 'GitHub' },
-            { href: 'https://www.linkedin.com/company/unicity-labs/', icon: <Linkedin className="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px]" />, label: 'LinkedIn' },
-          ].map(({ href, icon, label }) => (
-            <motion.a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, y: -5 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-[#e7e7e7] hover:text-white transition-colors cursor-pointer"
-              aria-label={label}
-            >
-              {icon}
-            </motion.a>
-          ))}
-        </div>
+        {/* Bottom spacer */}
+        <div className="shrink-0 pb-6 sm:pb-8 lg:pb-[60px]" />
 
       </div>
     </motion.div>

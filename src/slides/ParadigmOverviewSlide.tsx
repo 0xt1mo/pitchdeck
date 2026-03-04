@@ -38,16 +38,20 @@ export function ParadigmOverviewSlide() {
           className="shrink-0 mt-3">
           <p className="text-[#fefefe]/80 text-sm sm:text-base leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Satoshi's whitepaper was titled <span className="text-orange-400">"P2P electronic cash"</span>.
+            Satoshi's whitepaper was titled <span className="text-orange-400">"P2P electronic cash"</span>
           </p>
           <p className="text-[#fefefe]/80 text-sm sm:text-base leading-relaxed mt-1"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            17 years later we have neither P2P nor electronic cash.
+            17 years later we have neither P2P nor electronic cash
+          </p>
+          <p className="text-orange-400 text-sm sm:text-base leading-relaxed mt-1"
+            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            Unicity finishes what Bitcoin started
           </p>
         </motion.div>
 
         {/* Diagrams — compact */}
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-4 h-[28vh]">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-4 flex-1 min-h-0">
 
           {/* Traditional Approach */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
@@ -86,27 +90,14 @@ export function ParadigmOverviewSlide() {
         {/* Bottom text */}
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="shrink-0 mt-4">
-          <p className="text-[#fefefe]/80 text-sm sm:text-base leading-relaxed max-w-5xl"
+          className="shrink-0 mt-4 mb-14 text-center">
+          <p className="text-[#fefefe]/80 text-sm sm:text-base leading-relaxed w-full"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             All blockchains to date operate as shared ledgers, leading to competition for resources and bottlenecks.
             Unicity shatters this paradigm — the first blockchain with true peer-to-peer transactions,{' '}
             <span className="text-orange-400">eliminating the shared ledger entirely</span>.
             Assets exist off-chain; on-chain functionality is reduced to preventing double-spending.
           </p>
-          <div className="mt-3 space-y-1.5">
-            {[
-              'Unlimited throughput with the same security model as Bitcoin (trust nobody)',
-              'Validation at the edge (the recipient), not a set of validators',
-              'Ultra low latency',
-              'Ultra low cost: a microcent/tx',
-            ].map((item) => (
-              <p key={item} className="text-[#fefefe]/70 text-sm sm:text-base"
-                style={{ fontFamily: "'Geist Mono', monospace" }}>
-                <span className="text-orange-400 mr-2">→</span>{item}
-              </p>
-            ))}
-          </div>
         </motion.div>
 
         {/* Logo */}

@@ -68,12 +68,12 @@ export function WalletSlide() {
         s.sphere.on('transfer:confirmed', () => refresh(s.sphere));
 
         // Initial sync
-        try { await s.sphere.payments.receive(); } catch {}
+        try { await s.sphere.payments.receive(); } catch { }
         refresh(s.sphere);
 
         // Poll every 3s until tokens show up, then stop
         intervalId = setInterval(async () => {
-          try { await s.sphere.payments.receive(); } catch {}
+          try { await s.sphere.payments.receive(); } catch { }
           refresh(s.sphere);
           if (s.sphere.payments.getBalance().length > 0) {
             clearInterval(intervalId);
@@ -101,7 +101,7 @@ export function WalletSlide() {
       await session.sphere.payments.send({
         coinId: asset.coinId,
         amount: amountInSmallest,
-        recipient: '@mike',
+        recipient: '@mike_agent1',
       });
       setSendStatus('sent');
       setSendAmount('');
@@ -135,7 +135,7 @@ export function WalletSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            YOUR <span className="text-orange-400">WALLET</span>
+            TRUE P2P <span className="text-orange-400">ELECTRONIC CASH</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -175,15 +175,42 @@ export function WalletSlide() {
                 {[
                   'Ephemeral key pair generated on page load',
                   'Assets stored locally — no shared ledger',
-                  'P2P transfers via cryptographic proofs',
-                  'Sub-second finality, microcent cost',
-                  'Send tokens to @mike right now →',
+                  'P2P private transfers via NOSTR relays',
                 ].map((item) => (
                   <p key={item} className="text-[#fefefe]/70 text-xs sm:text-sm"
                     style={{ fontFamily: "'Geist Mono', monospace" }}>
                     <span className="text-orange-400 mr-2">→</span>{item}
                   </p>
                 ))}
+                <p className="text-[#fefefe]/70 text-xs sm:text-sm"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                  <span className="text-orange-400 mr-2">→</span>Send tokens to <span className="text-orange-400">@mike</span> right now →
+                </p>
+              </div>
+              <div className="mt-10 space-y-2">
+                <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.3em] uppercase mb-3"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                  Implications
+                </p>
+                {[
+                  'Unlimited throughput with the same security model as Bitcoin',
+                  'Validation at the edge (the recipient), not a set of validators',
+                  'Ultra low latency',
+                  'Ultra low cost: a microcent/tx',
+                ].map((item) => (
+                  <p key={item} className="text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed"
+                    style={{ fontFamily: "'Geist Mono', monospace" }}>
+                    <span className="text-orange-400 mr-2">→</span>{item}
+                  </p>
+                ))}
+                <p className="text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                  <span className="text-orange-400 mr-2">→</span>A single line of code
+                </p>
+                <p className="text-orange-400/80 text-xs sm:text-sm leading-relaxed mt-1 px-3 py-2 rounded-lg bg-orange-500/[0.06] border border-orange-500/15"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                  await sphere.payments.send({'{'} recipient: '@mike1_agent', amount: '100', coinId {'}'});
+                </p>
               </div>
             </motion.div>
 
@@ -329,9 +356,10 @@ export function WalletSlide() {
                     value={sendAmount}
                     onChange={(e) => setSendAmount(e.target.value)}
                     placeholder="Amount"
+                    autoFocus
                     disabled={sendStatus === 'sending'}
-                    className="flex-1 bg-transparent text-[#fefefe]/90 text-sm rounded-lg px-3 py-2 outline-none placeholder:text-[#fefefe]/20"
-                    style={{ fontFamily: "'Geist Mono', monospace", border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.03)' }}
+                    className="flex-1 bg-transparent text-[#fefefe]/90 text-sm rounded-lg px-3 py-2 outline-none placeholder:text-[#fefefe]/20 caret-orange-400 animate-border-pulse"
+                    style={{ fontFamily: "'Geist Mono', monospace", background: 'rgba(255,255,255,0.03)' }}
                     onKeyDown={(e) => { if (e.key === 'Enter') handleSend(); }}
                   />
                   <button
@@ -367,6 +395,16 @@ export function WalletSlide() {
           <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
         </motion.div>
       </div>
+      <style>{`
+        @keyframes border-pulse {
+          0%, 100% { border-color: rgba(249,115,22,0.4); }
+          50% { border-color: rgba(249,115,22,0.1); }
+        }
+        .animate-border-pulse {
+          border: 1px solid rgba(249,115,22,0.4);
+          animation: border-pulse 1.5s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 }

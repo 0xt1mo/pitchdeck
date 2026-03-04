@@ -52,7 +52,7 @@ export function IntroSlide() {
           className="mt-6 sm:mt-8 text-[#fefefe]/70 text-sm sm:text-base lg:text-xl text-center"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Agent security, networking and transactions at machine speed
+          Agent security, networking and trading at machine speed
         </motion.p>
 
         <motion.p
@@ -62,7 +62,7 @@ export function IntroSlide() {
           className="mt-3 sm:mt-4 text-orange-400/80 text-xs sm:text-sm lg:text-base text-center tracking-wide"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Built on AstridOS — the Linux for AI
+          Linux for AI Agents
         </motion.p>
 
       </div>

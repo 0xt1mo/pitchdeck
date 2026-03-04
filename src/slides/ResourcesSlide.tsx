@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 import unicityLogoUrl from '/UnicityLogo.svg';
 
@@ -100,50 +99,41 @@ const resources = [
 
 export function ResourcesSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto scrollbar-hide">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
       {/* Video background */}
       <div className="fixed inset-0 w-full h-full z-0">
         <video className="w-full h-full object-cover opacity-20" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
 
-      <div className="relative z-10 min-h-full flex flex-col px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
+      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-            className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
+          <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             Appendix
-          </motion.p>
-          <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1"
+          </p>
+          <h1 className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
             ESSENTIAL{' '}
             <span className="text-orange-400">RESOURCES</span>
-          </motion.h1>
-          <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-1.5" />
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="mt-2 text-[#fefefe]/60 text-xs sm:text-sm"
+          </h1>
+          <div className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-1.5" />
+          <p className="mt-2 text-[#fefefe]/60 text-xs sm:text-sm"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             Access all the essential resources to understand, engage with, and contribute to the Unicity project.
-          </motion.p>
+          </p>
         </div>
 
         {/* Resource grid */}
         <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-5 sm:mt-6">
-          {resources.map((r, i) => (
-            <motion.a
+          {resources.map((r) => (
+            <a
               key={r.title}
               href={r.url}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 + i * 0.06, duration: 0.4 }}
               className="group rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-orange-500/25 hover:bg-orange-500/[0.03] backdrop-blur-sm p-3 sm:p-4 transition-all duration-300 flex flex-col"
             >
               <div className="text-orange-400/60 group-hover:text-orange-400 transition-colors mb-2">
@@ -161,19 +151,18 @@ export function ResourcesSlide() {
                 style={{ fontFamily: "'Geist Mono', monospace" }}>
                 {r.urlLabel}
               </p>
-            </motion.a>
+            </a>
           ))}
         </div>
 
         {/* Footer */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
-          className="shrink-0 mt-5 flex items-end justify-between">
+        <div className="shrink-0 mt-5 flex items-end justify-between">
           <p className="text-[#fefefe]/30 text-[10px] sm:text-[11px]"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             These resources provide comprehensive insights into Unicity's technology, community, and future direction.
           </p>
           <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60 shrink-0 ml-4" />
-        </motion.div>
+        </div>
 
       </div>
     </div>

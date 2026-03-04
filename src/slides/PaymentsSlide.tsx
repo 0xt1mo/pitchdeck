@@ -42,7 +42,7 @@ export function PaymentsSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            MASSIVE SCALE MICROPAYMENTS
+            A2A MICROPAYMENTS
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -59,7 +59,8 @@ export function PaymentsSlide() {
           >
             Each token is itself a blockchain — self authenticating with the{' '}
             <span className="text-orange-400">same trust model as Bitcoin</span>.
-            {' '}No shared ledger. Just verifiable tokens moving P2P and A2A around the internet.
+            {' '}No shared ledger. Just verifiable tokens moving P2P around the internet, at{' '}
+            <span className="text-orange-400">massive scale</span>
           </motion.p>
         </div>
 

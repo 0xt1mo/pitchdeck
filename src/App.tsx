@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
 import { TitleSlide } from './slides/TitleSlide';
 import { IntroSlide } from './slides/IntroSlide';
@@ -8,21 +8,30 @@ import { SolutionSlide } from './slides/SolutionSlide';
 import { ParadigmOverviewSlide } from './slides/ParadigmOverviewSlide';
 import { ConsumerGTMSlide } from './slides/ConsumerGTMSlide';
 import { IntentsSlide } from './slides/IntentsSlide';
+import { MarketplaceSlide } from './slides/MarketplaceSlide';
 import { MarketSlide } from './slides/MarketSlide';
 import { RaiseSlide } from './slides/RaiseSlide';
-import { ThankYouSlide } from './slides/ThankYouSlide';
 import { AppendixSlide } from './slides/AppendixSlide';
 import { PaymentsSlide } from './slides/PaymentsSlide';
 import { ProtocolSlide } from './slides/ProtocolSlide';
-import { ParadigmSlide } from './slides/ParadigmSlide';
 import { SecuritySlide } from './slides/SecuritySlide';
 import { DemoSlide } from './slides/DemoSlide';
+import { GTMSlide } from './slides/GTMSlide';
 import { ResourcesSlide } from './slides/ResourcesSlide';
+import { IPLCricketSlide } from './slides/IPLCricketSlide';
+import { ComparisonSlide } from './slides/ComparisonSlide';
+import { AICompanionsSlide } from './slides/AICompanionsSlide';
+import { AgentsSlide } from './slides/AgentsSlide';
 import { CommunitySlide } from './slides/CommunitySlide';
 import { TokenSlide } from './slides/TokenSlide';
-import { KbbotSlide } from './slides/KbbotSlide';
 import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
 import { WalletSlide } from './slides/WalletSlide';
+import { SecurityNetworkSlide } from './slides/SecurityNetworkSlide';
+import { KernelDividerSlide, SecurityDividerSlide, BlockchainDividerSlide } from './slides/SectionDividerSlide';
+import { AstridSlide } from './slides/AstridSlide';
+import { AstridComparisonSlide } from './slides/AstridComparisonSlide';
+import { AstridUseCasesSlide } from './slides/AstridUseCasesSlide';
+import { BlockchainArchSlide } from './slides/BlockchainArchSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
@@ -35,36 +44,86 @@ const slides = [
   ParadigmOverviewSlide,
   WalletSlide,
   ConsumerGTMSlide,
+  MarketplaceSlide,
   IntentsSlide,
   DemoSlide,
-  KbbotSlide,
+  GTMSlide,
   TokenSlide,
   CommunitySlide,
   RaiseSlide,
-  ThankYouSlide,
   ThankYouChatSlide,
   AppendixSlide,
-  ProtocolSlide,
-  PaymentsSlide,
+  KernelDividerSlide,
+  AstridSlide,
+  AstridComparisonSlide,
+  AstridUseCasesSlide,
+  SecurityDividerSlide,
   SecuritySlide,
-  ParadigmSlide,
+  SecurityNetworkSlide,
+  BlockchainDividerSlide,
+  BlockchainArchSlide,
+  AgentsSlide,
+  PaymentsSlide,
+  ProtocolSlide,
+  ComparisonSlide,
+  IPLCricketSlide,
+  AICompanionsSlide,
   ResourcesSlide,
 ];
 
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const goToSlide = (index: number) => {
+  const goToSlide = useCallback((index: number) => {
     if (index >= 0 && index < slides.length) {
       setCurrentSlide(index);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.code === 'Space' && !(e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement)) {
+        e.preventDefault();
+        setCurrentSlide((prev) => Math.min(prev + 1, slides.length - 1));
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   const CurrentSlideComponent = slides[currentSlide];
 
+  if (isMobile) {
+    return (
+      <div className="h-full w-full flex flex-col items-center justify-center px-8 bg-[#060606]">
+        <img src="/UnicityLogo.svg" alt="Unicity" className="h-8 mb-6 opacity-60" />
+        <h1
+          className="text-[#fefefe] text-2xl text-center leading-tight"
+          style={{ fontFamily: "'Anton', sans-serif" }}
+        >
+          DESKTOP <span className="text-orange-400">ONLY</span>
+        </h1>
+        <p
+          className="text-[#fefefe]/50 text-xs text-center mt-3 max-w-xs"
+          style={{ fontFamily: "'Geist Mono', monospace" }}
+        >
+          This deck is optimized for desktop. Please open it on a larger screen.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="h-full w-full relative">
-      <CurrentSlideComponent onNext={() => goToSlide(currentSlide + 1)} />
+      <CurrentSlideComponent onNext={() => goToSlide(currentSlide + 1)} goToSlide={goToSlide} />
       {slides.length > 1 && (
         <SlideNavigation
           current={currentSlide}

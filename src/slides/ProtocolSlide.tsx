@@ -170,7 +170,7 @@ export function ProtocolSlide() {
             className="text-[#fefefe] text-[24px] sm:text-[36px] lg:text-[48px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
             UNICITY X402 —{' '}
-            <span className="text-orange-400">THE MESSAGE IS THE SETTLEMENT</span>
+            <span className="text-orange-400">THE MESSAGE IS THE PAYMENT</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}

@@ -58,12 +58,12 @@ function PipelineBox({ label, tag, className = '' }: { label: string; tag?: stri
 }
 
 const bullets = [
-  'Agents, intents, and tool services are composed dynamically, and semantically consistent.',
-  'Each agent is assigned a unique identity (ephemeral or persistent, depending on context).',
-  'All user and agent-agent messaging is converted from natural language to Structured Semantic Flow (SSF) message formats.',
-  'All messages are passed through Semantic Firewalls for validation and enforcement.',
-  'All agents are monitored for suspicious behavior (SBM) to detect and mitigate threats.',
-  'Our Trust Execution Context helps deliver safer, more reliable, deterministic workflows and results.',
+  'All agents are first class citizens, assigned a unique identity (ephemeral or persistent, depending on context).',
+  'Agents, intents, and tool services are composed and permissioned dynamically, giving consistent reliable behaviour, with full explainability and audit trail.',
+  'All user and agent-agent messaging is converted to semantically consistent flow formats, ensuring that all intents and data flows are consistently and reliably scrutinised, with faster interventions and superior explainability.',
+  'All messages are intercepted for strict policy enforcement. We apply multi-lavel semantic processing techniques, grounded by domain specific ontologies, using signal detection and ensemble models, helping mitigate emerging prompt injection and data leakage threats.', 
+  'All agents are monitored for suspicious and anomalous behavior, to assist detecting and intercepting new types of agentic threat, misconfiguration, and compromised systems.', 
+  'Finally, our secure runtime and trusted execution contexts help constrain rogue and undesirable behaviour. delivering safer, more reliable, deterministic workflows and results.',
 ];
 
 export function SecuritySlide() {
@@ -89,7 +89,7 @@ export function SecuritySlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
             SECURITY:{' '}
-            <span className="text-orange-400">SEMANTIC FIREWALLS</span>
+            <span className="text-orange-400">SEMANTIC INTERCEPT FABRIC</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -97,8 +97,7 @@ export function SecuritySlide() {
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
             className="mt-1.5 text-[#fefefe]/60 text-[11px] sm:text-xs lg:text-sm max-w-3xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            At the core of our zero trust architecture — unparalleled security and control for agentic systems,
-            ensuring safe, reliable, compliant operations within enterprise environments.
+            At the core of our zero trust architecture — unparalleled security and control for autonomous agentic systems, ensuring safer, reliable, compliant & explainable operations within enterprise environments.
           </motion.p>
         </div>
 
@@ -189,8 +188,8 @@ export function SecuritySlide() {
 
             <p className="text-[#fefefe]/80 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6"
               style={{ fontFamily: "'Geist Mono', monospace" }}>
-              Unicity's Semantic Firewalls provide unparalleled security and control for agentic systems,
-              ensuring safe, reliable, compliant operations within enterprise environments.
+              
+Unicity's Semantic Intercept fabric is purpose-built to help orchestrate secure, autonomous, explainable agentic systems, aligned with zero trust principles.
             </p>
 
             <div className="space-y-3 sm:space-y-4">

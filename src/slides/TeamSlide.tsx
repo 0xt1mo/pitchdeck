@@ -2,31 +2,25 @@ import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 
 const leaders = [
-  { name: 'Mike Gault', role: 'CEO', lines: ['PhD EE', 'Founder Guardtime (ADX:IHC)', 'MD Barclays Capital'], photo: '/team/mike.jpg' },
-  { name: 'Vladimir Rogojin', role: 'CTO', lines: ['PhD CS', 'Somnium Metaverse, Guardtime'], photo: '/team/vladimir.png' },
-  { name: 'Rajeev Malik', role: 'Commercial', lines: ['CCO Etisalat'], photo: '' },
-  { name: 'Tony Kenyon', role: 'Product', lines: ['PhD ML/Cybersecurity', 'Vitruvian, BT, Nokia, A10'], photo: '' },
-  { name: 'Joshua J. Bouw', role: 'AI', lines: ['NEAR, Asimov, Blackcoin', 'Godfather Proof of Stake'], photo: '/team/joshua.jpeg' },
-  { name: 'Matt Law', role: 'Growth', lines: ['Outlier Ventures'], photo: '/team/matt.jpg' },
-  { name: 'Pavel Grigorenko', role: 'Engineering', lines: ['PhD CS', 'Microsoft, Guardtime'], photo: '/team/pavel.png' },
-  { name: 'Jamie Steiner', role: 'DeFi', lines: ['JP Morgan'], photo: '/team/jamie.jpg' },
+  { name: 'Mike Gault', role: 'CEO', lines: ['PhD EE', 'Founder Guardtime (ADX:IHC)', 'MD Barclays Capital'], photo: '/team/mike.jpg', linkedin: 'https://www.linkedin.com/in/mikegault1/' },
+  { name: 'Vladimir Rogojin', role: 'CTO', lines: ['PhD CS', 'Somnium Metaverse, Guardtime'], photo: '/team/vladimir.png', linkedin: 'https://www.linkedin.com/in/vladimir-rogojin-369b7151/' },
+  { name: 'Rajeev Malik', role: 'Commercial', lines: ['CCO Etisalat'], photo: '/team/Nitish2.jpeg', linkedin: '' },
+  { name: 'Tony Kenyon', role: 'Product', lines: ['PhD ML/Cybersecurity', 'Vitruvian, BT, Nokia, A10'], photo: '/team/Tony.jpeg', linkedin: 'https://www.linkedin.com/in/tonykenyon/' },
+  { name: 'Joshua J. Bouw', role: 'AI', lines: ['NEAR, Asimov, Blackcoin', 'Godfather Proof of Stake'], photo: '/team/joshua.jpeg', linkedin: 'https://www.linkedin.com/in/joshuajbouw/' },
+  { name: 'Matt Law', role: 'Growth', lines: ['Outlier Ventures, Boson, Fetch.ai'], photo: '/team/matt.jpg', linkedin: 'https://www.linkedin.com/in/mattlaw/' },
+  { name: 'Pavel Grigorenko', role: 'Engineering', lines: ['PhD CS', 'Microsoft, Guardtime'], photo: '/team/pavel.png', linkedin: 'https://www.linkedin.com/in/pavelgrigorenko/' },
+  { name: 'Jamie Steiner', role: 'DeFi', lines: ['JP Morgan, NEOM'], photo: '/team/jamie.jpg', linkedin: 'https://www.linkedin.com/in/jvsteiner/' },
 ];
 
 const cryptographers = ['Ahto Buldas PhD', 'Ahto Truu PhD', 'Risto Laanoja PhD', 'Jian Tan PhD', 'Dirk Draheim PhD'];
 
-const developers = ['Martti Maran', 'Igor Mahlinovski', 'Alex Khrushkov', 'Marek Sepp', 'Lennart Ploom', 'Dmytro Maryshev', 'Johannes Ait'];
+const developers = ['Martti Maran', 'Igor Mahlinovski', 'Alexander Khrushkov', 'Marek Sepp', 'Lennart Ploom', 'Dmytro Maryshev', 'Johannes Ait'];
 
 const advisors = [
-  { name: 'Carlos Domingo', company: 'Securitize', focus: 'Tokenization' },
-  { name: 'Eric Leandri', company: 'Aleria AI', focus: 'AI' },
-  { name: 'Arnold Lee', company: 'Sphere', focus: 'Stable-coin' },
-  { name: 'Sylvain LaMarche', company: 'Movidone', focus: 'Commerce' },
-];
-
-const credentials = [
-  'Guardtime', 'Microsoft', 'NEAR', 'JP Morgan',
-  'Outlier', 'BT', 'Nokia','Barclays','Vitruvian','Deutsche Bank',
-  'Asimov',
+  { name: 'Carlos Domingo', company: 'Securitize', focus: 'Tokenization', linkedin: 'https://www.linkedin.com/in/carlosdomingo/' },
+  { name: 'Eric Leandri', company: 'Aleria AI', focus: 'AI', linkedin: 'https://www.linkedin.com/in/ericleandri/' },
+  { name: 'Arnold Lee', company: 'Sphere', focus: 'Stable-coin', linkedin: 'https://www.linkedin.com/in/arnoldhlee/' },
+  { name: 'Sylvain LaMarche', company: 'Movidone', focus: 'Commerce', linkedin: 'https://www.linkedin.com/in/sylvain-mathieu-lamarche-0b47711a/' },
 ];
 
 export function TeamSlide() {
@@ -77,7 +71,7 @@ export function TeamSlide() {
             className="mt-3 text-[#fefefe]/70 text-xs sm:text-sm max-w-lg"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Experienced entrepreneurs with multiple exits.
+            Experienced entrepreneurs with multiple exits
             <br />
             PhDs in ML, Cryptography and Cybersecurity
           </motion.p>
@@ -85,16 +79,16 @@ export function TeamSlide() {
 
         {/* ── Leadership Grid ── */}
         <div className="mt-8 sm:mt-12 px-4 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-0">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-0 auto-rows-fr">
             {leaders.map((leader, i) => (
               <motion.div
                 key={leader.name}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 + i * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-                className="group relative"
+                className="group relative h-full"
               >
-                <div className="relative border-r border-white/[0.05] last:border-r-0 overflow-hidden">
+                <div className="relative border-r border-white/[0.05] last:border-r-0 overflow-hidden h-full">
                   {/* Hover glow */}
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
@@ -111,6 +105,27 @@ export function TeamSlide() {
 
                   {/* Content */}
                   <div className="relative p-4 sm:p-5 lg:p-6 flex items-start gap-3">
+                    {/* Avatar */}
+                    <div className="relative shrink-0">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden ring-2 ring-orange-500/20">
+                        {leader.photo ? (
+                          <img src={leader.photo} alt={leader.name} className="w-full h-full object-cover" />
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-orange-500/20 to-orange-600/10 flex items-center justify-center text-orange-400 text-sm font-bold">
+                            {leader.name.split(' ').map(n => n[0]).join('')}
+                          </div>
+                        )}
+                      </div>
+                      {leader.linkedin && (
+                        <a href={leader.linkedin} target="_blank" rel="noopener noreferrer"
+                          className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center"
+                          style={{ background: 'rgba(249,115,22,0.8)' }}>
+                          <svg viewBox="0 0 24 24" fill="white" className="w-3.5 h-3.5">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                          </svg>
+                        </a>
+                      )}
+                    </div>
                     {/* Text */}
                     <div className="flex-1 min-w-0">
                     <h3 className="text-[#fefefe] text-base sm:text-lg lg:text-xl font-bold leading-tight">
@@ -129,16 +144,6 @@ export function TeamSlide() {
                         </p>
                       ))}
                     </div>
-                    </div>
-                    {/* Avatar */}
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden ring-2 ring-orange-500/20 shrink-0">
-                      {leader.photo ? (
-                        <img src={leader.photo} alt={leader.name} className="w-full h-full object-cover" />
-                      ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-orange-500/20 to-orange-600/10 flex items-center justify-center text-orange-400 text-xs font-bold">
-                          {leader.name.split(' ').map(n => n[0]).join('')}
-                        </div>
-                      )}
                     </div>
                   </div>
                 </div>
@@ -206,18 +211,31 @@ export function TeamSlide() {
           >
             Advisors
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {advisors.map((a, i) => (
-              <motion.div
+              <motion.a
                 key={a.name}
+                href={a.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.2 + i * 0.08, duration: 0.5 }}
                 whileHover={{ y: -3 }}
-                className="flex items-center gap-3 px-4 py-3 rounded-xl border border-orange-500/15 bg-orange-500/[0.03] hover:border-orange-500/30 transition-colors duration-300"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-xl border border-orange-500/15 bg-orange-500/[0.03] hover:border-orange-500/30 transition-colors duration-300"
+                style={{ cursor: 'pointer' }}
               >
-                <div className="w-8 h-8 rounded-full bg-orange-500/15 flex items-center justify-center text-orange-400 text-[10px] font-bold">
-                  {a.name.split(' ').map(n => n[0]).join('')}
+                <div className="relative shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-orange-500/15 flex items-center justify-center text-orange-400 text-[10px] font-bold">
+                    {a.name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                  <div
+                    className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center"
+                    style={{ background: 'rgba(249,115,22,0.8)' }}>
+                    <svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                  </div>
                 </div>
                 <div>
                   <p className="text-[#fefefe] text-xs font-semibold">{a.name}</p>
@@ -225,41 +243,12 @@ export function TeamSlide() {
                     CEO, {a.company} — {a.focus}
                   </p>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* ── Credentials Marquee ── */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.8 }}
-          className="mt-10 sm:mt-12 border-t border-white/[0.05] py-6 overflow-hidden"
-        >
-          <div className="flex animate-marquee whitespace-nowrap">
-            {[...credentials, ...credentials].map((c, i) => (
-              <span
-                key={`${c}-${i}`}
-                className="text-[#fefefe]/20 text-sm sm:text-base font-bold tracking-wider mx-8 sm:mx-12"
-              >
-                {c}
-              </span>
+              </motion.a>
             ))}
           </div>
         </motion.div>
 
       </div>
-
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 20s linear infinite;
-        }
-      `}</style>
     </div>
   );
 }

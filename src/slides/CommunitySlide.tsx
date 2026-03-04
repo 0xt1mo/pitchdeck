@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import { Github, Linkedin } from 'lucide-react';
+import { DiscordIcon, XIcon } from '../components/icons/SocialIcons';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 import unicityLogoUrl from '/UnicityLogo.svg';
 
@@ -66,16 +68,25 @@ function DifficultyChart() {
     .join(' ');
 
   const yLabels: { val: number; label: string }[] = [
-    { val: 1, label: '1' },
+    { val: 1, label: '1 H/s' },
     { val: 10, label: '10' },
     { val: 100, label: '100' },
-    { val: 1e3, label: '1e3' },
-    { val: 1e4, label: '1e4' },
-    { val: 1e5, label: '1e5' },
-    { val: 1e6, label: '1e6' },
-    { val: 1e7, label: '1e7' },
+    { val: 1e3, label: '1 KH/s' },
+    { val: 1e4, label: '10K' },
+    { val: 1e5, label: '100K' },
+    { val: 1e6, label: '1 MH/s' },
+    { val: 1e7, label: '1 GH/s' },
   ];
-  const xLabels = [0, 50, 100, 150, 200, 250, 300, 350];
+  const xLabels: { val: number; label: string }[] = [
+    { val: 0, label: 'Jun' },
+    { val: 50, label: 'Jul' },
+    { val: 100, label: 'Aug' },
+    { val: 150, label: 'Sep' },
+    { val: 200, label: 'Oct' },
+    { val: 250, label: 'Nov' },
+    { val: 300, label: 'Dec' },
+    { val: 350, label: '' },
+  ];
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto">
@@ -85,7 +96,7 @@ function DifficultyChart() {
 
       {/* Title */}
       <text x={pad.left + 4} y={pad.top - 10} fill="rgba(254,254,254,0.6)" fontSize="11"
-        fontFamily="Geist Mono, monospace">Difficulty History</text>
+        fontFamily="Geist Mono, monospace">Hash Rate (log scale)</text>
 
       {/* Grid lines + Y labels */}
       {yLabels.map(yl => {
@@ -103,17 +114,23 @@ function DifficultyChart() {
       })}
 
       {/* Vertical grid + X labels */}
-      {xLabels.map(v => {
-        const x = toSvgX(v);
+      {xLabels.map(xl => {
+        const x = toSvgX(xl.val);
         return (
-          <g key={v}>
+          <g key={xl.val}>
             <line x1={x} y1={pad.top} x2={x} y2={pad.top + ch}
               stroke="rgba(249,115,22,0.06)" strokeWidth={0.5} />
-            <text x={x} y={H - 8} textAnchor="middle" fill="rgba(249,115,22,0.4)"
-              fontSize="8" fontFamily="Geist Mono, monospace">{v}</text>
+            {xl.label && (
+              <text x={x} y={H - 8} textAnchor="middle" fill="rgba(249,115,22,0.4)"
+                fontSize="8" fontFamily="Geist Mono, monospace">{xl.label}</text>
+            )}
           </g>
         );
       })}
+
+      {/* X-axis label */}
+      <text x={pad.left + cw / 2} y={H - 1} textAnchor="middle" fill="rgba(254,254,254,0.35)"
+        fontSize="8" fontFamily="Geist Mono, monospace">2025</text>
 
       {/* Glow fill under line */}
       <defs>
@@ -141,11 +158,6 @@ function DifficultyChart() {
   );
 }
 
-const highlights = [
-  'Second only to Monero',
-  'Zero marketing, no social media',
-  'Word of mouth organic growth pre-launch',
-];
 
 export function CommunitySlide() {
   return (
@@ -178,7 +190,7 @@ export function CommunitySlide() {
         </div>
 
         {/* Main content */}
-        <div className="flex-1 grid grid-cols-2 gap-6 sm:gap-10 mt-6 sm:mt-10 items-center min-h-0">
+        <div className="flex-1 grid grid-cols-2 gap-4 sm:gap-6 mt-6 sm:mt-10 items-center min-h-0">
 
           {/* Left: stats */}
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
@@ -192,25 +204,37 @@ export function CommunitySlide() {
             >
               <h2 className="text-[#fefefe] text-[64px] sm:text-[80px] lg:text-[100px] leading-none font-black"
                 style={{ fontFamily: "'Anton', sans-serif" }}>
-                150MH/S
+                1GH/S
               </h2>
+              <p className="text-orange-400 text-sm sm:text-base mt-1"
+                style={{ fontFamily: "'Geist Mono', monospace" }}>
+                Peak hash rate
+              </p>
             </motion.div>
 
-            {/* Bullet points */}
-            <div className="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
-              {highlights.map((h, i) => (
-                <motion.div key={h}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.7 + i * 0.15, duration: 0.5 }}
-                >
-                  <h3 className="text-[#fefefe]/90 text-lg sm:text-xl lg:text-2xl uppercase tracking-wide"
-                    style={{ fontFamily: "'Anton', sans-serif" }}>
-                    {h}
-                  </h3>
-                </motion.div>
+            {/* Explanatory text */}
+            <p className="text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed mt-4 sm:mt-6"
+              style={{ fontFamily: "'Geist Mono', monospace" }}>
+              Alpha testnet ran from June to December 2025. Zero marketing spend, no social media, word of mouth only — the community grew organically, peaking at <span className="text-orange-400">1GH/s</span>, second only to Monero at 5GH/s among RandomX chains.
+            </p>
+
+            {/* Social icons */}
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2 }}
+              className="flex items-center gap-8 sm:gap-10 mt-6 sm:mt-8">
+              {[
+                { href: 'https://x.com/unicity_labs', icon: <XIcon className="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px]" />, label: 'X' },
+                { href: 'https://discord.com/invite/PGzNZT5uVp', icon: <DiscordIcon className="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px]" />, label: 'Discord' },
+                { href: 'https://github.com/unicity-sphere/sphere', icon: <Github className="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px]" />, label: 'GitHub' },
+                { href: 'https://www.linkedin.com/company/unicity-labs/', icon: <Linkedin className="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px]" />, label: 'LinkedIn' },
+              ].map(({ href, icon, label }) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer"
+                  className="text-[#fefefe]/70 hover:text-orange-400 transition-colors"
+                  aria-label={label}>
+                  {icon}
+                </a>
               ))}
-            </div>
+            </motion.div>
+
           </motion.div>
 
           {/* Right: chart */}
@@ -226,7 +250,7 @@ export function CommunitySlide() {
               transition={{ delay: 1.5 }}
               className="mt-3 text-[#fefefe]/50 text-xs sm:text-sm"
               style={{ fontFamily: "'Geist Mono', monospace" }}>
-              Log Scale Hash Rate over time
+              Alpha testnet hash rate · Jun–Dec 2025
             </motion.p>
           </motion.div>
 

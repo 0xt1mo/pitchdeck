@@ -107,8 +107,8 @@ function AgentNode({ agent, style, index }: {
     <div style={{ ...style, zIndex: 10 }}>
       <div
         style={{
-          width: 40, height: 40,
-          borderRadius: 10,
+          width: 52, height: 52,
+          borderRadius: 13,
           background: `${agent.color}18`,
           border: `1px solid ${agent.color}40`,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -117,7 +117,7 @@ function AgentNode({ agent, style, index }: {
           fontSize: '1.1rem',
         }}
       >
-        <span style={{ fontSize: '0.55rem', fontWeight: 700, color: agent.color, fontFamily: "'Geist Mono', monospace" }}>
+        <span style={{ fontSize: '0.7rem', fontWeight: 700, color: agent.color, fontFamily: "'Geist Mono', monospace" }}>
           A{agent.id}
         </span>
       </div>
@@ -143,7 +143,7 @@ function AgentNode({ agent, style, index }: {
             pointerEvents: 'none',
           }}
         >
-          <div style={{ fontSize: '0.5rem', fontWeight: 600, color: 'rgba(254,254,254,0.7)', fontFamily: "'Geist Mono', monospace" }}>
+          <div style={{ fontSize: '0.6rem', fontWeight: 600, color: 'rgba(254,254,254,0.7)', fontFamily: "'Geist Mono', monospace" }}>
             {agent.intent}
           </div>
         </div>
@@ -186,7 +186,7 @@ export function IntentsSlide() {
   const [intents, setIntents] = useState<Intent[]>([]);
 
   useEffect(() => {
-    const VISIBLE = 18;
+    const VISIBLE = 24;
     const initial = allIntents.slice(0, VISIBLE).map((item, i) => ({
       ...item, id: i, age: ages[Math.min(i, ages.length - 1)],
     }));
@@ -206,10 +206,10 @@ export function IntentsSlide() {
   }, []);
 
   // Compute agent positions for SVG lines
-  const RX = 180;
-  const RY = 140;
-  const CX = 260;
-  const CY = 200;
+  const RX = 230;
+  const RY = 180;
+  const CX = 300;
+  const CY = 240;
 
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
@@ -241,8 +241,8 @@ export function IntentsSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            STREAMING{' '}
-            <span className="text-orange-400">INTENTS</span>
+            AGENTS EXPRESS THEIR{' '}
+            <span className="text-orange-400">INTENT</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -259,12 +259,11 @@ export function IntentsSlide() {
             transition={{ delay: 0.4, duration: 0.5 }}
             className="flex flex-col min-h-0"
           >
-            {/* Diagram — upper portion */}
-            <div className="relative min-h-0" style={{ flex: '0 0 60%' }}>
-              {/* SVG connection lines + center board */}
+            {/* Diagram */}
+            <div className="relative flex-1 min-h-0">
               <svg
                 style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}
-                viewBox="0 0 520 400"
+                viewBox="0 0 600 480"
               >
                 <defs>
                   {BOARD_AGENTS.map((agent, i) => (
@@ -282,30 +281,16 @@ export function IntentsSlide() {
                   const dx = CX - ox;
                   const dy = CY - oy;
                   const dist = Math.sqrt(dx * dx + dy * dy);
-                  const endX = ox + dx * (1 - 50 / dist);
-                  const endY = oy + dy * (1 - 35 / dist);
-                  const startX = ox + dx * (22 / dist);
-                  const startY = oy + dy * (22 / dist);
-
+                  const endX = ox + dx * (1 - 65 / dist);
+                  const endY = oy + dy * (1 - 45 / dist);
+                  const startX = ox + dx * (28 / dist);
+                  const startY = oy + dy * (28 / dist);
                   return (
                     <g key={i}>
-                      <line
-                        x1={startX} y1={startY}
-                        x2={endX} y2={endY}
-                        stroke={`url(#lg${i})`}
-                        strokeWidth="1.5"
-                      />
-                      {/* Traveling particle */}
+                      <line x1={startX} y1={startY} x2={endX} y2={endY} stroke={`url(#lg${i})`} strokeWidth="1.5" />
                       <circle r="2" fill={agent.color} opacity="0.8">
-                        <animateMotion
-                          dur={`${2 + (i % 4) * 0.5}s`}
-                          repeatCount="indefinite"
-                          begin={`${i * 0.3}s`}
-                          path={i % 2 === 0
-                            ? `M${startX},${startY} L${endX},${endY}`
-                            : `M${endX},${endY} L${startX},${startY}`
-                          }
-                        />
+                        <animateMotion dur={`${2 + (i % 4) * 0.5}s`} repeatCount="indefinite" begin={`${i * 0.3}s`}
+                          path={i % 2 === 0 ? `M${startX},${startY} L${endX},${endY}` : `M${endX},${endY} L${startX},${startY}`} />
                       </circle>
                     </g>
                   );
@@ -314,89 +299,55 @@ export function IntentsSlide() {
 
               {/* Central bulletin board */}
               <div style={{
-                position: 'absolute',
-                top: '50%', left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: 200, height: 70,
-                borderRadius: 35,
-                background: 'rgba(249,115,22,0.06)',
-                border: '1.5px solid rgba(249,115,22,0.3)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                flexDirection: 'column', gap: '0.15rem',
-                boxShadow: '0 0 60px rgba(249,115,22,0.1), inset 0 0 30px rgba(249,115,22,0.05)',
-                backdropFilter: 'blur(12px)',
+                position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+                width: 260, height: 90, borderRadius: 45,
+                background: 'rgba(249,115,22,0.06)', border: '1.5px solid rgba(249,115,22,0.3)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '0.2rem',
+                boxShadow: '0 0 60px rgba(249,115,22,0.1), inset 0 0 30px rgba(249,115,22,0.05)', backdropFilter: 'blur(12px)',
               }}>
-                <span style={{
-                  fontSize: '0.7rem', letterSpacing: '0.05em', fontWeight: 600,
-                  color: '#f97316', fontFamily: "'Anton', sans-serif",
-                }}>
-                  CRYPTOGRAPHIC BULLETIN BOARD
+                <span style={{ fontSize: '1.15rem', letterSpacing: '0.05em', fontWeight: 600, color: '#f97316', fontFamily: "'Anton', sans-serif" }}>
+                  BULLETIN BOARD
                 </span>
-                <span style={{
-                  fontSize: '0.45rem', fontWeight: 500, letterSpacing: '0.08em',
-                  textTransform: 'uppercase', color: 'rgba(254,254,254,0.3)',
-                  fontFamily: "'Geist Mono', monospace",
-                }}>
+                <span style={{ fontSize: '0.55rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(254,254,254,0.3)', fontFamily: "'Geist Mono', monospace" }}>
                   Decentralized Intents
                 </span>
               </div>
 
-              {/* Board glow */}
               <div style={{
-                position: 'absolute',
-                top: '50%', left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: 250, height: 80,
-                borderRadius: 50,
-                background: 'radial-gradient(ellipse, rgba(249,115,22,0.12) 0%, transparent 70%)',
-                filter: 'blur(30px)',
-                pointerEvents: 'none',
+                position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+                width: 320, height: 110, borderRadius: 60,
+                background: 'radial-gradient(ellipse, rgba(249,115,22,0.12) 0%, transparent 70%)', filter: 'blur(30px)', pointerEvents: 'none',
               }} />
 
-              {/* Agent nodes in elliptical ring */}
               {BOARD_AGENTS.map((agent, i) => {
                 const angle = (i / BOARD_AGENTS.length) * Math.PI * 2 - Math.PI / 2;
                 const x = Math.cos(angle) * RX;
                 const y = Math.sin(angle) * RY;
-
                 return (
-                  <AgentNode
-                    key={agent.id}
-                    agent={agent}
-                    style={{
-                      position: 'absolute',
-                      top: `calc(50% + ${y}px)`,
-                      left: `calc(50% + ${x}px)`,
-                      transform: 'translate(-50%, -50%)',
-                    }}
-                    index={i}
-                  />
+                  <AgentNode key={agent.id} agent={agent}
+                    style={{ position: 'absolute', top: `calc(50% + ${y}px)`, left: `calc(50% + ${x}px)`, transform: 'translate(-50%, -50%)' }}
+                    index={i} />
                 );
               })}
             </div>
 
-            {/* Bullet points — lower portion */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
-              className="shrink-0 mt-3 space-y-2"
-            >
+            {/* Bullet points */}
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.5 }} className="shrink-0 mt-3 space-y-2">
               {[
                 'Agents post cryptographically signed intents to the board',
-                'Autonomous discovery & matching — no search, no browsing',
+                'Autonomous discovery & matching',
                 'Direct P2P negotiation between agents',
-                'Cryptographic settlement via on-chain escrow',
+                'Zero trust atomic swap settlement',
               ].map((item) => (
-                <p key={item} className="text-[#fefefe]/70 text-xs sm:text-sm"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                <p key={item} className="text-[#fefefe]/70 text-xs sm:text-sm" style={{ fontFamily: "'Geist Mono', monospace" }}>
                   <span className="text-orange-400 mr-2">→</span>{item}
                 </p>
               ))}
             </motion.div>
           </motion.div>
 
-          {/* RIGHT: Streaming Intents Feed */}
+          {/* RIGHT: Streaming Intents Feed — full height */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -416,9 +367,9 @@ export function IntentsSlide() {
             </div>
 
             {/* Feed */}
-            <div className="flex-1 rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden min-h-0">
+            <div className="flex-1 rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden min-h-0 flex flex-col">
               {/* Header row */}
-              <div className="flex items-center gap-2 py-1.5 px-2 border-b border-white/[0.04] text-[#fefefe]/20 text-[8px] uppercase tracking-wider"
+              <div className="flex items-center gap-2 py-1.5 px-2 border-b border-white/[0.04] text-[#fefefe]/20 text-[8px] uppercase tracking-wider shrink-0"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>
                 <span className="w-10">Type</span>
                 <span className="w-24">Agent</span>
@@ -426,7 +377,7 @@ export function IntentsSlide() {
                 <span className="shrink-0">Price</span>
                 <span className="w-7 text-right">Age</span>
               </div>
-              <div className="overflow-hidden">
+              <div className="flex-1 overflow-hidden">
                 {intents.map((intent) => (
                   <IntentRow key={intent.id} intent={intent} />
                 ))}
@@ -448,17 +399,12 @@ export function IntentsSlide() {
               ))}
             </div>
           </motion.div>
-
         </div>
 
         {/* Footer */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}
-          className="shrink-0 mt-3 flex items-center justify-between">
-          <p className="text-[#fefefe]/30 text-[10px] sm:text-[11px]"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Multi-category P2P marketplace — Pokemon, Crypto OTC, Fiat on-ramps, Predictions, Local goods
-          </p>
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60 shrink-0 ml-4" />
+          className="shrink-0 mt-3 flex justify-end">
+          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
         </motion.div>
 
       </div>

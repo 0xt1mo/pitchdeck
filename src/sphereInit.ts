@@ -8,7 +8,7 @@ const FAUCET_API_URL = 'https://faucet.unicity.network/api/v1/faucet/request';
 export interface SphereSession {
   sphere: Sphere;
   peer: PeerInfo;       // @kbbot
-  mikePeer: PeerInfo;   // @mike
+  mikePeer: PeerInfo;   // @mike_agent1
 }
 
 let initPromise: Promise<SphereSession> | null = null;
@@ -98,10 +98,10 @@ async function doInit(): Promise<SphereSession> {
   // Resolve kbbot and mike in parallel
   const [peer, mikePeer] = await Promise.all([
     sphere.resolve('@kbbot'),
-    sphere.resolve('@mike'),
+    sphere.resolve('@mike_agent1'),
   ]);
   if (!peer) throw new Error('Could not resolve @kbbot');
-  if (!mikePeer) throw new Error('Could not resolve @mike');
+  if (!mikePeer) throw new Error('Could not resolve @mike_agent1');
 
   return { sphere, peer, mikePeer };
 }

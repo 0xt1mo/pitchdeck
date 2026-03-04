@@ -18,7 +18,7 @@ function toDM(dm: DirectMessage, myPubkey: string): ChatMessage {
   return { id: dm.id, content: dm.content, isFromMe: dm.senderPubkey === myPubkey, timestamp: dm.timestamp };
 }
 
-// ── Mini chat panel (reused for both kbbot and @mike) ────────
+// ── Mini chat panel (reused for both kbbot and @mike_agent1) ────────
 function ChatPanel({ session, peer, peerLabel, placeholder, filterWelcome }: {
   session: SphereSession | null;
   peer: PeerInfo | null;
@@ -108,8 +108,8 @@ function ChatPanel({ session, peer, peerLabel, placeholder, filterWelcome }: {
             <div key={msg.id} className={`flex ${msg.isFromMe ? 'justify-end' : 'justify-start'}`}>
               <div className="max-w-[85%] rounded-lg px-3 py-1.5"
                 style={{
-                  background: msg.isFromMe ? 'rgba(249,115,22,0.12)' : 'rgba(255,255,255,0.04)',
-                  border: msg.isFromMe ? '1px solid rgba(249,115,22,0.2)' : '1px solid rgba(255,255,255,0.06)',
+                  background: msg.isFromMe ? 'rgba(249,115,22,0.12)' : 'rgba(59,130,246,0.10)',
+                  border: msg.isFromMe ? '1px solid rgba(249,115,22,0.2)' : '1px solid rgba(59,130,246,0.20)',
                 }}>
                 {!msg.isFromMe && (
                   <p className="text-orange-400 text-[9px] font-bold mb-0.5"
@@ -142,7 +142,7 @@ function ChatPanel({ session, peer, peerLabel, placeholder, filterWelcome }: {
       {/* Input */}
       <div className="shrink-0 px-3 pb-3">
         <div className="flex items-center gap-2 rounded-lg px-3 py-2"
-          style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+          style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(249,115,22,0.4)', animation: 'border-pulse-chat 1.5s ease-in-out infinite' }}>
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -150,7 +150,7 @@ function ChatPanel({ session, peer, peerLabel, placeholder, filterWelcome }: {
             placeholder={placeholder}
             rows={1}
             disabled={isSending || !session}
-            className="flex-1 bg-transparent text-[#fefefe]/90 text-xs resize-none outline-none placeholder:text-[#fefefe]/20"
+            className="flex-1 bg-transparent text-[#fefefe]/90 text-xs resize-none outline-none placeholder:text-[#fefefe]/50 caret-orange-400"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           />
           <button
@@ -201,7 +201,7 @@ export function ThankYouChatSlide() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-[#fefefe] text-[36px] sm:text-[52px] lg:text-[64px] leading-none tracking-tight"
+            className="text-[#fefefe] text-[48px] sm:text-[72px] lg:text-[96px] leading-none tracking-tight"
             style={{ fontFamily: "'Anton', sans-serif" }}>
             THANK <span className="text-orange-400">YOU</span>
           </motion.h1>
@@ -232,11 +232,11 @@ export function ThankYouChatSlide() {
             filterWelcome
           />
 
-          {/* Right — DM @mike */}
+          {/* Right — DM @mike_agent1 */}
           <ChatPanel
             session={session}
             peer={session?.mikePeer ?? null}
-            peerLabel="@mike"
+            peerLabel="@mike_agent1"
             placeholder="Message Mike directly..."
           />
         </motion.div>
@@ -257,7 +257,22 @@ export function ThankYouChatSlide() {
           </p>
         </motion.div>
 
+        {/* Logo */}
+        <div className="shrink-0 flex justify-end mt-4">
+          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
+        </div>
+
       </div>
+      <style>{`
+        @keyframes border-pulse-chat {
+          0%, 100% { border-color: rgba(249,115,22,0.4); }
+          50% { border-color: rgba(249,115,22,0.1); }
+        }
+        .animate-border-pulse-chat {
+          border: 1px solid rgba(249,115,22,0.4);
+          animation: border-pulse-chat 1.5s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 }
