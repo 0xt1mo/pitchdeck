@@ -43,8 +43,8 @@ const useCases = [
 
 export function AstridUseCasesSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="fixed inset-0 w-full h-full z-0">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-15" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
@@ -88,7 +88,7 @@ export function AstridUseCasesSlide() {
                 borderColor: `${uc.color}25`,
                 background: `${uc.color}06`,
               }}>
-              <h3 className="text-sm sm:text-base mb-1"
+              <h3 className="text-base sm:text-lg lg:text-xl mb-1"
                 style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.02em', color: uc.color }}>
                 {uc.title}
               </h3>

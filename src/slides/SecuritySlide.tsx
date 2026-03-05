@@ -31,7 +31,7 @@ function ServiceBox({ label, variant = 'dark' }: { label: string; variant?: 'dar
   const bg = variant === 'orange' ? 'bg-orange-500/[0.06]' : 'bg-white/[0.04]';
   return (
     <div className={`px-2 py-1.5 sm:px-3 sm:py-2 rounded-md border ${border} ${bg} text-center`}>
-      <span className="text-[#fefefe]/80 text-[8px] sm:text-[9px] lg:text-[10px] uppercase tracking-wider leading-tight"
+      <span className="text-[#fefefe]/80 text-[10px] sm:text-xs lg:text-sm uppercase tracking-wider leading-tight"
         style={{ fontFamily: "'Geist Mono', monospace" }}>
         {label}
       </span>
@@ -43,12 +43,12 @@ function ServiceBox({ label, variant = 'dark' }: { label: string; variant?: 'dar
 function PipelineBox({ label, tag, className = '' }: { label: string; tag?: string; className?: string }) {
   return (
     <div className={`relative px-3 py-2 sm:px-4 sm:py-2.5 rounded-md border border-white/15 bg-white/[0.05] text-center ${className}`}>
-      <span className="text-[#fefefe]/80 text-[9px] sm:text-[10px] uppercase tracking-wider"
+      <span className="text-[#fefefe]/80 text-[11px] sm:text-xs lg:text-sm uppercase tracking-wider"
         style={{ fontFamily: "'Geist Mono', monospace" }}>
         {label}
       </span>
       {tag && (
-        <span className="absolute -bottom-1 right-1 text-[7px] text-red-400/80 font-bold"
+        <span className="absolute -bottom-1 right-1 text-[9px] text-red-400/80 font-bold"
           style={{ fontFamily: "'Geist Mono', monospace" }}>
           {tag}
         </span>
@@ -58,19 +58,19 @@ function PipelineBox({ label, tag, className = '' }: { label: string; tag?: stri
 }
 
 const bullets = [
-  'All agents are first class citizens, assigned a unique identity (ephemeral or persistent, depending on context).',
-  'Agents, intents, and tool services are composed and permissioned dynamically, giving consistent reliable behaviour, with full explainability and audit trail.',
-  'All user and agent-agent messaging is converted to semantically consistent flow formats, ensuring that all intents and data flows are consistently and reliably scrutinised, with faster interventions and superior explainability.',
-  'All messages are intercepted for strict policy enforcement. We apply multi-lavel semantic processing techniques, grounded by domain specific ontologies, using signal detection and ensemble models, helping mitigate emerging prompt injection and data leakage threats.', 
-  'All agents are monitored for suspicious and anomalous behavior, to assist detecting and intercepting new types of agentic threat, misconfiguration, and compromised systems.', 
-  'Finally, our secure runtime and trusted execution contexts help constrain rogue and undesirable behaviour. delivering safer, more reliable, deterministic workflows and results.',
+  <>All agents are first class citizens, assigned a <span className="text-orange-400">unique identity</span> (ephemeral or persistent, depending on context).</>,
+  <>Agents, intents, and tool services are <span className="text-orange-400">composed and permissioned dynamically</span>, giving consistent reliable behaviour, with full <span className="text-orange-400">explainability and audit trail</span>.</>,
+  <>All user and agent-agent messaging is converted to <span className="text-orange-400">semantically consistent flow formats</span>, ensuring that all intents and data flows are consistently and reliably scrutinised, with faster interventions and superior explainability.</>,
+  <>All messages are intercepted for <span className="text-orange-400">strict policy enforcement</span>. We apply multi-level semantic processing techniques, grounded by domain specific ontologies, using <span className="text-orange-400">signal detection and ensemble models</span>, helping mitigate emerging prompt injection and data leakage threats.</>,
+  <>All agents are monitored for <span className="text-orange-400">suspicious and anomalous behavior</span>, to assist detecting and intercepting new types of agentic threat, misconfiguration, and compromised systems.</>,
+  <>Finally, our <span className="text-orange-400">secure runtime and trusted execution contexts</span> help constrain rogue and undesirable behaviour, delivering safer, more reliable, <span className="text-orange-400">deterministic workflows</span> and results.</>,
 ];
 
 export function SecuritySlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
       {/* Video background */}
-      <div className="fixed inset-0 w-full h-full z-0">
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-15" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
@@ -127,14 +127,14 @@ export function SecuritySlide() {
 
               {/* System prompt label */}
               <div className="flex items-center gap-1.5 mb-2">
-                <span className="text-orange-400/50 text-[8px] sm:text-[9px] italic"
+                <span className="text-orange-400/80 text-xs sm:text-sm italic"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>system prompt</span>
                 <ArrowDown className="scale-75" />
               </div>
 
               {/* Main pipeline row */}
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <span className="text-orange-400/50 text-[8px] sm:text-[9px] italic shrink-0"
+                <span className="text-orange-400/80 text-xs sm:text-sm italic shrink-0"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>user prompt</span>
                 <ArrowRight />
                 <PipelineBox label="encoder" tag="N" />
@@ -142,7 +142,7 @@ export function SecuritySlide() {
 
                 {/* Reasoning column (state / reasoning / planning) */}
                 <div className="flex flex-col items-center gap-1">
-                  <PipelineBox label="state" className="!py-1 !px-2 text-[8px]" />
+                  <PipelineBox label="state" className="!py-1 !px-2" />
                   <PipelineBox label="reasoning" tag="S" />
                   <PipelineBox label="planning" tag="NS" />
                 </div>
@@ -150,17 +150,17 @@ export function SecuritySlide() {
                 <ArrowRight />
                 <PipelineBox label="decoder" tag="N" />
                 <ArrowRight />
-                <span className="text-orange-400/50 text-[8px] sm:text-[9px] italic shrink-0"
+                <span className="text-orange-400/80 text-xs sm:text-sm italic shrink-0"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>output</span>
               </div>
 
               {/* API / MCP / RAG label */}
               <div className="mt-2 flex items-center gap-1.5">
-                <span className="text-orange-400/40 text-[8px] sm:text-[9px] italic"
+                <span className="text-orange-400/80 text-xs sm:text-sm italic"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
                   API, MCP, RAG
                 </span>
-                <span className="text-[#fefefe]/20 text-[7px] ml-auto"
+                <span className="text-[#fefefe]/60 text-xs sm:text-sm ml-auto"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
                   tool responses, acquired knowledge
                 </span>
@@ -185,12 +185,6 @@ export function SecuritySlide() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
             className="flex flex-col justify-center">
-
-            <p className="text-[#fefefe]/80 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6"
-              style={{ fontFamily: "'Geist Mono', monospace" }}>
-              
-Unicity's Semantic Intercept fabric is purpose-built to help orchestrate secure, autonomous, explainable agentic systems, aligned with zero trust principles.
-            </p>
 
             <div className="space-y-3 sm:space-y-4">
               {bullets.map((b, i) => (

@@ -4,18 +4,19 @@ import unicityLogoUrl from '/UnicityLogo.svg';
 
 function StackDiagram() {
   const W = 520;
-  const H = 420;
+  const H = 440;
   const px = 30; // horizontal padding
   const bw = W - px * 2; // box width
   const bh = 90; // box height
   const arrowGap = 22;
+  const astridH = bh + 20; // astrid box is taller (2 rows of tags)
   const font = "'Geist Mono', monospace";
   const fontTitle = "'Anton', sans-serif";
 
   // Layer positions (top-down)
   const y0 = 20; // user space
   const y1 = y0 + bh + arrowGap; // astrid
-  const y2 = y1 + bh + arrowGap; // host os
+  const y2 = y1 + astridH + arrowGap; // host os
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto">
@@ -124,8 +125,8 @@ const keyPoints = [
 
 export function AstridSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="fixed inset-0 w-full h-full z-0">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-15" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
@@ -159,7 +160,7 @@ export function AstridSlide() {
         </div>
 
         {/* Two-column: stack diagram left, key points right */}
-        <div className="flex-1 grid grid-cols-[1.1fr_1fr] gap-6 sm:gap-10 mt-5 min-h-0 items-center">
+        <div className="flex-1 grid grid-cols-[1fr_1.1fr] gap-4 sm:gap-8 mt-5 min-h-0 items-center">
 
           {/* Left — SVG Layer stack */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
@@ -168,30 +169,32 @@ export function AstridSlide() {
             <StackDiagram />
           </motion.div>
 
-          {/* Right — Key points */}
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="flex flex-col gap-4 sm:gap-5">
+          {/* Right — Key points as cards */}
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
             {keyPoints.map((point, i) => (
               <motion.div key={point.title}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.7 + i * 0.1, duration: 0.4 }}
-                className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-orange-400/60 mt-1.5 shrink-0" />
-                <div>
-                  <h3 className="text-[#fefefe]/90 text-xs sm:text-sm font-bold"
-                    style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.02em' }}>
-                    {point.title}
-                  </h3>
-                  <p className="text-[#fefefe]/50 text-[10px] sm:text-xs leading-relaxed mt-0.5"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}>
-                    {point.text}
-                  </p>
-                </div>
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 + i * 0.1, duration: 0.4 }}
+                className="rounded-lg p-3 sm:p-4"
+                style={{
+                  background: 'rgba(249,115,22,0.04)',
+                  borderLeft: '3px solid rgba(249,115,22,0.5)',
+                  border: '1px solid rgba(249,115,22,0.12)',
+                  borderLeftWidth: '3px',
+                  borderLeftColor: 'rgba(249,115,22,0.5)',
+                }}>
+                <h3 className="text-orange-400 text-xs sm:text-sm font-bold mb-1.5"
+                  style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.02em' }}>
+                  {point.title}
+                </h3>
+                <p className="text-[#fefefe]/55 text-[9px] sm:text-[11px] leading-relaxed"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                  {point.text}
+                </p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
         </div>
 

@@ -82,9 +82,13 @@ export default function App() {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.code === 'Space' && !(e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement)) {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (e.code === 'Space' || e.code === 'ArrowRight') {
         e.preventDefault();
         setCurrentSlide((prev) => Math.min(prev + 1, slides.length - 1));
+      } else if (e.code === 'ArrowLeft') {
+        e.preventDefault();
+        setCurrentSlide((prev) => Math.max(prev - 1, 0));
       }
     };
     window.addEventListener('keydown', handleKeyDown);

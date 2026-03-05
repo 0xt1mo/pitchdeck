@@ -28,8 +28,8 @@ const markets = [
 
 export function MarketplaceSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="fixed inset-0 w-full h-full z-0">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-20" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>

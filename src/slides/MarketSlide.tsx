@@ -41,7 +41,7 @@ export function MarketSlide() {
         <div className="absolute inset-0 bg-[#060606]/20" />
       </div>
 
-      <div className="relative z-10 min-h-full flex flex-col px-6 sm:px-10 lg:px-16 py-10 sm:py-14 lg:py-16">
+      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-10 sm:py-14 lg:py-16">
 
         {/* Header */}
         <div>

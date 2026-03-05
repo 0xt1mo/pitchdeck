@@ -16,9 +16,9 @@ const machineTraits = [
 
 export function PaymentsSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
       {/* Video background */}
-      <div className="fixed inset-0 w-full h-full z-0">
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-40" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/30" />
       </div>
@@ -133,7 +133,7 @@ export function PaymentsSlide() {
           </div>
 
           {/* ═══ Center divider ═══ */}
-          <div className="relative w-[2px] flex items-center justify-center z-20">
+          <div className="relative w-16 sm:w-20 flex items-center justify-center z-20">
             {/* Vertical line */}
             <motion.div
               initial={{ scaleY: 0 }}

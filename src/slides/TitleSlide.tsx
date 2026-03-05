@@ -12,10 +12,10 @@ export function TitleSlide({ onNext }: { onNext?: () => void }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed inset-0 z-50 bg-[#060606] overflow-hidden"
+      className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto"
     >
       {/* ── Video Background (sphere) ── */}
-      <div className="absolute inset-0 w-full h-full z-0">
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         <video
           className="w-full h-full object-cover"
           style={{ transform: 'scale(1.15)' }}

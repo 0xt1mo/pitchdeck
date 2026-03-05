@@ -101,7 +101,7 @@ function CenterLabel({ centerX, centerY }: { centerX: number; centerY: number })
         textAnchor="middle"
         dominantBaseline="central"
         fill="#fefefe"
-        fontSize="22"
+        fontSize="36"
         fontFamily="Anton, sans-serif"
         letterSpacing="0.05em"
       >
@@ -109,11 +109,11 @@ function CenterLabel({ centerX, centerY }: { centerX: number; centerY: number })
       </text>
       <text
         x={centerX}
-        y={centerY + 14}
+        y={centerY + 22}
         textAnchor="middle"
         dominantBaseline="central"
         fill="rgba(254,254,254,0.5)"
-        fontSize="9"
+        fontSize="12"
         fontFamily="Geist Mono, monospace"
       >
         TOTAL SUPPLY
@@ -126,9 +126,9 @@ export function TokenSlide() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
       {/* Video background */}
-      <div className="fixed inset-0 w-full h-full z-0">
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-40" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/20" />
       </div>

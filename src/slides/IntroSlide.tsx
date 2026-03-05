@@ -4,9 +4,9 @@ import unicityLogoUrl from '/UnicityLogo.svg';
 
 export function IntroSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
       {/* Video background */}
-      <div className="fixed inset-0 w-full h-full z-0">
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-30" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/40" />
       </div>
@@ -55,15 +55,6 @@ export function IntroSlide() {
           Agent security, networking and trading at machine speed
         </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.1, duration: 0.5 }}
-          className="mt-3 sm:mt-4 text-orange-400/80 text-xs sm:text-sm lg:text-base text-center tracking-wide"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          Linux for AI Agents
-        </motion.p>
 
       </div>
     </div>

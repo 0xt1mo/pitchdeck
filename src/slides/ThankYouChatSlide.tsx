@@ -156,7 +156,7 @@ function ChatPanel({ session, peer, peerLabel, placeholder, filterWelcome }: {
           <button
             onClick={handleSend}
             disabled={!input.trim() || isSending || !session}
-            className="shrink-0 w-6 h-6 rounded flex items-center justify-center disabled:opacity-30"
+            className="shrink-0 w-6 h-6 rounded flex items-center justify-center disabled:opacity-30 cursor-pointer"
             style={{ background: 'rgba(249,115,22,0.2)', border: '1px solid rgba(249,115,22,0.3)' }}>
             {isSending ? (
               <div className="w-3 h-3 border border-orange-400 border-t-transparent rounded-full animate-spin" />
@@ -183,13 +183,13 @@ export function ThankYouChatSlide() {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="fixed inset-0 w-full h-full z-0">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-20" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
 
-      <div className="relative z-10 h-full flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
+      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
 
         {/* Top section — Thank You + socials */}
         <div className="shrink-0 text-center">
@@ -221,7 +221,7 @@ export function ThankYouChatSlide() {
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="grid grid-cols-2 gap-4 sm:gap-6 mt-4" style={{ height: '35vh' }}
+          className="flex-1 grid grid-cols-2 gap-4 sm:gap-6 mt-4 min-h-0"
         >
           {/* Left — kbbot */}
           <ChatPanel

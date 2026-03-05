@@ -96,7 +96,7 @@ function DifficultyChart() {
 
       {/* Title */}
       <text x={pad.left + 4} y={pad.top - 10} fill="rgba(254,254,254,0.6)" fontSize="11"
-        fontFamily="Geist Mono, monospace">Hash Rate (log scale)</text>
+        fontFamily="Geist Mono, monospace">Difficulty (log scale)</text>
 
       {/* Grid lines + Y labels */}
       {yLabels.map(yl => {
@@ -161,9 +161,9 @@ function DifficultyChart() {
 
 export function CommunitySlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
       {/* Video background */}
-      <div className="fixed inset-0 w-full h-full z-0">
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-40" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/20" />
       </div>
@@ -223,12 +223,12 @@ export function CommunitySlide() {
               className="flex items-center gap-8 sm:gap-10 mt-6 sm:mt-8">
               {[
                 { href: 'https://x.com/unicity_labs', icon: <XIcon className="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px]" />, label: 'X' },
-                { href: 'https://discord.com/invite/PGzNZT5uVp', icon: <DiscordIcon className="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px]" />, label: 'Discord' },
+                { href: 'https://discord.gg/BGuqUtwZp3', icon: <DiscordIcon className="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px]" />, label: 'Discord' },
                 { href: 'https://github.com/unicity-sphere/sphere', icon: <Github className="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px]" />, label: 'GitHub' },
                 { href: 'https://www.linkedin.com/company/unicity-labs/', icon: <Linkedin className="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px]" />, label: 'LinkedIn' },
               ].map(({ href, icon, label }) => (
                 <a key={label} href={href} target="_blank" rel="noopener noreferrer"
-                  className="text-[#fefefe]/70 hover:text-orange-400 transition-colors"
+                  className="text-[#fefefe]/70 hover:text-orange-400 transition-colors cursor-pointer"
                   aria-label={label}>
                   {icon}
                 </a>
@@ -250,7 +250,7 @@ export function CommunitySlide() {
               transition={{ delay: 1.5 }}
               className="mt-3 text-[#fefefe]/50 text-xs sm:text-sm"
               style={{ fontFamily: "'Geist Mono', monospace" }}>
-              Alpha testnet hash rate · Jun–Dec 2025
+              Jun–Dec 2025
             </motion.p>
           </motion.div>
 

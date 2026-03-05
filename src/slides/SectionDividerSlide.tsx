@@ -54,8 +54,8 @@ export function SectionDividerSlide({ section }: { section: SectionId; [key: str
   const isHighlighted = (id: string) => config.highlightIds.includes(id);
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="fixed inset-0 w-full h-full z-0">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-15" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>

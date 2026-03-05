@@ -25,14 +25,14 @@ const ANGLES = [-90, -30, 30, 90, 150, 210];
 
 export function SolutionSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="fixed inset-0 w-full h-full z-0">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-15" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
 
       {/* Header — absolute so it doesn't affect centering */}
-      <div className="absolute z-20 top-6 sm:top-8 left-6 sm:left-10 lg:left-16">
+      <div className="fixed z-20 top-6 sm:top-8 left-6 sm:left-10 lg:left-16 pointer-events-none">
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
           style={{ fontFamily: "'Geist Mono', monospace" }}>
@@ -56,7 +56,7 @@ export function SolutionSlide() {
       </div>
 
       {/* Layout: stacked on mobile, two-column on lg+ */}
-      <div className="fixed inset-0 z-10 flex flex-col lg:grid lg:grid-cols-2">
+      <div className="relative z-10 h-full flex flex-col lg:grid lg:grid-cols-2">
 
         {/* Left — orbital diagram centered, scaled for viewport */}
         <div className="relative flex items-center justify-center flex-1 lg:flex-none pt-24 sm:pt-28 lg:pt-0">
@@ -168,7 +168,7 @@ export function SolutionSlide() {
 
       {/* Logo */}
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
-        className="fixed bottom-6 right-6 sm:right-10 lg:right-16 z-20">
+        className="fixed bottom-6 right-6 sm:right-10 lg:right-16 z-20 pointer-events-none">
         <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
       </motion.div>
 

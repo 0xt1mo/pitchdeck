@@ -116,8 +116,8 @@ export function WalletSlide() {
   const identity = session?.sphere.identity;
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="fixed inset-0 w-full h-full z-0">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-15" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
@@ -147,7 +147,7 @@ export function WalletSlide() {
             <div className="text-center">
               <p className="text-red-400 text-sm" style={{ fontFamily: "'Geist Mono', monospace" }}>{error}</p>
               <button onClick={() => window.location.reload()}
-                className="mt-3 px-4 py-2 rounded-lg text-sm"
+                className="mt-3 px-4 py-2 rounded-lg text-sm cursor-pointer"
                 style={{ background: 'rgba(249,115,22,0.15)', border: '1px solid rgba(249,115,22,0.3)', color: '#f97316', fontFamily: "'Geist Mono', monospace" }}>
                 Retry
               </button>
@@ -365,7 +365,7 @@ export function WalletSlide() {
                   <button
                     onClick={handleSend}
                     disabled={!sendAmount.trim() || sendStatus === 'sending' || assets.length === 0}
-                    className="shrink-0 px-4 py-2 rounded-lg text-sm font-bold disabled:opacity-30"
+                    className="shrink-0 px-4 py-2 rounded-lg text-sm font-bold disabled:opacity-30 cursor-pointer"
                     style={{ background: 'rgba(249,115,22,0.2)', border: '1px solid rgba(249,115,22,0.3)', color: '#f97316', fontFamily: "'Geist Mono', monospace" }}>
                     {sendStatus === 'sending' ? (
                       <div className="w-4 h-4 border-2 border-orange-400 border-t-transparent rounded-full animate-spin mx-auto" />

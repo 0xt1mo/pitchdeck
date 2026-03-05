@@ -4,9 +4,9 @@ import unicityLogoUrl from '/UnicityLogo.svg';
 
 export function ParadigmOverviewSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
       {/* Video background */}
-      <div className="fixed inset-0 w-full h-full z-0">
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-40" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/30" />
       </div>
@@ -90,7 +90,7 @@ export function ParadigmOverviewSlide() {
         {/* Bottom text */}
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="shrink-0 mt-4 mb-14 text-center">
+          className="shrink-0 mt-4 mb-14">
           <p className="text-[#fefefe]/80 text-sm sm:text-base leading-relaxed w-full"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             All blockchains to date operate as shared ledgers, leading to competition for resources and bottlenecks.

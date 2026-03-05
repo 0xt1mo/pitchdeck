@@ -6,16 +6,16 @@ import unicityLogoUrl from '/UnicityLogo.svg';
 
 const socials = [
   { href: 'https://x.com/unicity_labs', icon: <XIcon className="w-6 h-6" />, label: 'X' },
-  { href: 'https://discord.com/invite/PGzNZT5uVp', icon: <DiscordIcon className="w-6 h-6" />, label: 'Discord' },
+  { href: 'https://discord.gg/BGuqUtwZp3', icon: <DiscordIcon className="w-6 h-6" />, label: 'Discord' },
   { href: 'https://github.com/unicity-sphere/sphere', icon: <Github className="w-6 h-6" />, label: 'GitHub' },
   { href: 'https://www.linkedin.com/company/unicity-labs/', icon: <Linkedin className="w-6 h-6" />, label: 'LinkedIn' },
 ];
 
 export function ThankYouSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
       {/* Video background */}
-      <div className="fixed inset-0 w-full h-full z-0">
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-30" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/40" />
       </div>
@@ -88,7 +88,7 @@ export function ThankYouSlide() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, y: -3 }}
               whileTap={{ scale: 0.9 }}
-              className="text-[#fefefe]/50 hover:text-orange-400 transition-colors"
+              className="text-[#fefefe]/50 hover:text-orange-400 transition-colors cursor-pointer"
               aria-label={label}
             >
               {icon}

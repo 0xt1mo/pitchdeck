@@ -112,8 +112,8 @@ export function KbbotSlide() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="fixed inset-0 w-full h-full z-0">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-15" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
@@ -159,7 +159,7 @@ export function KbbotSlide() {
                 </p>
                 <button
                   onClick={() => window.location.reload()}
-                  className="px-4 py-2 rounded-lg text-sm"
+                  className="px-4 py-2 rounded-lg text-sm cursor-pointer"
                   style={{
                     background: 'rgba(249,115,22,0.15)',
                     border: '1px solid rgba(249,115,22,0.3)',
@@ -249,7 +249,7 @@ export function KbbotSlide() {
                   <button
                     onClick={handleSend}
                     disabled={!input.trim() || isSending}
-                    className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-colors disabled:opacity-30"
+                    className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-colors disabled:opacity-30 cursor-pointer"
                     style={{
                       background: 'rgba(249,115,22,0.2)',
                       border: '1px solid rgba(249,115,22,0.3)',
