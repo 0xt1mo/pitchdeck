@@ -1,33 +1,26 @@
 import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
 import { TitleSlide } from './slides/TitleSlide';
-import { IntroSlide } from './slides/IntroSlide';
 import { TeamSlide } from './slides/TeamSlide';
+import { TableOfContentsSlide } from './slides/TableOfContentsSlide';
 import { ProblemSlide } from './slides/ProblemSlide';
 import { SolutionSlide } from './slides/SolutionSlide';
 import { ParadigmOverviewSlide } from './slides/ParadigmOverviewSlide';
 import { ConsumerGTMSlide } from './slides/ConsumerGTMSlide';
 import { IntentsSlide } from './slides/IntentsSlide';
 import { MarketplaceSlide } from './slides/MarketplaceSlide';
-import { MarketSlide } from './slides/MarketSlide';
-import { RaiseSlide } from './slides/RaiseSlide';
-import { AppendixSlide } from './slides/AppendixSlide';
 import { PaymentsSlide } from './slides/PaymentsSlide';
 import { ProtocolSlide } from './slides/ProtocolSlide';
 import { SecuritySlide } from './slides/SecuritySlide';
 import { DemoSlide } from './slides/DemoSlide';
-import { GTMSlide } from './slides/GTMSlide';
 import { ResourcesSlide } from './slides/ResourcesSlide';
-import { IPLCricketSlide } from './slides/IPLCricketSlide';
 import { ComparisonSlide } from './slides/ComparisonSlide';
-import { AICompanionsSlide } from './slides/AICompanionsSlide';
-import { AgentsSlide } from './slides/AgentsSlide';
 import { CommunitySlide } from './slides/CommunitySlide';
 import { TokenSlide } from './slides/TokenSlide';
 import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
 import { WalletSlide } from './slides/WalletSlide';
 import { SecurityNetworkSlide } from './slides/SecurityNetworkSlide';
-import { KernelDividerSlide, SecurityDividerSlide, BlockchainDividerSlide } from './slides/SectionDividerSlide';
+import { KernelDividerSlide, SecurityDividerSlide, BlockchainDividerSlide, TokenDividerSlide } from './slides/SectionDividerSlide';
 import { AstridSlide } from './slides/AstridSlide';
 import { AstridComparisonSlide } from './slides/AstridComparisonSlide';
 import { AstridUseCasesSlide } from './slides/AstridUseCasesSlide';
@@ -35,40 +28,42 @@ import { BlockchainArchSlide } from './slides/BlockchainArchSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
+  // Introduction
   TitleSlide,
-  IntroSlide,
   TeamSlide,
-  MarketSlide,
+  TableOfContentsSlide,
   ProblemSlide,
   SolutionSlide,
+  // How It Works
   ParadigmOverviewSlide,
   WalletSlide,
+  // Product
   ConsumerGTMSlide,
   MarketplaceSlide,
   IntentsSlide,
   DemoSlide,
-  GTMSlide,
-  TokenSlide,
-  CommunitySlide,
-  RaiseSlide,
-  ThankYouChatSlide,
-  AppendixSlide,
+  // Kernel
   KernelDividerSlide,
   AstridSlide,
   AstridComparisonSlide,
   AstridUseCasesSlide,
+  // Security
   SecurityDividerSlide,
   SecuritySlide,
   SecurityNetworkSlide,
+  // L1 Blockchain
   BlockchainDividerSlide,
   BlockchainArchSlide,
-  AgentsSlide,
   PaymentsSlide,
   ProtocolSlide,
   ComparisonSlide,
-  IPLCricketSlide,
-  AICompanionsSlide,
+  // Unicity Token
+  TokenDividerSlide,
+  TokenSlide,
+  CommunitySlide,
+  // Close
   ResourcesSlide,
+  ThankYouChatSlide,
 ];
 
 export default function App() {

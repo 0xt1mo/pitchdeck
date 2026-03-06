@@ -20,7 +20,7 @@ const ORBIT = KERNEL_R + SAT_R + GAP;
 const DIAGRAM_SIZE = ORBIT * 2 + SAT_R * 2 + 20;
 const ANGLES = [-90, -30, 30, 90, 150, 210];
 
-type SectionId = 'kernel' | 'security' | 'payments';
+type SectionId = 'kernel' | 'security' | 'payments' | 'token';
 
 const sectionConfig: Record<SectionId, {
   label: string;
@@ -44,6 +44,12 @@ const sectionConfig: Record<SectionId, {
     label: 'BLOCKCHAIN',
     subtitle: 'The Unicity L1',
     highlightIds: ['payments'],
+    highlightKernel: false,
+  },
+  token: {
+    label: 'TOKEN',
+    subtitle: 'Unicity Genesis Token',
+    highlightIds: [],
     highlightKernel: false,
   },
 };
@@ -197,4 +203,8 @@ export function SecurityDividerSlide(props: Record<string, unknown>) {
 
 export function BlockchainDividerSlide(props: Record<string, unknown>) {
   return <SectionDividerSlide section="payments" {...props} />;
+}
+
+export function TokenDividerSlide(props: Record<string, unknown>) {
+  return <SectionDividerSlide section="token" {...props} />;
 }

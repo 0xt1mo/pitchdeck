@@ -4,7 +4,7 @@ import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 const leaders = [
   { name: 'Mike Gault', role: 'CEO', lines: ['PhD EE', 'Founder Guardtime (ADX:IHC)', 'MD Barclays Capital'], photo: '/team/mike.jpg', linkedin: 'https://www.linkedin.com/in/mikegault1/' },
   { name: 'Vladimir Rogojin', role: 'CTO', lines: ['PhD CS', 'Somnium Metaverse, Guardtime'], photo: '/team/vladimir.png', linkedin: 'https://www.linkedin.com/in/vladimir-rogojin-369b7151/' },
-  { name: 'Rajeev Malik', role: 'Commercial', lines: ['CCO Etisalat'], photo: '/team/Nitish2.jpeg', linkedin: '' },
+  { name: 'Rajeev Gupta', role: 'Commercial', lines: ['CCO Etisalat'], photo: '/team/Nitish2.jpeg', linkedin: '' },
   { name: 'Tony Kenyon', role: 'Product', lines: ['PhD ML/Cybersecurity', 'Vitruvian, BT, Nokia, A10'], photo: '/team/Tony.jpeg', linkedin: 'https://www.linkedin.com/in/tonykenyon/' },
   { name: 'Joshua J. Bouw', role: 'AI', lines: ['NEAR, Asimov, Blackcoin', 'Godfather Proof of Stake'], photo: '/team/joshua.jpeg', linkedin: 'https://www.linkedin.com/in/joshuajbouw/' },
   { name: 'Matt Law', role: 'Growth', lines: ['Outlier Ventures, Boson, Fetch.ai'], photo: '/team/matt.jpg', linkedin: 'https://www.linkedin.com/in/mattlaw/' },
@@ -12,9 +12,23 @@ const leaders = [
   { name: 'Jamie Steiner', role: 'DeFi', lines: ['JP Morgan, NEOM'], photo: '/team/jamie.jpg', linkedin: 'https://www.linkedin.com/in/jvsteiner/' },
 ];
 
-const cryptographers = ['Ahto Buldas PhD', 'Ahto Truu PhD', 'Risto Laanoja PhD', 'Jian Tan PhD', 'Dirk Draheim PhD'];
+const cryptographers = [
+  { name: 'Ahto Buldas PhD', linkedin: 'https://www.linkedin.com/in/ahto-buldas-55988646/' },
+  { name: 'Ahto Truu PhD', linkedin: 'https://www.linkedin.com/in/ahtotruu/' },
+  { name: 'Risto Laanoja PhD', linkedin: 'https://www.linkedin.com/in/ristolaanoja/' },
+  { name: 'Jian Tan PhD', linkedin: 'https://www.linkedin.com/in/jiantan/' },
+  { name: 'Dirk Draheim PhD', linkedin: 'https://www.linkedin.com/in/dirk-draheim-66057a38/' },
+];
 
-const developers = ['Martti Maran', 'Igor Mahlinovski', 'Alexander Khrushkov', 'Marek Sepp', 'Lennart Ploom', 'Dmytro Maryshev', 'Johannes Ait'];
+const developers = [
+  { name: 'Martti Marran', linkedin: 'https://www.linkedin.com/in/martti-marran-68aa1825/' },
+  { name: 'Igor Mahlinovski', linkedin: 'https://www.linkedin.com/in/igor-mahlinovski-8a5500208/' },
+  { name: 'Alexander Khrushkov', linkedin: 'https://www.linkedin.com/in/alexander-khrushkov-488008221/' },
+  { name: 'Marek Sepp', linkedin: 'https://www.linkedin.com/in/marek-sepp-0b125451/' },
+  { name: 'Lennart Ploom', linkedin: '' },
+  { name: 'Dmytro Maryshev', linkedin: 'https://www.linkedin.com/in/dmytro-m-2329a5144/' },
+  { name: 'Johannes Ait', linkedin: 'https://www.linkedin.com/in/johannes-ait-34087393/' },
+];
 
 const advisors = [
   { name: 'Carlos Domingo', company: 'Securitize', focus: 'Tokenization', linkedin: 'https://www.linkedin.com/in/carlosdomingo/' },
@@ -167,9 +181,14 @@ export function TeamSlide() {
               Cryptography
             </p>
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-              {cryptographers.map((name, i) => (
-                <span key={name}>
-                  <span className="text-[#fefefe]/80 text-sm font-medium">{name}</span>
+              {cryptographers.map((c, i) => (
+                <span key={c.name}>
+                  {c.linkedin ? (
+                    <a href={c.linkedin} target="_blank" rel="noopener noreferrer"
+                      className="text-[#fefefe]/80 hover:text-orange-400 text-sm font-medium transition-colors cursor-pointer">{c.name}</a>
+                  ) : (
+                    <span className="text-[#fefefe]/80 text-sm font-medium">{c.name}</span>
+                  )}
                   {i < cryptographers.length - 1 && (
                     <span className="text-orange-500/30 mx-1">·</span>
                   )}
@@ -186,9 +205,14 @@ export function TeamSlide() {
               Development
             </p>
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-              {developers.map((name, i) => (
-                <span key={name}>
-                  <span className="text-[#fefefe]/80 text-sm font-medium">{name}</span>
+              {developers.map((d, i) => (
+                <span key={d.name}>
+                  {d.linkedin ? (
+                    <a href={d.linkedin} target="_blank" rel="noopener noreferrer"
+                      className="text-[#fefefe]/80 hover:text-orange-400 text-sm font-medium transition-colors cursor-pointer">{d.name}</a>
+                  ) : (
+                    <span className="text-[#fefefe]/80 text-sm font-medium">{d.name}</span>
+                  )}
                   {i < developers.length - 1 && (
                     <span className="text-orange-500/30 mx-1">·</span>
                   )}
