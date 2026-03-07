@@ -166,7 +166,7 @@ export function WalletSlide() {
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
               className="flex flex-col justify-center">
-              <p className="text-[#fefefe]/80 text-sm sm:text-base leading-relaxed"
+              <p className="text-[#fefefe] text-sm sm:text-base leading-relaxed"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>
                 This is a <span className="text-orange-400">real wallet</span> running entirely in your browser.
                 No extensions, no blockchain sync, no account creation.
@@ -177,12 +177,12 @@ export function WalletSlide() {
                   'Assets stored locally — no shared ledger',
                   'P2P private transfers via NOSTR relays',
                 ].map((item) => (
-                  <p key={item} className="text-[#fefefe]/70 text-xs sm:text-sm"
+                  <p key={item} className="text-[#fefefe]/90 text-xs sm:text-sm"
                     style={{ fontFamily: "'Geist Mono', monospace" }}>
                     <span className="text-orange-400 mr-2">→</span>{item}
                   </p>
                 ))}
-                <p className="text-[#fefefe]/70 text-xs sm:text-sm"
+                <p className="text-[#fefefe]/90 text-xs sm:text-sm"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
                   <span className="text-orange-400 mr-2">→</span>Send tokens to <span className="text-orange-400">@mike</span> right now →
                 </p>
@@ -198,12 +198,12 @@ export function WalletSlide() {
                   'Ultra low latency',
                   'Ultra low cost: a microcent/tx',
                 ].map((item) => (
-                  <p key={item} className="text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed"
+                  <p key={item} className="text-[#fefefe]/90 text-xs sm:text-sm leading-relaxed"
                     style={{ fontFamily: "'Geist Mono', monospace" }}>
                     <span className="text-orange-400 mr-2">→</span>{item}
                   </p>
                 ))}
-                <p className="text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed"
+                <p className="text-[#fefefe]/90 text-xs sm:text-sm leading-relaxed"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
                   <span className="text-orange-400 mr-2">→</span>A single line of code
                 </p>

@@ -23,7 +23,7 @@ const partners = [
   {
     segment: 'MERCHANTS',
     color: '#10b981',
-    name: 'EasyTransac',
+    name: 'Movidone',
     what: 'Omnichannel payment acceptance',
     scale: '60K+ merchants',
     geography: 'Europe',
@@ -131,7 +131,7 @@ export function GTMSlide() {
           {[
             { partner: 'Tawasal', proves: 'Consumer Settlement', color: '#f97316' },
             { partner: 'Aleria', proves: 'Enterprise AI Execution', color: '#3b82f6' },
-            { partner: 'EasyTransac', proves: 'Merchant Acceptance', color: '#10b981' },
+            { partner: 'Movidone', proves: 'Merchant Acceptance', color: '#10b981' },
             { partner: 'PadUp', proves: 'Developer Pipeline', color: '#a855f7' },
           ].map((p, i) => (
             <div key={p.partner} className="flex items-center gap-2.5">

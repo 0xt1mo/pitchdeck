@@ -147,19 +147,37 @@ export function SolutionSlide() {
               style={{ fontFamily: "'Anton', sans-serif" }}>
               3 MAJOR <span className="text-orange-400">INNOVATIONS</span>
             </h2>
-            <div className="mt-3 sm:mt-4 space-y-2 sm:space-y-3">
-              <p className="text-[#fefefe]/70 text-[11px] sm:text-xs lg:text-sm leading-relaxed"
-                style={{ fontFamily: "'Geist Mono', monospace" }}>
-                <span className="text-orange-400 mr-2">→</span>A hardened event bus <span className="text-orange-400">kernel</span> where skills (OpenClaw, Claude,…), prompting frameworks (ReAct, CoT, ToT…) and inference (Claude, Ollama,…) are pluggable, composable and isolated — switch any component without rewriting apps
-              </p>
-              <p className="text-[#fefefe]/70 text-[11px] sm:text-xs lg:text-sm leading-relaxed"
-                style={{ fontFamily: "'Geist Mono', monospace" }}>
-                <span className="text-orange-400 mr-2">→</span>A new L1 <span className="text-orange-400">blockchain</span> that enables massive throughput by removing shared ledger bottlenecks. We make <span className="text-orange-400">Satoshi's vision</span> real by delivering P2P electronic cash
-              </p>
-              <p className="text-[#fefefe]/70 text-[11px] sm:text-xs lg:text-sm leading-relaxed"
-                style={{ fontFamily: "'Geist Mono', monospace" }}>
-                <span className="text-orange-400 mr-2">→</span>A new security architecture based on <span className="text-orange-400">neurosymbolic</span> AI and semantic <span className="text-orange-400">intercept fabric</span> providing cryptographic guarantees for execution, safety and explainability
-              </p>
+            <div className="mt-3 sm:mt-4 space-y-3 sm:space-y-4">
+              <div>
+                <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.3em] uppercase mb-1"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                  Astrid — Agentic Kernel
+                </p>
+                <p className="text-[#fefefe]/70 text-[11px] sm:text-xs lg:text-sm leading-relaxed"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                  <span className="text-orange-400 mr-2">→</span>A hardened event bus <span className="text-orange-400">kernel</span> where skills (OpenClaw, Claude,…), prompting frameworks (ReAct, CoT, ToT…) and inference (Claude, Ollama,…) are pluggable, composable and isolated — switch any component without rewriting apps
+                </p>
+              </div>
+              <div>
+                <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.3em] uppercase mb-1"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                  Unicity — L1 Blockchain
+                </p>
+                <p className="text-[#fefefe]/70 text-[11px] sm:text-xs lg:text-sm leading-relaxed"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                  <span className="text-orange-400 mr-2">→</span>We make <span className="text-orange-400">Satoshi's vision</span> real by delivering P2P electronic cash. Massive throughput, low latency, private transactions
+                </p>
+              </div>
+              <div>
+                <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.3em] uppercase mb-1"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                  Semantic Intercept Fabric
+                </p>
+                <p className="text-[#fefefe]/70 text-[11px] sm:text-xs lg:text-sm leading-relaxed"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                  <span className="text-orange-400 mr-2">→</span>A new security architecture based on <span className="text-orange-400">neurosymbolic</span> AI providing cryptographic guarantees for execution, safety and explainability
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
