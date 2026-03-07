@@ -1,7 +1,6 @@
 import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
 import { TitleSlide } from './slides/TitleSlide';
-import { IntroSlide } from './slides/IntroSlide';
 import { TeamSlide } from './slides/TeamSlide';
 import { ProblemSlide } from './slides/ProblemSlide';
 import { SolutionSlide } from './slides/SolutionSlide';
@@ -10,7 +9,6 @@ import { ConsumerGTMSlide } from './slides/ConsumerGTMSlide';
 import { IntentsSlide } from './slides/IntentsSlide';
 import { MarketplaceSlide } from './slides/MarketplaceSlide';
 import { MarketSlide } from './slides/MarketSlide';
-import { RaiseSlide } from './slides/RaiseSlide';
 import { AppendixSlide } from './slides/AppendixSlide';
 import { PaymentsSlide } from './slides/PaymentsSlide';
 import { ProtocolSlide } from './slides/ProtocolSlide';
@@ -23,7 +21,6 @@ import { ComparisonSlide } from './slides/ComparisonSlide';
 import { AICompanionsSlide } from './slides/AICompanionsSlide';
 import { AgentsSlide } from './slides/AgentsSlide';
 import { CommunitySlide } from './slides/CommunitySlide';
-import { TokenSlide } from './slides/TokenSlide';
 import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
 import { WalletSlide } from './slides/WalletSlide';
 import { SecurityNetworkSlide } from './slides/SecurityNetworkSlide';
@@ -36,7 +33,6 @@ import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
   TitleSlide,
-  IntroSlide,
   TeamSlide,
   MarketSlide,
   ProblemSlide,
@@ -48,9 +44,7 @@ const slides = [
   IntentsSlide,
   DemoSlide,
   GTMSlide,
-  TokenSlide,
   CommunitySlide,
-  RaiseSlide,
   ThankYouChatSlide,
   AppendixSlide,
   KernelDividerSlide,

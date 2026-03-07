@@ -54,49 +54,32 @@ export function TitleSlide({ onNext }: { onNext?: () => void }) {
         <div className="flex-1 flex flex-col items-center justify-center text-center px-4 mt-6 sm:mt-4 lg:mt-2">
           <div className="flex flex-col items-center">
 
-            {/* AGENTSPHERE — Anton font */}
+            {/* Main title */}
             <motion.h1
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="text-[#fefefe] text-[60px] sm:text-[68px] md:text-[80px] lg:text-[96px] xl:text-[110px] font-normal leading-none select-none"
+              className="text-[#fefefe] text-[48px] sm:text-[60px] md:text-[72px] lg:text-[88px] xl:text-[100px] font-normal leading-[0.95] tracking-tight text-center select-none"
               style={{ fontFamily: "'Anton', sans-serif" }}
             >
-              <motion.span
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7 }}
-              >
-                SERIES
-              </motion.span>
-              {' '}
-              <motion.span
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7 }}
-              >
-                A
-              </motion.span>
+              INFRASTRUCTURE FOR THE
+              <br />
+              <span className="text-orange-400">AGENTIC ECONOMY</span>
             </motion.h1>
 
-            {/* Tagline — orange-tinted glass pill */}
+            {/* Subtitle */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="mt-1 sm:mt-1.5 flex items-center justify-center"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mt-3 sm:mt-4 flex items-center justify-center"
             >
-              <div
-                className="px-12 sm:px-14 py-1.5 sm:py-2 rounded-full backdrop-blur-[5px]"
-                style={{ background: 'rgba(255, 111, 0, 0.15)' }}
+              <p
+                className="text-[#fefefe]/70 text-sm sm:text-base lg:text-xl font-normal text-center"
+                style={{ fontFamily: "'Geist Mono', 'SF Mono', 'Fira Code', monospace" }}
               >
-                <p
-                  className="text-[#ffe2cc] text-xs sm:text-sm md:text-base lg:text-lg font-normal whitespace-nowrap"
-                  style={{ fontFamily: "'Geist Mono', 'SF Mono', 'Fira Code', monospace" }}
-                >
-                  pitch deck
-                </p>
-              </div>
+                Agent security, networking and trading at machine speed
+              </p>
             </motion.div>
 
             {/* Explore button — flat top, rounded bottom, fill animation on hover */}
