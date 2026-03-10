@@ -5,6 +5,17 @@ import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 
 export function TitleSlide({ onNext }: { onNext?: () => void }) {
   const [isExploreHovered, setIsExploreHovered] = useState(false);
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(false);
+
+  const handleSubmit = () => {
+    if (password === 'unicity') {
+      setError(false);
+      onNext?.();
+    } else {
+      setError(true);
+    }
+  };
 
   return (
     <motion.div
@@ -99,44 +110,70 @@ export function TitleSlide({ onNext }: { onNext?: () => void }) {
               </div>
             </motion.div>
 
-            {/* Explore button — flat top, rounded bottom, fill animation on hover */}
-            <motion.button
+            {/* Password entry */}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={onNext}
-              onHoverStart={() => setIsExploreHovered(true)}
-              onHoverEnd={() => setIsExploreHovered(false)}
-              className="mt-2 sm:mt-3 w-40 sm:w-[190px] lg:w-[210px] h-[38px] sm:h-[42px] lg:h-[46px] cursor-pointer shadow-lg hover:shadow-xl relative overflow-hidden"
-              style={{
-                borderRadius: '5px 5px 50px 50px',
-                fontFamily: "'Geist Mono', 'SF Mono', 'Fira Code', monospace",
-                background: 'white',
-              }}
+              className="mt-3 sm:mt-4 flex flex-col items-center gap-2"
             >
-              {/* Orange fill layer — animates from bottom */}
-              <motion.div
-                className="absolute inset-0"
-                initial={{ y: '100%' }}
-                animate={{ y: isExploreHovered ? '0%' : '100%' }}
-                transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-                style={{
-                  background: '#FF6F00',
-                  borderRadius: 'inherit',
-                }}
-              />
-              <motion.span
-                animate={{
-                  color: isExploreHovered ? '#ffffff' : '#1d0900',
-                }}
-                transition={{ duration: 0.25 }}
-                className="relative z-10 text-sm sm:text-base lg:text-lg font-medium"
-              >
-                Enter
-              </motion.span>
-            </motion.button>
+              <div className="flex items-center gap-2">
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => { setPassword(e.target.value); setError(false); }}
+                  onKeyDown={(e) => { if (e.key === 'Enter') handleSubmit(); }}
+                  placeholder="Password"
+                  autoFocus
+                  className="w-40 sm:w-[190px] lg:w-[210px] h-[38px] sm:h-[42px] lg:h-[46px] px-4 text-sm sm:text-base rounded-full outline-none text-center caret-orange-400 placeholder:text-[#fefefe]/20"
+                  style={{
+                    fontFamily: "'Geist Mono', 'SF Mono', 'Fira Code', monospace",
+                    background: 'rgba(255,255,255,0.08)',
+                    border: error ? '1px solid rgba(239,68,68,0.6)' : '1px solid rgba(255,255,255,0.15)',
+                    color: '#fefefe',
+                    backdropFilter: 'blur(8px)',
+                  }}
+                />
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleSubmit}
+                  onHoverStart={() => setIsExploreHovered(true)}
+                  onHoverEnd={() => setIsExploreHovered(false)}
+                  className="h-[38px] sm:h-[42px] lg:h-[46px] px-5 sm:px-6 cursor-pointer shadow-lg hover:shadow-xl relative overflow-hidden"
+                  style={{
+                    borderRadius: '50px',
+                    fontFamily: "'Geist Mono', 'SF Mono', 'Fira Code', monospace",
+                    background: 'white',
+                  }}
+                >
+                  <motion.div
+                    className="absolute inset-0"
+                    initial={{ y: '100%' }}
+                    animate={{ y: isExploreHovered ? '0%' : '100%' }}
+                    transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+                    style={{ background: '#FF6F00', borderRadius: 'inherit' }}
+                  />
+                  <motion.span
+                    animate={{ color: isExploreHovered ? '#ffffff' : '#1d0900' }}
+                    transition={{ duration: 0.25 }}
+                    className="relative z-10 text-sm sm:text-base font-medium"
+                  >
+                    Enter
+                  </motion.span>
+                </motion.button>
+              </div>
+              {error && (
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-red-400 text-xs"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}
+                >
+                  Incorrect password
+                </motion.p>
+              )}
+            </motion.div>
 
           </div>
         </div>

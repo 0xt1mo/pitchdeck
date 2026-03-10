@@ -1,7 +1,7 @@
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 import unicityLogoUrl from '/UnicityLogo.svg';
 
-export function AICompanionsSlide() {
+export function ParametricInsuranceSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
@@ -24,7 +24,7 @@ export function AICompanionsSlide() {
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
             DEMO AGENT:{' '}
-            <span className="text-orange-400">AI COMPANIONS</span>
+            <span className="text-orange-400">PARAMETRIC INSURANCE</span>
           </h1>
           <div className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-2" />
         </div>
@@ -33,7 +33,7 @@ export function AICompanionsSlide() {
         <div className="flex-1 mt-4 min-h-0 rounded-xl overflow-hidden border border-orange-500/15 relative">
           <div className="absolute inset-0 bg-orange-500/[0.03]" />
           <iframe
-            src="https://privatefans.netlify.app"
+            src="https://paramarket.netlify.app/"
             className="w-full h-full relative z-10"
             style={{ border: 'none', background: '#060606' }}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"

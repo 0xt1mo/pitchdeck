@@ -19,6 +19,7 @@ import { DemoSlide } from './slides/DemoSlide';
 import { GTMSlide } from './slides/GTMSlide';
 import { ResourcesSlide } from './slides/ResourcesSlide';
 import { IPLCricketSlide } from './slides/IPLCricketSlide';
+import { ParametricInsuranceSlide } from './slides/ParametricInsuranceSlide';
 import { ComparisonSlide } from './slides/ComparisonSlide';
 import { AICompanionsSlide } from './slides/AICompanionsSlide';
 import { AgentsSlide } from './slides/AgentsSlide';
@@ -66,6 +67,7 @@ const slides = [
   PaymentsSlide,
   ProtocolSlide,
   ComparisonSlide,
+  ParametricInsuranceSlide,
   IPLCricketSlide,
   AICompanionsSlide,
   ResourcesSlide,
@@ -73,6 +75,7 @@ const slides = [
 
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [unlocked, setUnlocked] = useState(false);
 
   const goToSlide = useCallback((index: number) => {
     if (index >= 0 && index < slides.length) {
@@ -82,6 +85,7 @@ export default function App() {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (!unlocked) return;
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
       if (e.code === 'Space' || e.code === 'ArrowRight') {
         e.preventDefault();
@@ -93,7 +97,7 @@ export default function App() {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [unlocked]);
 
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
 
@@ -127,8 +131,8 @@ export default function App() {
 
   return (
     <div className="h-full w-full relative">
-      <CurrentSlideComponent onNext={() => goToSlide(currentSlide + 1)} goToSlide={goToSlide} />
-      {slides.length > 1 && (
+      <CurrentSlideComponent onNext={() => { if (currentSlide === 0) setUnlocked(true); goToSlide(currentSlide + 1); }} goToSlide={goToSlide} />
+      {unlocked && slides.length > 1 && (
         <SlideNavigation
           current={currentSlide}
           total={slides.length}
