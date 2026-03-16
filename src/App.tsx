@@ -14,7 +14,6 @@ import { PaymentsSlide } from './slides/PaymentsSlide';
 import { ProtocolSlide } from './slides/ProtocolSlide';
 import { SecuritySlide } from './slides/SecuritySlide';
 import { DemoSlide } from './slides/DemoSlide';
-import { GTMSlide } from './slides/GTMSlide';
 import { ResourcesSlide } from './slides/ResourcesSlide';
 import { IPLCricketSlide } from './slides/IPLCricketSlide';
 import { ComparisonSlide } from './slides/ComparisonSlide';
@@ -43,7 +42,6 @@ const slides = [
   MarketplaceSlide,
   IntentsSlide,
   DemoSlide,
-  GTMSlide,
   CommunitySlide,
   ThankYouChatSlide,
   AppendixSlide,

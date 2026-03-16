@@ -248,16 +248,6 @@ export function WalletSlide() {
                       </p>
                     </div>
                   )}
-                  {identity?.l1Address && (
-                    <div>
-                      <p className="text-[#fefefe]/30 text-[9px] uppercase tracking-wider" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                        L1 Address
-                      </p>
-                      <p className="text-[#fefefe]/60 text-[11px] break-all" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                        {truncate(identity.l1Address, 32)}
-                      </p>
-                    </div>
-                  )}
                   {identity?.directAddress && (
                     <div>
                       <p className="text-[#fefefe]/30 text-[9px] uppercase tracking-wider" style={{ fontFamily: "'Geist Mono', monospace" }}>

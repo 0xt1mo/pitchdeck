@@ -33,7 +33,7 @@ export function AICompanionsSlide() {
         <div className="flex-1 mt-4 min-h-0 rounded-xl overflow-hidden border border-orange-500/15 relative">
           <div className="absolute inset-0 bg-orange-500/[0.03]" />
           <iframe
-            src="https://verdant-sundae-2e4992.netlify.app"
+            src="https://privatefans.netlify.app"
             className="w-full h-full relative z-10"
             style={{ border: 'none', background: '#060606' }}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
