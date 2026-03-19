@@ -19,7 +19,8 @@ import { DemoSlide } from './slides/DemoSlide';
 import { GTMSlide } from './slides/GTMSlide';
 import { ResourcesSlide } from './slides/ResourcesSlide';
 import { IPLCricketSlide } from './slides/IPLCricketSlide';
-import { ParametricInsuranceSlide } from './slides/ParametricInsuranceSlide';
+import { ParamarketSlide } from './slides/ParamarketSlide';
+import { UniclawSlide } from './slides/UniclawSlide';
 import { ComparisonSlide } from './slides/ComparisonSlide';
 import { AICompanionsSlide } from './slides/AICompanionsSlide';
 import { AgentsSlide } from './slides/AgentsSlide';
@@ -49,6 +50,8 @@ const slides = [
   IntentsSlide,
   DemoSlide,
   GTMSlide,
+  ParamarketSlide,
+  UniclawSlide,
   TokenSlide,
   CommunitySlide,
   RaiseSlide,
@@ -67,7 +70,6 @@ const slides = [
   PaymentsSlide,
   ProtocolSlide,
   ComparisonSlide,
-  ParametricInsuranceSlide,
   IPLCricketSlide,
   AICompanionsSlide,
   ResourcesSlide,

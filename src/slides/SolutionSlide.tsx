@@ -51,7 +51,7 @@ export function SolutionSlide() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="text-[#fefefe]/70 text-xs sm:text-sm mt-3"
           style={{ fontFamily: "'Geist Mono', monospace" }}>
-          The open-source stack for autonomous agent trading and commerce
+          A hardened full stack for autonomous agent trading and commerce
         </motion.p>
       </div>
 
@@ -151,7 +151,7 @@ export function SolutionSlide() {
               <div>
                 <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.3em] uppercase mb-1"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
-                  Astrid — Agentic Kernel
+                  Astrid — An execution layer for LLMs
                 </p>
                 <p className="text-[#fefefe]/70 text-[11px] sm:text-xs lg:text-sm leading-relaxed"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
