@@ -7,45 +7,31 @@ const sections = [
     title: 'KERNEL',
     color: '#f97316',
     items: [
-      { label: 'Astrid: The Agent Runtime', slideIndex: 21 },
-      { label: 'Why Astrid', slideIndex: 22 },
-      { label: 'Swap a Capsule', slideIndex: 23 },
+      { label: 'Astrid: The Agent Runtime', slideIndex: 4 },
+      { label: 'Why Astrid', slideIndex: 5 },
+      { label: 'Swap a Capsule', slideIndex: 6 },
+      { label: 'Impact for Aleria', slideIndex: 7 },
     ],
   },
   {
     title: 'SECURITY',
     color: '#a855f7',
     items: [
-      { label: 'Semantic Intercept Fabric', slideIndex: 25 },
-      { label: 'Zero Trust Network', slideIndex: 26 },
+      { label: 'Semantic Intercept Fabric', slideIndex: 9 },
     ],
   },
   {
-    title: 'BLOCKCHAIN',
-    color: '#3b82f6',
-    items: [
-      { label: 'Unicity Protocol Stack', slideIndex: 28 },
-      { label: 'Agents vs Smart Contracts', slideIndex: 29 },
-      { label: 'A2A Micropayments', slideIndex: 30 },
-      { label: 'Unicity X402', slideIndex: 31 },
-      { label: 'Solana vs Unicity', slideIndex: 32 },
-    ],
-  },
-  {
-    title: 'MARKETPLACES',
+    title: 'DEMOS',
     color: '#ec4899',
     items: [
-      { label: 'Parametric Insurance', slideIndex: 13 },
-      { label: 'Uniclaw', slideIndex: 14 },
-      { label: 'IPL Cricket', slideIndex: 33 },
-      { label: 'AI Companions', slideIndex: 34 },
+      { label: 'Parametric Insurance', slideIndex: 11 },
     ],
   },
   {
     title: 'RESOURCES',
     color: '#10b981',
     items: [
-      { label: 'Essential Resources', slideIndex: 35 },
+      { label: 'Essential Resources', slideIndex: 12 },
     ],
   },
 ];

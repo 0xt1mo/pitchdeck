@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import unicityLogoUrl from '/UnicityLogo.svg';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 
-export function TitleSlide({ onNext }: { onNext?: () => void }) {
+export function TitleSlide({ onNext }: { onNext?: () => void; [key: string]: unknown }) {
   const [isExploreHovered, setIsExploreHovered] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
@@ -78,7 +78,16 @@ export function TitleSlide({ onNext }: { onNext?: () => void }) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7 }}
               >
-                SERIES
+                ALERIA
+              </motion.span>
+              {' '}
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.7 }}
+                className="text-orange-400"
+              >
+                ×
               </motion.span>
               {' '}
               <motion.span
@@ -86,7 +95,7 @@ export function TitleSlide({ onNext }: { onNext?: () => void }) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7 }}
               >
-                A
+                UNICITY
               </motion.span>
             </motion.h1>
 
@@ -105,7 +114,7 @@ export function TitleSlide({ onNext }: { onNext?: () => void }) {
                   className="text-[#ffe2cc] text-xs sm:text-sm md:text-base lg:text-lg font-normal whitespace-nowrap"
                   style={{ fontFamily: "'Geist Mono', 'SF Mono', 'Fira Code', monospace" }}
                 >
-                  pitch deck
+                  Enter
                 </p>
               </div>
             </motion.div>
