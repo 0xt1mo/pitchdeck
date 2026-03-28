@@ -20,10 +20,10 @@ export function ParamarketSlide() {
             Marketplace
           </p>
           <h1
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1"
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            MARKETPLACE 1:{' '}
+            EXAMPLE MARKETPLACE —{' '}
             <span className="text-orange-400">PARAMETRIC INSURANCE</span>
           </h1>
           <div className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-2" />

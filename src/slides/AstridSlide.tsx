@@ -60,7 +60,7 @@ function StackDiagram() {
       <rect x={px} y={y1} width={bw} height={bh + 20} rx={12}
         fill="rgba(249,115,22,0.08)" stroke="rgba(249,115,22,0.45)" strokeWidth={2} />
       <text x={px + 16} y={y1 + 24} fill="#f97316" fontSize="15" fontWeight="bold"
-        fontFamily={fontTitle} letterSpacing="0.08em">ASTRID RUNTIME</text>
+        fontFamily={fontTitle} letterSpacing="0.08em">ASTRID OS RUNTIME</text>
       <text x={px + 180} y={y1 + 24} fill="rgba(254,254,254,0.35)" fontSize="9"
         fontFamily={font}>User-space microkernel — enforcement layer</text>
       {/* Tags */}
@@ -144,7 +144,7 @@ export function AstridSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            <span className="text-orange-400">ASTRID:</span>{' '}
+            <span className="text-orange-400">ASTRID OS:</span>{' '}
             THE AGENT RUNTIME
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
@@ -185,7 +185,7 @@ export function AstridSlide() {
                   borderLeftColor: 'rgba(249,115,22,0.5)',
                 }}>
                 <h3 className="text-orange-400 text-xs sm:text-sm font-bold mb-1.5"
-                  style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.02em' }}>
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
                   {point.title}
                 </h3>
                 <p className="text-[#fefefe]/55 text-[9px] sm:text-[11px] leading-relaxed"

@@ -7,7 +7,7 @@ export function IntroSlide() {
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
       {/* Video background */}
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
-        <video className="w-full h-full object-cover opacity-30" autoPlay muted loop playsInline src={splashVideoUrl} />
+        <video className="w-full h-full object-cover" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/40" />
       </div>
 
@@ -28,11 +28,10 @@ export function IntroSlide() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="text-[#fefefe] text-[36px] sm:text-[52px] lg:text-[68px] leading-[0.95] tracking-tight text-center"
+          className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight text-center"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          INFRASTRUCTURE FOR THE
-          <br />
+          INFRASTRUCTURE FOR THE{' '}
           <span className="text-orange-400">AGENTIC ECONOMY</span>
         </motion.h1>
 

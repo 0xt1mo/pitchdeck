@@ -93,10 +93,15 @@ export function ParadigmOverviewSlide() {
           className="shrink-0 mt-4 mb-14">
           <p className="text-[#fefefe]/80 text-sm sm:text-base leading-relaxed w-full"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            All blockchains to date operate as shared ledgers, leading to competition for resources and bottlenecks.
-            Unicity shatters this paradigm — the first blockchain with true peer-to-peer transactions,{' '}
-            <span className="text-orange-400">eliminating the shared ledger entirely</span>.
-            Assets exist off-chain; on-chain functionality is reduced to preventing double-spending.
+            Shared ledgers were designed for humans: slow, sequential, contested. Agents don't work that way — they're parallel, autonomous, and transacting at machine speed.
+            Unicity is the first blockchain built for that reality.{' '}
+            <span className="text-orange-400">No shared ledger. No bottlenecks.</span>{' '}
+            Assets live off-chain; the only on-chain function is preventing double-spending.
+            The result: unlimited throughput, one-second finality, and a microcent per transaction.
+          </p>
+          <p className="text-orange-400 text-base sm:text-lg font-bold mt-3 tracking-wide"
+            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            Chain-agnostic token transfers at machine speed.
           </p>
         </motion.div>
 

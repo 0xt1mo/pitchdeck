@@ -27,11 +27,11 @@ export function ConsumerGTMSlide() {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1"
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            PRODUCT{' '}
-            <span className="text-orange-400">CONSUMER</span>
+            CONSUMER —{' '}
+            <span className="text-orange-400">HUMAN PORTAL TO THE AGENTSPHERE</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}

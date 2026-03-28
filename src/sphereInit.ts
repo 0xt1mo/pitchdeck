@@ -52,7 +52,7 @@ async function doInit(): Promise<SphereSession> {
 
   if (exists) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const result = await Sphere.init({ ...providers as any, l1: null });
+    const result = await Sphere.init({ ...providers as any, l1: null, discoverAddresses: false });
     sphere = result.sphere;
 
     // If existing wallet has no tokens yet, request from faucet
@@ -69,6 +69,7 @@ async function doInit(): Promise<SphereSession> {
       ...providers as any,
       autoGenerate: true,
       l1: null,
+      discoverAddresses: false,
     });
     sphere = result.sphere;
 

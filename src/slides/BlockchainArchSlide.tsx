@@ -250,7 +250,7 @@ export function BlockchainArchSlide() {
                   style={{ background: `${point.color}99` }} />
                 <div>
                   <h3 className="text-[#fefefe]/90 text-xs sm:text-sm font-bold"
-                    style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.02em', color: point.color }}>
+                    style={{ fontFamily: "'Geist Mono', monospace", color: point.color }}>
                     {point.title}
                   </h3>
                   <p className="text-[#fefefe]/50 text-[10px] sm:text-xs leading-relaxed mt-0.5"

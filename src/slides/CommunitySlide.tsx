@@ -179,7 +179,7 @@ export function CommunitySlide() {
           </motion.p>
           <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[48px] lg:text-[64px] leading-[0.95] tracking-tight mt-1"
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
             BUILDING THE{' '}
             <span className="text-orange-400">UNICITY COMMUNITY</span>
@@ -216,6 +216,10 @@ export function CommunitySlide() {
             <p className="text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed mt-4 sm:mt-6"
               style={{ fontFamily: "'Geist Mono', monospace" }}>
               Alpha testnet ran from June to December 2025. Zero marketing spend, no social media, word of mouth only — the community grew organically, peaking at <span className="text-orange-400">1GH/s</span>, second only to Monero at 5GH/s among RandomX chains.
+            </p>
+            <p className="text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed mt-3"
+              style={{ fontFamily: "'Geist Mono', monospace" }}>
+              <span className="text-orange-400 font-bold">Current Status:</span> 20K DAU on testnet. Agents to be introduced April 2026.
             </p>
 
             {/* Social icons */}

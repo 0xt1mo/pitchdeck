@@ -4,48 +4,50 @@ import unicityLogoUrl from '/UnicityLogo.svg';
 
 const sections = [
   {
-    title: 'KERNEL',
+    title: 'GO TO MARKET',
+    color: '#10b981',
+    items: [
+      { label: 'AgentStack', slideIndex: 18 },
+      { label: 'A2A Marketplaces', slideIndex: 19 },
+      { label: 'Consumer GTM', slideIndex: 20 },
+      { label: 'Paramarket', slideIndex: 21 },
+      { label: 'Enterprise', slideIndex: 22 },
+    ],
+  },
+  {
+    title: 'ASTRID OS',
     color: '#f97316',
     items: [
-      { label: 'Astrid: The Agent Runtime', slideIndex: 21 },
-      { label: 'Why Astrid', slideIndex: 22 },
-      { label: 'Swap a Capsule', slideIndex: 23 },
+      { label: 'The Agent Runtime', slideIndex: 24 },
+      { label: 'Why Astrid OS', slideIndex: 25 },
+      { label: 'Use Cases', slideIndex: 26 },
     ],
   },
   {
     title: 'SECURITY',
     color: '#a855f7',
     items: [
-      { label: 'Semantic Intercept Fabric', slideIndex: 25 },
-      { label: 'Zero Trust Network', slideIndex: 26 },
+      { label: 'Semantic Intercept Fabric', slideIndex: 28 },
+      { label: 'Zero Trust Network', slideIndex: 29 },
     ],
   },
   {
     title: 'BLOCKCHAIN',
     color: '#3b82f6',
     items: [
-      { label: 'Unicity Protocol Stack', slideIndex: 28 },
-      { label: 'Agents vs Smart Contracts', slideIndex: 29 },
-      { label: 'A2A Micropayments', slideIndex: 30 },
-      { label: 'Unicity X402', slideIndex: 31 },
-      { label: 'Solana vs Unicity', slideIndex: 32 },
-    ],
-  },
-  {
-    title: 'MARKETPLACES',
-    color: '#ec4899',
-    items: [
-      { label: 'Parametric Insurance', slideIndex: 13 },
-      { label: 'Uniclaw', slideIndex: 14 },
-      { label: 'IPL Cricket', slideIndex: 33 },
-      { label: 'AI Companions', slideIndex: 34 },
+      { label: 'Unicity Architecture', slideIndex: 31 },
+      { label: 'Wallet', slideIndex: 32 },
+      { label: 'Agents', slideIndex: 33 },
+      { label: 'A2A Micropayments', slideIndex: 34 },
+      { label: 'Unicity X402', slideIndex: 35 },
+      { label: 'Solana vs Unicity', slideIndex: 36 },
     ],
   },
   {
     title: 'RESOURCES',
-    color: '#10b981',
+    color: '#ec4899',
     items: [
-      { label: 'Essential Resources', slideIndex: 35 },
+      { label: 'Essential Resources', slideIndex: 37 },
     ],
   },
 ];

@@ -63,11 +63,10 @@ export function ProblemSlide() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[48px] lg:text-[64px] xl:text-[76px] leading-[0.95] tracking-tight"
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            THE INTERNET IS BEING
-            <br />
+            THE INTERNET IS BEING{' '}
             <span className="text-orange-400">REBUILT FOR AI</span>
           </motion.h1>
           <motion.p

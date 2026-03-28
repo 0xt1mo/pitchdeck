@@ -189,41 +189,40 @@ export function ThankYouChatSlide() {
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
 
-      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
 
-        {/* Top section — Thank You + socials */}
-        <div className="shrink-0 text-center">
+        {/* Centered block: Thank You + chat */}
+        <div className="text-center">
           <motion.img src={unicityLogoUrl} alt="Unicity"
             initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="h-8 sm:h-10 mx-auto mb-3"
+            className="h-8 sm:h-10 mx-auto mb-4"
           />
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-[#fefefe] text-[48px] sm:text-[72px] lg:text-[96px] leading-none tracking-tight"
+            className="text-[#fefefe] text-[56px] sm:text-[80px] lg:text-[110px] leading-none tracking-tight"
             style={{ fontFamily: "'Anton', sans-serif" }}>
             THANK <span className="text-orange-400">YOU</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="h-[2px] w-24 sm:w-36 bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-center mx-auto mt-2" />
+            className="h-[2px] w-24 sm:w-36 bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-center mx-auto mt-3" />
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
-            className="mt-2 text-[#fefefe]/50 text-xs sm:text-sm"
+            className="mt-3 text-[#fefefe]/50 text-xs sm:text-sm"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             Infrastructure for the agentic economy
           </motion.p>
-
         </div>
 
-        {/* Two chat panels */}
+        {/* Chat panel */}
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="flex-1 grid grid-cols-2 gap-4 sm:gap-6 mt-4 min-h-0"
+          className="w-full max-w-lg mt-8"
+          style={{ height: 220 }}
         >
-          {/* Left — kbbot */}
           <ChatPanel
             session={session}
             peer={session?.peer ?? null}
@@ -231,34 +230,18 @@ export function ThankYouChatSlide() {
             placeholder="Ask about Unicity..."
             filterWelcome
           />
-
-          {/* Right — DM @mike_agent1 */}
-          <ChatPanel
-            session={session}
-            peer={session?.mikePeer ?? null}
-            peerLabel="@mike_agent1"
-            placeholder="Message Mike directly..."
-          />
         </motion.div>
 
-        {/* Labels under panels */}
-        <motion.div
+        <motion.p
           initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="grid grid-cols-2 gap-4 sm:gap-6 mt-2"
-        >
-          <p className="text-orange-400 text-sm sm:text-base text-center"
-            style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.04em' }}>
-            Talk to our KnowledgeBot
-          </p>
-          <p className="text-orange-400 text-sm sm:text-base text-center"
-            style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.04em' }}>
-            Talk to our CEO Agent to arrange a meeting
-          </p>
-        </motion.div>
+          className="text-orange-400 text-sm sm:text-base mt-3"
+          style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.04em' }}>
+          Talk to our KnowledgeBot
+        </motion.p>
 
-        {/* Logo */}
-        <div className="shrink-0 flex justify-end mt-4">
+        {/* Logo — bottom right */}
+        <div className="absolute bottom-6 right-6 sm:right-10 lg:right-16">
           <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
         </div>
 

@@ -2,15 +2,6 @@ import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 import unicityLogoUrl from '/UnicityLogo.svg';
 
-const takeRates = [
-  { platform: 'eBay', rate: '13–15%' },
-  { platform: 'Airbnb', rate: '15–20%' },
-  { platform: 'Uber', rate: '25–30%' },
-  { platform: 'App Store', rate: '15–30%' },
-  { platform: 'Upwork', rate: '10–20%' },
-  { platform: 'OpenSea', rate: '2.5% + fees' },
-];
-
 const markets = [
   { title: 'Crypto OTC', desc: 'Private atomic settlement' },
   { title: 'Prediction Markets', desc: 'No front-running' },
@@ -45,83 +36,28 @@ export function MarketplaceSlide() {
           </motion.p>
           <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1"
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            PRODUCT{' '}<span className="text-orange-400">MARKETPLACE</span>
+            AGENT{' '}<span className="text-orange-400">MARKETPLACE</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-2" />
         </div>
 
-        {/* Big statement */}
-        <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+        {/* Subheader */}
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="shrink-0 mt-6 text-[#fefefe] text-[22px] sm:text-[32px] lg:text-[42px] leading-[1] tracking-tight"
-          style={{ fontFamily: "'Anton', sans-serif" }}>
-          MASSIVE SCALE, LOW LATENCY, ZERO TRUST{' '}
-          <span className="text-orange-400">A2A DISCOVERY, TRADING & SETTLEMENT</span>
-        </motion.h2>
+          className="shrink-0 mt-3 text-[#fefefe]/60 text-sm sm:text-base"
+          style={{ fontFamily: "'Geist Mono', monospace" }}>
+          Zero-trust A2A discovery, trading and settlement at scale.
+        </motion.p>
 
-        {/* Two-column layout */}
-        <div className="flex-1 mt-4 grid grid-cols-2 gap-8 sm:gap-12 min-h-0 items-center">
-
-          {/* Left — Take rate table */}
+        {/* Content */}
+        <div className="flex-1 mt-4 min-h-0 flex items-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}>
-            <p className="text-[#fefefe]/80 text-sm sm:text-base leading-relaxed mb-5"
-              style={{ fontFamily: "'Geist Mono', monospace" }}>
-              Platforms take <span className="text-orange-400">10–30%</span>. Agents take <span className="text-orange-400 text-lg sm:text-xl font-black px-2 py-0.5 rounded bg-orange-500/[0.12] border border-orange-500/25">zero</span>.
-            </p>
-
-            <div className="rounded-xl overflow-hidden border border-white/[0.08]">
-              {/* Header row */}
-              <div className="grid grid-cols-2 px-4 sm:px-5 py-2.5 border-b border-white/[0.08] bg-white/[0.03]">
-                <span className="text-[#fefefe]/50 text-[10px] sm:text-xs uppercase tracking-wider"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}>Platform</span>
-                <span className="text-[#fefefe]/50 text-[10px] sm:text-xs uppercase tracking-wider text-right"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}>Take Rate</span>
-              </div>
-              {/* Platform rows */}
-              {takeRates.map((row, i) => (
-                <motion.div
-                  key={row.platform}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 + i * 0.06 }}
-                  className="grid grid-cols-2 px-4 sm:px-5 py-2.5 border-b border-white/[0.04]"
-                >
-                  <span className="text-[#fefefe]/60 text-xs sm:text-sm"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}>{row.platform}</span>
-                  <span className="text-red-400/70 text-xs sm:text-sm text-right font-medium"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}>{row.rate}</span>
-                </motion.div>
-              ))}
-              {/* Unicity row — highlighted */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.9, duration: 0.4 }}
-                className="grid grid-cols-2 px-4 sm:px-5 py-3 bg-orange-500/[0.08] border-t border-orange-500/20"
-              >
-                <span className="text-orange-400 text-sm sm:text-base font-bold"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}>Unicity</span>
-                <motion.span
-                  initial={{ scale: 1 }}
-                  animate={{ scale: [1, 1.15, 1] }}
-                  transition={{ delay: 1.2, duration: 0.5 }}
-                  className="text-orange-400 text-lg sm:text-xl font-black text-right"
-                  style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.05em' }}>
-                  0%
-                </motion.span>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Right — Vision + featured markets */}
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="flex flex-col justify-center">
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="grid grid-cols-2 gap-8 sm:gap-12 w-full">
 
             {/* For Buyers */}
             <div>
@@ -164,7 +100,6 @@ export function MarketplaceSlide() {
             </div>
 
           </motion.div>
-
         </div>
 
         {/* Market carousel */}

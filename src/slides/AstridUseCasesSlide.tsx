@@ -89,7 +89,7 @@ export function AstridUseCasesSlide() {
                 background: `${uc.color}06`,
               }}>
               <h3 className="text-base sm:text-lg lg:text-xl mb-1"
-                style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.02em', color: uc.color }}>
+                style={{ fontFamily: "'Geist Mono', monospace", color: uc.color }}>
                 {uc.title}
               </h3>
               <p className="text-[#fefefe]/35 text-[9px] sm:text-[10px] mb-2"

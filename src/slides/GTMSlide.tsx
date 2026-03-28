@@ -1,51 +1,56 @@
+import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 import unicityLogoUrl from '/UnicityLogo.svg';
 
-const partners = [
+const phases = [
   {
-    segment: 'CONSUMERS',
-    color: '#f97316',
-    name: 'Tawasal',
-    what: 'MENA super app',
-    scale: '6M daily active users',
-    geography: 'UAE, MENA, Asia',
-    role: 'A2A marketplace infra',
-  },
-  {
-    segment: 'ENTERPRISE',
+    phase: 'PHASE 1',
+    name: 'AgentStack',
     color: '#3b82f6',
-    name: 'Aleria',
-    what: "Sovereign AI platform",
-    scale: '$400B+ ecosystem (UAE)',
-    geography: 'UAE → GCC → Global',
-    role: 'A2A marketplace infra',
+    desc: 'Open source + enterprise license',
+    bullets: [
+      'Open source core + enterprise license',
+      'Channel partner distribution',
+      'Security · Runtime · Settlement',
+    ],
+    revenue: 'ENTERPRISE LICENSE (FIAT)',
+    partner: { name: 'Aleria', detail: 'Sovereign AI — $400B+ ecosystem (UAE)', motion: 'Channel partner → enterprise deployments' },
   },
   {
-    segment: 'MERCHANTS',
+    phase: 'PHASE 2',
+    name: 'AgentSphere',
     color: '#10b981',
-    name: 'Movidone',
-    what: 'Omnichannel payment acceptance',
-    scale: '60K+ merchants',
-    geography: 'Europe',
-    role: 'A2A marketplace infra',
+    desc: 'A2A marketplace for autonomous trading',
+    bullets: [
+      'Agent-to-agent transactions',
+      'Crypto token settlement',
+      'Predictions & parametrics',
+      'Network effects at scale',
+    ],
+    revenue: 'PROTOCOL SUBSCRIPTION (TOKEN)',
+    partner: { name: 'Tawasal', detail: '6M DAU super app — UAE, MENA, Asia', motion: '6M DAU → agent onramp at scale' },
   },
   {
-    segment: 'DEVELOPERS',
+    phase: 'PHASE 3',
+    name: 'ParaMarket',
     color: '#a855f7',
-    name: 'PadUp Ventures',
-    what: 'Startup incubator',
-    scale: '112K+ startup ecosystem',
-    geography: 'India',
-    role: 'Agentic commerce dev track',
+    desc: 'Mutual insurance built by agents, for agents',
+    bullets: [
+      'Parametric insurance marketplace',
+      'Agent-managed mutual pools',
+      'Automated claims & settlement',
+      'First vertical proof point',
+    ],
+    revenue: 'APPLICATION REVENUE',
+    partner: { name: 'Aleria/Blackrock', detail: 'Reinsurance — UAE', motion: 'Reinsurance capital → first mutual pools' },
   },
 ];
 
 export function GTMSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
-      {/* Video background */}
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
-        <video className="w-full h-full object-cover opacity-20" autoPlay muted loop playsInline src={splashVideoUrl} />
+        <video className="w-full h-full object-cover opacity-15" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
 
@@ -53,139 +58,128 @@ export function GTMSlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <p
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            Strategy
-          </p>
-          <h1
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1"
-            style={{ fontFamily: "'Anton', sans-serif" }}
-          >
-            DISTRIBUTION
-          </h1>
-          <div className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-2" />
-          <p
-            className="text-[#fefefe]/70 text-xs sm:text-sm mt-3 max-w-3xl"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            Our initial distribution is through <span className="text-orange-400">strategic investors</span> deploying infrastructure for both consumer and enterprise <span className="text-orange-400">agent commerce</span>.
-          </p>
+            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            Go to Market
+          </motion.p>
+          <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
+            style={{ fontFamily: "'Anton', sans-serif" }}>
+            LAND THE OS. BUILD THE MARKETPLACE.{' '}
+            <span className="text-orange-400">PROVE THE VERTICAL.</span>
+          </motion.h1>
+          <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-2" />
         </div>
 
-        {/* Partner cards */}
-        <div className="mt-6 sm:mt-8 grid grid-cols-4 gap-3 sm:gap-4 shrink-0">
-          {partners.map((p) => (
-            <div
-              key={p.segment}
-              className="rounded-xl overflow-hidden flex flex-col"
+        {/* Phase cards */}
+        <div className="shrink-0 grid grid-cols-3 gap-4 sm:gap-5 mt-4">
+          {phases.map((p, i) => (
+            <motion.div
+              key={p.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 + i * 0.12, duration: 0.5 }}
+              className="rounded-xl flex flex-col overflow-hidden"
               style={{
-                border: `1px solid ${p.color}30`,
-                background: `linear-gradient(170deg, ${p.color}12 0%, transparent 40%)`,
+                border: `1px solid ${p.color}25`,
+                background: `linear-gradient(170deg, ${p.color}0a 0%, transparent 50%)`,
               }}
             >
-              {/* Segment header */}
-              <div
-                className="px-4 sm:px-5 pt-4 sm:pt-5 pb-3"
-                style={{ borderBottom: `1px solid ${p.color}20` }}
-              >
-                <p
-                  className="text-[10px] sm:text-xs tracking-[0.2em] uppercase mb-1"
-                  style={{ fontFamily: "'Geist Mono', monospace", color: `${p.color}90` }}
-                >
-                  {p.segment}
-                </p>
-                <h3
-                  className="text-lg sm:text-xl lg:text-2xl leading-tight"
-                  style={{ fontFamily: "'Anton', sans-serif", color: p.color }}
-                >
+              {/* Card header */}
+              <div className="px-5 pt-5 pb-3">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl leading-none"
+                  style={{ fontFamily: "'Anton', sans-serif", color: p.color }}>
                   {p.name}
-                </h3>
+                </h2>
+                <p className="text-[#fefefe]/60 text-xs sm:text-sm mt-1.5"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                  {p.desc}
+                </p>
               </div>
 
-              {/* Data rows */}
-              <div className="flex-1 px-4 sm:px-5 py-3 space-y-3" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                {[
-                  { label: 'What', value: p.what },
-                  { label: 'Scale', value: p.scale },
-                  { label: 'Geo', value: p.geography },
-                  { label: 'A2A Infra', value: p.role },
-                ].map((row) => (
-                  <div key={row.label}>
-                    <p className="text-[#fefefe]/30 text-[9px] sm:text-[10px] uppercase tracking-wider mb-0.5">
-                      {row.label}
-                    </p>
-                    <p className="text-[#fefefe]/80 text-[11px] sm:text-xs leading-snug">
-                      {row.value}
-                    </p>
-                  </div>
+              {/* Bullets */}
+              <div className="px-5 py-3 space-y-1.5 flex-1">
+                {p.bullets.map((b) => (
+                  <p key={b} className="text-[#fefefe]/70 text-[11px] sm:text-xs leading-relaxed"
+                    style={{ fontFamily: "'Geist Mono', monospace" }}>
+                    <span className="mr-1.5" style={{ color: p.color }}>→</span>{b}
+                  </p>
                 ))}
               </div>
-            </div>
-          ))}
-        </div>
 
-        {/* Proof points — horizontal flow */}
-        <div className="shrink-0 mt-4 sm:mt-5 grid grid-cols-4 gap-3 sm:gap-4">
-          {[
-            { partner: 'Tawasal', proves: 'Consumer Settlement', color: '#f97316' },
-            { partner: 'Aleria', proves: 'Enterprise AI Execution', color: '#3b82f6' },
-            { partner: 'Movidone', proves: 'Merchant Acceptance', color: '#10b981' },
-            { partner: 'PadUp', proves: 'Developer Pipeline', color: '#a855f7' },
-          ].map((p, i) => (
-            <div key={p.partner} className="flex items-center gap-2.5">
-              <div className="w-1 h-8 rounded-full shrink-0" style={{ background: p.color }} />
-              <div style={{ fontFamily: "'Geist Mono', monospace" }}>
-                <p className="text-[#fefefe]/80 text-[10px] sm:text-xs font-bold">{p.partner}</p>
-                <p className="text-[10px] sm:text-[11px]" style={{ color: p.color }}>{p.proves}</p>
+              {/* Partner proof point */}
+              <div className="px-5 py-3 border-t"
+                style={{ borderColor: `${p.color}15` }}>
+                <p className="text-[10px] tracking-[0.15em] uppercase mb-1"
+                  style={{ fontFamily: "'Geist Mono', monospace", color: `${p.color}80` }}>
+                  Launch Partner
+                </p>
+                <p className="text-[#fefefe]/90 text-xs sm:text-sm font-bold"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                  {p.partner.name}
+                </p>
+                <p className="text-[#fefefe]/50 text-[10px] sm:text-[11px] mt-0.5"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                  {p.partner.detail}
+                </p>
+                <p className="text-[10px] mt-1.5 italic"
+                  style={{ fontFamily: "'Geist Mono', monospace", color: `${p.color}90` }}>
+                  {p.partner.motion}
+                </p>
               </div>
-              {i < 3 && (
-                <svg viewBox="0 0 12 12" className="w-3 h-3 ml-auto shrink-0 text-[#fefefe]/15">
-                  <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              )}
-            </div>
+
+              {/* Revenue model tag */}
+              <div className="px-5 py-2 pb-4">
+                <span className="text-[10px] sm:text-[11px] tracking-[0.15em] uppercase px-3 py-1.5 rounded-md border"
+                  style={{
+                    fontFamily: "'Geist Mono', monospace",
+                    color: p.color,
+                    borderColor: `${p.color}35`,
+                    background: `${p.color}10`,
+                  }}>
+                  {p.revenue}
+                </span>
+              </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Target banner */}
-        <div
-          className="shrink-0 mt-4 sm:mt-5 rounded-xl px-6 sm:px-8 py-4 sm:py-5 flex items-center gap-6 sm:gap-10"
-          style={{
-            background: 'linear-gradient(135deg, rgba(249,115,22,0.06) 0%, rgba(249,115,22,0.02) 100%)',
-            border: '1px solid rgba(249,115,22,0.2)',
-          }}
-        >
-          <h2
-            className="text-[#fefefe]/50 text-sm sm:text-base lg:text-lg uppercase tracking-wider whitespace-nowrap"
-            style={{ fontFamily: "'Anton', sans-serif" }}
-          >
-            SERIES A<br />TARGET
-          </h2>
-          <div className="h-10 w-px bg-orange-500/20 shrink-0" />
-          <div className="flex items-baseline gap-2">
-            <span className="text-[#fefefe] text-[28px] sm:text-[36px] lg:text-[44px] leading-none" style={{ fontFamily: "'Anton', sans-serif" }}>100K</span>
-            <span className="text-orange-400 text-sm sm:text-base lg:text-lg" style={{ fontFamily: "'Geist Mono', monospace" }}>DAA</span>
-          </div>
-          <div className="text-[#fefefe]/15 text-2xl" style={{ fontFamily: "'Anton', sans-serif" }}>|</div>
-          <div className="flex items-baseline gap-2">
-            <span className="text-[#fefefe] text-[28px] sm:text-[36px] lg:text-[44px] leading-none" style={{ fontFamily: "'Anton', sans-serif" }}>1K</span>
-            <span className="text-orange-400 text-sm sm:text-base lg:text-lg" style={{ fontFamily: "'Geist Mono', monospace" }}>TPS</span>
-          </div>
-          <div className="ml-auto text-[#fefefe]/60 text-[10px] sm:text-xs text-right leading-relaxed" style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Daily Active Agents<br />Transactions Per Second
-          </div>
+        {/* Strategy paragraphs */}
+        <div className="shrink-0 mt-5 space-y-3">
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 0.5 }}
+            className="text-[#fefefe]/60 text-xs sm:text-sm leading-relaxed"
+            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            <span className="text-blue-400 font-bold">AgentStack:</span> The open infrastructure layer for AI agents. Any agent, any LLM, any framework. AgentStack packages the Unicity runtime (Astrid OS), the Semantic Intercept Fabric, and the L1 settlement layer into a single deployable stack. Open source core drives adoption — developers integrate once and get security, execution, and settlement out of the box. Enterprise license adds SLAs, policy dashboards, and dedicated support for production deployments.
+          </motion.p>
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            transition={{ delay: 1.1, duration: 0.5 }}
+            className="text-[#fefefe]/60 text-xs sm:text-sm leading-relaxed"
+            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            <span className="text-emerald-400 font-bold">AgentSphere:</span> The first marketplace purpose-built for autonomous agent commerce. Agents discover counterparties, negotiate terms, and settle transactions peer-to-peer using crypto tokens — no human in the loop. A bulletin board protocol enables price discovery across predictions, parametrics, and any structured product agents can define. Every transaction settles on the Unicity L1 at $1/month per agent, unlimited volume.
+          </motion.p>
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.5 }}
+            className="text-[#fefefe]/60 text-xs sm:text-sm leading-relaxed"
+            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            <span className="text-purple-400 font-bold">ParaMarket:</span> Parametric insurance built entirely by agents. Mutual pools are formed, priced, and managed autonomously — agents assess risk, set premiums, process claims, and distribute payouts without manual intervention. The first vertical proof point on the Unicity stack, demonstrating that the infrastructure can power regulated, high-value financial products. Once proven in insurance, the same model extends to lending, derivatives, and supply chain finance.
+          </motion.p>
         </div>
 
-        <div className="flex-1" />
 
-        {/* Logo */}
-        <div className="shrink-0 mt-3 flex justify-end">
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-        </div>
+
 
       </div>
+
+      {/* Logo — fixed bottom right */}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
+        className="fixed bottom-6 right-6 sm:right-10 lg:right-16 z-20">
+        <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
+      </motion.div>
     </div>
   );
 }

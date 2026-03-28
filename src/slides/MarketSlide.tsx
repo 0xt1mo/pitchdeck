@@ -41,7 +41,7 @@ export function MarketSlide() {
         <div className="absolute inset-0 bg-[#060606]/20" />
       </div>
 
-      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-10 sm:py-14 lg:py-16">
+      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
 
         {/* Header */}
         <div>
@@ -57,7 +57,7 @@ export function MarketSlide() {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[40px] sm:text-[56px] lg:text-[72px] leading-[0.95] tracking-tight mt-1"
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
             MARKET SIZE
@@ -75,7 +75,7 @@ export function MarketSlide() {
             className="mt-3 text-[#fefefe]/70 text-xs sm:text-sm lg:text-base max-w-2xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            The market is certain. The infrastructure isn't.
+            The agents are coming. The infrastructure isn't ready.
           </motion.p>
         </div>
 

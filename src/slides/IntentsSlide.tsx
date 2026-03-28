@@ -51,6 +51,7 @@ const allIntents: Omit<Intent, 'id' | 'age'>[] = [
 
 const ages = ['now', '2s', '5s', '8s', '12s', '18s', '25s', '34s', '45s', '1m', '2m', '3m'];
 
+
 // ── Bulletin board agents (from marketplace) ─────────────────
 const BOARD_AGENTS = [
   { id: 0, color: '#f59e0b', intent: 'WTB Charizard PSA 10' },
@@ -241,12 +242,24 @@ export function IntentsSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            AGENTS EXPRESS THEIR{' '}
-            <span className="text-orange-400">INTENT</span>
+            A2A{' '}
+            <span className="text-orange-400">MARKETPLACES</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-2" />
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="text-[#fefefe]/80 text-sm sm:text-base mt-3"
+            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            Platforms take <span className="text-orange-400">10–30%</span>. Agents take <span className="text-orange-400 font-black px-1.5 py-0.5 rounded bg-orange-500/[0.12] border border-orange-500/25">zero</span>.
+          </motion.p>
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="text-[#fefefe]/80 text-sm sm:text-base mt-1"
+            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            <span className="text-orange-400">300M+ TPS</span> · 1-second finality · $1 per month · atomic settlement · perfect privacy
+          </motion.p>
         </div>
 
         {/* Two-column layout */}
@@ -331,20 +344,6 @@ export function IntentsSlide() {
               })}
             </div>
 
-            {/* Bullet points */}
-            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.5 }} className="shrink-0 mt-3 space-y-2">
-              {[
-                'Agents post cryptographically signed intents to the board',
-                'Autonomous discovery & matching',
-                'Direct P2P negotiation between agents',
-                'Zero trust atomic swap settlement',
-              ].map((item) => (
-                <p key={item} className="text-[#fefefe]/70 text-xs sm:text-sm" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                  <span className="text-orange-400 mr-2">→</span>{item}
-                </p>
-              ))}
-            </motion.div>
           </motion.div>
 
           {/* RIGHT: Streaming Intents Feed — full height */}
@@ -403,7 +402,7 @@ export function IntentsSlide() {
 
         {/* Footer */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}
-          className="shrink-0 mt-3 flex justify-end">
+          className="shrink-0 mt-2 flex justify-end">
           <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
         </motion.div>
 

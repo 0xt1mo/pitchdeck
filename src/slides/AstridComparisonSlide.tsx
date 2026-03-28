@@ -49,7 +49,7 @@ export function AstridComparisonSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            WHY{' '}<span className="text-orange-400">ASTRID</span>
+            WHY{' '}<span className="text-orange-400">ASTRID OS</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}

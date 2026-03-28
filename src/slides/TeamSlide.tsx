@@ -9,7 +9,7 @@ const leaders = [
   { name: 'Joshua J. Bouw', role: 'AI', lines: ['NEAR, Asimov, Blackcoin', 'Godfather Proof of Stake'], photo: '/team/joshua.jpeg', linkedin: 'https://www.linkedin.com/in/joshuajbouw/' },
   { name: 'Matt Law', role: 'Growth', lines: ['Outlier Ventures, Boson, Fetch.ai'], photo: '/team/matt.jpg', linkedin: 'https://www.linkedin.com/in/mattlaw/' },
   { name: 'Pavel Grigorenko', role: 'Engineering', lines: ['PhD CS', 'Microsoft, Guardtime'], photo: '/team/pavel.png', linkedin: 'https://www.linkedin.com/in/pavelgrigorenko/' },
-  { name: 'Jamie Steiner', role: 'DeFi', lines: ['JP Morgan, NEOM'], photo: '/team/jamie.jpg', linkedin: 'https://www.linkedin.com/in/jvsteiner/' },
+  { name: 'Jamie Steiner', role: 'Insurance', lines: ['JP Morgan, NEOM'], photo: '/team/jamie.jpg', linkedin: 'https://www.linkedin.com/in/jvsteiner/' },
 ];
 
 const cryptographers = [

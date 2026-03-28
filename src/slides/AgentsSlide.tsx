@@ -85,7 +85,7 @@ export function AgentsSlide() {
                 className="rounded-lg border p-4 sm:p-5"
                 style={{ borderColor: `${card.color}30`, background: `${card.color}06` }}>
                 <h3 className="text-[#fefefe] text-sm sm:text-base mb-1.5"
-                  style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.02em' }}>
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
                   {card.title}
                 </h3>
                 <p className="text-[#fefefe]/60 text-[10px] sm:text-xs leading-relaxed"

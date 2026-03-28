@@ -20,7 +20,7 @@ const ORBIT = KERNEL_R + SAT_R + GAP;
 const DIAGRAM_SIZE = ORBIT * 2 + SAT_R * 2 + 20;
 const ANGLES = [-90, -30, 30, 90, 150, 210];
 
-type SectionId = 'kernel' | 'security' | 'payments';
+type SectionId = 'kernel' | 'security' | 'payments' | 'gtm';
 
 const sectionConfig: Record<SectionId, {
   label: string;
@@ -29,7 +29,7 @@ const sectionConfig: Record<SectionId, {
   highlightKernel: boolean;
 }> = {
   kernel: {
-    label: 'KERNEL',
+    label: 'ASTRID OS',
     subtitle: 'Architecture deep dive',
     highlightIds: ['skills', 'orchestration', 'inference', 'networking'],
     highlightKernel: true,
@@ -46,6 +46,12 @@ const sectionConfig: Record<SectionId, {
     highlightIds: ['payments'],
     highlightKernel: false,
   },
+  gtm: {
+    label: 'GO TO MARKET',
+    subtitle: 'Products & Distribution',
+    highlightIds: ['networking', 'payments'],
+    highlightKernel: false,
+  },
 };
 
 export function SectionDividerSlide({ section }: { section: SectionId; [key: string]: unknown }) {
@@ -56,14 +62,14 @@ export function SectionDividerSlide({ section }: { section: SectionId; [key: str
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
-        <video className="w-full h-full object-cover opacity-15" autoPlay muted loop playsInline src={splashVideoUrl} />
-        <div className="absolute inset-0 bg-[#060606]/50" />
+        <video className="w-full h-full object-cover" autoPlay muted loop playsInline src={splashVideoUrl} />
+        <div className="absolute inset-0 bg-[#060606]/40" />
       </div>
 
       <div className="relative z-10 h-full flex items-center justify-center">
 
-        {/* Diagram */}
-        <div
+        {/* Diagram — hidden for all sections */}
+        {false && <div
           className="relative origin-center"
           style={{
             width: `${DIAGRAM_SIZE}px`,
@@ -140,9 +146,9 @@ export function SectionDividerSlide({ section }: { section: SectionId; [key: str
               </motion.div>
             );
           })}
-        </div>
+        </div>}
 
-        {/* Section label — positioned to the right */}
+        {/* Section label */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -197,4 +203,8 @@ export function SecurityDividerSlide(props: Record<string, unknown>) {
 
 export function BlockchainDividerSlide(props: Record<string, unknown>) {
   return <SectionDividerSlide section="payments" {...props} />;
+}
+
+export function GTMDividerSlide(props: Record<string, unknown>) {
+  return <SectionDividerSlide section="gtm" {...props} />;
 }
