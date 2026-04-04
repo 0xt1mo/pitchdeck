@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 type ArrowStep = { num: number; label: string; from: number; to: number };
 type SelfStep = { num: number; label: string; at: number };
@@ -133,14 +132,14 @@ function Diagram({
       {showEliminated && (
         <g>
           <rect x={35} y={HEAD_H + 5 * ROW_H + 12} width={VB_W - 70} height={6.5 * ROW_H}
-            rx={12} fill="rgba(249,115,22,0.02)" stroke={accent} strokeWidth={1} strokeDasharray="8 5" opacity={0.3} />
+            rx={12} fill="rgba(249,115,22,0.06)" stroke={accent} strokeWidth={2} strokeDasharray="8 5" opacity={0.6} />
           <text x={VB_W / 2} y={HEAD_H + 5 * ROW_H + 2.8 * ROW_H} textAnchor="middle"
-            fill={accent} fontSize="18" fontFamily="Anton, sans-serif" letterSpacing="0.06em" opacity={0.35}>
+            fill={accent} fontSize="26" fontFamily="Anton, sans-serif" letterSpacing="0.08em" opacity={0.9}>
             7 STEPS ELIMINATED
           </text>
           <text x={VB_W / 2} y={HEAD_H + 5 * ROW_H + 3.8 * ROW_H + 4} textAnchor="middle"
-            fill="rgba(254,254,254,0.3)" fontSize="9.5" fontFamily="Geist Mono, monospace">
-            No facilitator · No shared ledger · No settlement
+            fill="rgba(254,254,254,0.5)" fontSize="11" fontFamily="Geist Mono, monospace">
+            No facilitator · No shared ledger
           </text>
         </g>
       )}
@@ -163,13 +162,13 @@ export function ProtocolSlide() {
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Appendix — Protocol
+            Scaling Agentic Payments
           </motion.p>
           <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[24px] sm:text-[36px] lg:text-[48px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            UNICITY X402 —{' '}
+            X402/MPP —{' '}
             <span className="text-orange-400">THE MESSAGE IS THE PAYMENT</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
@@ -178,7 +177,7 @@ export function ProtocolSlide() {
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
             className="mt-1.5 text-[#fefefe]/70 text-xs sm:text-sm"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Native HTTP payments with instant finality, zero gas fees, and no wallet complexity
+            We don't compete with agentic protocols — we SCALE them.
           </motion.p>
         </div>
 
@@ -222,10 +221,6 @@ export function ProtocolSlide() {
         </div>
 
         {/* Bottom */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
-          className="shrink-0 mt-3 flex items-end justify-between gap-6">
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60 shrink-0 ml-auto" />
-        </motion.div>
       </div>
     </div>
   );

@@ -1,58 +1,8 @@
 import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
-
-const sections = [
-  {
-    title: 'GO TO MARKET',
-    color: '#10b981',
-    items: [
-      { label: 'AgentStack', slideIndex: 18 },
-      { label: 'A2A Marketplaces', slideIndex: 19 },
-      { label: 'Consumer GTM', slideIndex: 20 },
-      { label: 'Paramarket', slideIndex: 21 },
-      { label: 'Enterprise', slideIndex: 22 },
-    ],
-  },
-  {
-    title: 'ASTRID OS',
-    color: '#f97316',
-    items: [
-      { label: 'The Agent Runtime', slideIndex: 24 },
-      { label: 'Why Astrid OS', slideIndex: 25 },
-      { label: 'Use Cases', slideIndex: 26 },
-    ],
-  },
-  {
-    title: 'SECURITY',
-    color: '#a855f7',
-    items: [
-      { label: 'Semantic Intercept Fabric', slideIndex: 28 },
-      { label: 'Zero Trust Network', slideIndex: 29 },
-    ],
-  },
-  {
-    title: 'BLOCKCHAIN',
-    color: '#3b82f6',
-    items: [
-      { label: 'Unicity Architecture', slideIndex: 31 },
-      { label: 'Wallet', slideIndex: 32 },
-      { label: 'Agents', slideIndex: 33 },
-      { label: 'A2A Micropayments', slideIndex: 34 },
-      { label: 'Unicity X402', slideIndex: 35 },
-      { label: 'Solana vs Unicity', slideIndex: 36 },
-    ],
-  },
-  {
-    title: 'RESOURCES',
-    color: '#ec4899',
-    items: [
-      { label: 'Essential Resources', slideIndex: 37 },
-    ],
-  },
-];
 
 export function AppendixSlide({ goToSlide }: { goToSlide?: (index: number) => void; [key: string]: unknown }) {
+  void goToSlide;
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
@@ -83,44 +33,14 @@ export function AppendixSlide({ goToSlide }: { goToSlide?: (index: number) => vo
           transition={{ duration: 0.8, delay: 0.4 }}
           className="h-[2px] w-24 bg-gradient-to-r from-transparent via-orange-500 to-transparent mx-auto mt-6 origin-center"
         />
-
-        {/* Section grid */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-          className="grid grid-cols-5 gap-6 sm:gap-8 mt-10 sm:mt-14 w-full max-w-6xl">
-          {sections.map((section, si) => (
-            <div key={section.title}>
-              <h3 className="text-sm sm:text-base lg:text-lg tracking-[0.12em] mb-3"
-                style={{ fontFamily: "'Anton', sans-serif", color: section.color }}>
-                {section.title}
-              </h3>
-              <div className="space-y-2">
-                {section.items.map((item, ii) => (
-                  <motion.button
-                    key={item.label}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.8 + si * 0.1 + ii * 0.05 }}
-                    onClick={() => goToSlide?.(item.slideIndex)}
-                    className="block text-left w-full group"
-                    style={{ cursor: 'pointer' }}>
-                    <span className="text-[#fefefe]/60 text-[11px] sm:text-xs leading-relaxed group-hover:text-orange-400 transition-colors"
-                      style={{ fontFamily: "'Geist Mono', monospace" }}>
-                      <span className="text-orange-400/60 mr-1.5">→</span>
-                      {item.label}
-                    </span>
-                  </motion.button>
-                ))}
-              </div>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* Logo */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
-          className="absolute bottom-8 right-6 sm:right-10 lg:right-16">
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-        </motion.div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="text-[#fefefe]/50 text-lg sm:text-xl tracking-[0.3em] uppercase mt-6"
+          style={{ fontFamily: "'Geist Mono', monospace" }}>
+          Technology
+        </motion.p>
 
       </div>
     </div>

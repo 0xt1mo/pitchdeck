@@ -1,21 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import unicityLogoUrl from '/UnicityLogo.svg';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 
 export function TitleSlide({ onNext }: { onNext?: () => void }) {
   const [isExploreHovered, setIsExploreHovered] = useState(false);
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState(false);
-
-  const handleSubmit = () => {
-    if (password === 'unicity') {
-      setError(false);
-      onNext?.();
-    } else {
-      setError(true);
-    }
-  };
 
   return (
     <motion.div
@@ -23,163 +11,82 @@ export function TitleSlide({ onNext }: { onNext?: () => void }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto"
+      className="fixed inset-0 z-50 bg-[#060606] overflow-hidden"
     >
-      {/* ── Video Background (sphere) ── */}
+      {/* Video background — full bloom, centered sphere */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         <video
           className="w-full h-full object-cover"
-          style={{ transform: 'scale(1.15)' }}
-          autoPlay
-          muted
-          loop
-          playsInline
+          autoPlay muted loop playsInline
           src={splashVideoUrl}
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(to top, rgba(6,6,6,0.85) 0%, rgba(6,6,6,0.3) 35%, transparent 60%)',
+        }} />
       </div>
 
-      {/* ── Content layer ── */}
-      <div className="relative z-20 h-full flex flex-col">
+      {/* Content */}
+      <div className="relative z-10 h-full flex flex-col items-center">
 
-        {/* ── Top: UNICITY logo + decorative line ── */}
-        <div className="flex items-center px-6 sm:px-10 lg:px-[23%] pt-5 sm:pt-7 lg:pt-14">
+        {/* Center: Logo + Title */}
+        <div className="flex-1 flex flex-col items-center justify-center">
           <motion.img
-            src={unicityLogoUrl}
+            src="/UnicityLogo.svg"
             alt="Unicity"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="h-[18px] sm:h-[22px] lg:h-[26px] w-auto shrink-0 select-none"
-          />
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="h-0.5 bg-[#fefefe] rounded-[10px] ml-2 sm:ml-3 origin-left"
-            style={{ flex: '1 1 0', maxWidth: '750px' }}
+            className="h-10 sm:h-12 lg:h-14 mb-6"
           />
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-[#fefefe] text-[40px] sm:text-[56px] lg:text-[72px] leading-none tracking-[-0.02em] select-none"
+            style={{ fontFamily: "'Anton', sans-serif" }}
+          >
+            INVESTOR <span className="text-orange-400">INTRODUCTION</span>
+          </motion.h1>
         </div>
 
-        {/* ── Center: title / tagline / button ── */}
-        <div className="flex-1 flex flex-col items-center justify-center text-center px-4 mt-6 sm:mt-4 lg:mt-2">
-          <div className="flex flex-col items-center">
-
-            {/* AGENTSPHERE — Anton font */}
-            <motion.h1
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.7 }}
-              className="text-[#fefefe] text-[60px] sm:text-[68px] md:text-[80px] lg:text-[96px] xl:text-[110px] font-normal leading-none select-none"
-              style={{ fontFamily: "'Anton', sans-serif" }}
-            >
-              <motion.span
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7 }}
-              >
-                SERIES
-              </motion.span>
-              {' '}
-              <motion.span
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7 }}
-              >
-                A
-              </motion.span>
-            </motion.h1>
-
-            {/* Tagline — orange-tinted glass pill */}
+        {/* Bottom: Enter button */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7, duration: 0.5 }}
+          className="pb-[15vh] flex flex-col items-center gap-2.5"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => onNext?.()}
+            onHoverStart={() => setIsExploreHovered(true)}
+            onHoverEnd={() => setIsExploreHovered(false)}
+            className="h-10 px-5 cursor-pointer relative overflow-hidden"
+            style={{
+              borderRadius: '50px',
+              fontFamily: "'Geist Mono', monospace",
+              background: 'rgba(255,255,255,0.07)',
+              border: '1px solid rgba(255,255,255,0.1)',
+              backdropFilter: 'blur(12px)',
+            }}
+          >
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="mt-1 sm:mt-1.5 flex items-center justify-center"
+              className="absolute inset-0"
+              initial={{ y: '100%' }}
+              animate={{ y: isExploreHovered ? '0%' : '100%' }}
+              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+              style={{ background: 'rgba(249,115,22,0.25)', borderRadius: 'inherit' }}
+            />
+            <motion.span
+              animate={{ color: isExploreHovered ? '#f97316' : 'rgba(254,254,254,0.5)' }}
+              transition={{ duration: 0.2 }}
+              className="relative z-10 text-sm"
             >
-              <div
-                className="px-12 sm:px-14 py-1.5 sm:py-2 rounded-full backdrop-blur-[5px]"
-                style={{ background: 'rgba(255, 111, 0, 0.15)' }}
-              >
-                <p
-                  className="text-[#ffe2cc] text-xs sm:text-sm md:text-base lg:text-lg font-normal whitespace-nowrap"
-                  style={{ fontFamily: "'Geist Mono', 'SF Mono', 'Fira Code', monospace" }}
-                >
-                  pitch deck
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Password entry */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mt-3 sm:mt-4 flex flex-col items-center gap-2"
-            >
-              <div className="flex items-center gap-2">
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => { setPassword(e.target.value); setError(false); }}
-                  onKeyDown={(e) => { if (e.key === 'Enter') handleSubmit(); }}
-                  placeholder="Password"
-                  autoFocus
-                  className="w-40 sm:w-[190px] lg:w-[210px] h-[38px] sm:h-[42px] lg:h-[46px] px-4 text-sm sm:text-base rounded-full outline-none text-center caret-orange-400 placeholder:text-[#fefefe]/20"
-                  style={{
-                    fontFamily: "'Geist Mono', 'SF Mono', 'Fira Code', monospace",
-                    background: 'rgba(255,255,255,0.08)',
-                    border: error ? '1px solid rgba(239,68,68,0.6)' : '1px solid rgba(255,255,255,0.15)',
-                    color: '#fefefe',
-                    backdropFilter: 'blur(8px)',
-                  }}
-                />
-                <motion.button
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={handleSubmit}
-                  onHoverStart={() => setIsExploreHovered(true)}
-                  onHoverEnd={() => setIsExploreHovered(false)}
-                  className="h-[38px] sm:h-[42px] lg:h-[46px] px-5 sm:px-6 cursor-pointer shadow-lg hover:shadow-xl relative overflow-hidden"
-                  style={{
-                    borderRadius: '50px',
-                    fontFamily: "'Geist Mono', 'SF Mono', 'Fira Code', monospace",
-                    background: 'white',
-                  }}
-                >
-                  <motion.div
-                    className="absolute inset-0"
-                    initial={{ y: '100%' }}
-                    animate={{ y: isExploreHovered ? '0%' : '100%' }}
-                    transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-                    style={{ background: '#FF6F00', borderRadius: 'inherit' }}
-                  />
-                  <motion.span
-                    animate={{ color: isExploreHovered ? '#ffffff' : '#1d0900' }}
-                    transition={{ duration: 0.25 }}
-                    className="relative z-10 text-sm sm:text-base font-medium"
-                  >
-                    Enter
-                  </motion.span>
-                </motion.button>
-              </div>
-              {error && (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="text-red-400 text-xs"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}
-                >
-                  Incorrect password
-                </motion.p>
-              )}
-            </motion.div>
-
-          </div>
-        </div>
-
-        {/* Bottom spacer */}
-        <div className="shrink-0 pb-6 sm:pb-8 lg:pb-[60px]" />
+              Enter
+            </motion.span>
+          </motion.button>
+        </motion.div>
 
       </div>
     </motion.div>

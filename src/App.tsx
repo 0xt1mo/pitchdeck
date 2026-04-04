@@ -6,91 +6,79 @@ import { TeamSlide } from './slides/TeamSlide';
 import { ProblemSlide } from './slides/ProblemSlide';
 import { SolutionSlide } from './slides/SolutionSlide';
 import { ParadigmOverviewSlide } from './slides/ParadigmOverviewSlide';
-import { ConsumerGTMSlide } from './slides/ConsumerGTMSlide';
-import { IntentsSlide } from './slides/IntentsSlide';
 import { MarketSlide } from './slides/MarketSlide';
 import { RaiseSlide } from './slides/RaiseSlide';
 import { AppendixSlide } from './slides/AppendixSlide';
-import { PaymentsSlide } from './slides/PaymentsSlide';
 import { ProtocolSlide } from './slides/ProtocolSlide';
-import { SecuritySlide } from './slides/SecuritySlide';
-import { DemoSlide } from './slides/DemoSlide';
-import { GTMSlide } from './slides/GTMSlide';
 import { ResourcesSlide } from './slides/ResourcesSlide';
-import { ParamarketSlide } from './slides/ParamarketSlide';
-import { ComparisonSlide } from './slides/ComparisonSlide';
 import { AgentsSlide } from './slides/AgentsSlide';
-import { CommunitySlide } from './slides/CommunitySlide';
-import { TokenSlide } from './slides/TokenSlide';
 import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
 import { WalletSlide } from './slides/WalletSlide';
 import { SecurityNetworkSlide } from './slides/SecurityNetworkSlide';
-import { KernelDividerSlide, SecurityDividerSlide, BlockchainDividerSlide, GTMDividerSlide } from './slides/SectionDividerSlide';
+import { KernelDividerSlide, SecurityDividerSlide, BlockchainDividerSlide } from './slides/SectionDividerSlide';
 import { AstridSlide } from './slides/AstridSlide';
 import { AstridComparisonSlide } from './slides/AstridComparisonSlide';
 import { AstridUseCasesSlide } from './slides/AstridUseCasesSlide';
 import { BlockchainArchSlide } from './slides/BlockchainArchSlide';
 import { RoadmapSlide } from './slides/RoadmapSlide';
-import { AgentStackSlide } from './slides/AgentStackSlide';
 import { ProjectionsSlide } from './slides/ProjectionsSlide';
 import { CompetitionSlide } from './slides/CompetitionSlide';
-import { OpportunitySlide } from './slides/OpportunitySlide';
+import { TokenSlide } from './slides/TokenSlide';
+import { WhyBlockchainSlide } from './slides/WhyBlockchainSlide';
+import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
+import { SIFDashboardSlide } from './slides/SIFDashboardSlide';
+import { WhyUnicityProductSlide } from './slides/WhyUnicityProductSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  TitleSlide,
-  IntroSlide,
-  TeamSlide,
-  ProblemSlide,
-  MarketSlide,
-  ParadigmOverviewSlide,
-  SolutionSlide,
-  GTMSlide,
-  RoadmapSlide,
-  ProjectionsSlide,
-  TokenSlide,
-  CommunitySlide,
-  OpportunitySlide,
-  CompetitionSlide,
-  RaiseSlide,
-  ThankYouChatSlide,
+  TitleSlide,          // Cover
+  IntroSlide,          // Thesis
+  MarketSlide,         // Market Opportunity
+  WhyBlockchainSlide,  // Why Blockchain
+  ProblemSlide,        // Problem
+  SolutionSlide,       // Solution
+  WhyUnicityProductSlide, // Why Unicity — Why Now + Products
+  AgentsSlide,         // Unicity L1
+  WalletSlide,         // Live Demo
+  ProtocolSlide,       // x402/MPP
+  CompetitionSlide,    // Competition
+  ProjectionsSlide,    // Projections
+  RoadmapSlide,        // Roadmap
+  TeamSlide,           // Team
+  TokenSlide,          // Tokenomics
+  RaiseSlide,          // The Raise
+  ResourcesSlide,      // Resources
+  ThankYouChatSlide,   // Thank You
   AppendixSlide,
-  GTMDividerSlide,
-  AgentStackSlide,
-  IntentsSlide,
-  ConsumerGTMSlide,
-  ParamarketSlide,
-  DemoSlide,
   KernelDividerSlide,
   AstridSlide,
   AstridComparisonSlide,
   AstridUseCasesSlide,
   SecurityDividerSlide,
-  SecuritySlide,
+  InterceptFabricSlide,
+  SIFDashboardSlide,
   SecurityNetworkSlide,
   BlockchainDividerSlide,
+  ParadigmOverviewSlide,
   BlockchainArchSlide,
-  WalletSlide,
-  AgentsSlide,
-  PaymentsSlide,
-  ProtocolSlide,
-  ComparisonSlide,
-  ResourcesSlide,
 ];
 
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [unlocked, setUnlocked] = useState(false);
-
   const goToSlide = useCallback((index: number) => {
     if (index >= 0 && index < slides.length) {
       setCurrentSlide(index);
     }
   }, []);
 
+  // Expose for PDF export script
+  useEffect(() => {
+    (window as any).__goToSlide = goToSlide;
+    (window as any).__totalSlides = slides.length;
+  }, [goToSlide]);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (!unlocked) return;
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
       if (e.code === 'Space' || e.code === 'ArrowRight') {
         e.preventDefault();
@@ -102,7 +90,7 @@ export default function App() {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [unlocked]);
+  }, []);
 
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
 
@@ -136,16 +124,16 @@ export default function App() {
 
   return (
     <div className="h-full w-full relative">
-      <CurrentSlideComponent onNext={() => { if (currentSlide === 0) setUnlocked(true); goToSlide(currentSlide + 1); }} goToSlide={goToSlide} />
-      {unlocked && currentSlide > 0 && (
+      <CurrentSlideComponent onNext={() => { goToSlide(currentSlide + 1); }} goToSlide={goToSlide} />
+      {currentSlide > 0 && (
         <div
-          className="fixed bottom-5 left-6 sm:left-10 lg:left-16 z-[60] text-[#fefefe]/25 text-[11px] font-medium select-none pointer-events-none"
+          className="fixed bottom-3 left-6 sm:left-10 lg:left-16 z-[101] text-[#fefefe]/25 text-[11px] font-medium select-none pointer-events-none"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
           {currentSlide} / {slides.length - 1}
         </div>
       )}
-      {unlocked && slides.length > 1 && (
+      {slides.length > 1 && (
         <SlideNavigation
           current={currentSlide}
           total={slides.length}

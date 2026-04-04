@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 type IntentType = 'WTB' | 'WTS' | 'SWAP' | 'BET';
 
@@ -254,12 +253,6 @@ export function IntentsSlide() {
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             Platforms take <span className="text-orange-400">10–30%</span>. Agents take <span className="text-orange-400 font-black px-1.5 py-0.5 rounded bg-orange-500/[0.12] border border-orange-500/25">zero</span>.
           </motion.p>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            className="text-[#fefefe]/80 text-sm sm:text-base mt-1"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            <span className="text-orange-400">300M+ TPS</span> · 1-second finality · $1 per month · atomic settlement · perfect privacy
-          </motion.p>
         </div>
 
         {/* Two-column layout */}
@@ -401,10 +394,6 @@ export function IntentsSlide() {
         </div>
 
         {/* Footer */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}
-          className="shrink-0 mt-2 flex justify-end">
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-        </motion.div>
 
       </div>
     </div>

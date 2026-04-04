@@ -1,22 +1,21 @@
 import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 const cards: { title: string; color: string; text: React.ReactNode }[] = [
   {
     title: 'Off-Chain Architecture',
-    color: '#f59e0b',
-    text: <>Agents are the equivalent of smart contracts — verifiable code living entirely off-chain, operating on tokens bound to conditional ownership rules. They leverage Unicity's infrastructure to prove <span className="text-orange-400">unique</span> state.</>,
+    color: '#f97316',
+    text: 'Agents are the equivalent of smart contracts — verifiable code living entirely off-chain, operating on tokens bound to conditional ownership rules.',
   },
   {
     title: 'Token Operations',
-    color: '#f59e0b',
-    text: 'Through the Unicity SDK, agents can mint, transfer, and burn tokens with minimal overhead — sophisticated financial applications without blockchain constraints.',
+    color: '#f97316',
+    text: 'Through the Unicity SDK, agents can mint, transfer, and burn tokens with minimal overhead.',
   },
   {
     title: 'Shared State',
-    color: '#ef4444',
-    text: <>When <span className="text-orange-400">shared state</span> is needed (e.g., atomic multi-token settlement), users install programmable ownership rules before transferring tokens to agents. State is only shared amongst <span className="italic">interested</span> parties — maximum efficiency with full cryptographic guarantees.</>,
+    color: '#f97316',
+    text: 'When shared state is needed (e.g., atomic multi-token settlement), users install programmable ownership rules before transferring tokens to agents.',
   },
 ];
 
@@ -35,7 +34,7 @@ export function AgentsSlide() {
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Appendix — Architecture
+            The Unicity L1
           </motion.p>
           <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
@@ -54,14 +53,11 @@ export function AgentsSlide() {
           transition={{ delay: 0.3 }}
           className="shrink-0 mt-3 text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed max-w-4xl"
           style={{ fontFamily: "'Geist Mono', monospace" }}>
-          The lesson from the last 10 years is clear: <span className="text-orange-400">global ordering and "everyone validating everything" cannot scale</span>.
-          Unicity eliminates globally shared state entirely — agents execute off-chain, verification is done by interested parties only, independent of other transactions.
-          State is still shared, but only amongst those who need it, achieving censorship resistance, privacy, and unparalleled efficiency.
-          Like physical cash, state is <span className="text-orange-400">locally verifiable</span> — every layer presents a cryptographic proof of correctness to the layer above.
+          Unicity eliminates <span className="text-orange-400">globally</span> shared state entirely — agents execute off-chain, verification is done by interested parties only, independent of other transactions.          Like physical cash, tokens are <span className="text-orange-400">locally verifiable</span> at the edge — there is no chain dependency.
         </motion.p>
 
         {/* Two-column: diagram left, cards right */}
-        <div className="flex-1 grid grid-cols-[1.2fr_1fr] gap-6 sm:gap-8 mt-5 min-h-0 items-center">
+        <div className="flex-1 grid grid-cols-[1.2fr_1fr] gap-6 sm:gap-8 mt-4 min-h-0 items-start">
 
           {/* Left — SVG diagram, filling available space */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
@@ -84,8 +80,8 @@ export function AgentsSlide() {
                 transition={{ delay: 0.6 + i * 0.15, duration: 0.4 }}
                 className="rounded-lg border p-4 sm:p-5"
                 style={{ borderColor: `${card.color}30`, background: `${card.color}06` }}>
-                <h3 className="text-[#fefefe] text-sm sm:text-base mb-1.5"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                <h3 className="text-sm sm:text-base mb-1.5 font-bold"
+                  style={{ fontFamily: "'Geist Mono', monospace", color: card.color }}>
                   {card.title}
                 </h3>
                 <p className="text-[#fefefe]/60 text-[10px] sm:text-xs leading-relaxed"
@@ -99,10 +95,6 @@ export function AgentsSlide() {
         </div>
 
         {/* Logo */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
-          className="shrink-0 mt-3 flex justify-end">
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-        </motion.div>
 
       </div>
     </div>

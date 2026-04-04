@@ -1,166 +1,85 @@
 import { motion } from 'framer-motion';
-import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
-const problems = [
-  {
-    no: 'LIMITED DISCOVERY',
-    noPrefix: false,
-    lines: ["Agents can't find each other", '10,000 unused MCP servers'],
-    delay: 0.6,
-  },
-  {
-    no: 'SECURITY',
-    noPrefix: true,
-    lines: ["It's Windows 95 in 1995", 'Major unprotected threat surfaces'],
-    delay: 0.9,
-  },
-  {
-    no: 'TRANSACTION FRICTION',
-    noPrefix: false,
-    lines: ['Shared ledgers were built for human not machine finance'],
-    delay: 1.2,
-  },
-  {
-    no: 'AUTONOMY',
-    noPrefix: true,
-    lines: ['Humans required in the loop'],
-    delay: 1.5,
-  },
+const pillars = [
+  { title: 'FRICTIONLESS RAILS', punch: 'Extreme throughput with ultra-low latency.', text: 'Billions of agents may transact thousands of times a day.' },
+  { title: 'NEAR-ZERO COST', punch: 'A $0.001 transaction can\'t cost $0.001 to settle.', text: 'Agent micro-economics break on gas-priced chains.' },
+  { title: 'PERMISSIONLESS', punch: 'Centralized gatekeepers don\'t work for an autonomous economy.', text: 'Any chain. Any service. Any agent. No gatekeepers.' },
+  { title: 'IDENTITY', punch: 'Agents have API keys. Not identities.', text: 'No way to verify who an agent is, what it\'s authorised to do.' },
+  { title: 'ENFORCEMENT', punch: 'Agent security is bolted on, not built in.', text: 'No verifiable execution. No way to prove what an agent actually did.' },
 ];
 
 export function ProblemSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
-      {/* Video background */}
-      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-        <video
-          className="w-full h-full object-cover opacity-40"
-          autoPlay muted loop playsInline
-          src={splashVideoUrl}
-        />
-        <div className="absolute inset-0 bg-[#060606]/20" />
-      </div>
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
 
-      {/* Scan line overlay */}
-      <div className="absolute inset-0 z-[1] pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.1) 2px, rgba(255,255,255,0.1) 4px)',
-        }}
-      />
-
-      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-8 sm:py-12 lg:py-14">
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16">
 
         {/* Header */}
-        <div>
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: '100%' }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
-            className="h-[1px] bg-gradient-to-r from-red-500/60 via-orange-500/40 to-transparent mb-4"
-          />
+        <div className="mb-8 lg:mb-10">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
+            The Problem
+          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight"
+            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            THE INTERNET IS BEING{' '}
-            <span className="text-orange-400">REBUILT FOR AI</span>
+            WHAT AUTONOMY <span className="text-orange-400">ACTUALLY REQUIRES</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="mt-3 text-[#fefefe]/60 text-xs sm:text-sm lg:text-base max-w-2xl"
+            className="mt-3 text-[#fefefe]/80 text-base sm:text-lg max-w-3xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            The first web connected people. The next one is connecting AI agents.
-            <span className="text-orange-400/80"> We are still in the dialup phase.</span>
+            Agents transact today on infrastructure designed for human-scale finance — gas-priced chains, shared ledgers, transaction-based pricing. The economics break at scale. Today's agent security is bolted on, not integrated. <span className="text-orange-400/80">The autonomous economy needs purpose-built rails.</span>
           </motion.p>
         </div>
 
-        {/* ── Problem Grid ── */}
-        <div className="flex-1 flex items-center mt-4 sm:mt-6">
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-5xl mx-auto">
-            {problems.map((p, i) => (
-              <motion.div
-                key={p.no}
-                initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: p.delay,
-                  ease: [0.25, 0.1, 0.25, 1],
-                }}
-                className="group relative"
+        {/* Pillars — vertical list with text beside */}
+        <div className="flex flex-col mt-4">
+          {pillars.map((p, i) => (
+            <motion.div
+              key={p.title}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+              className="flex items-center gap-5 lg:gap-8 py-2 lg:py-2.5"
+              style={{ borderBottom: i < pillars.length - 1 ? '1px solid rgba(249,115,22,0.1)' : 'none' }}
+            >
+              {/* Title */}
+              <h3
+                className="text-orange-400 text-[24px] sm:text-[30px] lg:text-[36px] leading-none tracking-tight w-[220px] lg:w-[280px] shrink-0"
+                style={{ fontFamily: "'Anton', sans-serif" }}
               >
-                {/* Card */}
-                <div className="relative rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm p-5 sm:p-6 lg:p-8 h-full transition-all duration-300 hover:border-red-500/30 hover:bg-red-500/[0.06] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(239,68,68,0.1)]">
-                  {/* Animated warning pulse border */}
-                  <motion.div
-                    className="absolute inset-0 rounded-2xl pointer-events-none"
-                    style={{ border: '1px solid rgba(239, 68, 68, 0.15)' }}
-                    animate={{ opacity: [0.3, 0.8, 0.3] }}
-                    transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
-                  />
+                {p.title}
+              </h3>
 
-                  {/* Big "NO" watermark */}
-                  <div
-                    className="absolute -top-2 -right-2 text-[80px] sm:text-[100px] lg:text-[130px] font-black leading-none select-none pointer-events-none"
-                    style={{
-                      fontFamily: "'Anton', sans-serif",
-                      color: 'transparent',
-                      WebkitTextStroke: '1px rgba(239, 68, 68, 0.1)',
-                    }}
-                  >
-                    NO
-                  </div>
-
-                  {/* Red dot indicator */}
-                  <motion.div
-                    className="w-2 h-2 rounded-full bg-red-500 mb-4 shadow-[0_0_10px_rgba(239,68,68,0.5)]"
-                    animate={{ opacity: [1, 0.3, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
-                  />
-
-                  {/* Title */}
-                  <h3
-                    className="text-[#fefefe] text-lg sm:text-2xl lg:text-3xl tracking-wide relative z-10"
-                    style={{ fontFamily: "'Anton', sans-serif" }}
-                  >
-                    {p.noPrefix && <><span className="text-red-400/90">NO</span>{' '}</>}
-                    {p.no}
-                  </h3>
-
-                  {/* Description lines */}
-                  <div className="mt-2 sm:mt-3 flex flex-col gap-0.5 relative z-10">
-                    {p.lines.map((line, j) => (
-                      <p
-                        key={j}
-                        className="text-[#fefefe]/50 text-[10px] sm:text-xs lg:text-sm uppercase tracking-wider"
-                        style={{ fontFamily: "'Geist Mono', monospace" }}
-                      >
-                        {line}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+              {/* Punch + Text */}
+              <div>
+                <p className="text-[#fefefe] text-sm sm:text-base font-bold"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                  {p.punch}
+                </p>
+                <p className="text-[#fefefe]/60 text-xs sm:text-sm leading-relaxed mt-1"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}>
+                  {p.text}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
-        {/* Unicity logo bottom right */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 0.6 }}
-          className="self-end"
-        >
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 sm:h-6 opacity-60" />
-        </motion.div>
+        {/* Logo bottom right */}
 
       </div>
     </div>

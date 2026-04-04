@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { useEffect, useState, useCallback } from 'react';
 import { getSphereSession, type SphereSession } from '../sphereInit';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 interface AssetDisplay {
   coinId: string;
@@ -15,13 +14,7 @@ interface AssetDisplay {
   tokenCount: number;
 }
 
-function formatAmount(amount: string, decimals: number): string {
-  if (!amount || amount === '0') return '0';
-  const padded = amount.padStart(decimals + 1, '0');
-  const intPart = padded.slice(0, -decimals) || '0';
-  const fracPart = padded.slice(-decimals).replace(/0+$/, '');
-  return fracPart ? `${intPart}.${fracPart}` : intPart;
-}
+
 
 function truncate(s: string, n: number): string {
   if (s.length <= n) return s;
@@ -135,11 +128,17 @@ export function WalletSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            TRUE P2P <span className="text-orange-400">ELECTRONIC CASH</span>
+            P2P SETTLEMENT <span className="text-orange-400">IS THE UNLOCK</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-2" />
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="mt-3 text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed max-w-4xl"
+            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            <span className="text-[#fefefe] font-bold">Satoshi's whitepaper was titled "P2P Electronic Cash". 17 years later we have neither P2P nor electronic cash.</span><br />All blockchains from Bitcoin to Megaeth are based on the same asset ledger design. For <span className="text-orange-400">agent-level finance</span> we need a new design — one where the shared ledger is eliminated and validation happens at the edge. This is the unlock needed for massive scale low latency throughput.
+          </motion.p>
         </div>
 
         {error ? (
@@ -166,46 +165,41 @@ export function WalletSlide() {
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
               className="flex flex-col justify-center">
-              <p className="text-[#fefefe] text-sm sm:text-base leading-relaxed"
+              <p className="text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>
                 This is a <span className="text-orange-400">real wallet</span> running entirely in your browser.
                 No extensions, no blockchain sync, no account creation.
               </p>
               <div className="mt-4 space-y-2">
                 {[
-                  'Ephemeral key pair generated on page load',
                   'Assets stored locally — no shared ledger',
                   'P2P private transfers via NOSTR relays',
+                  'Chain-agnostic assets',
                 ].map((item) => (
-                  <p key={item} className="text-[#fefefe]/90 text-xs sm:text-sm"
+                  <p key={item} className="text-[#fefefe]/50 text-xs sm:text-sm"
                     style={{ fontFamily: "'Geist Mono', monospace" }}>
-                    <span className="text-orange-400 mr-2">→</span>{item}
+                    <span className="text-orange-400/60 mr-2">→</span>{item}
                   </p>
                 ))}
-                <p className="text-[#fefefe]/90 text-xs sm:text-sm"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}>
-                  <span className="text-orange-400 mr-2">→</span>Send tokens to <span className="text-orange-400">@mike</span> right now →
-                </p>
               </div>
               <div className="mt-10 space-y-2">
-                <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.3em] uppercase mb-3"
+                <p className="text-orange-400/60 text-[10px] sm:text-xs tracking-[0.3em] uppercase mb-3"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
                   Implications
                 </p>
                 {[
-                  'Unlimited throughput with the same security model as Bitcoin',
-                  'Validation at the edge (the recipient), not a set of validators',
+                  'Unlimited throughput with the same trust model as Bitcoin',
                   'Ultra low latency',
                   'Ultra low cost: a microcent/tx',
                 ].map((item) => (
-                  <p key={item} className="text-[#fefefe]/90 text-xs sm:text-sm leading-relaxed"
+                  <p key={item} className="text-[#fefefe]/50 text-xs sm:text-sm leading-relaxed"
                     style={{ fontFamily: "'Geist Mono', monospace" }}>
-                    <span className="text-orange-400 mr-2">→</span>{item}
+                    <span className="text-orange-400/60 mr-2">→</span>{item}
                   </p>
                 ))}
-                <p className="text-[#fefefe]/90 text-xs sm:text-sm leading-relaxed"
+                <p className="text-[#fefefe]/50 text-xs sm:text-sm leading-relaxed"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
-                  <span className="text-orange-400 mr-2">→</span>A single line of code
+                  <span className="text-orange-400/60 mr-2">→</span>A single line of code
                 </p>
                 <p className="text-orange-400/80 text-xs sm:text-sm leading-relaxed mt-1 px-3 py-2 rounded-lg bg-orange-500/[0.06] border border-orange-500/15"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
@@ -236,85 +230,47 @@ export function WalletSlide() {
                     </p>
                   </div>
                 </div>
-
-                <div className="space-y-2">
-                  {identity?.chainPubkey && (
-                    <div>
-                      <p className="text-[#fefefe]/30 text-[9px] uppercase tracking-wider" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                        Public Key
-                      </p>
-                      <p className="text-[#fefefe]/60 text-[11px] break-all" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                        {truncate(identity.chainPubkey, 32)}
-                      </p>
-                    </div>
-                  )}
-                  {identity?.directAddress && (
-                    <div>
-                      <p className="text-[#fefefe]/30 text-[9px] uppercase tracking-wider" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                        Direct Address
-                      </p>
-                      <p className="text-[#fefefe]/60 text-[11px] break-all" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                        {truncate(identity.directAddress, 32)}
-                      </p>
-                    </div>
-                  )}
-                </div>
+                {identity?.chainPubkey && (
+                  <div>
+                    <p className="text-[#fefefe]/30 text-[9px] uppercase tracking-wider" style={{ fontFamily: "'Geist Mono', monospace" }}>
+                      Public Key
+                    </p>
+                    <p className="text-[#fefefe]/60 text-[11px] break-all" style={{ fontFamily: "'Geist Mono', monospace" }}>
+                      {truncate(identity.chainPubkey, 32)}
+                    </p>
+                  </div>
+                )}
               </div>
 
-              {/* Balances */}
+              {/* Static balances */}
               <div className="shrink-0 rounded-xl p-4"
                 style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
                 <p className="text-[#fefefe]/50 text-[10px] uppercase tracking-wider mb-3"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
                   Token Balances
                 </p>
-                {assets.length === 0 ? (
-                  <div className="py-3 text-center">
-                    <p className="text-[#fefefe]/25 text-xs" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                      No tokens yet
-                    </p>
-                    <p className="text-[#fefefe]/15 text-[10px] mt-1" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                      Send tokens to this wallet to see them here
-                    </p>
-                  </div>
-                ) : (
-                  <div className="space-y-2">
-                    {assets.map((asset) => (
-                      <div key={asset.symbol} className="rounded-lg px-3 py-2"
-                        style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <div className="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold"
-                              style={{ background: 'rgba(249,115,22,0.15)', border: '1px solid rgba(249,115,22,0.25)', color: '#f97316', fontFamily: "'Geist Mono', monospace" }}>
-                              {asset.symbol.slice(0, 2)}
-                            </div>
-                            <div>
-                              <p className="text-[#fefefe]/80 text-xs font-bold" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                                {asset.symbol}
-                              </p>
-                              <p className="text-[#fefefe]/30 text-[9px]" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                                {asset.name}
-                              </p>
-                            </div>
-                          </div>
-                          <div className="text-right">
-                            <p className="text-[#fefefe]/90 text-sm font-bold" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                              {formatAmount(asset.totalAmount, asset.decimals)}
-                            </p>
-                            <p className="text-[#fefefe]/30 text-[9px]" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                              {asset.tokenCount} token{asset.tokenCount !== 1 ? 's' : ''}
-                            </p>
-                          </div>
+                <div className="space-y-2">
+                  {[
+                    { symbol: 'BTC', name: 'Bitcoin', amount: '0.42' },
+                    { symbol: 'USDT', name: 'Tether', amount: '10,000' },
+                    { symbol: 'ETH', name: 'Ethereum', amount: '3.8' },
+                  ].map((token) => (
+                    <div key={token.symbol} className="rounded-lg px-3 py-2 flex items-center justify-between"
+                      style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                      <div className="flex items-center gap-2">
+                        <div className="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold"
+                          style={{ background: 'rgba(249,115,22,0.15)', border: '1px solid rgba(249,115,22,0.25)', color: '#f97316', fontFamily: "'Geist Mono', monospace" }}>
+                          {token.symbol.slice(0, 2)}
                         </div>
-                        {asset.unconfirmedAmount !== '0' && (
-                          <p className="text-orange-400/60 text-[9px] mt-1" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                            {formatAmount(asset.unconfirmedAmount, asset.decimals)} pending
-                          </p>
-                        )}
+                        <div>
+                          <p className="text-[#fefefe]/80 text-xs font-bold" style={{ fontFamily: "'Geist Mono', monospace" }}>{token.symbol}</p>
+                          <p className="text-[#fefefe]/30 text-[9px]" style={{ fontFamily: "'Geist Mono', monospace" }}>{token.name}</p>
+                        </div>
                       </div>
-                    ))}
-                  </div>
-                )}
+                      <p className="text-[#fefefe]/90 text-sm font-bold" style={{ fontFamily: "'Geist Mono', monospace" }}>{token.amount}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* Send to @mike */}
@@ -380,10 +336,6 @@ export function WalletSlide() {
         )}
 
         {/* Logo */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
-          className="shrink-0 mt-3 flex justify-end">
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-        </motion.div>
       </div>
       <style>{`
         @keyframes border-pulse {

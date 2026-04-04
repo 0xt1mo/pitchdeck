@@ -9,7 +9,8 @@ interface SlideNavigationProps {
 
 export function SlideNavigation({ current, total, onNavigate }: SlideNavigationProps) {
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] flex items-center gap-4">
+    <div className="fixed bottom-0 left-0 right-0 z-[100] flex items-center justify-center gap-4 py-3 bg-gradient-to-t from-[#060606] via-[#060606]/90 to-transparent">
+      <img src="/UnicityLogo.svg" alt="Unicity" className="h-5 opacity-50 absolute right-6 sm:right-10 lg:right-16" />
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

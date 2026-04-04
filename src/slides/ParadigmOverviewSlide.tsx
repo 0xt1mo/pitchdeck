@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 export function ParadigmOverviewSlide() {
   return (
@@ -24,8 +23,8 @@ export function ParadigmOverviewSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            THE L1 PARADIGM SHIFT:{' '}
-            <span className="text-orange-400">BEYOND SHARED LEDGERS</span>
+            BLOCKCHAINS WEREN'T BUILT{' '}
+            <span className="text-orange-400">FOR A BILLION MACHINES</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -36,17 +35,9 @@ export function ParadigmOverviewSlide() {
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
           className="shrink-0 mt-3">
-          <p className="text-[#fefefe]/80 text-sm sm:text-base leading-relaxed"
+          <p className="text-[#fefefe]/70 text-sm sm:text-base leading-relaxed max-w-3xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Satoshi's whitepaper was titled <span className="text-orange-400">"P2P electronic cash"</span>
-          </p>
-          <p className="text-[#fefefe]/80 text-sm sm:text-base leading-relaxed mt-1"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            17 years later we have neither P2P nor electronic cash
-          </p>
-          <p className="text-orange-400 text-sm sm:text-base leading-relaxed mt-1"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Unicity finishes what Bitcoin started
+            Traditional blockchains force every transaction through a shared ledger. Unicity eliminates the ledger entirely — assets are validated locally and settled peer-to-peer. Verifiable Agents are the new smart contracts (managing shared state).
           </p>
         </motion.div>
 
@@ -91,25 +82,17 @@ export function ParadigmOverviewSlide() {
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.6 }}
           className="shrink-0 mt-4 mb-14">
-          <p className="text-[#fefefe]/80 text-sm sm:text-base leading-relaxed w-full"
+          <p className="text-[#fefefe]/70 text-xl sm:text-2xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Shared ledgers were designed for humans: slow, sequential, contested. Agents don't work that way — they're parallel, autonomous, and transacting at machine speed.
-            Unicity is the first blockchain built for that reality.{' '}
-            <span className="text-orange-400">No shared ledger. No bottlenecks.</span>{' '}
-            Assets live off-chain; the only on-chain function is preventing double-spending.
-            The result: unlimited throughput, one-second finality, and a microcent per transaction.
+            Extreme throughput · low latency · chain-agnostic · gasless rails
           </p>
-          <p className="text-orange-400 text-base sm:text-lg font-bold mt-3 tracking-wide"
+          <p className="text-[#fefefe]/50 text-sm sm:text-base leading-relaxed mt-3"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Chain-agnostic token transfers at machine speed.
+            The cost per transaction is so low (one microcent) that agents can get unlimited transactions with a decentralised permissionless subscription model of $1-10/month.
           </p>
         </motion.div>
 
         {/* Logo */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
-          className="shrink-0 mt-3 flex justify-end">
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-        </motion.div>
 
       </div>
     </div>

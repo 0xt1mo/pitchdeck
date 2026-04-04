@@ -1,59 +1,64 @@
 import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 export function IntroSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
-      {/* Video background */}
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+      {/* Video background — atmospheric watermark */}
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
-        <video className="w-full h-full object-cover" autoPlay muted loop playsInline src={splashVideoUrl} />
-        <div className="absolute inset-0 bg-[#060606]/40" />
+        <video className="w-full h-full object-cover opacity-[0.12]" autoPlay muted loop playsInline src={splashVideoUrl} />
       </div>
+
+      {/* Subtle radial glow behind text */}
+      <div className="fixed inset-0 z-[1] pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse 60% 40% at 50% 50%, rgba(249,115,22,0.06) 0%, transparent 70%)',
+        }}
+      />
 
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 sm:px-10 lg:px-16">
 
-        {/* Logo */}
-        <motion.img
-          src={unicityLogoUrl}
-          alt="Unicity"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="h-10 sm:h-14 lg:h-16 mb-6 sm:mb-8"
-        />
-
-        {/* Tagline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+        {/* Title */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight text-center"
-          style={{ fontFamily: "'Anton', sans-serif" }}
+          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+          className="text-center"
         >
-          INFRASTRUCTURE FOR THE{' '}
-          <span className="text-orange-400">AGENTIC ECONOMY</span>
-        </motion.h1>
+          <h1
+            className="text-[#fefefe] text-[48px] sm:text-[72px] lg:text-[100px] xl:text-[120px] leading-[0.9] tracking-[-0.02em]"
+            style={{ fontFamily: "'Anton', sans-serif" }}
+          >
+            AUTONOMOUS AI
+            <br />
+            <span className="text-orange-400">NEEDS AN INTERNET</span>
+            <br />
+            BUILT FOR MACHINES
+          </h1>
+        </motion.div>
 
         {/* Accent line */}
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="h-[2px] w-24 sm:w-36 bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-center mt-5 sm:mt-6"
+          transition={{ duration: 1, delay: 0.7 }}
+          className="h-[1px] w-32 sm:w-48 lg:w-64 bg-gradient-to-r from-transparent via-orange-500/60 to-transparent origin-center mt-6 sm:mt-8"
         />
 
-        {/* Subtitle lines */}
+        {/* Subtitle */}
         <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, duration: 0.5 }}
-          className="mt-6 sm:mt-8 text-[#fefefe]/70 text-sm sm:text-base lg:text-xl text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.1, duration: 0.8 }}
+          className="mt-6 sm:mt-8 text-[#fefefe]/40 text-sm sm:text-base lg:text-lg text-center max-w-2xl leading-relaxed"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Agent security, networking and trading at machine speed
+          Billions of machine intelligences are coming.
+          <br />
+          <span className="text-[#fefefe]/60">The infrastructure they need doesn't exist.</span>
+          <br />
+          <span className="text-[#fefefe]/60">We are here to build it.</span>
         </motion.p>
-
 
       </div>
     </div>

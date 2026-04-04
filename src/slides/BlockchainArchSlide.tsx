@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 function StackDiagram() {
   const W = 520;
-  const H = 440;
+  const H = 460;
   const cx = W / 2;
   const bw = 340;
   const bh = 48;
@@ -14,7 +13,7 @@ function StackDiagram() {
   const y0 = 20;
   const y1 = y0 + bh + 12;
   const y2 = y1 + bh + 12;
-  const yDiv = y2 + bh + 28;
+  const yDiv = y2 + bh + 48;
   const y3 = yDiv + 28;
   const yA = y3 + bh + 45;
 
@@ -83,11 +82,13 @@ function StackDiagram() {
       <line x1={cx} y1={y1 + bh} x2={cx} y2={y2} stroke="rgba(99,102,241,0.2)" strokeWidth={1.5} />
       <polygon points={`${cx - 3},${y2 - 3} ${cx + 3},${y2 - 3} ${cx},${y2}`} fill="rgba(99,102,241,0.25)" />
 
-      {/* Uniqueness Oracle */}
-      <rect x={cx - bw / 2} y={y2} width={bw} height={bh} rx={8}
-        fill="url(#conG)" stroke="rgba(99,102,241,0.45)" strokeWidth={1.5} />
-      <text x={cx} y={y2 + bh / 2 + 5} textAnchor="middle" fill="#c7d2fe"
-        fontSize="14" fontFamily={fontTitle} letterSpacing="0.06em">UNIQUENESS ORACLE</text>
+      {/* ZK Uniqueness Oracle */}
+      <rect x={cx - bw / 2} y={y2} width={bw} height={bh + 20} rx={8}
+        fill="rgba(249,115,22,0.06)" stroke="rgba(249,115,22,0.45)" strokeWidth={1.5} />
+      <text x={cx} y={y2 + 24} textAnchor="middle" fill="#f97316"
+        fontSize="14" fontWeight="bold" fontFamily={fontTitle} letterSpacing="0.06em">ZK UNIQUENESS ORACLE</text>
+      <text x={cx} y={y2 + 44} textAnchor="middle" fill="#fefefe" opacity="0.45"
+        fontSize="11" fontFamily={font} fontStyle="italic">Single function: has this token been spent before?</text>
 
       {/* Divider */}
       <line x1={cx - bw / 2} y1={yDiv} x2={cx + bw / 2} y2={yDiv}
@@ -98,9 +99,9 @@ function StackDiagram() {
         fontSize="9" fontFamily={font}>Off-Chain</text>
 
       {/* Double arrow */}
-      <line x1={cx} y1={y2 + bh + 2} x2={cx} y2={y3 - 2}
+      <line x1={cx} y1={y2 + bh + 22} x2={cx} y2={y3 - 2}
         stroke="rgba(249,115,22,0.3)" strokeWidth={1.5} />
-      <polygon points={`${cx - 3},${y2 + bh + 5} ${cx + 3},${y2 + bh + 5} ${cx},${y2 + bh + 1}`}
+      <polygon points={`${cx - 3},${y2 + bh + 25} ${cx + 3},${y2 + bh + 25} ${cx},${y2 + bh + 21}`}
         fill="rgba(249,115,22,0.3)" />
       <polygon points={`${cx - 3},${y3 - 5} ${cx + 3},${y3 - 5} ${cx},${y3 - 1}`}
         fill="rgba(249,115,22,0.3)" />
@@ -175,9 +176,9 @@ const keyPoints = [
     text: 'Custom built chained Hotstuff consensus. Provides fast 1 second finality.',
   },
   {
-    title: 'Uniqueness Oracle',
-    color: '#6366f1',
-    text: 'Custom built using ZK + hash-chain proofs. Pevents double-spending of off-chain assets.',
+    title: 'ZK Uniqueness Oracle',
+    color: '#f97316',
+    text: 'Custom built using ZK + hash-chain proofs. Prevents double-spending of off-chain assets.',
   },
   {
     title: 'Token Operations SDK',
@@ -265,10 +266,6 @@ export function BlockchainArchSlide() {
         </div>
 
         {/* Logo */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
-          className="shrink-0 mt-3 flex justify-end">
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-        </motion.div>
 
       </div>
     </div>

@@ -1,5 +1,4 @@
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 export function AICompanionsSlide() {
   return (
@@ -39,12 +38,6 @@ export function AICompanionsSlide() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
           />
         </div>
-
-        {/* Logo */}
-        <div className="shrink-0 mt-3 flex justify-end">
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-        </div>
-
       </div>
     </div>
   );

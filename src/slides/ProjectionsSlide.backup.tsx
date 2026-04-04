@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 const years = ["H2 '26", '2027', '2028', '2029'];
 
@@ -281,10 +280,6 @@ export function ProjectionsSlide() {
       </div>
 
       {/* Logo — fixed bottom right */}
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4 }}
-        className="fixed bottom-6 right-6 sm:right-10 lg:right-16 z-20">
-        <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-      </motion.div>
     </div>
   );
 }

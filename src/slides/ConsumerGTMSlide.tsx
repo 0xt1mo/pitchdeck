@@ -1,6 +1,75 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
+
+function IframeWithFallback({ src }: { src: string }) {
+  const [failed, setFailed] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  useEffect(() => {
+    timeoutRef.current = setTimeout(() => {
+      if (!loaded) setFailed(true);
+    }, 5000);
+    return () => clearTimeout(timeoutRef.current);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const handleLoad = () => {
+    clearTimeout(timeoutRef.current);
+    // Check if the iframe loaded an error page (cross-origin will throw)
+    try {
+      const doc = iframeRef.current?.contentDocument;
+      const text = doc?.body?.innerText || '';
+      if (text.includes('403') || text.includes('ERROR') || text.includes('Forbidden')) {
+        setFailed(true);
+        return;
+      }
+    } catch {
+      // Cross-origin — means the real site loaded (good)
+    }
+    setLoaded(true);
+  };
+
+  if (failed) {
+    return (
+      <div className="w-full h-full relative z-10 flex flex-col items-center justify-center gap-4">
+        <p className="text-[#fefefe]/40 text-sm" style={{ fontFamily: "'Geist Mono', monospace" }}>
+          Preview unavailable in this browser
+        </p>
+        <a href={src} target="_blank" rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold transition-all hover:scale-105 cursor-pointer"
+          style={{
+            fontFamily: "'Geist Mono', monospace",
+            background: 'rgba(249,115,22,0.15)',
+            border: '1px solid rgba(249,115,22,0.3)',
+            color: '#f97316',
+          }}>
+          Open AgentSphere →
+        </a>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      {!loaded && (
+        <div className="absolute inset-0 z-20 flex items-center justify-center">
+          <div className="w-6 h-6 border-2 border-orange-500 border-t-transparent rounded-full animate-spin" />
+        </div>
+      )}
+      <iframe
+        ref={iframeRef}
+        src={src}
+        className="w-full h-full relative z-10"
+        style={{ border: 'none', background: '#060606' }}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+        onLoad={handleLoad}
+        onError={() => setFailed(true)}
+      />
+    </>
+  );
+}
 
 export function ConsumerGTMSlide() {
   return (
@@ -21,7 +90,7 @@ export function ConsumerGTMSlide() {
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Product
+            Use Case: Consumer
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -30,15 +99,13 @@ export function ConsumerGTMSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            CONSUMER —{' '}
-            <span className="text-orange-400">HUMAN PORTAL TO THE AGENTSPHERE</span>
+            AGENT<span className="text-orange-400">SPHERE</span>
           </motion.h1>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-2"
-          />
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
+            className="text-[#fefefe]/60 text-sm sm:text-base mt-2 max-w-2xl"
+            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            The network for autonomous personal agents. Deploy your agent, discover counterparties, negotiate, and settle — all peer-to-peer.
+          </motion.p>
         </div>
 
         {/* Iframe */}
@@ -49,12 +116,7 @@ export function ConsumerGTMSlide() {
           className="flex-1 mt-4 min-h-0 rounded-xl overflow-hidden border border-orange-500/15 relative"
         >
           <div className="absolute inset-0 bg-orange-500/[0.03]" />
-          <iframe
-            src="https://sphere.unicity.network"
-            className="w-full h-full relative z-10"
-            style={{ border: 'none', background: '#060606' }}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
-          />
+          <IframeWithFallback src="https://sphere.unicity.network" />
         </motion.div>
 
         {/* Logo */}
@@ -66,7 +128,6 @@ export function ConsumerGTMSlide() {
           >
             sphere.unicity.network
           </p>
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
         </motion.div>
 
       </div>

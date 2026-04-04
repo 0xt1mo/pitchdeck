@@ -3,7 +3,6 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import type { DirectMessage, PeerInfo } from '@unicitylabs/sphere-sdk';
 import { getSphereSession, type SphereSession } from '../sphereInit';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 const WELCOME_TRIGGER = '__sphere_welcome__';
 
@@ -193,11 +192,6 @@ export function ThankYouChatSlide() {
 
         {/* Centered block: Thank You + chat */}
         <div className="text-center">
-          <motion.img src={unicityLogoUrl} alt="Unicity"
-            initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="h-8 sm:h-10 mx-auto mb-4"
-          />
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -212,7 +206,7 @@ export function ThankYouChatSlide() {
             transition={{ delay: 0.7 }}
             className="mt-3 text-[#fefefe]/50 text-xs sm:text-sm"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Infrastructure for the agentic economy
+            The infrastructure for autonomous AI
           </motion.p>
         </div>
 
@@ -240,10 +234,6 @@ export function ThankYouChatSlide() {
           Talk to our KnowledgeBot
         </motion.p>
 
-        {/* Logo — bottom right */}
-        <div className="absolute bottom-6 right-6 sm:right-10 lg:right-16">
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-        </div>
 
       </div>
       <style>{`

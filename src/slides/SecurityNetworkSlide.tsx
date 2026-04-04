@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 const CX = 300;
 const CY = 300;
@@ -76,17 +75,17 @@ function NetworkDiagram() {
           <g key={`g2g${i}`}>
             <line x1={gx1} y1={gy1} x2={gx2} y2={gy2}
               stroke="rgba(168,85,247,0.15)" strokeWidth={1} strokeDasharray="3 4" />
-            <circle r="2.5" fill="#a855f7" opacity="0">
-              <animateMotion dur={`${4 + i * 0.4}s`} repeatCount="indefinite" begin={`${i * 0.8}s`}
+            <circle r="3" fill="#a855f7" opacity="0">
+              <animateMotion dur="1s" repeatCount="indefinite" begin={`${i * 0.3}s`}
                 path={`M${gx1},${gy1} L${gx2},${gy2}`} />
-              <animate attributeName="opacity" values="0;0.6;0" dur={`${4 + i * 0.4}s`}
-                repeatCount="indefinite" begin={`${i * 0.8}s`} />
+              <animate attributeName="opacity" values="0;0.6;0" dur="1s"
+                repeatCount="indefinite" begin={`${i * 0.3}s`} />
             </circle>
-            <circle r="2.5" fill="#a855f7" opacity="0">
-              <animateMotion dur={`${4.5 + i * 0.3}s`} repeatCount="indefinite" begin={`${2 + i * 0.6}s`}
+            <circle r="3" fill="#a855f7" opacity="0">
+              <animateMotion dur="1s" repeatCount="indefinite" begin={`${0.5 + i * 0.2}s`}
                 path={`M${gx2},${gy2} L${gx1},${gy1}`} />
-              <animate attributeName="opacity" values="0;0.6;0" dur={`${4.5 + i * 0.3}s`}
-                repeatCount="indefinite" begin={`${2 + i * 0.6}s`} />
+              <animate attributeName="opacity" values="0;0.6;0" dur="1s"
+                repeatCount="indefinite" begin={`${0.5 + i * 0.2}s`} />
             </circle>
           </g>
         );
@@ -99,17 +98,17 @@ function NetworkDiagram() {
           <g key={`conn${i}`}>
             <line x1={gx} y1={gy} x2={CX} y2={CY}
               stroke={`url(#connGrad${i})`} strokeWidth={2} strokeDasharray="6 4" />
-            <circle r="4" fill="#f97316" opacity="0.8">
-              <animateMotion dur={`${2.5 + i * 0.3}s`} repeatCount="indefinite" begin={`${i * 0.5}s`}
+            <circle r="3" fill="#f97316" opacity="0.8">
+              <animateMotion dur="1s" repeatCount="indefinite" begin={`${i * 0.15}s`}
                 path={`M${gx},${gy} L${CX},${CY}`} />
-              <animate attributeName="opacity" values="0;0.9;0" dur={`${2.5 + i * 0.3}s`}
-                repeatCount="indefinite" begin={`${i * 0.5}s`} />
+              <animate attributeName="opacity" values="0;0.9;0" dur="1s"
+                repeatCount="indefinite" begin={`${i * 0.15}s`} />
             </circle>
             <circle r="3" fill={ent.color} opacity="0.6">
-              <animateMotion dur={`${3 + i * 0.2}s`} repeatCount="indefinite" begin={`${1 + i * 0.4}s`}
+              <animateMotion dur="1s" repeatCount="indefinite" begin={`${0.3 + i * 0.12}s`}
                 path={`M${CX},${CY} L${gx},${gy}`} />
-              <animate attributeName="opacity" values="0;0.7;0" dur={`${3 + i * 0.2}s`}
-                repeatCount="indefinite" begin={`${1 + i * 0.4}s`} />
+              <animate attributeName="opacity" values="0;0.7;0" dur="1s"
+                repeatCount="indefinite" begin={`${0.3 + i * 0.12}s`} />
             </circle>
           </g>
         );
@@ -144,10 +143,10 @@ function NetworkDiagram() {
             {agents.map((a1, ai) => {
               const a2 = agents[(ai + 1) % agents.length];
               return (
-                <circle key={`iap${ai}`} r="2" fill={ent.color} opacity="0">
-                  <animateMotion dur={`${2 + ai * 0.5}s`} repeatCount="indefinite" begin={`${0.3 * ai}s`}
+                <circle key={`iap${ai}`} r="3" fill={ent.color} opacity="0">
+                  <animateMotion dur="1s" repeatCount="indefinite" begin={`${0.1 * ai}s`}
                     path={`M${a1.ax},${a1.ay} L${a2.ax},${a2.ay}`} />
-                  <animate attributeName="opacity" values="0;0.6;0" dur={`${2 + ai * 0.5}s`}
+                  <animate attributeName="opacity" values="0;0.6;0" dur="1s"
                     repeatCount="indefinite" begin={`${0.3 * ai}s`} />
                 </circle>
               );
@@ -173,10 +172,10 @@ function NetworkDiagram() {
 
             {/* Particles: gateway → agents (fan out) */}
             {agents.map((a, ai) => (
-              <circle key={`gta${ai}`} r="2.5" fill={ent.color} opacity="0">
-                <animateMotion dur={`${2.2 + ai * 0.3}s`} repeatCount="indefinite" begin={`${1.5 + ai * 0.4}s`}
+              <circle key={`gta${ai}`} r="3" fill={ent.color} opacity="0">
+                <animateMotion dur="1s" repeatCount="indefinite" begin={`${0.4 + ai * 0.12}s`}
                   path={`M${gx},${gy} L${a.ax},${a.ay}`} />
-                <animate attributeName="opacity" values="0;0.7;0" dur={`${2.2 + ai * 0.3}s`}
+                <animate attributeName="opacity" values="0;0.7;0" dur="1s"
                   repeatCount="indefinite" begin={`${1.5 + ai * 0.4}s`} />
               </circle>
             ))}
@@ -309,10 +308,6 @@ export function SecurityNetworkSlide() {
         </div>
 
         {/* Logo */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
-          className="shrink-0 mt-3 flex justify-end">
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-        </motion.div>
 
       </div>
     </div>

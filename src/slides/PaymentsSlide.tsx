@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 const humanTraits = [
   { label: 'Fragmentation by Necessity' },
@@ -253,14 +252,6 @@ export function PaymentsSlide() {
         </div>
 
         {/* ── Bottom logo ── */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.6 }}
-          className="px-6 sm:px-10 lg:px-16 pb-6 sm:pb-8 flex justify-end"
-        >
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-        </motion.div>
 
       </div>
     </div>

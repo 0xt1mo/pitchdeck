@@ -1,30 +1,50 @@
-import { motion } from 'framer-motion';
-import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import { useEffect } from 'react';
 
-const years = ["H2 '26", '2027', '2028', '2029'];
+function AnimatedNumber({ value, duration = 2, delay = 0 }: { value: number; duration?: number; delay?: number }) {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (v) => Math.round(v));
+  useEffect(() => {
+    const controls = animate(count, value, { duration, delay, ease: [0.25, 0.1, 0.25, 1] });
+    return controls.stop;
+  }, [value, duration, delay, count]);
+  return <motion.span>{rounded}</motion.span>;
+}
 
-const protocolTable = [
-  { label: 'Daily active agents', values: ['1M', '20M', '100M', '500M'] },
-  { label: 'Subscription', values: ['$1/mo', '$1/mo', '$1/mo', '$1/mo'] },
+const path = [
+  { year: "H2 '26", agents: '100K', revenue: '$0.6M' },
+  { year: '2027', agents: '2M', revenue: '$24M' },
+  { year: '2028', agents: '10M', revenue: '$120M' },
+  { year: '2029', agents: '50M', revenue: '$600M' },
 ];
-const protocolRevenue = ['$6M', '$240M', '$1.2B', '$6B'];
 
-const enterpriseTable = [
-  { label: 'Enterprise customers', values: ['5', '25', '80', '200'] },
-  { label: 'Avg. contract value', values: ['$50K', '$80K', '$100K', '$120K'] },
+const drivers = [
+  {
+    title: 'Partner with AI Labs',
+    milestone: '→ 2M agents',
+    text: 'Signed integration with a leading AI lab. Every agent on their platform gets native access to security, identity, and settlement.',
+  },
+  {
+    title: 'Developer marketing',
+    milestone: '→ organic growth',
+    text: "Community-first. The Stripe/Vercel playbook — win the developer, win every agent they build. Unicity skills, open SDKs, docs-as-product.",
+  },
+  {
+    title: 'Enterprise distribution',
+    milestone: '→ 10M agents',
+    text: 'Platform deals that bring millions of agents in a single contract. One partner = step-function growth.',
+  },
+  {
+    title: 'Network effects',
+    milestone: '→ 50M agents',
+    text: 'Every on-network transaction recruits the counterparty. Machine-readable discovery. Self-onboarding. Zero human in the loop.',
+  },
 ];
-const enterpriseRevenue = ['$0.15M', '$2M', '$8M', '$24M'];
 
 export function ProjectionsSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
-      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
-        <video className="w-full h-full object-cover opacity-15" autoPlay muted loop playsInline src={splashVideoUrl} />
-        <div className="absolute inset-0 bg-[#060606]/50" />
-      </div>
-
-      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16">
 
         {/* Header */}
         <div className="shrink-0">
@@ -35,244 +55,106 @@ export function ProjectionsSlide() {
           </motion.p>
           <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
+            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            TWO{' '}
-            <span className="text-orange-400">REVENUE ENGINES.</span>
+            THE PROTOCOL <span className="text-orange-400">REVENUE OPPORTUNITY</span>
           </motion.h1>
-          <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-2" />
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-[#fefefe]/60 text-sm sm:text-base mt-3"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            One funds the business. The other defines the upside.
-          </motion.p>
         </div>
 
-        {/* Two-column layout */}
-        <div className="shrink-0 grid mt-6 gap-8" style={{ gridTemplateColumns: '1fr 1fr' }}>
+        {/* Two-column body */}
+        <div className="flex-1 grid grid-cols-2 gap-10 mt-4 content-start">
 
-          {/* ── LEFT: Protocol Economy ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-          >
-            <p className="text-blue-400/70 text-[10px] tracking-[0.3em] uppercase mb-1"
-              style={{ fontFamily: "'Geist Mono', monospace" }}>
-              Protocol Economy
-            </p>
-            <h3 className="text-blue-400 text-lg sm:text-xl font-bold"
-              style={{ fontFamily: "'Geist Mono', monospace" }}>
-              Agent Subscriptions
-            </h3>
-            <p className="text-[#fefefe]/50 text-xs mt-1 leading-relaxed"
-              style={{ fontFamily: "'Geist Mono', monospace" }}>
-              Paid in <span className="text-[#fefefe]/80 font-bold">native token</span>. Permissionless. Scales with every agent on the network.
-            </p>
+          {/* Left — model + number + trajectory */}
+          <div className="flex flex-col">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
+              <p className="text-[#fefefe] text-sm font-bold" style={{ fontFamily: "'Geist Mono', monospace" }}>
+                Every agent pays a subscription in native token.
+              </p>
+              <p className="text-[#fefefe]/50 text-xs sm:text-sm leading-relaxed mt-1"
+                style={{ fontFamily: "'Geist Mono', monospace" }}>
+                Unlimited transactions. Subscription replaces gas entirely. Infrastructure cost per transaction: one microcent.
+              </p>
+              <p className="text-[#fefefe]/40 text-xs leading-relaxed mt-1"
+                style={{ fontFamily: "'Geist Mono', monospace" }}>
+                Pricing ranges from $12 to $120 per year per agent depending on tier. The model below uses <span className="text-orange-400">floor pricing only</span>.
+              </p>
+            </motion.div>
 
-            {/* Price card */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="mt-4 rounded-lg px-4 py-3 flex items-center gap-4"
-              style={{
-                background: 'rgba(59,130,246,0.06)',
-                border: '1px solid rgba(59,130,246,0.15)',
-              }}
-            >
-              <span className="text-3xl sm:text-4xl font-black text-amber-500"
+            {/* Hero number */}
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="mt-4">
+              <p className="text-[#fefefe]/40 text-sm" style={{ fontFamily: "'Geist Mono', monospace" }}>
+                50M agents × $12/year/agent
+              </p>
+              <p className="text-orange-400 text-[90px] sm:text-[120px] lg:text-[150px] leading-none"
                 style={{ fontFamily: "'Anton', sans-serif" }}>
-                $1<span className="text-lg text-amber-500/60">/mo</span>
-              </span>
-              <p className="text-[#fefefe]/60 text-[11px] leading-relaxed"
-                style={{ fontFamily: "'Geist Mono', monospace" }}>
-                Per agent. <span className="font-bold text-[#fefefe]/80">Unlimited transactions.</span> No gas. An active agent on Solana pays $500+/mo in fees. On Unicity: $1 flat.
+                $<AnimatedNumber value={600} delay={0.6} duration={1.5} />M
+              </p>
+              <p className="text-[#fefefe]/40 text-xs mt-1" style={{ fontFamily: "'Geist Mono', monospace" }}>
+                annual protocol revenue by 2029 (floor pricing)
               </p>
             </motion.div>
 
-            {/* Table */}
-            <div className="mt-4">
-              {/* Header row */}
-              <div className="grid items-center pb-2 border-b border-white/[0.06]"
-                style={{ gridTemplateColumns: '140px repeat(4, 1fr)' }}>
-                <div />
-                {years.map((y) => (
-                  <span key={y} className="text-[#fefefe]/40 text-[10px] text-right tracking-[0.1em]"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}>
-                    {y}
-                  </span>
+            {/* Trajectory */}
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9 }}
+              className="mt-4">
+              <div className="flex items-center">
+                {path.map((p, i) => (
+                  <div key={p.year} className="flex items-center">
+                    <div className="text-center px-2 sm:px-4 first:pl-0">
+                      <p className="text-[#fefefe]/40 text-[10px]" style={{ fontFamily: "'Geist Mono', monospace" }}>{p.year}</p>
+                      <p className="text-[#fefefe]/80 text-lg font-bold" style={{ fontFamily: "'Geist Mono', monospace" }}>{p.agents}</p>
+                      <p className="text-orange-400/80 text-base font-bold" style={{ fontFamily: "'Geist Mono', monospace" }}>{p.revenue}</p>
+                    </div>
+                    {i < path.length - 1 && <div className="text-orange-500/30 text-xs">→</div>}
+                  </div>
                 ))}
               </div>
+              <p className="text-[#fefefe]/25 text-[10px] mt-1" style={{ fontFamily: "'Geist Mono', monospace" }}>
+                $12-120/year per agent · unlimited transactions · no gas
+              </p>
+            </motion.div>
+          </div>
 
-              {/* Data rows */}
-              {protocolTable.map((row) => (
-                <div key={row.label} className="grid items-center py-2 border-b border-white/[0.04]"
-                  style={{ gridTemplateColumns: '140px repeat(4, 1fr)' }}>
-                  <span className="text-[#fefefe]/50 text-[11px]"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}>
-                    {row.label}
-                  </span>
-                  {row.values.map((v, vi) => (
-                    <span key={vi} className="text-[#fefefe]/60 text-xs text-right"
-                      style={{ fontFamily: "'Geist Mono', monospace" }}>
-                      {v}
+          {/* Right — How We Get There */}
+          <div className="flex flex-col">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
+              <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.35em] uppercase"
+                style={{ fontFamily: "'Geist Mono', monospace" }}>
+                How We Get There
+              </p>
+              <div className="h-[1px] bg-orange-400/30 mt-2" />
+            </motion.div>
+
+            <div className="flex flex-col gap-4 mt-4">
+              {drivers.map((d, i) => (
+                <motion.div key={d.title}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 + i * 0.12 }}
+                  style={{ borderBottom: i < drivers.length - 1 ? '1px solid rgba(249,115,22,0.1)' : 'none', paddingBottom: i < drivers.length - 1 ? '1rem' : 0 }}>
+                  <div className="flex items-baseline gap-3">
+                    <p className="text-[#fefefe] text-sm font-bold" style={{ fontFamily: "'Geist Mono', monospace" }}>
+                      {d.title}
+                    </p>
+                    <span className="text-orange-400 text-xs font-bold" style={{ fontFamily: "'Geist Mono', monospace" }}>
+                      {d.milestone}
                     </span>
-                  ))}
-                </div>
+                  </div>
+                  <p className="text-[#fefefe]/50 text-[11px] leading-relaxed mt-1"
+                    style={{ fontFamily: "'Geist Mono', monospace" }}>
+                    {d.text}
+                  </p>
+                </motion.div>
               ))}
-
-              {/* Revenue row */}
-              <div className="grid items-center py-2 border-t border-white/[0.08]"
-                style={{ gridTemplateColumns: '140px repeat(4, 1fr)' }}>
-                <span className="text-blue-400 text-[11px] font-bold"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}>
-                  Protocol revenue
-                </span>
-                {protocolRevenue.map((v, vi) => (
-                  <span key={vi} className="text-blue-400 text-xs sm:text-sm text-right font-bold"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}>
-                    {v}
-                  </span>
-                ))}
-              </div>
             </div>
-
-            {/* Benchmark note */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
-              className="mt-4 rounded-lg px-4 py-3"
-              style={{
-                background: 'rgba(59,130,246,0.04)',
-                border: '1px solid rgba(59,130,246,0.1)',
-              }}
-            >
-              <p className="text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed"
-                style={{ fontFamily: "'Geist Mono', monospace" }}>
-                <span className="text-amber-500 font-bold">Benchmark:</span> Solana generated $1.4B in protocol revenue in 2025 with 3.2M daily active wallets. Even at sub-cent base fees, per-transaction pricing punishes high-frequency agents. Subscription pricing eliminates that cost entirely — making agents 30-300x cheaper while generating predictable protocol revenue at scale.
-              </p>
-            </motion.div>
-          </motion.div>
-
-          {/* ── RIGHT: Enterprise Business ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-          >
-            <p className="text-blue-400/70 text-[10px] tracking-[0.3em] uppercase mb-1"
-              style={{ fontFamily: "'Geist Mono', monospace" }}>
-              Enterprise Business
-            </p>
-            <h3 className="text-blue-400 text-lg sm:text-xl font-bold"
-              style={{ fontFamily: "'Geist Mono', monospace" }}>
-              Platform Licenses
-            </h3>
-            <p className="text-[#fefefe]/50 text-xs mt-1 leading-relaxed"
-              style={{ fontFamily: "'Geist Mono', monospace" }}>
-              Paid in <span className="text-[#fefefe]/80 font-bold">fiat</span>. Annual contracts. Astrid OS + Semantic Intercept Fabric + support & SLAs.
-            </p>
-
-            {/* Price card */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-              className="mt-4 rounded-lg px-4 py-3 flex items-center gap-4"
-              style={{
-                background: 'rgba(59,130,246,0.06)',
-                border: '1px solid rgba(59,130,246,0.15)',
-              }}
-            >
-              <span className="text-3xl sm:text-4xl font-black text-amber-500"
-                style={{ fontFamily: "'Anton', sans-serif" }}>
-                $120K<span className="text-lg text-amber-500/60">/yr</span>
-              </span>
-              <p className="text-[#fefefe]/60 text-[11px] leading-relaxed"
-                style={{ fontFamily: "'Geist Mono', monospace" }}>
-                Average contract value at scale. Channel-partner led. <span className="font-bold text-[#fefefe]/80">Traditional enterprise sales motion.</span>
-              </p>
-            </motion.div>
-
-            {/* Table */}
-            <div className="mt-4">
-              {/* Header row */}
-              <div className="grid items-center pb-2 border-b border-white/[0.06]"
-                style={{ gridTemplateColumns: '140px repeat(4, 1fr)' }}>
-                <div />
-                {years.map((y) => (
-                  <span key={y} className="text-[#fefefe]/40 text-[10px] text-right tracking-[0.1em]"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}>
-                    {y}
-                  </span>
-                ))}
-              </div>
-
-              {/* Data rows */}
-              {enterpriseTable.map((row) => (
-                <div key={row.label} className="grid items-center py-2 border-b border-white/[0.04]"
-                  style={{ gridTemplateColumns: '140px repeat(4, 1fr)' }}>
-                  <span className="text-[#fefefe]/50 text-[11px]"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}>
-                    {row.label}
-                  </span>
-                  {row.values.map((v, vi) => (
-                    <span key={vi} className="text-[#fefefe]/60 text-xs text-right"
-                      style={{ fontFamily: "'Geist Mono', monospace" }}>
-                      {v}
-                    </span>
-                  ))}
-                </div>
-              ))}
-
-              {/* Revenue row */}
-              <div className="grid items-center py-2 border-t border-white/[0.08]"
-                style={{ gridTemplateColumns: '140px repeat(4, 1fr)' }}>
-                <span className="text-blue-400 text-[11px] font-bold"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}>
-                  Enterprise revenue
-                </span>
-                {enterpriseRevenue.map((v, vi) => (
-                  <span key={vi} className="text-blue-400 text-xs sm:text-sm text-right font-bold"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}>
-                    {v}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Enterprise note */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.1 }}
-              className="mt-4 rounded-lg px-4 py-3"
-              style={{
-                background: 'rgba(59,130,246,0.04)',
-                border: '1px solid rgba(59,130,246,0.1)',
-              }}
-            >
-              <p className="text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed"
-                style={{ fontFamily: "'Geist Mono', monospace" }}>
-                <span className="text-amber-500 font-bold">This is the bankable base.</span> Predictable fiat revenue, enterprise contracts, 75%+ gross margin. Funds operations while the protocol economy scales.
-              </p>
-            </motion.div>
-          </motion.div>
-
+          </div>
         </div>
+
 
       </div>
-
-      {/* Logo — fixed bottom right */}
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4 }}
-        className="fixed bottom-6 right-6 sm:right-10 lg:right-16 z-20">
-        <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-      </motion.div>
     </div>
   );
 }
