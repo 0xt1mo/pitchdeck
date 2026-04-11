@@ -10,6 +10,7 @@ import { MarketSlide } from './slides/MarketSlide';
 import { RaiseSlide } from './slides/RaiseSlide';
 import { AppendixSlide } from './slides/AppendixSlide';
 import { ProtocolSlide } from './slides/ProtocolSlide';
+import { WhyDecentralizedSlide } from './slides/WhyDecentralizedSlide';
 import { ResourcesSlide } from './slides/ResourcesSlide';
 import { AgentsSlide } from './slides/AgentsSlide';
 import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
@@ -24,31 +25,30 @@ import { RoadmapSlide } from './slides/RoadmapSlide';
 import { ProjectionsSlide } from './slides/ProjectionsSlide';
 import { CompetitionSlide } from './slides/CompetitionSlide';
 import { TokenSlide } from './slides/TokenSlide';
-import { WhyBlockchainSlide } from './slides/WhyBlockchainSlide';
 import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
 import { SIFDashboardSlide } from './slides/SIFDashboardSlide';
 import { WhyUnicityProductSlide } from './slides/WhyUnicityProductSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  TitleSlide,          // Cover
-  IntroSlide,          // Thesis
-  MarketSlide,         // Market Opportunity
-  WhyBlockchainSlide,  // Why Blockchain
-  ProblemSlide,        // Problem
-  SolutionSlide,       // Solution
-  WhyUnicityProductSlide, // Why Unicity — Why Now + Products
-  AgentsSlide,         // Unicity L1
-  WalletSlide,         // Live Demo
-  ProtocolSlide,       // x402/MPP
-  CompetitionSlide,    // Competition
-  ProjectionsSlide,    // Projections
-  RoadmapSlide,        // Roadmap
-  TeamSlide,           // Team
-  TokenSlide,          // Tokenomics
-  RaiseSlide,          // The Raise
-  ResourcesSlide,      // Resources
-  ThankYouChatSlide,   // Thank You
+  TitleSlide,              // 1. Cover
+  IntroSlide,              // 2. Thesis — agents are coming
+  ProblemSlide,            // 3. What autonomy actually requires
+  SolutionSlide,           // 4. The complete autonomy stack
+  WalletSlide,             // 5. P2P settlement is the unlock
+  AgentsSlide,             // 6. The magic sauce — agents as smart contracts
+  WhyUnicityProductSlide,  // 7. Security is the wedge, network is the moat
+  WhyDecentralizedSlide,   // 8. Why decentralized. Why Unicity.
+  ProtocolSlide,           // 9. Scaling agentic payments
+  CompetitionSlide,        // 10. Why us / competition
+  ProjectionsSlide,        // 11. Projections
+  RoadmapSlide,            // 12. Roadmap
+  TeamSlide,               // 13. The people
+  MarketSlide,             // 14. Market opportunity
+  TokenSlide,              // 15. Tokenomics
+  RaiseSlide,              // 16. The raise
+  ResourcesSlide,          // 17. Resources
+  ThankYouChatSlide,       // 18. Thank you
   AppendixSlide,
   KernelDividerSlide,
   AstridSlide,
@@ -127,7 +127,7 @@ export default function App() {
       <CurrentSlideComponent onNext={() => { goToSlide(currentSlide + 1); }} goToSlide={goToSlide} />
       {currentSlide > 0 && (
         <div
-          className="fixed bottom-3 left-6 sm:left-10 lg:left-16 z-[101] text-[#fefefe]/25 text-[11px] font-medium select-none pointer-events-none"
+          className="fixed bottom-4 left-6 sm:left-10 lg:left-16 z-[101] text-[#fefefe]/40 text-base sm:text-lg font-medium select-none pointer-events-none"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
           {currentSlide} / {slides.length - 1}

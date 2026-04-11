@@ -3,12 +3,12 @@ import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 
 const cards: { title: string; color: string; text: React.ReactNode }[] = [
   {
-    title: 'Off-Chain Architecture',
+    title: 'Verifiable execution',
     color: '#f97316',
     text: 'Agents are the equivalent of smart contracts — verifiable code living entirely off-chain, operating on tokens bound to conditional ownership rules.',
   },
   {
-    title: 'Token Operations',
+    title: 'Chain Agnostic Tokens',
     color: '#f97316',
     text: 'Through the Unicity SDK, agents can mint, transfer, and burn tokens with minimal overhead.',
   },
@@ -40,8 +40,7 @@ export function AgentsSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            <span className="text-orange-400">AGENTS:</span>{' '}
-            THE NEW SMART CONTRACTS
+            <span className="text-orange-400">VERIFIABLE AGENTS REPLACE</span> SMART CONTRACTS
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -51,7 +50,7 @@ export function AgentsSlide() {
         {/* Intro paragraph */}
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="shrink-0 mt-3 text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed max-w-4xl"
+          className="shrink-0 mt-3 text-[#fefefe]/90 text-sm sm:text-base leading-relaxed max-w-4xl"
           style={{ fontFamily: "'Geist Mono', monospace" }}>
           Unicity eliminates <span className="text-orange-400">globally</span> shared state entirely — agents execute off-chain, verification is done by interested parties only, independent of other transactions.          Like physical cash, tokens are <span className="text-orange-400">locally verifiable</span> at the edge — there is no chain dependency.
         </motion.p>
@@ -80,11 +79,11 @@ export function AgentsSlide() {
                 transition={{ delay: 0.6 + i * 0.15, duration: 0.4 }}
                 className="rounded-lg border p-4 sm:p-5"
                 style={{ borderColor: `${card.color}30`, background: `${card.color}06` }}>
-                <h3 className="text-sm sm:text-base mb-1.5 font-bold"
+                <h3 className="text-base sm:text-lg lg:text-xl mb-2 font-bold"
                   style={{ fontFamily: "'Geist Mono', monospace", color: card.color }}>
                   {card.title}
                 </h3>
-                <p className="text-[#fefefe]/60 text-[10px] sm:text-xs leading-relaxed"
+                <p className="text-[#fefefe]/70 text-sm leading-relaxed"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
                   {card.text}
                 </p>

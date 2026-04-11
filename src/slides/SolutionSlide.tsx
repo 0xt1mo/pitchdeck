@@ -55,19 +55,19 @@ export function SolutionSlide() {
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
             className="mt-3 text-[#fefefe]/80 text-base sm:text-lg max-w-3xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            One integrated stack — built from first principles for autonomous AI. Agent economics that actually work, with security integrated into the design.
+            A layer one blockchain built from first principles integrated into a secure AI operating system, enabling true autonomy.
           </motion.p>
         </div>
 
         {/* Solutions — matches Autonomy Stack layout */}
-        <div className="flex flex-col mt-4">
+        <div className="flex flex-col flex-1 justify-center mt-4">
           {solutions.map((s, i) => (
             <motion.div
               key={s.product}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
-              className="flex items-center gap-5 lg:gap-8 py-2 lg:py-2.5"
+              className="flex items-center gap-5 lg:gap-8 py-3 lg:py-4"
               style={{ borderBottom: i < solutions.length - 1 ? '1px solid rgba(249,115,22,0.1)' : 'none' }}
             >
               {/* Title */}
@@ -83,11 +83,11 @@ export function SolutionSlide() {
 
               {/* Punch + Description */}
               <div>
-                <p className="text-[#fefefe] text-sm sm:text-base font-bold"
+                <p className="text-[#fefefe] text-base sm:text-lg lg:text-xl font-bold"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
                   {s.punch}
                 </p>
-                <p className="text-[#fefefe]/60 text-xs sm:text-sm leading-relaxed mt-1"
+                <p className="text-[#fefefe]/60 text-sm sm:text-base leading-relaxed mt-1"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
                   {s.desc}
                 </p>

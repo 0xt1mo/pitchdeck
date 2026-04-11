@@ -87,7 +87,7 @@ export function TokenSlide() {
             TOKEN <span className="text-orange-400">MODEL & ALLOCATION</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="mt-2 text-[#fefefe]/70 text-xs sm:text-sm max-w-3xl"
+            className="mt-3 text-[#fefefe]/75 text-sm sm:text-base lg:text-lg max-w-4xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             Utility primitive, not a speculative asset. Agents pay a subscription that can be settled in stables or native token — paying in native token unlocks more capacity and value. Subscription revenue is redistributed to network participants.
           </motion.p>
@@ -107,11 +107,11 @@ export function TokenSlide() {
                 className="pl-4 border-l-[3px]"
                 style={{ borderColor: p.color }}
               >
-                <h3 className="text-[20px] sm:text-[24px] lg:text-[28px] leading-none tracking-tight"
+                <h3 className="text-[26px] sm:text-[32px] lg:text-[38px] leading-none tracking-tight"
                   style={{ fontFamily: "'Anton', sans-serif", color: p.color }}>
                   {p.title}
                 </h3>
-                <p className="text-[#fefefe]/55 text-[11px] sm:text-xs leading-relaxed mt-2 whitespace-pre-line"
+                <p className="text-[#fefefe]/70 text-sm sm:text-base leading-relaxed mt-2 whitespace-pre-line"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
                   {p.desc}
                 </p>
@@ -146,14 +146,14 @@ export function TokenSlide() {
                     className="flex items-center gap-3 transition-all duration-200"
                     style={{ filter: hoveredId && !isHovered ? 'brightness(0.4)' : 'brightness(1)', transition: 'filter 0.2s ease' }}
                   >
-                    <div className="w-2.5 h-2.5 rounded-full shrink-0"
+                    <div className="w-3 h-3 rounded-full shrink-0"
                       style={{ backgroundColor: slice.color, boxShadow: isHovered ? `0 0 10px ${slice.color}` : 'none' }} />
-                    <span className="text-[#fefefe]/80 text-xs sm:text-sm uppercase tracking-wide flex-1"
-                      style={{ fontFamily: "'Anton', sans-serif" }}>
+                    <span className="text-[#fefefe]/85 text-base sm:text-lg uppercase tracking-wide flex-1 font-bold"
+                      style={{ fontFamily: "'Geist Mono', monospace" }}>
                       {slice.id}
                     </span>
-                    <span className="text-[#fefefe] text-sm sm:text-base font-black"
-                      style={{ fontFamily: "'Anton', sans-serif" }}>
+                    <span className="text-[#fefefe] text-base sm:text-lg font-bold"
+                      style={{ fontFamily: "'Geist Mono', monospace" }}>
                       {Number.isInteger(slice.value) ? `${slice.value}%` : `${slice.value}%`}
                     </span>
                   </motion.div>

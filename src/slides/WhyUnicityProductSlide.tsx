@@ -43,23 +43,23 @@ export function WhyUnicityProductSlide() {
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Why Unicity
+            Product Strategy
           </motion.p>
           <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            WHY AGENTS NEED UNICITY — <span className="text-orange-400">WHY NOW?</span>
+            SECURITY IS THE <span className="text-orange-400">GAPING CHEST WOUND.</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="mt-3 text-[#fefefe]/70 text-sm sm:text-base max-w-5xl leading-relaxed"
+            className="mt-3 text-[#fefefe] text-sm sm:text-base max-w-5xl leading-relaxed font-bold"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             No enterprise will deploy autonomous agents that can spend money, sign contracts, or access sensitive data without verifiable security. This is the single biggest blocker to production agent deployments today.
           </motion.p>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}
-            className="mt-3 text-[#fefefe]/60 text-xs sm:text-sm max-w-5xl leading-relaxed"
+            className="mt-3 text-[#fefefe]/80 text-sm sm:text-base max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Security is the must-have that gets us in the door. <span className="text-orange-400 font-bold">AgentStack</span> solves it at the kernel. <span className="text-orange-400 font-bold">AgentSphere</span> is the network effect that keeps us there. Both built on the <span className="text-orange-400 font-bold">Unicity Protocol</span>.
+            <span className="text-orange-400 font-bold">AgentStack</span> is the security product that gets us in the door. <span className="text-orange-400 font-bold">AgentSphere</span> provides the network effect that keeps us there. Both use the protocol for token generation.
           </motion.p>
         </div>
 
@@ -81,7 +81,7 @@ export function WhyUnicityProductSlide() {
                   <span className="text-[#fefefe]">{p.name}</span>
                   <span className="text-orange-400">{p.highlight}</span>
                 </h2>
-                <span className="px-2.5 py-1 rounded-full text-[10px] tracking-wider uppercase"
+                <span className="px-2.5 py-1 rounded-full text-xs tracking-wider uppercase"
                   style={{
                     fontFamily: "'Geist Mono', monospace",
                     background: 'rgba(249,115,22,0.12)',
@@ -93,7 +93,7 @@ export function WhyUnicityProductSlide() {
               </div>
 
               {/* Tagline */}
-              <p className="mt-2 text-[#fefefe]/60 text-xs sm:text-sm leading-relaxed"
+              <p className="mt-2 text-[#fefefe]/80 text-sm sm:text-base leading-relaxed"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>
                 {p.tagline}
               </p>
@@ -103,7 +103,7 @@ export function WhyUnicityProductSlide() {
                 {p.features.map((f, i) => (
                   <div key={i} className="flex gap-2">
                     <span className="text-orange-400/60 mt-0.5 text-xs" style={{ fontFamily: "'Geist Mono', monospace" }}>→</span>
-                    <p className="text-[#fefefe]/50 text-[11px] sm:text-xs leading-relaxed"
+                    <p className="text-[#fefefe]/70 text-sm leading-relaxed"
                       style={{ fontFamily: "'Geist Mono', monospace" }}>{f}</p>
                   </div>
                 ))}

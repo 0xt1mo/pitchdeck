@@ -22,10 +22,6 @@ const economicsQuotes = [
     text: '"We will likely need blockchains that support more than one million — or even one billion — transactions per second."',
     author: 'Patrick & John Collison, Stripe, 2026',
   },
-  {
-    text: '"By 2028, AI agents will intermediate more than $15 trillion in B2B spending."',
-    author: 'Gartner',
-  },
 ];
 
 export function MarketSlide() {
@@ -46,33 +42,32 @@ export function MarketSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            AGENTS ARE COMING.{' '}
-            <span className="text-orange-400">THE INFRA ISN'T READY.</span>
+            THE <span className="text-orange-400">$400B+</span> AUTONOMOUS AI MARKET
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
             className="text-[#fefefe]/70 text-sm sm:text-base mt-3 max-w-3xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            <span className="text-orange-400 font-bold">$3-5T</span> agentic commerce by 2030 (McKinsey).<br />Trillion-dollar opportunity. Infra is still in the dialup stage.<br />That's the gap we fill.
+            <span className="text-orange-400 font-bold">$400B+</span> autonomous AI market by 2030. Every agent framework, every AI lab, every open source agent developer, every enterprise building agents is a potential protocol user. <span className="text-orange-400">We are the infrastructure layer they all need.</span>
           </motion.p>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            className="text-[#fefefe]/50 text-xs sm:text-sm mt-3 max-w-3xl leading-relaxed"
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="text-[#fefefe]/30 text-[10px] sm:text-xs mt-2"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            x402 has moved to the Linux Foundation with Google, AWS, Microsoft, Visa, and Mastercard as founding members. Tempo launched at a $5B valuation backed by Stripe and Paradigm. Kite.ai raised $33M from PayPal Ventures. <span className="text-orange-400 font-bold">The agent infrastructure race is on.</span>
+            $400B+ market size: Meticulous Research — Autonomous AI and Autonomous Agents Market Analysis
           </motion.p>
         </div>
 
         {/* ─── MIDDLE: Two columns ─── */}
-        <div className="shrink-0 grid grid-cols-2 gap-10 lg:gap-14 mt-8">
+        <div className="flex-1 grid grid-cols-2 gap-10 lg:gap-14 mt-8">
 
           {/* LEFT — The Economics */}
           <div>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
               <h2 className="text-[#fefefe] text-[20px] sm:text-[26px] lg:text-[32px] leading-none tracking-tight"
                 style={{ fontFamily: "'Anton', sans-serif" }}>
-                THE <span className="text-orange-400">ECONOMICS</span>
+                THE <span className="text-orange-400">SCALE</span>
               </h2>
               <div className="h-[1px] bg-orange-400/30 mt-2 mb-5" />
             </motion.div>
@@ -83,10 +78,10 @@ export function MarketSlide() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 + i * 0.15, duration: 0.5 }}
-                className="mb-5 pb-5"
+                className="mb-6 pb-6"
                 style={{ borderBottom: i < economicsQuotes.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none' }}
               >
-                <p className="text-[#fefefe]/80 text-sm sm:text-[15px] lg:text-lg leading-relaxed italic">
+                <p className="text-[#fefefe]/80 text-base sm:text-lg lg:text-xl leading-relaxed italic">
                   {q.text}
                 </p>
                 <p className="text-orange-400/60 text-xs sm:text-sm mt-2" style={{ fontFamily: "'Geist Mono', monospace" }}>
@@ -97,7 +92,7 @@ export function MarketSlide() {
           </div>
 
           {/* RIGHT — The Security */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-8">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
               <h2 className="text-[#fefefe] text-[20px] sm:text-[26px] lg:text-[32px] leading-none tracking-tight"
                 style={{ fontFamily: "'Anton', sans-serif" }}>
@@ -112,7 +107,7 @@ export function MarketSlide() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
             >
-              <p className="text-[#fefefe]/80 text-sm sm:text-[15px] lg:text-lg leading-relaxed italic">
+              <p className="text-[#fefefe]/80 text-base sm:text-lg lg:text-xl leading-relaxed italic">
                 "If we let the animal out of the cage today, nobody's ready for it."
               </p>
               <p className="text-orange-400/60 text-xs sm:text-sm mt-2" style={{ fontFamily: "'Geist Mono', monospace" }}>
@@ -128,7 +123,7 @@ export function MarketSlide() {
               className="flex gap-8 sm:gap-12"
             >
               <div>
-                <p className="text-orange-400 text-[28px] sm:text-[34px] lg:text-[40px] leading-none"
+                <p className="text-orange-400 text-[36px] sm:text-[44px] lg:text-[52px] leading-none"
                   style={{ fontFamily: "'Anton', sans-serif" }}>
                   <AnimatedNumber value={88} delay={1} duration={1.5} suffix="%" />
                 </p>
@@ -137,7 +132,7 @@ export function MarketSlide() {
                 </p>
               </div>
               <div>
-                <p className="text-orange-400 text-[28px] sm:text-[34px] lg:text-[40px] leading-none"
+                <p className="text-orange-400 text-[36px] sm:text-[44px] lg:text-[52px] leading-none"
                   style={{ fontFamily: "'Anton', sans-serif" }}>
                   <AnimatedNumber value={14} delay={1.2} duration={1.5} suffix="%" />
                 </p>
@@ -162,8 +157,6 @@ export function MarketSlide() {
         </div>
         </div>
 
-
-        {/* Logo */}
 
       </div>
     </div>

@@ -229,7 +229,7 @@ export function ThankYouChatSlide() {
         <motion.p
           initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="text-orange-400 text-sm sm:text-base mt-3"
+          className="text-orange-400 text-2xl sm:text-4xl mt-3"
           style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.04em' }}>
           Talk to our KnowledgeBot
         </motion.p>

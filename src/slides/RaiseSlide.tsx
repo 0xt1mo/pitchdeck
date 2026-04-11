@@ -15,13 +15,13 @@ function CountUp({ target, delay = 0 }: { target: number; delay?: number }) {
 const unlocks = [
   {
     title: 'DEVELOPER ADOPTION',
-    desc: 'Scale developer marketing, developer relations, community. Universal integration into harness/frameworks.',
+    desc: 'Scale developer marketing, developer relations, community. Universal integration into harnesses/frameworks.',
     goal: 'Network effects — scaling transactions, liquidity and agent deployments.',
   },
   {
     title: 'SCALING ENTERPRISE',
     desc: 'Scale enterprise licensing, channels & partner programs.',
-    goal: 'Prove the stack in production and scale real customers and real revenue.',
+    goal: 'Scale sales to the Fortune 500.',
   },
   {
     title: 'EXCHANGE LISTING',
@@ -45,13 +45,13 @@ export function RaiseSlide() {
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Now Raising
+Series A Fundraise
           </motion.p>
           <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            THE <span className="text-orange-400">RAISE</span>
+THE RAISE: <span className="text-orange-400">FROM TESTNET TO 50M AGENTS</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -93,11 +93,11 @@ export function RaiseSlide() {
                 { label: 'TIMELINE', value: 'Close Q3 2026' },
               ].map((d) => (
                 <div key={d.label} className="flex items-baseline gap-5">
-                  <span className="text-[#fefefe]/50 text-[11px] tracking-[0.2em] uppercase shrink-0 w-24"
+                  <span className="text-[#fefefe]/60 text-sm tracking-[0.2em] uppercase shrink-0 w-28"
                     style={{ fontFamily: "'Geist Mono', monospace" }}>
                     {d.label}
                   </span>
-                  <span className="text-[#fefefe]/90 text-sm sm:text-base font-bold"
+                  <span className="text-[#fefefe]/90 text-base sm:text-lg font-bold"
                     style={{ fontFamily: "'Geist Mono', monospace" }}>
                     {d.value}
                   </span>
@@ -112,13 +112,13 @@ export function RaiseSlide() {
               transition={{ delay: 1.4 }}
               className="mt-10"
             >
-              <p className="text-[#fefefe]/50 text-[11px] tracking-[0.3em] uppercase mb-2"
+              <p className="text-[#fefefe]/60 text-sm tracking-[0.3em] uppercase mb-3"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>
-                Seed Round Backers
+                Seed Round Backers <span className="text-[#fefefe]">· Sep 2025</span>
               </p>
               <div className="flex items-center gap-5">
                 {['Blockchange Capital', 'Outlier Ventures', 'Tawasal'].map((name) => (
-                  <span key={name} className="text-[#fefefe]/70 text-sm sm:text-base font-semibold">
+                  <span key={name} className="text-[#fefefe]/85 text-base sm:text-lg font-semibold">
                     {name}
                   </span>
                 ))}
@@ -155,15 +155,15 @@ export function RaiseSlide() {
                   transition={{ delay: 0.6 + i * 0.15, duration: 0.5 }}
                   style={{ borderBottom: i < unlocks.length - 1 ? '1px solid rgba(249,115,22,0.1)' : 'none', paddingBottom: i < unlocks.length - 1 ? '1.25rem' : 0 }}
                 >
-                  <p className="text-orange-400 text-[18px] sm:text-[22px] leading-none tracking-tight"
+                  <p className="text-orange-400 text-[24px] sm:text-[30px] lg:text-[34px] leading-none tracking-tight"
                     style={{ fontFamily: "'Anton', sans-serif" }}>
                     {u.title}
                   </p>
-                  <p className="text-[#fefefe]/50 text-[11px] sm:text-xs leading-relaxed mt-2"
+                  <p className="text-[#fefefe]/65 text-sm sm:text-base leading-relaxed mt-3"
                     style={{ fontFamily: "'Geist Mono', monospace" }}>
                     {u.desc}
                   </p>
-                  <p className="text-[#fefefe]/70 text-[11px] sm:text-xs font-bold mt-1.5"
+                  <p className="text-[#fefefe]/85 text-sm sm:text-base font-bold mt-2"
                     style={{ fontFamily: "'Geist Mono', monospace" }}>
                     Goal: {u.goal}
                   </p>

@@ -38,7 +38,7 @@ export function CompetitionSlide() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
+            className="text-orange-400 text-sm tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             Competition
           </motion.p>
@@ -51,7 +51,7 @@ export function CompetitionSlide() {
             WHY US? <span className="text-orange-400">THE COMPETITIVE LANDSCAPE</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="mt-3 text-[#fefefe]/70 text-xs sm:text-sm max-w-4xl"
+            className="mt-3 text-[#fefefe]/80 text-base max-w-4xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             The first purpose-built infrastructure for autonomous AI — settlement, kernel-level security, verifiable execution, and cryptographic identity in one integrated stack.
           </motion.p>
@@ -65,7 +65,7 @@ export function CompetitionSlide() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-              className="flex items-start gap-5 lg:gap-8 py-1.5 lg:py-2"
+              className="flex items-start gap-5 lg:gap-8 py-2.5 lg:py-3"
               style={{ borderBottom: i < categories.length - 1 ? '1px solid rgba(249,115,22,0.1)' : 'none' }}
             >
               <h3
@@ -74,11 +74,11 @@ export function CompetitionSlide() {
                 {cat.title}
               </h3>
               <div>
-                <p className="text-[#fefefe]/40 text-xs sm:text-sm"
+                <p className="text-[#fefefe]/50 text-sm"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
                   {cat.competitors}
                 </p>
-                <p className="text-[#fefefe]/80 text-xs sm:text-sm leading-relaxed mt-1.5"
+                <p className="text-[#fefefe]/90 text-base leading-relaxed mt-1.5"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
                   {cat.text}
                 </p>

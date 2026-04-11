@@ -114,11 +114,11 @@ export function ResourcesSlide() {
               <div className="text-orange-400/60 group-hover:text-orange-400 transition-colors mb-2">
                 {r.icon}
               </div>
-              <h3 className="text-[#fefefe]/90 text-xs sm:text-sm font-bold uppercase tracking-wide"
-                style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.05em' }}>
+              <h3 className="text-[#fefefe]/90 text-base sm:text-lg font-bold uppercase"
+                style={{ fontFamily: "'Geist Mono', monospace" }}>
                 {r.title}
               </h3>
-              <p className="text-[#fefefe]/50 text-[10px] sm:text-[11px] leading-relaxed mt-1.5 flex-1"
+              <p className="text-[#fefefe]/70 text-sm leading-relaxed mt-1.5 flex-1"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>
                 {r.desc}
               </p>
@@ -126,14 +126,14 @@ export function ResourcesSlide() {
                 <div className="flex gap-2 mt-2" style={{ fontFamily: "'Geist Mono', monospace" }}>
                   {r.repos.map((repo: any) => (
                     <a key={repo.name} href={repo.url} target="_blank" rel="noopener noreferrer"
-                      className="text-orange-400/70 hover:text-orange-400 text-[9px] sm:text-[10px] px-2 py-1 rounded border border-orange-500/20 hover:border-orange-500/40 transition-colors cursor-pointer">
+                      className="text-orange-400/70 hover:text-orange-400 text-xs sm:text-sm px-2 py-1 rounded border border-orange-500/20 hover:border-orange-500/40 transition-colors cursor-pointer">
                       {repo.name}
                     </a>
                   ))}
                 </div>
               ) : (
                 <a href={r.url} target="_blank" rel="noopener noreferrer"
-                  className="text-orange-400/60 hover:text-orange-400 text-[9px] sm:text-[10px] mt-2 underline underline-offset-2 decoration-orange-500/30 truncate cursor-pointer"
+                  className="text-orange-400/60 hover:text-orange-400 text-xs sm:text-sm mt-2 underline underline-offset-2 decoration-orange-500/30 truncate cursor-pointer"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
                   {r.urlLabel}
                 </a>

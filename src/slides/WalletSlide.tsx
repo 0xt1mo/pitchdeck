@@ -128,16 +128,16 @@ export function WalletSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            P2P SETTLEMENT <span className="text-orange-400">IS THE UNLOCK</span>
+            FROM ASSET LEDGERS TO <span className="text-orange-400">P2P SETTLEMENT</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-2" />
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="mt-3 text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed max-w-4xl"
+            className="mt-3 text-[#fefefe]/70 text-sm sm:text-base lg:text-lg leading-relaxed max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            <span className="text-[#fefefe] font-bold">Satoshi's whitepaper was titled "P2P Electronic Cash". 17 years later we have neither P2P nor electronic cash.</span><br />All blockchains from Bitcoin to Megaeth are based on the same asset ledger design. For <span className="text-orange-400">agent-level finance</span> we need a new design — one where the shared ledger is eliminated and validation happens at the edge. This is the unlock needed for massive scale low latency throughput.
+            <span className="text-[#fefefe] font-bold">Satoshi's whitepaper was titled "P2P Electronic Cash". 17 years later we have neither P2P nor electronic cash. Yet P2P is exactly what we need for massive throughput low latency machine finance.</span> <span className="text-orange-400 font-bold">Unicity eliminates the shared ledger and moves validation to the edge.</span>
           </motion.p>
         </div>
 

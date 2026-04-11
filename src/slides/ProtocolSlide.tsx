@@ -37,7 +37,6 @@ const UNI_STEPS: Step[] = [
 const ROW_H = 38;
 const HEAD_H = 48;
 const VB_W = 460;
-const VB_H = HEAD_H + 12 * ROW_H + 24;
 
 function Diagram({
   participants,
@@ -56,9 +55,11 @@ function Diagram({
   const gap = n > 2 ? (VB_W - 100) / (n - 1) : 200;
   const offset = n > 2 ? 50 : (VB_W - gap) / 2;
   const cx = (i: number) => offset + i * gap;
+  const contentRows = showEliminated ? steps.length + 4 : steps.length;
+  const vbH = HEAD_H + contentRows * ROW_H + 24;
 
   return (
-    <svg viewBox={`0 0 ${VB_W} ${VB_H}`} className="w-full h-full" preserveAspectRatio="xMidYMin meet">
+    <svg viewBox={`0 0 ${VB_W} ${vbH}`} className="w-full h-full" preserveAspectRatio="xMidYMin meet">
       <defs>
         <marker id={`ar-${id}`} markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
           <path d="M0,0.5 L7,3 L0,5.5" fill={accent} />
@@ -77,7 +78,7 @@ function Diagram({
               fill="rgba(255,255,255,0.05)" stroke={accent} strokeWidth={0.8} />
             <text x={x} y={25} textAnchor="middle" fill="#fefefe" fontSize="10"
               fontFamily="Geist Mono, monospace" style={{ opacity: 0.9 }}>{p}</text>
-            <line x1={x} y1={38} x2={x} y2={VB_H - 8}
+            <line x1={x} y1={38} x2={x} y2={vbH - 8}
               stroke="rgba(255,255,255,0.25)" strokeDasharray="4 3" />
           </g>
         );
@@ -168,8 +169,8 @@ export function ProtocolSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[24px] sm:text-[36px] lg:text-[48px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            X402/MPP —{' '}
-            <span className="text-orange-400">THE MESSAGE IS THE PAYMENT</span>
+            SCALING X402/MPP —{' '}
+            <span className="text-orange-400">THE MESSAGE IS THE SETTLEMENT</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -182,11 +183,11 @@ export function ProtocolSlide() {
         </div>
 
         {/* Diagrams */}
-        <div className="flex-1 grid grid-cols-2 gap-4 sm:gap-6 mt-4 min-h-0">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-4">
           {/* Traditional */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="flex flex-col min-h-0">
+            className="flex flex-col">
             <div className="flex items-center gap-3 mb-2">
               <h2 className="text-[#fefefe]/80 text-sm sm:text-base tracking-[0.1em] uppercase"
                 style={{ fontFamily: "'Anton', sans-serif" }}>
@@ -195,7 +196,7 @@ export function ProtocolSlide() {
               <span className="px-2 py-0.5 rounded-full bg-red-500/15 border border-red-500/25 text-red-400 text-[10px] tracking-wider uppercase font-semibold"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>12 steps</span>
             </div>
-            <div className="flex-1 rounded-xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm p-2 sm:p-3 min-h-0 overflow-hidden">
+            <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm p-2 sm:p-3">
               <Diagram participants={TRAD_PARTICIPANTS} steps={TRAD_STEPS}
                 accent="rgba(254,254,254,0.5)" id="trad" />
             </div>
@@ -204,7 +205,7 @@ export function ProtocolSlide() {
           {/* Unicity */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="flex flex-col min-h-0">
+            className="flex flex-col">
             <div className="flex items-center gap-3 mb-2">
               <h2 className="text-orange-400 text-sm sm:text-base tracking-[0.1em] uppercase"
                 style={{ fontFamily: "'Anton', sans-serif" }}>
@@ -213,7 +214,7 @@ export function ProtocolSlide() {
               <span className="px-2 py-0.5 rounded-full bg-orange-500/15 border border-orange-500/25 text-orange-400 text-[10px] tracking-wider uppercase font-semibold"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>5 steps</span>
             </div>
-            <div className="flex-1 rounded-xl border border-orange-500/20 bg-orange-500/[0.03] backdrop-blur-sm p-2 sm:p-3 min-h-0 overflow-hidden">
+            <div className="rounded-xl border border-orange-500/20 bg-orange-500/[0.03] backdrop-blur-sm p-2 sm:p-3">
               <Diagram participants={UNI_PARTICIPANTS} steps={UNI_STEPS}
                 accent="#f97316" id="uni" showEliminated />
             </div>
