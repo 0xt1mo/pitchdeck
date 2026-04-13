@@ -53,7 +53,7 @@ export function SolutionSlide() {
             UNICITY: THE COMPLETE <span className="text-orange-400">AUTONOMY STACK</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="mt-3 text-[#fefefe]/80 text-base sm:text-lg max-w-3xl"
+            className="mt-4 text-[#fefefe]/85 text-lg sm:text-xl lg:text-2xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             A layer one blockchain built from first principles integrated into a secure AI operating system, enabling true autonomy.
           </motion.p>

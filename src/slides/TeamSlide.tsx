@@ -99,9 +99,9 @@ export function TeamSlide() {
             A WORLD CLASS AI, CRYPTO AND <span className="text-orange-400">ENTERPRISE TEAM</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="mt-3 text-[#fefefe]/80 text-xs sm:text-sm max-w-4xl"
+            className="mt-4 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            15 years building cryptographic infrastructure for governments, defence, and critical systems.<br />
+            15 years building infra for governments, defence, and critical systems.<br />
             PhDs across machine learning, cryptography, and computer science.<br />
             Core team developing blockchain protocols <span className="text-orange-400">since before Bitcoin</span>.<br />
             Founded and exited Guardtime: DARPA, NATO, Lockheed, Ericsson, Roche, Maersk.

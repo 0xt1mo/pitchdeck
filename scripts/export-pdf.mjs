@@ -5,6 +5,7 @@ import path from 'path';
 
 const URL = process.argv[2] || 'http://localhost:5174';
 const MAIN_SLIDES_ONLY = process.argv.includes('--main-only');
+const SKIP_TITLE = process.argv.includes('--skip-title');
 const OUTPUT = process.argv.find(a => a.endsWith('.pdf')) || 'pitchdeck.pdf';
 const VIEWPORT = { width: 1440, height: 900, deviceScaleFactor: 3 };
 
@@ -34,20 +35,22 @@ async function exportPDF() {
   const totalSlides = await page.evaluate(() => window.__totalSlides || 27);
   console.log(`📊 Detected ${totalSlides} slides`);
 
-  const slideCount = MAIN_SLIDES_ONLY ? Math.min(18, totalSlides) : totalSlides;
+  const maxSlides = MAIN_SLIDES_ONLY ? Math.min(18, totalSlides) : totalSlides;
+  const startSlide = SKIP_TITLE ? 1 : 0;
+  const slideCount = maxSlides - startSlide;
 
   const screenshots = [];
   const tmpDir = path.join(process.cwd(), '.tmp-slides');
   if (!fs.existsSync(tmpDir)) fs.mkdirSync(tmpDir);
 
-  for (let i = 0; i < slideCount; i++) {
+  for (let i = startSlide; i < startSlide + slideCount; i++) {
     // Navigate directly using exposed goToSlide
     await page.evaluate((idx) => window.__goToSlide(idx), i);
 
-    console.log(`📸 Capturing slide ${i + 1}/${slideCount}...`);
+    console.log(`📸 Capturing slide ${i - startSlide + 1}/${slideCount}...`);
     await new Promise(r => setTimeout(r, 3000));
 
-    // Hide nav bar and slide counter
+    // Hide nav bar and slide counter, then inject logo
     await page.evaluate(() => {
       document.querySelectorAll('.fixed.bottom-0').forEach(el => {
         el.style.display = 'none';
@@ -56,7 +59,29 @@ async function exportPDF() {
         el.textContent?.match(/^\d+ \/ \d+$/) && el.children.length === 0
       );
       if (counter) counter.style.display = 'none';
+
+      // Inject Unicity logo bottom-right
+      const existing = document.getElementById('pdf-logo');
+      if (existing) existing.remove();
+      const logo = document.createElement('img');
+      logo.id = 'pdf-logo';
+      logo.src = '/UnicityLogo.svg';
+      Object.assign(logo.style, {
+        position: 'fixed', bottom: '24px', right: '48px',
+        height: '20px', opacity: '0.5', zIndex: '9999',
+        pointerEvents: 'none',
+      });
+      document.body.appendChild(logo);
     });
+
+    // When --skip-title, boost video opacity on all slides for PDF
+    if (SKIP_TITLE) {
+      await page.evaluate(() => {
+        document.querySelectorAll('video').forEach(v => {
+          v.style.opacity = '0.35';
+        });
+      });
+    }
 
     await new Promise(r => setTimeout(r, 200));
 

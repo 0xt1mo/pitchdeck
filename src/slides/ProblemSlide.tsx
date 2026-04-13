@@ -35,18 +35,15 @@ export function ProblemSlide() {
           >
             WHAT AUTONOMY <span className="text-orange-400">ACTUALLY REQUIRES</span>
           </motion.h1>
-          <motion.ul
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="mt-3 text-[#fefefe]/80 text-sm sm:text-base max-w-4xl leading-relaxed space-y-1"
+            className="mt-4 text-[#fefefe]/85 text-lg sm:text-xl lg:text-2xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            <li className="flex gap-3"><span className="text-orange-400/80 shrink-0">→</span><span>No enterprise will deploy autonomous agents that can spend money, sign contracts, or access sensitive data without verifiable security.</span></li>
-            <li className="flex gap-3"><span className="text-orange-400/80 shrink-0">→</span><span>Legacy blockchains have too much friction for machines.</span></li>
-            <li className="flex gap-3"><span className="text-orange-400/80 shrink-0">→</span><span>Nothing is portable.</span></li>
-            <li className="flex gap-3"><span className="text-orange-400/80 shrink-0">→</span><span className="text-orange-400/80">Here's what's missing.</span></li>
-          </motion.ul>
+            No enterprise will deploy autonomous agents that can spend money, sign contracts, or access sensitive data without verifiable security.
+          </motion.p>
         </div>
 
         {/* Pillars — vertical list with text beside */}

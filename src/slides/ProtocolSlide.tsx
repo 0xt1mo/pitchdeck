@@ -176,7 +176,7 @@ export function ProtocolSlide() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-1.5" />
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="mt-1.5 text-[#fefefe]/70 text-xs sm:text-sm"
+            className="mt-3 text-[#fefefe]/85 text-lg sm:text-xl lg:text-2xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             We don't compete with agentic protocols — we SCALE them.
           </motion.p>

@@ -50,7 +50,7 @@ export function IntroSlide() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1, duration: 0.8 }}
-          className="mt-6 sm:mt-8 text-[#fefefe]/40 text-base sm:text-lg lg:text-xl text-center max-w-3xl leading-relaxed"
+          className="mt-6 sm:mt-8 text-[#fefefe]/40 text-lg sm:text-xl lg:text-2xl text-center max-w-4xl leading-relaxed"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
           Billions of machine intelligences are coming.

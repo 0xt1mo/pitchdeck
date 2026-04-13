@@ -25,28 +25,60 @@ export function TitleSlide({ onNext }: { onNext?: () => void }) {
         }} />
       </div>
 
+      {/* Top-left: brand mark */}
+      <div className="absolute top-0 left-0 z-20 px-8 sm:px-12 lg:px-16 py-6 sm:py-8">
+        <motion.img
+          src="/UnicityLogo.svg"
+          alt="Unicity"
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="h-6 sm:h-7 opacity-90"
+        />
+      </div>
+
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center">
 
-        {/* Center: Logo + Title */}
-        <div className="flex-1 flex flex-col items-center justify-center">
-          <motion.img
-            src="/UnicityLogo.svg"
-            alt="Unicity"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+        {/* Center: Title + tagline */}
+        <div className="flex-1 flex flex-col items-center justify-center px-6">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="h-10 sm:h-12 lg:h-14 mb-6"
-          />
+            className="text-orange-400/80 text-xs sm:text-sm tracking-[0.5em] uppercase mb-5"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
+            ⎯⎯⎯⎯  Unicity  ⎯⎯⎯⎯
+          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-[#fefefe] text-[40px] sm:text-[56px] lg:text-[72px] leading-none tracking-[-0.02em] select-none"
-            style={{ fontFamily: "'Anton', sans-serif" }}
+            className="text-[#fefefe] text-[56px] sm:text-[80px] lg:text-[112px] leading-[0.9] tracking-[-0.02em] select-none text-center"
+            style={{
+              fontFamily: "'Anton', sans-serif",
+              textShadow: '0 0 60px rgba(249,115,22,0.3)',
+            }}
           >
-            INVESTOR <span className="text-orange-400">INTRODUCTION</span>
+            <span className="text-orange-400">INTRODUCTION</span>
           </motion.h1>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.9, delay: 0.5 }}
+            className="h-[2px] w-32 sm:w-48 lg:w-64 mt-6 origin-center"
+            style={{ background: 'linear-gradient(to right, transparent, rgba(249,115,22,0.8), transparent)' }}
+          />
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-[#fefefe]/80 text-base sm:text-lg lg:text-xl mt-6 text-center max-w-3xl leading-relaxed"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
+            The infrastructure layer for <span className="text-orange-400">autonomous AI</span>.
+          </motion.p>
         </div>
 
         {/* Bottom: Enter button */}
@@ -88,6 +120,28 @@ export function TitleSlide({ onNext }: { onNext?: () => void }) {
           </motion.button>
         </motion.div>
 
+      </div>
+
+      {/* Bottom corners: confidential + date */}
+      <div className="absolute bottom-0 left-0 right-0 z-20 flex items-end justify-between px-8 sm:px-12 lg:px-16 pb-6 sm:pb-8 pointer-events-none">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="text-[#fefefe]/40 text-[10px] sm:text-xs tracking-[0.3em] uppercase"
+          style={{ fontFamily: "'Geist Mono', monospace" }}
+        >
+          Confidential
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="text-[#fefefe]/40 text-[10px] sm:text-xs tracking-[0.3em] uppercase"
+          style={{ fontFamily: "'Geist Mono', monospace" }}
+        >
+          unicity.network
+        </motion.p>
       </div>
     </motion.div>
   );

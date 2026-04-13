@@ -51,15 +51,10 @@ export function WhyUnicityProductSlide() {
             style={{ fontFamily: "'Anton', sans-serif" }}>
             SECURITY IS THE <span className="text-orange-400">GAPING CHEST WOUND.</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="mt-3 text-[#fefefe] text-sm sm:text-base max-w-5xl leading-relaxed font-bold"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            No enterprise will deploy autonomous agents that can spend money, sign contracts, or access sensitive data without verifiable security. This is the single biggest blocker to production agent deployments today.
-          </motion.p>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}
-            className="mt-3 text-[#fefefe]/80 text-sm sm:text-base max-w-5xl leading-relaxed"
+            className="mt-4 text-[#fefefe]/85 text-lg sm:text-xl lg:text-2xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            <span className="text-orange-400 font-bold">AgentStack</span> is the security product that gets us in the door. <span className="text-orange-400 font-bold">AgentSphere</span> provides the network effect that keeps us there. Both use the protocol for token generation.
+            <span className="text-orange-400 font-bold">AgentStack</span> is the security product that gets us in the door. <span className="text-orange-400 font-bold">AgentSphere</span> provides the network effect that keeps us there.
           </motion.p>
         </div>
 

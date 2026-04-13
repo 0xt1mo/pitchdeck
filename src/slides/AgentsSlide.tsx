@@ -50,7 +50,7 @@ export function AgentsSlide() {
         {/* Intro paragraph */}
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="shrink-0 mt-3 text-[#fefefe]/90 text-sm sm:text-base leading-relaxed max-w-4xl"
+          className="shrink-0 mt-4 text-[#fefefe]/90 text-lg sm:text-xl lg:text-2xl leading-relaxed max-w-5xl"
           style={{ fontFamily: "'Geist Mono', monospace" }}>
           Unicity eliminates <span className="text-orange-400">globally</span> shared state entirely — agents execute off-chain, verification is done by interested parties only, independent of other transactions.          Like physical cash, tokens are <span className="text-orange-400">locally verifiable</span> at the edge — there is no chain dependency.
         </motion.p>

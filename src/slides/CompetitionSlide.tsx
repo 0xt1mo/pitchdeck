@@ -51,7 +51,7 @@ export function CompetitionSlide() {
             WHY US? <span className="text-orange-400">THE COMPETITIVE LANDSCAPE</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="mt-3 text-[#fefefe]/80 text-base max-w-4xl leading-relaxed"
+            className="mt-4 text-[#fefefe]/85 text-lg sm:text-xl lg:text-2xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             The first purpose-built infrastructure for autonomous AI — settlement, kernel-level security, verifiable execution, and cryptographic identity in one integrated stack.
           </motion.p>
