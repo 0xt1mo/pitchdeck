@@ -1,66 +1,27 @@
 import { useEffect, useCallback, useState } from 'react';
-import './sphereInit'; // Start SDK initialization eagerly on page load
-import { TitleSlide } from './slides/TitleSlide';
-import { IntroSlide } from './slides/IntroSlide';
-import { TeamSlide } from './slides/TeamSlide';
-import { ProblemSlide } from './slides/ProblemSlide';
-import { SolutionSlide } from './slides/SolutionSlide';
-import { ParadigmOverviewSlide } from './slides/ParadigmOverviewSlide';
-import { MarketSlide } from './slides/MarketSlide';
-import { RaiseSlide } from './slides/RaiseSlide';
-import { AppendixSlide } from './slides/AppendixSlide';
-import { ProtocolSlide } from './slides/ProtocolSlide';
-import { WhyDecentralizedSlide } from './slides/WhyDecentralizedSlide';
-import { ResourcesSlide } from './slides/ResourcesSlide';
-import { AgentsSlide } from './slides/AgentsSlide';
-import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
-import { WalletSlide } from './slides/WalletSlide';
-import { SecurityNetworkSlide } from './slides/SecurityNetworkSlide';
-import { KernelDividerSlide, SecurityDividerSlide, BlockchainDividerSlide } from './slides/SectionDividerSlide';
-import { AstridSlide } from './slides/AstridSlide';
-import { AstridComparisonSlide } from './slides/AstridComparisonSlide';
-import { AstridUseCasesSlide } from './slides/AstridUseCasesSlide';
-import { BlockchainArchSlide } from './slides/BlockchainArchSlide';
-import { RoadmapSlide } from './slides/RoadmapSlide';
-import { ProjectionsSlide } from './slides/ProjectionsSlide';
-import { CompetitionSlide } from './slides/CompetitionSlide';
-import { TokenSlide } from './slides/TokenSlide';
-import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
-import { SIFDashboardSlide } from './slides/SIFDashboardSlide';
-import { WhyUnicityProductSlide } from './slides/WhyUnicityProductSlide';
+import { SalesIntroSlide } from './slides/sales/SalesIntroSlide';
+import { SalesAgentsComingSlide } from './slides/sales/SalesAgentsComingSlide';
+import { SalesPilotPurgatorySlide } from './slides/sales/SalesPilotPurgatorySlide';
+import { SalesOverviewSlide } from './slides/sales/SalesOverviewSlide';
+import { SalesAgentHostSlide } from './slides/sales/SalesAgentHostSlide';
+import { SalesInterceptFabricSlide } from './slides/sales/SalesInterceptFabricSlide';
+import { SalesAgentSphereSlide } from './slides/sales/SalesAgentSphereSlide';
+import { SalesDeploymentSlide } from './slides/sales/SalesDeploymentSlide';
+import { SalesAboutSlide } from './slides/sales/SalesAboutSlide';
+import { SalesContactSlide } from './slides/sales/SalesContactSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  TitleSlide,              // 1. Cover
-  IntroSlide,              // 2. Thesis — agents are coming
-  ProblemSlide,            // 3. What autonomy actually requires
-  SolutionSlide,           // 4. The complete autonomy stack
-  WalletSlide,             // 5. P2P settlement is the unlock
-  AgentsSlide,             // 6. The magic sauce — agents as smart contracts
-  WhyUnicityProductSlide,  // 7. Security is the wedge, network is the moat
-  WhyDecentralizedSlide,   // 8. Why decentralized. Why Unicity.
-  ProtocolSlide,           // 9. Scaling agentic payments
-  CompetitionSlide,        // 10. Why us / competition
-  ProjectionsSlide,        // 11. Projections
-  RoadmapSlide,            // 12. Roadmap
-  TeamSlide,               // 13. The people
-  MarketSlide,             // 14. Market opportunity
-  TokenSlide,              // 15. Tokenomics
-  RaiseSlide,              // 16. The raise
-  ResourcesSlide,          // 17. Resources
-  ThankYouChatSlide,       // 18. Thank you
-  AppendixSlide,
-  KernelDividerSlide,
-  AstridSlide,
-  AstridComparisonSlide,
-  AstridUseCasesSlide,
-  SecurityDividerSlide,
-  InterceptFabricSlide,
-  SIFDashboardSlide,
-  SecurityNetworkSlide,
-  BlockchainDividerSlide,
-  ParadigmOverviewSlide,
-  BlockchainArchSlide,
+  SalesIntroSlide,         // 1. Intro
+  SalesAgentsComingSlide,  // 2. Agents are coming
+  SalesPilotPurgatorySlide,// 3. Agentic AI not ready for production
+  SalesOverviewSlide,      // 4. Security, Safety, Verifiability — 3 products
+  SalesAgentHostSlide,     // 5. AgentHost / ASTRID OS
+  SalesInterceptFabricSlide,// 6. Semantic Intercept Fabric
+  SalesAgentSphereSlide,   // 7. AgentSphere
+  SalesDeploymentSlide,    // 8. Deployment Models
+  SalesAboutSlide,         // 9. About Us
+  SalesContactSlide,       // 10. See It In Action / Contact
 ];
 
 export default function App() {
@@ -124,7 +85,7 @@ export default function App() {
 
   return (
     <div className="h-full w-full relative">
-      <CurrentSlideComponent onNext={() => { goToSlide(currentSlide + 1); }} goToSlide={goToSlide} />
+      <CurrentSlideComponent />
       {currentSlide > 0 && (
         <div
           className="fixed bottom-4 left-6 sm:left-10 lg:left-16 z-[101] text-[#fefefe]/40 text-base sm:text-lg font-medium select-none pointer-events-none"
