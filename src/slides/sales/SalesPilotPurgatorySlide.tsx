@@ -50,8 +50,8 @@ export function SalesPilotPurgatorySlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            AGENTIC AI IS{' '}
-            <span className="text-orange-400">NOT READY FOR PRODUCTION.</span>
+            THE BIGGEST BLOCKER TO PRODUCTION IS{' '}
+            <span className="text-orange-400">SECURITY.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -137,21 +137,21 @@ export function SalesPilotPurgatorySlide() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1.5 }}
-          className="rounded-r-md px-5 py-4 shrink-0"
+          className="rounded-r-md px-6 py-5 shrink-0"
           style={{
-            background: 'rgba(239,68,68,0.05)',
-            borderLeft: '2px solid rgba(239,68,68,0.4)',
+            background: 'rgba(239,68,68,0.14)',
+            borderLeft: '4px solid rgba(248,113,113,0.95)',
           }}
         >
           <p
-            className="text-base lg:text-lg italic leading-snug text-[#fefefe]/70"
+            className="text-lg lg:text-2xl italic leading-snug text-[#fefefe] font-bold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
             "If we let the animal out of the cage today, nobody's ready for it."
           </p>
           <p
-            className="text-[11px] lg:text-xs mt-2 tracking-wide"
-            style={{ fontFamily: "'Geist Mono', monospace", color: 'rgba(239,68,68,0.6)' }}
+            className="text-sm lg:text-base mt-3 tracking-wide font-bold"
+            style={{ fontFamily: "'Geist Mono', monospace", color: '#fca5a5' }}
           >
             Kevin Mandia, founder of Mandiant · RSA 2026
           </p>

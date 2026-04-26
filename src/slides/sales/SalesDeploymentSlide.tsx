@@ -29,7 +29,7 @@ const models = [
     points: [
       'Data never leaves the perimeter',
       'Zero external network access',
-      'Military-grade isolation',
+      'Full isolation',
       'Full offline operation',
     ],
     best: 'Defence, government, regulated industries.',

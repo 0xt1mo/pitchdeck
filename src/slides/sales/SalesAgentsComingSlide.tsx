@@ -23,7 +23,7 @@ export function SalesAgentsComingSlide() {
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
             AGENTIC AI IS HERE.{' '}
-            <span className="text-orange-400">THE SECURITY ISN'T.</span>
+            <span className="text-orange-400">EVERY GOVERNMENT, EVERY ENTERPRISE</span>
           </motion.h1>
         </div>
 

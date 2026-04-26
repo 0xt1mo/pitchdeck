@@ -8,9 +8,9 @@ const pillars = [
 
 const products = [
   {
-    name: 'AGENTHOST',
+    name: 'AOS-9',
     role: 'The Platform',
-    desc: 'Secure multi-tenant hosting on AstridOS. Thousands of agents per node with cryptographic isolation.',
+    desc: 'Secure multi-tenant hosting. Any agent framework or harness. Plug-and-play OpenClaw plugins and Hermes memory — with security guaranteed.',
     color: '#fbbf24',
     bg: 'rgba(245,158,11,0.08)',
     border: 'rgba(245,158,11,0.30)',
@@ -56,7 +56,7 @@ export function SalesOverviewSlide() {
             className="mt-4 text-[#fefefe]/85 text-lg lg:text-xl max-w-4xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Three products. One integrated stack. Enforcement <span className="text-orange-400 font-bold">below the model</span> — where it cannot see, reason about, or override it.
+            The Unicity platform enables <span className="text-orange-400 font-bold">security, safety and verifiability</span> for agentic operations.
           </motion.p>
         </div>
 
