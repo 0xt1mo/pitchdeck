@@ -1,24 +1,6 @@
 import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 
-const cards: { title: string; color: string; text: React.ReactNode }[] = [
-  {
-    title: 'Verifiable execution',
-    color: '#f97316',
-    text: 'Agents are the equivalent of smart contracts — verifiable code living entirely off-chain, operating on tokens bound to conditional ownership rules.',
-  },
-  {
-    title: 'Chain Agnostic Tokens',
-    color: '#f97316',
-    text: 'Through the Unicity SDK, agents can mint, transfer, and burn tokens with minimal overhead.',
-  },
-  {
-    title: 'Shared State',
-    color: '#f97316',
-    text: 'When shared state is needed (e.g., atomic multi-token settlement), users install programmable ownership rules before transferring tokens to agents.',
-  },
-];
-
 export function AgentsSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
@@ -27,7 +9,7 @@ export function AgentsSlide() {
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
 
-      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
+      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-10 sm:py-14 lg:py-16 justify-center gap-6">
 
         {/* Header */}
         <div className="shrink-0">
@@ -40,7 +22,7 @@ export function AgentsSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            <span className="text-orange-400">VERIFIABLE AGENTS REPLACE</span> SMART CONTRACTS
+            THE NEW PARADIGM: <span className="text-orange-400">VALIDATION AT THE EDGE</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -55,43 +37,15 @@ export function AgentsSlide() {
           Unicity eliminates <span className="text-orange-400">globally</span> shared state entirely — agents execute off-chain, verification is done by interested parties only, independent of other transactions.          Like physical cash, tokens are <span className="text-orange-400">locally verifiable</span> at the edge — there is no chain dependency.
         </motion.p>
 
-        {/* Two-column: diagram left, cards right */}
-        <div className="flex-1 grid grid-cols-[1.2fr_1fr] gap-6 sm:gap-8 mt-4 min-h-0 items-start">
-
-          {/* Left — SVG diagram, filling available space */}
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="flex items-center justify-center h-full min-h-0">
-            <object type="image/svg+xml" data="/agents_smartcontracts.svg"
-              className="w-full h-full object-contain max-h-full">
-              Agents architecture diagram
-            </object>
-          </motion.div>
-
-          {/* Right — stacked cards */}
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="flex flex-col gap-4 justify-center">
-            {cards.map((card, i) => (
-              <motion.div key={card.title}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6 + i * 0.15, duration: 0.4 }}
-                className="rounded-lg border p-4 sm:p-5"
-                style={{ borderColor: `${card.color}30`, background: `${card.color}06` }}>
-                <h3 className="text-base sm:text-lg lg:text-xl mb-2 font-bold"
-                  style={{ fontFamily: "'Geist Mono', monospace", color: card.color }}>
-                  {card.title}
-                </h3>
-                <p className="text-[#fefefe]/70 text-sm leading-relaxed"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}>
-                  {card.text}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-
-        </div>
+        {/* Diagram */}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="flex items-center justify-center shrink-0 h-[400px] lg:h-[480px]">
+          <object type="image/svg+xml" data="/agents_smartcontracts.svg"
+            className="w-full h-full object-contain">
+            Agents architecture diagram
+          </object>
+        </motion.div>
 
         {/* Logo */}
 

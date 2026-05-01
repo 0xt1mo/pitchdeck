@@ -1,54 +1,48 @@
 import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
-import { TitleSlide } from './slides/TitleSlide';
 import { IntroSlide } from './slides/IntroSlide';
-import { TeamSlide } from './slides/TeamSlide';
-import { ProblemSlide } from './slides/ProblemSlide';
-import { SolutionSlide } from './slides/SolutionSlide';
-import { ParadigmOverviewSlide } from './slides/ParadigmOverviewSlide';
-import { MarketSlide } from './slides/MarketSlide';
-import { RaiseSlide } from './slides/RaiseSlide';
-import { AppendixSlide } from './slides/AppendixSlide';
-import { ProtocolSlide } from './slides/ProtocolSlide';
-import { WhyDecentralizedSlide } from './slides/WhyDecentralizedSlide';
-import { ResourcesSlide } from './slides/ResourcesSlide';
+import { PromiseSlide } from './slides/PromiseSlide';
+import { SharedLedgerSlide } from './slides/SharedLedgerSlide';
 import { AgentsSlide } from './slides/AgentsSlide';
+import { RetrofitSlide } from './slides/RetrofitSlide';
+import { ProblemSlide } from './slides/ProblemSlide';
+import { AutonomyStackSlide } from './slides/AutonomyStackSlide';
+import { ProtocolSlide } from './slides/ProtocolSlide';
+import { CiscoSlide } from './slides/CiscoSlide';
+import { ProjectionsSlide } from './slides/ProjectionsSlide';
+import { TokenSlide } from './slides/TokenSlide';
+import { RoadmapSlide } from './slides/RoadmapSlide';
+import { TeamSlide } from './slides/TeamSlide';
+import { RaiseSlide } from './slides/RaiseSlide';
 import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
-import { WalletSlide } from './slides/WalletSlide';
+import { AppendixSlide } from './slides/AppendixSlide';
+import { ParadigmOverviewSlide } from './slides/ParadigmOverviewSlide';
 import { SecurityNetworkSlide } from './slides/SecurityNetworkSlide';
 import { KernelDividerSlide, SecurityDividerSlide, BlockchainDividerSlide } from './slides/SectionDividerSlide';
 import { AstridSlide } from './slides/AstridSlide';
 import { AstridComparisonSlide } from './slides/AstridComparisonSlide';
 import { AstridUseCasesSlide } from './slides/AstridUseCasesSlide';
 import { BlockchainArchSlide } from './slides/BlockchainArchSlide';
-import { RoadmapSlide } from './slides/RoadmapSlide';
-import { ProjectionsSlide } from './slides/ProjectionsSlide';
-import { CompetitionSlide } from './slides/CompetitionSlide';
-import { TokenSlide } from './slides/TokenSlide';
 import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
 import { SIFDashboardSlide } from './slides/SIFDashboardSlide';
-import { WhyUnicityProductSlide } from './slides/WhyUnicityProductSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  TitleSlide,              // 1. Cover
-  IntroSlide,              // 2. Thesis — agents are coming
-  ProblemSlide,            // 3. What autonomy actually requires
-  SolutionSlide,           // 4. The complete autonomy stack
-  WalletSlide,             // 5. P2P settlement is the unlock
-  AgentsSlide,             // 6. The magic sauce — agents as smart contracts
-  WhyUnicityProductSlide,  // 7. Security is the wedge, network is the moat
-  WhyDecentralizedSlide,   // 8. Why decentralized. Why Unicity.
-  ProtocolSlide,           // 9. Scaling agentic payments
-  CompetitionSlide,        // 10. Why us / competition
-  ProjectionsSlide,        // 11. Projections
-  RoadmapSlide,            // 12. Roadmap
-  TeamSlide,               // 13. The people
-  MarketSlide,             // 14. Market opportunity
-  TokenSlide,              // 15. Tokenomics
-  RaiseSlide,              // 16. The raise
-  ResourcesSlide,          // 17. Resources
-  ThankYouChatSlide,       // 18. Thank you
+  IntroSlide,              // 1. Title — Autonomous AI needs a blockchain built for machines
+  PromiseSlide,            // 2. The promise — Satoshi's P2P electronic cash
+  SharedLedgerSlide,       // 3. The industry — shared ledger is the bottleneck
+  AgentsSlide,             // 4. The Unicity L1 — validation at the edge
+  RetrofitSlide,           // 5. Competition — wrong substrate, incomplete stack
+  ProblemSlide,            // 6. The problem — what autonomy actually requires
+  AutonomyStackSlide,      // 7. The solution — the Unicity autonomy stack
+  ProtocolSlide,           // 8. Technical proof — scaling x402/MPP
+  CiscoSlide,              // 9. Go-to-market — the Cisco for the agentic internet
+  ProjectionsSlide,        // 10. Protocol revenue — $600M by 2029
+  TokenSlide,              // 11. Tokenomics — token model & allocation
+  RoadmapSlide,            // 12. Roadmap & traction — mainnet June '26, $20M pipeline
+  TeamSlide,               // 13. Team — 15 years building infra for governments
+  RaiseSlide,              // 14. The raise — $12M Series A
+  ThankYouChatSlide,       // 15. Thank you — KnowledgeBot
   AppendixSlide,
   KernelDividerSlide,
   AstridSlide,

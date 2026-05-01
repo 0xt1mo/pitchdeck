@@ -38,7 +38,7 @@ export function RaiseSlide() {
         <div className="absolute inset-0 bg-[#060606]/30" />
       </div>
 
-      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
+      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-10 sm:py-14 lg:py-16 justify-center gap-7">
 
         {/* Header */}
         <div className="shrink-0">
@@ -59,10 +59,10 @@ THE RAISE: <span className="text-orange-400">FROM TESTNET TO 50M AGENTS</span>
         </div>
 
         {/* Main two-column content */}
-        <div className="flex-1 flex min-h-0 mt-4 gap-10 lg:gap-14">
+        <div className="flex shrink-0 gap-10 lg:gap-14">
 
           {/* ── LEFT: $30M + details ── */}
-          <div className="flex flex-col justify-center" style={{ width: '40%' }}>
+          <div className="flex flex-col" style={{ width: '40%' }}>
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -135,7 +135,7 @@ THE RAISE: <span className="text-orange-400">FROM TESTNET TO 50M AGENTS</span>
           />
 
           {/* ── RIGHT: What this round unlocks ── */}
-          <div className="flex-1 flex flex-col justify-center min-w-0">
+          <div className="flex-1 flex flex-col min-w-0">
             <motion.h2
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

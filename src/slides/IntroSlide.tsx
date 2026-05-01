@@ -31,7 +31,7 @@ export function IntroSlide() {
           >
             AUTONOMOUS AI
             <br />
-            <span className="text-orange-400">NEEDS AN INTERNET</span>
+            <span className="text-orange-400">NEEDS A BLOCKCHAIN</span>
             <br />
             BUILT FOR MACHINES
           </h1>
@@ -55,7 +55,7 @@ export function IntroSlide() {
         >
           Billions of machine intelligences are coming.
           <br />
-          <span className="text-[#fefefe]/60">We're building the infrastructure to make them autonomous.</span>
+          <span className="text-[#fefefe]/60">We've built the infrastructure to make them autonomous.</span>
         </motion.p>
 
       </div>

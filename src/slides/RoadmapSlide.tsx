@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const nowItems: { text: string; sub?: string }[] = [
   { text: 'Initial distribution secured through sovereign AI lab integration.', sub: 'Every agent on their platform gets native access to security, identity, and settlement.' },
   { text: 'Agentic intent-based trading marketplace goes live May 2026.', sub: 'Permissionless, private, and fast enough for agent-speed settlement.' },
-  { text: 'Active enterprise pilots:', sub: 'Mutual and Parametric Insurance, Telecom, Supply Chain.' },
+  { text: '$20M enterprise pipeline:', sub: 'Governments, Financial Institutions, Telecom, AI Labs.' },
   { text: 'Mainnet launching June 2026.' },
   { text: 'TGE is adoption-triggered at 1M daily active agents — not calendar-driven.' },
 ];
@@ -11,10 +11,10 @@ const nowItems: { text: string; sub?: string }[] = [
 export function RoadmapSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16">
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16 justify-center gap-8">
 
         {/* Header */}
-        <div>
+        <div className="shrink-0">
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="text-orange-400 text-sm tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
@@ -29,7 +29,7 @@ export function RoadmapSlide() {
         </div>
 
         {/* Main content — what's happening now */}
-        <div className="flex-1 flex flex-col justify-center">
+        <div className="flex flex-col shrink-0">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}>
             <p className="text-[24px] sm:text-[30px] lg:text-[36px] leading-none tracking-tight text-orange-400"

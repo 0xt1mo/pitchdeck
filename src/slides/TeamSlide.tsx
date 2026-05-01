@@ -83,10 +83,10 @@ export function TeamSlide() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#060606]/40 via-[#060606]/20 to-[#060606]/40" />
       </div>
 
-      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16">
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16 justify-center gap-8">
 
         {/* Header — same as ProblemSlide */}
-        <div className="mb-4">
+        <div className="shrink-0">
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
@@ -109,7 +109,7 @@ export function TeamSlide() {
         </div>
 
         {/* Leadership Grid */}
-        <div className="flex-1 flex flex-col justify-center max-h-[55%]">
+        <div className="flex flex-col shrink-0">
           <div className="grid grid-cols-4 gap-x-6 gap-y-5">
             {leaders.map((leader, i) => (
               <motion.div

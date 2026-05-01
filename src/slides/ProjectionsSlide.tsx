@@ -44,7 +44,7 @@ const drivers = [
 export function ProjectionsSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16">
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16 justify-center gap-8">
 
         {/* Header */}
         <div className="shrink-0">
@@ -62,7 +62,7 @@ export function ProjectionsSlide() {
         </div>
 
         {/* Two-column body */}
-        <div className="flex-1 grid grid-cols-2 gap-10 mt-5 content-center">
+        <div className="grid grid-cols-2 gap-10 shrink-0">
 
           {/* Left — model + number + trajectory */}
           <div className="flex flex-col">

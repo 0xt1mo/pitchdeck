@@ -71,10 +71,10 @@ export function TokenSlide() {
 
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-8 sm:py-10 lg:py-12">
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16 justify-center gap-7">
 
         {/* Header */}
-        <div>
+        <div className="shrink-0">
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
@@ -94,10 +94,10 @@ export function TokenSlide() {
         </div>
 
         {/* Main content: three pillars left, donut + breakdown right */}
-        <div className="flex-1 flex gap-8 lg:gap-12 mt-5 min-h-0">
+        <div className="flex gap-8 lg:gap-12 shrink-0">
 
           {/* Left — token model */}
-          <div className="flex flex-col justify-center gap-5" style={{ width: '40%' }}>
+          <div className="flex flex-col gap-5" style={{ width: '40%' }}>
             {pillars.map((p, i) => (
               <motion.div
                 key={p.title}

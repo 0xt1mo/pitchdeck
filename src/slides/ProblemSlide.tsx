@@ -1,22 +1,22 @@
 import { motion } from 'framer-motion';
 
 const pillars = [
-  { title: 'FRICTIONLESS RAILS', punch: 'Extreme throughput with ultra-low latency.', text: 'Billions of agents may transact thousands of times a day.' },
-  { title: 'NEAR-ZERO COST', punch: 'A $0.001 transaction can\'t cost $0.001 to settle.', text: 'Agent micro-economics break on gas-priced chains.' },
-  { title: 'PERMISSIONLESS', punch: 'Centralized gatekeepers don\'t work for an autonomous economy.', text: 'Any chain. Any service. Any agent. No gatekeepers.' },
-  { title: 'IDENTITY', punch: 'Agents have API keys. Not identities.', text: 'No way to verify who an agent is, what it\'s authorized to do.' },
-  { title: 'SECURITY', punch: 'Agent security is bolted on, not built in.', text: 'No verifiable execution. No way to prove what an agent actually did.' },
-  { title: 'PORTABILITY', punch: "True autonomy means agents can't be tied to a single host.", text: 'On-chain identity, reputation, and history travel with the agent. Switch models, switch platforms, keep everything.' },
+  { title: 'IDENTITY', punch: 'Cryptographic identity, not API keys.' },
+  { title: 'DELEGATION', punch: 'Verifiable authority. Scoped and revocable.' },
+  { title: 'VERIFIABLE EXECUTION', punch: 'Prove what the agent actually did.' },
+  { title: 'POLICY ENFORCEMENT', punch: 'Governance at runtime, not in code review.' },
+  { title: 'SETTLEMENT', punch: 'Machine-speed transactions at machine economics.' },
+  { title: 'INTEROPERABILITY', punch: 'MCP, A2A, AP2, x402 — agents already span them all.' },
 ];
 
 export function ProblemSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
 
-      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-8 sm:py-10 lg:py-12">
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16 justify-center gap-8">
 
         {/* Header */}
-        <div className="shrink-0 mb-4">
+        <div className="shrink-0">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -42,12 +42,12 @@ export function ProblemSlide() {
             className="mt-4 text-[#fefefe]/85 text-lg sm:text-xl lg:text-2xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            No enterprise will deploy autonomous agents that can spend money, sign contracts, or access sensitive data without verifiable security.
+            No government or enterprise will deploy autonomous agents that spend money, execute contracts, or access sensitive data — unless every one of the following is in place:
           </motion.p>
         </div>
 
         {/* Pillars — vertical list with text beside */}
-        <div className="flex flex-col flex-1 justify-center">
+        <div className="flex flex-col shrink-0">
           {pillars.map((p, i) => (
             <motion.div
               key={p.title}
@@ -58,24 +58,28 @@ export function ProblemSlide() {
               style={{ borderBottom: i < pillars.length - 1 ? '1px solid rgba(249,115,22,0.1)' : 'none' }}
             >
               <h3
-                className="text-orange-400 text-[22px] sm:text-[28px] lg:text-[34px] leading-none tracking-tight w-[200px] lg:w-[260px] shrink-0"
+                className="text-orange-400 text-[22px] sm:text-[28px] lg:text-[34px] leading-none tracking-tight w-[240px] lg:w-[320px] shrink-0"
                 style={{ fontFamily: "'Anton', sans-serif" }}
               >
                 {p.title}
               </h3>
-              <div>
-                <p className="text-[#fefefe] text-sm sm:text-base lg:text-lg font-bold"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}>
-                  {p.punch}
-                </p>
-                <p className="text-[#fefefe]/60 text-sm sm:text-base leading-relaxed mt-0.5"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}>
-                  {p.text}
-                </p>
-              </div>
+              <p className="text-[#fefefe] text-base sm:text-lg lg:text-xl font-bold"
+                style={{ fontFamily: "'Geist Mono', monospace" }}>
+                {p.punch}
+              </p>
             </motion.div>
           ))}
         </div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 + 6 * 0.08, duration: 0.6 }}
+          className="text-[#fefefe] text-lg sm:text-xl lg:text-2xl font-bold shrink-0"
+          style={{ fontFamily: "'Geist Mono', monospace" }}
+        >
+          No legacy blockchain meets <span className="text-orange-400">all six</span>.
+        </motion.p>
 
       </div>
     </div>
