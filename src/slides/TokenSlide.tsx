@@ -13,7 +13,7 @@ const slices = [
 
 const pillars = [
   { title: 'ACCESS', desc: 'Agents subscribe in native token.\nStaking unlocks capacity and reduced fees.', color: '#f59e0b' },
-  { title: 'DECENTRALISATION', desc: 'Validators and oracles compensated in token. Incentives aligned with growth.', color: '#3b82f6' },
+  { title: 'DECENTRALISATION', desc: 'Infra operators compensated in token. Incentives aligned with growth.', color: '#3b82f6' },
   { title: 'VALUE ACCRUAL', desc: 'Every new agent increases utility demand. Token value tracks active agent count.', color: '#22c55e' },
 ];
 

@@ -35,7 +35,7 @@ export function PromiseSlide() {
           className="text-orange-400 text-[48px] sm:text-[72px] lg:text-[96px] leading-[1.0] tracking-tight max-w-6xl shrink-0"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          "Peer-to-Peer Electronic Cash."
+          "PEER-TO-PEER ELECTRONIC CASH."
         </motion.h1>
 
         {/* Reflection */}
@@ -49,9 +49,9 @@ export function PromiseSlide() {
             borderBottom: '1px solid rgba(249,115,22,0.25)',
           }}
         >
-          17 years later,
+          17 YEARS LATER,
           <br />
-          we have <span className="text-orange-400">neither.</span>
+          WE HAVE <span className="text-orange-400">NEITHER.</span>
         </motion.h2>
 
         {/* Punch */}
@@ -62,7 +62,7 @@ export function PromiseSlide() {
           className="text-[#fefefe] text-[20px] sm:text-[26px] lg:text-[32px] leading-[0.95] tracking-tight shrink-0"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          UNICITY IS FINALLY BUILDING{' '}
+          UNICITY HAS FINALLY BUILT{' '}
           <span className="text-orange-400">WHAT WAS PROMISED.</span>
         </motion.h3>
 

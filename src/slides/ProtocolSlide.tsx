@@ -55,11 +55,11 @@ function Diagram({
   const gap = n > 2 ? (VB_W - 100) / (n - 1) : 200;
   const offset = n > 2 ? 50 : (VB_W - gap) / 2;
   const cx = (i: number) => offset + i * gap;
-  const contentRows = showEliminated ? steps.length + 4 : steps.length;
+  const contentRows = showEliminated ? 12 : steps.length;
   const vbH = HEAD_H + contentRows * ROW_H + 24;
 
   return (
-    <svg viewBox={`0 0 ${VB_W} ${vbH}`} className="w-full h-full" preserveAspectRatio="xMidYMin meet">
+    <svg viewBox={`0 0 ${VB_W} ${vbH}`} className="h-full w-auto max-w-full" preserveAspectRatio="xMidYMid meet">
       <defs>
         <marker id={`ar-${id}`} markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
           <path d="M0,0.5 L7,3 L0,5.5" fill={accent} />
@@ -132,13 +132,13 @@ function Diagram({
       {/* Eliminated steps zone (Unicity only) */}
       {showEliminated && (
         <g>
-          <rect x={35} y={HEAD_H + 5 * ROW_H + 12} width={VB_W - 70} height={6.5 * ROW_H}
+          <rect x={35} y={HEAD_H + 5 * ROW_H + 12} width={VB_W - 70} height={7 * ROW_H - 12}
             rx={12} fill="rgba(249,115,22,0.06)" stroke={accent} strokeWidth={2} strokeDasharray="8 5" opacity={0.6} />
-          <text x={VB_W / 2} y={HEAD_H + 5 * ROW_H + 2.8 * ROW_H} textAnchor="middle"
+          <text x={VB_W / 2} y={HEAD_H + 5 * ROW_H + 3.2 * ROW_H} textAnchor="middle"
             fill={accent} fontSize="26" fontFamily="Anton, sans-serif" letterSpacing="0.08em" opacity={0.9}>
             7 STEPS ELIMINATED
           </text>
-          <text x={VB_W / 2} y={HEAD_H + 5 * ROW_H + 3.8 * ROW_H + 4} textAnchor="middle"
+          <text x={VB_W / 2} y={HEAD_H + 5 * ROW_H + 4.5 * ROW_H} textAnchor="middle"
             fill="rgba(254,254,254,0.5)" fontSize="11" fontFamily="Geist Mono, monospace">
             No facilitator · No shared ledger
           </text>
@@ -150,14 +150,14 @@ function Diagram({
 
 export function ProtocolSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
       {/* Video background */}
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
-        <video className="w-full h-full object-cover opacity-40" autoPlay muted loop playsInline src={splashVideoUrl} />
-        <div className="absolute inset-0 bg-[#060606]/30" />
+        <video className="w-full h-full object-cover opacity-25" autoPlay muted loop playsInline src={splashVideoUrl} />
+        <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
 
-      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-10 sm:py-14 lg:py-16 justify-center gap-7">
+      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-8 sm:py-10 lg:py-12 justify-center gap-5">
         {/* Header */}
         <div className="shrink-0">
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
@@ -196,7 +196,8 @@ export function ProtocolSlide() {
               <span className="px-2 py-0.5 rounded-full bg-red-500/15 border border-red-500/25 text-red-400 text-[10px] tracking-wider uppercase font-semibold"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>12 steps</span>
             </div>
-            <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm p-2 sm:p-3">
+            <div className="rounded-xl border border-white/[0.15] p-2 sm:p-3 h-[520px] flex justify-center"
+              style={{ background: '#0a0a0f' }}>
               <Diagram participants={TRAD_PARTICIPANTS} steps={TRAD_STEPS}
                 accent="rgba(254,254,254,0.5)" id="trad" />
             </div>
@@ -214,7 +215,8 @@ export function ProtocolSlide() {
               <span className="px-2 py-0.5 rounded-full bg-orange-500/15 border border-orange-500/25 text-orange-400 text-[10px] tracking-wider uppercase font-semibold"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>5 steps</span>
             </div>
-            <div className="rounded-xl border border-orange-500/20 bg-orange-500/[0.03] backdrop-blur-sm p-2 sm:p-3">
+            <div className="rounded-xl border border-orange-500/50 p-2 sm:p-3 h-[520px] flex justify-center"
+              style={{ background: '#0a0a0f' }}>
               <Diagram participants={UNI_PARTICIPANTS} steps={UNI_STEPS}
                 accent="#f97316" id="uni" showEliminated />
             </div>

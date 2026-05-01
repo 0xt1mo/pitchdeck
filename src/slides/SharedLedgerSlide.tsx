@@ -24,8 +24,8 @@ export function SharedLedgerSlide() {
           className="text-[#fefefe] text-[42px] sm:text-[64px] lg:text-[88px] leading-[1.0] tracking-tight max-w-6xl shrink-0"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          Every blockchain from Bitcoin to MegaETH is the same{' '}
-          <span className="text-orange-400">17-year-old design.</span>
+          EVERY BLOCKCHAIN FROM BITCOIN TO MEGAETH IS THE SAME{' '}
+          <span className="text-orange-400">17-YEAR-OLD DESIGN.</span>
         </motion.h1>
 
         {/* Body */}

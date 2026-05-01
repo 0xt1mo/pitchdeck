@@ -31,7 +31,7 @@ export function IntroSlide() {
           >
             AUTONOMOUS AI
             <br />
-            <span className="text-orange-400">NEEDS A BLOCKCHAIN</span>
+            <span className="text-orange-400">NEEDS AN INTERNET</span>
             <br />
             BUILT FOR MACHINES
           </h1>

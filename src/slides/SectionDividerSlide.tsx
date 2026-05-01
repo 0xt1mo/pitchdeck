@@ -28,7 +28,7 @@ const sectionConfig: Record<SectionId, {
   highlightKernel: boolean;
 }> = {
   kernel: {
-    label: 'ASTRID OS',
+    label: 'AOS9',
     subtitle: 'Architecture deep dive',
     highlightIds: ['skills', 'orchestration', 'inference', 'networking'],
     highlightKernel: true,

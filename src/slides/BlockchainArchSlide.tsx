@@ -200,7 +200,7 @@ export function BlockchainArchSlide() {
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
 
-      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
+      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-10 sm:py-14 lg:py-16 justify-center gap-6">
 
         {/* Header */}
         <div className="shrink-0">
@@ -228,7 +228,7 @@ export function BlockchainArchSlide() {
         </div>
 
         {/* Two-column: diagram left, descriptions right */}
-        <div className="flex-1 grid grid-cols-[1.1fr_1fr] gap-6 sm:gap-10 mt-5 min-h-0 items-start pt-2">
+        <div className="grid grid-cols-[1.1fr_1fr] gap-6 sm:gap-10 shrink-0 items-start">
 
           {/* Left — SVG */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}

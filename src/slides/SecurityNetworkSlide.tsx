@@ -28,7 +28,7 @@ function NetworkDiagram() {
   });
 
   return (
-    <svg viewBox="0 0 600 600" className="w-full h-auto">
+    <svg viewBox="0 0 600 600" className="h-full w-auto max-w-full" preserveAspectRatio="xMidYMid meet">
       <defs>
         <filter id="marketGlow">
           <feGaussianBlur stdDeviation="12" result="blur" />
@@ -236,13 +236,13 @@ const keyPoints = [
 
 export function SecurityNetworkSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-15" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
 
-      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
+      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-8 sm:py-10 lg:py-12 justify-center gap-5">
 
         {/* Header */}
         <div className="shrink-0">
@@ -270,12 +270,12 @@ export function SecurityNetworkSlide() {
         </div>
 
         {/* Two-column: diagram left, descriptions right */}
-        <div className="flex-1 grid grid-cols-[1.1fr_1fr] gap-4 sm:gap-8 mt-4 min-h-0 items-center">
+        <div className="grid grid-cols-[1.1fr_1fr] gap-4 sm:gap-8 shrink-0 items-center h-[560px]">
 
           {/* Left — SVG */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="flex items-center justify-center">
+            className="flex items-center justify-center h-full">
             <NetworkDiagram />
           </motion.div>
 

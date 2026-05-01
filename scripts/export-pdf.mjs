@@ -35,7 +35,7 @@ async function exportPDF() {
   const totalSlides = await page.evaluate(() => window.__totalSlides || 27);
   console.log(`📊 Detected ${totalSlides} slides`);
 
-  const maxSlides = MAIN_SLIDES_ONLY ? Math.min(15, totalSlides) : totalSlides;
+  const maxSlides = MAIN_SLIDES_ONLY ? Math.min(16, totalSlides) : totalSlides;
   const startSlide = SKIP_TITLE ? 1 : 0;
   const slideCount = maxSlides - startSlide;
 

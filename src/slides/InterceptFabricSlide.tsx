@@ -30,10 +30,10 @@ function Arrow() {
 export function InterceptFabricSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-8 sm:py-10 lg:py-12">
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16 justify-center gap-6">
 
         {/* Header */}
-        <div>
+        <div className="shrink-0">
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: font }}>
@@ -53,11 +53,11 @@ export function InterceptFabricSlide() {
         </div>
 
         {/* Main: text left, diagram right */}
-        <div className="flex-1 grid grid-cols-[1fr_1.2fr] gap-8 lg:gap-12 mt-5 min-h-0">
+        <div className="grid grid-cols-[1fr_1.2fr] gap-8 lg:gap-12 shrink-0">
 
           {/* Left — description */}
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="flex flex-col justify-center gap-5">
+            className="flex flex-col gap-5">
 
             <div>
               <p className="text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed" style={{ fontFamily: font }}>

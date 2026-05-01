@@ -4,11 +4,15 @@ import { IntroSlide } from './slides/IntroSlide';
 import { PromiseSlide } from './slides/PromiseSlide';
 import { SharedLedgerSlide } from './slides/SharedLedgerSlide';
 import { AgentsSlide } from './slides/AgentsSlide';
+import { EdgePayoffSlide } from './slides/EdgePayoffSlide';
 import { RetrofitSlide } from './slides/RetrofitSlide';
+import { CompetitionSlide } from './slides/CompetitionSlide';
+import { MarketSlide } from './slides/MarketSlide';
+import { ResourcesSlide } from './slides/ResourcesSlide';
 import { ProblemSlide } from './slides/ProblemSlide';
 import { AutonomyStackSlide } from './slides/AutonomyStackSlide';
+import { AgentSphereDashboardSlide } from './slides/AgentSphereDashboardSlide';
 import { ProtocolSlide } from './slides/ProtocolSlide';
-import { CiscoSlide } from './slides/CiscoSlide';
 import { ProjectionsSlide } from './slides/ProjectionsSlide';
 import { TokenSlide } from './slides/TokenSlide';
 import { RoadmapSlide } from './slides/RoadmapSlide';
@@ -16,7 +20,6 @@ import { TeamSlide } from './slides/TeamSlide';
 import { RaiseSlide } from './slides/RaiseSlide';
 import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
 import { AppendixSlide } from './slides/AppendixSlide';
-import { ParadigmOverviewSlide } from './slides/ParadigmOverviewSlide';
 import { SecurityNetworkSlide } from './slides/SecurityNetworkSlide';
 import { KernelDividerSlide, SecurityDividerSlide, BlockchainDividerSlide } from './slides/SectionDividerSlide';
 import { AstridSlide } from './slides/AstridSlide';
@@ -29,21 +32,27 @@ import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
   IntroSlide,              // 1. Title — Autonomous AI needs a blockchain built for machines
-  PromiseSlide,            // 2. The promise — Satoshi's P2P electronic cash
-  SharedLedgerSlide,       // 3. The industry — shared ledger is the bottleneck
-  AgentsSlide,             // 4. The Unicity L1 — validation at the edge
-  RetrofitSlide,           // 5. Competition — wrong substrate, incomplete stack
-  ProblemSlide,            // 6. The problem — what autonomy actually requires
-  AutonomyStackSlide,      // 7. The solution — the Unicity autonomy stack
+  ProblemSlide,            // 2. The problem — what autonomy actually requires
+  AgentsSlide,             // 3. The Unicity L1 — validation at the edge
+  EdgePayoffSlide,         // 4. The payoff — what validation at the edge unlocks
+  AutonomyStackSlide,      // 5. The solution — the Unicity autonomy stack
+  AgentSphereDashboardSlide, // 6. Agent Sphere control plane — one dashboard, four pillars
+  CompetitionSlide,        // 7. Why us — competitive landscape
   ProtocolSlide,           // 8. Technical proof — scaling x402/MPP
-  CiscoSlide,              // 9. Go-to-market — the Cisco for the agentic internet
-  ProjectionsSlide,        // 10. Protocol revenue — $600M by 2029
-  TokenSlide,              // 11. Tokenomics — token model & allocation
-  RoadmapSlide,            // 12. Roadmap & traction — mainnet June '26, $20M pipeline
-  TeamSlide,               // 13. Team — 15 years building infra for governments
-  RaiseSlide,              // 14. The raise — $12M Series A
-  ThankYouChatSlide,       // 15. Thank you — KnowledgeBot
+  MarketSlide,             // 9. Market — $400B+ autonomous AI market
+  ProjectionsSlide,        // 8. Protocol revenue — $600M by 2029
+  TokenSlide,              // 9. Tokenomics — token model & allocation
+  RoadmapSlide,            // 10. Roadmap & traction — mainnet June '26, $20M pipeline
+  TeamSlide,               // 11. Team — 15 years building infra for governments
+  RaiseSlide,              // 13. The raise — $5M Seed Extension
+  ResourcesSlide,          // 14. Essential resources
+  ThankYouChatSlide,       // 15. Thank you
   AppendixSlide,
+  BlockchainDividerSlide,
+  PromiseSlide,
+  SharedLedgerSlide,
+  RetrofitSlide,
+  BlockchainArchSlide,
   KernelDividerSlide,
   AstridSlide,
   AstridComparisonSlide,
@@ -52,9 +61,6 @@ const slides = [
   InterceptFabricSlide,
   SIFDashboardSlide,
   SecurityNetworkSlide,
-  BlockchainDividerSlide,
-  ParadigmOverviewSlide,
-  BlockchainArchSlide,
 ];
 
 export default function App() {

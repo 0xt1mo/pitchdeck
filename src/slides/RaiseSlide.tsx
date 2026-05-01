@@ -16,17 +16,14 @@ const unlocks = [
   {
     title: 'DEVELOPER ADOPTION',
     desc: 'Scale developer marketing, developer relations, community. Universal integration into harnesses/frameworks.',
-    goal: 'Network effects — scaling transactions, liquidity and agent deployments.',
   },
   {
     title: 'SCALING ENTERPRISE',
     desc: 'Scale enterprise licensing, channels & partner programs.',
-    goal: 'Scale sales to the Fortune 500.',
   },
   {
     title: 'EXCHANGE LISTING',
     desc: 'TGE preparation, exchange listing infrastructure, community.',
-    goal: 'Network live, liquid, and generating protocol revenue.',
   },
 ];
 
@@ -51,7 +48,7 @@ Series A Fundraise
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-THE RAISE: <span className="text-orange-400">FROM TESTNET TO 50M AGENTS</span>
+THE RAISE: <span className="text-orange-400">FROM TESTNET TO 2M AGENTS</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -70,7 +67,7 @@ THE RAISE: <span className="text-orange-400">FROM TESTNET TO 50M AGENTS</span>
             >
               <h2 className="text-[90px] sm:text-[120px] lg:text-[150px] leading-none font-black text-[#fefefe]"
                 style={{ fontFamily: "'Anton', sans-serif" }}>
-                <CountUp target={12} delay={0.5} />
+                <CountUp target={5} delay={0.5} />
               </h2>
               <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
                 transition={{ delay: 0.8, duration: 0.6 }}
@@ -88,9 +85,8 @@ THE RAISE: <span className="text-orange-400">FROM TESTNET TO 50M AGENTS</span>
               className="mt-10 space-y-3"
             >
               {[
-                { label: 'ROUND', value: 'Series A' },
                 { label: 'STRUCTURE', value: 'Equity + Token Warrants' },
-                { label: 'TIMELINE', value: 'Close Q3 2026' },
+                { label: 'TIMELINE', value: 'June 2026' },
               ].map((d) => (
                 <div key={d.label} className="flex items-baseline gap-5">
                   <span className="text-[#fefefe]/60 text-sm tracking-[0.2em] uppercase shrink-0 w-28"
@@ -117,7 +113,7 @@ THE RAISE: <span className="text-orange-400">FROM TESTNET TO 50M AGENTS</span>
                 Seed Round Backers <span className="text-[#fefefe]">· Sep 2025</span>
               </p>
               <div className="flex items-center gap-5">
-                {['Blockchange Capital', 'Outlier Ventures', 'Tawasal'].map((name) => (
+                {['Blockchange Capital', 'Outlier Ventures', 'Tawasal Al Khaleej'].map((name) => (
                   <span key={name} className="text-[#fefefe]/85 text-base sm:text-lg font-semibold">
                     {name}
                   </span>
@@ -162,10 +158,6 @@ THE RAISE: <span className="text-orange-400">FROM TESTNET TO 50M AGENTS</span>
                   <p className="text-[#fefefe]/65 text-sm sm:text-base leading-relaxed mt-3"
                     style={{ fontFamily: "'Geist Mono', monospace" }}>
                     {u.desc}
-                  </p>
-                  <p className="text-[#fefefe]/85 text-sm sm:text-base font-bold mt-2"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}>
-                    Goal: {u.goal}
                   </p>
                 </motion.div>
               ))}

@@ -22,7 +22,7 @@ export function AgentsSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            THE NEW PARADIGM: <span className="text-orange-400">VALIDATION AT THE EDGE</span>
+            THE NEW BLOCKCHAIN PARADIGM: <span className="text-orange-400">VALIDATION AT THE EDGE</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -30,12 +30,23 @@ export function AgentsSlide() {
         </div>
 
         {/* Intro paragraph */}
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="shrink-0 mt-4 text-[#fefefe]/90 text-lg sm:text-xl lg:text-2xl leading-relaxed max-w-5xl"
+          className="shrink-0 mt-4 text-[#fefefe]/90 text-base sm:text-lg lg:text-xl leading-relaxed max-w-5xl space-y-3"
           style={{ fontFamily: "'Geist Mono', monospace" }}>
-          Unicity eliminates <span className="text-orange-400">globally</span> shared state entirely — agents execute off-chain, verification is done by interested parties only, independent of other transactions.          Like physical cash, tokens are <span className="text-orange-400">locally verifiable</span> at the edge — there is no chain dependency.
-        </motion.p>
+          <p>
+            Unicity eliminates <span className="text-orange-400">the shared ledger</span> entirely.
+          </p>
+          <p>
+            Like physical cash, tokens move p2p and are <span className="text-orange-400">locally verifiable</span> at the edge.
+          </p>
+          <p>
+            <span className="text-orange-400">Verifiable execution</span> agents are the equivalent of smart contracts.
+          </p>
+          <p>
+            Our core invention is the <span className="text-orange-400">ZK Uniqueness Oracle</span> that proves the uniqueness of state.
+          </p>
+        </motion.div>
 
         {/* Diagram */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}

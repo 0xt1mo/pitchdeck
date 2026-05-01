@@ -78,7 +78,7 @@ export function ProblemSlide() {
           className="text-[#fefefe] text-lg sm:text-xl lg:text-2xl font-bold shrink-0"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          No legacy blockchain meets <span className="text-orange-400">all six</span>.
+          Legacy blockchains <span className="text-orange-400">weren't designed</span> to meet these requirements.
         </motion.p>
 
       </div>

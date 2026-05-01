@@ -48,7 +48,7 @@ export function AstridUseCasesSlide() {
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
 
-      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
+      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-10 sm:py-14 lg:py-16 justify-center gap-6">
 
         {/* Header */}
         <div className="shrink-0">
@@ -76,7 +76,7 @@ export function AstridUseCasesSlide() {
         </div>
 
         {/* Use case grid */}
-        <div className="flex-1 grid grid-cols-3 grid-rows-2 gap-3 sm:gap-4 mt-5 min-h-0">
+        <div className="grid grid-cols-3 grid-rows-2 gap-3 sm:gap-4 shrink-0">
           {useCases.map((uc, i) => (
             <motion.div key={uc.title}
               initial={{ opacity: 0, y: 15 }}

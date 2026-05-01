@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 
 const nowItems: { text: string; sub?: string }[] = [
   { text: 'Initial distribution secured through sovereign AI lab integration.', sub: 'Every agent on their platform gets native access to security, identity, and settlement.' },
-  { text: 'Agentic intent-based trading marketplace goes live May 2026.', sub: 'Permissionless, private, and fast enough for agent-speed settlement.' },
   { text: '$20M enterprise pipeline:', sub: 'Governments, Financial Institutions, Telecom, AI Labs.' },
   { text: 'Mainnet launching June 2026.' },
   { text: 'TGE is adoption-triggered at 1M daily active agents — not calendar-driven.' },

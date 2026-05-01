@@ -1,15 +1,36 @@
 import { motion } from 'framer-motion';
-import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
+
+const founders = [
+  {
+    name: 'Mike Gault',
+    role: 'CEO',
+    photo: '/team/mike.jpg',
+    linkedin: 'https://www.linkedin.com/in/mikegault1/',
+    lines: [
+      'PhD Electrical Engineering',
+      'Built & exited Guardtime (ADX:IHC)',
+      'Ex-MD, Barclays Capital',
+    ],
+  },
+  {
+    name: 'Tony Kenyon',
+    role: 'CPTO',
+    photo: '/team/tony.png',
+    linkedin: 'https://www.linkedin.com/in/tonykenyon/',
+    lines: [
+      'PhD Machine Learning',
+      '25 years shipping enterprise AI & infra',
+      'Former Vitruvian (applied ML, security)',
+      'Principal Architect: BT, Nokia, A10',
+    ],
+  },
+];
 
 const leaders = [
-  { name: 'Mike Gault', role: 'CEO', lines: ['PhD EE', 'Founder Guardtime (ADX:IHC)', 'MD Barclays Capital'], photo: '/team/mike.jpg', linkedin: 'https://www.linkedin.com/in/mikegault1/' },
-  { name: 'Vladimir Rogojin', role: 'CTO', lines: ['PhD CS', 'Somnium Metaverse, Guardtime'], photo: '/team/vladimir.png', linkedin: 'https://www.linkedin.com/in/vladimir-rogojin-369b7151/' },
-  { name: 'Rajeev Nair', role: 'Commercial', lines: ['CCO Etisalat'], photo: '/team/Nitish2.jpeg', linkedin: '' },
-  { name: 'Tony Kenyon', role: 'Product', lines: ['PhD Machine Learning', 'Vitruvian, BT, Nokia, A10'], photo: '/team/Tony.jpeg', linkedin: 'https://www.linkedin.com/in/tonykenyon/' },
-  { name: 'Joshua J. Bouw', role: 'AI OS', lines: ['NEAR, Asimov, Blackcoin', 'Godfather Proof of Stake'], photo: '/team/joshua.jpeg', linkedin: 'https://www.linkedin.com/in/joshuajbouw/' },
-  { name: 'Matt Law', role: 'Growth', lines: ['Outlier Ventures, Boson, Fetch.ai'], photo: '/team/matt.jpg', linkedin: 'https://www.linkedin.com/in/mattlaw/' },
-  { name: 'Pavel Grigorenko', role: 'Engineering', lines: ['PhD CS', 'Microsoft, Guardtime'], photo: '/team/pavel.png', linkedin: 'https://www.linkedin.com/in/pavelgrigorenko/' },
-  { name: 'Jamie Steiner', role: 'BD', lines: ['JP Morgan, NEOM'], photo: '/team/jamie.jpg', linkedin: 'https://www.linkedin.com/in/jvsteiner/' },
+  { name: 'Vladimir Rogojin', role: 'Architect', bg: 'PhD CS · Somnium Metaverse, Guardtime', photo: '/team/vladimir.png', linkedin: 'https://www.linkedin.com/in/vladimir-rogojin-369b7151/' },
+  { name: 'Joshua J. Bouw', role: 'AI OS', bg: 'NEAR, Asimov, Blackcoin · Godfather Proof of Stake', photo: '/team/joshua.jpeg', linkedin: 'https://www.linkedin.com/in/joshuajbouw/' },
+  { name: 'Matt Law', role: 'Growth', bg: 'Outlier Ventures, Boson, Fetch.ai', photo: '/team/matt.jpg', linkedin: 'https://www.linkedin.com/in/mattlaw/' },
+  { name: 'Pavel Grigorenko', role: 'Engineering', bg: 'PhD CS · Microsoft, Guardtime', photo: '/team/pavel.png', linkedin: 'https://www.linkedin.com/in/pavelgrigorenko/' },
 ];
 
 const cryptographers = [
@@ -37,38 +58,55 @@ const advisors = [
   { name: 'Sylvain LaMarche', company: 'Movidone', linkedin: 'https://www.linkedin.com/in/sylvain-mathieu-lamarche-0b47711a/' },
 ];
 
-const seedBackers = [
-  { name: 'Blockchange Capital', linkedin: '' },
-  { name: 'Outlier Ventures', linkedin: '' },
-  { name: 'Tawasal Super App', linkedin: '' },
-];
-
-const LinkedInBadge = ({ href }: { href: string }) => (
-  <a href={href} target="_blank" rel="noopener noreferrer"
-    className="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full flex items-center justify-center cursor-pointer"
-    style={{ background: 'rgba(249,115,22,0.8)' }}>
+const LinkedInBadge = ({ href, size = 5 }: { href: string; size?: number }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`absolute -bottom-0.5 -right-0.5 w-${size} h-${size} rounded-full flex items-center justify-center cursor-pointer`}
+    style={{ background: 'rgba(249,115,22,0.85)' }}
+  >
     <svg viewBox="0 0 24 24" fill="white" className="w-3 h-3">
       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
     </svg>
   </a>
 );
 
-const NameList = ({ label, items }: { label: string; items: { name: string; linkedin: string; company?: string }[] }) => (
-  <div className="flex items-center gap-4">
-    <p className="text-orange-400 text-[10px] tracking-[0.3em] uppercase shrink-0 w-24"
-      style={{ fontFamily: "'Geist Mono', monospace" }}>{label}</p>
+const NameList = ({
+  label,
+  items,
+}: {
+  label: string;
+  items: { name: string; linkedin: string; company?: string }[];
+}) => (
+  <div className="flex items-start gap-4">
+    <p
+      className="text-orange-400 text-xs tracking-[0.3em] uppercase shrink-0 w-32 pt-1"
+      style={{ fontFamily: "'Geist Mono', monospace" }}
+    >
+      {label}
+    </p>
     <div className="flex flex-wrap items-center gap-x-1">
       {items.map((c, i) => (
         <span key={c.name}>
           {c.linkedin ? (
-            <a href={c.linkedin} target="_blank" rel="noopener noreferrer"
-              className="text-[#fefefe]/70 hover:text-orange-400 text-sm transition-colors cursor-pointer">
-              {c.name}{('company' in c && c.company) ? <span className="text-[#fefefe]/30"> ({c.company})</span> : ''}
+            <a
+              href={c.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#fefefe]/85 hover:text-orange-400 text-base transition-colors cursor-pointer"
+            >
+              {c.name}
+              {'company' in c && c.company ? (
+                <span className="text-[#fefefe]/45"> ({c.company})</span>
+              ) : (
+                ''
+              )}
             </a>
           ) : (
-            <span className="text-[#fefefe]/70 text-sm">{c.name}</span>
+            <span className="text-[#fefefe]/85 text-base">{c.name}</span>
           )}
-          {i < items.length - 1 && <span className="text-orange-500/30 mx-1">·</span>}
+          {i < items.length - 1 && <span className="text-orange-500/40 mx-1">·</span>}
         </span>
       ))}
     </div>
@@ -78,76 +116,126 @@ const NameList = ({ label, items }: { label: string; items: { name: string; link
 export function TeamSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="fixed inset-0 w-full h-full z-0">
-        <video className="w-full h-full object-cover opacity-40" autoPlay muted loop playsInline src={splashVideoUrl} />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#060606]/40 via-[#060606]/20 to-[#060606]/40" />
-      </div>
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16 justify-center gap-7">
 
-      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16 justify-center gap-8">
-
-        {/* Header — same as ProblemSlide */}
+        {/* Header */}
         <div className="shrink-0">
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
             The People
           </motion.p>
-          <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-2"
-            style={{ fontFamily: "'Anton', sans-serif" }}>
-            A WORLD CLASS AI, CRYPTO AND <span className="text-orange-400">ENTERPRISE TEAM</span>
+            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight mt-2"
+            style={{ fontFamily: "'Anton', sans-serif" }}
+          >
+            FOUNDERS WHO'VE <span className="text-orange-400">DONE THIS BEFORE</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="mt-4 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl max-w-5xl leading-relaxed"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            15 years building infra for governments, defence, and critical systems.<br />
-            PhDs across machine learning, cryptography, and computer science.<br />
-            Core team developing blockchain protocols <span className="text-orange-400">since before Bitcoin</span>.<br />
-            Founded and exited Guardtime: DARPA, NATO, Lockheed, Ericsson, Roche, Maersk.
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="mt-3 text-[#fefefe]/85 text-base sm:text-lg max-w-5xl leading-relaxed"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
+            15 years shipping cryptographic infrastructure to <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed</span>.<br />5 PhD cryptographers in the core team.
           </motion.p>
         </div>
 
-        {/* Leadership Grid */}
-        <div className="flex flex-col shrink-0">
-          <div className="grid grid-cols-4 gap-x-6 gap-y-5">
-            {leaders.map((leader, i) => (
-              <motion.div
-                key={leader.name}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.3 + i * 0.06 }}
-                className="flex items-start gap-3"
-              >
-                <div className="relative shrink-0">
-                  <div className="w-14 h-14 rounded-full overflow-hidden ring-2 ring-orange-500/20">
-                    <img src={leader.photo} alt={leader.name} className="w-full h-full object-cover" />
-                  </div>
-                  {leader.linkedin && <LinkedInBadge href={leader.linkedin} />}
+        {/* Founders */}
+        <div className="grid grid-cols-2 gap-8 lg:gap-14 shrink-0">
+          {founders.map((f, i) => (
+            <motion.div
+              key={f.name}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 + i * 0.12 }}
+              className="flex items-start gap-5"
+            >
+              <div className="relative shrink-0">
+                <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden ring-2 ring-orange-500/30">
+                  <img src={f.photo} alt={f.name} className="w-full h-full object-cover" />
                 </div>
-                <div className="min-w-0">
-                  <p className="text-[#fefefe] text-sm font-bold leading-tight">{leader.name}</p>
-                  <p className="text-orange-400 text-[11px] font-medium tracking-wider uppercase mt-0.5"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}>{leader.role}</p>
-                  <div className="mt-1.5">
-                    {leader.lines.map((line, j) => (
-                      <p key={j} className="text-[#fefefe]/50 text-[11px] leading-snug"
-                        style={{ fontFamily: "'Geist Mono', monospace" }}>{line}</p>
-                    ))}
-                  </div>
+                {f.linkedin && <LinkedInBadge href={f.linkedin} size={6} />}
+              </div>
+              <div className="min-w-0">
+                <p className="text-[#fefefe] text-xl lg:text-2xl font-bold leading-tight">
+                  {f.name}
+                </p>
+                <p
+                  className="text-orange-400 text-xs lg:text-sm font-bold tracking-[0.2em] uppercase mt-1"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}
+                >
+                  {f.role}
+                </p>
+                <div className="mt-2 space-y-1">
+                  {f.lines.map((line, j) => (
+                    <p
+                      key={j}
+                      className="text-[#fefefe]/75 text-xs lg:text-sm leading-snug flex gap-2"
+                      style={{ fontFamily: "'Geist Mono', monospace" }}
+                    >
+                      <span className="text-orange-400/70 shrink-0">→</span>
+                      <span>{line}</span>
+                    </p>
+                  ))}
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Secondary leadership */}
+        <div className="grid grid-cols-4 gap-x-6 gap-y-3 shrink-0">
+          {leaders.map((leader, i) => (
+            <motion.div
+              key={leader.name}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.7 + i * 0.06 }}
+              className="flex items-start gap-3"
+            >
+              <div className="relative shrink-0">
+                <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-orange-500/20">
+                  <img src={leader.photo} alt={leader.name} className="w-full h-full object-cover" />
+                </div>
+                {leader.linkedin && <LinkedInBadge href={leader.linkedin} />}
+              </div>
+              <div className="min-w-0">
+                <p className="text-[#fefefe] text-base lg:text-lg font-bold leading-tight">{leader.name}</p>
+                <p
+                  className="text-orange-400 text-xs font-bold tracking-[0.2em] uppercase mt-0.5"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}
+                >
+                  {leader.role}
+                </p>
+                <p
+                  className="text-[#fefefe]/70 text-sm leading-snug mt-1"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}
+                >
+                  {leader.bg}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* Bottom: Science, Engineering, Advisors */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
-          className="shrink-0 space-y-2 border-t border-white/[0.06] pt-4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.0 }}
+          className="shrink-0 space-y-2 border-t border-white/[0.06] pt-4"
+        >
           <NameList label="Science" items={cryptographers} />
           <NameList label="Engineering" items={developers} />
           <NameList label="Advisors" items={advisors} />
-          <NameList label="Seed Round" items={seedBackers} />
         </motion.div>
 
       </div>

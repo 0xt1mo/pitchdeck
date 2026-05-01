@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 export function SIFDashboardSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-8 sm:py-10 lg:py-12">
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16 justify-center gap-6">
 
         {/* Header */}
         <div className="shrink-0">
@@ -30,7 +30,7 @@ export function SIFDashboardSlide() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="flex-1 mt-4 rounded-xl overflow-hidden border border-white/[0.08] min-h-0"
+          className="rounded-xl overflow-hidden border border-white/[0.08] shrink-0 h-[480px] lg:h-[560px]"
         >
           <img
             src="/sif-dashboard.png"

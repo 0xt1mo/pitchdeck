@@ -59,8 +59,8 @@ function StackDiagram() {
       <rect x={px} y={y1} width={bw} height={bh + 20} rx={12}
         fill="rgba(249,115,22,0.08)" stroke="rgba(249,115,22,0.45)" strokeWidth={2} />
       <text x={px + 16} y={y1 + 24} fill="#f97316" fontSize="15" fontWeight="bold"
-        fontFamily={fontTitle} letterSpacing="0.08em">ASTRID OS RUNTIME</text>
-      <text x={px + 180} y={y1 + 24} fill="rgba(254,254,254,0.35)" fontSize="9"
+        fontFamily={fontTitle} letterSpacing="0.08em">AOS9 KERNEL</text>
+      <text x={px + 130} y={y1 + 24} fill="rgba(254,254,254,0.35)" fontSize="9"
         fontFamily={font}>User-space microkernel — enforcement layer</text>
       {/* Tags */}
       {['Security Interceptor', 'WASM Sandbox', 'Capsule Engine'].map((t, i) => {
@@ -116,8 +116,8 @@ function StackDiagram() {
 }
 
 const keyPoints = [
-  { title: 'User-Space Microkernel', text: 'Astrid models itself as an OS — with syscalls, airlocks, and user-space isolation. The kernel (astridd) and system SDK (astrid-sys) are the only core components.' },
-  { title: 'WASM Capsule Sandbox', text: 'All plugins run as WASM capsules inside a sandboxed runtime. OpenClaw plugins are compiled into capsules via astrid-openclaw, with host calls thunked into astrid::sys.' },
+  { title: 'User-Space Microkernel', text: 'AOS9 models itself as an OS — with syscalls, airlocks, and user-space isolation. The kernel (aos9d) and system SDK (aos9-sys) are the only core components.' },
+  { title: 'WASM Capsule Sandbox', text: 'All plugins run as WASM capsules inside a sandboxed runtime. OpenClaw plugins are compiled into capsules via aos9-openclaw, with host calls thunked into aos9::sys.' },
   { title: 'Enforcement Layer', text: 'Security interception, budget enforcement, and audit logging happen at the runtime level — below the agent, not beside it. Tools cannot bypass the kernel.' },
   { title: 'Everything Is User-Space', text: 'CLIs, OpenClaw, frontends, and even LLM providers are external user-space components communicating over IPC. The kernel stays minimal and ignorant of legacy ABIs.' },
 ];
@@ -130,7 +130,7 @@ export function AstridSlide() {
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
 
-      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
+      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-10 sm:py-14 lg:py-16 justify-center gap-6">
 
         {/* Header */}
         <div className="shrink-0">
@@ -143,8 +143,8 @@ export function AstridSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            <span className="text-orange-400">ASTRID OS:</span>{' '}
-            THE AGENT RUNTIME
+            <span className="text-orange-400">AOS9:</span>{' '}
+            THE KERNEL
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -153,13 +153,13 @@ export function AstridSlide() {
             transition={{ delay: 0.3 }}
             className="mt-3 text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed max-w-3xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Astrid is the secure enforcement OS that tools like Claude Code and OpenClaw run <span className="text-orange-400">on top of</span>, not alongside.
+            AOS9 is the secure enforcement kernel that tools like Claude Code and OpenClaw run <span className="text-orange-400">on top of</span>, not alongside.
             A user-space microkernel with syscalls, airlocks, and sandboxed isolation — the kernel stays minimal while everything else lives in user-space.
           </motion.p>
         </div>
 
         {/* Two-column: stack diagram left, key points right */}
-        <div className="flex-1 grid grid-cols-[1fr_1.1fr] gap-4 sm:gap-8 mt-5 min-h-0 items-center">
+        <div className="grid grid-cols-[1fr_1.1fr] gap-4 sm:gap-8 shrink-0 items-center">
 
           {/* Left — SVG Layer stack */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}

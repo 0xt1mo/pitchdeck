@@ -24,8 +24,8 @@ export function RetrofitSlide() {
           className="text-[#fefefe] text-[42px] sm:text-[60px] lg:text-[80px] leading-[1.0] tracking-tight max-w-6xl shrink-0"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          You can't retrofit an EVM into{' '}
-          <span className="text-orange-400">autonomous AI.</span>
+          YOU CAN'T RETROFIT AN EVM INTO{' '}
+          <span className="text-orange-400">AUTONOMOUS AI.</span>
         </motion.h1>
 
         {/* Body */}
