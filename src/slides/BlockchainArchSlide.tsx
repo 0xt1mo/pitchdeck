@@ -225,6 +225,16 @@ export function BlockchainArchSlide() {
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             A purpose-built stack where <span className="text-orange-400">consensus stays minimal</span> and agents execute off-chain — connected to the ledger through a thin Token Operations SDK.
           </motion.p>
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            transition={{ delay: 0.45 }}
+            className="mt-3 inline-block text-orange-400 text-sm sm:text-base lg:text-lg font-bold tracking-wide px-4 py-2 rounded-md"
+            style={{
+              fontFamily: "'Geist Mono', monospace",
+              border: '1px solid rgba(249,115,22,0.5)',
+              background: 'rgba(249,115,22,0.08)',
+            }}>
+            We use Proof of Work to replicate the trust model of Bitcoin: <span className="text-[#fefefe]">Trust Noone.</span>
+          </motion.p>
         </div>
 
         {/* Two-column: diagram left, descriptions right */}

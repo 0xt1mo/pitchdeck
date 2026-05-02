@@ -27,7 +27,7 @@ const founders = [
 ];
 
 const leaders = [
-  { name: 'Vladimir Rogojin', role: 'Architect', bg: 'PhD CS · Somnium Metaverse, Guardtime', photo: '/team/vladimir.png', linkedin: 'https://www.linkedin.com/in/vladimir-rogojin-369b7151/' },
+  { name: 'Vladimir Rogojin', role: 'Architecture', bg: 'PhD CS · Somnium Metaverse, Guardtime', photo: '/team/vladimir.png', linkedin: 'https://www.linkedin.com/in/vladimir-rogojin-369b7151/' },
   { name: 'Joshua J. Bouw', role: 'AI OS', bg: 'NEAR, Asimov, Blackcoin · Godfather Proof of Stake', photo: '/team/joshua.jpeg', linkedin: 'https://www.linkedin.com/in/joshuajbouw/' },
   { name: 'Matt Law', role: 'Growth', bg: 'Outlier Ventures, Boson, Fetch.ai', photo: '/team/matt.jpg', linkedin: 'https://www.linkedin.com/in/mattlaw/' },
   { name: 'Pavel Grigorenko', role: 'Engineering', bg: 'PhD CS · Microsoft, Guardtime', photo: '/team/pavel.png', linkedin: 'https://www.linkedin.com/in/pavelgrigorenko/' },

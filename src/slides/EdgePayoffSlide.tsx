@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const cards = [
   {
     eyebrow: 'Kernel-Level Verification',
-    title: 'AGENT STATE ITSELF BECOMES A TOKEN.',
+    title: 'AGENT STATE IS TOKENIZED.',
     text: 'Every action - model output, tool call, decision, intermediate reasoning is verified cryptographically inside the OS kernel.',
   },
   {

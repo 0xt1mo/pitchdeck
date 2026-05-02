@@ -89,7 +89,7 @@ export function TokenSlide() {
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
             className="mt-3 text-[#fefefe]/75 text-sm sm:text-base lg:text-lg max-w-4xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Utility primitive, not a speculative asset. Agents pay a subscription that can be settled in stables or native token — paying in native token unlocks more capacity and value. Subscription revenue is redistributed to network participants.
+            Agents pay a subscription in native token giving them unlimited transactions. Subscription revenue is redistributed to network participants.
           </motion.p>
         </div>
 

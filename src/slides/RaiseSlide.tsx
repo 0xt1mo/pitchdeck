@@ -15,7 +15,7 @@ function CountUp({ target, delay = 0 }: { target: number; delay?: number }) {
 const unlocks = [
   {
     title: 'DEVELOPER ADOPTION',
-    desc: 'Scale developer marketing, developer relations, community. Universal integration into harnesses/frameworks.',
+    desc: 'Build developer marketing, developer relations. Integration into harnesses/frameworks.',
   },
   {
     title: 'SCALING ENTERPRISE',

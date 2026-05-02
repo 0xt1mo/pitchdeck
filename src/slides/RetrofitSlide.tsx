@@ -46,8 +46,8 @@ export function RetrofitSlide() {
             className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            And even with a perfect chain, enterprise and government need more — secure runtime, policy enforcement, verifiable execution, cryptographic identity, multi-protocol networking.{' '}
-            <span className="text-[#fefefe] font-bold">A blockchain delivers none of these.</span>
+            And even with a perfect chain, enterprise and government need more — secure runtime, policy enforcement, on-premise verifiable execution, cryptographic identity, multi-protocol networking.{' '}
+            <span className="text-[#fefefe] font-bold">Current blockchains deliver none of these.</span>
           </p>
         </motion.div>
 

@@ -52,7 +52,7 @@ function StackDiagram() {
       <polygon points={`${W / 2 - 4},${y1 - 6} ${W / 2 + 4},${y1 - 6} ${W / 2},${y1 - 1}`}
         fill="rgba(254,254,254,0.15)" />
 
-      {/* ── Astrid Runtime (highlighted) ── */}
+      {/* ── AOS9 Kernel (highlighted) ── */}
       <rect x={px - 2} y={y1 - 2} width={bw + 4} height={bh + 24} rx={14}
         fill="rgba(249,115,22,0.04)" stroke="rgba(249,115,22,0.12)" strokeWidth={1}
         strokeDasharray="0" filter="url(#astridGlow)" />

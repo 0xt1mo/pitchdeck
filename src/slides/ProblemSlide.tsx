@@ -4,7 +4,7 @@ const pillars = [
   { title: 'IDENTITY', punch: 'Cryptographic identity, not API keys.' },
   { title: 'DELEGATION', punch: 'Verifiable authority. Scoped and revocable.' },
   { title: 'VERIFIABLE EXECUTION', punch: 'Prove what the agent actually did.' },
-  { title: 'POLICY ENFORCEMENT', punch: 'Governance at runtime, not in code review.' },
+  { title: 'POLICY ENFORCEMENT', punch: 'Real-time guardrails on every action.' },
   { title: 'SETTLEMENT', punch: 'Machine-speed transactions at machine economics.' },
   { title: 'INTEROPERABILITY', punch: 'MCP, A2A, AP2, x402 — agents already span them all.' },
 ];
