@@ -59,70 +59,42 @@ export function AgentSphereDashboardSlide() {
             className="mt-2 text-[#fefefe]/85 text-xs sm:text-sm max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Identity, delegation, policy, settlement and audit — unified into a single operator surface.
+            Identity, delegation, policy, settlement and audit — unified into a single operator surface. Not rip and replace. A control plane that sits under any agent deployment. Give every employee an OpenClaw experience with security and safety.
           </motion.p>
         </div>
 
-        {/* Hero overview + pillar 2x2 grid */}
-        <div className="grid grid-cols-[1.5fr_1fr] gap-3 shrink-0 h-[460px] lg:h-[500px]">
-          {/* Overview hero */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="rounded-xl overflow-hidden border border-orange-500/40 relative h-full"
-            style={{ background: '#0a0a0f' }}
-          >
-            <img
-              src="/dashboards/overview.png"
-              alt="Agent Sphere overview"
-              className="w-full h-full object-contain object-top"
-            />
-            <div
-              className="absolute top-2 left-3 text-orange-400 text-[10px] sm:text-xs tracking-[0.25em] uppercase font-bold px-2 py-1 rounded"
+        {/* Pillar dashboards — 4-column strip */}
+        <div className="grid grid-cols-4 gap-3 lg:gap-4 shrink-0 h-[460px] lg:h-[500px]">
+          {pillars.map((p, i) => (
+            <motion.div
+              key={p.label}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 + i * 0.08, duration: 0.5 }}
+              className="rounded-lg overflow-hidden border relative"
               style={{
-                fontFamily: "'Geist Mono', monospace",
-                background: 'rgba(6,6,6,0.78)',
-                border: '1px solid rgba(249,115,22,0.55)',
+                borderColor: `${p.accent}66`,
+                background: '#0a0a0f',
               }}
             >
-              Overview
-            </div>
-          </motion.div>
-
-          {/* Pillar 2x2 grid */}
-          <div className="grid grid-cols-2 grid-rows-2 gap-3 h-full">
-            {pillars.map((p, i) => (
-              <motion.div
-                key={p.label}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 + i * 0.08, duration: 0.5 }}
-                className="rounded-lg overflow-hidden border relative"
+              <img
+                src={p.img}
+                alt={`${p.label} dashboard`}
+                className="w-full h-full object-contain object-top"
+              />
+              <div
+                className="absolute top-2 left-3 text-[10px] sm:text-xs tracking-[0.25em] uppercase font-bold px-2 py-1 rounded"
                 style={{
-                  borderColor: `${p.accent}66`,
-                  background: '#0a0a0f',
+                  fontFamily: "'Geist Mono', monospace",
+                  color: p.accent,
+                  background: 'rgba(6,6,6,0.78)',
+                  border: `1px solid ${p.accent}80`,
                 }}
               >
-                <img
-                  src={p.img}
-                  alt={`${p.label} dashboard`}
-                  className="w-full h-full object-contain object-top"
-                />
-                <div
-                  className="absolute top-1.5 left-2 text-[9px] sm:text-[10px] tracking-[0.25em] uppercase font-bold px-1.5 py-0.5 rounded"
-                  style={{
-                    fontFamily: "'Geist Mono', monospace",
-                    color: p.accent,
-                    background: 'rgba(6,6,6,0.78)',
-                    border: `1px solid ${p.accent}80`,
-                  }}
-                >
-                  {p.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                {p.label}
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* Pillar captions */}

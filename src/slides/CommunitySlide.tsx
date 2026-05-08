@@ -160,14 +160,14 @@ function DifficultyChart() {
 
 export function CommunitySlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
       {/* Video background */}
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <video className="w-full h-full object-cover opacity-40" autoPlay muted loop playsInline src={splashVideoUrl} />
         <div className="absolute inset-0 bg-[#060606]/20" />
       </div>
 
-      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-8 sm:py-10">
+      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-8 sm:py-10 justify-center gap-6">
 
         {/* Header */}
         <div className="shrink-0">
@@ -189,7 +189,7 @@ export function CommunitySlide() {
         </div>
 
         {/* Main content */}
-        <div className="flex-1 grid grid-cols-2 gap-4 sm:gap-6 mt-6 sm:mt-10 items-center min-h-0">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 shrink-0 items-center">
 
           {/* Left: stats */}
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}

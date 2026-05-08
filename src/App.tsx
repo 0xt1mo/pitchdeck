@@ -13,54 +13,60 @@ import { ProblemSlide } from './slides/ProblemSlide';
 import { AutonomyStackSlide } from './slides/AutonomyStackSlide';
 import { AgentSphereDashboardSlide } from './slides/AgentSphereDashboardSlide';
 import { ProtocolSlide } from './slides/ProtocolSlide';
+import { GoToMarketSlide } from './slides/GoToMarketSlide';
 import { ProjectionsSlide } from './slides/ProjectionsSlide';
 import { TokenSlide } from './slides/TokenSlide';
-import { RoadmapSlide } from './slides/RoadmapSlide';
+import { ThePathSlide } from './slides/ThePathSlide';
 import { TeamSlide } from './slides/TeamSlide';
 import { RaiseSlide } from './slides/RaiseSlide';
 import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
 import { AppendixSlide } from './slides/AppendixSlide';
-import { SecurityNetworkSlide } from './slides/SecurityNetworkSlide';
-import { KernelDividerSlide, SecurityDividerSlide, BlockchainDividerSlide } from './slides/SectionDividerSlide';
+import { KernelDividerSlide, BlockchainDividerSlide, ProductDividerSlide } from './slides/SectionDividerSlide';
 import { AstridSlide } from './slides/AstridSlide';
 import { AstridComparisonSlide } from './slides/AstridComparisonSlide';
 import { AstridUseCasesSlide } from './slides/AstridUseCasesSlide';
 import { BlockchainArchSlide } from './slides/BlockchainArchSlide';
+import { ZKOracleSlide } from './slides/ZKOracleSlide';
+import { PermissionlessSlide } from './slides/PermissionlessSlide';
+import { SettlementSlide } from './slides/SettlementSlide';
+import { AgentsSmartContractsSlide } from './slides/AgentsSmartContractsSlide';
+import { ChainAgnosticSlide } from './slides/ChainAgnosticSlide';
+import { DemoSlide } from './slides/DemoSlide';
 import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
-import { SIFDashboardSlide } from './slides/SIFDashboardSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  IntroSlide,              // 1. Title — Autonomous AI needs a blockchain built for machines
-  ProblemSlide,            // 2. The problem — what autonomy actually requires
-  AgentsSlide,             // 3. The Unicity L1 — validation at the edge
-  EdgePayoffSlide,         // 4. The payoff — what validation at the edge unlocks
-  AutonomyStackSlide,      // 5. The solution — the Unicity autonomy stack
-  AgentSphereDashboardSlide, // 6. Agent Sphere control plane — one dashboard, four pillars
-  CompetitionSlide,        // 7. Why us — competitive landscape
-  ProtocolSlide,           // 8. Technical proof — scaling x402/MPP
-  MarketSlide,             // 9. Market — $400B+ autonomous AI market
-  ProjectionsSlide,        // 8. Protocol revenue — $600M by 2029
-  TokenSlide,              // 9. Tokenomics — token model & allocation
-  RoadmapSlide,            // 10. Roadmap & traction — mainnet June '26, $20M pipeline
-  TeamSlide,               // 11. Team — 15 years building infra for governments
-  RaiseSlide,              // 13. The raise — $5M Seed Extension
-  ResourcesSlide,          // 14. Essential resources
-  ThankYouChatSlide,       // 15. Thank you
-  AppendixSlide,
-  BlockchainDividerSlide,
-  PromiseSlide,
-  SharedLedgerSlide,
-  RetrofitSlide,
-  BlockchainArchSlide,
-  KernelDividerSlide,
-  AstridSlide,
-  AstridComparisonSlide,
-  AstridUseCasesSlide,
-  SecurityDividerSlide,
-  InterceptFabricSlide,
-  SIFDashboardSlide,
-  SecurityNetworkSlide,
+  IntroSlide,              // 1. Cover
+  PromiseSlide,            // 2. Satoshi: Peer-to-Peer Electronic Cash
+  SharedLedgerSlide,       // 3. Every blockchain since Bitcoin is the same 17-year-old design
+  ProblemSlide,            // 4. What Autonomy Demands
+  TeamSlide,               // 5. Founders — we've assembled the team to build it
+  AgentsSlide,             // 6. Validation at the Edge
+  EdgePayoffSlide,         // 7. What Validation Unlocks
+  AutonomyStackSlide,      // 8. Operating System for AI
+  ProtocolSlide,           // 9. Scaling x402/MPP — The Message Is the Settlement
+  MarketSlide,             // 10. Market Opportunity — Autonomous AI is Exponential
+  // ProjectionsSlide,     // The World If We Win — hidden
+  CompetitionSlide,        // 11. Why Us — Competitive Landscape
+  GoToMarketSlide,         // 12. Beachhead: The UAE
+  ThePathSlide,            // 13. Current Status and How We Win
+  TokenSlide,              // 14. Tokenomics
+  RaiseSlide,              // 15. Pre-Series A Raise
+  ResourcesSlide,          // 17. Resources
+  ThankYouChatSlide,       // 18. Thank You
+  // ── 19+ Appendix — technical deep-dives ──
+  BlockchainArchSlide,     // Protocol Stack
+  ZKOracleSlide,           // ZK Oracle
+  PermissionlessSlide,     // Hierarchical Scaling
+  SettlementSlide,         // Settlement
+  ChainAgnosticSlide,      // Chain-Agnostic Operations
+  AgentsSmartContractsSlide, // Agents-as-Smart-Contracts
+  AstridSlide,             // AOS9 kernel
+  AstridComparisonSlide,   // Why AOS9
+  AstridUseCasesSlide,     // Swap Capsule
+  InterceptFabricSlide,    // Security Fabric
+  AgentSphereDashboardSlide, // Enterprise console dashboards
+  RetrofitSlide,           // "Wrong Substrate" — every patch in crypto is a hack
 ];
 
 export default function App() {

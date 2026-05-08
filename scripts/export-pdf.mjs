@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer';
-import { PDFDocument } from 'pdf-lib';
+import { PDFDocument, PDFName, PDFString } from 'pdf-lib';
 import fs from 'fs';
 import path from 'path';
 
@@ -40,6 +40,7 @@ async function exportPDF() {
   const slideCount = maxSlides - startSlide;
 
   const screenshots = [];
+  const links = []; // { pageIndex, href, x, y, w, h } in CSS pixels (top-left origin)
   const tmpDir = path.join(process.cwd(), '.tmp-slides');
   if (!fs.existsSync(tmpDir)) fs.mkdirSync(tmpDir);
 
@@ -85,6 +86,21 @@ async function exportPDF() {
 
     await new Promise(r => setTimeout(r, 200));
 
+    // Capture any external anchor positions on this slide for clickable PDF links
+    const anchors = await page.evaluate(() => {
+      return [...document.querySelectorAll('a[href^="http"]')]
+        .filter(a => a.offsetParent !== null)
+        .map(a => {
+          const r = a.getBoundingClientRect();
+          return { href: a.href, x: r.left, y: r.top, w: r.width, h: r.height };
+        })
+        .filter(a => a.w > 0 && a.h > 0);
+    });
+    const slidePageIndex = i - startSlide;
+    for (const a of anchors) {
+      links.push({ pageIndex: slidePageIndex, ...a });
+    }
+
     const screenshotPath = path.join(tmpDir, `slide-${String(i).padStart(3, '0')}.png`);
     await page.screenshot({ path: screenshotPath, type: 'png' });
     screenshots.push(screenshotPath);
@@ -107,6 +123,35 @@ async function exportPDF() {
       width: pageWidth,
       height: pageHeight,
     });
+  }
+
+  // Add clickable link annotations
+  if (links.length > 0) {
+    console.log(`🔗 Adding ${links.length} clickable link annotation(s)...`);
+    const refsByPage = new Map();
+    for (const link of links) {
+      const pdfPage = pdfDoc.getPage(link.pageIndex);
+      const { height } = pdfPage.getSize();
+      // PDF coords: origin bottom-left. CSS rect: origin top-left.
+      const x1 = link.x;
+      const x2 = link.x + link.w;
+      const y1 = height - (link.y + link.h);
+      const y2 = height - link.y;
+      const annotation = pdfDoc.context.obj({
+        Type: 'Annot',
+        Subtype: 'Link',
+        Rect: [x1, y1, x2, y2],
+        Border: [0, 0, 0],
+        A: { Type: 'Action', S: 'URI', URI: PDFString.of(link.href) },
+      });
+      const ref = pdfDoc.context.register(annotation);
+      if (!refsByPage.has(link.pageIndex)) refsByPage.set(link.pageIndex, []);
+      refsByPage.get(link.pageIndex).push(ref);
+    }
+    for (const [pageIndex, refs] of refsByPage) {
+      const pdfPage = pdfDoc.getPage(pageIndex);
+      pdfPage.node.set(PDFName.of('Annots'), pdfDoc.context.obj(refs));
+    }
   }
 
   const pdfBytes = await pdfDoc.save();

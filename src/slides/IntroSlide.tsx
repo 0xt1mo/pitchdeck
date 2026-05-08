@@ -55,7 +55,7 @@ export function IntroSlide() {
         >
           Billions of machine intelligences are coming.
           <br />
-          <span className="text-[#fefefe]/60">We've built the infrastructure to make them autonomous.</span>
+          <span className="text-[#fefefe]/60">The internet they need doesn't exist yet.</span>
         </motion.p>
 
       </div>

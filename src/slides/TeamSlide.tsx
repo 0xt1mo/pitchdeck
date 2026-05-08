@@ -31,6 +31,7 @@ const leaders = [
   { name: 'Joshua J. Bouw', role: 'AI OS', bg: 'NEAR, Asimov, Blackcoin · Godfather Proof of Stake', photo: '/team/joshua.jpeg', linkedin: 'https://www.linkedin.com/in/joshuajbouw/' },
   { name: 'Matt Law', role: 'Growth', bg: 'Outlier Ventures, Boson, Fetch.ai', photo: '/team/matt.jpg', linkedin: 'https://www.linkedin.com/in/mattlaw/' },
   { name: 'Pavel Grigorenko', role: 'Engineering', bg: 'PhD CS · Microsoft, Guardtime', photo: '/team/pavel.png', linkedin: 'https://www.linkedin.com/in/pavelgrigorenko/' },
+  { name: 'Jamie Steiner', role: 'Product', bg: 'JP Morgan', photo: '/team/jamie.jpg' },
 ];
 
 const cryptographers = [
@@ -192,7 +193,7 @@ export function TeamSlide() {
         </div>
 
         {/* Secondary leadership */}
-        <div className="grid grid-cols-4 gap-x-6 gap-y-3 shrink-0">
+        <div className="grid grid-cols-5 gap-x-4 gap-y-3 shrink-0">
           {leaders.map((leader, i) => (
             <motion.div
               key={leader.name}

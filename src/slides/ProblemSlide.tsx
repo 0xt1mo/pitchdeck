@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const pillars = [
   { title: 'IDENTITY', punch: 'Cryptographic identity, not API keys.' },
   { title: 'DELEGATION', punch: 'Verifiable authority. Scoped and revocable.' },
-  { title: 'VERIFIABLE EXECUTION', punch: 'Prove what the agent actually did.' },
+  { title: 'VERIFIABLE EXECUTION', punch: 'Cryptographic proof of every action, not vendor logs.' },
   { title: 'POLICY ENFORCEMENT', punch: 'Real-time guardrails on every action.' },
   { title: 'SETTLEMENT', punch: 'Machine-speed transactions at machine economics.' },
   { title: 'INTEROPERABILITY', punch: 'MCP, A2A, AP2, x402 — agents already span them all.' },
@@ -33,7 +33,7 @@ export function ProblemSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            WHAT AUTONOMY <span className="text-orange-400">ACTUALLY REQUIRES</span>
+            WHAT AUTONOMOUS AI <span className="text-orange-400">DEMANDS</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -42,7 +42,7 @@ export function ProblemSlide() {
             className="mt-4 text-[#fefefe]/85 text-lg sm:text-xl lg:text-2xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            No government or enterprise will deploy autonomous agents that spend money, execute contracts, or access sensitive data — unless every one of the following is in place:
+            Autonomy has six requirements that no tech stack can deliver on.
           </motion.p>
         </div>
 
@@ -74,11 +74,14 @@ export function ProblemSlide() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 + 6 * 0.08, duration: 0.6 }}
-          className="text-[#fefefe] text-lg sm:text-xl lg:text-2xl font-bold shrink-0"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
+          transition={{ delay: 0.4 + 6 * 0.08 + 0.2, duration: 0.6 }}
+          className="text-orange-400 text-[20px] sm:text-[26px] lg:text-[32px] leading-tight tracking-tight pt-3 shrink-0"
+          style={{
+            fontFamily: "'Anton', sans-serif",
+            borderTop: '1px solid rgba(249,115,22,0.25)',
+          }}
         >
-          Legacy blockchains <span className="text-orange-400">weren't designed</span> to meet these requirements.
+          WE'VE ASSEMBLED THE TEAM <span className="text-[#fefefe]">TO BUILD IT.</span>
         </motion.p>
 
       </div>

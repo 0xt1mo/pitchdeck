@@ -1,20 +1,34 @@
 import { motion } from 'framer-motion';
 
-const layers = [
+type StackLayer = {
+  product: string;
+  label: string;
+  detail: string;
+  tags: string;
+  variant: 'top' | 'mid' | 'bottom';
+};
+
+const stack: StackLayer[] = [
   {
-    label: 'Security & Governance',
-    products: ['AOS9 KERNEL'],
-    text: 'Secure runtime. Every message inspected. Policy enforced below the model.',
+    product: 'AGENT FRAMEWORKS',
+    label: 'THE APPLICATION LAYER',
+    detail: 'Bring your own agent — any framework, any model.',
+    tags: 'LANGCHAIN · OPENCLAW · AUTOGEN · CUSTOM',
+    variant: 'top',
   },
   {
-    label: 'Settlement & Identity',
-    products: ['UNICITY L1'],
-    text: 'The substrate. Bearer-token chain. Cryptographic identity, delegation, and settlement. No shared ledger.',
+    product: 'UNICITY AOS9',
+    label: 'RUNTIME',
+    detail: 'A secure runtime that sits below the agent. Every model output, tool call, and decision passes through it — security interception, audit logging, and budget enforcement happen here, where tools cannot bypass them.',
+    tags: 'KERNEL · POLICY · INTERCEPT',
+    variant: 'mid',
   },
   {
-    label: 'Networking & Payments',
-    products: ['AGENTSPHERE SDK'],
-    text: 'Multi-protocol comms and payments. A2A, Nostr, x402, MCP — neutral by design.',
+    product: 'UNICITY L1',
+    label: 'SETTLEMENT & IDENTITY',
+    detail: 'The substrate. State tokenization, value transfer, cryptographic identity and delegation.',
+    tags: 'STATE TOKENS · IDENTITY · DELEGATION',
+    variant: 'bottom',
   },
 ];
 
@@ -30,7 +44,7 @@ const requirements = [
 export function AutonomyStackSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16 justify-center gap-6">
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-5 sm:py-6 lg:py-8 justify-center gap-3 lg:gap-4">
 
         {/* Header */}
         <div className="shrink-0">
@@ -50,8 +64,8 @@ export function AutonomyStackSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            THE PLATFORM FOR{' '}
-            <span className="text-orange-400">SECURE AUTONOMOUS AI</span>
+            THE PROTOCOL STACK FOR THE{' '}
+            <span className="text-orange-400">AGENTIC INTERNET</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -60,76 +74,72 @@ export function AutonomyStackSlide() {
             className="mt-3 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            <span className="text-orange-400 font-bold">Security</span> gets us in the door. <span className="text-orange-400 font-bold">Network effects</span> keep us there.
+            Three layers. <span className="text-orange-400 font-bold">Settlement, runtime, frameworks.</span> Every requirement autonomy demands, delivered as one protocol stack.
           </motion.p>
         </div>
 
-        {/* Stack */}
-        <div className="grid grid-cols-[200px_1fr] lg:grid-cols-[240px_1fr] gap-x-10 shrink-0">
-          {/* Side labels */}
-          <div className="flex flex-col">
-            {layers.map((layer, i) => (
-              <motion.p
-                key={layer.label}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 + i * 0.15 }}
-                className="flex-1 flex items-center text-orange-400 text-sm lg:text-base tracking-[0.25em] uppercase font-bold leading-snug"
-                style={{ fontFamily: "'Geist Mono', monospace" }}
-              >
-                {layer.label}
-              </motion.p>
-            ))}
-          </div>
-
-          {/* Stacked frame */}
+        {/* Isometric stack */}
+        <div className="grid grid-cols-[1.1fr_1fr] lg:grid-cols-[1fr_1fr] gap-6 lg:gap-10 shrink-0 items-center">
+          {/* Diagram */}
           <motion.div
-            initial={{ opacity: 0, scaleY: 0.95 }}
-            animate={{ opacity: 1, scaleY: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="rounded-md overflow-hidden flex flex-col origin-top"
-            style={{ border: '1px solid rgba(249,115,22,0.5)' }}
+            className="relative"
           >
-            {layers.map((layer, i) => (
+            <IsoStackDiagram />
+          </motion.div>
+
+          {/* Right-side annotations */}
+          <div className="flex flex-col gap-3 lg:gap-4">
+            {stack.map((layer, i) => (
               <motion.div
-                key={layer.label}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                key={layer.product}
+                initial={{ opacity: 0, x: 12 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 + i * 0.15 }}
-                className="px-6 lg:px-8 py-5 lg:py-6"
-                style={{
-                  borderTop: i > 0 ? '1px solid rgba(249,115,22,0.5)' : 'none',
-                }}
+                className="flex items-start gap-3"
               >
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-                  {layer.products.map((prod, idx) => (
-                    <span key={prod} className="flex items-center gap-4">
-                      {idx > 0 && (
-                        <span
-                          className="text-[#fefefe]/40 text-2xl font-bold"
-                          style={{ fontFamily: "'Geist Mono', monospace" }}
-                        >
-                          +
-                        </span>
-                      )}
-                      <span
-                        className="text-[#fefefe] text-[22px] sm:text-[26px] lg:text-[32px] leading-none tracking-tight"
-                        style={{ fontFamily: "'Anton', sans-serif" }}
-                      >
-                        {prod}
-                      </span>
-                    </span>
-                  ))}
+                <span
+                  className="block w-6 h-[2px] mt-3 shrink-0"
+                  style={{
+                    background:
+                      layer.variant === 'mid'
+                        ? '#f97316'
+                        : layer.variant === 'bottom'
+                        ? 'rgba(249,115,22,0.7)'
+                        : 'rgba(254,254,254,0.7)',
+                  }}
+                />
+                <div className="flex flex-col">
+                  <p
+                    className="text-[#fefefe] text-[22px] sm:text-[26px] lg:text-[32px] leading-none tracking-tight"
+                    style={{ fontFamily: "'Anton', sans-serif" }}
+                  >
+                    {layer.product}
+                  </p>
+                  <p
+                    className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.28em] uppercase font-bold mt-1.5"
+                    style={{ fontFamily: "'Geist Mono', monospace" }}
+                  >
+                    {layer.label}
+                  </p>
+                  <p
+                    className="text-[#fefefe]/75 text-xs sm:text-sm lg:text-base leading-snug mt-1"
+                    style={{ fontFamily: "'Geist Mono', monospace" }}
+                  >
+                    {layer.detail}
+                  </p>
+                  <p
+                    className="text-[#fefefe]/45 text-[10px] sm:text-xs tracking-[0.18em] uppercase mt-1.5"
+                    style={{ fontFamily: "'Geist Mono', monospace" }}
+                  >
+                    {layer.tags}
+                  </p>
                 </div>
-                <p
-                  className="text-[#fefefe]/80 text-sm sm:text-base lg:text-lg leading-relaxed mt-2"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}
-                >
-                  {layer.text}
-                </p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* Requirements box */}
@@ -137,11 +147,11 @@ export function AutonomyStackSlide() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.6 }}
-          className="rounded-md px-6 py-5 shrink-0"
+          className="rounded-md px-5 py-3 shrink-0"
           style={{ border: '1px solid rgba(249,115,22,0.30)' }}
         >
           <p
-            className="text-[#fefefe]/55 text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-3"
+            className="text-[#fefefe]/55 text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-2"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
             Every Autonomy Requirement, Delivered
@@ -171,7 +181,7 @@ export function AutonomyStackSlide() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.6 }}
-          className="text-orange-400 text-[20px] sm:text-[26px] lg:text-[32px] leading-[0.95] tracking-tight pt-4 shrink-0"
+          className="text-orange-400 text-[18px] sm:text-[22px] lg:text-[26px] leading-[0.95] tracking-tight pt-3 shrink-0"
           style={{
             fontFamily: "'Anton', sans-serif",
             borderTop: '1px solid rgba(249,115,22,0.25)',
@@ -182,5 +192,131 @@ export function AutonomyStackSlide() {
 
       </div>
     </div>
+  );
+}
+
+// Isometric exploded-view of the three-layer stack.
+function IsoStackDiagram() {
+  const W = 720;
+  const H = 360;
+  const cx = W / 2;
+  const hw = 180; // rhombus half-width
+  const hh = 55; // rhombus half-depth
+  const t = 14; // slab thickness
+  const layerY = [55, 170, 285]; // top, mid, bottom centers — bottom slab fits within H (285+55+14=354)
+
+  function Slab({
+    cy,
+    variant,
+    centerLabel,
+    centerSub,
+  }: {
+    cy: number;
+    variant: 'top' | 'mid' | 'bottom';
+    centerLabel?: string;
+    centerSub?: string;
+  }) {
+    const top = `${cx},${cy - hh} ${cx + hw},${cy} ${cx},${cy + hh} ${cx - hw},${cy}`;
+    const leftFace = `${cx - hw},${cy} ${cx},${cy + hh} ${cx},${cy + hh + t} ${cx - hw},${cy + t}`;
+    const rightFace = `${cx},${cy + hh} ${cx + hw},${cy} ${cx + hw},${cy + t} ${cx},${cy + hh + t}`;
+
+    const styles: Record<typeof variant, { stroke: string; topFill: string; leftFill: string; rightFill: string; glow: boolean }> = {
+      top: {
+        stroke: 'rgba(254,254,254,0.55)',
+        topFill: 'rgba(254,254,254,0.04)',
+        leftFill: 'rgba(254,254,254,0.06)',
+        rightFill: 'rgba(254,254,254,0.03)',
+        glow: false,
+      },
+      mid: {
+        stroke: '#f97316',
+        topFill: 'rgba(249,115,22,0.32)',
+        leftFill: 'rgba(249,115,22,0.45)',
+        rightFill: 'rgba(249,115,22,0.22)',
+        glow: true,
+      },
+      bottom: {
+        stroke: 'rgba(249,115,22,0.65)',
+        topFill: 'rgba(249,115,22,0.08)',
+        leftFill: 'rgba(249,115,22,0.16)',
+        rightFill: 'rgba(249,115,22,0.06)',
+        glow: false,
+      },
+    };
+
+    const s = styles[variant];
+
+    return (
+      <g filter={s.glow ? 'url(#iso-glow)' : undefined}>
+        <polygon points={leftFace} fill={s.leftFill} stroke={s.stroke} strokeWidth={1} />
+        <polygon points={rightFace} fill={s.rightFill} stroke={s.stroke} strokeWidth={1} />
+        <polygon points={top} fill={s.topFill} stroke={s.stroke} strokeWidth={1.2} />
+
+        {variant === 'mid' && (
+          <>
+            {/* Inner accent diamond */}
+            <polygon
+              points={`${cx},${cy - hh * 0.55} ${cx + hw * 0.55},${cy} ${cx},${cy + hh * 0.55} ${cx - hw * 0.55},${cy}`}
+              fill="rgba(249,115,22,0.55)"
+              stroke="#f97316"
+              strokeWidth={1}
+            />
+          </>
+        )}
+
+
+        {centerLabel && (
+          <text
+            x={cx}
+            y={cy + 5}
+            textAnchor="middle"
+            fill="#fefefe"
+            fontSize="14"
+            fontWeight="bold"
+            letterSpacing="2"
+            fontFamily="Geist Mono, monospace"
+          >
+            {centerLabel}
+          </text>
+        )}
+        {centerSub && (
+          <text
+            x={cx}
+            y={cy + 22}
+            textAnchor="middle"
+            fill="rgba(254,254,254,0.7)"
+            fontSize="9"
+            letterSpacing="1.5"
+            fontFamily="Geist Mono, monospace"
+          >
+            {centerSub}
+          </text>
+        )}
+      </g>
+    );
+  }
+
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto">
+      <defs>
+        <pattern id="iso-grid" width="36" height="36" patternUnits="userSpaceOnUse">
+          <path d="M 36 0 L 0 0 0 36" fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="0.5" />
+        </pattern>
+        <filter id="iso-glow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="6" result="b" />
+          <feMerge>
+            <feMergeNode in="b" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <rect x={0} y={0} width={W} height={H} fill="url(#iso-grid)" />
+
+      {/* Render bottom-up so upper layers sit visually in front */}
+      <Slab cy={layerY[2]} variant="bottom" centerLabel="PROOF" />
+      <Slab cy={layerY[1]} variant="mid" centerLabel="AOS9" centerSub="KERNEL" />
+      <Slab cy={layerY[0]} variant="top" centerLabel="AGENT" />
+    </svg>
   );
 }

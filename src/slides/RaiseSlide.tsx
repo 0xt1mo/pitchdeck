@@ -14,16 +14,22 @@ function CountUp({ target, delay = 0 }: { target: number; delay?: number }) {
 
 const unlocks = [
   {
-    title: 'DEVELOPER ADOPTION',
-    desc: 'Build developer marketing, developer relations. Integration into harnesses/frameworks.',
+    num: '01',
+    tag: '',
+    title: 'LAUNCH MAINNET',
+    desc: 'Network live. Hashlock audit complete. Distribution partners go live.',
   },
   {
-    title: 'SCALING ENTERPRISE',
-    desc: 'Scale enterprise licensing, channels & partner programs.',
+    num: '02',
+    tag: '$20M+ pipeline',
+    title: 'CONVERT FIRST DEPLOYMENTS',
+    desc: 'Sovereign AI Lab and Tier-1 Financial Institution deploy. Government, Telecom, Banks line up.',
   },
   {
-    title: 'EXCHANGE LISTING',
-    desc: 'TGE preparation, exchange listing infrastructure, community.',
+    num: '03',
+    tag: 'Network growth',
+    title: 'BUILD THE FLYWHEEL',
+    desc: 'Developer relations, framework integrations, hackathons. Path to TGE at adoption thresholds.',
   },
 ];
 
@@ -42,13 +48,13 @@ export function RaiseSlide() {
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-Series A Fundraise
+Pre Series A
           </motion.p>
           <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-THE RAISE: <span className="text-orange-400">FROM TESTNET TO 2M AGENTS</span>
+FROM MAINNET LAUNCH <span className="text-orange-400">TO INITIAL SCALE</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -86,7 +92,7 @@ THE RAISE: <span className="text-orange-400">FROM TESTNET TO 2M AGENTS</span>
             >
               {[
                 { label: 'STRUCTURE', value: 'Equity + Token Warrants' },
-                { label: 'TIMELINE', value: 'June 2026' },
+                { label: 'TIMELINE', value: 'Now' },
               ].map((d) => (
                 <div key={d.label} className="flex items-baseline gap-5">
                   <span className="text-[#fefefe]/60 text-sm tracking-[0.2em] uppercase shrink-0 w-28"
@@ -142,26 +148,73 @@ THE RAISE: <span className="text-orange-400">FROM TESTNET TO 2M AGENTS</span>
               WHAT THIS ROUND <span className="text-orange-400">UNLOCKS</span>
             </motion.h2>
 
-            <div className="space-y-5">
+            <div className="flex flex-col gap-3 lg:gap-4 relative">
+              {/* Vertical rail */}
+              <div className="absolute left-[19px] top-2 bottom-2 w-[2px] bg-gradient-to-b from-orange-500/70 via-orange-500/40 to-orange-500/10" />
+
               {unlocks.map((u, i) => (
                 <motion.div
                   key={u.title}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6 + i * 0.15, duration: 0.5 }}
-                  style={{ borderBottom: i < unlocks.length - 1 ? '1px solid rgba(249,115,22,0.1)' : 'none', paddingBottom: i < unlocks.length - 1 ? '1.25rem' : 0 }}
+                  className="flex items-start gap-4 relative"
                 >
-                  <p className="text-orange-400 text-[24px] sm:text-[30px] lg:text-[34px] leading-none tracking-tight"
-                    style={{ fontFamily: "'Anton', sans-serif" }}>
-                    {u.title}
-                  </p>
-                  <p className="text-[#fefefe]/65 text-sm sm:text-base leading-relaxed mt-3"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}>
-                    {u.desc}
-                  </p>
+                  {/* Step badge */}
+                  <span
+                    className="relative z-10 shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
+                    style={{
+                      background: 'linear-gradient(rgba(249,115,22,0.18), rgba(249,115,22,0.18)), #060606',
+                      border: '1.5px solid rgba(249,115,22,0.7)',
+                    }}
+                  >
+                    <span
+                      className="text-orange-400 text-xs font-bold tracking-[0.1em]"
+                      style={{ fontFamily: "'Geist Mono', monospace" }}
+                    >
+                      {u.num}
+                    </span>
+                  </span>
+
+                  {/* Body */}
+                  <div className="flex-1 pt-1 pb-1">
+                    <div className="flex items-baseline justify-between gap-3 flex-wrap">
+                      <p
+                        className="text-[#fefefe] text-[20px] sm:text-[26px] lg:text-[30px] leading-none tracking-tight"
+                        style={{ fontFamily: "'Anton', sans-serif" }}
+                      >
+                        {u.title}
+                      </p>
+                      <span
+                        className="text-orange-400 text-[10px] sm:text-xs tracking-[0.22em] uppercase font-bold whitespace-nowrap"
+                        style={{ fontFamily: "'Geist Mono', monospace" }}
+                      >
+                        {u.tag}
+                      </span>
+                    </div>
+                    <p
+                      className="text-[#fefefe]/70 text-xs sm:text-sm lg:text-base leading-snug mt-2"
+                      style={{ fontFamily: "'Geist Mono', monospace" }}
+                    >
+                      {u.desc}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2, duration: 0.5 }}
+              className="mt-5 text-orange-400 text-[18px] sm:text-[22px] lg:text-[26px] leading-tight tracking-tight pt-4"
+              style={{
+                fontFamily: "'Anton', sans-serif",
+                borderTop: '1px solid rgba(249,115,22,0.25)',
+              }}
+            >
+              THIS ROUND FUNDS THE TRANSITION FROM <span className="text-[#fefefe]">INFRASTRUCTURE</span> → <span className="text-[#fefefe]">LIVE NETWORK.</span>
+            </motion.p>
 
           </div>
         </div>

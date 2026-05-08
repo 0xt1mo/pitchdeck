@@ -1,157 +1,150 @@
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
-import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
-function AnimatedNumber({ value, duration = 2, delay = 0 }: { value: number; duration?: number; delay?: number }) {
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (v) => Math.round(v));
-  useEffect(() => {
-    const controls = animate(count, value, { duration, delay, ease: [0.25, 0.1, 0.25, 1] });
-    return controls.stop;
-  }, [value, duration, delay, count]);
-  return <motion.span>{rounded}</motion.span>;
-}
-
-const path = [
-  { year: "H2 '26", agents: '100K', revenue: '$0.6M' },
-  { year: '2027', agents: '2M', revenue: '$24M' },
-  { year: '2028', agents: '10M', revenue: '$120M' },
-  { year: '2029', agents: '50M', revenue: '$600M' },
-];
-
-const drivers = [
+const scenarios = [
   {
-    title: 'Partner with AI Labs',
-    milestone: '→ 2M agents',
-    text: 'Signed integration with a leading AI lab. Every agent on their platform gets native access to security, identity, and settlement.',
+    title: 'TGE viable',
+    sub: 'monetization activates',
+    agents: '1M',
+    revenue: '$12M',
+    highlight: false,
   },
   {
-    title: 'Developer marketing',
-    milestone: '→ organic growth',
-    text: "Community-first. The Stripe/Vercel playbook — win the developer, win every agent they build. Unicity skills, open SDKs, docs-as-product.",
+    title: 'Mainstream protocol',
+    sub: '~0.5% of agent economy',
+    agents: '50M',
+    revenue: '$600M',
+    highlight: false,
   },
   {
-    title: 'Enterprise distribution',
-    milestone: '→ 10M agents',
-    text: 'Platform deals that bring millions of agents in a single contract. One partner = step-function growth.',
-  },
-  {
-    title: 'Network effects',
-    milestone: '→ 50M agents',
-    text: 'Every on-network transaction recruits the counterparty. Machine-readable discovery. Self-onboarding. Zero human in the loop.',
+    title: 'Category-defining',
+    sub: '~5% of agent economy',
+    agents: '500M',
+    revenue: '$6B',
+    highlight: true,
   },
 ];
 
 export function ProjectionsSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16 justify-center gap-8">
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-16 py-8 sm:py-10 lg:py-12 justify-center gap-6 lg:gap-8">
 
         {/* Header */}
         <div className="shrink-0">
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-            className="text-orange-400 text-sm tracking-[0.4em] uppercase"
+            className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Projections
+            The Opportunity
           </motion.p>
           <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-2"
+            className="text-[#fefefe] text-[26px] sm:text-[36px] lg:text-[44px] leading-[1.05] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            THE PROTOCOL <span className="text-orange-400">REVENUE OPPORTUNITY</span>
+            THE WORLD IF <span className="text-orange-400">WE WIN</span>
           </motion.h1>
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
+            className="mt-3 text-[#fefefe]/90 text-sm sm:text-base lg:text-lg max-w-5xl leading-relaxed"
+            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            Agents become the <span className="text-orange-400">next interface to the Internet, finance and commerce</span>. Enterprise adopts Unicity first — for <span className="text-orange-400">compliance, audit, and verifiable execution</span>. From there it expands into <span className="text-[#fefefe] font-bold">the mainstream protocol layer underneath the agent economy.</span>
+          </motion.p>
         </div>
 
-        {/* Two-column body */}
-        <div className="grid grid-cols-2 gap-10 shrink-0">
-
-          {/* Left — model + number + trajectory */}
-          <div className="flex flex-col">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
-              <p className="text-[#fefefe] text-base font-bold" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                Every agent pays a subscription in native token.
-              </p>
-              <p className="text-[#fefefe]/70 text-sm leading-relaxed mt-1"
-                style={{ fontFamily: "'Geist Mono', monospace" }}>
-                Unlimited transactions. Subscription replaces gas entirely. Infrastructure cost per transaction: one microcent.
-              </p>
-              <p className="text-[#fefefe]/50 text-sm leading-relaxed mt-1"
-                style={{ fontFamily: "'Geist Mono', monospace" }}>
-                Pricing ranges from $12 to $120 per year per agent depending on tier. The model below uses <span className="text-orange-400">floor pricing only</span>.
-              </p>
-            </motion.div>
-
-            {/* Hero number */}
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="mt-4">
-              <p className="text-[#fefefe]/50 text-base" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                50M agents × $12/year/agent
-              </p>
-              <p className="text-orange-400 text-[80px] sm:text-[100px] lg:text-[120px] leading-none"
-                style={{ fontFamily: "'Anton', sans-serif" }}>
-                $<AnimatedNumber value={600} delay={0.6} duration={1.5} />M
-              </p>
-              <p className="text-[#fefefe]/50 text-sm mt-1" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                annual protocol revenue by 2029 (floor pricing)
-              </p>
-            </motion.div>
-
-            {/* Trajectory */}
-            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
-              className="mt-4">
-              <div className="flex items-center">
-                {path.map((p, i) => (
-                  <div key={p.year} className="flex items-center">
-                    <div className="text-center px-2 sm:px-4 first:pl-0">
-                      <p className="text-[#fefefe]/50 text-sm" style={{ fontFamily: "'Geist Mono', monospace" }}>{p.year}</p>
-                      <p className="text-[#fefefe]/80 text-xl font-bold" style={{ fontFamily: "'Geist Mono', monospace" }}>{p.agents}</p>
-                      <p className="text-orange-400/80 text-lg font-bold" style={{ fontFamily: "'Geist Mono', monospace" }}>{p.revenue}</p>
-                    </div>
-                    {i < path.length - 1 && <div className="text-orange-500/40 text-sm">→</div>}
-                  </div>
-                ))}
-              </div>
-              <p className="text-[#fefefe]/40 text-sm mt-2" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                $12-120/year per agent · unlimited transactions · no gas
-              </p>
-            </motion.div>
+        {/* Validation strip — compact horizontal pill */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7, duration: 0.5 }}
+          className="shrink-0 flex items-center gap-5 lg:gap-7 rounded-xl px-5 lg:px-7 py-4 lg:py-5"
+          style={{
+            border: '1px solid rgba(249,115,22,0.4)',
+            background: 'rgba(249,115,22,0.04)',
+          }}
+        >
+          <div className="flex items-baseline gap-2">
+            <p className="text-orange-400 text-[36px] sm:text-[44px] lg:text-[56px] leading-none tracking-tight"
+              style={{ fontFamily: "'Anton', sans-serif" }}>
+              100K
+            </p>
+            <p className="text-[#fefefe]/60 text-[10px] sm:text-xs uppercase tracking-[0.2em]"
+              style={{ fontFamily: "'Geist Mono', monospace" }}>
+              testnet wallets
+            </p>
           </div>
+          <p className="text-[#fefefe]/85 text-xs sm:text-sm lg:text-base leading-snug border-l border-white/[0.12] pl-5 lg:pl-7 flex-1"
+            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            100K users have created a wallet pre-launch. <span className="text-[#fefefe] font-bold">Every user gets a hosted agent.</span>
+          </p>
+          <a
+            href="https://sphere.unicity.network"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-orange-400 text-xs sm:text-sm font-bold hover:underline cursor-pointer whitespace-nowrap"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
+            sphere.unicity.network →
+          </a>
+        </motion.div>
 
-          {/* Right — How We Get There */}
-          <div className="flex flex-col">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
-              <p className="text-orange-400 text-sm tracking-[0.35em] uppercase"
-                style={{ fontFamily: "'Geist Mono', monospace" }}>
-                How We Get There
-              </p>
-              <div className="h-[1px] bg-orange-400/30 mt-2" />
-            </motion.div>
-
-            <div className="flex flex-col gap-6 mt-5">
-              {drivers.map((d, i) => (
-                <motion.div key={d.title}
-                  initial={{ opacity: 0, x: 20 }}
+        {/* Protocol upside table */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, duration: 0.5 }}
+          className="shrink-0"
+        >
+          <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.3em] uppercase font-bold mb-3"
+            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            The Protocol Upside
+          </p>
+          <table className="w-full max-w-3xl" style={{ fontFamily: "'Geist Mono', monospace" }}>
+            <thead>
+              <tr className="border-b border-white/[0.12]">
+                <th className="text-left py-3 text-[#fefefe]/50 text-[10px] sm:text-xs tracking-[0.18em] uppercase font-normal w-[55%]">
+                  Scenario
+                </th>
+                <th className="text-right py-3 px-6 text-[#fefefe]/50 text-[10px] sm:text-xs tracking-[0.18em] uppercase font-normal">
+                  Agents
+                </th>
+                <th className="text-right py-3 text-orange-400 text-[10px] sm:text-xs tracking-[0.18em] uppercase font-bold">
+                  Protocol Revenue
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {scenarios.map((s, i) => (
+                <motion.tr
+                  key={s.title}
+                  initial={{ opacity: 0, x: -8 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 + i * 0.12 }}
-                  style={{ borderBottom: i < drivers.length - 1 ? '1px solid rgba(249,115,22,0.1)' : 'none', paddingBottom: i < drivers.length - 1 ? '1.25rem' : 0 }}>
-                  <div className="flex items-baseline gap-3">
-                    <p className="text-[#fefefe] text-base font-bold" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                      {d.title}
+                  transition={{ delay: 1.0 + i * 0.08, duration: 0.4 }}
+                  className={i < scenarios.length - 1 ? 'border-b border-white/[0.06]' : ''}
+                  style={s.highlight ? { background: 'rgba(249,115,22,0.06)' } : undefined}
+                >
+                  <td className="py-4 lg:py-5 pl-3">
+                    <p className={`${s.highlight ? 'text-orange-400' : 'text-[#fefefe]'} text-base sm:text-lg lg:text-xl font-bold leading-tight`}>
+                      {s.title}
                     </p>
-                    <span className="text-orange-400 text-sm font-bold" style={{ fontFamily: "'Geist Mono', monospace" }}>
-                      {d.milestone}
-                    </span>
-                  </div>
-                  <p className="text-[#fefefe]/70 text-sm leading-relaxed mt-1.5"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}>
-                    {d.text}
-                  </p>
-                </motion.div>
+                    <p className="text-[#fefefe]/50 text-[10px] sm:text-xs leading-tight mt-1">
+                      {s.sub}
+                    </p>
+                  </td>
+                  <td className={`py-4 lg:py-5 px-6 text-right text-2xl sm:text-3xl lg:text-4xl ${s.highlight ? 'text-orange-400' : 'text-[#fefefe]'}`}
+                    style={{ fontFamily: "'Anton', sans-serif" }}>
+                    {s.agents}
+                  </td>
+                  <td className={`py-4 lg:py-5 pr-3 text-right text-2xl sm:text-3xl lg:text-4xl ${s.highlight ? 'text-orange-400' : 'text-[#fefefe]'}`}
+                    style={{ fontFamily: "'Anton', sans-serif" }}>
+                    {s.revenue}
+                  </td>
+                </motion.tr>
               ))}
-            </div>
-          </div>
-        </div>
+            </tbody>
+          </table>
+          <p className="text-[#fefefe]/45 text-[10px] sm:text-xs italic mt-3"
+            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            Floor pricing only ($12/agent/year).
+          </p>
+        </motion.div>
 
       </div>
     </div>

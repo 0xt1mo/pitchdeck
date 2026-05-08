@@ -4,17 +4,17 @@ const categories = [
   {
     title: 'AGENT PROTOCOLS',
     competitors: 'x402 (Linux Foundation) · Stripe MPP',
-    text: "We don't compete, we scale them. Unicity turns the message itself into P2P settlement.",
+    text: "We implement and simplify. Unicity turns the message itself into P2P settlement.",
   },
   {
     title: 'SETTLEMENT',
     competitors: 'Base · Tempo · Solana · Lightning',
-    text: "All shared-ledger or centralized. Unicity settles natively, per-transaction, at internet speed, with privacy by design.",
+    text: "We scale them by orders of magnitude. Tokens minted on any chain detach onto Unicity, transact peer-to-peer at machine speed, and settle back when needed. Every L1 becomes a Unicity issuance layer.",
   },
   {
     title: 'AI CHAINS',
     competitors: 'Kite.ai · Near · Fetch.ai',
-    text: "Closest competitors. You can't retrofit an EVM into autonomous AI.",
+    text: "We compete. Existing AI-chain projects retrofit general-purpose runtimes — EVM, Cosmos, sharded WASM — none of which were designed for off-chain agent execution with edge validation. Our architecture is purpose-built for the agent transaction profile.",
   },
   {
     title: 'FRAMEWORKS',
@@ -24,7 +24,7 @@ const categories = [
   {
     title: 'SECURITY',
     competitors: 'Lakera/Check Point · HiddenLayer · Protect AI · NeMo Guardrails',
-    text: "All bolt-on, not kernel level. Check Point paid $300M for Lakera — validating demand but not solving the problem.",
+    text: "Check Point paid $300M for Lakera, which addresses LLM prompt-layer security. Our scope is broader and structurally different — we secure the entire agent execution path at the kernel and settlement layers.",
   },
 ];
 

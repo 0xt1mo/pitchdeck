@@ -2,12 +2,10 @@ import { motion } from 'framer-motion';
 
 const cards = [
   {
-    eyebrow: 'Kernel-Level Verification',
     title: 'AGENT STATE IS TOKENIZED.',
-    text: 'Every action - model output, tool call, decision, intermediate reasoning is verified cryptographically inside the OS kernel.',
+    text: 'Every action — model output, tool call, decision — is verified inside an enforcement runtime that sits below the agent and cannot be bypassed.',
   },
   {
-    eyebrow: 'Peer-to-Peer at Machine Scale',
     title: 'VALUE MOVES AT MACHINE SPEED.',
     text: 'No shared ledger. No mempool. No gas. Subscription economics, privacy by design — the first architecture that fits agent-to-agent payments.',
   },
@@ -46,59 +44,68 @@ export function EdgePayoffSlide() {
             className="mt-4 text-[#fefefe]/85 text-lg sm:text-xl lg:text-2xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Two consequences of the architecture that enable autonomous AI.
+            Three consequences. Each one is required for autonomous AI. Each one is impossible on a shared ledger.
           </motion.p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-2 gap-5 lg:gap-6 shrink-0">
-          {cards.map((c, i) => (
-            <motion.div
-              key={c.title}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 + i * 0.15 }}
-              className="rounded-md p-7 lg:p-9"
-              style={{
-                background: 'rgba(249,115,22,0.04)',
-                border: '1px solid rgba(249,115,22,0.45)',
-              }}
-            >
-              <p
-                className="text-orange-400 text-xs lg:text-sm tracking-[0.28em] uppercase font-bold"
-                style={{ fontFamily: "'Geist Mono', monospace" }}
+        {/* Cards — top row 2-col + economic unlock full-width */}
+        <div className="flex flex-col gap-4 lg:gap-5 shrink-0">
+          <div className="grid grid-cols-2 gap-4 lg:gap-5">
+            {cards.map((c, i) => (
+              <motion.div
+                key={c.title}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 + i * 0.15 }}
+                className="rounded-md p-5 lg:p-7"
+                style={{
+                  background: 'rgba(249,115,22,0.04)',
+                  border: '1px solid rgba(249,115,22,0.45)',
+                }}
               >
-                {c.eyebrow}
-              </p>
+                <h3
+                  className="text-orange-400 text-[20px] sm:text-[26px] lg:text-[30px] leading-[1.05] tracking-tight"
+                  style={{ fontFamily: "'Anton', sans-serif" }}
+                >
+                  {c.title}
+                </h3>
+                <p
+                  className="text-[#fefefe]/80 text-sm lg:text-base leading-relaxed mt-3"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}
+                >
+                  {c.text}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Third card — full width */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="rounded-md p-5 lg:p-7 grid grid-cols-[1fr_2fr] gap-6 items-start"
+            style={{
+              background: 'rgba(249,115,22,0.04)',
+              border: '1px solid rgba(249,115,22,0.45)',
+            }}
+          >
+            <div>
               <h3
-                className="text-[#fefefe] text-[24px] sm:text-[30px] lg:text-[36px] leading-[1.05] tracking-tight mt-3"
+                className="text-orange-400 text-[20px] sm:text-[26px] lg:text-[30px] leading-[1.05] tracking-tight"
                 style={{ fontFamily: "'Anton', sans-serif" }}
               >
-                {c.title}
+                GAS IS ELIMINATED.
               </h3>
-              <p
-                className="text-[#fefefe]/80 text-sm sm:text-base lg:text-lg leading-relaxed mt-4"
-                style={{ fontFamily: "'Geist Mono', monospace" }}
-              >
-                {c.text}
-              </p>
-            </motion.div>
-          ))}
+            </div>
+            <p
+              className="text-[#fefefe]/80 text-sm lg:text-base leading-relaxed"
+              style={{ fontFamily: "'Geist Mono', monospace" }}
+            >
+              No scarcity, no auction, no per-transaction fees. Pricing inverts from gas to fixed subscription. The only architecture where machine-speed agent transaction volumes are economically viable at the protocol layer.
+            </p>
+          </motion.div>
         </div>
-
-        {/* Footer */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9, duration: 0.6 }}
-          className="text-orange-400 text-[22px] sm:text-[30px] lg:text-[38px] leading-[0.95] tracking-tight pt-5 shrink-0"
-          style={{
-            fontFamily: "'Anton', sans-serif",
-            borderTop: '1px solid rgba(249,115,22,0.25)',
-          }}
-        >
-          ALLOWING US TO BUILD...
-        </motion.p>
 
       </div>
     </div>

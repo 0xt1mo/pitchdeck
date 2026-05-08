@@ -39,7 +39,7 @@ export function SharedLedgerSlide() {
             className="text-[#fefefe]/85 text-lg sm:text-xl lg:text-2xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            A shared asset ledger. Competition for blockspace. Gas fees.
+            A globally shared asset ledger. Competition for blockspace. Gas fees.
           </p>
           <p
             className="text-[#fefefe]/65 text-base sm:text-lg lg:text-xl italic leading-relaxed mt-3 pb-5"

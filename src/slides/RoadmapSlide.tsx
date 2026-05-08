@@ -2,9 +2,10 @@ import { motion } from 'framer-motion';
 
 const nowItems: { text: string; sub?: string }[] = [
   { text: 'Initial distribution secured through sovereign AI lab integration.', sub: 'Every agent on their platform gets native access to security, identity, and settlement.' },
-  { text: '$20M enterprise pipeline:', sub: 'Governments, Financial Institutions, Telecom, AI Labs.' },
+  { text: '$20M enterprise pipeline (post-launch activation):', sub: 'Governments, Financial Institutions, Telecom, AI Labs.' },
   { text: 'Mainnet launching June 2026.' },
   { text: 'TGE is adoption-triggered at 1M daily active agents — not calendar-driven.' },
+  { text: 'Series A readiness: post-launch adoption signals.', sub: 'Target: 100K+ active agents, live enterprise deployments.' },
 ];
 
 export function RoadmapSlide() {

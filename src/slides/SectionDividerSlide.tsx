@@ -19,7 +19,7 @@ const ORBIT = KERNEL_R + SAT_R + GAP;
 const DIAGRAM_SIZE = ORBIT * 2 + SAT_R * 2 + 20;
 const ANGLES = [-90, -30, 30, 90, 150, 210];
 
-type SectionId = 'kernel' | 'security' | 'payments' | 'gtm';
+type SectionId = 'kernel' | 'security' | 'payments' | 'gtm' | 'product';
 
 const sectionConfig: Record<SectionId, {
   label: string;
@@ -49,6 +49,12 @@ const sectionConfig: Record<SectionId, {
     label: 'GO TO MARKET',
     subtitle: 'Products & Distribution',
     highlightIds: ['networking', 'payments'],
+    highlightKernel: false,
+  },
+  product: {
+    label: 'PRODUCT',
+    subtitle: 'Agent Sphere Console',
+    highlightIds: ['skills', 'security', 'networking', 'payments'],
     highlightKernel: false,
   },
 };
@@ -202,4 +208,8 @@ export function BlockchainDividerSlide(props: Record<string, unknown>) {
 
 export function GTMDividerSlide(props: Record<string, unknown>) {
   return <SectionDividerSlide section="gtm" {...props} />;
+}
+
+export function ProductDividerSlide(props: Record<string, unknown>) {
+  return <SectionDividerSlide section="product" {...props} />;
 }

@@ -169,17 +169,32 @@ export function ProtocolSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[24px] sm:text-[36px] lg:text-[48px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            SCALING X402/MPP —{' '}
-            <span className="text-orange-400">THE MESSAGE IS THE SETTLEMENT</span>
+            LIVE DEMO —{' '}
+            <span className="text-orange-400">USDT MOVING AGENT-TO-AGENT AT 3M TPS</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-1.5" />
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="mt-3 text-[#fefefe]/85 text-lg sm:text-xl lg:text-2xl leading-relaxed"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            We don't compete with agentic protocols — we SCALE them.
+          <motion.p
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}
+            className="mt-3 text-[#fefefe]/85 text-sm sm:text-base lg:text-lg max-w-5xl leading-relaxed"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
+            <span className="text-orange-400 font-bold">x402</span> is an agent-payment standard developed by Coinbase. Unicity implements it and simplifies it — <span className="text-orange-400">12 steps collapse to 5</span>.
           </motion.p>
+          <motion.a
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }}
+            href="https://www.youtube.com/watch?v=tz4NBRRNLRo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 mt-3 text-orange-400 text-sm sm:text-base font-bold hover:underline cursor-pointer"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
+            <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            Watch demo at <span className="underline">youtube.com/watch?v=tz4NBRRNLRo</span> — USDT moving A2A at 3M TPS
+          </motion.a>
         </div>
 
         {/* Diagrams */}

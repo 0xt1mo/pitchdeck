@@ -9,14 +9,14 @@ export function AgentsSlide() {
         <div className="absolute inset-0 bg-[#060606]/50" />
       </div>
 
-      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-8 sm:py-10 lg:py-12 justify-center gap-4">
+      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-6 sm:py-8 lg:py-10 justify-center gap-3 lg:gap-4">
 
         {/* Header */}
         <div className="shrink-0">
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            The Unicity L1
+            The Breakthrough
           </motion.p>
           <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
@@ -32,36 +32,25 @@ export function AgentsSlide() {
         {/* Intro paragraph */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="shrink-0 text-[#fefefe]/90 text-sm sm:text-base lg:text-lg leading-relaxed max-w-5xl space-y-2"
+          className="shrink-0 text-[#fefefe]/90 text-xs sm:text-sm lg:text-base leading-relaxed max-w-5xl"
           style={{ fontFamily: "'Geist Mono', monospace" }}>
           <p>
-            Unicity eliminates <span className="text-orange-400">the shared asset ledger construct</span> entirely.
-          </p>
-          <p>
-            Like cash, tokens move p2p and are <span className="text-orange-400">locally verifiable</span> at the edge with zero trust.
-          </p>
-          <p>
-            <span className="text-orange-400">Chain agnostic</span>: tokens are self-authenticating without any chain dependency.
-          </p>
-          <p>
-            <span className="text-orange-400">Verifiable execution</span> agents are the equivalent of smart contracts.
-          </p>
-          <p>
-            Our core invention is the <span className="text-orange-400">ZK Uniqueness Oracle</span> that proves the uniqueness of state.
+            In Unicity, tokens are <span className="text-orange-400">cryptographic objects that carry their own validation</span>. They move directly between parties, verified by the recipient alone. There's no shared ledger to coordinate, no validator set to gate transactions, no global state to contend for. Agents replace smart contracts and manage shared state through <span className="text-orange-400">programmable token predicates</span>.
           </p>
         </motion.div>
 
-        {/* Diagram */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+        {/* Diagram — EXTERNAL CHAINS now baked into the SVG itself */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="flex items-center justify-center shrink-0 h-[300px] lg:h-[340px]">
+          className="flex items-center justify-center shrink-0 h-[360px] lg:h-[440px] -mt-2"
+        >
           <object type="image/svg+xml" data="/agents_smartcontracts.svg"
             className="w-full h-full object-contain">
             Agents architecture diagram
           </object>
         </motion.div>
-
-        {/* Logo */}
 
       </div>
     </div>
