@@ -42,7 +42,7 @@ export function SalesContactSlide() {
                 className="text-[#fefefe]/80 text-sm lg:text-base leading-relaxed"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                Move your agentic AI to production...
+                See an agent open a session, place a wager, settle — end-to-end.
               </p>
             </div>
 
