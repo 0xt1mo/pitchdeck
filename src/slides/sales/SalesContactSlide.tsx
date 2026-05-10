@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export function SalesContactSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#0a0a0f] overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
       <div className="relative z-10 h-full flex flex-col px-10 lg:px-20 py-12 lg:py-16 justify-center gap-7">
 
         <div className="shrink-0">
