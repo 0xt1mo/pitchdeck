@@ -1,14 +1,11 @@
 import { useEffect, useCallback, useState } from 'react';
 import { CasinoCoverSlide } from './slides/casino/CasinoCoverSlide';
-import { CasinoUnlocksSlide } from './slides/casino/CasinoUnlocksSlide';
 import { CasinoOnboardingSlide } from './slides/casino/CasinoOnboardingSlide';
 import { CasinoRetentionSlide } from './slides/casino/CasinoRetentionSlide';
 import { CasinoLoyaltySlide } from './slides/casino/CasinoLoyaltySlide';
-import { CasinoComplianceSlide } from './slides/casino/CasinoComplianceSlide';
 import { CasinoCostSlide } from './slides/casino/CasinoCostSlide';
 import { CasinoTeamSlide } from './slides/casino/CasinoTeamSlide';
 import { CasinoPlatformSlide } from './slides/casino/CasinoPlatformSlide';
-import { CasinoArchitectureSlide } from './slides/casino/CasinoArchitectureSlide';
 import { CasinoAutonomyStackSlide } from './slides/casino/CasinoAutonomyStackSlide';
 import { CasinoWhyNowSlide } from './slides/casino/CasinoWhyNowSlide';
 import { CasinoIntroducingUnicitySlide } from './slides/casino/CasinoIntroducingUnicitySlide';

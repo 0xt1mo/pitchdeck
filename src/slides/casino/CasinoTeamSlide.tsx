@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, type CSSProperties } from 'react';
 import { motion } from 'framer-motion';
 import LANDDATA_LON_LAT from './landData.json';
 
@@ -28,7 +28,8 @@ const founders = [
   {
     name: 'Alan Radi',
     role: 'Gaming Vertical',
-    photo: '/team/alan.svg',
+    photo: '/team/Alan Portrait.jpg',
+    photoStyle: { transform: 'translateY(-8%) scale(1.3)', transformOrigin: '50% 50%' },
     linkedin: '',
     lines: [],
   },
@@ -148,7 +149,7 @@ export function CasinoTeamSlide() {
               >
                 <div className="relative shrink-0">
                   <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden ring-2 ring-orange-500/30">
-                    <img src={f.photo} alt={f.name} className="w-full h-full object-cover" />
+                    <img src={f.photo} alt={f.name} className="w-full h-full object-cover" style={(f as { photoStyle?: CSSProperties }).photoStyle} />
                   </div>
                   {f.linkedin && <LinkedInBadge href={f.linkedin} />}
                 </div>
