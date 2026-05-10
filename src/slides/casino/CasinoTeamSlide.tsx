@@ -30,19 +30,22 @@ const founders = [
     role: 'Gaming Vertical',
     photo: '/team/Alan Portrait.jpg',
     photoStyle: { transform: 'translateY(-8%) scale(1.3)', transformOrigin: '50% 50%' },
-    linkedin: '',
-    lines: [],
+    linkedin: 'https://www.linkedin.com/in/alanradi/',
+    lines: [
+      '12 years implementing CX AI for Global B2C brands',
+      'Apple · Google · Verizon · Pepsi · DHL',
+    ],
   },
 ];
 
 const clients = [
-  { name: 'NATO',     file: 'nato.svg' },
-  { name: 'DARPA',    file: 'darpa.svg' },
-  { name: 'Lockheed', file: 'lockheed.svg' },
-  { name: 'Boeing',   file: 'boeing.svg' },
-  { name: 'BIS',      file: 'bis.svg' },
-  { name: 'Maersk',   file: 'maersk.svg' },
-  { name: 'ESA',      file: 'esa.svg' },
+  { name: 'NATO',     file: 'nato.png',     scale: 1    },
+  { name: 'DARPA',    file: 'darpa.png',    scale: 1    },
+  { name: 'Lockheed', file: 'lockheed.png', scale: 1    },
+  { name: 'Boeing',   file: 'boeing.png',   scale: 0.63 },
+  { name: 'BIS',      file: 'bis.png',      scale: 0.63 },
+  { name: 'Maersk',   file: 'maersk.png',   scale: 0.63 },
+  { name: 'ESA',      file: 'esa.png',      scale: 1    },
 ];
 
 const offices = [
@@ -65,7 +68,7 @@ const LinkedInBadge = ({ href }: { href: string }) => (
   </a>
 );
 
-function ClientLogo({ name, file }: { name: string; file: string }) {
+function ClientLogo({ name, file, scale = 1 }: { name: string; file: string; scale?: number }) {
   const [failed, setFailed] = useState(false);
   if (failed) {
     return (
@@ -83,7 +86,7 @@ function ClientLogo({ name, file }: { name: string; file: string }) {
       alt={name}
       onError={() => setFailed(true)}
       className="h-9 lg:h-11 w-auto"
-      style={{ filter: 'brightness(0) invert(1)', opacity: 0.7 }}
+      style={{ filter: 'brightness(0) invert(1)', opacity: 0.7, transform: `scale(${scale})`, transformOrigin: 'center' }}
     />
   );
 }
@@ -218,7 +221,7 @@ export function CasinoTeamSlide() {
           <div className="flex items-center justify-between gap-6 lg:gap-8 flex-wrap">
             {clients.map((c) => (
               <div key={c.name} className="flex items-center justify-center h-9 lg:h-10 min-w-[80px]">
-                <ClientLogo name={c.name} file={c.file} />
+                <ClientLogo name={c.name} file={c.file} scale={c.scale} />
               </div>
             ))}
           </div>
