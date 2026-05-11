@@ -3,33 +3,35 @@ import { motion } from 'framer-motion';
 const movements = [
   {
     num: '01',
-    title: 'What you have today.',
+    title: 'Traditional IAM.',
     text: (
       <>
-        Telemetry. Anonymous behavioral signal. CRM segments built from clicks and deposits. Send-time optimization that fires at the moment your CRM thinks is best — not the moment the player is paying attention.
+        Built for human lifecycles — <span className="text-[#fefefe] font-semibold">joiner, mover, leaver</span>. The systems designed for the 1:1 world do not govern the 144:1 machine-to-human world. An agent has no employee record, no manager, no termination event.
       </>
     ),
-    dim: true,
+    dim: false,
   },
   {
     num: '02',
-    title: 'What the agent delivers.',
+    title: 'Prompt-layer tools.',
     text: (
       <>
-        <span className="text-[#fefefe] font-semibold">Attention.</span> The agent is in conversation with the player. It knows when the player is <span className="text-[#fefefe] font-semibold">actually present</span> — not because it reads their mind, but because the player just spoke to it.{' '}
-        <span className="text-orange-400 font-semibold">A signal you cannot get from any other channel.</span>
+        Classify <span className="text-[#fefefe] font-semibold">what the agent says</span>. They do not produce a record of what it did, under whose authority, against which system.{' '}
+        <span className="text-orange-400 font-semibold">By the time a prompt-layer tool flags an anomaly, the BSS API has already been invoked.</span>
       </>
     ),
+    dim: false,
   },
   {
     num: '03',
-    title: 'What you do with it.',
+    title: 'Vendor logs.',
     text: (
       <>
-        A reload bonus that arrives in <span className="text-[#fefefe] font-semibold">a live conversation</span>, not an unread inbox. Promotions delivered at moments of real attention.{' '}
-        <span className="text-orange-400 font-semibold">Personalization by timing — the only personalisation that has ever worked.</span>
+        Generated and held by the vendor. An operator presenting a vendor's log as evidence in a regulatory proceeding is <span className="text-[#fefefe] font-semibold">depending on the vendor to defend its own record</span>.{' '}
+        <span className="text-orange-400 font-semibold">That is not operator-grade evidence.</span>
       </>
     ),
+    dim: false,
   },
 ];
 
@@ -47,17 +49,17 @@ export function CasinoLoyaltySlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 05 · Loyalty
+            Nº 02 · The Gap, Continued
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[60px] leading-[0.98] tracking-tight mt-3 uppercase"
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[54px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Personalization that{' '}
-            <span className="text-orange-400">actually personalizes.</span>
+            Three workarounds.{' '}
+            <span className="text-orange-400">None of them governs the agent.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -129,8 +131,8 @@ export function CasinoLoyaltySlide() {
             borderTop: '1px solid rgba(249,115,22,0.25)',
           }}
         >
-          Personalization has been a marketing word for thirty years.{' '}
-          <span className="text-orange-400">The agent makes it a real one.</span>
+          The infrastructure gap is structural.{' '}
+          <span className="text-orange-400">It will not be closed by another tool above the agent.</span>
         </motion.p>
       </div>
     </div>

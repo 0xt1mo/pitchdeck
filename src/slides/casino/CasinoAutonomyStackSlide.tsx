@@ -10,35 +10,35 @@ type StackLayer = {
 
 const stack: StackLayer[] = [
   {
-    product: 'AGENT FRAMEWORKS',
-    label: 'THE APPLICATION LAYER',
-    detail: 'Bring your own agent — any framework, any model.',
-    tags: 'LANGCHAIN · OPENCLAW · AUTOGEN · CUSTOM',
+    product: 'VERIFIABILITY',
+    label: 'INDEPENDENT CONFIRMATION',
+    detail: 'An independent party confirms the record is intact and unaltered — cryptographically, without trusting the operator or the vendor.',
+    tags: 'TAMPER-EVIDENT · OPERATOR-HELD',
     variant: 'top',
   },
   {
-    product: 'UNICITY AOS9',
-    label: 'RUNTIME',
-    detail: 'A secure runtime that sits below the agent. Every model output, tool call, and decision passes through it — security interception, audit logging, and budget enforcement happen here, where tools cannot bypass them.',
-    tags: 'KERNEL · POLICY · INTERCEPT',
+    product: 'EXPLAINABILITY',
+    label: 'DECISION CHAIN',
+    detail: 'A regulator or court can reconstruct the decision and reasoning — from a record produced at the moment of execution, not the next morning.',
+    tags: 'RECEIPT · IDENTITY · AUTHORITY · POLICY',
     variant: 'mid',
   },
   {
-    product: 'UNICITY L1',
-    label: 'SETTLEMENT & IDENTITY',
-    detail: 'The substrate. State tokenization, value transfer, cryptographic identity and delegation.',
-    tags: 'STATE TOKENS · IDENTITY · DELEGATION',
+    product: 'SECURITY',
+    label: 'ARCHITECTURAL ENFORCEMENT',
+    detail: 'The agent operates within authorisation — enforced at the architectural level, before execution. Article 14 by design.',
+    tags: 'POLICY · KERNEL · ED25519',
     variant: 'bottom',
   },
 ];
 
 const requirements = [
-  'Identity',
-  'Delegation',
-  'Verifiable Execution',
-  'Policy Enforcement',
-  'Settlement',
-  'Interoperability',
+  'Article 12',
+  'Article 13',
+  'Article 14',
+  'Article 26',
+  'DORA',
+  'Operator-Held',
 ];
 
 export function CasinoAutonomyStackSlide() {
@@ -55,7 +55,7 @@ export function CasinoAutonomyStackSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 10 · The Stack
+            Nº 06 · Three Properties
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -64,8 +64,8 @@ export function CasinoAutonomyStackSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight mt-2 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            An operating system for{' '}
-            <span className="text-orange-400">autonomous AI.</span>
+            Security. Explainability.{' '}
+            <span className="text-orange-400">Verifiability.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -74,7 +74,7 @@ export function CasinoAutonomyStackSlide() {
             className="mt-3 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Three layers. <span className="text-orange-400 font-bold">Settlement, runtime, frameworks.</span> Every requirement autonomy demands, delivered as one protocol stack.
+            Three properties. <span className="text-orange-400 font-bold">What the regulation requires. What enterprise customers need.</span>
           </motion.p>
         </div>
 
@@ -152,7 +152,7 @@ export function CasinoAutonomyStackSlide() {
             className="text-[#fefefe]/55 text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-2"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Every Autonomy Requirement, Delivered
+            Every Regulatory Requirement, Mapped
           </p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             {requirements.map((r, i) => (
@@ -185,7 +185,7 @@ export function CasinoAutonomyStackSlide() {
             borderTop: '1px solid rgba(249,115,22,0.25)',
           }}
         >
-          SIX REQUIREMENTS. ONE PLATFORM. BUILT FROM FIRST PRINCIPLES.
+          ENFORCED. EXPLAINED. VERIFIED. AT THE ARCHITECTURAL LEVEL.
         </motion.p>
 
       </div>
@@ -307,9 +307,9 @@ function IsoStackDiagram() {
 
       <rect x={0} y={0} width={W} height={H} fill="url(#iso-grid)" />
 
-      <Slab cy={layerY[2]} variant="bottom" centerLabel="PROOF" />
-      <Slab cy={layerY[1]} variant="mid" centerLabel="AOS9" centerSub="KERNEL" />
-      <Slab cy={layerY[0]} variant="top" centerLabel="AGENT" />
+      <Slab cy={layerY[2]} variant="bottom" centerLabel="SECURITY" />
+      <Slab cy={layerY[1]} variant="mid" centerLabel="EXPLAIN" centerSub="RECEIPT" />
+      <Slab cy={layerY[0]} variant="top" centerLabel="VERIFY" />
     </svg>
   );
 }

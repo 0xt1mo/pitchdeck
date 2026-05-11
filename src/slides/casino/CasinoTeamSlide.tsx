@@ -10,7 +10,7 @@ const founders = [
     linkedin: 'https://www.linkedin.com/in/mikegault1/',
     lines: [
       'PhD Electrical Engineering',
-      'Built & exited Guardtime (ADX:IHC)',
+      'Built the company that developed & deployed KSI at national scale',
       'Ex-MD, Barclays Capital',
     ],
   },
@@ -21,18 +21,18 @@ const founders = [
     linkedin: 'https://www.linkedin.com/in/tonykenyon/',
     lines: [
       'PhD Machine Learning',
-      '25 years shipping enterprise AI & infra',
-      'Principal Architect: BT, Nokia, A10',
+      '25 years shipping enterprise infrastructure',
+      'Principal Architect: BT, Nokia, A10 Networks',
     ],
   },
   {
     name: 'Alan Radi',
-    role: 'Gaming Vertical',
+    role: 'Co-Founder · Head of AI Strategy',
     photo: '/team/Alan Portrait.jpg',
     photoStyle: { transform: 'translateY(-8%) scale(1.3)', transformOrigin: '50% 50%' },
     linkedin: 'https://www.linkedin.com/in/alanradi/',
     lines: [
-      '12 years implementing CX AI for Global B2C brands',
+      '12 years implementing AI for global B2C brands',
       'Apple · Google · Verizon · Pepsi · DHL',
     ],
   },
@@ -105,7 +105,7 @@ export function CasinoTeamSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 08 · Who We Are
+            Nº 08 · The Track Record
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -114,8 +114,6 @@ export function CasinoTeamSlide() {
             className="text-[#fefefe] text-[22px] sm:text-[32px] lg:text-[42px] leading-[1.0] tracking-tight mt-2 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Who are we?
-            <br />
             Founders who've{' '}
             <span className="text-orange-400">done this before.</span>
           </motion.h1>
@@ -133,7 +131,7 @@ export function CasinoTeamSlide() {
             className="mt-3 text-[#fefefe]/85 text-xs sm:text-sm lg:text-base leading-snug max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            <span className="text-[#fefefe] font-semibold">Unicity Labs.</span> A team of PhDs in machine learning and cryptography with deep experience building agentic systems — applying fifteen years of nation-state-grade cryptographic engineering to the rail your agents transact on.
+            <span className="text-[#fefefe] font-semibold">Unicity Labs.</span> Built on cryptographic engineering lineage used in <span className="text-[#fefefe] font-semibold">Estonia's digital state infrastructure</span>, <span className="text-[#fefefe] font-semibold">NATO Cyber Range</span>, and <span className="text-[#fefefe] font-semibold">Verizon Enterprise blockchain</span> services. Cleared sovereign government procurement, NATO security review, and tier-one telco deployment.
           </motion.p>
         </div>
 

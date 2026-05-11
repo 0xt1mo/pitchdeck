@@ -14,17 +14,17 @@ export function CasinoOnboardingSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 03 · Onboarding
+            Nº 03 · The Stakes
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[60px] leading-[0.98] tracking-tight mt-3 uppercase"
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[54px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            The signup funnel was built for humans.{' '}
-            <span className="text-orange-400">Gone.</span>
+            When an agent acts on the network,{' '}
+            <span className="text-orange-400">the operator owns the consequence.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -44,7 +44,7 @@ export function CasinoOnboardingSlide() {
             className="text-[#fefefe]/60 text-[64px] sm:text-[96px] lg:text-[132px] leading-[0.88] tracking-[-0.01em] uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            25 Minutes.
+            $33M.
           </motion.h2>
           <motion.h2
             initial={{ opacity: 0, x: -30 }}
@@ -53,7 +53,7 @@ export function CasinoOnboardingSlide() {
             className="text-orange-400 text-[64px] sm:text-[96px] lg:text-[132px] leading-[0.88] tracking-[-0.01em] uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            30% Lost.
+            40% Cancelled.
           </motion.h2>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -69,8 +69,8 @@ export function CasinoOnboardingSlide() {
             className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl leading-relaxed max-w-5xl mt-2"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            From landing page to first wager, the average regulated operator's onboarding funnel costs <span className="text-[#fefefe] font-semibold">twenty-five minutes</span> and loses <span className="text-[#fefefe] font-semibold">thirty per cent of attempted players</span> to abandonment, KYC drop-off, and card decline.{' '}
-            <span className="text-orange-400 font-semibold">The agent doesn't have a funnel.</span>
+            <span className="text-[#fefefe] font-semibold">$33M:</span> T-Mobile, March 2025 — private arbitration following a SIM-swap attack. A single misconfigured agent can initiate <span className="text-[#fefefe] font-semibold">hundreds of unauthorised actions</span> before a human notices.{' '}
+            <span className="text-orange-400 font-semibold">40%:</span> Gartner's estimate of agentic AI projects cancelled by end 2027 — because the governance infrastructure beneath them does not exist.
           </motion.p>
         </div>
 
@@ -85,8 +85,8 @@ export function CasinoOnboardingSlide() {
             borderTop: '1px solid rgba(249,115,22,0.25)',
           }}
         >
-          Agents are already{' '}
-          <span className="text-orange-400">signaling their intent.</span>
+          A SIM swap. A provisioning request. A billing change.{' '}
+          <span className="text-orange-400">The operator carried it out. The operator is accountable.</span>
         </motion.p>
       </div>
     </div>

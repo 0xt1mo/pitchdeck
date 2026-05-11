@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 
 const items = [
-  { name: 'Card Processing',        today: '2.5–3.5% of deposit volume',          after: '0',        zero: true  },
-  { name: 'Chargebacks & Disputes', today: '0.5–1.0% of deposits + per-dispute',  after: '0',        zero: true  },
-  { name: 'PSP Integration Stack',  today: '5+ vendors per geography',            after: '1 rail',   zero: false },
-  { name: 'Deposit Funnel',         today: '30% abandon at first attempt',        after: '0 funnel', zero: false },
+  { name: 'Identity', today: 'Which subscriber logged in?',       after: 'Which agent acted?' },
+  { name: 'Authority', today: 'Which device connected?',           after: 'Who authorised it?' },
+  { name: 'Policy',   today: 'Which application called the API?', after: 'Which policy governed it?' },
+  { name: 'Evidence', today: 'Can we identify the user?',          after: 'Can we prove it to a regulator?' },
 ];
 
 export function CasinoCostSlide() {
@@ -21,17 +21,17 @@ export function CasinoCostSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 07 · Cost
+            Nº 02 · The Gap
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[60px] leading-[0.98] tracking-tight mt-3 uppercase"
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Thirty years of on-ramp friction.{' '}
-            <span className="text-orange-400">Gone.</span>
+            Current infrastructure was designed to answer{' '}
+            <span className="text-orange-400">different questions.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -47,22 +47,35 @@ export function CasinoCostSlide() {
             className="mt-4 text-[#fefefe]/75 text-sm lg:text-base leading-relaxed max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Card processing, chargebacks, PSP integrations, deposit funnels — the apparatus that exists to get money into your platform. Agents arrive with the money. They've already KYC'd upstream.
+            A telco today can reliably answer: <span className="text-[#fefefe] font-semibold">which subscriber logged in, which device connected, which application called the API.</span> Agentic AI creates a different set of questions — and none of the infrastructure built for human-initiated transactions produces answers at operator standard.
           </motion.p>
         </div>
 
-        {/* Two columns: items going to zero (left) + composite stat (right) */}
+        {/* Two columns: 4-row question comparison (left) + composite "0" (right) */}
         <div className="grid grid-cols-[1.4fr_1fr] gap-12 lg:gap-16 items-stretch shrink-0">
 
-          {/* Left — five line items */}
+          {/* Left — 4 row comparison */}
           <div className="flex flex-col">
+            <div
+              className="grid grid-cols-[0.7fr_1.6fr_60px_1.6fr] items-end gap-4 py-2"
+              style={{ borderBottom: '1px dashed rgba(255,255,255,0.18)' }}
+            >
+              <div />
+              <div className="text-[#fefefe]/45 text-[10px] tracking-[0.32em] uppercase font-semibold" style={{ fontFamily: "'Geist Mono', monospace" }}>
+                Today
+              </div>
+              <div />
+              <div className="text-orange-400 text-[10px] tracking-[0.32em] uppercase font-semibold" style={{ fontFamily: "'Geist Mono', monospace" }}>
+                For Agents
+              </div>
+            </div>
             {items.map((it, i) => (
               <motion.div
                 key={it.name}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.08, duration: 0.5 }}
-                className="grid grid-cols-[1.5fr_60px_0.7fr] items-center gap-4 py-3 lg:py-4"
+                className="grid grid-cols-[0.7fr_1.6fr_60px_1.6fr] items-center gap-4 py-3 lg:py-4"
                 style={{
                   borderTop: '1px solid rgba(255,255,255,0.10)',
                   ...(i === items.length - 1
@@ -70,19 +83,17 @@ export function CasinoCostSlide() {
                     : {}),
                 }}
               >
-                <div>
-                  <div
-                    className="text-[#fefefe] text-[18px] sm:text-[20px] lg:text-[24px] tracking-[0.04em] uppercase leading-tight"
-                    style={{ fontFamily: "'Anton', sans-serif" }}
-                  >
-                    {it.name}
-                  </div>
-                  <div
-                    className="text-[#fefefe]/40 text-[11px] lg:text-[13px] mt-1"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}
-                  >
-                    {it.today}
-                  </div>
+                <div
+                  className="text-[#fefefe] text-[15px] sm:text-[17px] lg:text-[19px] tracking-[0.04em] uppercase leading-tight"
+                  style={{ fontFamily: "'Anton', sans-serif" }}
+                >
+                  {it.name}
+                </div>
+                <div
+                  className="text-[#fefefe]/55 text-[12px] lg:text-[13px] leading-snug"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}
+                >
+                  {it.today}
                 </div>
                 <div
                   className="text-[#fefefe]/30 text-center text-base lg:text-lg"
@@ -91,22 +102,16 @@ export function CasinoCostSlide() {
                   →
                 </div>
                 <div
-                  className="text-orange-400 text-right uppercase leading-none"
-                  style={{
-                    fontFamily: "'Anton', sans-serif",
-                    letterSpacing: '0.02em',
-                    fontSize: it.zero ? undefined : undefined,
-                  }}
+                  className="text-[#fefefe] text-[13px] lg:text-[14px] leading-snug font-semibold"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
-                  <span className={it.zero ? 'text-[44px] lg:text-[56px]' : 'text-[22px] lg:text-[28px]'}>
-                    {it.after}
-                  </span>
+                  {it.after}
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Right — composite stat + architecture */}
+          {/* Right — composite "0" */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -119,25 +124,19 @@ export function CasinoCostSlide() {
                 className="text-[#fefefe]/40 text-[11px] lg:text-[13px] tracking-[0.32em] uppercase font-semibold"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                Composite On-Ramp Cost · Today
+                Operator-Grade Answers · Today
               </div>
               <h3
-                className="text-orange-400 text-[88px] sm:text-[112px] lg:text-[132px] leading-[0.92] tracking-[-0.005em] uppercase"
+                className="text-orange-400 text-[120px] sm:text-[160px] lg:text-[200px] leading-[0.88] tracking-[-0.005em] uppercase"
                 style={{ fontFamily: "'Anton', sans-serif" }}
               >
-                15–35%
+                0
               </h3>
               <div
-                className="text-[#fefefe] text-[24px] sm:text-[28px] lg:text-[34px] leading-tight tracking-[0.04em] uppercase"
+                className="text-[#fefefe] text-[20px] sm:text-[24px] lg:text-[28px] leading-tight tracking-[0.04em] uppercase"
                 style={{ fontFamily: "'Anton', sans-serif" }}
               >
-                Of GGR.
-              </div>
-              <div
-                className="text-[#fefefe]/40 text-[10px] lg:text-xs tracking-[0.12em] uppercase mt-2"
-                style={{ fontFamily: "'Geist Mono', monospace" }}
-              >
-                Edgar Dunn · Aeropay · EPI · 2025–26
+                Of the new questions.
               </div>
             </div>
 
@@ -148,8 +147,8 @@ export function CasinoCostSlide() {
                 borderTop: '1px solid rgba(255,255,255,0.10)',
               }}
             >
-              Players hold regulated stablecoins — <span className="text-[#fefefe] font-semibold">USDC, EURC, MiCA-compliant</span> — in agent wallets, KYC'd upstream by regulated issuers and exchanges. When the agent opens a session, the money is already there.{' '}
-              <span className="text-orange-400 font-semibold">No card network. No PSP stack. No deposit funnel.</span> Once the wager arrives, your platform runs exactly as it does today.
+              Traditional IAM was built for human lifecycles. Prompt-layer security tools classify what an agent says — not what it did. Vendor-managed logs are held by the vendor.{' '}
+              <span className="text-orange-400 font-semibold">An operator presenting a vendor's log as evidence is depending on the vendor to defend its own record.</span>
             </p>
           </motion.div>
         </div>
@@ -165,8 +164,8 @@ export function CasinoCostSlide() {
             borderTop: '1px solid rgba(249,115,22,0.25)',
           }}
         >
-          The agentic interface{' '}
-          <span className="text-orange-400">solves your on-ramp problem.</span>
+          The network was built for one set of questions.{' '}
+          <span className="text-orange-400">Agentic AI is asking another.</span>
         </motion.p>
       </div>
     </div>

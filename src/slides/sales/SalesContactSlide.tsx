@@ -42,7 +42,7 @@ export function SalesContactSlide() {
                 className="text-[#fefefe]/80 text-sm lg:text-base leading-relaxed"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                See an agent open a session, place a wager, settle — end-to-end.
+                See an unsigned agent rejected, a signed agent acted on, and the regulator-readable record produced — end-to-end. <span className="text-orange-400 font-semibold">Security. Explainability. Verifiability.</span>
               </p>
             </div>
 
@@ -100,11 +100,11 @@ export function SalesContactSlide() {
                   </svg>
                 </div>
                 <a
-                  href="tel:+971508843756"
+                  href="tel:+37258859860"
                   className="text-orange-400 text-base lg:text-lg font-bold"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
-                  +971 50 884 3756
+                  +372 5885 9860
                 </a>
               </div>
             </div>
@@ -121,8 +121,8 @@ export function SalesContactSlide() {
               style={{ border: '1px solid rgba(255,255,255,0.10)' }}
             >
               <iframe
-                title="Unicity Labs Abu Dhabi"
-                src="https://maps.google.com/maps?q=Al+Montazah+Tower+B+Khalidiyah+Abu+Dhabi+UAE&z=16&output=embed"
+                title="Unicity Labs Tallinn"
+                src="https://maps.google.com/maps?q=59.4370,24.7536&z=12&output=embed"
                 className="w-full h-full"
                 style={{
                   border: 0,
@@ -138,9 +138,9 @@ export function SalesContactSlide() {
             >
               <span className="text-[#fefefe] font-bold">Unicity Labs</span>
               <br />
-              502, 5th Floor, Al Montazah Tower B
+              Tallinn · Estonia
               <br />
-              Khalidiyah Area, Abu Dhabi, UAE
+              Anchored in the home of the digital state
             </p>
           </motion.div>
 

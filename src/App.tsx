@@ -1,53 +1,33 @@
 import { useEffect, useCallback, useState } from 'react';
 import { CasinoCoverSlide } from './slides/casino/CasinoCoverSlide';
+import { CasinoWhyNowSlide } from './slides/casino/CasinoWhyNowSlide';
+import { CasinoCostSlide } from './slides/casino/CasinoCostSlide';
+import { CasinoLoyaltySlide } from './slides/casino/CasinoLoyaltySlide';
 import { CasinoOnboardingSlide } from './slides/casino/CasinoOnboardingSlide';
 import { CasinoRetentionSlide } from './slides/casino/CasinoRetentionSlide';
-import { CasinoLoyaltySlide } from './slides/casino/CasinoLoyaltySlide';
-import { CasinoCostSlide } from './slides/casino/CasinoCostSlide';
-import { CasinoTeamSlide } from './slides/casino/CasinoTeamSlide';
+import { CasinoDashboardSlide } from './slides/casino/CasinoDashboardSlide';
 import { CasinoPlatformSlide } from './slides/casino/CasinoPlatformSlide';
 import { CasinoAutonomyStackSlide } from './slides/casino/CasinoAutonomyStackSlide';
-import { CasinoWhyNowSlide } from './slides/casino/CasinoWhyNowSlide';
 import { CasinoIntroducingUnicitySlide } from './slides/casino/CasinoIntroducingUnicitySlide';
 import { CasinoAskSlide } from './slides/casino/CasinoAskSlide';
-import { CasinoDashboardSlide } from './slides/casino/CasinoDashboardSlide';
-import { SalesIntroSlide } from './slides/sales/SalesIntroSlide';
-import { SalesAgentsComingSlide } from './slides/sales/SalesAgentsComingSlide';
-import { SalesPilotPurgatorySlide } from './slides/sales/SalesPilotPurgatorySlide';
-import { SalesOverviewSlide } from './slides/sales/SalesOverviewSlide';
-import { SalesAgentHostSlide } from './slides/sales/SalesAgentHostSlide';
-import { SalesInterceptFabricSlide } from './slides/sales/SalesInterceptFabricSlide';
-import { SalesAgentSphereSlide } from './slides/sales/SalesAgentSphereSlide';
-import { SalesDeploymentSlide } from './slides/sales/SalesDeploymentSlide';
-import { SalesAboutSlide } from './slides/sales/SalesAboutSlide';
+import { CasinoTeamSlide } from './slides/casino/CasinoTeamSlide';
 import { SalesContactSlide } from './slides/sales/SalesContactSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  CasinoCoverSlide,             // 1. Cover — Your next million customers won't arrive as humans
-  CasinoWhyNowSlide,            // 2. Why Now — Web → Mobile → Agentic
-  CasinoIntroducingUnicitySlide,// 3. Introducing Unicity — secure agentic OS for gaming
-  CasinoOnboardingSlide,        // 4. Onboarding — signup funnel was built for humans
-  CasinoCostSlide,              // 5. Cost — Thirty years of on-ramp friction
-  CasinoRetentionSlide,         // 6. Retention — 92% ignored
-  CasinoLoyaltySlide,           // 7. Loyalty — Personalisation that actually personalises
-  // CasinoComplianceSlide,     // hidden — Your regulatory moat, built into the rail
-  CasinoAutonomyStackSlide,     // 8. The Stack — operating system for autonomous AI
-  CasinoDashboardSlide,         // 9. Enterprise Console — pillar dashboards
-  CasinoPlatformSlide,          // 10. What Unicity Is — 6 platform pillars
-  // CasinoArchitectureSlide,   // hidden — Player wallet to operator wallet
-  CasinoAskSlide,               // 11. The Ask — 45 days to production
-  CasinoTeamSlide,              // 12. Who We Are — team + globe
-  SalesContactSlide,            // 13. See It In Action / Contact
-  SalesIntroSlide,              // 14. Intro
-  SalesAgentsComingSlide,       // 15. Agents are coming
-  SalesPilotPurgatorySlide,     // 16. Agentic AI not ready for production
-  SalesOverviewSlide,           // 17. Security, Safety, Verifiability — 3 products
-  SalesAgentHostSlide,          // 18. AgentHost / ASTRID OS
-  SalesInterceptFabricSlide,    // 19. Semantic Intercept Fabric
-  SalesAgentSphereSlide,        // 20. AgentSphere
-  SalesDeploymentSlide,         // 21. Deployment Models
-  SalesAboutSlide,              // 22. About Us
+  CasinoCoverSlide,             // 1. Cover — Every agent on your network is signed
+  CasinoWhyNowSlide,            // 2. Nº 01 The Shift — 3 eras: Sessions/Devices/Agents
+  CasinoCostSlide,              // 3. Nº 02 The Gap — questions table
+  CasinoLoyaltySlide,           // 4. Nº 02 cont. — 3 failure modes
+  CasinoOnboardingSlide,        // 5. Nº 03 The Stakes — $33M / 40%
+  CasinoRetentionSlide,         // 6. Nº 04 Regulatory Pull — Dec 2 2027
+  CasinoDashboardSlide,         // 7. Nº 04 cont. — 4 EU AI Act Articles
+  CasinoPlatformSlide,          // 8. Nº 05 Revenue Opportunity — 6 products
+  CasinoAutonomyStackSlide,     // 9. Nº 06 Security · Explainability · Verifiability
+  CasinoIntroducingUnicitySlide,// 10. Nº 07 What Unicity Provides — 4 components
+  CasinoAskSlide,               // 11. Nº 09 The Pilot — 3 tracks
+  CasinoTeamSlide,              // 12. Nº 08 The Track Record — team + globe
+  SalesContactSlide,            // 13. Contact — Tallinn anchor
 ];
 
 export default function App() {
@@ -58,7 +38,6 @@ export default function App() {
     }
   }, []);
 
-  // Expose for PDF export script
   useEffect(() => {
     (window as any).__goToSlide = goToSlide;
     (window as any).__totalSlides = slides.length;

@@ -2,26 +2,26 @@ import { motion } from 'framer-motion';
 
 const pillars = [
   {
-    label: 'Security',
-    desc: 'Semantic intercept fabric — every payload checked at runtime.',
+    label: 'Article 12',
+    desc: 'Automatic event recording throughout the system\'s operational lifetime — traceability by design.',
     img: '/dashboards/security.png',
     accent: '#ef4444',
   },
   {
-    label: 'Governance',
-    desc: 'Live policy library, approvals, and full audit ledger.',
+    label: 'Article 13',
+    desc: 'Sufficiently transparent that the deployer can interpret outputs. Log collection built in.',
     img: '/dashboards/governance.png',
     accent: '#22c55e',
   },
   {
-    label: 'Networking',
-    desc: 'Open lanes across A2A, MCP, x402 — counterparty-aware.',
+    label: 'Article 14',
+    desc: 'Designed so natural persons can effectively oversee operation — human oversight as architecture.',
     img: '/dashboards/networking.png',
     accent: '#a855f7',
   },
   {
-    label: 'Payments',
-    desc: 'Cash flow, rail balances and per-agent budgets in real time.',
+    label: 'Article 26',
+    desc: 'Deployer holds logs under their control — minimum six months. Operator-side, not vendor-side.',
     img: '/dashboards/payments.png',
     accent: '#f59e0b',
   },
@@ -41,7 +41,7 @@ export function CasinoDashboardSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            The Enterprise Console
+            Nº 04 · The Regulation, Article by Article
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -50,8 +50,8 @@ export function CasinoDashboardSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[1.05] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            One pane of glass for{' '}
-            <span className="text-orange-400">every agent, every policy, every payment.</span>
+            Four articles.{' '}
+            <span className="text-orange-400">One architectural requirement.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -60,7 +60,7 @@ export function CasinoDashboardSlide() {
             className="mt-2 text-[#fefefe]/85 text-xs sm:text-sm max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Identity, delegation, policy, settlement and audit — unified into a single operator surface. Not rip and replace. A control plane that sits under any agent deployment.
+            Regulation (EU) 2024/1689 — for high-risk AI systems under Annex III. <span className="text-[#fefefe] font-semibold">Designed.</span> Not monitored. Not reported on. Not audited retrospectively. The transparency, traceability, and oversight capability must be properties of the system's architecture from the moment it operates.
           </motion.p>
         </div>
 

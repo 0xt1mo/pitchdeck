@@ -2,38 +2,37 @@ import { motion } from 'framer-motion';
 
 const eras = [
   {
-    tag: '01 · The First Wave',
+    tag: '01 · Sessions',
     name: 'Web',
     year: '1995',
     arrival: 'The browser arrives.',
-    fact: <>InterCasino launches 1995. Bet365 founded 2000. Online gambling reaches $1bn by 2003.</>,
-    impact: <>Winners: operators who treated the web as the platform. Losers: high-street bookmakers who treated it as a side channel.</>,
+    fact: <>The infrastructure learned to answer <span className="text-[#fefefe]/85">"which session is this?"</span></>,
+    impact: <>Username · password · cookie.</>,
     state: 'past' as const,
   },
   {
-    tag: '02 · The Second Wave',
+    tag: '02 · Devices',
     name: 'Mobile',
     year: '2008',
     arrival: 'The smartphone arrives.',
-    fact: <>App Store launches 2008. Mobile overtakes desktop in regulated markets by 2014. FanDuel and DraftKings build $5bn+ businesses on the new interface.</>,
-    impact: <>Winners: operators who built mobile-first. Losers: operators who ported the website.</>,
+    fact: <>The infrastructure learned to answer <span className="text-[#fefefe]/85">"which device is this?"</span></>,
+    impact: <>SIM · IMEI · fingerprint.</>,
     state: 'past' as const,
   },
   {
-    tag: '03 · The Third Wave',
+    tag: '03 · Agents',
     name: 'Agentic',
     year: '2026 · Now',
     arrival: 'The agent arrives.',
     fact: (
       <>
-        <span className="text-[#fefefe] font-semibold">Agents are the fastest-growing channel in commerce.</span> The infrastructure is in production: Mastercard and Santander cleared Europe's first live agent-initiated bank payment in March. Visa Intelligent Commerce and Mastercard Agent Pay are rolling out across US cardholders.{' '}
-        <span className="text-orange-400 font-semibold">The category is six months old and already real.</span>
+        AT&amp;T, Telefónica, TM Forum — agents already in production telecom workflows.{' '}
+        <span className="text-orange-400 font-semibold">The infrastructure has not yet learned to answer "which agent acted?"</span>
       </>
     ),
     impact: (
       <>
-        Winners: operators who are agent-readable first.{' '}
-        <span className="text-orange-400 font-semibold">The window is three years. It just opened.</span>
+        <span className="text-orange-400 font-semibold">The new infrastructure gap.</span>
       </>
     ),
     state: 'now' as const,
@@ -54,7 +53,7 @@ export function CasinoWhyNowSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 11 · Why Now
+            Nº 01 · The Shift
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -63,8 +62,8 @@ export function CasinoWhyNowSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Every twenty years, the interface changes.{' '}
-            <span className="text-orange-400">The operator who moves first defines the era.</span>
+            The actor on the network{' '}
+            <span className="text-orange-400">is changing.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -80,7 +79,8 @@ export function CasinoWhyNowSlide() {
             className="mt-4 text-[#fefefe]/75 text-sm lg:text-base leading-relaxed max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Two interfaces shaped this industry — the web and the mobile app. Each had a window of about three years where the early movers became the giants of the next two decades. The third interface is here.
+            The internet learned to authenticate sessions. Mobile networks learned to authenticate devices.{' '}
+            <span className="text-[#fefefe] font-semibold">The next requirement is to govern agents</span> — autonomously provisioning services, classifying fraud, modifying accounts, calling network APIs.
           </motion.p>
         </div>
 
@@ -195,8 +195,8 @@ export function CasinoWhyNowSlide() {
             borderTop: '1px solid rgba(249,115,22,0.25)',
           }}
         >
-          Two interfaces. Two generations of winners.{' '}
-          <span className="text-orange-400">The third one is here.</span>
+          Subscribers. Devices. Applications.{' '}
+          <span className="text-orange-400">The network has not yet learned to govern the agent.</span>
         </motion.p>
       </div>
     </div>

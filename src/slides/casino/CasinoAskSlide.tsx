@@ -3,34 +3,33 @@ import { motion } from 'framer-motion';
 const movements = [
   {
     num: '01',
-    week: 'Week 1–3',
-    title: 'Install.',
+    week: 'Track 01',
+    title: 'EU AI Act.',
     text: (
       <>
-        Unicity AOS deploys <strong className="text-[#fefefe] font-semibold">into your platform</strong>, alongside your existing wallet and game engine. No replacement, no migration. Your existing systems keep running.
+        Compliance infrastructure for high-risk AI under Annex III. <span className="text-orange-400 font-semibold">Articles 12 and 13 obligations met by architecture.</span>
       </>
     ),
     production: false,
   },
   {
     num: '02',
-    week: 'Week 4–6',
-    title: 'Integrate.',
+    week: 'Track 02',
+    title: 'Sovereign Registry.',
     text: (
       <>
-        Sandbox handshake with reference agent. Validate <strong className="text-[#fefefe] font-semibold">signed sessions, per-wager settlement, audit trail</strong>. Compliance and security review run in parallel.
+        Every agent registered, scoped, governed, revocable. <span className="text-orange-400 font-semibold">The single source of truth Article 26 requires.</span>
       </>
     ),
     production: false,
   },
   {
     num: '03',
-    week: 'Week 7',
-    title: 'Production.',
+    week: 'Track 03',
+    title: 'Enterprise Service.',
     text: (
       <>
-        Live agent traffic. First signed session settles. Audit clean.{' '}
-        <span className="text-orange-400 font-semibold">You start onboarding agents at scale.</span>
+        Managed service for DORA-regulated enterprise customers — closing the evidence gap. <span className="text-orange-400 font-semibold">Trust as a billable line.</span>
       </>
     ),
     production: true,
@@ -51,17 +50,17 @@ export function CasinoAskSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 12 · The Ask
+            Nº 09 · The Pilot
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[60px] leading-[0.98] tracking-tight mt-3 uppercase"
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[54px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Forty-five days to production.{' '}
-            <span className="text-orange-400">Then start onboarding agents.</span>
+            Forty-five days. One integration.{' '}
+            <span className="text-orange-400">Operator-held evidence.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -77,7 +76,8 @@ export function CasinoAskSlide() {
             className="mt-4 text-[#fefefe]/75 text-sm lg:text-base leading-relaxed max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            One integration. One sprint. One regulated operator on the live rail. Forty-five days from kickoff to production deployment of Unicity AOS inside your stack — then you start receiving agents.
+            Deploys alongside existing BSS and OSS — <span className="text-[#fefefe] font-semibold">no replacement, no migration</span>.{' '}
+            <span className="text-orange-400 font-semibold">REGISTER → INTERCEPT → ENFORCE → PROVE.</span> Three tracks from day one.
           </motion.p>
         </div>
 

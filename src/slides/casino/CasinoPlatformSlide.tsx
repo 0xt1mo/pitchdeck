@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 
 const pillars = [
-  { num: '01', name: 'Security',   body: <>Verifiable execution for <strong className="text-[#fefefe] font-semibold">every agent</strong> Guardrails, sandboxing and enforcement at the OS kernel</> },
-  { num: '02', name: 'Compliance', body: <>KYC attestations, risk caps, session limits, regulatory audit trail — <strong className="text-[#fefefe] font-semibold">bound to the agent</strong>, enforced structurally, presented per transaction.</> },
-  { num: '03', name: 'Networking', body: <>Peer-to-peer agent-to-agent messaging. <strong className="text-[#fefefe] font-semibold">No shared ledger.</strong> No central router. Sub-second across regulated counterparties.</> },
-  { num: '04', name: 'Governance', body: <>Policy enforcement at the agent level. Limits, exclusions, permissions — <strong className="text-[#fefefe] font-semibold">defined once</strong>, applied across every interaction.</> },
-  { num: '05', name: 'Payments',    body: <>P2P transfer of regulated stablecoins. Perfect privacy <strong className="text-[#fefefe] font-semibold">Cryptographic finality.</strong> No card network, no payment processor.</> },
-  { num: '06', name: 'Audit',      body: <>Every action signed and witnessed. <strong className="text-[#fefefe] font-semibold">Compliance evidence is a query</strong>, not a CSV. Regulators verify, not trust.</> },
+  { num: '01', name: 'Governed APIs',       body: <>Every network API call <strong className="text-[#fefefe] font-semibold">signed, scoped, and recorded</strong>.</> },
+  { num: '02', name: 'Safe Provisioning',   body: <>Human or agent — both governed at the <strong className="text-[#fefefe] font-semibold">same evidentiary standard</strong>.</> },
+  { num: '03', name: 'Verified Identity',   body: <>Cryptographic identity <strong className="text-[#fefefe] font-semibold">bound to a verified tenant</strong>.</> },
+  { num: '04', name: 'Compliance Receipts', body: <>Tamper-evident proof — <strong className="text-[#fefefe] font-semibold">delivered as a managed service</strong>.</> },
+  { num: '05', name: 'Sovereign Hosting',   body: <>Subscriber data <strong className="text-[#fefefe] font-semibold">stays inside the operator environment</strong>.</> },
+  { num: '06', name: 'Reg-Scope Service',   body: <>DORA + Annex III evidence, <strong className="text-[#fefefe] font-semibold">billed to enterprise</strong>.</> },
 ];
 
 export function CasinoPlatformSlide() {
@@ -23,17 +23,17 @@ export function CasinoPlatformSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 09 · What Unicity Is
+            Nº 05 · The Revenue Opportunity
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[60px] leading-[0.98] tracking-tight mt-3 uppercase"
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            What it means{' '}
-            <span className="text-orange-400">for gaming operators.</span>
+            The operator who governs agent access{' '}
+            <span className="text-orange-400">can sell it.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -49,7 +49,7 @@ export function CasinoPlatformSlide() {
             className="mt-4 text-[#fefefe]/75 text-sm lg:text-base leading-relaxed max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Everything an enterprise needs to deploy agents safely at scale — security, compliance, networking, governance, value, audit — on a single platform.
+            Regulated enterprises cannot consume agentic telco services without assurance that every agent action is governed. <span className="text-[#fefefe] font-semibold">The operator who provides that assurance is selling trusted agent access</span> — a premium layer on existing infrastructure that hyperscalers cannot match.
           </motion.p>
         </div>
 
@@ -105,8 +105,8 @@ export function CasinoPlatformSlide() {
             borderTop: '1px solid rgba(249,115,22,0.25)',
           }}
         >
-          Other vendors solve one piece.{' '}
-          <span className="text-orange-400">Unicity is the platform.</span>
+          Omdia named compliance-grade trust infrastructure a monetisable opportunity.{' '}
+          <span className="text-orange-400">TM Forum named the requirement at MWC 2026.</span>
         </motion.p>
       </div>
     </div>
