@@ -1,5 +1,4 @@
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 const resources = [
   {
@@ -9,8 +8,8 @@ const resources = [
     urlLabel: 'github.com/unicitynetwork',
     repos: [
       { name: 'blockchain', url: 'https://github.com/unicitynetwork/' },
-      { name: 'agents', url: 'https://github.com/unicity-astrid/astrid' },
-      { name: 'kernel', url: 'https://github.com/unicity-sphere/sphere-sdk' },
+      { name: 'agents', url: 'https://github.com/orgs/unicity-sphere/' },
+      { name: 'kernel', url: 'https://github.com/unicity-astrid' },
     ],
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -64,18 +63,6 @@ const resources = [
     ),
   },
   {
-    title: 'Unicity Block Explorer',
-    desc: 'Explore the Unicity testnet in real-time. View transactions, network statistics, and monitor decentralized infrastructure.',
-    url: 'https://unicity.network',
-    urlLabel: 'unicity.network',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
-        <circle cx="11" cy="11" r="8" />
-        <path d="M21 21l-4.35-4.35" />
-      </svg>
-    ),
-  },
-  {
     title: 'Security Proofs',
     desc: 'Formal security proofs and cryptographic analysis of Unicity\'s protocols. For security researchers and auditors.',
     url: 'https://github.com/unicitynetwork/execution-model-tex/releases/tag/latest/',
@@ -83,20 +70,6 @@ const resources = [
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Predicate Language',
-    desc: 'Each token has its own execution environment. This paper provides a formal proof of execution.',
-    url: 'https://github.com/unicitynetwork/execution-model-tex/releases/tag/latest',
-    urlLabel: 'github.com/.../execution-model-tex/releases',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
-        <rect x="4" y="4" width="6" height="6" rx="1" />
-        <rect x="14" y="4" width="6" height="6" rx="1" />
-        <rect x="4" y="14" width="6" height="6" rx="1" />
-        <rect x="14" y="14" width="6" height="6" rx="1" />
       </svg>
     ),
   },
@@ -117,7 +90,7 @@ export function ResourcesSlide() {
         <div className="shrink-0">
           <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Appendix
+            Resources
           </p>
           <h1 className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
@@ -141,11 +114,11 @@ export function ResourcesSlide() {
               <div className="text-orange-400/60 group-hover:text-orange-400 transition-colors mb-2">
                 {r.icon}
               </div>
-              <h3 className="text-[#fefefe]/90 text-xs sm:text-sm font-bold uppercase tracking-wide"
-                style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.05em' }}>
+              <h3 className="text-[#fefefe]/90 text-base sm:text-lg font-bold uppercase"
+                style={{ fontFamily: "'Geist Mono', monospace" }}>
                 {r.title}
               </h3>
-              <p className="text-[#fefefe]/50 text-[10px] sm:text-[11px] leading-relaxed mt-1.5 flex-1"
+              <p className="text-[#fefefe]/70 text-sm leading-relaxed mt-1.5 flex-1"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>
                 {r.desc}
               </p>
@@ -153,25 +126,20 @@ export function ResourcesSlide() {
                 <div className="flex gap-2 mt-2" style={{ fontFamily: "'Geist Mono', monospace" }}>
                   {r.repos.map((repo: any) => (
                     <a key={repo.name} href={repo.url} target="_blank" rel="noopener noreferrer"
-                      className="text-orange-400/70 hover:text-orange-400 text-[9px] sm:text-[10px] px-2 py-1 rounded border border-orange-500/20 hover:border-orange-500/40 transition-colors cursor-pointer">
+                      className="text-orange-400/70 hover:text-orange-400 text-xs sm:text-sm px-2 py-1 rounded border border-orange-500/20 hover:border-orange-500/40 transition-colors cursor-pointer">
                       {repo.name}
                     </a>
                   ))}
                 </div>
               ) : (
                 <a href={r.url} target="_blank" rel="noopener noreferrer"
-                  className="text-orange-400/60 hover:text-orange-400 text-[9px] sm:text-[10px] mt-2 underline underline-offset-2 decoration-orange-500/30 truncate cursor-pointer"
+                  className="text-orange-400/60 hover:text-orange-400 text-xs sm:text-sm mt-2 underline underline-offset-2 decoration-orange-500/30 truncate cursor-pointer"
                   style={{ fontFamily: "'Geist Mono', monospace" }}>
                   {r.urlLabel}
                 </a>
               )}
             </div>
           ))}
-        </div>
-
-        {/* Footer */}
-        <div className="shrink-0 mt-5 flex justify-end">
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
         </div>
 
       </div>

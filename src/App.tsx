@@ -1,87 +1,37 @@
 import { useEffect, useCallback, useState } from 'react';
-import './sphereInit'; // Start SDK initialization eagerly on page load
-import { TitleSlide } from './slides/TitleSlide';
-import { IntroSlide } from './slides/IntroSlide';
-import { TeamSlide } from './slides/TeamSlide';
-import { ProblemSlide } from './slides/ProblemSlide';
-import { SolutionSlide } from './slides/SolutionSlide';
-import { ParadigmOverviewSlide } from './slides/ParadigmOverviewSlide';
-import { ConsumerGTMSlide } from './slides/ConsumerGTMSlide';
-import { IntentsSlide } from './slides/IntentsSlide';
-import { MarketSlide } from './slides/MarketSlide';
-import { RaiseSlide } from './slides/RaiseSlide';
-import { AppendixSlide } from './slides/AppendixSlide';
-import { PaymentsSlide } from './slides/PaymentsSlide';
-import { ProtocolSlide } from './slides/ProtocolSlide';
-import { SecuritySlide } from './slides/SecuritySlide';
-import { DemoSlide } from './slides/DemoSlide';
-import { GTMSlide } from './slides/GTMSlide';
-import { ResourcesSlide } from './slides/ResourcesSlide';
-import { ParamarketSlide } from './slides/ParamarketSlide';
-import { ComparisonSlide } from './slides/ComparisonSlide';
-import { AgentsSlide } from './slides/AgentsSlide';
-import { CommunitySlide } from './slides/CommunitySlide';
-import { TokenSlide } from './slides/TokenSlide';
-import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
-import { WalletSlide } from './slides/WalletSlide';
-import { SecurityNetworkSlide } from './slides/SecurityNetworkSlide';
-import { KernelDividerSlide, SecurityDividerSlide, BlockchainDividerSlide, GTMDividerSlide } from './slides/SectionDividerSlide';
-import { AstridSlide } from './slides/AstridSlide';
-import { AstridComparisonSlide } from './slides/AstridComparisonSlide';
-import { AstridUseCasesSlide } from './slides/AstridUseCasesSlide';
-import { BlockchainArchSlide } from './slides/BlockchainArchSlide';
-import { RoadmapSlide } from './slides/RoadmapSlide';
-import { AgentStackSlide } from './slides/AgentStackSlide';
-import { ProjectionsSlide } from './slides/ProjectionsSlide';
-import { CompetitionSlide } from './slides/CompetitionSlide';
-import { OpportunitySlide } from './slides/OpportunitySlide';
+import { CasinoCoverSlide } from './slides/casino/CasinoCoverSlide';
+import { CasinoWhyNowSlide } from './slides/casino/CasinoWhyNowSlide';
+import { CasinoCostSlide } from './slides/casino/CasinoCostSlide';
+import { CasinoLoyaltySlide } from './slides/casino/CasinoLoyaltySlide';
+import { CasinoOnboardingSlide } from './slides/casino/CasinoOnboardingSlide';
+import { CasinoRetentionSlide } from './slides/casino/CasinoRetentionSlide';
+import { CasinoDashboardSlide } from './slides/casino/CasinoDashboardSlide';
+import { CasinoPlatformSlide } from './slides/casino/CasinoPlatformSlide';
+import { CasinoAutonomyStackSlide } from './slides/casino/CasinoAutonomyStackSlide';
+import { CasinoIntroducingUnicitySlide } from './slides/casino/CasinoIntroducingUnicitySlide';
+import { CasinoAskSlide } from './slides/casino/CasinoAskSlide';
+import { CasinoTeamSlide } from './slides/casino/CasinoTeamSlide';
+import { SalesContactSlide } from './slides/sales/SalesContactSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  TitleSlide,
-  IntroSlide,
-  TeamSlide,
-  ProblemSlide,
-  MarketSlide,
-  ParadigmOverviewSlide,
-  SolutionSlide,
-  GTMSlide,
-  RoadmapSlide,
-  ProjectionsSlide,
-  TokenSlide,
-  CommunitySlide,
-  OpportunitySlide,
-  CompetitionSlide,
-  RaiseSlide,
-  ThankYouChatSlide,
-  AppendixSlide,
-  GTMDividerSlide,
-  AgentStackSlide,
-  IntentsSlide,
-  ConsumerGTMSlide,
-  ParamarketSlide,
-  DemoSlide,
-  KernelDividerSlide,
-  AstridSlide,
-  AstridComparisonSlide,
-  AstridUseCasesSlide,
-  SecurityDividerSlide,
-  SecuritySlide,
-  SecurityNetworkSlide,
-  BlockchainDividerSlide,
-  BlockchainArchSlide,
-  WalletSlide,
-  AgentsSlide,
-  PaymentsSlide,
-  ProtocolSlide,
-  ComparisonSlide,
-  ResourcesSlide,
+  CasinoCoverSlide,             // 1. Cover — Every agent on your network is signed
+  CasinoWhyNowSlide,            // 2. Nº 01 The Shift — 3 eras: Sessions/Devices/Agents
+  CasinoCostSlide,              // 3. Nº 02 The Gap — questions table
+  CasinoLoyaltySlide,           // 4. Nº 02 cont. — 3 failure modes
+  CasinoOnboardingSlide,        // 5. Nº 03 The Stakes — $33M / 40%
+  CasinoRetentionSlide,         // 6. Nº 04 Regulatory Pull — Dec 2 2027
+  CasinoDashboardSlide,         // 7. Nº 04 cont. — 4 EU AI Act Articles
+  CasinoPlatformSlide,          // 8. Nº 05 Revenue Opportunity — 6 products
+  CasinoAutonomyStackSlide,     // 9. Nº 06 Security · Explainability · Verifiability
+  CasinoIntroducingUnicitySlide,// 10. Nº 07 What Unicity Provides — 4 components
+  CasinoAskSlide,               // 11. Nº 09 The Pilot — 3 tracks
+  CasinoTeamSlide,              // 12. Nº 08 The Track Record — team + globe
+  SalesContactSlide,            // 13. Contact — Tallinn anchor
 ];
 
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [unlocked, setUnlocked] = useState(false);
-
   const goToSlide = useCallback((index: number) => {
     if (index >= 0 && index < slides.length) {
       setCurrentSlide(index);
@@ -89,8 +39,12 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    (window as any).__goToSlide = goToSlide;
+    (window as any).__totalSlides = slides.length;
+  }, [goToSlide]);
+
+  useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (!unlocked) return;
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
       if (e.code === 'Space' || e.code === 'ArrowRight') {
         e.preventDefault();
@@ -102,7 +56,7 @@ export default function App() {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [unlocked]);
+  }, []);
 
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
 
@@ -136,16 +90,16 @@ export default function App() {
 
   return (
     <div className="h-full w-full relative">
-      <CurrentSlideComponent onNext={() => { if (currentSlide === 0) setUnlocked(true); goToSlide(currentSlide + 1); }} goToSlide={goToSlide} />
-      {unlocked && currentSlide > 0 && (
+      <CurrentSlideComponent />
+      {currentSlide > 0 && (
         <div
-          className="fixed bottom-5 left-6 sm:left-10 lg:left-16 z-[60] text-[#fefefe]/25 text-[11px] font-medium select-none pointer-events-none"
+          className="fixed bottom-4 left-6 sm:left-10 lg:left-16 z-[101] text-[#fefefe]/40 text-base sm:text-lg font-medium select-none pointer-events-none"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
           {currentSlide} / {slides.length - 1}
         </div>
       )}
-      {unlocked && slides.length > 1 && (
+      {slides.length > 1 && (
         <SlideNavigation
           current={currentSlide}
           total={slides.length}

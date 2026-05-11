@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin } from 'lucide-react';
 import { DiscordIcon, XIcon } from '../components/icons/SocialIcons';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 /* Generate difficulty history mimicking the real chart:
    x: 0-350, y: ~1 → ~1e7 (log scale)
@@ -175,7 +174,7 @@ export function CommunitySlide() {
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Appendix — Traction
+            Traction
           </motion.p>
           <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
@@ -202,9 +201,9 @@ export function CommunitySlide() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
-              <h2 className="text-[#fefefe] text-[64px] sm:text-[80px] lg:text-[100px] leading-none font-black"
+              <h2 className="text-[#fefefe] text-[40px] sm:text-[52px] lg:text-[64px] leading-none font-black"
                 style={{ fontFamily: "'Anton', sans-serif" }}>
-                1GH/S
+                1 GigaHash/S
               </h2>
               <p className="text-orange-400 text-sm sm:text-base mt-1"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>
@@ -215,11 +214,11 @@ export function CommunitySlide() {
             {/* Explanatory text */}
             <p className="text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed mt-4 sm:mt-6"
               style={{ fontFamily: "'Geist Mono', monospace" }}>
-              Alpha testnet ran from June to December 2025. Zero marketing spend, no social media, word of mouth only — the community grew organically, peaking at <span className="text-orange-400">1GH/s</span>, second only to Monero at 5GH/s among RandomX chains.
+              Alpha testnet ran from June to December 2025. Zero marketing spend, no social media, word of mouth only — the community grew organically, peaking at <span className="text-orange-400">1GH/s</span>, second only to Monero at 5GH/s among RandomX chains. 50,000 mining servers across the world.
             </p>
             <p className="text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed mt-3"
               style={{ fontFamily: "'Geist Mono', monospace" }}>
-              <span className="text-orange-400 font-bold">Current Status:</span> 20K DAU on testnet. Agents to be introduced April 2026.
+              <span className="text-orange-400 font-bold">Current Status:</span> Sphere announced Mar 26. 20K wallets created. Personal Agents to be introduced Apr 26.
             </p>
 
             {/* Social icons */}
@@ -261,10 +260,6 @@ export function CommunitySlide() {
         </div>
 
         {/* Logo */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}
-          className="shrink-0 mt-4 flex justify-end">
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-        </motion.div>
 
       </div>
     </div>

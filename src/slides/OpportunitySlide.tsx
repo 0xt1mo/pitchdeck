@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 const rightToWin = [
   {
@@ -31,13 +30,13 @@ const moats = [
   {
     tag: 'MOAT 2 · STANDARD ADOPTION',
     title: 'The OS becomes the industry standard',
-    desc: 'Kernel as the Linux of AI agents. Once the ecosystem builds on your runtime, switching costs are enormous. Nobody migrates off a standard.',
+    desc: 'The Linux moment for AI agents. One universal runtime replaces a thousand fragmented implementations.',
     color: '#3b82f6',
   },
   {
     tag: 'THE ENDGAME',
-    title: 'Every agent transaction is revenue',
-    desc: 'Settlement layer + marketplace + token economics. Compounding network value on every machine-to-machine transaction, at machine speed.',
+    title: 'Every agent is revenue',
+    desc: 'Protocol revenue that compounds with every agent deployed. $1-10/month, unlimited transactions, paid in native token. At 50M agents: $600M. At the $10 tier: $6B. The marginal cost of the next agent is zero. The marginal revenue is not.',
     color: '#10b981',
   },
 ];
@@ -156,15 +155,18 @@ export function OpportunitySlide() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.3, duration: 0.6 }}
-          className="shrink-0 mt-6 rounded-xl px-6 py-5"
-          style={{
-            background: 'linear-gradient(135deg, rgba(249,115,22,0.06) 0%, rgba(249,115,22,0.02) 100%)',
-            border: '1px solid rgba(249,115,22,0.15)',
-          }}
+          className="shrink-0 mt-6 border-t border-white/[0.05] pt-4"
         >
-          <p className="text-[#fefefe]/80 text-sm sm:text-base text-center leading-relaxed"
+          <p className="text-[#fefefe]/35 text-sm leading-relaxed max-w-3xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            The agentic economy will be larger than the human internet economy. The company that owns the <span className="text-orange-400 font-bold">settlement layer</span>, the <span className="text-orange-400 font-bold">runtime</span>, and the <span className="text-orange-400 font-bold">marketplace</span> where agents transact will be one of the most valuable infrastructure businesses of the next decade. <span className="text-[#fefefe] font-bold">That is what we are building.</span>
+            Autonomous AI won't run on today's infrastructure.<br />
+            It needs its own <span className="text-orange-400/60">settlement layer</span>.<br />
+            Its own <span className="text-orange-400/60">runtime</span>.<br />
+            Its own <span className="text-orange-400/60">marketplace</span>.
+          </p>
+          <p className="text-[#fefefe]/60 text-sm font-bold mt-2"
+            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            We are building all three.
           </p>
         </motion.div>
 
@@ -172,10 +174,6 @@ export function OpportunitySlide() {
       </div>
 
       {/* Logo — fixed bottom right */}
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4 }}
-        className="fixed bottom-6 right-6 sm:right-10 lg:right-16 z-20">
-        <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-      </motion.div>
     </div>
   );
 }

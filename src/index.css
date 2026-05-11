@@ -42,3 +42,14 @@ input[type="number"] {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* All slides: scrollable with bottom spacer for nav bar */
+.fixed.inset-0.z-50 {
+  overflow-y: auto !important;
+}
+.fixed.inset-0.z-50::after {
+  content: '';
+  display: block;
+  height: 4rem;
+  flex-shrink: 0;
+}

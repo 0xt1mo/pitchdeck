@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin } from 'lucide-react';
 import { DiscordIcon, XIcon } from '../components/icons/SocialIcons';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 const socials = [
   { href: 'https://x.com/unicity_labs', icon: <XIcon className="w-6 h-6" />, label: 'X' },
@@ -21,16 +20,6 @@ export function ThankYouSlide() {
       </div>
 
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 sm:px-10 lg:px-16">
-
-        {/* Logo */}
-        <motion.img
-          src={unicityLogoUrl}
-          alt="Unicity"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="h-10 sm:h-14 lg:h-16 mb-6 sm:mb-8"
-        />
 
         {/* Thank You */}
         <motion.h1

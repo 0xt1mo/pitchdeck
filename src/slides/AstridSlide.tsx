@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 function StackDiagram() {
   const W = 520;
@@ -199,10 +198,6 @@ export function AstridSlide() {
         </div>
 
         {/* Logo */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
-          className="shrink-0 mt-3 flex justify-end">
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-        </motion.div>
 
       </div>
     </div>

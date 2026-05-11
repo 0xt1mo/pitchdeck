@@ -1,5 +1,4 @@
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 export function ParamarketSlide() {
   return (
@@ -17,16 +16,17 @@ export function ParamarketSlide() {
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Marketplace
+            Use Case: Enterprise
           </p>
           <h1
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            EXAMPLE MARKETPLACE —{' '}
-            <span className="text-orange-400">PARAMETRIC INSURANCE</span>
+            PARAMETRIC <span className="text-orange-400">INSURANCE</span>
           </h1>
-          <div className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-2" />
+          <p className="text-[#fefefe]/60 text-sm sm:text-base mt-2 max-w-2xl" style={{ fontFamily: "'Geist Mono', monospace" }}>
+            Built for a leading reinsurance company, ParaMarket is an insurance company operated by autonomous agents.
+          </p>
         </div>
 
         {/* Iframe */}
@@ -39,12 +39,6 @@ export function ParamarketSlide() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
           />
         </div>
-
-        {/* Logo */}
-        <div className="shrink-0 mt-3 flex justify-end">
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-        </div>
-
       </div>
     </div>
   );

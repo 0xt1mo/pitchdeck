@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
-import unicityLogoUrl from '/UnicityLogo.svg';
 
 const modules = [
   { title: 'SKILLS', items: ['OpenClaw', 'MCP Tools', 'Custom'], color: '#f59e0b', id: 'skills' },
@@ -167,10 +166,6 @@ export function SectionDividerSlide({ section }: { section: SectionId; [key: str
         </motion.div>
 
         {/* Logo */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}
-          className="absolute bottom-6 sm:bottom-8 right-6 sm:right-10 lg:right-16">
-          <img src={unicityLogoUrl} alt="Unicity" className="h-5 opacity-60" />
-        </motion.div>
 
       </div>
 
