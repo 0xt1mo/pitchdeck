@@ -1,12 +1,60 @@
 import { motion } from 'framer-motion';
 
 const pillars = [
-  { num: '01', name: 'Security',   body: <>Verifiable execution for <strong className="text-[#fefefe] font-semibold">every agent</strong> Guardrails, sandboxing and enforcement at the OS kernel</> },
-  { num: '02', name: 'Compliance', body: <>KYC attestations, risk caps, session limits, regulatory audit trail — <strong className="text-[#fefefe] font-semibold">bound to the agent</strong>, enforced structurally, presented per transaction.</> },
-  { num: '03', name: 'Networking', body: <>Peer-to-peer agent-to-agent messaging. <strong className="text-[#fefefe] font-semibold">No shared ledger.</strong> No central router. Sub-second across regulated counterparties.</> },
-  { num: '04', name: 'Governance', body: <>Policy enforcement at the agent level. Limits, exclusions, permissions — <strong className="text-[#fefefe] font-semibold">defined once</strong>, applied across every interaction.</> },
-  { num: '05', name: 'Payments',    body: <>P2P transfer of regulated stablecoins. Perfect privacy <strong className="text-[#fefefe] font-semibold">Cryptographic finality.</strong> No card network, no payment processor.</> },
-  { num: '06', name: 'Audit',      body: <>Every action signed and witnessed. <strong className="text-[#fefefe] font-semibold">Compliance evidence is a query</strong>, not a CSV. Regulators verify, not trust.</> },
+  {
+    num: 'E·01',
+    name: 'Banking',
+    body: (
+      <>
+        Agents approve credit decisions, modify accounts, authorise payments — <strong className="text-[#fefefe] font-semibold">records compliance, regulators, and legal teams can review</strong>.
+      </>
+    ),
+  },
+  {
+    num: 'E·02',
+    name: 'Logistics',
+    body: (
+      <>
+        Agents coordinate across counterparties — <strong className="text-[#fefefe] font-semibold">every commitment scoped and recorded</strong>, cross-jurisdiction.
+      </>
+    ),
+  },
+  {
+    num: 'E·03',
+    name: 'Healthcare',
+    body: (
+      <>
+        Agents access patient records — <strong className="text-[#fefefe] font-semibold">access bounded by policy before action</strong>, never post-hoc.
+      </>
+    ),
+  },
+  {
+    num: 'G·01',
+    name: 'Customs',
+    body: (
+      <>
+        Agents classify declarations and authorise clearances — <strong className="text-[#fefefe] font-semibold">a record that survives independent review</strong>.
+      </>
+    ),
+  },
+  {
+    num: 'G·02',
+    name: 'Permitting',
+    body: (
+      <>
+        Agents approve or reject applications — <strong className="text-[#fefefe] font-semibold">an audit trail that can be inspected</strong>, decision by decision.
+      </>
+    ),
+  },
+  {
+    num: 'G·03',
+    name: 'Sovereign AI',
+    body: (
+      <>
+        Citizen-data deployments — <strong className="text-[#fefefe] font-semibold">evidence held under the institution's control</strong>, not a vendor's.
+      </>
+    ),
+  },
 ];
 
 export function CasinoPlatformSlide() {
@@ -23,17 +71,17 @@ export function CasinoPlatformSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 09 · What Unicity Is
+            Nº 10 · Enterprise &amp; Government
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[60px] leading-[0.98] tracking-tight mt-3 uppercase"
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            What it means{' '}
-            <span className="text-orange-400">for gaming operators.</span>
+            Two contexts.{' '}
+            <span className="text-orange-400">One security architecture.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -49,7 +97,7 @@ export function CasinoPlatformSlide() {
             className="mt-4 text-[#fefefe]/75 text-sm lg:text-base leading-relaxed max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Everything an enterprise needs to deploy agents safely at scale — security, compliance, networking, governance, value, audit — on a single platform.
+            The use cases differ. The requirement is the same: <span className="text-[#fefefe] font-semibold">Security. Explainability. Verifiability.</span> Enterprises need agents acting inside systems of record — auditable and bounded. Governments need agent actions that stay attributable and institution-controlled.
           </motion.p>
         </div>
 
@@ -105,8 +153,8 @@ export function CasinoPlatformSlide() {
             borderTop: '1px solid rgba(249,115,22,0.25)',
           }}
         >
-          Other vendors solve one piece.{' '}
-          <span className="text-orange-400">Unicity is the platform.</span>
+          Different mandates.{' '}
+          <span className="text-orange-400">Same evidentiary standard.</span>
         </motion.p>
       </div>
     </div>

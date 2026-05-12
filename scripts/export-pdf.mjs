@@ -50,6 +50,31 @@ async function exportPDF() {
     console.log(`📸 Capturing slide ${i - startSlide + 1}/${slideCount}...`);
     await new Promise(r => setTimeout(r, 3000));
 
+    // If the slide contains iframes (e.g. Google Maps embed on the contact slide),
+    // strip lazy-loading, kick off load, and wait for them to settle before screenshotting.
+    const iframeCount = await page.evaluate(() => {
+      const frames = Array.from(document.querySelectorAll('iframe'));
+      frames.forEach((f) => {
+        if (f.getAttribute('loading') === 'lazy') f.removeAttribute('loading');
+        const src = f.getAttribute('src');
+        if (src) { f.setAttribute('src', ''); f.setAttribute('src', src); }
+      });
+      return frames.length;
+    });
+    if (iframeCount > 0) {
+      console.log(`   ⏳ ${iframeCount} iframe(s) detected — waiting for tiles to render...`);
+      await page.evaluate(() => Promise.all(
+        Array.from(document.querySelectorAll('iframe')).map((f) =>
+          new Promise((resolve) => {
+            const done = () => resolve(true);
+            f.addEventListener('load', done, { once: true });
+            setTimeout(done, 9000);
+          })
+        )
+      ));
+      await new Promise(r => setTimeout(r, 4000));
+    }
+
     // Hide nav bar and slide counter, then inject logo
     await page.evaluate(() => {
       document.querySelectorAll('.fixed.bottom-0').forEach(el => {

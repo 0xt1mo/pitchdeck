@@ -3,37 +3,43 @@ import { motion } from 'framer-motion';
 const eras = [
   {
     tag: '01 · The First Wave',
-    name: 'Web',
-    year: '1995',
-    arrival: 'The browser arrives.',
-    fact: <>InterCasino launches 1995. Bet365 founded 2000. Online gambling reaches $1bn by 2003.</>,
-    impact: <>Winners: operators who treated the web as the platform. Losers: high-street bookmakers who treated it as a side channel.</>,
+    name: 'Generation',
+    year: '2022 – 2023',
+    arrival: 'AI produces output.',
+    fact: (
+      <>
+        ChatGPT: <span className="text-[#fefefe]/85 font-semibold">100M users in 60 days</span>. Words, code, images, decks — generated on demand. The fastest consumer-technology adoption curve in history.
+      </>
+    ),
+    impact: <>The output expanded. <span className="text-[#fefefe]/45">The actor did not.</span></>,
     state: 'past' as const,
   },
   {
     tag: '02 · The Second Wave',
-    name: 'Mobile',
-    year: '2008',
-    arrival: 'The smartphone arrives.',
-    fact: <>App Store launches 2008. Mobile overtakes desktop in regulated markets by 2014. FanDuel and DraftKings build $5bn+ businesses on the new interface.</>,
-    impact: <>Winners: operators who built mobile-first. Losers: operators who ported the website.</>,
+    name: 'Assistance',
+    year: '2023 – 2025',
+    arrival: 'AI helps the worker.',
+    fact: (
+      <>
+        Copilot, Cursor, Glean — <span className="text-[#fefefe]/85 font-semibold">embedded in every productivity surface</span>. Suggestions, summaries, drafts. A human still presses the button on every action.
+      </>
+    ),
+    impact: <>Productivity expanded. <span className="text-[#fefefe]/45">The actor did not.</span></>,
     state: 'past' as const,
   },
   {
     tag: '03 · The Third Wave',
-    name: 'Agentic',
+    name: 'Action',
     year: '2026 · Now',
-    arrival: 'The agent arrives.',
+    arrival: 'AI begins to act.',
     fact: (
       <>
-        <span className="text-[#fefefe] font-semibold">Agents are the fastest-growing channel in commerce.</span> The infrastructure is in production: Mastercard and Santander cleared Europe's first live agent-initiated bank payment in March. Visa Intelligent Commerce and Mastercard Agent Pay are rolling out across US cardholders.{' '}
-        <span className="text-orange-400 font-semibold">The category is six months old and already real.</span>
+        AT&amp;T agentic customer operations in production. Mastercard × Santander cleared Europe's <span className="text-[#fefefe] font-semibold">first agent-initiated bank payment</span>. Agents provision services, classify fraud, modify accounts, call APIs — autonomously, at machine speed.
       </>
     ),
     impact: (
       <>
-        Winners: operators who are agent-readable first.{' '}
-        <span className="text-orange-400 font-semibold">The window is three years. It just opened.</span>
+        <span className="text-orange-400 font-semibold">The actor changed.</span> Authority expands — or it doesn't.
       </>
     ),
     state: 'now' as const,
@@ -54,7 +60,7 @@ export function CasinoWhyNowSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 11 · Why Now
+            Nº 01 · The Shift
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -63,8 +69,8 @@ export function CasinoWhyNowSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Every twenty years, the interface changes.{' '}
-            <span className="text-orange-400">The operator who moves first defines the era.</span>
+            AI is moving from output{' '}
+            <span className="text-orange-400">to action.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -80,13 +86,13 @@ export function CasinoWhyNowSlide() {
             className="mt-4 text-[#fefefe]/75 text-sm lg:text-base leading-relaxed max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Two interfaces shaped this industry — the web and the mobile app. Each had a window of about three years where the early movers became the giants of the next two decades. The third interface is here.
+            Two waves expanded what AI could produce. <span className="text-[#fefefe] font-semibold">The third wave is different — the actor changes.</span> The institutional question: how do you allow autonomous systems to act without losing control of authority, accountability, and evidence?
           </motion.p>
         </div>
 
         {/* Three eras */}
         <div
-          className="grid grid-cols-[1fr_1fr_1.15fr] gap-8 lg:gap-10 pt-7 shrink-0"
+          className="grid grid-cols-3 gap-8 lg:gap-10 pt-7 shrink-0"
           style={{ borderTop: '1px solid rgba(255,255,255,0.10)' }}
         >
           {eras.map((e, i) => {
@@ -119,10 +125,10 @@ export function CasinoWhyNowSlide() {
                   {e.tag}
                 </p>
                 <h3
-                  className="leading-[0.92] uppercase"
+                  className="leading-[0.95] uppercase break-words"
                   style={{
                     fontFamily: "'Anton', sans-serif",
-                    fontSize: 'clamp(56px, 7vw, 96px)',
+                    fontSize: 'clamp(36px, 3.8vw, 56px)',
                     letterSpacing: '0.02em',
                     color: isNow ? '#FEFEFE' : 'rgba(254,254,254,0.40)',
                   }}
@@ -195,8 +201,8 @@ export function CasinoWhyNowSlide() {
             borderTop: '1px solid rgba(249,115,22,0.25)',
           }}
         >
-          Two interfaces. Two generations of winners.{' '}
-          <span className="text-orange-400">The third one is here.</span>
+          Generate. Assist. Act.{' '}
+          <span className="text-orange-400">The bottleneck is not capability. It is security.</span>
         </motion.p>
       </div>
     </div>

@@ -1,53 +1,37 @@
 import { useEffect, useCallback, useState } from 'react';
 import { CasinoCoverSlide } from './slides/casino/CasinoCoverSlide';
-import { CasinoOnboardingSlide } from './slides/casino/CasinoOnboardingSlide';
-import { CasinoRetentionSlide } from './slides/casino/CasinoRetentionSlide';
-import { CasinoLoyaltySlide } from './slides/casino/CasinoLoyaltySlide';
-import { CasinoCostSlide } from './slides/casino/CasinoCostSlide';
-import { CasinoTeamSlide } from './slides/casino/CasinoTeamSlide';
-import { CasinoPlatformSlide } from './slides/casino/CasinoPlatformSlide';
-import { CasinoAutonomyStackSlide } from './slides/casino/CasinoAutonomyStackSlide';
 import { CasinoWhyNowSlide } from './slides/casino/CasinoWhyNowSlide';
-import { CasinoIntroducingUnicitySlide } from './slides/casino/CasinoIntroducingUnicitySlide';
-import { CasinoAskSlide } from './slides/casino/CasinoAskSlide';
+import { CasinoRetentionSlide } from './slides/casino/CasinoRetentionSlide';
+import { CasinoCostSlide } from './slides/casino/CasinoCostSlide';
+import { CasinoOnboardingSlide } from './slides/casino/CasinoOnboardingSlide';
+import { CasinoLoyaltySlide } from './slides/casino/CasinoLoyaltySlide';
 import { CasinoDashboardSlide } from './slides/casino/CasinoDashboardSlide';
-import { SalesIntroSlide } from './slides/sales/SalesIntroSlide';
-import { SalesAgentsComingSlide } from './slides/sales/SalesAgentsComingSlide';
-import { SalesPilotPurgatorySlide } from './slides/sales/SalesPilotPurgatorySlide';
-import { SalesOverviewSlide } from './slides/sales/SalesOverviewSlide';
-import { SalesAgentHostSlide } from './slides/sales/SalesAgentHostSlide';
-import { SalesInterceptFabricSlide } from './slides/sales/SalesInterceptFabricSlide';
-import { SalesAgentSphereSlide } from './slides/sales/SalesAgentSphereSlide';
-import { SalesDeploymentSlide } from './slides/sales/SalesDeploymentSlide';
-import { SalesAboutSlide } from './slides/sales/SalesAboutSlide';
+import { CasinoIntroducingUnicitySlide } from './slides/casino/CasinoIntroducingUnicitySlide';
+import { CasinoAutonomyStackSlide } from './slides/casino/CasinoAutonomyStackSlide';
+import { CasinoProofSlide } from './slides/casino/CasinoProofSlide';
+import { CasinoPlatformSlide } from './slides/casino/CasinoPlatformSlide';
+import { CasinoAskSlide } from './slides/casino/CasinoAskSlide';
+import { CasinoTeamSlide } from './slides/casino/CasinoTeamSlide';
+import { CasinoLogosSlide } from './slides/casino/CasinoLogosSlide';
 import { SalesContactSlide } from './slides/sales/SalesContactSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  CasinoCoverSlide,             // 1. Cover — Your next million customers won't arrive as humans
-  CasinoWhyNowSlide,            // 2. Why Now — Web → Mobile → Agentic
-  CasinoIntroducingUnicitySlide,// 3. Introducing Unicity — secure agentic OS for gaming
-  CasinoOnboardingSlide,        // 4. Onboarding — signup funnel was built for humans
-  CasinoCostSlide,              // 5. Cost — Thirty years of on-ramp friction
-  CasinoRetentionSlide,         // 6. Retention — 92% ignored
-  CasinoLoyaltySlide,           // 7. Loyalty — Personalisation that actually personalises
-  // CasinoComplianceSlide,     // hidden — Your regulatory moat, built into the rail
-  CasinoAutonomyStackSlide,     // 8. The Stack — operating system for autonomous AI
-  CasinoDashboardSlide,         // 9. Enterprise Console — pillar dashboards
-  CasinoPlatformSlide,          // 10. What Unicity Is — 6 platform pillars
-  // CasinoArchitectureSlide,   // hidden — Player wallet to operator wallet
-  CasinoAskSlide,               // 11. The Ask — 45 days to production
-  CasinoTeamSlide,              // 12. Who We Are — team + globe
-  SalesContactSlide,            // 13. See It In Action / Contact
-  SalesIntroSlide,              // 14. Intro
-  SalesAgentsComingSlide,       // 15. Agents are coming
-  SalesPilotPurgatorySlide,     // 16. Agentic AI not ready for production
-  SalesOverviewSlide,           // 17. Security, Safety, Verifiability — 3 products
-  SalesAgentHostSlide,          // 18. AgentHost / ASTRID OS
-  SalesInterceptFabricSlide,    // 19. Semantic Intercept Fabric
-  SalesAgentSphereSlide,        // 20. AgentSphere
-  SalesDeploymentSlide,         // 21. Deployment Models
-  SalesAboutSlide,              // 22. About Us
+  CasinoCoverSlide,             //  1. Cover — runtime security layer + audit committee
+  CasinoWhyNowSlide,            //  2. Nº 01 The Shift — 3 waves (Generation/Assistance/Action)
+  CasinoRetentionSlide,         //  3. Nº 02 The Principle — Limits? Qualifies.
+  CasinoCostSlide,              //  4. Nº 03 The New Actor — 4-row table
+  CasinoOnboardingSlide,        //  5. Nº 04 Why Projects Stall — 40% / Demonstrate
+  CasinoLoyaltySlide,           //  6. Nº 05 SEV — Security · Explainability · Verifiability
+  CasinoDashboardSlide,         //  7. Nº 06 Enables — Payments · Access · Agreements · Networking
+  CasinoIntroducingUnicitySlide,//  8. Nº 07–08 What Unicity + How It Works — 5 cards Register/Delegate/Enforce/Prove/Move
+  CasinoAutonomyStackSlide,     //  9. Nº 09 Architecture — 3 layers
+  CasinoProofSlide,             // 10. Nº 10 Proof Travels — 5 advantages
+  CasinoPlatformSlide,          // 11. Nº 11 Enterprise & Government — 6 use cases
+  CasinoAskSlide,               // 12. Nº 11 First Deployment — 45 days
+  CasinoTeamSlide,              // 13. Nº 12 Team — 7 founders + sci/eng/advisors
+  CasinoLogosSlide,             // 14. Nº 13 Deployment Ecosystem — 4 categories
+  SalesContactSlide,            // 15. Contact — Next Steps + 45 days callout + Globe
 ];
 
 export default function App() {
@@ -58,7 +42,6 @@ export default function App() {
     }
   }, []);
 
-  // Expose for PDF export script
   useEffect(() => {
     (window as any).__goToSlide = goToSlide;
     (window as any).__totalSlides = slides.length;

@@ -3,33 +3,41 @@ import { motion } from 'framer-motion';
 const movements = [
   {
     num: '01',
-    title: 'What you have today.',
+    title: 'Security.',
     text: (
       <>
-        Telemetry. Anonymous behavioral signal. CRM segments built from clicks and deposits. Send-time optimization that fires at the moment your CRM thinks is best — not the moment the player is paying attention.
+        The agent operated within what it was authorised to do — <strong className="text-[#fefefe] font-semibold">enforced before execution</strong>, at the architectural level. Not a policy that asks the agent to behave. A layer the agent cannot bypass.
       </>
     ),
-    dim: true,
+    dim: false,
   },
   {
     num: '02',
-    title: 'What the agent delivers.',
+    title: 'Explainability.',
     text: (
       <>
-        <span className="text-[#fefefe] font-semibold">Attention.</span> The agent is in conversation with the player. It knows when the player is <span className="text-[#fefefe] font-semibold">actually present</span> — not because it reads their mind, but because the player just spoke to it.{' '}
-        <span className="text-orange-400 font-semibold">A signal you cannot get from any other channel.</span>
+        An auditor, regulator, board member, or court can <strong className="text-[#fefefe] font-semibold">reconstruct what the agent decided and why</strong>, from a record produced at the moment of decision:
+        <span className="block mt-1 text-[#fefefe]/65">
+          <span className="text-orange-400">→</span> what the agent was authorised to do{' '}
+          <span className="text-orange-400">→</span> what it requested{' '}
+          <span className="text-orange-400">→</span> what policy applied{' '}
+          <span className="text-orange-400">→</span> what decision was made{' '}
+          <span className="text-orange-400">→</span> what outcome was recorded.
+        </span>
       </>
     ),
+    dim: false,
   },
   {
     num: '03',
-    title: 'What you do with it.',
+    title: 'Verifiability.',
     text: (
       <>
-        A reload bonus that arrives in <span className="text-[#fefefe] font-semibold">a live conversation</span>, not an unread inbox. Promotions delivered at moments of real attention.{' '}
-        <span className="text-orange-400 font-semibold">Personalization by timing — the only personalisation that has ever worked.</span>
+        An independent party can confirm the record is intact and unaltered — <strong className="text-[#fefefe] font-semibold">without depending on the vendor's system</strong>. Cryptographically signed, held under institution control, any alteration mathematically detectable.{' '}
+        <span className="text-orange-400 font-semibold">Not a log. Evidence.</span>
       </>
     ),
+    dim: false,
   },
 ];
 
@@ -47,17 +55,17 @@ export function CasinoLoyaltySlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 05 · Loyalty
+            Nº 05 · What Security Produces
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[60px] leading-[0.98] tracking-tight mt-3 uppercase"
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[54px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Personalization that{' '}
-            <span className="text-orange-400">actually personalizes.</span>
+            Security. Explainability.{' '}
+            <span className="text-orange-400">Verifiability.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -129,8 +137,8 @@ export function CasinoLoyaltySlide() {
             borderTop: '1px solid rgba(249,115,22,0.25)',
           }}
         >
-          Personalization has been a marketing word for thirty years.{' '}
-          <span className="text-orange-400">The agent makes it a real one.</span>
+          Three properties.{' '}
+          <span className="text-orange-400">Each one maps to what an institution must answer.</span>
         </motion.p>
       </div>
     </div>

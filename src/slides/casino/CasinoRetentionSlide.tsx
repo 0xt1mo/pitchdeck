@@ -14,17 +14,17 @@ export function CasinoRetentionSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 04 · Retention
+            Nº 02 · The Principle
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[60px] leading-[0.98] tracking-tight mt-3 uppercase"
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[54px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Retention becomes{' '}
-            <span className="text-orange-400">a conversation.</span>
+            Security is not what limits agents.{' '}
+            <span className="text-orange-400">It is what qualifies them.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -44,7 +44,7 @@ export function CasinoRetentionSlide() {
             className="text-[#fefefe]/60 text-[64px] sm:text-[96px] lg:text-[132px] leading-[0.88] tracking-[-0.01em] uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            92%
+            Limits?
           </motion.h2>
           <motion.h2
             initial={{ opacity: 0, x: -30 }}
@@ -53,7 +53,7 @@ export function CasinoRetentionSlide() {
             className="text-orange-400 text-[64px] sm:text-[96px] lg:text-[132px] leading-[0.88] tracking-[-0.01em] uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Ignored.
+            Qualifies.
           </motion.h2>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -66,11 +66,11 @@ export function CasinoRetentionSlide() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl leading-relaxed max-w-5xl mt-2"
+            className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl leading-relaxed max-w-5xl mt-2"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            The average regulated operator spends <span className="text-[#fefefe] font-semibold">$5–10 per active player per year</span> on CRM platforms — Optimove, Smartico, Fast Track — to deliver promotional emails that <span className="text-[#fefefe] font-semibold">ninety-two per cent of recipients never open</span>. The agent is the channel the player already uses. The Friday reload arrives in chat, contextually, when it matters.{' '}
-            <span className="text-orange-400 font-semibold">Delivered: one hundred per cent.</span>
+            Once an agent's <span className="text-[#fefefe] font-semibold">identity is established</span>, its <span className="text-[#fefefe] font-semibold">authority scoped</span>, its <span className="text-[#fefefe] font-semibold">actions enforced against policy</span>, and every <span className="text-[#fefefe] font-semibold">outcome evidenced</span> — the institution can allow the agent to do things it would never otherwise approve.{' '}
+            <span className="text-orange-400 font-semibold">Move money. Enter controlled systems. Execute agreements. Coordinate across networks.</span>
           </motion.p>
         </div>
 
@@ -85,8 +85,8 @@ export function CasinoRetentionSlide() {
             borderTop: '1px solid rgba(249,115,22,0.25)',
           }}
         >
-          The CRM stack was a workaround.{' '}
-          <span className="text-orange-400">The agent makes the channel alive again.</span>
+          Secure the agent.{' '}
+          <span className="text-orange-400">Then let it work.</span>
         </motion.p>
       </div>
     </div>

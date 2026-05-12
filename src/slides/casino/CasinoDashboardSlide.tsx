@@ -2,28 +2,28 @@ import { motion } from 'framer-motion';
 
 const pillars = [
   {
-    label: 'Security',
-    desc: 'Semantic intercept fabric — every payload checked at runtime.',
+    label: 'Payments',
+    desc: 'Agents move value between institutions — every transaction authorised, policy-enforced, and evidenced.',
+    img: '/dashboards/payments.png',
+    accent: '#f59e0b',
+  },
+  {
+    label: 'Access',
+    desc: 'Agents enter controlled systems — identity established, scope verifiably bounded, revocable.',
     img: '/dashboards/security.png',
     accent: '#ef4444',
   },
   {
-    label: 'Governance',
-    desc: 'Live policy library, approvals, and full audit ledger.',
+    label: 'Agreements',
+    desc: 'Agents execute commitments on behalf of institutions — authority chain recorded, independently verifiable.',
     img: '/dashboards/governance.png',
     accent: '#22c55e',
   },
   {
     label: 'Networking',
-    desc: 'Open lanes across A2A, MCP, x402 — counterparty-aware.',
+    desc: 'Agents coordinate across systems, organisations, and jurisdictions — counterparty-verified, no shared ledger.',
     img: '/dashboards/networking.png',
     accent: '#a855f7',
-  },
-  {
-    label: 'Payments',
-    desc: 'Cash flow, rail balances and per-agent budgets in real time.',
-    img: '/dashboards/payments.png',
-    accent: '#f59e0b',
   },
 ];
 
@@ -41,7 +41,7 @@ export function CasinoDashboardSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            The Enterprise Console
+            Nº 06 · What Security Enables
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -50,8 +50,8 @@ export function CasinoDashboardSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[1.05] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            One pane of glass for{' '}
-            <span className="text-orange-400">every agent, every policy, every payment.</span>
+            Four categories of real work{' '}
+            <span className="text-orange-400">become possible.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -60,7 +60,7 @@ export function CasinoDashboardSlide() {
             className="mt-2 text-[#fefefe]/85 text-xs sm:text-sm max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Identity, delegation, policy, settlement and audit — unified into a single operator surface. Not rip and replace. A control plane that sits under any agent deployment.
+            Once identity is established, authority scoped, action enforced, and outcome evidenced — <span className="text-[#fefefe] font-semibold">an institution can allow an agent to do what it would never otherwise approve</span>. Move money. Enter controlled systems. Execute agreements. Coordinate across networks.
           </motion.p>
         </div>
 

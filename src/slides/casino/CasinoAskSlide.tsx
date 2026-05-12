@@ -4,10 +4,10 @@ const movements = [
   {
     num: '01',
     week: 'Week 1–3',
-    title: 'Install.',
+    title: 'Register.',
     text: (
       <>
-        Unicity AOS deploys <strong className="text-[#fefefe] font-semibold">into your platform</strong>, alongside your existing wallet and game engine. No replacement, no migration. Your existing systems keep running.
+        One institution. One workflow. One agent class. <strong className="text-[#fefefe] font-semibold">Register agents</strong> in the Sovereign Agent Registry — scope, authority, owner — held by the institution.
       </>
     ),
     production: false,
@@ -18,19 +18,19 @@ const movements = [
     title: 'Integrate.',
     text: (
       <>
-        Sandbox handshake with reference agent. Validate <strong className="text-[#fefefe] font-semibold">signed sessions, per-wager settlement, audit trail</strong>. Compliance and security review run in parallel.
+        Deploy AOS-9 and the Semantic Intercept Fabric <strong className="text-[#fefefe] font-semibold">alongside existing systems of record</strong>. No replacement, no migration. Compliance and security review run in parallel.
       </>
     ),
     production: false,
   },
   {
     num: '03',
-    week: 'Week 7',
-    title: 'Production.',
+    week: 'Week 7+',
+    title: 'Operate.',
     text: (
       <>
-        Live agent traffic. First signed session settles. Audit clean.{' '}
-        <span className="text-orange-400 font-semibold">You start onboarding agents at scale.</span>
+        Live workflow with every action <strong className="text-[#fefefe] font-semibold">secured before execution</strong> and every outcome receipted.{' '}
+        <span className="text-orange-400 font-semibold">The institution can produce the record on demand.</span>
       </>
     ),
     production: true,
@@ -51,17 +51,17 @@ export function CasinoAskSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 12 · The Ask
+            Nº 11 · First Deployment
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[60px] leading-[0.98] tracking-tight mt-3 uppercase"
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[54px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Forty-five days to production.{' '}
-            <span className="text-orange-400">Then start onboarding agents.</span>
+            Forty-five days to the{' '}
+            <span className="text-orange-400">first secure-agent workflow.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -77,7 +77,7 @@ export function CasinoAskSlide() {
             className="mt-4 text-[#fefefe]/75 text-sm lg:text-base leading-relaxed max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            One integration. One sprint. One regulated operator on the live rail. Forty-five days from kickoff to production deployment of Unicity AOS inside your stack — then you start receiving agents.
+            Start narrow. One institution. One workflow. One agent class. One controlled action surface — <span className="text-[#fefefe] font-semibold">permit approval, procurement authorisation, customer onboarding, claims decisioning, customs verification, payment authorisation, regulated account changes</span>. By the end: <span className="text-orange-400 font-semibold">which agent acted, under whose authority, with what result — produced on demand.</span> 45 days from kickoff. <span className="text-orange-400 font-semibold">Then bring us your hardest agentic workflow.</span>
           </motion.p>
         </div>
 

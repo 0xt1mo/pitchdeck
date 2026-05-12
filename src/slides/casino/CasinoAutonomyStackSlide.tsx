@@ -11,23 +11,23 @@ type StackLayer = {
 const stack: StackLayer[] = [
   {
     product: 'AGENT FRAMEWORKS',
-    label: 'THE APPLICATION LAYER',
-    detail: 'Bring your own agent — any framework, any model.',
-    tags: 'LANGCHAIN · OPENCLAW · AUTOGEN · CUSTOM',
+    label: 'APPLICATION LAYER',
+    detail: 'Any model. Any agent. Any enterprise or government system. No rewrite required.',
+    tags: 'LANGCHAIN · AUTOGEN · OPENCLAW · CUSTOM',
     variant: 'top',
   },
   {
-    product: 'UNICITY AOS9',
-    label: 'RUNTIME',
-    detail: 'A secure runtime that sits below the agent. Every model output, tool call, and decision passes through it — security interception, audit logging, and budget enforcement happen here, where tools cannot bypass them.',
-    tags: 'KERNEL · POLICY · INTERCEPT',
+    product: 'UNICITY AOS-9',
+    label: 'SECURE RUNTIME · ENFORCEMENT',
+    detail: 'Sits outside the agent\'s control path. AgentStack + Semantic Intercept Fabric evaluate every action before execution.',
+    tags: 'KERNEL · POLICY · INTERCEPT · RECEIPT',
     variant: 'mid',
   },
   {
-    product: 'UNICITY L1',
-    label: 'SETTLEMENT & IDENTITY',
-    detail: 'The substrate. State tokenization, value transfer, cryptographic identity and delegation.',
-    tags: 'STATE TOKENS · IDENTITY · DELEGATION',
+    product: 'AGENTSPHERE',
+    label: 'NETWORK LAYER',
+    detail: 'Agent-to-system and agent-to-agent coordination. Counterparty-verified. No shared-ledger dependency.',
+    tags: 'IDENTITY · DELEGATION · INTEROPERABILITY',
     variant: 'bottom',
   },
 ];
@@ -37,7 +37,7 @@ const requirements = [
   'Delegation',
   'Verifiable Execution',
   'Policy Enforcement',
-  'Settlement',
+  'Payments',
   'Interoperability',
 ];
 
@@ -55,7 +55,7 @@ export function CasinoAutonomyStackSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 10 · The Stack
+            Nº 08 · The Architecture
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -64,17 +64,17 @@ export function CasinoAutonomyStackSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight mt-2 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            An operating system for{' '}
-            <span className="text-orange-400">autonomous AI.</span>
+            Three layers.{' '}
+            <span className="text-orange-400">One protocol stack.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="mt-3 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl max-w-5xl leading-relaxed"
+            className="mt-3 text-[#fefefe]/85 text-sm sm:text-base lg:text-lg max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Three layers. <span className="text-orange-400 font-bold">Settlement, runtime, frameworks.</span> Every requirement autonomy demands, delivered as one protocol stack.
+            <span className="text-orange-400 font-bold">Application. Runtime. Network.</span> One protocol stack sitting outside the agent's control path — enforcing policy before the action reaches the target system.
           </motion.p>
         </div>
 
@@ -111,25 +111,25 @@ export function CasinoAutonomyStackSlide() {
                 />
                 <div className="flex flex-col">
                   <p
-                    className="text-[#fefefe] text-[22px] sm:text-[26px] lg:text-[32px] leading-none tracking-tight"
+                    className="text-[#fefefe] text-[20px] sm:text-[24px] lg:text-[28px] leading-none tracking-tight"
                     style={{ fontFamily: "'Anton', sans-serif" }}
                   >
                     {layer.product}
                   </p>
                   <p
-                    className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.28em] uppercase font-bold mt-1.5"
+                    className="text-orange-400 text-[10px] lg:text-[11px] tracking-[0.28em] uppercase font-bold mt-1"
                     style={{ fontFamily: "'Geist Mono', monospace" }}
                   >
                     {layer.label}
                   </p>
                   <p
-                    className="text-[#fefefe]/75 text-xs sm:text-sm lg:text-base leading-snug mt-1"
+                    className="text-[#fefefe]/75 text-[12px] lg:text-[13px] leading-snug mt-1"
                     style={{ fontFamily: "'Geist Mono', monospace" }}
                   >
                     {layer.detail}
                   </p>
                   <p
-                    className="text-[#fefefe]/45 text-[10px] sm:text-xs tracking-[0.18em] uppercase mt-1.5"
+                    className="text-[#fefefe]/45 text-[10px] lg:text-[11px] tracking-[0.16em] uppercase mt-1"
                     style={{ fontFamily: "'Geist Mono', monospace" }}
                   >
                     {layer.tags}
@@ -152,7 +152,7 @@ export function CasinoAutonomyStackSlide() {
             className="text-[#fefefe]/55 text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-2"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Every Autonomy Requirement, Delivered
+            Every Requirement Autonomy Demands
           </p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             {requirements.map((r, i) => (
@@ -174,19 +174,6 @@ export function CasinoAutonomyStackSlide() {
           </div>
         </motion.div>
 
-        {/* Footer */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="text-orange-400 text-[18px] sm:text-[22px] lg:text-[26px] leading-[0.95] tracking-tight pt-3 shrink-0"
-          style={{
-            fontFamily: "'Anton', sans-serif",
-            borderTop: '1px solid rgba(249,115,22,0.25)',
-          }}
-        >
-          SIX REQUIREMENTS. ONE PLATFORM. BUILT FROM FIRST PRINCIPLES.
-        </motion.p>
 
       </div>
     </div>
@@ -307,8 +294,8 @@ function IsoStackDiagram() {
 
       <rect x={0} y={0} width={W} height={H} fill="url(#iso-grid)" />
 
-      <Slab cy={layerY[2]} variant="bottom" centerLabel="PROOF" />
-      <Slab cy={layerY[1]} variant="mid" centerLabel="AOS9" centerSub="KERNEL" />
+      <Slab cy={layerY[2]} variant="bottom" centerLabel="AGENTSPHERE" />
+      <Slab cy={layerY[1]} variant="mid" centerLabel="AOS-9" centerSub="KERNEL" />
       <Slab cy={layerY[0]} variant="top" centerLabel="AGENT" />
     </svg>
   );

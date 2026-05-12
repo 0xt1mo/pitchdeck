@@ -27,7 +27,7 @@ export function CasinoCoverSlide() {
                 className="text-orange-400 text-[11px] sm:text-xs tracking-[0.32em] uppercase font-semibold"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                A New VIP Agent Has Entered The Room
+                Enterprise &amp; Government
               </span>
             </motion.div>
 
@@ -35,30 +35,64 @@ export function CasinoCoverSlide() {
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-[#fefefe] text-[34px] sm:text-[48px] lg:text-[64px] leading-[0.95] tracking-tight uppercase"
+              className="text-[#fefefe] text-[30px] sm:text-[42px] lg:text-[56px] leading-[0.95] tracking-tight uppercase"
               style={{ fontFamily: "'Anton', sans-serif" }}
             >
-              Your next million customers{' '}
-              <span className="text-orange-400">won't be using web or apps.</span>
+              The runtime security layer for{' '}
+              <span className="text-orange-400">autonomous AI.</span>
             </motion.h1>
-
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="h-[2px] w-24 lg:w-32 bg-orange-500 origin-left mt-6 mb-6"
-              style={{ boxShadow: '0 0 8px rgba(249,115,22,0.7)' }}
-            />
 
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl leading-relaxed"
+              transition={{ delay: 0.45 }}
+              className="text-[#fefefe]/65 text-sm sm:text-base lg:text-[15px] mt-3 leading-snug"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              The first regulated gaming operator to receive Agents at the front door — <span className="text-[#fefefe] font-semibold">safely, auditably, at machine speed</span> — defines the category.
+              Enabling your agents to do real work in the real world.
             </motion.p>
+
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.55 }}
+              className="h-[2px] w-24 lg:w-32 bg-orange-500 origin-left mt-5 mb-5"
+              style={{ boxShadow: '0 0 8px rgba(249,115,22,0.7)' }}
+            />
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-col gap-4"
+              style={{ fontFamily: "'Geist Mono', monospace" }}
+            >
+              <p className="text-[#fefefe]/65 text-[11px] sm:text-[12px] leading-snug">
+                <span className="text-orange-400 font-semibold">Agents will:</span> approve claims · process permits · onboard customers · verify identities · trigger payments · coordinate supply chains · interact with systems of record.
+              </p>
+              <p className="text-[#fefefe]/85 text-sm sm:text-base lg:text-[15px] leading-[1.55]">
+                Six months after an enterprise agent begins handling account changes, the audit committee will not ask whether the workflow was impressive. <span className="text-[#fefefe] font-semibold">It will ask:</span>
+              </p>
+              <p
+                className="text-orange-400 text-[15px] sm:text-[17px] lg:text-[19px] leading-[1.35] tracking-[0.04em] uppercase font-bold"
+                style={{ fontFamily: "'Anton', sans-serif" }}
+              >
+                Which actions were authorised, by whom, under what policy, and where is the record?
+              </p>
+              <p className="text-[#fefefe]/70 text-sm lg:text-base leading-[1.55] uppercase tracking-[0.04em]" style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.02em' }}>
+                Secure first.{' '}
+                <span className="text-orange-400">Then run.</span>
+              </p>
+              <p
+                className="text-[#fefefe]/55 text-[11px] sm:text-[12px] tracking-[0.18em] uppercase font-semibold"
+                style={{ fontFamily: "'Geist Mono', monospace" }}
+              >
+                <span className="text-orange-400">Payments</span> · Access · Agreements · Networking.
+              </p>
+              <p className="text-[#fefefe]/55 text-[11px] sm:text-[12px] tracking-[0.04em] pt-3" style={{ borderTop: '1px dashed rgba(254,254,254,0.12)' }}>
+                Built on cryptographic engineering lineage used in <span className="text-[#fefefe]/80">Estonia's digital state infrastructure</span>, <span className="text-[#fefefe]/80">NATO Cyber Range</span>, and <span className="text-[#fefefe]/80">Verizon Enterprise KSI</span> services.
+              </p>
+            </motion.div>
           </div>
 
           {/* Right column — phone mockup */}
@@ -68,7 +102,6 @@ export function CasinoCoverSlide() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="relative justify-self-center w-full max-w-[560px] p-8"
           >
-            {/* Bracket corners */}
             <span className="absolute top-0 left-0 w-5 h-5 border-l-2 border-t-2 border-orange-500" />
             <span className="absolute top-0 right-0 w-5 h-5 border-r-2 border-t-2 border-orange-500" />
             <span className="absolute bottom-0 left-0 w-5 h-5 border-l-2 border-b-2 border-orange-500" />
@@ -86,7 +119,6 @@ export function CasinoCoverSlide() {
                 style={{ border: '1px solid rgba(254,254,254,0.10)', borderTop: 0 }}
               />
 
-              {/* Phone bar */}
               <div
                 className="flex items-center justify-between px-2 pt-1.5 pb-3 mb-3"
                 style={{ borderBottom: '1px solid rgba(254,254,254,0.10)' }}
@@ -105,13 +137,13 @@ export function CasinoCoverSlide() {
                       className="text-[#fefefe] text-[13px] font-semibold"
                       style={{ fontFamily: "'Geist Mono', monospace" }}
                     >
-                      Kelly
+                      ARIA
                     </div>
                     <div
                       className="text-orange-400 text-[11px] tracking-[0.08em] uppercase"
                       style={{ fontFamily: "'Geist Mono', monospace" }}
                     >
-                      Active · bound to Alan
+                      Verified · bound to GlobalBank
                     </div>
                   </div>
                 </div>
@@ -119,25 +151,24 @@ export function CasinoCoverSlide() {
                   className="text-[#fefefe]/40 text-[10px] tracking-[0.16em] uppercase"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
-                  OPENCLAW
+                  GLOBALBANK · TREASURY
                 </div>
               </div>
 
-              {/* Chat */}
               <div className="flex flex-col gap-2 px-1 pb-2">
                 <div
                   className="text-[#fefefe]/40 text-[11px] text-center tracking-[0.12em] uppercase my-1"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
-                  SAT · 09:14
+                  WED · 11:24
                 </div>
                 <ChatMsg variant="agent" delay={0.6}>
-                  Friday reload from MatchdayBet just dropped — <strong className="text-[#fefefe] font-semibold">£40 + 50 free spins</strong> on Big Bass Bonanza.
+                  Payment authorization — <strong className="text-[#fefefe] font-semibold">$4.2M wire to Vendor #G2847</strong>. Q4 procurement, IT services.
                 </ChatMsg>
                 <ChatMsg variant="agent" delay={1.7}>
-                  Want me to open a session? <strong className="text-[#fefefe] font-semibold">Stop-loss £30, 45m cap</strong> — same as last week.
+                  Tenant attested · scope within delegation. <strong className="text-[#fefefe] font-semibold">Open signed session?</strong>
                 </ChatMsg>
-                <ChatMsg variant="user" delay={3.0}>Go.</ChatMsg>
+                <ChatMsg variant="user" delay={3.0}>Approve.</ChatMsg>
                 <SessionCard delay={3.7} />
               </div>
             </div>
@@ -193,12 +224,12 @@ function SessionCard({ delay }: { delay: number }) {
         style={{ fontFamily: "'Anton', sans-serif" }}
       >
         <span className="inline-block w-5 h-5 rounded-full bg-orange-500 text-[#060606] text-[13px] font-bold text-center leading-5">✓</span>
-        SESSION OPEN
+        RECEIPT · SIGNED
       </div>
-      <Row k="Operator" v="MatchdayBet" />
-      <Row k="Wallet" v="0x8f2…a3c · custody retained" />
-      <Row k="Caps" v="$30 loss · 45m" />
-      <Row k="Settlement" v="Per-wager · sub-second" />
+      <Row k="Agent" v="ARIA · 0x4f7…b2e" />
+      <Row k="Authority" v="GlobalBank · Treasury · Q4-Procure" />
+      <Row k="Policy" v="Sec.14.2 · operator-held" />
+      <Row k="Decision" v="APPROVED · 11:24:08" />
       <div
         className="mt-2.5 pt-2.5 text-orange-400 text-[12px] tracking-[0.06em] flex items-center gap-2 whitespace-nowrap"
         style={{
@@ -210,7 +241,7 @@ function SessionCard({ delay }: { delay: number }) {
           className="inline-block w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0"
           style={{ boxShadow: '0 0 6px rgba(249,115,22,0.8)' }}
         />
-        SIGNED · AOS9 · 8f2_a3c
+        TAMPER-EVIDENT · AOS9 · ed25519
       </div>
     </motion.div>
   );

@@ -2,38 +2,47 @@ import { motion } from 'framer-motion';
 
 const benefits = [
   {
-    num: '01 · Acquisition',
-    title: <>Onboard agents <span className="text-orange-400">in seconds.</span></>,
+    num: '01 · Register',
+    title: <>Every agent gets <span className="text-orange-400">an identity.</span></>,
     body: (
       <>
-        Wallet, KYC, risk caps presented in a single signed handshake. The funnel — and its <strong className="text-[#fefefe] font-semibold">30% abandon rate</strong> — disappears. First wager in seconds, not sessions.
+        A verifiable identity tied to its <strong className="text-[#fefefe] font-semibold">owner, purpose, and scope</strong>. Held in the Sovereign Agent Registry.
       </>
     ),
   },
   {
-    num: '02 · Retention',
-    title: <>A live retention <span className="text-orange-400">channel.</span></>,
+    num: '02 · Delegate',
+    title: <>Authority is <span className="text-orange-400">scoped & revocable.</span></>,
     body: (
       <>
-        The dead email channel is replaced by the channel the player already uses. Promotions arrive in chat, contextually, when they matter. <strong className="text-[#fefefe] font-semibold">From 8% open to 100% delivered.</strong>
+        Just-in-time, time-bound, revocable. <strong className="text-[#fefefe] font-semibold">This action, this session, no more</strong>.
       </>
     ),
   },
   {
-    num: '03 · Loyalty',
-    title: <>Personalization <span className="text-orange-400">that is real.</span></>,
+    num: '03 · Enforce',
+    title: <>Policy decided <span className="text-orange-400">before action.</span></>,
     body: (
       <>
-        Bankroll mood, time available, mental state — surfaced to your platform with the player's permission, signed and auditable. <strong className="text-[#fefefe] font-semibold">Telemetry was a guess. This is signal.</strong>
+        Semantic Intercept Fabric evaluates every action against policy <strong className="text-[#fefefe] font-semibold">before execution</strong>. Sub-20ms, at the kernel.
       </>
     ),
   },
   {
-    num: '04 · Cost',
-    title: <>The payments stack <span className="text-orange-400">collapses.</span></>,
+    num: '04 · Prove',
+    title: <>Every action <span className="text-orange-400">receipted.</span></>,
     body: (
       <>
-        No card network. No PSP integrations. No deposit funnel. No withdrawal queue. <strong className="text-[#fefefe] font-semibold">15–35% of GGR back on your P&amp;L.</strong>
+        Cryptographically signed receipt: identity, authority, policy, decision, outcome. <strong className="text-[#fefefe] font-semibold">The institution keeps the evidence.</strong>
+      </>
+    ),
+  },
+  {
+    num: '05 · Move',
+    title: <>Value moves <span className="text-orange-400">at machine speed.</span></>,
+    body: (
+      <>
+        AgentSphere enables <strong className="text-[#fefefe] font-semibold">agent-to-agent and agent-to-system coordination</strong> — counterparty-verified, no shared-ledger dependency.
       </>
     ),
   },
@@ -53,7 +62,7 @@ export function CasinoIntroducingUnicitySlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 08 · Introducing Unicity
+            Nº 07 · What Unicity Provides
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -62,8 +71,8 @@ export function CasinoIntroducingUnicitySlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Unicity:{' '}
-            <span className="text-orange-400">The Secure Agentic OS for gaming operators.</span>
+            Security at the point of{' '}
+            <span className="text-orange-400">agent execution.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -79,7 +88,7 @@ export function CasinoIntroducingUnicitySlide() {
             className="mt-4 text-[#fefefe]/75 text-sm lg:text-base leading-relaxed max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Unicity Labs has pioneered the platform that lets operators onboard agents at scale, securely. Identity, value, settlement, audit — one OS, one integration.
+            Every agent gets an <span className="text-[#fefefe] font-semibold">identity</span>. Every action gets a <span className="text-[#fefefe] font-semibold">policy decision</span>. Every outcome gets a <span className="text-orange-400 font-semibold">tamper-evident receipt</span>. The institution keeps custody of the evidence — cryptographic proofs can be verified without depending on editable vendor logs.
           </motion.p>
         </div>
 
@@ -95,31 +104,31 @@ export function CasinoIntroducingUnicitySlide() {
             <UnicityDiagram />
           </motion.div>
 
-          {/* Right — 4 benefits */}
-          <div className="flex flex-col gap-4 lg:gap-5">
+          {/* Right — 5 cards */}
+          <div className="flex flex-col gap-2.5 lg:gap-3">
             {benefits.map((b, i) => (
               <motion.div
                 key={b.num}
                 initial={{ opacity: 0, x: 12 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 + i * 0.08, duration: 0.5 }}
-                className="relative pl-5"
+                className="relative pl-4"
                 style={{ borderLeft: '2px solid rgba(255,106,31,0.55)' }}
               >
                 <p
-                  className="text-orange-400 text-[11px] lg:text-xs tracking-[0.32em] uppercase font-semibold"
+                  className="text-orange-400 text-[10px] lg:text-[11px] tracking-[0.28em] uppercase font-semibold"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
                   {b.num}
                 </p>
                 <h3
-                  className="text-[#fefefe] text-[22px] sm:text-[24px] lg:text-[28px] leading-[1.05] tracking-[0.04em] uppercase mt-1"
+                  className="text-[#fefefe] text-[18px] sm:text-[19px] lg:text-[22px] leading-[1.05] tracking-[0.03em] uppercase mt-0.5"
                   style={{ fontFamily: "'Anton', sans-serif" }}
                 >
                   {b.title}
                 </h3>
                 <p
-                  className="text-[#fefefe]/78 text-xs lg:text-sm leading-[1.55] mt-1.5"
+                  className="text-[#fefefe]/78 text-[11px] lg:text-[12px] leading-[1.5] mt-1"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
                   {b.body}
@@ -145,21 +154,21 @@ function UnicityDiagram() {
         </marker>
       </defs>
 
-      {/* AGENT (left) */}
+      {/* AI AGENT (left) */}
       <g>
         <rect x="20" y="80" width="180" height="160" fill="rgba(255,106,31,0.025)" stroke="rgba(254,254,254,0.18)" strokeWidth="1" />
         <rect x="20" y="80" width="2" height="160" fill="#FF6A1F" />
-        <text x="34" y="106" fontFamily="Geist Mono" fontSize="9" letterSpacing="3" fill="#FF6A1F">AGENT</text>
+        <text x="34" y="106" fontFamily="Geist Mono" fontSize="9" letterSpacing="3" fill="#FF6A1F">AI AGENT</text>
 
         <circle cx="50" cy="138" r="9" fill="#FF6A1F" />
-        <text x="50" y="142" fontFamily="Geist Mono" fontSize="10" fontWeight="700" fill="#060606" textAnchor="middle">K</text>
-        <text x="68" y="135" fontFamily="Geist Mono" fontSize="11" fill="#FEFEFE" fontWeight="600">Player Agent</text>
-        <text x="68" y="148" fontFamily="Geist Mono" fontSize="9" fill="rgba(254,254,254,0.45)">OpenClaw</text>
+        <text x="50" y="142" fontFamily="Geist Mono" fontSize="10" fontWeight="700" fill="#060606" textAnchor="middle">A</text>
+        <text x="68" y="135" fontFamily="Geist Mono" fontSize="11" fill="#FEFEFE" fontWeight="600">Enterprise Agent</text>
+        <text x="68" y="148" fontFamily="Geist Mono" fontSize="9" fill="rgba(254,254,254,0.45)">Bank · Gov · Insurer</text>
 
         <rect x="34" y="168" width="152" height="60" fill="rgba(0,0,0,0.4)" stroke="rgba(255,106,31,0.45)" strokeWidth="1" />
-        <text x="46" y="186" fontFamily="Geist Mono" fontSize="9" letterSpacing="2" fill="#FF6A1F">WALLET</text>
-        <text x="46" y="202" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">USDC / EURC</text>
-        <text x="46" y="216" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">KYC bound</text>
+        <text x="46" y="186" fontFamily="Geist Mono" fontSize="9" letterSpacing="2" fill="#FF6A1F">DELEGATION</text>
+        <text x="46" y="202" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">Scoped · revocable</text>
+        <text x="46" y="216" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">Time-bound</text>
       </g>
 
       {/* CONNECTION */}
@@ -169,15 +178,15 @@ function UnicityDiagram() {
           filter="drop-shadow(0 0 4px rgba(255,106,31,0.6))"
           markerEnd="url(#iu-arrow)"
           markerStart="url(#iu-arrow-rev)" />
-        <text x="260" y="172" fontFamily="Geist Mono" fontSize="10" letterSpacing="1.5" fill="#FF6A1F" textAnchor="middle" fontWeight="600">tokens</text>
+        <text x="260" y="172" fontFamily="Geist Mono" fontSize="10" letterSpacing="1.5" fill="#FF6A1F" textAnchor="middle" fontWeight="600">actions</text>
       </g>
 
-      {/* OPERATOR (right, large) */}
+      {/* INSTITUTION (right, large) */}
       <g>
         <rect x="320" y="40" width="360" height="460" fill="rgba(255,106,31,0.025)" stroke="rgba(254,254,254,0.18)" strokeWidth="1" />
         <rect x="320" y="40" width="2" height="460" fill="#FF6A1F" />
 
-        <text x="338" y="66" fontFamily="Geist Mono" fontSize="9" letterSpacing="3" fill="#FF6A1F">OPERATOR PLATFORM</text>
+        <text x="338" y="66" fontFamily="Geist Mono" fontSize="9" letterSpacing="3" fill="#FF6A1F">INSTITUTION</text>
         <text x="338" y="92" fontFamily="Anton" fontSize="22" letterSpacing="1" fill="#FEFEFE">YOUR STACK</text>
 
         {/* AOS band */}
@@ -185,41 +194,41 @@ function UnicityDiagram() {
           fill="rgba(255,106,31,0.10)"
           stroke="#FF6A1F" strokeWidth="1.5"
           filter="drop-shadow(0 0 8px rgba(255,106,31,0.25))" />
-        <text x="354" y="140" fontFamily="Geist Mono" fontSize="10" letterSpacing="3" fill="#FF6A1F" fontWeight="600">UNICITY AOS</text>
-        <text x="354" y="162" fontFamily="Anton" fontSize="20" letterSpacing="1" fill="#FEFEFE">AGENTIC OS</text>
-        <text x="354" y="184" fontFamily="Geist Mono" fontSize="9" letterSpacing="2" fill="rgba(255,106,31,0.85)">IDENTITY  ·  VALUE  ·  SETTLEMENT  ·  AUDIT</text>
+        <text x="354" y="140" fontFamily="Geist Mono" fontSize="10" letterSpacing="3" fill="#FF6A1F" fontWeight="600">UNICITY AOS-9</text>
+        <text x="354" y="162" fontFamily="Anton" fontSize="20" letterSpacing="1" fill="#FEFEFE">RUNTIME SECURITY</text>
+        <text x="354" y="184" fontFamily="Geist Mono" fontSize="9" letterSpacing="2" fill="rgba(255,106,31,0.85)">REGISTER · DELEGATE · ENFORCE · PROVE</text>
 
         {/* Dashed leaders from AOS down to each box */}
         <line x1="388" y1="196" x2="388" y2="240" stroke="rgba(255,106,31,0.5)" strokeWidth="1" strokeDasharray="2 3" />
         <line x1="500" y1="196" x2="500" y2="240" stroke="rgba(255,106,31,0.5)" strokeWidth="1" strokeDasharray="2 3" />
         <line x1="612" y1="196" x2="612" y2="240" stroke="rgba(255,106,31,0.5)" strokeWidth="1" strokeDasharray="2 3" />
 
-        {/* WALLET */}
+        {/* SYSTEMS OF RECORD */}
         <rect x="338" y="240" width="100" height="150" fill="rgba(0,0,0,0.4)" stroke="rgba(254,254,254,0.30)" strokeWidth="1" />
-        <text x="354" y="266" fontFamily="Geist Mono" fontSize="10" letterSpacing="2" fill="#FEFEFE" fontWeight="600">HOUSE</text>
-        <text x="354" y="282" fontFamily="Geist Mono" fontSize="10" letterSpacing="2" fill="#FEFEFE" fontWeight="600">WALLET</text>
+        <text x="354" y="266" fontFamily="Geist Mono" fontSize="10" letterSpacing="2" fill="#FEFEFE" fontWeight="600">SYSTEMS</text>
+        <text x="354" y="282" fontFamily="Geist Mono" fontSize="10" letterSpacing="2" fill="#FEFEFE" fontWeight="600">OF RECORD</text>
         <line x1="354" y1="290" x2="396" y2="290" stroke="rgba(255,106,31,0.6)" strokeWidth="1" />
-        <text x="354" y="312" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">USDC balance</text>
-        <text x="354" y="330" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">Takes wagers</text>
-        <text x="354" y="348" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">Pays winnings</text>
+        <text x="354" y="312" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">Core banking</text>
+        <text x="354" y="330" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">Claims</text>
+        <text x="354" y="348" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">Customs</text>
 
-        {/* GAME ENGINE */}
+        {/* PAYMENT RAILS */}
         <rect x="450" y="240" width="100" height="150" fill="rgba(0,0,0,0.4)" stroke="rgba(254,254,254,0.30)" strokeWidth="1" />
-        <text x="466" y="266" fontFamily="Geist Mono" fontSize="10" letterSpacing="2" fill="#FEFEFE" fontWeight="600">GAME</text>
-        <text x="466" y="282" fontFamily="Geist Mono" fontSize="10" letterSpacing="2" fill="#FEFEFE" fontWeight="600">ENGINE</text>
+        <text x="466" y="266" fontFamily="Geist Mono" fontSize="10" letterSpacing="2" fill="#FEFEFE" fontWeight="600">PAYMENT</text>
+        <text x="466" y="282" fontFamily="Geist Mono" fontSize="10" letterSpacing="2" fill="#FEFEFE" fontWeight="600">RAILS</text>
         <line x1="466" y1="290" x2="508" y2="290" stroke="rgba(255,106,31,0.6)" strokeWidth="1" />
-        <text x="466" y="312" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">RNG · fair</text>
-        <text x="466" y="330" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">Per-wager</text>
-        <text x="466" y="348" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">Signed</text>
+        <text x="466" y="312" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">Wire · ACH</text>
+        <text x="466" y="330" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">Card · SEPA</text>
+        <text x="466" y="348" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">Treasury</text>
 
-        {/* BACKEND SYSTEMS */}
+        {/* IDENTITY & ACCESS */}
         <rect x="562" y="240" width="100" height="150" fill="rgba(0,0,0,0.4)" stroke="rgba(254,254,254,0.30)" strokeWidth="1" />
-        <text x="578" y="266" fontFamily="Geist Mono" fontSize="10" letterSpacing="2" fill="#FEFEFE" fontWeight="600">BACKEND</text>
-        <text x="578" y="282" fontFamily="Geist Mono" fontSize="10" letterSpacing="2" fill="#FEFEFE" fontWeight="600">SYSTEMS</text>
+        <text x="578" y="266" fontFamily="Geist Mono" fontSize="10" letterSpacing="2" fill="#FEFEFE" fontWeight="600">IDENTITY</text>
+        <text x="578" y="282" fontFamily="Geist Mono" fontSize="10" letterSpacing="2" fill="#FEFEFE" fontWeight="600">&amp; ACCESS</text>
         <line x1="578" y1="290" x2="620" y2="290" stroke="rgba(255,106,31,0.6)" strokeWidth="1" />
-        <text x="578" y="312" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">CRM · loyalty</text>
-        <text x="578" y="330" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">Treasury</text>
-        <text x="578" y="348" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">Risk · limits</text>
+        <text x="578" y="312" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">SSO · KYC</text>
+        <text x="578" y="330" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">Permits</text>
+        <text x="578" y="348" fontFamily="Geist Mono" fontSize="10" fill="rgba(254,254,254,0.78)">Onboarding</text>
       </g>
     </svg>
   );
