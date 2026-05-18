@@ -28,7 +28,7 @@ const sectionConfig: Record<SectionId, {
   highlightKernel: boolean;
 }> = {
   kernel: {
-    label: 'AOS9',
+    label: 'AOS',
     subtitle: 'Architecture deep dive',
     highlightIds: ['skills', 'orchestration', 'inference', 'networking'],
     highlightKernel: true,

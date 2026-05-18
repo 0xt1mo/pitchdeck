@@ -2,6 +2,36 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Self-hosted fonts — TTF format ensures clean text-layer embedding in PDFs (avoids Type 3 fallback) */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('/fonts/Anton-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('/fonts/GeistMono-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url('/fonts/GeistMono-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url('/fonts/GeistMono-Bold.ttf') format('truetype');
+}
+
 :root {
   --color-bg-primary: #060606;
   --color-text-primary: #fefefe;

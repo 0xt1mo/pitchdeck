@@ -1,21 +1,33 @@
 import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
 import { IntroSlide } from './slides/IntroSlide';
+import { CoverSlide } from './slides/CoverSlide';
 import { PromiseSlide } from './slides/PromiseSlide';
 import { SharedLedgerSlide } from './slides/SharedLedgerSlide';
 import { AgentsSlide } from './slides/AgentsSlide';
 import { EdgePayoffSlide } from './slides/EdgePayoffSlide';
+import { UnbundledPayoffSlide } from './slides/UnbundledPayoffSlide';
 import { RetrofitSlide } from './slides/RetrofitSlide';
 import { CompetitionSlide } from './slides/CompetitionSlide';
 import { MarketSlide } from './slides/MarketSlide';
 import { ResourcesSlide } from './slides/ResourcesSlide';
 import { ProblemSlide } from './slides/ProblemSlide';
 import { AutonomyStackSlide } from './slides/AutonomyStackSlide';
+import { CompleteAutonomyStackSlide } from './slides/CompleteAutonomyStackSlide';
+import { SolutionIntroSlide } from './slides/SolutionIntroSlide';
+import { ArchitectureStackSlide } from './slides/ArchitectureStackSlide';
+import { CompetitiveLandscapeSlide } from './slides/CompetitiveLandscapeSlide';
+import { SecurityNetworkSlide } from './slides/SecurityNetworkSlide';
 import { AgentSphereDashboardSlide } from './slides/AgentSphereDashboardSlide';
+import { AgentSprawlSlide } from './slides/AgentSprawlSlide';
+import { WedgeSlide } from './slides/WedgeSlide';
 import { ProtocolSlide } from './slides/ProtocolSlide';
 import { GoToMarketSlide } from './slides/GoToMarketSlide';
 import { ProjectionsSlide } from './slides/ProjectionsSlide';
 import { TokenSlide } from './slides/TokenSlide';
+import { BusinessModelSlide } from './slides/BusinessModelSlide';
+import { IntellectualArcSlide } from './slides/IntellectualArcSlide';
+import { AppendixDividerSlide } from './slides/AppendixDividerSlide';
 import { ThePathSlide } from './slides/ThePathSlide';
 import { TeamSlide } from './slides/TeamSlide';
 import { RaiseSlide } from './slides/RaiseSlide';
@@ -36,37 +48,53 @@ import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  IntroSlide,              // 1. Cover
-  PromiseSlide,            // 2. Satoshi: Peer-to-Peer Electronic Cash
-  SharedLedgerSlide,       // 3. Every blockchain since Bitcoin is the same 17-year-old design
-  ProblemSlide,            // 4. What Autonomy Demands
-  TeamSlide,               // 5. Founders — we've assembled the team to build it
-  AgentsSlide,             // 6. Validation at the Edge
-  EdgePayoffSlide,         // 7. What Validation Unlocks
-  AutonomyStackSlide,      // 8. Operating System for AI
-  ProtocolSlide,           // 9. Scaling x402/MPP — The Message Is the Settlement
-  MarketSlide,             // 10. Market Opportunity — Autonomous AI is Exponential
+  CoverSlide,              // 1. Cover — Unicity logo + Seed Round Extension
+  IntroSlide,              // 2. Thesis — Autonomous AI needs an internet built for machines
+  // ── Architecture arc (3–8) ──
+  ProblemSlide,            // 3. What Autonomy Demands — The Fourth Rebuild
+  // SolutionIntroSlide,   // hidden — Unicity OS: A Secure OS for AI Agents
+  AutonomyStackSlide,      // 4. The Protocol Stack for the Agentic Internet
+  // CompleteAutonomyStackSlide, // hidden — The First Complete Stack Built For Machines
+  TeamSlide,               // 6. Founders
+  // ArchitectureStackSlide, // hidden — The Secure OS for Agents
+  AgentsSlide,             // 7. The Unicity L1 — Why a Purpose Built Chain
+  EdgePayoffSlide,         // 7. The Unlock — What This Unlocks
+  CompetitiveLandscapeSlide, // 8. Competitive Landscape — OS, not chain. Private state.
+  // ── Commercial arc (9–14) ──
+  WedgeSlide,              // 9. The Wedge — Land on Security. Revenue Today.
+  MarketSlide,             // 10. Market Opportunity — trillion-dollar rebuild
+  GoToMarketSlide,         // 11. Beachhead: The UAE
+  // SecurityNetworkSlide, // hidden — Zero Trust Enterprise Network
+  ProtocolSlide,           // 13. x402 Live Demo
+  // AgentSprawlSlide,     // hidden — Case Study: Agent Sprawl
+  ThePathSlide,            // 14. Current Status and How We Win
+  RaiseSlide,              // 15. The Ask — Seed Round Extension
+  // AgentSphereDashboardSlide moved to appendix (was split into AgentSprawlSlide + WedgeSlide for main deck)
+  // UnbundledPayoffSlide, // hidden — merged Unbundling + Unlocks attempt
+  // AutonomyStackSlide,   // hidden — Protocol Stack for the Agentic Internet
   // ProjectionsSlide,     // The World If We Win — hidden
-  CompetitionSlide,        // 11. Why Us — Competitive Landscape
-  GoToMarketSlide,         // 12. Beachhead: The UAE
-  ThePathSlide,            // 13. Current Status and How We Win
-  TokenSlide,              // 14. Tokenomics
-  RaiseSlide,              // 15. Pre-Series A Raise
-  ResourcesSlide,          // 17. Resources
-  ThankYouChatSlide,       // 18. Thank You
-  // ── 19+ Appendix — technical deep-dives ──
+  // BusinessModelSlide,   // hidden — Business Model — Four Surfaces. One Platform.
+  ResourcesSlide,          // 16. Resources
+  ThankYouChatSlide,       // 17. Thank You
+  // ── 17+ Appendix — technical deep-dives ──
+  AppendixDividerSlide,    // Appendix · Technology — section break
+  CompetitionSlide,        // Competition — Why It Is Different (architectural arc)
+  // SharedLedgerSlide,    // hidden — Every blockchain from Bitcoin to MegaETH is the same 17-year-old design
+  // IntellectualArcSlide, // hidden — Unbundling what the network has to do
+  // PromiseSlide,         // hidden — Satoshi: Peer-to-Peer Electronic Cash
   BlockchainArchSlide,     // Protocol Stack
   ZKOracleSlide,           // ZK Oracle
   PermissionlessSlide,     // Hierarchical Scaling
   SettlementSlide,         // Settlement
   ChainAgnosticSlide,      // Chain-Agnostic Operations
   AgentsSmartContractsSlide, // Agents-as-Smart-Contracts
-  AstridSlide,             // AOS9 kernel
-  AstridComparisonSlide,   // Why AOS9
+  TokenSlide,              // Tokenomics — end of blockchain section
+  AstridSlide,             // AOS kernel
+  AstridComparisonSlide,   // Why AOS
   AstridUseCasesSlide,     // Swap Capsule
   InterceptFabricSlide,    // Security Fabric
-  AgentSphereDashboardSlide, // Enterprise console dashboards
-  RetrofitSlide,           // "Wrong Substrate" — every patch in crypto is a hack
+  // AgentSphereDashboardSlide, // hidden — original 4-pillar enterprise dashboard
+  // RetrofitSlide,        // hidden — You Can't Retrofit an EVM into Autonomous AI
 ];
 
 export default function App() {

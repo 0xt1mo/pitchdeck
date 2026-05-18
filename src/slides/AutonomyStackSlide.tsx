@@ -17,16 +17,16 @@ const stack: StackLayer[] = [
     variant: 'top',
   },
   {
-    product: 'UNICITY AOS9',
+    product: 'UNICITY AOS',
     label: 'RUNTIME',
-    detail: 'A secure runtime that sits below the agent. Every model output, tool call, and decision passes through it — security interception, audit logging, and budget enforcement happen here, where tools cannot bypass them.',
+    detail: 'Executes the agents. Capsules provide multi-tenancy and isolation. Every prompt, tool call, and decision passes through it — proactive safety policy, goal focus and budget enforcement, with tokenized execution trace for analysis and compliance, with hard policy rules on tool interactions.',
     tags: 'KERNEL · POLICY · INTERCEPT',
     variant: 'mid',
   },
   {
     product: 'UNICITY L1',
-    label: 'SETTLEMENT & IDENTITY',
-    detail: 'The substrate. State tokenization, value transfer, cryptographic identity and delegation.',
+    label: 'PROOF SYSTEM',
+    detail: 'State tokenization. Verifiable execution. Cryptographic identity. Value transfer.',
     tags: 'STATE TOKENS · IDENTITY · DELEGATION',
     variant: 'bottom',
   },
@@ -34,11 +34,9 @@ const stack: StackLayer[] = [
 
 const requirements = [
   'Identity',
-  'Delegation',
-  'Verifiable Execution',
-  'Policy Enforcement',
-  'Settlement',
-  'Interoperability',
+  'Execution',
+  'Governance',
+  'Payments',
 ];
 
 export function AutonomyStackSlide() {
@@ -64,7 +62,7 @@ export function AutonomyStackSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            THE PROTOCOL STACK FOR THE{' '}
+            UNICITY: THE PROTOCOL STACK FOR THE{' '}
             <span className="text-orange-400">AGENTIC INTERNET</span>
           </motion.h1>
           <motion.p
@@ -74,7 +72,7 @@ export function AutonomyStackSlide() {
             className="mt-3 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Three layers. <span className="text-orange-400 font-bold">Settlement, runtime, frameworks.</span> Every requirement autonomy demands, delivered as one protocol stack.
+            Every requirement autonomy demands, delivered as one protocol stack.
           </motion.p>
         </div>
 
@@ -176,27 +174,13 @@ export function AutonomyStackSlide() {
           </div>
         </motion.div>
 
-        {/* Footer */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="text-orange-400 text-[18px] sm:text-[22px] lg:text-[26px] leading-[0.95] tracking-tight pt-3 shrink-0"
-          style={{
-            fontFamily: "'Anton', sans-serif",
-            borderTop: '1px solid rgba(249,115,22,0.25)',
-          }}
-        >
-          SIX REQUIREMENTS. ONE PLATFORM. BUILT FROM FIRST PRINCIPLES.
-        </motion.p>
-
       </div>
     </div>
   );
 }
 
 // Isometric exploded-view of the three-layer stack.
-function IsoStackDiagram() {
+export function IsoStackDiagram() {
   const W = 720;
   const H = 360;
   const cx = W / 2;
@@ -314,8 +298,8 @@ function IsoStackDiagram() {
       <rect x={0} y={0} width={W} height={H} fill="url(#iso-grid)" />
 
       {/* Render bottom-up so upper layers sit visually in front */}
-      <Slab cy={layerY[2]} variant="bottom" centerLabel="PROOF" />
-      <Slab cy={layerY[1]} variant="mid" centerLabel="AOS9" centerSub="KERNEL" />
+      <Slab cy={layerY[2]} variant="bottom" centerLabel="PROOF SYSTEM" />
+      <Slab cy={layerY[1]} variant="mid" centerLabel="AOS" centerSub="KERNEL" />
       <Slab cy={layerY[0]} variant="top" centerLabel="AGENT" />
     </svg>
   );

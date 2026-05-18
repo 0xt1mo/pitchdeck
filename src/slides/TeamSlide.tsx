@@ -28,7 +28,7 @@ const founders = [
 
 const leaders = [
   { name: 'Vladimir Rogojin', role: 'Architecture', bg: 'PhD CS · Somnium Metaverse, Guardtime', photo: '/team/vladimir.png', linkedin: 'https://www.linkedin.com/in/vladimir-rogojin-369b7151/' },
-  { name: 'Joshua J. Bouw', role: 'AI OS', bg: 'NEAR, Asimov, Blackcoin · Godfather Proof of Stake', photo: '/team/joshua.jpeg', linkedin: 'https://www.linkedin.com/in/joshuajbouw/' },
+  { name: 'Joshua J. Bouw', role: 'AI OS', bg: 'NEAR, Asimov, Blackcoin · Early Proof of Stake pioneer', photo: '/team/joshua.jpeg', linkedin: 'https://www.linkedin.com/in/joshuajbouw/' },
   { name: 'Matt Law', role: 'Growth', bg: 'Outlier Ventures, Boson, Fetch.ai', photo: '/team/matt.jpg', linkedin: 'https://www.linkedin.com/in/mattlaw/' },
   { name: 'Pavel Grigorenko', role: 'Engineering', bg: 'PhD CS · Microsoft, Guardtime', photo: '/team/pavel.png', linkedin: 'https://www.linkedin.com/in/pavelgrigorenko/' },
   { name: 'Jamie Steiner', role: 'Product', bg: 'JP Morgan', photo: '/team/jamie.jpg' },
@@ -133,7 +133,7 @@ export function TeamSlide() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight mt-2"
+            className="text-[#fefefe] text-[44px] sm:text-[60px] lg:text-[80px] xl:text-[92px] leading-[1.0] tracking-tight mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
             FOUNDERS WHO'VE <span className="text-orange-400">DONE THIS BEFORE</span>

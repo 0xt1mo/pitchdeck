@@ -1,90 +1,239 @@
 import { motion } from 'framer-motion';
 
-const categories = [
+type Generation = {
+  year: string;
+  name: string;
+  summary: string;
+  detail: string;
+  highlight?: boolean;
+};
+
+const generations: Generation[] = [
   {
-    title: 'AGENT PROTOCOLS',
-    competitors: 'x402 (Linux Foundation) · Stripe MPP',
-    text: "We implement and simplify. Unicity turns the message itself into P2P settlement.",
+    year: '2009',
+    name: 'BITCOIN',
+    summary: 'Correctness + global ordering.',
+    detail: 'Every node certifies every transaction. Every node agrees on order.',
   },
   {
-    title: 'SETTLEMENT',
-    competitors: 'Base · Tempo · Solana · Lightning',
-    text: "We scale them by orders of magnitude. Tokens minted on any chain detach onto Unicity, transact peer-to-peer at machine speed, and settle back when needed. Every L1 becomes a Unicity issuance layer.",
+    year: '2023',
+    name: 'SUI / FASTPAY',
+    summary: 'Correctness only.',
+    detail: 'Validators certify correctness. Ordering removed.',
   },
   {
-    title: 'AI CHAINS',
-    competitors: 'Kite.ai · Near · Fetch.ai',
-    text: "We compete. Existing AI-chain projects retrofit general-purpose runtimes — EVM, Cosmos, sharded WASM — none of which were designed for off-chain agent execution with edge validation. Our architecture is purpose-built for the agent transaction profile.",
-  },
-  {
-    title: 'FRAMEWORKS',
-    competitors: 'LangChain · CrewAI · Google ADK · OpenClaw',
-    text: "We complement. Unicity as the runtime underneath adds security, identity, communication and settlement.",
-  },
-  {
-    title: 'SECURITY',
-    competitors: 'Lakera/Check Point · HiddenLayer · Protect AI · NeMo Guardrails',
-    text: "Check Point paid $300M for Lakera, which addresses LLM prompt-layer security. Our scope is broader and structurally different — we secure the entire agent execution path at the kernel and settlement layers.",
+    year: '2026',
+    name: 'UNICITY',
+    summary: 'Uniqueness only.',
+    detail: 'The network attests one thing: has this token been spent? Correctness moves to the edge.',
+    highlight: true,
   },
 ];
+
+const left = {
+  header: 'EVERY EXISTING BLOCKCHAIN',
+  subhead: 'Network verifies transactions.',
+  bullets: [
+    { text: 'State lives on a shared ledger', emphasis: false },
+    { text: 'Network is the bottleneck', emphasis: false },
+    { text: 'Tokens are ledger entries', emphasis: false },
+    { text: 'Tokens are static', emphasis: false },
+    { text: 'Cannot integrate natively with existing systems', emphasis: true },
+  ],
+};
+
+const right = {
+  header: 'UNICITY',
+  subhead: 'Network verifies uniqueness.',
+  bullets: [
+    { text: "State lives where it's used", emphasis: false },
+    { text: 'Verification at the edge', emphasis: false },
+    { text: 'Each token carries its own proof', emphasis: false },
+    { text: 'Tokens move peer-to-peer', emphasis: false },
+    { text: 'Integrates natively into existing systems', emphasis: true },
+  ],
+};
 
 export function CompetitionSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16 justify-center gap-8">
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-6 sm:py-8 lg:py-10 justify-center gap-4 lg:gap-5">
 
         {/* Header */}
         <div className="shrink-0">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-orange-400 text-sm tracking-[0.4em] uppercase"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
+            transition={{ duration: 0.5 }}
+            className="text-orange-400 text-sm sm:text-base lg:text-lg tracking-[0.4em] uppercase font-bold"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
             Competition
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-2"
-            style={{ fontFamily: "'Anton', sans-serif" }}>
-            WHY US? <span className="text-orange-400">THE COMPETITIVE LANDSCAPE</span>
+            className="text-[28px] sm:text-[40px] lg:text-[52px] xl:text-[60px] leading-[0.95] tracking-tight uppercase shrink-0 mt-1"
+            style={{ fontFamily: "'Anton', sans-serif" }}
+          >
+            <span className="text-[#fefefe]">THE INEVITABLE ENDPOINT</span>{' '}
+            <span className="text-orange-400">FOR BLOCKCHAIN.</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="mt-4 text-[#fefefe]/85 text-lg sm:text-xl lg:text-2xl max-w-5xl leading-relaxed"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            The first purpose-built infrastructure for autonomous AI — settlement, kernel-level security, verifiable execution, and cryptographic identity in one integrated stack.
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="text-[#fefefe]/90 text-base sm:text-lg lg:text-xl leading-snug shrink-0 max-w-6xl mt-2"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
+            Each generation of consensus removed work from the network.{' '}
+            <span className="text-orange-400">We took the unbundling to its logical conclusion.</span>
           </motion.p>
         </div>
 
-        {/* Rows */}
-        <div className="flex flex-col shrink-0">
-          {categories.map((cat, i) => (
+        {/* Three-column generation comparison */}
+        <div
+          className="grid grid-cols-3 shrink-0"
+          style={{
+            borderTop: '1px solid rgba(249,115,22,0.4)',
+            borderBottom: '1px solid rgba(249,115,22,0.4)',
+          }}
+        >
+          {generations.map((g, i) => (
             <motion.div
-              key={cat.title}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-              className="flex items-start gap-5 lg:gap-8 py-2.5 lg:py-3"
-              style={{ borderBottom: i < categories.length - 1 ? '1px solid rgba(249,115,22,0.1)' : 'none' }}
+              key={g.name}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35 + i * 0.1, duration: 0.5 }}
+              className="flex flex-col gap-1 lg:gap-1.5 px-4 lg:px-5 py-2 lg:py-2.5"
+              style={{
+                borderLeft: i > 0 ? '1px solid rgba(249,115,22,0.15)' : 'none',
+              }}
             >
+              <p
+                className={`text-xs sm:text-sm lg:text-base tracking-[0.18em] ${
+                  g.highlight ? 'text-orange-400' : 'text-[#fefefe]/50'
+                }`}
+                style={{ fontFamily: "'Geist Mono', monospace" }}
+              >
+                {g.year}
+              </p>
               <h3
-                className="text-orange-400 text-[24px] sm:text-[30px] lg:text-[36px] leading-none tracking-tight w-[220px] lg:w-[280px] shrink-0"
-                style={{ fontFamily: "'Anton', sans-serif" }}>
-                {cat.title}
+                className={`text-[20px] sm:text-[26px] lg:text-[32px] leading-none tracking-tight uppercase ${
+                  g.highlight ? 'text-orange-400' : 'text-[#fefefe]/55'
+                }`}
+                style={{ fontFamily: "'Anton', sans-serif" }}
+              >
+                {g.name}
               </h3>
-              <div>
-                <p className="text-[#fefefe]/50 text-sm"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}>
-                  {cat.competitors}
-                </p>
-                <p className="text-[#fefefe]/90 text-base leading-relaxed mt-1.5"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}>
-                  {cat.text}
-                </p>
-              </div>
+              <p
+                className={`text-sm sm:text-base lg:text-lg font-bold leading-snug ${
+                  g.highlight ? 'text-orange-400' : 'text-[#fefefe]/85'
+                }`}
+                style={{ fontFamily: "'Geist Mono', monospace" }}
+              >
+                {g.summary}
+              </p>
+              <p
+                className={`text-xs sm:text-sm lg:text-base italic leading-snug ${
+                  g.highlight ? 'text-[#fefefe]/85' : 'text-[#fefefe]/55'
+                }`}
+                style={{ fontFamily: "'Geist Mono', monospace" }}
+              >
+                {g.detail}
+              </p>
             </motion.div>
           ))}
+        </div>
+
+        {/* Two-column comparison */}
+        <div
+          className="grid grid-cols-2 shrink-0"
+          style={{
+            borderTop: '1px solid rgba(255,255,255,0.12)',
+            borderBottom: '1px solid rgba(255,255,255,0.12)',
+          }}
+        >
+          {/* Left — every existing blockchain */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex flex-col gap-3 lg:gap-4 py-4 lg:py-5 pr-6 lg:pr-10"
+            style={{ borderRight: '1px solid rgba(255,255,255,0.12)' }}
+
+          >
+            <p
+              className="text-[#fefefe]/50 text-sm sm:text-base lg:text-lg tracking-[0.18em] uppercase font-bold"
+              style={{ fontFamily: "'Geist Mono', monospace" }}
+            >
+              {left.header}
+            </p>
+            <p
+              className="text-[#fefefe]/85 text-xl sm:text-2xl lg:text-[28px] font-bold leading-tight"
+              style={{ fontFamily: "'Geist Mono', monospace" }}
+            >
+              {left.subhead}
+            </p>
+            <ul className="flex flex-col gap-2 lg:gap-3 mt-1">
+              {left.bullets.map((b) => (
+                <li
+                  key={b.text}
+                  className="flex items-start gap-3 lg:gap-4"
+                >
+                  <span className="text-orange-400/70 text-base lg:text-lg shrink-0 mt-0.5 font-bold">→</span>
+                  <span
+                    className={`text-sm sm:text-base lg:text-lg leading-snug ${
+                      b.emphasis ? 'text-[#fefefe] font-bold' : 'text-[#fefefe]/55'
+                    }`}
+                    style={{ fontFamily: "'Geist Mono', monospace" }}
+                  >
+                    {b.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Right — Unicity */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="flex flex-col gap-4 lg:gap-5 py-5 lg:py-7 pl-6 lg:pl-10"
+          >
+            <p
+              className="text-orange-400 text-sm sm:text-base lg:text-lg tracking-[0.18em] uppercase font-bold"
+              style={{ fontFamily: "'Geist Mono', monospace" }}
+            >
+              {right.header}
+            </p>
+            <p
+              className="text-orange-400 text-xl sm:text-2xl lg:text-[28px] font-bold leading-tight"
+              style={{ fontFamily: "'Geist Mono', monospace" }}
+            >
+              {right.subhead}
+            </p>
+            <ul className="flex flex-col gap-2 lg:gap-3 mt-1">
+              {right.bullets.map((b) => (
+                <li
+                  key={b.text}
+                  className="flex items-start gap-3 lg:gap-4"
+                >
+                  <span className="text-orange-400 text-base lg:text-lg shrink-0 mt-0.5 font-bold">→</span>
+                  <span
+                    className={`text-sm sm:text-base lg:text-lg leading-snug ${
+                      b.emphasis ? 'text-orange-400 font-bold' : 'text-[#fefefe]/85'
+                    }`}
+                    style={{ fontFamily: "'Geist Mono', monospace" }}
+                  >
+                    {b.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
 
       </div>

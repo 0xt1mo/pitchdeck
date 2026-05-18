@@ -44,11 +44,11 @@ export function ThankYouChatSlide() {
               </svg>
             </div>
             <a
-              href="mailto:info@unicity.ai"
+              href="mailto:mike@unicity-labs.com"
               className="text-orange-400 text-lg lg:text-2xl font-bold"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              info@unicity.ai
+              mike@unicity-labs.com
             </a>
           </div>
           <div className="flex items-center gap-3">

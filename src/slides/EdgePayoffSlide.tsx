@@ -1,111 +1,112 @@
 import { motion } from 'framer-motion';
 
-const cards = [
+type Card = {
+  title: string;
+  body: string;
+  closer: string;
+  closerHighlight: string;
+};
+
+const cards: Card[] = [
   {
-    title: 'AGENT STATE IS TOKENIZED.',
-    text: 'Every action — model output, tool call, decision — is verified inside an enforcement runtime that sits below the agent and cannot be bypassed.',
+    title: 'PRIVACY · COMPLIANCE · THROUGHPUT',
+    body: 'The three properties no public chain delivers together. Bearer-token settlement, peer-to-peer, at machine speed.',
+    closer: '',
+    closerHighlight: 'State is only shared amongst counterparties.',
   },
   {
-    title: 'VALUE MOVES AT MACHINE SPEED.',
-    text: 'No shared ledger. No mempool. No gas. Subscription economics, privacy by design — the first architecture that fits agent-to-agent payments.',
+    title: 'NATIVE OS INTEGRATION',
+    body: 'Every action — model output, tool call, decision — is verifiable and portable.',
+    closer: "Execution and identity remain inside the operator's perimeter.",
+    closerHighlight: 'No transactions on the public network.',
   },
 ];
 
 export function EdgePayoffSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16 justify-center gap-7">
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-8 sm:py-10 lg:py-12 justify-center gap-6 lg:gap-8">
 
-        {/* Header */}
-        <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-orange-400 text-sm tracking-[0.4em] uppercase"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            The Payoff
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight mt-2"
-            style={{ fontFamily: "'Anton', sans-serif" }}
-          >
-            WHAT VALIDATION AT THE EDGE{' '}
-            <span className="text-orange-400">UNLOCKS</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="mt-4 text-[#fefefe]/85 text-lg sm:text-xl lg:text-2xl max-w-5xl leading-relaxed"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            Three consequences. Each one is required for autonomous AI. Each one is impossible on a shared ledger.
-          </motion.p>
-        </div>
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-[32px] sm:text-[48px] lg:text-[68px] xl:text-[80px] leading-[0.95] tracking-tight uppercase shrink-0"
+          style={{ fontFamily: "'Anton', sans-serif" }}
+        >
+          <span className="text-[#fefefe]">WHAT THIS</span>{' '}
+          <span className="text-orange-400">UNLOCKS.</span>
+        </motion.h1>
 
-        {/* Cards — top row 2-col + economic unlock full-width */}
-        <div className="flex flex-col gap-4 lg:gap-5 shrink-0">
-          <div className="grid grid-cols-2 gap-4 lg:gap-5">
-            {cards.map((c, i) => (
-              <motion.div
-                key={c.title}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 + i * 0.15 }}
-                className="rounded-md p-5 lg:p-7"
-                style={{
-                  background: 'rgba(249,115,22,0.04)',
-                  border: '1px solid rgba(249,115,22,0.45)',
-                }}
-              >
-                <h3
-                  className="text-orange-400 text-[20px] sm:text-[26px] lg:text-[30px] leading-[1.05] tracking-tight"
-                  style={{ fontFamily: "'Anton', sans-serif" }}
-                >
-                  {c.title}
-                </h3>
-                <p
-                  className="text-[#fefefe]/80 text-sm lg:text-base leading-relaxed mt-3"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}
-                >
-                  {c.text}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="text-[#fefefe]/90 text-lg sm:text-xl lg:text-2xl leading-snug shrink-0 max-w-6xl -mt-2"
+          style={{ fontFamily: "'Geist Mono', monospace" }}
+        >
+          The unbundling unlocks capabilities no public chain has delivered before.
+        </motion.p>
 
-          {/* Third card — full width */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-            className="rounded-md p-5 lg:p-7 grid grid-cols-[1fr_2fr] gap-6 items-start"
-            style={{
-              background: 'rgba(249,115,22,0.04)',
-              border: '1px solid rgba(249,115,22,0.45)',
-            }}
-          >
-            <div>
+        {/* Two cards */}
+        <div className="grid grid-cols-2 gap-6 lg:gap-8 shrink-0">
+          {cards.map((c, i) => (
+            <motion.div
+              key={c.title}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 + i * 0.15 }}
+              className="rounded-lg p-7 lg:p-10 flex flex-col gap-5 lg:gap-6"
+              style={{
+                background: 'rgba(249,115,22,0.04)',
+                border: '1px solid rgba(249,115,22,0.55)',
+              }}
+            >
               <h3
-                className="text-orange-400 text-[20px] sm:text-[26px] lg:text-[30px] leading-[1.05] tracking-tight"
+                className="text-orange-400 text-[24px] sm:text-[32px] lg:text-[40px] leading-[1.05] tracking-tight uppercase"
                 style={{ fontFamily: "'Anton', sans-serif" }}
               >
-                GAS IS ELIMINATED.
+                {c.title}
               </h3>
-            </div>
-            <p
-              className="text-[#fefefe]/80 text-sm lg:text-base leading-relaxed"
-              style={{ fontFamily: "'Geist Mono', monospace" }}
-            >
-              No scarcity, no auction, no per-transaction fees. Pricing inverts from gas to fixed subscription. The only architecture where machine-speed agent transaction volumes are economically viable at the protocol layer.
-            </p>
-          </motion.div>
+              <p
+                className="text-[#fefefe]/90 text-base sm:text-lg lg:text-xl leading-relaxed"
+                style={{ fontFamily: "'Geist Mono', monospace" }}
+              >
+                {c.body}
+              </p>
+              <p
+                className="text-base sm:text-lg lg:text-xl leading-relaxed"
+                style={{ fontFamily: "'Geist Mono', monospace" }}
+              >
+                {c.closer && (
+                  <span className="text-[#fefefe]/65">
+                    {c.closer}{' '}
+                  </span>
+                )}
+                <span className="text-orange-400">{c.closerHighlight}</span>
+              </p>
+            </motion.div>
+          ))}
         </div>
+
+        {/* Bottom anchor */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+          className="shrink-0 pt-4 lg:pt-5"
+          style={{ borderTop: '1px solid rgba(249,115,22,0.4)' }}
+        >
+          <p
+            className="text-[#fefefe]/90 text-xl sm:text-2xl lg:text-[28px] leading-snug"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
+            Unicity is public and permissionless.{' '}
+            <span className="text-orange-400">Agent state is private.</span>
+          </p>
+        </motion.div>
 
       </div>
     </div>

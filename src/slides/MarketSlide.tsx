@@ -18,11 +18,12 @@ const cards: Card[] = [
     bigSub: 'agents-to-humans ratio at scale',
   },
   {
-    source: 'MCKINSEY',
-    quote: 'Agentic commerce will orchestrate $3–5 trillion in global transaction volume by 2030.',
-    author: 'McKinsey QuantumBlack, October 2025',
-    bigNumber: '$3–5T',
-    bigSub: 'in agent transaction volume by 2030',
+    source: 'GARTNER',
+    quote: 'By 2028, the average Fortune 500 will run 150,000+ AI agents, up from fewer than 15 today. Only 13% have adequate governance.',
+    author: 'Max Goss, Gartner, April 2026',
+    bigNumber: '10,000×',
+    bigSub: 'agent growth in 3 years · 87% ungoverned',
+    highlight: true,
   },
   {
     source: 'STRIPE',
@@ -30,7 +31,6 @@ const cards: Card[] = [
     author: 'Patrick & John Collison, Stripe, 2026',
     bigNumber: '1B TPS',
     bigSub: 'the infrastructure thesis, validated',
-    highlight: true,
   },
 ];
 
@@ -56,17 +56,9 @@ export function MarketSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1.5"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            THE INTERNET IS BEING <span className="text-orange-400">REBUILT FOR MACHINES.</span>
+            MARKET OPPORTUNITY:{' '}
+            <span className="text-orange-400">A TRILLION-DOLLAR REBUILD.</span>
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg mt-3 max-w-5xl leading-relaxed"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            Nvidia is staffing it. McKinsey is modeling it. Stripe is preparing for it.
-          </motion.p>
         </div>
 
         {/* Three citation cards */}
@@ -103,8 +95,8 @@ export function MarketSlide() {
               <span className="text-orange-400">blockchains are not optional infrastructure</span>. They are the missing layer that makes an AI-native internet work.
             </p>
             <p
-              className="text-orange-400 text-[10px] sm:text-xs lg:text-sm mt-2 tracking-[0.18em] uppercase font-bold"
-              style={{ fontFamily: "'Geist Mono', monospace" }}
+              className="text-orange-400 text-[20px] sm:text-[26px] lg:text-[32px] mt-3 tracking-tight uppercase leading-none"
+              style={{ fontFamily: "'Anton', sans-serif" }}
             >
               — a16z crypto, February 2026
             </p>
@@ -134,8 +126,8 @@ function CitationCard({ card, delay }: { card: Card; delay: number }) {
     >
       {/* Source */}
       <p
-        className="text-orange-400 text-[10px] sm:text-xs tracking-[0.32em] uppercase font-bold"
-        style={{ fontFamily: "'Geist Mono', monospace" }}
+        className="text-orange-400 text-[22px] sm:text-[28px] lg:text-[36px] leading-none tracking-tight uppercase"
+        style={{ fontFamily: "'Anton', sans-serif" }}
       >
         {card.source}
       </p>
@@ -169,7 +161,7 @@ function CitationCard({ card, delay }: { card: Card; delay: number }) {
       {/* Big number */}
       <div className="mt-4 lg:mt-5 flex-1 flex flex-col justify-end">
         <p
-          className={`${card.highlight ? 'text-orange-400' : 'text-[#fefefe]'} text-[40px] sm:text-[52px] lg:text-[64px] leading-[0.9] tracking-tight`}
+          className={`${card.highlight ? 'text-orange-400' : 'text-[#fefefe]'} text-[40px] sm:text-[52px] lg:text-[64px] tracking-tight leading-[0.9]`}
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
           {card.bigNumber}

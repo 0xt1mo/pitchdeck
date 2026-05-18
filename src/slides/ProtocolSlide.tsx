@@ -160,17 +160,12 @@ export function ProtocolSlide() {
       <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-8 sm:py-10 lg:py-12 justify-center gap-5">
         {/* Header */}
         <div className="shrink-0">
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-            className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Scaling Agentic Payments
-          </motion.p>
           <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[24px] sm:text-[36px] lg:text-[48px] leading-[0.95] tracking-tight mt-1"
+            className="text-[28px] sm:text-[40px] lg:text-[56px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            LIVE DEMO —{' '}
-            <span className="text-orange-400">USDT MOVING AGENT-TO-AGENT AT 3M TPS</span>
+            <span className="text-[#fefefe]">LIVE DEMO:</span>{' '}
+            <span className="text-orange-400">X402 USDT AT 3M TPS WITH PRIVACY AND COMPLIANCE.</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -180,20 +175,20 @@ export function ProtocolSlide() {
             className="mt-3 text-[#fefefe]/85 text-sm sm:text-base lg:text-lg max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            <span className="text-orange-400 font-bold">x402</span> is an agent-payment standard developed by Coinbase. Unicity implements it and simplifies it — <span className="text-orange-400">12 steps collapse to 5</span>.
+            <span className="text-orange-400 font-bold">x402</span> Unicity implements and simplifies it — <span className="text-orange-400">from 12 steps to 5</span>.
           </motion.p>
           <motion.a
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }}
             href="https://www.youtube.com/watch?v=tz4NBRRNLRo"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-3 text-orange-400 text-sm sm:text-base font-bold hover:underline cursor-pointer"
+            className="inline-flex items-center gap-3 mt-5 text-orange-400 text-lg sm:text-xl lg:text-2xl font-bold hover:underline cursor-pointer"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor">
-              <path d="M8 5v14l11-7z" />
+            <svg viewBox="0 0 24 24" className="w-8 h-8 lg:w-10 lg:h-10 shrink-0" fill="#FF0000">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
             </svg>
-            Watch demo at <span className="underline">youtube.com/watch?v=tz4NBRRNLRo</span> — USDT moving A2A at 3M TPS
+            Watch demo — USDT moving A2A at 3M TPS
           </motion.a>
         </div>
 

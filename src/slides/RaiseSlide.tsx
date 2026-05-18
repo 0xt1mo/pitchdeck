@@ -48,7 +48,7 @@ export function RaiseSlide() {
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-Pre Series A
+Seed Round Extension
           </motion.p>
           <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
@@ -73,7 +73,7 @@ FROM MAINNET LAUNCH <span className="text-orange-400">TO INITIAL SCALE</span>
             >
               <h2 className="text-[90px] sm:text-[120px] lg:text-[150px] leading-none font-black text-[#fefefe]"
                 style={{ fontFamily: "'Anton', sans-serif" }}>
-                <CountUp target={5} delay={0.5} />
+                <CountUp target={3} delay={0.5} />
               </h2>
               <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
                 transition={{ delay: 0.8, duration: 0.6 }}
@@ -91,7 +91,7 @@ FROM MAINNET LAUNCH <span className="text-orange-400">TO INITIAL SCALE</span>
               className="mt-10 space-y-3"
             >
               {[
-                { label: 'STRUCTURE', value: 'Equity + Token Warrants' },
+                { label: 'STRUCTURE', value: 'SAFE + Token Warrants' },
                 { label: 'TIMELINE', value: 'Now' },
               ].map((d) => (
                 <div key={d.label} className="flex items-baseline gap-5">

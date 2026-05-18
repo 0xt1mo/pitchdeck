@@ -53,14 +53,14 @@ function StackDiagram() {
       <polygon points={`${W / 2 - 4},${y1 - 6} ${W / 2 + 4},${y1 - 6} ${W / 2},${y1 - 1}`}
         fill="rgba(254,254,254,0.15)" />
 
-      {/* ── AOS9 Kernel (highlighted) ── */}
+      {/* ── AOS Kernel (highlighted) ── */}
       <rect x={px - 2} y={y1 - 2} width={bw + 4} height={bh + 24} rx={14}
         fill="rgba(249,115,22,0.04)" stroke="rgba(249,115,22,0.12)" strokeWidth={1}
         strokeDasharray="0" filter="url(#astridGlow)" />
       <rect x={px} y={y1} width={bw} height={bh + 20} rx={12}
         fill="rgba(249,115,22,0.08)" stroke="rgba(249,115,22,0.45)" strokeWidth={2} />
       <text x={px + 16} y={y1 + 24} fill="#f97316" fontSize="15" fontWeight="bold"
-        fontFamily={fontTitle} letterSpacing="0.08em">AOS9 KERNEL</text>
+        fontFamily={fontTitle} letterSpacing="0.08em">AOS KERNEL</text>
       <text x={px + 130} y={y1 + 24} fill="rgba(254,254,254,0.35)" fontSize="9"
         fontFamily={font}>User-space microkernel — enforcement layer</text>
       {/* Tags */}
@@ -143,7 +143,7 @@ function StackDiagram() {
 }
 
 const keyPoints = [
-  { title: 'User-Space Microkernel', text: 'AOS9 models itself as an OS — with syscalls, airlocks, and user-space isolation. The kernel (aos9d) and system SDK (aos9-sys) are the only core components.' },
+  { title: 'User-Space Microkernel', text: 'AOS models itself as an OS — with syscalls, airlocks, and user-space isolation. The kernel (aos9d) and system SDK (aos9-sys) are the only core components.' },
   { title: 'WASM Capsule Sandbox', text: 'All plugins run as WASM capsules inside a sandboxed runtime. OpenClaw plugins are compiled into capsules via aos9-openclaw, with host calls thunked into aos9::sys.' },
   { title: 'Enforcement Layer', text: 'Security interception, budget enforcement, and audit logging happen at the runtime level — below the agent, not beside it. Tools cannot bypass the kernel.' },
   { title: 'Everything Is User-Space', text: 'CLIs, OpenClaw, frontends, and even LLM providers are external user-space components communicating over IPC. The kernel stays minimal and ignorant of legacy ABIs.' },
@@ -170,7 +170,7 @@ export function AstridSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            <span className="text-orange-400">AOS9:</span>{' '}
+            <span className="text-orange-400">AOS:</span>{' '}
             THE KERNEL
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
@@ -180,7 +180,7 @@ export function AstridSlide() {
             transition={{ delay: 0.3 }}
             className="mt-3 text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed max-w-3xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            AOS9 is the secure enforcement kernel that tools like Claude Code and OpenClaw run <span className="text-orange-400">on top of</span>, not alongside.
+            AOS is the secure enforcement kernel that tools like Claude Code and OpenClaw run <span className="text-orange-400">on top of</span>, not alongside.
             A user-space microkernel with syscalls, airlocks, and sandboxed isolation — the kernel stays minimal while everything else lives in user-space.
           </motion.p>
         </div>

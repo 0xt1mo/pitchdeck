@@ -6,7 +6,7 @@ const status = [
   { title: 'Public testnet live · Hashlock audit in progress', sub: 'architecture validated end-to-end, mainnet imminent' },
   { title: 'Whitepaper, ZK bluepaper, security proofs published' },
   { title: "Seed closed Sep '25", sub: 'Blockchange · Outlier · Tawasal Al Khaleej' },
-  { title: 'Unicity Foundation', sub: 'Zug, Switzerland' },
+  { title: 'Unicity Foundation established March 26', sub: 'Zug, Switzerland' },
 ];
 
 const winSteps = [
@@ -29,11 +29,6 @@ const winSteps = [
     num: '4',
     title: 'TGE at adoption thresholds',
     desc: 'Token launches. Subscription monetization activates. Permissionless validators take over consensus.',
-  },
-  {
-    num: '5',
-    title: 'Network effects compound',
-    desc: 'Every on-network transaction recruits the counterparty. Self-onboarding agents. Growth becomes endogenous.',
   },
 ];
 

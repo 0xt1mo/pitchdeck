@@ -19,7 +19,7 @@ const rows = [
   { approach: 'WASM plugins', values: ['Yes', 'Yes', 'No', 'No', 'No', 'Yes'] },
 ];
 
-const astridRow = { approach: 'AOS9', values: ['Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes'] };
+const astridRow = { approach: 'AOS', values: ['Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes'] };
 
 function CellValue({ value }: { value: string }) {
   if (value === 'Yes') return <span className="text-emerald-400 font-bold">{value}</span>;
@@ -48,7 +48,7 @@ export function AstridComparisonSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            WHY{' '}<span className="text-orange-400">AOS9</span>
+            WHY{' '}<span className="text-orange-400">AOS</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -59,7 +59,7 @@ export function AstridComparisonSlide() {
             style={{ fontFamily: "'Geist Mono', monospace" }}>
 
             Existing approaches each solve part of the problem — system prompts control behaviour, containers isolate execution, policy engines enforce rules. But none deliver the full stack: <span className="text-orange-400">multi-user isolation, swappable components, audit, and sandboxing</span> in a single runtime.
-            Today's agent frameworks give you a customizable brain with <span className="text-orange-400">the keys to the house</span>. AOS9 gives you a pluggable brain in a padded room with a mail slot — the loop is <span className="text-orange-400">isolated from everything it controls</span>. It can't bypass the sandbox, skip the audit, or access tools it hasn't been granted. Swap it without touching anything else, because it communicates through a standard bus, not direct function calls.
+            Today's agent frameworks give you a customizable brain with <span className="text-orange-400">the keys to the house</span>. AOS gives you a pluggable brain in a padded room with a mail slot — the loop is <span className="text-orange-400">isolated from everything it controls</span>. It can't bypass the sandbox, skip the audit, or access tools it hasn't been granted. Swap it without touching anything else, because it communicates through a standard bus, not direct function calls.
           </motion.p>
         </div>
 

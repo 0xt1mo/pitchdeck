@@ -71,7 +71,7 @@ export function AstridUseCasesSlide() {
             transition={{ delay: 0.3 }}
             className="mt-3 text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed max-w-4xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Because intelligence is no longer baked into the OS, anyone can change how AOS9 thinks without touching a single line of core code. <span className="text-orange-400">Swap a capsule, change the config, restart.</span> That's it.
+            Because intelligence is no longer baked into the OS, anyone can change how AOS thinks without touching a single line of core code. <span className="text-orange-400">Swap a capsule, change the config, restart.</span> That's it.
           </motion.p>
         </div>
 
