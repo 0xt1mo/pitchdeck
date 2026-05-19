@@ -13,7 +13,7 @@ export function CoverSlide() {
         }}
       />
 
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 sm:px-10 lg:px-16 gap-12 lg:gap-16">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-8 sm:px-12 lg:px-16 gap-10 lg:gap-12">
 
         {/* Logo */}
         <motion.img
@@ -22,7 +22,7 @@ export function CoverSlide() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
-          className="h-20 sm:h-28 lg:h-36 w-auto"
+          className="h-16 sm:h-24 lg:h-28 w-auto"
         />
 
         {/* Accent line */}
@@ -33,26 +33,17 @@ export function CoverSlide() {
           className="h-[1px] w-40 sm:w-56 lg:w-72 bg-gradient-to-r from-transparent via-orange-500/60 to-transparent origin-center"
         />
 
-        {/* Round name */}
-        <motion.div
+        {/* Headline — explicit two-line wrap */}
+        <motion.h1
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="flex flex-col items-center gap-3"
+          className="text-[#fefefe] text-[40px] sm:text-[64px] lg:text-[96px] xl:text-[112px] leading-[0.95] tracking-tight uppercase text-center"
+          style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          <p
-            className="text-orange-400 text-sm sm:text-base lg:text-lg tracking-[0.4em] uppercase font-bold"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            Investor Deck
-          </p>
-          <h1
-            className="text-[#fefefe] text-[40px] sm:text-[60px] lg:text-[80px] leading-[0.95] tracking-tight uppercase text-center"
-            style={{ fontFamily: "'Anton', sans-serif" }}
-          >
-            SEED ROUND <span className="text-orange-400">EXTENSION</span>
-          </h1>
-        </motion.div>
+          A SECURE COMPUTE PLATFORM<br />
+          <span className="text-orange-400">FOR AI.</span>
+        </motion.h1>
 
       </div>
     </div>

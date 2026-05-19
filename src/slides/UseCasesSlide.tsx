@@ -59,8 +59,8 @@ export function UseCasesSlide() {
             className="text-[32px] sm:text-[44px] lg:text-[60px] xl:text-[68px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            <span className="text-[#fefefe]">LAND ON SECURITY.</span>{' '}
-            <span className="text-orange-400">REVENUE TODAY.</span>
+            <span className="text-[#fefefe]">ENTERPRISE</span>{' '}
+            <span className="text-orange-400">CASE STUDIES.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}

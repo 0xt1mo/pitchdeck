@@ -19,6 +19,12 @@ import { ArchitectureStackSlide } from './slides/ArchitectureStackSlide';
 import { CompetitiveLandscapeSlide } from './slides/CompetitiveLandscapeSlide';
 import { SecurityNetworkSlide } from './slides/SecurityNetworkSlide';
 import { UseCasesSlide } from './slides/UseCasesSlide';
+import { SemanticFirewallSlide } from './slides/SemanticFirewallSlide';
+import { IndirectInjectionSlide } from './slides/IndirectInjectionSlide';
+import { ShadowAISlide } from './slides/ShadowAISlide';
+import { DLPSlide } from './slides/DLPSlide';
+import { RunawayComputeSlide } from './slides/RunawayComputeSlide';
+import { IntelligentRoutingSlide } from './slides/IntelligentRoutingSlide';
 import { AgentSphereDashboardSlide } from './slides/AgentSphereDashboardSlide';
 import { AgentSprawlSlide } from './slides/AgentSprawlSlide';
 import { WedgeSlide } from './slides/WedgeSlide';
@@ -55,28 +61,35 @@ const slides = [
   ProblemSlide,            // 3. What Autonomy Demands — The Fourth Rebuild
   // SolutionIntroSlide,   // hidden — Unicity OS: A Secure OS for AI Agents
   AutonomyStackSlide,      // 4. The Protocol Stack for the Agentic Internet
+  AstridSlide,             // 5. Architecture — AOS kernel deep dive
+  SemanticFirewallSlide,   // 6. The Semantic Firewall (AOS Architecture)
+  IndirectInjectionSlide,  // 6. Stopping the Indirect Injection
+  ShadowAISlide,           // 7. Agent Sprawl & Shadow AI
+  DLPSlide,                // 8. Data Loss Prevention (DLP)
+  RunawayComputeSlide,     // 9. Runaway Compute & Cost
+  IntelligentRoutingSlide, // 10. Intelligent Routing — Orchestrating the Agent Mesh
   // CompleteAutonomyStackSlide, // hidden — The First Complete Stack Built For Machines
-  TeamSlide,               // 6. Founders
+  GoToMarketSlide,         // 10. Beachhead: The UAE — moved before Founders
+  TeamSlide,               // 11. Founders
   // ArchitectureStackSlide, // hidden — The Secure OS for Agents
-  AgentsSlide,             // 7. The Unicity L1 — Why a Purpose Built Chain
-  EdgePayoffSlide,         // 7. The Unlock — What This Unlocks
-  CompetitiveLandscapeSlide, // 8. Competitive Landscape — OS, not chain. Private state.
-  // ── Commercial arc (9–14) ──
+  // AgentsSlide,          // hidden (MSSP) — The Unicity L1
+  // EdgePayoffSlide,      // hidden (MSSP) — What This Unlocks
+  // CompetitiveLandscapeSlide, // hidden (MSSP) — We're Betting on a Different Architecture
+  // ── Commercial arc ──
   // WedgeSlide,           // hidden — Wedge content folded into UseCasesSlide title
-  UseCasesSlide,           // 9. Land on Security. Revenue Today.
-  MarketSlide,             // 11. Market Opportunity — trillion-dollar rebuild
-  GoToMarketSlide,         // 12. Beachhead: The UAE
+  UseCasesSlide,           // 12. Enterprise Case Studies
+  MarketSlide,             // 13. Market Opportunity — trillion-dollar rebuild
   // SecurityNetworkSlide, // hidden — Zero Trust Enterprise Network
   ProtocolSlide,           // 13. x402 Live Demo
   // AgentSprawlSlide,     // hidden — Case Study: Agent Sprawl
-  ThePathSlide,            // 14. Current Status and How We Win
-  RaiseSlide,              // 15. The Ask — Seed Round Extension
+  // ThePathSlide,         // hidden (MSSP) — Current Status and How We Win
+  // RaiseSlide,           // hidden (MSSP) — From Mainnet Launch to Initial Scale
   // AgentSphereDashboardSlide moved to appendix (was split into AgentSprawlSlide + WedgeSlide for main deck)
   // UnbundledPayoffSlide, // hidden — merged Unbundling + Unlocks attempt
   // AutonomyStackSlide,   // hidden — Protocol Stack for the Agentic Internet
   // ProjectionsSlide,     // The World If We Win — hidden
   // BusinessModelSlide,   // hidden — Business Model — Four Surfaces. One Platform.
-  ResourcesSlide,          // 16. Resources
+  // ResourcesSlide,       // hidden (MSSP) — Essential Resources
   ThankYouChatSlide,       // 17. Thank You
   // ── 17+ Appendix — technical deep-dives ──
   AppendixDividerSlide,    // Appendix · Technology — section break
@@ -91,7 +104,6 @@ const slides = [
   ChainAgnosticSlide,      // Chain-Agnostic Operations
   AgentsSmartContractsSlide, // Agents-as-Smart-Contracts
   TokenSlide,              // Tokenomics — end of blockchain section
-  AstridSlide,             // AOS kernel
   AstridComparisonSlide,   // Why AOS
   AstridUseCasesSlide,     // Swap Capsule
   InterceptFabricSlide,    // Security Fabric

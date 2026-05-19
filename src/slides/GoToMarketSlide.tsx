@@ -16,7 +16,7 @@ export function GoToMarketSlide() {
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Bootstrap
+            Strategic Distribution Partnership
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -104,138 +104,99 @@ export function GoToMarketSlide() {
             </div>
           </motion.div>
 
-          {/* Right column — phased timeline */}
-          <div className="flex flex-col gap-4 lg:gap-5 relative">
-            {/* Vertical timeline rail */}
-            <div className="absolute left-[7px] top-3 bottom-3 w-[2px] bg-gradient-to-b from-orange-500 via-orange-500/50 to-orange-500/15" />
-
-            {/* Strategic Partner */}
-            <motion.div
-              initial={{ opacity: 0, x: 10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="flex items-start gap-4 relative"
-            >
-              <span className="relative z-10 flex w-4 h-4 mt-1.5 shrink-0">
-                <span className="absolute inset-0 rounded-full bg-orange-400 opacity-50 animate-ping" />
-                <span className="relative w-4 h-4 rounded-full bg-orange-400 ring-4 ring-[#060606]" />
+          {/* Right column — Aleria / UAE Sovereign AI Lab */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="flex flex-col gap-5 lg:gap-6 rounded-lg p-6 lg:p-8"
+            style={{
+              border: '1px solid rgba(249,115,22,0.55)',
+              background: 'rgba(249,115,22,0.05)',
+            }}
+          >
+            {/* Header */}
+            <div className="flex items-baseline justify-between gap-3">
+              <p
+                className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.28em] uppercase font-bold"
+                style={{ fontFamily: "'Geist Mono', monospace" }}
+              >
+                Channel Partner · Live Today
+              </p>
+              <span className="flex items-center gap-2">
+                <span className="relative flex w-2 h-2">
+                  <span className="absolute inset-0 rounded-full bg-orange-400 opacity-50 animate-ping" />
+                  <span className="relative w-2 h-2 rounded-full bg-orange-400" />
+                </span>
+                <span
+                  className="text-orange-400/80 text-[10px] sm:text-xs tracking-[0.2em] uppercase font-bold"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}
+                >
+                  Now
+                </span>
               </span>
-              <div
-                className="flex-1 rounded-lg p-4 lg:p-5"
-                style={{
-                  border: '1px solid rgba(249,115,22,0.55)',
-                  background: 'rgba(249,115,22,0.05)',
-                }}
-              >
-                <div className="flex items-baseline justify-between gap-3">
-                  <p
-                    className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.28em] uppercase font-bold"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}
-                  >
-                    Strategic Partner · 2026
-                  </p>
-                  <p
-                    className="text-orange-400/60 text-[9px] sm:text-[10px] tracking-[0.2em] uppercase"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}
-                  >
-                    Now
-                  </p>
-                </div>
-                <p
-                  className="text-[#fefefe] text-lg sm:text-xl lg:text-2xl leading-tight mt-1.5"
-                  style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.01em' }}
-                >
-                  UAE SOVEREIGN AI LAB
-                </p>
-                <p
-                  className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg mt-2 leading-snug"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}
-                >
-                  Channel partner for UAE deployments.
-                </p>
-              </div>
-            </motion.div>
+            </div>
 
-            {/* Pipeline */}
-            <motion.div
-              initial={{ opacity: 0, x: 10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.62, duration: 0.5 }}
-              className="flex items-start gap-4 relative"
+            <h2
+              className="text-[#fefefe] text-[28px] sm:text-[36px] lg:text-[44px] leading-none tracking-tight uppercase"
+              style={{ fontFamily: "'Anton', sans-serif" }}
             >
-              <span className="relative z-10 w-4 h-4 mt-1.5 shrink-0 rounded-full bg-orange-400/80 ring-4 ring-[#060606]" />
-              <div
-                className="flex-1 rounded-lg p-4 lg:p-5"
-                style={{
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  background: 'rgba(255,255,255,0.025)',
-                }}
-              >
-                <p
-                  className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.28em] uppercase font-bold"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}
-                >
-                  Pipeline · Active RFPs
-                </p>
-                <div className="flex items-baseline gap-3 mt-1.5">
-                  <p
-                    className="text-[#fefefe] text-[34px] sm:text-[42px] lg:text-[52px] leading-none tracking-tight"
-                    style={{ fontFamily: "'Anton', sans-serif" }}
-                  >
-                    $20M<span className="text-orange-400">+</span>
-                  </p>
-                  <p
-                    className="text-[#fefefe]/70 text-xs sm:text-sm lg:text-base tracking-[0.18em] uppercase"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}
-                  >
-                    enterprise pipeline
-                  </p>
-                </div>
-                <p
-                  className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg mt-2 leading-snug"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}
-                >
-                  <span className="text-orange-400 font-bold">Government</span> · <span className="text-orange-400 font-bold">Telecom</span> · <span className="text-orange-400 font-bold">Tier-1 Financial Institutions</span>
-                </p>
-              </div>
-            </motion.div>
+              ALERIA AI: <span className="text-orange-400">UAE SOVEREIGN AI LAB</span>
+            </h2>
 
-            {/* 2027 Expansion */}
-            <motion.div
-              initial={{ opacity: 0, x: 10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.74, duration: 0.5 }}
-              className="flex items-start gap-4 relative"
+            <p
+              className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg leading-snug"
+              style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              <span className="relative z-10 w-4 h-4 mt-1.5 shrink-0 rounded-full border-2 border-orange-400/70 bg-[#060606] ring-4 ring-[#060606]" />
-              <div
-                className="flex-1 rounded-lg p-4 lg:p-5"
-                style={{
-                  border: '1px dashed rgba(249,115,22,0.35)',
-                  background: 'rgba(255,255,255,0.015)',
-                }}
-              >
+              Strategic distribution partner, majority-owned by IHC. Channels Unicity into every regulated AI deployment in the UAE.
+            </p>
+
+            {/* Big stats */}
+            <div
+              className="grid grid-cols-2 gap-6 lg:gap-8 pt-4 lg:pt-5"
+              style={{ borderTop: '1px solid rgba(249,115,22,0.30)' }}
+            >
+              <div className="flex flex-col gap-1.5">
                 <p
-                  className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.28em] uppercase font-bold"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}
+                  className="text-orange-400 text-[34px] sm:text-[44px] lg:text-[60px] leading-none tracking-tight"
+                  style={{ fontFamily: "'Anton', sans-serif" }}
                 >
-                  Expansion · 2027
+                  1,000+
                 </p>
                 <p
-                  className="text-[#fefefe] text-lg sm:text-xl lg:text-2xl leading-tight mt-1.5"
-                  style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.01em' }}
-                >
-                  FROM UAE → <span className="text-orange-400">EUROPE & THE US</span>
-                </p>
-                <p
-                  className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg mt-2 leading-snug"
+                  className="text-[#fefefe]/65 text-xs sm:text-sm lg:text-base tracking-[0.18em] uppercase"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
-                  Sovereign reference unlocks regulated-market expansion.
+                  AI customers
                 </p>
               </div>
-            </motion.div>
-          </div>
+              <div className="flex flex-col gap-1.5" style={{ borderLeft: '1px solid rgba(255,255,255,0.12)', paddingLeft: '24px' }}>
+                <p
+                  className="text-orange-400 text-[34px] sm:text-[44px] lg:text-[60px] leading-none tracking-tight"
+                  style={{ fontFamily: "'Anton', sans-serif" }}
+                >
+                  225K
+                </p>
+                <p
+                  className="text-[#fefefe]/65 text-xs sm:text-sm lg:text-base tracking-[0.18em] uppercase"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}
+                >
+                  Agents in production
+                </p>
+              </div>
+            </div>
+
+            {/* Pipeline footer */}
+            <p
+              className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg leading-snug pt-3"
+              style={{
+                fontFamily: "'Geist Mono', monospace",
+                borderTop: '1px solid rgba(255,255,255,0.10)',
+              }}
+            >
+              <span className="text-orange-400 font-bold">$20M+ active pipeline</span> across Government, Telecom, and Tier-1 Financial Institutions.
+            </p>
+          </motion.div>
         </div>
 
       </div>
