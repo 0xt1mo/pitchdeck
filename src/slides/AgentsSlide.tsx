@@ -32,7 +32,7 @@ export function AgentsSlide() {
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
           Unicity is the logical conclusion of a decade of network unbundling:{' '}
-          <span className="text-orange-400">the network attests uniqueness, nothing else. Tokens self-authenticate and move P2P with transaction validation at the edge.</span>
+          <span className="text-orange-400">the network attests uniqueness, nothing else. Tokens are self-contained and move P2P with transaction validation at the edge.</span>
         </motion.p>
 
         {/* Architecture diagram */}

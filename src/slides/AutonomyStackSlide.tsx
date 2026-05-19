@@ -25,9 +25,9 @@ const stack: StackLayer[] = [
   },
   {
     product: 'UNICITY L1',
-    label: 'PROOF SYSTEM',
+    label: 'PROOF SYSTEM · FORMAL VERIFICATION',
     detail: 'State tokenization. Verifiable execution. Cryptographic identity. Value transfer.',
-    tags: 'STATE TOKENS · IDENTITY · DELEGATION',
+    tags: '',
     variant: 'bottom',
   },
 ];

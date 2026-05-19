@@ -18,6 +18,7 @@ import { SolutionIntroSlide } from './slides/SolutionIntroSlide';
 import { ArchitectureStackSlide } from './slides/ArchitectureStackSlide';
 import { CompetitiveLandscapeSlide } from './slides/CompetitiveLandscapeSlide';
 import { SecurityNetworkSlide } from './slides/SecurityNetworkSlide';
+import { UseCasesSlide } from './slides/UseCasesSlide';
 import { AgentSphereDashboardSlide } from './slides/AgentSphereDashboardSlide';
 import { AgentSprawlSlide } from './slides/AgentSprawlSlide';
 import { WedgeSlide } from './slides/WedgeSlide';
@@ -61,9 +62,10 @@ const slides = [
   EdgePayoffSlide,         // 7. The Unlock — What This Unlocks
   CompetitiveLandscapeSlide, // 8. Competitive Landscape — OS, not chain. Private state.
   // ── Commercial arc (9–14) ──
-  WedgeSlide,              // 9. The Wedge — Land on Security. Revenue Today.
-  MarketSlide,             // 10. Market Opportunity — trillion-dollar rebuild
-  GoToMarketSlide,         // 11. Beachhead: The UAE
+  // WedgeSlide,           // hidden — Wedge content folded into UseCasesSlide title
+  UseCasesSlide,           // 9. Land on Security. Revenue Today.
+  MarketSlide,             // 11. Market Opportunity — trillion-dollar rebuild
+  GoToMarketSlide,         // 12. Beachhead: The UAE
   // SecurityNetworkSlide, // hidden — Zero Trust Enterprise Network
   ProtocolSlide,           // 13. x402 Live Demo
   // AgentSprawlSlide,     // hidden — Case Study: Agent Sprawl
