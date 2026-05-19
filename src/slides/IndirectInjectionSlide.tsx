@@ -7,7 +7,7 @@ const traceLog = [
   { t: '[11.05ms]', k: 'SIF_ML:', body: 'semantic intent vector evaluated — ', highlight: 'WARN: anomalous context', tone: 'warn' },
   { t: '[13.88ms]', k: 'SIF_DLP:', body: 'named-entity scan — ', highlight: 'CRITICAL: PII_SSN_DETECTED', tone: 'crit' },
   { t: '[14.02ms]', k: 'KERNEL_DENY:', body: 'action denied — process terminated', tone: 'panic' },
-  { t: '[14.10ms]', k: 'KSI_AUDIT:', body: 'hash-linked record written to state — identity flagged', tone: 'orange' },
+  { t: '[14.10ms]', k: 'CRYPTO_AUDIT:', body: 'hash-linked record written to state — identity flagged', tone: 'orange' },
 ];
 
 const toneColor: Record<string, string> = {
