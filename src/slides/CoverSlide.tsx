@@ -42,7 +42,7 @@ export function CoverSlide() {
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
           A SECURE COMPUTE PLATFORM<br />
-          <span className="text-orange-400">FOR AI.</span>
+          <span className="text-orange-400">FOR AGENTIC AI.</span>
         </motion.h1>
 
       </div>
