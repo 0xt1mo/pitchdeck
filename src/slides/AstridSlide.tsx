@@ -119,11 +119,11 @@ function StackDiagram() {
       <polygon points={`${W / 2 - 4},${y3 - 6} ${W / 2 + 4},${y3 - 6} ${W / 2},${y3 - 1}`}
         fill="rgba(254,254,254,0.15)" />
 
-      {/* ── Unicity L1 ── */}
+      {/* ── Unicity blockchain ── */}
       <rect x={px} y={y3} width={bw} height={bh - 10} rx={12}
         fill="rgba(249,115,22,0.05)" stroke="rgba(249,115,22,0.4)" strokeWidth={1.5} />
       <text x={px + 16} y={y3 + 24} fill="#f97316" fontSize="14" fontWeight="bold"
-        fontFamily={fontTitle} letterSpacing="0.08em">UNICITY L1</text>
+        fontFamily={fontTitle} letterSpacing="0.08em">UNICITY BLOCKCHAIN</text>
       <text x={px + 120} y={y3 + 24} fill="rgba(254,254,254,0.3)" fontSize="9"
         fontFamily={font}>Settlement substrate — tokens, identity, delegation</text>
       {['State Tokens', 'Cryptographic Identity', 'Settlement'].map((t, i) => {

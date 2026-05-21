@@ -43,7 +43,6 @@ export function AppendixDividerSlide() {
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.9, delay: 0.5 }}
           className="h-[2px] w-40 sm:w-56 lg:w-72 bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-center"
-          style={{ boxShadow: '0 0 12px rgba(249,115,22,0.6)' }}
         />
 
         {/* Subline */}

@@ -7,14 +7,14 @@ const founders = [
     photo: '/team/mike.jpg',
     linkedin: 'https://www.linkedin.com/in/mikegault1/',
     lines: [
-      'PhD Electrical Engineering',
+      'PhD EE',
       'Built & exited Guardtime (ADX:IHC)',
       'Ex-MD, Barclays Capital',
     ],
   },
   {
     name: 'Tony Kenyon',
-    role: 'CPTO',
+    role: 'CTO',
     photo: '/team/tony.png',
     linkedin: 'https://www.linkedin.com/in/tonykenyon/',
     lines: [
@@ -22,6 +22,17 @@ const founders = [
       '25 years shipping enterprise AI & infra',
       'Former Vitruvian (applied ML, security)',
       'Principal Architect: BT, Nokia, A10',
+    ],
+  },
+  {
+    name: 'Eric Leandri',
+    role: 'Chairman',
+    photo: '/team/eric.png',
+    linkedin: 'https://www.linkedin.com/in/ericleandri/',
+    lines: [
+      'AI Visionary',
+      'CEO, Aleria (UAE Sovereign AI)',
+      '1,000+ customers · 250K agents live',
     ],
   },
 ];
@@ -43,6 +54,9 @@ const cryptographers = [
 ];
 
 const developers = [
+  { name: 'Joshua J. Bouw', linkedin: 'https://www.linkedin.com/in/joshuajbouw/' },
+  { name: 'Vladimir Rogojin', linkedin: 'https://www.linkedin.com/in/vladimir-rogojin-369b7151/' },
+  { name: 'Pavel Grigorenko', linkedin: 'https://www.linkedin.com/in/pavelgrigorenko/' },
   { name: 'Martti Marran', linkedin: 'https://www.linkedin.com/in/martti-marran-68aa1825/' },
   { name: 'Igor Mahlinovski', linkedin: 'https://www.linkedin.com/in/igor-mahlinovski-8a5500208/' },
   { name: 'Alexander Khrushkov', linkedin: 'https://www.linkedin.com/in/alexander-khrushkov-488008221/' },
@@ -50,11 +64,11 @@ const developers = [
   { name: 'Lennart Ploom', linkedin: '' },
   { name: 'Dmytro Maryshev', linkedin: 'https://www.linkedin.com/in/dmytro-m-2329a5144/' },
   { name: 'Johannes Ait', linkedin: 'https://www.linkedin.com/in/johannes-ait-34087393/' },
+  { name: 'Jamie Steiner', linkedin: '' },
 ];
 
 const advisors = [
   { name: 'Carlos Domingo', company: 'Securitize', linkedin: 'https://www.linkedin.com/in/carlosdomingo/' },
-  { name: 'Eric Leandri', company: 'Aleria AI', linkedin: 'https://www.linkedin.com/in/ericleandri/' },
   { name: 'Arnold Lee', company: 'Sphere', linkedin: 'https://www.linkedin.com/in/arnoldhlee/' },
   { name: 'Sylvain LaMarche', company: 'Movidone', linkedin: 'https://www.linkedin.com/in/sylvain-mathieu-lamarche-0b47711a/' },
 ];
@@ -150,7 +164,7 @@ export function TeamSlide() {
         </div>
 
         {/* Founders */}
-        <div className="grid grid-cols-2 gap-8 lg:gap-14 shrink-0">
+        <div className="grid grid-cols-3 gap-6 lg:gap-10 shrink-0">
           {founders.map((f, i) => (
             <motion.div
               key={f.name}
@@ -187,41 +201,6 @@ export function TeamSlide() {
                     </p>
                   ))}
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Secondary leadership */}
-        <div className="grid grid-cols-5 gap-x-4 gap-y-3 shrink-0">
-          {leaders.map((leader, i) => (
-            <motion.div
-              key={leader.name}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.7 + i * 0.06 }}
-              className="flex items-start gap-3"
-            >
-              <div className="relative shrink-0">
-                <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-orange-500/20">
-                  <img src={leader.photo} alt={leader.name} className="w-full h-full object-cover" />
-                </div>
-                {leader.linkedin && <LinkedInBadge href={leader.linkedin} />}
-              </div>
-              <div className="min-w-0">
-                <p className="text-[#fefefe] text-base lg:text-lg font-bold leading-tight">{leader.name}</p>
-                <p
-                  className="text-orange-400 text-xs font-bold tracking-[0.2em] uppercase mt-0.5"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}
-                >
-                  {leader.role}
-                </p>
-                <p
-                  className="text-[#fefefe]/70 text-sm leading-snug mt-1"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}
-                >
-                  {leader.bg}
-                </p>
               </div>
             </motion.div>
           ))}

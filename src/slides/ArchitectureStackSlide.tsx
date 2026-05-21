@@ -21,7 +21,7 @@ const layers: Layer[] = [
     highlight: true,
   },
   {
-    label: 'UNICITY L1',
+    label: 'UNICITY BLOCKCHAIN',
     caption: 'Settlement layer · execution, identity, networking',
     boxes: ['Verifiable Execution', 'Cryptographic Identity', 'A2A Networking', 'A2A Settlement'],
     highlight: true,
@@ -70,7 +70,7 @@ export function ArchitectureStackSlide() {
           className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg leading-snug shrink-0 max-w-6xl"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Frameworks run on the AOS kernel. The kernel talks to Unicity L1 for settlement.{' '}
+          Frameworks run on the AOS kernel. The kernel talks to Unicity blockchain for settlement.{' '}
           <span className="text-orange-400">Everything below the kernel is ours.</span>
         </motion.p>
 

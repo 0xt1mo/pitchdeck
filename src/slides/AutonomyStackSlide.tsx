@@ -24,9 +24,9 @@ const stack: StackLayer[] = [
     variant: 'mid',
   },
   {
-    product: 'UNICITY L1',
+    product: 'UNICITY BLOCKCHAIN',
     label: 'PROOF SYSTEM · FORMAL VERIFICATION',
-    detail: 'State tokenization. Verifiable execution. Cryptographic identity. Value transfer.',
+    detail: 'Verifiable execution. Cryptographic identity. Value transfer.',
     tags: '',
     variant: 'bottom',
   },
@@ -62,8 +62,8 @@ export function AutonomyStackSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            UNICITY: THE PROTOCOL STACK FOR THE{' '}
-            <span className="text-orange-400">AGENTIC INTERNET</span>
+            UNICITY: THE SECURE COMPUTE LAYER FOR{' '}
+            <span className="text-orange-400">AUTONOMOUS AI</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -72,7 +72,7 @@ export function AutonomyStackSlide() {
             className="mt-3 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Every requirement autonomy demands, delivered as one protocol stack.
+            Unicity is the compute platform that sits below agents — providing verifiable execution, policy enforcement, and settlement.
           </motion.p>
         </div>
 

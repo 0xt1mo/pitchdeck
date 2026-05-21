@@ -25,7 +25,7 @@ export function GoToMarketSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            BEACHHEAD: <span className="text-orange-400">THE UAE</span>
+            DISTRIBUTION BEACHHEAD: <span className="text-orange-400">THE UAE</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -141,7 +141,7 @@ export function GoToMarketSlide() {
               className="text-[#fefefe] text-[28px] sm:text-[36px] lg:text-[44px] leading-none tracking-tight uppercase"
               style={{ fontFamily: "'Anton', sans-serif" }}
             >
-              ALERIA AI: <span className="text-orange-400">UAE SOVEREIGN AI LAB</span>
+              ALERIA AI: <span className="text-orange-400">UAE SOVEREIGN AI</span>
             </h2>
 
             <p
@@ -186,18 +186,34 @@ export function GoToMarketSlide() {
               </div>
             </div>
 
-            {/* Pipeline footer */}
-            <p
-              className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg leading-snug pt-3"
-              style={{
-                fontFamily: "'Geist Mono', monospace",
-                borderTop: '1px solid rgba(255,255,255,0.10)',
-              }}
-            >
-              <span className="text-orange-400 font-bold">$20M+ active pipeline</span> across Government, Telecom, and Tier-1 Financial Institutions.
-            </p>
           </motion.div>
         </div>
+
+        {/* Unicity direct pipeline — separate from Aleria */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.5 }}
+          className="shrink-0 rounded-lg px-6 lg:px-8 py-4 lg:py-5 flex items-center gap-5 lg:gap-7"
+          style={{
+            background: 'rgba(255,255,255,0.025)',
+            border: '1px solid rgba(255,255,255,0.15)',
+          }}
+        >
+          <p
+            className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.3em] uppercase font-bold shrink-0"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
+            Unicity Direct Pipeline
+          </p>
+          <div className="h-6 w-px" style={{ background: 'rgba(255,255,255,0.20)' }} />
+          <p
+            className="text-[#fefefe]/90 text-sm sm:text-base lg:text-lg leading-snug"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
+            <span className="text-orange-400 font-bold">$20M+ active pipeline</span> across Government, Telecom, and Tier-1 Financial Institutions.
+          </p>
+        </motion.div>
 
       </div>
     </div>

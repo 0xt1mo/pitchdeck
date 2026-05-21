@@ -15,7 +15,7 @@ export function ProblemSlide() {
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
           <span className="text-[#fefefe]">THE FOURTH REBUILD</span>{' '}
-          <span className="text-orange-400">OF COMPUTING.</span>
+          <span className="text-orange-400">OF COMPUTE.</span>
         </motion.h1>
 
         {/* Era progression */}
@@ -33,7 +33,7 @@ export function ProblemSlide() {
           <span className="text-[#fefefe]">Cloud</span>
           <span className="text-orange-400"> → </span>
           <span className="text-[#fefefe]">Mobile</span>
-          <span className="text-orange-400"> → Agentic</span>
+          <span className="text-orange-400"> → AI</span>
         </motion.p>
 
         {/* Tagline */}

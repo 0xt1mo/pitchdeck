@@ -10,6 +10,9 @@ import { UnbundledPayoffSlide } from './slides/UnbundledPayoffSlide';
 import { RetrofitSlide } from './slides/RetrofitSlide';
 import { CompetitionSlide } from './slides/CompetitionSlide';
 import { MarketSlide } from './slides/MarketSlide';
+import { BusinessModelPricingSlide } from './slides/BusinessModelPricingSlide';
+import { CompetitionMinimalSlide } from './slides/CompetitionMinimalSlide';
+import { DefensibilitySlide } from './slides/DefensibilitySlide';
 import { ResourcesSlide } from './slides/ResourcesSlide';
 import { ProblemSlide } from './slides/ProblemSlide';
 import { AutonomyStackSlide } from './slides/AutonomyStackSlide';
@@ -32,6 +35,7 @@ import { AppendixDividerSlide } from './slides/AppendixDividerSlide';
 import { ThePathSlide } from './slides/ThePathSlide';
 import { TeamSlide } from './slides/TeamSlide';
 import { RaiseSlide } from './slides/RaiseSlide';
+import { InvestmentSlide } from './slides/InvestmentSlide';
 import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
 import { AppendixSlide } from './slides/AppendixSlide';
 import { KernelDividerSlide, BlockchainDividerSlide, ProductDividerSlide } from './slides/SectionDividerSlide';
@@ -46,6 +50,7 @@ import { AgentsSmartContractsSlide } from './slides/AgentsSmartContractsSlide';
 import { ChainAgnosticSlide } from './slides/ChainAgnosticSlide';
 import { DemoSlide } from './slides/DemoSlide';
 import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
+import { PapersSlide } from './slides/PapersSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
@@ -58,19 +63,23 @@ const slides = [
   // CompleteAutonomyStackSlide, // hidden — The First Complete Stack Built For Machines
   TeamSlide,               // 6. Founders
   // ArchitectureStackSlide, // hidden — The Secure OS for Agents
-  AgentsSlide,             // 7. The Unicity L1 — Why a Purpose Built Chain
-  EdgePayoffSlide,         // 7. The Unlock — What This Unlocks
-  CompetitiveLandscapeSlide, // 8. Competitive Landscape — OS, not chain. Private state.
+  // AgentsSlide,          // appendix — The Unicity Blockchain: Why a Purpose Built Chain
+  // EdgePayoffSlide,      // appendix — What This Unlocks
+  // CompetitiveLandscapeSlide, // appendix — We're Betting on a Different Architecture
   // ── Commercial arc (9–14) ──
   // WedgeSlide,           // hidden — Wedge content folded into UseCasesSlide title
   UseCasesSlide,           // 9. Land on Security. Revenue Today.
   MarketSlide,             // 11. Market Opportunity — trillion-dollar rebuild
-  GoToMarketSlide,         // 12. Beachhead: The UAE
+  CompetitionMinimalSlide, // 12. Competition — Everyone else watches the agent. We run it.
+  DefensibilitySlide,      // 12b. Defensibility — patented today, verified-by-construction tomorrow
+  BusinessModelPricingSlide, // 13. Business Model — Open Core / Per Agent Pricing
+  GoToMarketSlide,         // 13. Beachhead: The UAE
   // SecurityNetworkSlide, // hidden — Zero Trust Enterprise Network
-  ProtocolSlide,           // 13. x402 Live Demo
+  // ProtocolSlide,        // hidden — x402 Live Demo
   // AgentSprawlSlide,     // hidden — Case Study: Agent Sprawl
-  ThePathSlide,            // 14. Current Status and How We Win
-  RaiseSlide,              // 15. The Ask — Seed Round Extension
+  // ThePathSlide,         // hidden — Current Status and How We Win
+  InvestmentSlide,         // 15. The Investment — $5M seed, Q3 2026, 18 mo runway
+  // RaiseSlide,           // hidden — old Seed Round Extension ask
   // AgentSphereDashboardSlide moved to appendix (was split into AgentSprawlSlide + WedgeSlide for main deck)
   // UnbundledPayoffSlide, // hidden — merged Unbundling + Unlocks attempt
   // AutonomyStackSlide,   // hidden — Protocol Stack for the Agentic Internet
@@ -81,6 +90,9 @@ const slides = [
   // ── 17+ Appendix — technical deep-dives ──
   AppendixDividerSlide,    // Appendix · Technology — section break
   CompetitionSlide,        // Competition — Why It Is Different (architectural arc)
+  CompetitiveLandscapeSlide, // We're Betting on a Different Architecture
+  AgentsSlide,             // The Unicity Blockchain — Why A Purpose Built Chain
+  EdgePayoffSlide,         // What This Unlocks
   // SharedLedgerSlide,    // hidden — Every blockchain from Bitcoin to MegaETH is the same 17-year-old design
   // IntellectualArcSlide, // hidden — Unbundling what the network has to do
   // PromiseSlide,         // hidden — Satoshi: Peer-to-Peer Electronic Cash
@@ -95,6 +107,7 @@ const slides = [
   AstridComparisonSlide,   // Why AOS
   AstridUseCasesSlide,     // Swap Capsule
   InterceptFabricSlide,    // Security Fabric
+  PapersSlide,             // Validate — Don't Take Our Word For It (3 formal papers)
   // AgentSphereDashboardSlide, // hidden — original 4-pillar enterprise dashboard
   // RetrofitSlide,        // hidden — You Can't Retrofit an EVM into Autonomous AI
 ];

@@ -3,7 +3,7 @@ import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 
 const modules = [
   { title: 'SKILLS', items: ['OpenClaw', 'MCP Tools', 'Custom'], color: '#f59e0b', id: 'skills' },
-  { title: 'PAYMENTS', items: ['Unicity L1', '300M++ TPS', '1 sec finality'], color: '#f97316', id: 'payments' },
+  { title: 'PAYMENTS', items: ['Unicity blockchain', '300M++ TPS', '1 sec finality'], color: '#f97316', id: 'payments' },
   { title: 'ORCHESTRATION', items: ['ReAct', 'Plan-Execute', 'ToT / Debate'], color: '#ec4899', id: 'orchestration' },
   { title: 'SECURITY', items: ['Semantic', 'Intercept Fabric', 'Policy Engine'], color: '#a855f7', id: 'security' },
   { title: 'NETWORKING', items: ['A2A Messaging', 'Groups', 'Discovery', 'Marketplaces'], color: '#6366f1', id: 'networking' },
@@ -41,7 +41,7 @@ const sectionConfig: Record<SectionId, {
   },
   payments: {
     label: 'BLOCKCHAIN',
-    subtitle: 'The Unicity L1',
+    subtitle: 'The Unicity blockchain',
     highlightIds: ['payments'],
     highlightKernel: false,
   },

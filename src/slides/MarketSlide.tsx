@@ -98,7 +98,7 @@ export function MarketSlide() {
               className="text-orange-400 text-[20px] sm:text-[26px] lg:text-[32px] mt-3 tracking-tight uppercase leading-none"
               style={{ fontFamily: "'Anton', sans-serif" }}
             >
-              — a16z crypto, February 2026
+              — a16z, February 2026
             </p>
           </div>
         </motion.div>
