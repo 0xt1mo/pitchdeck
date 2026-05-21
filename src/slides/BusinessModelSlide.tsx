@@ -13,7 +13,7 @@ const surfaces = [
   },
   {
     title: 'SETTLEMENT',
-    punch: 'Unicity L1 subscription — unlimited transactions.',
+    punch: 'Unicity Proof System subscription — unlimited transactions.',
     detail: '',
   },
   {

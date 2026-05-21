@@ -19,7 +19,7 @@ export function AgentsSlide() {
           className="text-[32px] sm:text-[48px] lg:text-[68px] leading-[0.95] tracking-tight uppercase shrink-0"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          <span className="text-[#fefefe]">THE UNICITY L1:</span>{' '}
+          <span className="text-[#fefefe]">THE UNICITY PROOF SYSTEM:</span>{' '}
           <span className="text-orange-400">WHY A PURPOSE BUILT CHAIN?</span>
         </motion.h1>
 

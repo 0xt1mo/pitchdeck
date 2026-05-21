@@ -52,63 +52,68 @@ import { AgentsSmartContractsSlide } from './slides/AgentsSmartContractsSlide';
 import { ChainAgnosticSlide } from './slides/ChainAgnosticSlide';
 import { DemoSlide } from './slides/DemoSlide';
 import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
+import { CompetitionMinimalSlide } from './slides/CompetitionMinimalSlide';
+import { EnterpriseDeploymentSlide } from './slides/EnterpriseDeploymentSlide';
+import { WhoWeAreSlide } from './slides/WhoWeAreSlide';
+import { ContactSlide } from './slides/ContactSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  CoverSlide,              // 1. Cover — Unicity logo + Seed Round Extension
-  IntroSlide,              // 2. Thesis — Autonomous AI needs an internet built for machines
-  // ── Architecture arc (3–8) ──
-  ProblemSlide,            // 3. What Autonomy Demands — The Fourth Rebuild
-  // SolutionIntroSlide,   // hidden — Unicity OS: A Secure OS for AI Agents
-  AutonomyStackSlide,      // 4. The Protocol Stack for the Agentic Internet
-  AstridSlide,             // 5. Architecture — AOS kernel deep dive
-  SemanticFirewallSlide,   // 6. The Semantic Firewall (AOS Architecture)
-  IndirectInjectionSlide,  // 6. Stopping the Indirect Injection
-  ShadowAISlide,           // 7. Agent Sprawl & Shadow AI
-  DLPSlide,                // 8. Data Loss Prevention (DLP)
-  RunawayComputeSlide,     // 9. Runaway Compute & Cost
-  IntelligentRoutingSlide, // 10. Intelligent Routing — Orchestrating the Agent Mesh
-  // CompleteAutonomyStackSlide, // hidden — The First Complete Stack Built For Machines
-  GoToMarketSlide,         // 10. Beachhead: The UAE — moved before Founders
-  TeamSlide,               // 11. Founders
-  // ArchitectureStackSlide, // hidden — The Secure OS for Agents
-  // AgentsSlide,          // hidden (MSSP) — The Unicity L1
-  // EdgePayoffSlide,      // hidden (MSSP) — What This Unlocks
-  // CompetitiveLandscapeSlide, // hidden (MSSP) — We're Betting on a Different Architecture
-  // ── Commercial arc ──
-  // WedgeSlide,           // hidden — Wedge content folded into UseCasesSlide title
-  UseCasesSlide,           // 12. Enterprise Case Studies
-  MarketSlide,             // 13. Market Opportunity — trillion-dollar rebuild
-  // SecurityNetworkSlide, // hidden — Zero Trust Enterprise Network
-  ProtocolSlide,           // 13. x402 Live Demo
-  // AgentSprawlSlide,     // hidden — Case Study: Agent Sprawl
-  // ThePathSlide,         // hidden (MSSP) — Current Status and How We Win
-  // RaiseSlide,           // hidden (MSSP) — From Mainnet Launch to Initial Scale
-  // AgentSphereDashboardSlide moved to appendix (was split into AgentSprawlSlide + WedgeSlide for main deck)
-  // UnbundledPayoffSlide, // hidden — merged Unbundling + Unlocks attempt
-  // AutonomyStackSlide,   // hidden — Protocol Stack for the Agentic Internet
-  // ProjectionsSlide,     // The World If We Win — hidden
-  // BusinessModelSlide,   // hidden — Business Model — Four Surfaces. One Platform.
-  // ResourcesSlide,       // hidden (MSSP) — Essential Resources
-  ThankYouChatSlide,       // 17. Thank You
-  // ── 17+ Appendix — technical deep-dives ──
-  AppendixDividerSlide,    // Appendix · Technology — section break
-  CompetitionSlide,        // Competition — Why It Is Different (architectural arc)
-  // SharedLedgerSlide,    // hidden — Every blockchain from Bitcoin to MegaETH is the same 17-year-old design
-  // IntellectualArcSlide, // hidden — Unbundling what the network has to do
-  // PromiseSlide,         // hidden — Satoshi: Peer-to-Peer Electronic Cash
-  BlockchainArchSlide,     // Protocol Stack
-  ZKOracleSlide,           // ZK Oracle
-  PermissionlessSlide,     // Hierarchical Scaling
-  SettlementSlide,         // Settlement
-  ChainAgnosticSlide,      // Chain-Agnostic Operations
-  AgentsSmartContractsSlide, // Agents-as-Smart-Contracts
-  TokenSlide,              // Tokenomics — end of blockchain section
-  AstridComparisonSlide,   // Why AOS
-  AstridUseCasesSlide,     // Swap Capsule
-  InterceptFabricSlide,    // Security Fabric
+  CoverSlide,                // 1. Cover — Unicity X CyberKnight
+  ProblemSlide,              // 2. The Fourth Rebuild of Compute
+  MarketSlide,               // 3. Market Opportunity
+  AutonomyStackSlide,        // 4. The Secure AI Compute Platform
+  AstridSlide,               // 5. AOS Kernel Architecture
+  CompetitionMinimalSlide,   // 6. Competition — Everyone else watches the agent
+  SemanticFirewallSlide,     // 7. The Semantic Firewall
+  EnterpriseDeploymentSlide, // 8. Enterprise Deployment — Inside the Firewall
+  UseCasesSlide,             // 9. Enterprise Case Studies (index)
+  ShadowAISlide,             // 10. Agent Sprawl & Shadow AI
+  DLPSlide,                  // 11. Data Loss Prevention
+  RunawayComputeSlide,       // 12. Cost Control
+  IntelligentRoutingSlide,   // 13. Intelligent Routing
+  WhoWeAreSlide,             // 14. Who We Are (globe + clients)
+  ContactSlide,              // 15. See It In Action — Contact
+  ThankYouChatSlide,         // 16. Thank You
+  // ── Hidden ──
+  // IntroSlide,             // Autonomous AI needs an internet built for machines
+  // SolutionIntroSlide,     // Unicity OS: A Secure OS for AI Agents
+  // CompleteAutonomyStackSlide, // The First Complete Stack Built For Machines
+  // GoToMarketSlide,        // Beachhead: The UAE
+  // TeamSlide,              // Founders Who've Done This Before (replaced by WhoWeAreSlide)
+  // ArchitectureStackSlide, // The Secure OS for Agents
+  // AgentsSlide,            // The Unicity L1
+  // EdgePayoffSlide,        // What This Unlocks
+  // CompetitiveLandscapeSlide, // We're Betting on a Different Architecture
+  // WedgeSlide,             // Wedge content folded into UseCasesSlide
+  // SecurityNetworkSlide,   // Zero Trust Enterprise Network
+  // ProtocolSlide,          // x402 Live Demo
+  // AgentSprawlSlide,       // Case Study: Agent Sprawl
+  // ThePathSlide,           // Current Status and How We Win
+  // RaiseSlide,             // From Mainnet Launch to Initial Scale
+  // IndirectInjectionSlide, // Stopping the Indirect Injection
+  // UnbundledPayoffSlide,   // merged Unbundling + Unlocks attempt
+  // ProjectionsSlide,       // The World If We Win
+  // BusinessModelSlide,     // Business Model — Four Surfaces. One Platform.
+  // ResourcesSlide,         // Essential Resources
+  // ── Appendix — all hidden ──
+  // AppendixDividerSlide,    // hidden — Appendix · Technology section break
+  // CompetitionSlide,        // hidden — Competition / architectural arc
+  // SharedLedgerSlide,       // hidden — Every blockchain from Bitcoin to MegaETH is the same 17-year-old design
+  // IntellectualArcSlide,    // hidden — Unbundling what the network has to do
+  // PromiseSlide,            // hidden — Satoshi: Peer-to-Peer Electronic Cash
+  // BlockchainArchSlide,     // hidden — Protocol Stack
+  // ZKOracleSlide,           // hidden — ZK Oracle
+  // PermissionlessSlide,     // hidden — Hierarchical Scaling
+  // SettlementSlide,         // hidden — Settlement
+  // ChainAgnosticSlide,      // hidden — Chain-Agnostic Operations
+  // AgentsSmartContractsSlide, // hidden — Agents-as-Smart-Contracts
+  // TokenSlide,              // hidden — Tokenomics
+  // AstridComparisonSlide,   // hidden — Why AOS
+  // AstridUseCasesSlide,     // hidden — Swap Capsule
+  // InterceptFabricSlide,    // hidden — Security Fabric
   // AgentSphereDashboardSlide, // hidden — original 4-pillar enterprise dashboard
-  // RetrofitSlide,        // hidden — You Can't Retrofit an EVM into Autonomous AI
+  // RetrofitSlide,           // hidden — You Can't Retrofit an EVM into Autonomous AI
 ];
 
 export default function App() {

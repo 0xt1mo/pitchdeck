@@ -3,7 +3,7 @@ import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 
 function StackDiagram() {
   const W = 520;
-  const H = 560;
+  const H = 380;
   const px = 30; // horizontal padding
   const bw = W - px * 2; // box width
   const bh = 90; // box height
@@ -16,7 +16,6 @@ function StackDiagram() {
   const y0 = 20; // user space
   const y1 = y0 + bh + arrowGap; // astrid
   const y2 = y1 + astridH + arrowGap; // host os
-  const y3 = y2 + (bh - 10) + arrowGap; // unicity L1
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto">
@@ -62,7 +61,12 @@ function StackDiagram() {
       <text x={px + 16} y={y1 + 24} fill="#f97316" fontSize="15" fontWeight="bold"
         fontFamily={fontTitle} letterSpacing="0.08em">AOS KERNEL</text>
       <text x={px + 130} y={y1 + 24} fill="rgba(254,254,254,0.35)" fontSize="9"
-        fontFamily={font}>User-space microkernel — enforcement layer</text>
+        fontFamily={font}>user-space microkernel</text>
+      {/* Enforcement Layer badge */}
+      <rect x={bw - 88} y={y1 + 12} width={104} height={18} rx={9}
+        fill="#f97316" stroke="rgba(249,115,22,0.9)" strokeWidth={1} />
+      <text x={bw - 88 + 52} y={y1 + 25} textAnchor="middle" fill="#060606" fontSize="9"
+        fontWeight="bold" letterSpacing="0.18em" fontFamily={font}>ENFORCEMENT LAYER</text>
       {/* Tags */}
       {['Security Interceptor', 'WASM Sandbox', 'Capsule Engine'].map((t, i) => {
         const tx = px + 16 + i * 148;
@@ -87,11 +91,13 @@ function StackDiagram() {
         );
       })}
 
-      {/* Arrow 2 */}
+      {/* Arrow 2 + "host calls" label */}
       <line x1={W / 2} y1={y1 + bh + 22} x2={W / 2} y2={y2 - 2}
         stroke="rgba(254,254,254,0.15)" strokeWidth={1.5} />
       <polygon points={`${W / 2 - 4},${y2 - 6} ${W / 2 + 4},${y2 - 6} ${W / 2},${y2 - 1}`}
         fill="rgba(254,254,254,0.15)" />
+      <text x={W / 2 + 12} y={y2 - 6} fill="rgba(254,254,254,0.45)" fontSize="9"
+        fontFamily={font}>host calls</text>
 
       {/* ── Host OS ── */}
       <rect x={px} y={y2} width={bw} height={bh - 10} rx={12}
@@ -113,31 +119,6 @@ function StackDiagram() {
         );
       })}
 
-      {/* Arrow 3 */}
-      <line x1={W / 2} y1={y2 + bh - 10 + 2} x2={W / 2} y2={y3 - 2}
-        stroke="rgba(254,254,254,0.15)" strokeWidth={1.5} />
-      <polygon points={`${W / 2 - 4},${y3 - 6} ${W / 2 + 4},${y3 - 6} ${W / 2},${y3 - 1}`}
-        fill="rgba(254,254,254,0.15)" />
-
-      {/* ── Unicity L1 ── */}
-      <rect x={px} y={y3} width={bw} height={bh - 10} rx={12}
-        fill="rgba(249,115,22,0.05)" stroke="rgba(249,115,22,0.4)" strokeWidth={1.5} />
-      <text x={px + 16} y={y3 + 24} fill="#f97316" fontSize="14" fontWeight="bold"
-        fontFamily={fontTitle} letterSpacing="0.08em">UNICITY L1</text>
-      <text x={px + 120} y={y3 + 24} fill="rgba(254,254,254,0.3)" fontSize="9"
-        fontFamily={font}>Settlement substrate — tokens, identity, delegation</text>
-      {['State Tokens', 'Cryptographic Identity', 'Settlement'].map((t, i) => {
-        const tw = i === 1 ? 150 : 110;
-        const tx = px + 16 + (i === 0 ? 0 : i === 1 ? 120 : 280);
-        return (
-          <g key={t}>
-            <rect x={tx} y={y3 + 40} width={tw} height={28} rx={6}
-              fill="rgba(249,115,22,0.1)" stroke="rgba(249,115,22,0.28)" strokeWidth={1} />
-            <text x={tx + tw / 2} y={y3 + 58} textAnchor="middle" fill="rgba(254,254,254,0.75)"
-              fontSize="9.5" fontFamily={font}>{t}</text>
-          </g>
-        );
-      })}
     </svg>
   );
 }
@@ -170,7 +151,7 @@ export function AstridSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[36px] sm:text-[52px] lg:text-[72px] xl:text-[84px] leading-[0.95] tracking-tight mt-1 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            <span className="text-orange-400">ARCHITECTURE.</span>
+            AOS KERNEL <span className="text-orange-400">ARCHITECTURE.</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -222,8 +203,6 @@ export function AstridSlide() {
           </div>
 
         </div>
-
-        {/* Logo */}
 
       </div>
     </div>

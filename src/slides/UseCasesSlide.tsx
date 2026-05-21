@@ -30,7 +30,7 @@ const cases: UseCase[] = [
   {
     n: '05',
     title: 'X402 PAYMENTS',
-    detail: 'Private, compliant A2A settlement over Unicity L1.',
+    detail: 'Private, compliant A2A settlement over Unicity Proof System.',
   },
 ];
 
@@ -78,29 +78,37 @@ export function UseCasesSlide() {
         <div className="grid grid-cols-[1.15fr_1fr] gap-6 lg:gap-10 shrink-0 items-start">
 
           {/* 5 stacked use cases */}
-          <div
-            className="flex flex-col"
-            style={{ borderTop: '1px solid rgba(255,255,255,0.10)' }}
-          >
+          <div className="flex flex-col gap-3 lg:gap-4">
             {cases.map((c, i) => (
               <motion.div
                 key={c.n}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: 0.35 + i * 0.07 }}
-                className="py-2 lg:py-2.5"
-                style={{ borderBottom: '1px solid rgba(255,255,255,0.10)' }}
+                className="flex items-start gap-4 lg:gap-6"
               >
-                <div className="flex flex-col gap-1">
+                <span
+                  className="text-orange-400/80 text-[10px] sm:text-xs lg:text-sm font-bold mt-1 shrink-0 w-5 lg:w-7"
+                  style={{ fontFamily: "'Geist Mono', monospace" }}
+                >
+                  {c.n}
+                </span>
+                <div className="flex-1 min-w-0">
                   <h3
-                    className="text-[#fefefe] text-[20px] sm:text-[26px] lg:text-[32px] leading-none tracking-[0.02em] uppercase font-bold"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}
+                    className="text-[#fefefe]/90 text-[15px] sm:text-[17px] lg:text-[19px] xl:text-[21px] leading-[1.15] tracking-tight uppercase font-bold"
+                    style={{
+                      fontFamily:
+                        '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                    }}
                   >
                     {c.title}
                   </h3>
                   <p
-                    className="text-[#fefefe]/65 text-xs sm:text-sm lg:text-base leading-snug"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}
+                    className="text-[#fefefe]/65 text-[12px] sm:text-[13px] lg:text-[14px] xl:text-[15px] leading-snug mt-1"
+                    style={{
+                      fontFamily:
+                        '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                    }}
                   >
                     {c.detail}
                   </p>

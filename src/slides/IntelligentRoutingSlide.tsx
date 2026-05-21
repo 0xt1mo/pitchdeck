@@ -77,7 +77,7 @@ export function IntelligentRoutingSlide() {
             className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg leading-snug mt-3 max-w-6xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Every agent request is scored before it runs and directed to the right model or capsule — by task complexity, cost, latency, and security clearance.{' '}
+            Every agent request is scored before it runs and directed to the right model — by task complexity, cost, latency, and security clearance.{' '}
             <span className="text-[#fefefe]/65">The routing decision is itself an inspected, recorded event, so traffic is matched to capability without ever escaping the security boundary.</span>
           </motion.p>
         </div>

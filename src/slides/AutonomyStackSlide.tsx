@@ -24,7 +24,7 @@ const stack: StackLayer[] = [
     variant: 'mid',
   },
   {
-    product: 'UNICITY L1',
+    product: 'UNICITY PROOF SYSTEM',
     label: 'PROOF SYSTEM · FORMAL VERIFICATION',
     detail: 'State tokenization. Verifiable execution. Cryptographic identity. Value transfer.',
     tags: '',
@@ -62,8 +62,8 @@ export function AutonomyStackSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            UNICITY: THE PROTOCOL STACK FOR THE{' '}
-            <span className="text-orange-400">AGENTIC INTERNET</span>
+            THE SECURE AI{' '}
+            <span className="text-orange-400">COMPUTE PLATFORM</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
