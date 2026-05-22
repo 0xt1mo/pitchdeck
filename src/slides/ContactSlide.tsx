@@ -42,7 +42,7 @@ export function ContactSlide() {
                 className="text-[#fefefe]/80 text-sm lg:text-base leading-relaxed"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                See an agent open a session, place a wager, settle — end-to-end.
+                See an agent execute under policy, with every decision verified and audit-logged — end-to-end.
               </p>
             </div>
 

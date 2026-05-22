@@ -105,27 +105,17 @@ export function WhoWeAreSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 08 · Who We Are
+            The Team
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[22px] sm:text-[32px] lg:text-[42px] leading-[1.0] tracking-tight mt-2 uppercase"
+            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-2 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Who are we?
-            <br />
-            Founders who've{' '}
-            <span className="text-orange-400">done this before.</span>
+            Who are <span className="text-orange-400">we?</span>
           </motion.h1>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-[2px] w-20 lg:w-28 bg-orange-500 origin-left mt-3"
-            style={{ boxShadow: '0 0 8px rgba(249,115,22,0.7)' }}
-          />
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -151,7 +141,7 @@ export function WhoWeAreSlide() {
                 className="flex items-start gap-5"
               >
                 <div className="relative shrink-0">
-                  <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden ring-2 ring-orange-500/30">
+                  <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden ring-2 ring-orange-500/30">
                     <img src={f.photo} alt={f.name} className="w-full h-full object-cover" style={(f as { photoStyle?: CSSProperties }).photoStyle} />
                   </div>
                   {f.linkedin && <LinkedInBadge href={f.linkedin} />}

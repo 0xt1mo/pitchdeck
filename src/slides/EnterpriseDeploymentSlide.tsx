@@ -227,21 +227,14 @@ function Diagram() {
         );
       })()}
 
-      {/* A2A label — 2-line stack sitting well above its arrow */}
+      {/* A2A label — 2-line stack sitting just above its arrow */}
       {(() => {
         const busX = 925;
         const labelX = (busX + rX) / 2;
-        const labelY = extMidY - 70;
         return (
-          <g fontFamily={mono} textAnchor="middle">
-            <text x={labelX} y={labelY}
-              fill="rgba(254,254,254,0.95)" fontSize="26" fontWeight="bold">
-              A2A networking
-            </text>
-            <text x={labelX} y={labelY + 32}
-              fill="rgba(254,254,254,0.95)" fontSize="26" fontWeight="bold">
-              + payments
-            </text>
+          <g fontFamily={mono} textAnchor="middle" fill="rgba(254,254,254,0.95)" fontWeight="bold">
+            <text x={labelX} y={extMidY - 30} fontSize="20">A2A networking</text>
+            <text x={labelX} y={extMidY - 10} fontSize="20">+ payments</text>
           </g>
         );
       })()}

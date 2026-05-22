@@ -128,7 +128,7 @@ export function CoverSlide() {
           </p>
           <p className="text-[#fefefe]/65 text-[10px] sm:text-xs lg:text-sm tracking-[0.24em] uppercase">
             Alan Radi · Commercial ·{' '}
-            <span className="text-orange-400/85 tracking-normal normal-case">alan.radi@unicity-labs.com</span>
+            <span className="text-orange-400/85 tracking-normal normal-case">alan@unicity-labs.com</span>
           </p>
         </motion.div>
 

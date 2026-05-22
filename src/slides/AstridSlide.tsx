@@ -34,13 +34,13 @@ function StackDiagram() {
       <text x={px + 145} y={y0 + 24} fill="rgba(254,254,254,0.3)" fontSize="9"
         fontFamily={font}>User-facing tools &amp; agent frameworks</text>
       {/* Tags */}
-      {['Claude Code', 'OpenClaw', 'Custom Agent Tools', 'LLM Frontends'].map((t, i) => {
-        const tx = px + 16 + i * 115;
+      {['Claude Code', 'OpenClaw', 'Custom Agents', 'LLM Frontends'].map((t, i) => {
+        const tx = px + 16 + i * 108;
         return (
           <g key={t}>
-            <rect x={tx} y={y0 + 40} width={106} height={28} rx={6}
+            <rect x={tx} y={y0 + 40} width={100} height={28} rx={6}
               fill="rgba(59,130,246,0.08)" stroke="rgba(59,130,246,0.18)" strokeWidth={1} />
-            <text x={tx + 53} y={y0 + 58} textAnchor="middle" fill="rgba(254,254,254,0.6)"
+            <text x={tx + 50} y={y0 + 58} textAnchor="middle" fill="rgba(254,254,254,0.6)"
               fontSize="9.5" fontFamily={font}>{t}</text>
           </g>
         );
@@ -61,12 +61,7 @@ function StackDiagram() {
       <text x={px + 16} y={y1 + 24} fill="#f97316" fontSize="15" fontWeight="bold"
         fontFamily={fontTitle} letterSpacing="0.08em">AOS KERNEL</text>
       <text x={px + 130} y={y1 + 24} fill="rgba(254,254,254,0.35)" fontSize="9"
-        fontFamily={font}>user-space microkernel</text>
-      {/* Enforcement Layer badge */}
-      <rect x={bw - 88} y={y1 + 12} width={104} height={18} rx={9}
-        fill="#f97316" stroke="rgba(249,115,22,0.9)" strokeWidth={1} />
-      <text x={bw - 88 + 52} y={y1 + 25} textAnchor="middle" fill="#060606" fontSize="9"
-        fontWeight="bold" letterSpacing="0.18em" fontFamily={font}>ENFORCEMENT LAYER</text>
+        fontFamily={font}>user-space microkernel · enforcement layer</text>
       {/* Tags */}
       {['Security Interceptor', 'WASM Sandbox', 'Capsule Engine'].map((t, i) => {
         const tx = px + 16 + i * 148;
