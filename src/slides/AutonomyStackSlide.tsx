@@ -18,13 +18,13 @@ const stack: StackLayer[] = [
   },
   {
     product: 'UNICITY AOS',
-    label: 'RUNTIME',
+    label: 'MULTI-TENANT SECURE OS',
     detail: 'Executes the agents. Capsules provide multi-tenancy and isolation. Every prompt, tool call, and decision passes through it — proactive safety policy, goal focus and budget enforcement, with tokenized execution trace for analysis and compliance, with hard policy rules on tool interactions.',
     tags: 'KERNEL · POLICY · INTERCEPT',
     variant: 'mid',
   },
   {
-    product: 'UNICITY PROOF SYSTEM',
+    product: 'UNICITY BLOCKCHAIN',
     label: 'PROOF SYSTEM · FORMAL VERIFICATION',
     detail: 'State tokenization. Verifiable execution. Cryptographic identity. Value transfer.',
     tags: '',
@@ -59,10 +59,10 @@ export function AutonomyStackSlide() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight mt-2"
+            className="text-[#fefefe] text-[40px] sm:text-[60px] lg:text-[88px] xl:text-[104px] leading-[0.95] tracking-tight uppercase mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            THE SECURE AI{' '}
+            UNICITY: THE SECURE AI{' '}
             <span className="text-orange-400">COMPUTE PLATFORM</span>
           </motion.h1>
           <motion.p

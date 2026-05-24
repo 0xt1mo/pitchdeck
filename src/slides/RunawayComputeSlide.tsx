@@ -37,7 +37,8 @@ export function RunawayComputeSlide() {
             className="text-[#fefefe] text-[36px] sm:text-[52px] lg:text-[72px] xl:text-[84px] leading-[0.95] tracking-tight uppercase mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            <span className="text-orange-400">COST CONTROL.</span>
+            COST OPTIMIZATION:{' '}
+            <span className="text-orange-400">EVERY AGENT GETS A BUDGET.</span>
           </motion.h1>
         </div>
 

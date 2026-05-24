@@ -32,7 +32,7 @@ const layers: Layer[] = [
   },
   {
     label: 'PAYMENTS',
-    title: 'A2A payments over Unicity Proof System',
+    title: 'A2A payments over Unicity Blockchain',
     detail: 'peer-to-peer · no shared ledger',
   },
 ];

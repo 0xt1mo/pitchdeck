@@ -13,7 +13,7 @@ const surfaces = [
   },
   {
     title: 'SETTLEMENT',
-    punch: 'Unicity Proof System subscription — unlimited transactions.',
+    punch: 'Unicity Blockchain subscription — unlimited transactions.',
     detail: '',
   },
   {

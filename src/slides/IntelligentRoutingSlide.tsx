@@ -67,8 +67,8 @@ export function IntelligentRoutingSlide() {
             className="text-[32px] sm:text-[48px] lg:text-[68px] xl:text-[80px] leading-[0.95] tracking-tight uppercase mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            <span className="text-[#fefefe]">INTELLIGENT</span>{' '}
-            <span className="text-orange-400">ROUTING.</span>
+            <span className="text-[#fefefe]">COST OPTIMIZATION:</span>{' '}
+            <span className="text-orange-400">INTELLIGENT ROUTING.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}

@@ -26,11 +26,11 @@ const cards: Card[] = [
     highlight: true,
   },
   {
-    source: 'STRIPE',
-    quote: 'We will likely need blockchains that support more than one million — or even one billion — transactions per second.',
-    author: 'Patrick & John Collison, Stripe, 2026',
-    bigNumber: '1B TPS',
-    bigSub: 'the infrastructure thesis, validated',
+    source: 'MCKINSEY',
+    quote: 'Generative and agentic AI could add up to $4.4 trillion in annual productivity value across the global economy — much of it consumed at the edge.',
+    author: 'McKinsey Global Institute, 2025',
+    bigNumber: '$4.4T',
+    bigSub: 'annual value at stake · landing on subscriber lines',
   },
 ];
 
@@ -53,11 +53,11 @@ export function MarketSlide() {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1.5"
+            className="text-[#fefefe] text-[40px] sm:text-[60px] lg:text-[88px] xl:text-[104px] leading-[0.95] tracking-tight uppercase mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            MARKET OPPORTUNITY:{' '}
-            <span className="text-orange-400">A TRILLION-DOLLAR REBUILD.</span>
+            AND IT'S{' '}
+            <span className="text-orange-400">A TRILLION-DOLLAR LAYER.</span>
           </motion.h1>
         </div>
 
@@ -67,41 +67,6 @@ export function MarketSlide() {
             <CitationCard key={c.source} card={c} delay={0.4 + i * 0.12} />
           ))}
         </div>
-
-        {/* a16z pull-quote */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.85, duration: 0.5 }}
-          className="shrink-0 rounded-xl px-5 sm:px-6 lg:px-8 py-3 lg:py-4 flex items-start gap-4 lg:gap-5"
-          style={{
-            border: '1px solid rgba(249,115,22,0.5)',
-            background: 'rgba(249,115,22,0.06)',
-          }}
-        >
-          <span
-            className="text-orange-400 text-[48px] sm:text-[64px] lg:text-[80px] leading-[0.7] shrink-0 -mt-1"
-            style={{ fontFamily: "'Anton', sans-serif" }}
-            aria-hidden="true"
-          >
-            "
-          </span>
-          <div className="flex-1">
-            <p
-              className="text-[#fefefe] text-sm sm:text-base lg:text-lg leading-snug"
-              style={{ fontFamily: "'Geist Mono', monospace" }}
-            >
-              If we want an internet where AI agents can operate without destroying trust,{' '}
-              <span className="text-orange-400">blockchains are not optional infrastructure</span>. They are the missing layer that makes an AI-native internet work.
-            </p>
-            <p
-              className="text-orange-400 text-[20px] sm:text-[26px] lg:text-[32px] mt-3 tracking-tight uppercase leading-none"
-              style={{ fontFamily: "'Anton', sans-serif" }}
-            >
-              — a16z crypto, February 2026
-            </p>
-          </div>
-        </motion.div>
 
       </div>
     </div>

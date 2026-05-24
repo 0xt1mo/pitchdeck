@@ -22,15 +22,9 @@ export function CoverSlide() {
             className="text-[#fefefe]/65 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Unicity X CyberKnight
+            Unicity · Secure Agentic Compute
           </span>
         </div>
-        <span
-          className="text-[#fefefe]/45 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em]"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          01 / 9
-        </span>
       </div>
 
       {/* Bottom HUD bar */}
@@ -39,13 +33,13 @@ export function CoverSlide() {
           className="text-[#fefefe]/45 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em] uppercase"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Product Overview
+          Platform Overview
         </span>
         <span
-          className="text-[#fefefe]/45 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em] uppercase"
+          className="text-[#fefefe]/45 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em] uppercase font-bold"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Confidential · 2026
+          Unicity
         </span>
       </div>
 
@@ -58,19 +52,17 @@ export function CoverSlide() {
       />
 
       {/* Main content — left-aligned */}
-      <div className="relative z-10 h-full flex flex-col justify-center pl-24 lg:pl-36 pr-8 lg:pr-16 gap-6 lg:gap-8">
+      <div className="relative z-10 h-full flex flex-col justify-center pl-24 lg:pl-36 pr-8 lg:pr-16 gap-5 lg:gap-6">
 
-        {/* Logos row */}
-        <motion.div
+        {/* Wordmark */}
+        <motion.img
+          src="/UnicityLogo.svg"
+          alt="Unicity"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex items-center gap-6 lg:gap-8 shrink-0"
-        >
-          <img src="/UnicityLogo.svg" alt="Unicity" className="h-10 lg:h-14 w-auto" />
-          <span className="text-orange-400 text-base lg:text-xl font-light">×</span>
-          <img src="/cyberknight.svg" alt="CyberKnight" className="h-10 lg:h-14 w-auto" />
-        </motion.div>
+          className="h-10 lg:h-14 w-auto shrink-0"
+        />
 
         {/* Eyebrow */}
         <motion.p
@@ -80,7 +72,7 @@ export function CoverSlide() {
           className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.32em] uppercase font-bold shrink-0 -mt-2"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Product Overview · June 2026
+          Platform Overview · 2026
         </motion.p>
 
         {/* Headline */}
@@ -88,23 +80,12 @@ export function CoverSlide() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.55, duration: 0.8 }}
-          className="text-[#fefefe] text-[48px] sm:text-[72px] lg:text-[112px] xl:text-[132px] leading-[0.95] tracking-tight uppercase shrink-0"
+          className="text-[#fefefe] text-[48px] sm:text-[72px] lg:text-[112px] xl:text-[140px] leading-[0.95] tracking-tight uppercase shrink-0"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          A SECURE COMPUTE PLATFORM<br />
-          <span className="text-orange-400">FOR AI.</span>
+          THE SECURE AGENTIC COMPUTE PLATFORM{' '}
+          <span className="text-orange-400">FOR TELECOM.</span>
         </motion.h1>
-
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
-          className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg shrink-0"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          Product overview for CyberKnight technical review.
-        </motion.p>
 
         {/* Divider */}
         <motion.div
@@ -125,10 +106,6 @@ export function CoverSlide() {
           <p className="text-[#fefefe]/65 text-[10px] sm:text-xs lg:text-sm tracking-[0.24em] uppercase">
             Mike Gault · CEO ·{' '}
             <span className="text-orange-400/85 tracking-normal normal-case">mike@unicity-labs.com</span>
-          </p>
-          <p className="text-[#fefefe]/65 text-[10px] sm:text-xs lg:text-sm tracking-[0.24em] uppercase">
-            Alan Radi · Commercial ·{' '}
-            <span className="text-orange-400/85 tracking-normal normal-case">alan.radi@unicity-labs.com</span>
           </p>
         </motion.div>
 

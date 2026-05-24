@@ -30,7 +30,7 @@ const cases: UseCase[] = [
   {
     n: '05',
     title: 'X402 PAYMENTS',
-    detail: 'Private, compliant A2A settlement over Unicity Proof System.',
+    detail: 'Private, compliant A2A settlement over Unicity Blockchain.',
   },
 ];
 

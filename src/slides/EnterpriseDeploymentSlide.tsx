@@ -156,11 +156,11 @@ function Diagram() {
       {/* ↓ arrow */}
       <DownArrow xMid={lX + lW / 2} yFrom={yAOS + hAOS + 4} yTo={yProof - 6} />
 
-      {/* Unicity Proof System */}
+      {/* Unicity Blockchain */}
       <Box x={lX} y={yProof} w={lW} h={hProof}
         stroke="rgba(249,115,22,0.55)" titleColor="#f97316"
         fill="rgba(249,115,22,0.04)"
-        title="Unicity Proof System"
+        title="Unicity Blockchain"
         subtitle="Verifiable execution" />
 
       {/* ───── RIGHT COLUMN — simplified single-label boxes ───── */}

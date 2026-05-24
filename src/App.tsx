@@ -54,27 +54,54 @@ import { DemoSlide } from './slides/DemoSlide';
 import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
 import { CompetitionMinimalSlide } from './slides/CompetitionMinimalSlide';
 import { EnterpriseDeploymentSlide } from './slides/EnterpriseDeploymentSlide';
+import { DeploymentModelSlide } from './slides/DeploymentModelSlide';
+import { DeploymentModelHtmlSlide } from './slides/DeploymentModelHtmlSlide';
+import { ConciergeSlide } from './slides/ConciergeSlide';
+import { OperatorPayoffSlide } from './slides/OperatorPayoffSlide';
+import { TelecomUseCasesSlide } from './slides/TelecomUseCasesSlide';
+import { UseCasesAppendixSlide } from './slides/UseCasesAppendixSlide';
+import { WhyDifferentSlide } from './slides/WhyDifferentSlide';
+import { TelecomOpportunitySlide } from './slides/TelecomOpportunitySlide';
 import { WhoWeAreSlide } from './slides/WhoWeAreSlide';
 import { ContactSlide } from './slides/ContactSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  CoverSlide,                // 1. Cover — Unicity X CyberKnight
-  ProblemSlide,              // 2. The Fourth Rebuild of Compute
-  MarketSlide,               // 3. Market Opportunity
-  AutonomyStackSlide,        // 4. The Secure AI Compute Platform
-  AstridSlide,               // 5. AOS Kernel Architecture
-  CompetitionMinimalSlide,   // 6. Competition — Everyone else watches the agent
-  SemanticFirewallSlide,     // 7. The Semantic Firewall
-  EnterpriseDeploymentSlide, // 8. Enterprise Deployment — Inside the Firewall
-  UseCasesSlide,             // 9. Enterprise Case Studies (index)
-  ShadowAISlide,             // 10. Agent Sprawl & Shadow AI
-  DLPSlide,                  // 11. Data Loss Prevention
-  RunawayComputeSlide,       // 12. Cost Control
-  IntelligentRoutingSlide,   // 13. Intelligent Routing
-  WhoWeAreSlide,             // 14. Who We Are (globe + clients)
-  ContactSlide,              // 15. See It In Action — Contact
-  ThankYouChatSlide,         // 16. Thank You
+  // ── ACT I — The Moment ──
+  CoverSlide,                // 1. Cover — Unicity for Telecom
+  TelecomOpportunitySlide,   // 2. The Opportunity — Every subscriber gets a Personal AI Agent
+  ProblemSlide,              // 3. The Fourth Rebuild of Compute
+  MarketSlide,               // 4. Market Opportunity
+
+  // ── ACT II — The Platform ──
+  AutonomyStackSlide,        // 5. Unicity: The Secure AI Compute Platform
+  WhyDifferentSlide,         // 6. The first secure, affordable, provable platform
+
+  // ── ACT III — The Story ──
+  ConciergeSlide,            // 7. Subscriber concierge — what subscribers see
+  OperatorPayoffSlide,       // 8. Every tap is revenue you own — the operator's view
+  TelecomUseCasesSlide,      // 9. New value-added services for enterprise + consumer
+
+  // ── ACT IV — The Proof ──
+  DeploymentModelHtmlSlide,  // 10. Deployment inside operator infrastructure
+  WhoWeAreSlide,             // 11. Team
+  ContactSlide,              // 12. Get Started — Own the agent layer / Book a live demo
+  // ThankYouChatSlide,      // hidden — Thank You (rolled into ContactSlide closer)
+
+  // ── APPENDIX — additional use case deep-dives ──
+  UseCasesAppendixSlide,   // 13. Appendix divider — Additional Use Cases
+  ShadowAISlide,           // 14. appendix — Agent Sprawl & Shadow AI
+  DLPSlide,                // 15. appendix — Data Loss Prevention
+  RunawayComputeSlide,     // 16. appendix — Cost Control
+  IntelligentRoutingSlide, // 17. appendix — Intelligent Routing
+
+  // ── Hidden (other) ──
+  // AstridSlide,            // AOS Kernel Architecture
+  // CompetitionMinimalSlide, // Competition / Everyone else watches the agent
+  // SemanticFirewallSlide,  // The Semantic Firewall
+  // DeploymentModelSlide,   // earlier all-SVG version
+  // EnterpriseDeploymentSlide, // older MSSP version
+  // UseCasesSlide,          // Enterprise Case Studies (replaced by TelecomUseCasesSlide)
   // ── Hidden ──
   // IntroSlide,             // Autonomous AI needs an internet built for machines
   // SolutionIntroSlide,     // Unicity OS: A Secure OS for AI Agents

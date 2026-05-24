@@ -1,150 +1,115 @@
 import { motion } from 'framer-motion';
 
+const mono = "'Geist Mono', monospace";
+const display = "'Anton', sans-serif";
+
 export function ContactSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-10 lg:px-20 py-12 lg:py-16 justify-center gap-7">
 
-        <div className="shrink-0">
-          <motion.h1
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight"
-            style={{ fontFamily: "'Anton', sans-serif" }}
-          >
-            SEE IT <span className="text-orange-400">IN ACTION.</span>
-          </motion.h1>
-        </div>
+      {/* RIGHT — full-height rainbow splash (clean transparent-bg PNG)
+          Left edge faded with a mask so the image blends into the black background */}
+      <img
+        src="/close-splash.png"
+        alt="Subscriber concierge — color splash"
+        className="absolute right-0 top-0 h-full w-auto pointer-events-none"
+        style={{
+          maxWidth: '55%',
+          objectFit: 'contain',
+          objectPosition: 'right center',
+          maskImage:
+            'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 18%, #000 45%)',
+          WebkitMaskImage:
+            'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 18%, #000 45%)',
+        }}
+      />
 
-        <div className="grid grid-cols-[1fr_440px] gap-10 lg:gap-14 shrink-0 items-stretch">
+      {/* LEFT — get-started copy + CTA */}
+      <div
+        className="relative z-10 h-full flex flex-col justify-center px-8 sm:px-12 lg:px-20 py-10 lg:py-14 gap-5 lg:gap-7"
+        style={{ maxWidth: '58%' }}
+      >
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="flex flex-col justify-center gap-6"
-          >
-            <div
-              className="rounded-lg p-6 lg:p-7"
-              style={{
-                background: 'rgba(245,158,11,0.08)',
-                border: '1px solid rgba(245,158,11,0.30)',
-              }}
-            >
-              <p
-                className="text-orange-400 text-xl lg:text-2xl font-bold mb-2"
-                style={{ fontFamily: "'Geist Mono', monospace" }}
-              >
-                Book a Live Demo
-              </p>
-              <p
-                className="text-[#fefefe]/80 text-sm lg:text-base leading-relaxed"
-                style={{ fontFamily: "'Geist Mono', monospace" }}
-              >
-                See an agent open a session, place a wager, settle — end-to-end.
-              </p>
-            </div>
+        {/* Eyebrow */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.4em] uppercase font-bold shrink-0"
+          style={{ fontFamily: mono }}
+        >
+          Get Started
+        </motion.p>
 
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-3">
-                <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
-                  style={{
-                    background: 'rgba(245,158,11,0.10)',
-                    border: '1px solid rgba(245,158,11,0.30)',
-                  }}
-                >
-                  <svg viewBox="0 0 24 24" className="w-4 h-4" fill="rgba(245,158,11,0.9)">
-                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                  </svg>
-                </div>
-                <a
-                  href="mailto:info@unicity.ai"
-                  className="text-orange-400 text-base lg:text-lg font-bold"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}
-                >
-                  info@unicity.ai
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
-                  style={{
-                    background: 'rgba(245,158,11,0.10)',
-                    border: '1px solid rgba(245,158,11,0.30)',
-                  }}
-                >
-                  <svg viewBox="0 0 24 24" className="w-4 h-4" fill="rgba(245,158,11,0.9)">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-                  </svg>
-                </div>
-                <a
-                  href="https://unicity.ai"
-                  className="text-orange-400 text-base lg:text-lg font-bold"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}
-                >
-                  unicity.ai
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
-                  style={{
-                    background: 'rgba(245,158,11,0.10)',
-                    border: '1px solid rgba(245,158,11,0.30)',
-                  }}
-                >
-                  <svg viewBox="0 0 24 24" className="w-4 h-4" fill="rgba(245,158,11,0.9)">
-                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
-                  </svg>
-                </div>
-                <a
-                  href="tel:+971508843756"
-                  className="text-orange-400 text-base lg:text-lg font-bold"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}
-                >
-                  +971 50 884 3756
-                </a>
-              </div>
-            </div>
-          </motion.div>
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="text-[#fefefe] text-[36px] sm:text-[56px] lg:text-[80px] xl:text-[96px] leading-[0.96] tracking-tight uppercase shrink-0"
+          style={{ fontFamily: display }}
+        >
+          OWN THE AGENT LAYER{' '}
+          <span className="text-orange-400">BEFORE SOMEONE ELSE DOES.</span>
+        </motion.h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="flex flex-col gap-3"
-          >
-            <div
-              className="rounded-lg overflow-hidden h-[300px]"
-              style={{ border: '1px solid rgba(255,255,255,0.10)' }}
-            >
-              <iframe
-                title="Unicity Labs Abu Dhabi"
-                src="https://maps.google.com/maps?q=Al+Montazah+Tower+B+Khalidiyah+Abu+Dhabi+UAE&z=16&output=embed"
-                className="w-full h-full"
-                style={{
-                  border: 0,
-                  filter:
-                    'invert(90%) hue-rotate(180deg) saturate(0.3) brightness(0.7) contrast(1.2)',
-                }}
-                loading="lazy"
-              />
-            </div>
-            <p
-              className="text-[#fefefe]/65 text-sm lg:text-base leading-relaxed text-center"
-              style={{ fontFamily: "'Geist Mono', monospace" }}
-            >
-              <span className="text-[#fefefe] font-bold">Unicity Labs</span>
-              <br />
-              502, 5th Floor, Al Montazah Tower B
-              <br />
-              Khalidiyah Area, Abu Dhabi, UAE
-            </p>
-          </motion.div>
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg leading-relaxed shrink-0 max-w-2xl"
+          style={{ fontFamily: mono }}
+        >
+          See an agent book, pay, and settle end-to-end — live, on your own infrastructure.
+        </motion.p>
 
-        </div>
+        {/* CTA button */}
+        <motion.a
+          href="mailto:info@unicity.ai?subject=Book%20a%20live%20demo"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45, duration: 0.5 }}
+          className="shrink-0 inline-flex items-center gap-3 self-start rounded-full px-6 py-3 lg:px-8 lg:py-4 text-[#060606] font-bold transition-transform hover:scale-[1.02]"
+          style={{ background: '#FF6A00', fontFamily: mono }}
+        >
+          <span className="text-sm sm:text-base lg:text-lg tracking-[0.18em] uppercase">
+            Book a live demo
+          </span>
+          <span className="text-base lg:text-lg">→</span>
+        </motion.a>
+
+        {/* Contact line */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+          className="text-orange-400/90 text-xs sm:text-sm lg:text-base shrink-0 mt-2 lg:mt-4"
+          style={{ fontFamily: mono }}
+        >
+          <a href="mailto:info@unicity.ai" className="hover:underline">info@unicity.ai</a>
+          <span className="text-[#fefefe]/40">  ·  </span>
+          <a href="https://unicity.ai" target="_blank" rel="noopener noreferrer" className="hover:underline">unicity.ai</a>
+          <span className="text-[#fefefe]/40">  ·  </span>
+          <a href="tel:+971508843756" className="hover:underline">+971 50 884 3756</a>
+        </motion.p>
+
+      </div>
+
+      {/* Bottom HUD bar */}
+      <div className="absolute bottom-6 left-8 lg:left-12 right-8 lg:right-12 z-20 flex items-center justify-between pointer-events-none">
+        <span
+          className="text-[#fefefe]/40 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em] uppercase"
+          style={{ fontFamily: mono }}
+        >
+          Unicity · Get Started
+        </span>
+        <span
+          className="text-[#fefefe]/35 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em] uppercase font-bold"
+          style={{ fontFamily: mono }}
+        >
+          Unicity
+        </span>
       </div>
     </div>
   );
