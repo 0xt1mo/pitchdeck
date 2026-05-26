@@ -44,13 +44,13 @@ export function CoverSlide() {
             className="text-orange-400 text-sm sm:text-base lg:text-lg tracking-[0.4em] uppercase font-bold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Investor Deck
+            Technology Overview
           </p>
           <h1
             className="text-[#fefefe] text-[40px] sm:text-[60px] lg:text-[80px] leading-[0.95] tracking-tight uppercase text-center"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            SEED ROUND <span className="text-orange-400">EXTENSION</span>
+            THE <span className="text-orange-400">PLATFORM</span>
           </h1>
         </motion.div>
 

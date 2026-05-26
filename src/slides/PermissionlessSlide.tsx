@@ -152,7 +152,7 @@ export function PermissionlessSlide() {
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Appendix — Blockchain
+            Blockchain
           </motion.p>
           <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}

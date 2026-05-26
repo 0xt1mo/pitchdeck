@@ -28,8 +28,8 @@ const sectionConfig: Record<SectionId, {
   highlightKernel: boolean;
 }> = {
   kernel: {
-    label: 'AOS',
-    subtitle: 'Architecture deep dive',
+    label: 'THE OPERATING SYSTEM',
+    subtitle: 'AOS · Multi-tenant runtime for agents',
     highlightIds: ['skills', 'orchestration', 'inference', 'networking'],
     highlightKernel: true,
   },
@@ -40,8 +40,8 @@ const sectionConfig: Record<SectionId, {
     highlightKernel: false,
   },
   payments: {
-    label: 'BLOCKCHAIN',
-    subtitle: 'The Unicity L1',
+    label: 'THE BLOCKCHAIN',
+    subtitle: 'Unicity L1 · Verifiable Execution',
     highlightIds: ['payments'],
     highlightKernel: false,
   },

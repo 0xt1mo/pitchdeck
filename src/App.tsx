@@ -1,102 +1,55 @@
 import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
-import { IntroSlide } from './slides/IntroSlide';
 import { CoverSlide } from './slides/CoverSlide';
-import { PromiseSlide } from './slides/PromiseSlide';
-import { SharedLedgerSlide } from './slides/SharedLedgerSlide';
-import { AgentsSlide } from './slides/AgentsSlide';
-import { EdgePayoffSlide } from './slides/EdgePayoffSlide';
-import { UnbundledPayoffSlide } from './slides/UnbundledPayoffSlide';
-import { RetrofitSlide } from './slides/RetrofitSlide';
-import { CompetitionSlide } from './slides/CompetitionSlide';
-import { MarketSlide } from './slides/MarketSlide';
-import { ResourcesSlide } from './slides/ResourcesSlide';
 import { ProblemSlide } from './slides/ProblemSlide';
 import { AutonomyStackSlide } from './slides/AutonomyStackSlide';
-import { CompleteAutonomyStackSlide } from './slides/CompleteAutonomyStackSlide';
-import { SolutionIntroSlide } from './slides/SolutionIntroSlide';
-import { ArchitectureStackSlide } from './slides/ArchitectureStackSlide';
-import { CompetitiveLandscapeSlide } from './slides/CompetitiveLandscapeSlide';
-import { SecurityNetworkSlide } from './slides/SecurityNetworkSlide';
-import { UseCasesSlide } from './slides/UseCasesSlide';
-import { AgentSphereDashboardSlide } from './slides/AgentSphereDashboardSlide';
-import { AgentSprawlSlide } from './slides/AgentSprawlSlide';
-import { WedgeSlide } from './slides/WedgeSlide';
-import { ProtocolSlide } from './slides/ProtocolSlide';
-import { GoToMarketSlide } from './slides/GoToMarketSlide';
-import { ProjectionsSlide } from './slides/ProjectionsSlide';
-import { TokenSlide } from './slides/TokenSlide';
-import { BusinessModelSlide } from './slides/BusinessModelSlide';
-import { IntellectualArcSlide } from './slides/IntellectualArcSlide';
-import { AppendixDividerSlide } from './slides/AppendixDividerSlide';
-import { ThePathSlide } from './slides/ThePathSlide';
-import { TeamSlide } from './slides/TeamSlide';
-import { RaiseSlide } from './slides/RaiseSlide';
-import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
-import { AppendixSlide } from './slides/AppendixSlide';
-import { KernelDividerSlide, BlockchainDividerSlide, ProductDividerSlide } from './slides/SectionDividerSlide';
 import { AstridSlide } from './slides/AstridSlide';
 import { AstridComparisonSlide } from './slides/AstridComparisonSlide';
+import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
 import { AstridUseCasesSlide } from './slides/AstridUseCasesSlide';
+import { AgentsSlide } from './slides/AgentsSlide';
 import { BlockchainArchSlide } from './slides/BlockchainArchSlide';
 import { ZKOracleSlide } from './slides/ZKOracleSlide';
 import { PermissionlessSlide } from './slides/PermissionlessSlide';
 import { SettlementSlide } from './slides/SettlementSlide';
 import { AgentsSmartContractsSlide } from './slides/AgentsSmartContractsSlide';
+import { DeploymentModelHtmlSlide } from './slides/DeploymentModelHtmlSlide';
 import { ChainAgnosticSlide } from './slides/ChainAgnosticSlide';
-import { DemoSlide } from './slides/DemoSlide';
-import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
+import { CompetitiveLandscapeSlide } from './slides/CompetitiveLandscapeSlide';
+import { CompetitionSlide } from './slides/CompetitionSlide';
+import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
+import { KernelDividerSlide, BlockchainDividerSlide } from './slides/SectionDividerSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  CoverSlide,              // 1. Cover — Unicity logo + Seed Round Extension
-  IntroSlide,              // 2. Thesis — Autonomous AI needs an internet built for machines
-  // ── Architecture arc (3–8) ──
-  ProblemSlide,            // 3. What Autonomy Demands — The Fourth Rebuild
-  // SolutionIntroSlide,   // hidden — Unicity OS: A Secure OS for AI Agents
-  AutonomyStackSlide,      // 4. The Protocol Stack for the Agentic Internet
-  // CompleteAutonomyStackSlide, // hidden — The First Complete Stack Built For Machines
-  TeamSlide,               // 6. Founders
-  // ArchitectureStackSlide, // hidden — The Secure OS for Agents
-  AgentsSlide,             // 7. The Unicity L1 — Why a Purpose Built Chain
-  EdgePayoffSlide,         // 7. The Unlock — What This Unlocks
-  CompetitiveLandscapeSlide, // 8. Competitive Landscape — OS, not chain. Private state.
-  // ── Commercial arc (9–14) ──
-  // WedgeSlide,           // hidden — Wedge content folded into UseCasesSlide title
-  UseCasesSlide,           // 9. Land on Security. Revenue Today.
-  MarketSlide,             // 11. Market Opportunity — trillion-dollar rebuild
-  GoToMarketSlide,         // 12. Beachhead: The UAE
-  // SecurityNetworkSlide, // hidden — Zero Trust Enterprise Network
-  ProtocolSlide,           // 13. x402 Live Demo
-  // AgentSprawlSlide,     // hidden — Case Study: Agent Sprawl
-  ThePathSlide,            // 14. Current Status and How We Win
-  RaiseSlide,              // 15. The Ask — Seed Round Extension
-  // AgentSphereDashboardSlide moved to appendix (was split into AgentSprawlSlide + WedgeSlide for main deck)
-  // UnbundledPayoffSlide, // hidden — merged Unbundling + Unlocks attempt
-  // AutonomyStackSlide,   // hidden — Protocol Stack for the Agentic Internet
-  // ProjectionsSlide,     // The World If We Win — hidden
-  // BusinessModelSlide,   // hidden — Business Model — Four Surfaces. One Platform.
-  ResourcesSlide,          // 16. Resources
-  ThankYouChatSlide,       // 17. Thank You
-  // ── 17+ Appendix — technical deep-dives ──
-  AppendixDividerSlide,    // Appendix · Technology — section break
-  CompetitionSlide,        // Competition — Why It Is Different (architectural arc)
-  // SharedLedgerSlide,    // hidden — Every blockchain from Bitcoin to MegaETH is the same 17-year-old design
-  // IntellectualArcSlide, // hidden — Unbundling what the network has to do
-  // PromiseSlide,         // hidden — Satoshi: Peer-to-Peer Electronic Cash
-  BlockchainArchSlide,     // Protocol Stack
-  ZKOracleSlide,           // ZK Oracle
-  PermissionlessSlide,     // Hierarchical Scaling
-  SettlementSlide,         // Settlement
-  ChainAgnosticSlide,      // Chain-Agnostic Operations
-  AgentsSmartContractsSlide, // Agents-as-Smart-Contracts
-  TokenSlide,              // Tokenomics — end of blockchain section
-  AstridSlide,             // AOS kernel
-  AstridComparisonSlide,   // Why AOS
-  AstridUseCasesSlide,     // Swap Capsule
-  InterceptFabricSlide,    // Security Fabric
-  // AgentSphereDashboardSlide, // hidden — original 4-pillar enterprise dashboard
-  // RetrofitSlide,        // hidden — You Can't Retrofit an EVM into Autonomous AI
+  // ── Act I — Why new infra ──
+  CoverSlide,                  // 1. Cover — Technology Overview
+  ProblemSlide,                // 2. The Fourth Rebuild
+  AutonomyStackSlide,          // 3. The Protocol Stack (OS + Blockchain)
+  DeploymentModelHtmlSlide,    // 4. Deployment inside enterprise infra
+
+  // ── Act II — The OS ──
+  KernelDividerSlide,          // 5. Divider — THE OPERATING SYSTEM
+  AstridSlide,                 // 6. AOS kernel intro
+  AstridComparisonSlide,       // 7. Why AOS vs alternatives
+  AstridUseCasesSlide,         // 8. Swap Capsule — capsule arch in action
+  InterceptFabricSlide,        // 9. Security fabric / policy interception
+
+  // ── Act III — The Blockchain ──
+  BlockchainDividerSlide,      // 10. Divider — THE BLOCKCHAIN
+  AgentsSlide,                 // 11. Why a purpose-built L1
+  BlockchainArchSlide,         // 12. Protocol stack
+  ZKOracleSlide,               // 13. ZK Oracle
+  PermissionlessSlide,         // 14. Hierarchical scaling
+  SettlementSlide,             // 15. Settlement / state finality
+  AgentsSmartContractsSlide,   // 16. Agents-as-smart-contracts
+
+  // ── Act IV — Differentiation ──
+  ChainAgnosticSlide,          // 15. Chain-agnostic operations
+  CompetitiveLandscapeSlide,   // 16. OS, not chain. Private state.
+  CompetitionSlide,            // 17. Architectural arc / why it is different
+
+  ThankYouChatSlide,           // 18. Thank you
 ];
 
 export default function App() {

@@ -1,0 +1,101 @@
+<div style="padding:1rem 0">
+<div style="background:#0A0A0A;border-radius:8px;aspect-ratio:16/9;font-family:system-ui,sans-serif;overflow:hidden">
+<div style="height:4px;background:#E87C1E"></div>
+<div style="padding:22px 36px;display:flex;flex-direction:column;justify-content:space-between;height:calc(100% - 26px)">
+
+<div>
+<div style="font-size:8px;color:#E87C1E;letter-spacing:4px;font-weight:700;margin-bottom:5px">ARCHITECTURE</div>
+<div style="font-size:21px;font-weight:900;color:#FFF;font-family:'Arial Black',sans-serif">SINGLE-TENANT VM PER AGENT. <span style="color:#E87C1E">VS MULTI-TENANT RUNTIME.</span></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+
+<div style="background:#131313;border:1px solid #333;border-radius:5px;padding:12px 14px">
+<div style="font-size:8px;color:#999;letter-spacing:3px;font-weight:600;margin-bottom:6px">FIRECRACKER microVM (e.g. LOBSTERTANK)</div>
+<div style="font-size:11px;color:#CCC;font-weight:700;margin-bottom:8px">One VM per agent. One kernel per agent.</div>
+<div style="display:flex;gap:5px;margin-bottom:10px">
+<div style="flex:1;background:#1A1A1A;border:1px solid #333;border-radius:3px;padding:6px;text-align:center">
+<div style="font-size:7px;color:#666;margin-bottom:2px">KERNEL</div>
+<div style="font-size:7px;color:#999">AGENT 1</div>
+</div>
+<div style="flex:1;background:#1A1A1A;border:1px solid #333;border-radius:3px;padding:6px;text-align:center">
+<div style="font-size:7px;color:#666;margin-bottom:2px">KERNEL</div>
+<div style="font-size:7px;color:#999">AGENT 2</div>
+</div>
+<div style="flex:1;background:#1A1A1A;border:1px solid #333;border-radius:3px;padding:6px;text-align:center">
+<div style="font-size:7px;color:#666;margin-bottom:2px">KERNEL</div>
+<div style="font-size:7px;color:#999">AGENT 3</div>
+</div>
+<div style="flex:1;background:#1A1A1A;border:1px solid #333;border-radius:3px;padding:6px;text-align:center">
+<div style="font-size:7px;color:#666">...</div>
+</div>
+</div>
+<div style="font-size:9px;color:#999;line-height:1.5">Each agent boots its own Linux kernel inside a KVM hardware boundary. Strong isolation — but every agent duplicates the OS, the runtime, and the boot sequence. Hundreds per server, not thousands.</div>
+</div>
+
+<div style="background:#131313;border:1px solid #E87C1E;border-radius:5px;padding:12px 14px">
+<div style="font-size:8px;color:#E87C1E;letter-spacing:3px;font-weight:600;margin-bottom:6px">ASTRID OS — WASM CAPSULES</div>
+<div style="font-size:11px;color:#CCC;font-weight:700;margin-bottom:8px">One kernel. One runtime. 1,000+ agents.</div>
+<div style="background:#1A1A1A;border:1px solid #2A1A0A;border-radius:3px;padding:6px;margin-bottom:10px">
+<div style="font-size:7px;color:#666;margin-bottom:4px">SINGLE KERNEL + ASTRID RUNTIME</div>
+<div style="display:flex;gap:2px;flex-wrap:wrap">
+<div style="width:12px;height:12px;background:#1E1408;border:0.5px solid #3A2A10;border-radius:2px"></div>
+<div style="width:12px;height:12px;background:#1E1408;border:0.5px solid #3A2A10;border-radius:2px"></div>
+<div style="width:12px;height:12px;background:#1E1408;border:0.5px solid #3A2A10;border-radius:2px"></div>
+<div style="width:12px;height:12px;background:#1E1408;border:0.5px solid #3A2A10;border-radius:2px"></div>
+<div style="width:12px;height:12px;background:#1E1408;border:0.5px solid #3A2A10;border-radius:2px"></div>
+<div style="width:12px;height:12px;background:#1E1408;border:0.5px solid #3A2A10;border-radius:2px"></div>
+<div style="width:12px;height:12px;background:#1E1408;border:0.5px solid #3A2A10;border-radius:2px"></div>
+<div style="width:12px;height:12px;background:#1E1408;border:0.5px solid #3A2A10;border-radius:2px"></div>
+<div style="width:12px;height:12px;background:#1E1408;border:0.5px solid #3A2A10;border-radius:2px"></div>
+<div style="width:12px;height:12px;background:#1E1408;border:0.5px solid #3A2A10;border-radius:2px"></div>
+<div style="width:12px;height:12px;background:#1E1408;border:0.5px solid #3A2A10;border-radius:2px"></div>
+<div style="width:12px;height:12px;background:#1E1408;border:0.5px solid #3A2A10;border-radius:2px"></div>
+<div style="font-size:7px;color:#555;display:flex;align-items:center;margin-left:3px">×1,000</div>
+</div>
+</div>
+<div style="font-size:9px;color:#999;line-height:1.5">Agents share one kernel and one runtime. Each runs in a WASM capsule with cryptographic isolation — no kernel duplication, no boot per agent. Thousands per server.</div>
+</div>
+
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px">
+<div style="background:#111;border:1px solid #1E1E1E;border-radius:3px;padding:6px 4px;text-align:center">
+<div style="font-size:7px;color:#666;margin-bottom:2px">MEMORY/AGENT</div>
+<div style="font-size:9px;color:#999">30-128MB</div>
+<div style="font-size:9px;color:#2ECC71;font-weight:700">2-8MB</div>
+</div>
+<div style="background:#111;border:1px solid #1E1E1E;border-radius:3px;padding:6px 4px;text-align:center">
+<div style="font-size:7px;color:#666;margin-bottom:2px">BOOT TIME</div>
+<div style="font-size:9px;color:#999">125ms</div>
+<div style="font-size:9px;color:#2ECC71;font-weight:700"><1ms</div>
+</div>
+<div style="background:#111;border:1px solid #1E1E1E;border-radius:3px;padding:6px 4px;text-align:center">
+<div style="font-size:7px;color:#666;margin-bottom:2px">AGENTS/NODE</div>
+<div style="font-size:9px;color:#999">100s</div>
+<div style="font-size:9px;color:#2ECC71;font-weight:700">1,000+</div>
+</div>
+<div style="background:#111;border:1px solid #1E1E1E;border-radius:3px;padding:6px 4px;text-align:center">
+<div style="font-size:7px;color:#666;margin-bottom:2px">REQUIRES KVM</div>
+<div style="font-size:9px;color:#999">Yes</div>
+<div style="font-size:9px;color:#2ECC71;font-weight:700">No</div>
+</div>
+<div style="background:#111;border:1px solid #1E1E1E;border-radius:3px;padding:6px 4px;text-align:center">
+<div style="font-size:7px;color:#666;margin-bottom:2px">IDENTITY</div>
+<div style="font-size:9px;color:#999">None</div>
+<div style="font-size:9px;color:#2ECC71;font-weight:700">Per-agent</div>
+</div>
+<div style="background:#111;border:1px solid #1E1E1E;border-radius:3px;padding:6px 4px;text-align:center">
+<div style="font-size:7px;color:#666;margin-bottom:2px">AUDIT / POLICY</div>
+<div style="font-size:9px;color:#999">None</div>
+<div style="font-size:9px;color:#2ECC71;font-weight:700">Built-in</div>
+</div>
+</div>
+
+<div style="border-top:1px solid #1A1A1A;padding-top:6px">
+<div style="font-size:10px;color:#BBB">Firecracker is infrastructure. Astrid is an <span style="color:#FFF;font-weight:700">agent platform</span> — identity, policy, audit, and settlement included.</div>
+</div>
+
+</div>
+</div>
+</div>
