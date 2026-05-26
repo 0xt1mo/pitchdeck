@@ -28,13 +28,7 @@ export function CoverSlide() {
       </div>
 
       {/* Bottom HUD bar */}
-      <div className="absolute bottom-6 left-8 lg:left-12 right-8 lg:right-12 z-20 flex items-center justify-between">
-        <span
-          className="text-[#fefefe]/45 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em] uppercase"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          Platform Overview
-        </span>
+      <div className="absolute bottom-6 left-8 lg:left-12 right-8 lg:right-12 z-20 flex items-center justify-end">
         <span
           className="text-[#fefefe]/45 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em] uppercase font-bold"
           style={{ fontFamily: "'Geist Mono', monospace" }}
@@ -72,7 +66,7 @@ export function CoverSlide() {
           className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.32em] uppercase font-bold shrink-0 -mt-2"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Platform Overview · 2026
+          Astrid OS + QVAC · 2026
         </motion.p>
 
         {/* Headline */}
@@ -83,9 +77,20 @@ export function CoverSlide() {
           className="text-[#fefefe] text-[48px] sm:text-[72px] lg:text-[112px] xl:text-[140px] leading-[0.95] tracking-tight uppercase shrink-0"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          THE SECURE AGENTIC COMPUTE PLATFORM{' '}
-          <span className="text-orange-400">FOR TELECOM.</span>
+          THE AGENT OS{' '}
+          <span className="text-orange-400">FOR TETHER AI.</span>
         </motion.h1>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.85, duration: 0.6 }}
+          className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl tracking-wide shrink-0 -mt-2"
+          style={{ fontFamily: "'Geist Mono', monospace" }}
+        >
+          Secure execution for QVAC-powered agents.
+        </motion.p>
 
         {/* Divider */}
         <motion.div
@@ -95,19 +100,54 @@ export function CoverSlide() {
           className="h-[1px] w-40 sm:w-56 lg:w-72 bg-orange-500/60 origin-left shrink-0"
         />
 
-        {/* Credits */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.05, duration: 0.5 }}
-          className="flex flex-col gap-1 shrink-0"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          <p className="text-[#fefefe]/65 text-[10px] sm:text-xs lg:text-sm tracking-[0.24em] uppercase">
-            Mike Gault · CEO ·{' '}
-            <span className="text-orange-400/85 tracking-normal normal-case">mike@unicity-labs.com</span>
-          </p>
-        </motion.div>
+        {/* Bottom row — credits (from) on left, Tether dedication (to) on right */}
+        <div className="flex items-end justify-between gap-8 shrink-0 pr-4 lg:pr-8">
+          {/* Credits */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.05, duration: 0.5 }}
+            className="flex flex-col gap-1"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
+            <p className="text-[#fefefe]/65 text-[10px] sm:text-xs lg:text-sm tracking-[0.24em] uppercase">
+              Mike Gault · CEO ·{' '}
+              <span className="text-orange-400/85 tracking-normal normal-case">mike@unicity-labs.com</span>
+            </p>
+            <p className="text-[#fefefe]/65 text-[10px] sm:text-xs lg:text-sm tracking-[0.24em] uppercase">
+              Alan Radi · Commercial ·{' '}
+              <span className="text-orange-400/85 tracking-normal normal-case">alan@unicity-labs.com</span>
+            </p>
+          </motion.div>
+
+          {/* Tether dedication — bottom right, baseline-aligned with credits */}
+          <motion.div
+            initial={{ opacity: 0, x: 8 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.15, duration: 0.5 }}
+            className="flex items-center gap-3 border-l border-orange-500/40 pl-3"
+          >
+            <div className="flex flex-col items-end gap-0.5">
+              <span
+                className="text-[#fefefe]/45 text-[8px] sm:text-[9px] lg:text-[10px] tracking-[0.32em] uppercase"
+                style={{ fontFamily: "'Geist Mono', monospace" }}
+              >
+                Prepared for
+              </span>
+              <span
+                className="text-[#fefefe] text-[10px] sm:text-xs lg:text-sm tracking-[0.18em] uppercase font-bold"
+                style={{ fontFamily: "'Geist Mono', monospace" }}
+              >
+                Paolo <span className="text-orange-400">@</span> Tether
+              </span>
+            </div>
+            <img
+              src="/logos/tether_logo.jpeg"
+              alt="Tether"
+              className="h-10 lg:h-12 w-auto rounded-md shadow-[0_0_20px_rgba(0,166,166,0.18)]"
+            />
+          </motion.div>
+        </div>
 
       </div>
     </div>

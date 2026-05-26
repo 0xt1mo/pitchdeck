@@ -39,13 +39,13 @@ const founders = [
 ];
 
 const clients = [
-  { name: 'NATO',     file: 'nato.png',     scale: 1    },
+  { name: 'NATO',     file: 'nato.png',     scale: 0.95 },
   { name: 'DARPA',    file: 'darpa.png',    scale: 1    },
-  { name: 'Lockheed', file: 'lockheed.png', scale: 1    },
-  { name: 'Verizon',  file: 'verizon.svg',  scale: 1    },
-  { name: 'BIS',      file: 'bis.png',      scale: 0.63 },
-  { name: 'Maersk',   file: 'maersk.png',   scale: 0.63 },
-  { name: 'ESA',      file: 'esa.png',      scale: 1    },
+  { name: 'Lockheed', file: 'lockheed.png', scale: 0.85 },
+  { name: 'Verizon',  file: 'verizon.svg',  scale: 0.72 },
+  { name: 'BIS',      file: 'bis.png',      scale: 0.70 },
+  { name: 'Maersk',   file: 'maersk.png',   scale: 0.75 },
+  { name: 'ESA',      file: 'esa.png',      scale: 0.95 },
 ];
 
 const offices = [
@@ -94,7 +94,7 @@ function ClientLogo({ name, file, scale = 1 }: { name: string; file: string; sca
 export function WhoWeAreSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-12 lg:px-20 py-6 lg:py-8 justify-center gap-4">
+      <div className="relative z-10 h-full flex flex-col px-12 lg:px-20 pt-6 pb-20 lg:pt-6 lg:pb-24 justify-center gap-3">
 
         {/* Header */}
         <div className="shrink-0">
@@ -111,11 +111,11 @@ export function WhoWeAreSlide() {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[40px] sm:text-[60px] lg:text-[88px] xl:text-[104px] leading-[0.95] tracking-tight mt-2 uppercase"
+            className="text-[#fefefe] text-[34px] sm:text-[50px] lg:text-[72px] xl:text-[84px] leading-[0.95] tracking-tight mt-2 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
             Built by{' '}
-            <span className="text-orange-400">infrastructure operators.</span>
+            <span className="text-orange-400">infrastructure veterans.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -138,7 +138,7 @@ export function WhoWeAreSlide() {
         <div className="grid grid-cols-[1fr_1fr] gap-6 lg:gap-8 items-center shrink-0">
 
           {/* Left — founders stacked */}
-          <div className="flex flex-col gap-5 lg:gap-7">
+          <div className="flex flex-col gap-4 lg:gap-5">
             {founders.map((f, i) => (
               <motion.div
                 key={f.name}
@@ -215,9 +215,9 @@ export function WhoWeAreSlide() {
           >
             Cryptographic infrastructure trusted by
           </p>
-          <div className="flex items-center justify-between gap-6 lg:gap-8 flex-wrap">
+          <div className="grid grid-cols-7 gap-2 lg:gap-4 items-center">
             {clients.map((c) => (
-              <div key={c.name} className="flex items-center justify-center h-9 lg:h-10 min-w-[80px]">
+              <div key={c.name} className="flex items-center justify-center h-9 lg:h-10 overflow-hidden">
                 <ClientLogo name={c.name} file={c.file} scale={c.scale} />
               </div>
             ))}

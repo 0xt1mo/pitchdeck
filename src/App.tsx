@@ -62,30 +62,34 @@ import { TelecomUseCasesSlide } from './slides/TelecomUseCasesSlide';
 import { UseCasesAppendixSlide } from './slides/UseCasesAppendixSlide';
 import { WhyDifferentSlide } from './slides/WhyDifferentSlide';
 import { TelecomOpportunitySlide } from './slides/TelecomOpportunitySlide';
+import { TetherOpportunitySlide } from './slides/TetherOpportunitySlide';
+import { TetherWhyNowSlide } from './slides/TetherWhyNowSlide';
+import { TetherMechanismSlide } from './slides/TetherMechanismSlide';
 import { WhoWeAreSlide } from './slides/WhoWeAreSlide';
 import { ContactSlide } from './slides/ContactSlide';
+import { TetherContactSlide } from './slides/TetherContactSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
   // ── ACT I — The Moment ──
-  CoverSlide,                // 1. Cover — Unicity for Telecom
-  TelecomOpportunitySlide,   // 2. The Opportunity — Every subscriber gets a Personal AI Agent
-  ProblemSlide,              // 3. The Fourth Rebuild of Compute
-  MarketSlide,               // 4. Market Opportunity
+  CoverSlide,                // 1. Cover — The Agent OS for Tether AI
+  TetherOpportunitySlide,    // 2. The Opportunity — Every AI agent is about to get a wallet
+  TetherWhyNowSlide,         // 3. Why Now — The money is ready. The agents are not.
+  TetherMechanismSlide,      // 4. How It Works — QVAC runs locally. Astrid checks the action.
 
   // ── ACT II — The Platform ──
   AutonomyStackSlide,        // 5. Unicity: The Secure AI Compute Platform
   WhyDifferentSlide,         // 6. The first secure, affordable, provable platform
 
   // ── ACT III — The Story ──
-  ConciergeSlide,            // 7. Subscriber concierge — what subscribers see
-  OperatorPayoffSlide,       // 8. Every tap is revenue you own — the operator's view
-  TelecomUseCasesSlide,      // 9. New value-added services for enterprise + consumer
+  // ConciergeSlide,         // removed for Tether — telecom-specific subscriber concierge
+  // OperatorPayoffSlide,    // removed for Tether — telecom operator's view
+  // TelecomUseCasesSlide,   // removed for Tether — telecom use cases
 
   // ── ACT IV — The Proof ──
   DeploymentModelHtmlSlide,  // 10. Deployment inside operator infrastructure
   WhoWeAreSlide,             // 11. Team
-  ContactSlide,              // 12. Get Started — Own the agent layer / Book a live demo
+  TetherContactSlide,        // 9. Next Step — Build the first QVAC agent running on Astrid OS
   // ThankYouChatSlide,      // hidden — Thank You (rolled into ContactSlide closer)
 
   // ── APPENDIX — additional use case deep-dives ──

@@ -32,7 +32,7 @@ const cards: Card[] = [
         works at scale
       </>
     ),
-    desc: "Intelligent routing sends each task to the cheapest model that can handle it, and multi-tenancy packs many agents onto the same hardware. Together they bring the cost per agent low enough to offer one to every subscriber — and still hold a margin when you resell.",
+    desc: "Intelligent routing sends each task to the cheapest model that can handle it, and multi-tenancy packs many agents onto the same hardware. Together they bring the cost per agent low enough to run one per USDT holder — at unit economics that work at billion-user scale.",
     feature: (
       <>
         <span className="text-[#cfcfcf] font-medium">Intelligent routing + multi-tenancy</span>
@@ -98,7 +98,7 @@ export function WhyDifferentSlide() {
             style={{ fontFamily: sans }}
           >
             <span className="text-[#fefefe] font-medium">Unicity is the first secure, efficient, and provable agent compute platform</span>{' '}
-            — built for telecom from day one.
+            — built for agents that move real money.
           </motion.p>
         </div>
 

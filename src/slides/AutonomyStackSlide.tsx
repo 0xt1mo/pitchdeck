@@ -59,11 +59,10 @@ export function AutonomyStackSlide() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[40px] sm:text-[60px] lg:text-[88px] xl:text-[104px] leading-[0.95] tracking-tight uppercase mt-2"
+            className="text-[#fefefe] text-[28px] sm:text-[36px] lg:text-[52px] xl:text-[68px] 2xl:text-[80px] leading-[0.95] tracking-tight uppercase mt-2 whitespace-nowrap"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            UNICITY: THE SECURE AI{' '}
-            <span className="text-orange-400">COMPUTE PLATFORM</span>
+            UNICITY: THE SECURE AI <span className="text-orange-400">COMPUTE PLATFORM.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
