@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 
 const mono = "'Geist Mono', monospace";
 const display = "'Anton', sans-serif";
-const sans = '"Helvetica Neue", Helvetica, Arial, sans-serif';
 
 type Card = {
   num: string;
@@ -19,24 +18,19 @@ const cards: Card[] = [
     desc: "The agent runs inside your kernel, on your infrastructure. Every action is intercepted in-path — security can't be bypassed, and data never leaves your network.",
     feature: (
       <>
-        <span className="text-[#cfcfcf] font-medium">AOS enforcement kernel</span>
-        {' · in-path, unbypassable'}
+        <span className="text-[#cfcfcf] font-bold block">AOS enforcement kernel</span>
+        <span className="block mt-0.5">in-path, unbypassable</span>
       </>
     ),
   },
   {
     num: '02 · Efficiently',
-    benefit: (
-      <>
-        A price point that<br />
-        works at scale
-      </>
-    ),
+    benefit: 'A price point that works at scale',
     desc: "Intelligent routing sends each task to the cheapest model that can handle it, and multi-tenancy packs many agents onto the same hardware. Together they bring the cost per agent low enough to run one per USDT holder — at unit economics that work at billion-user scale.",
     feature: (
       <>
-        <span className="text-[#cfcfcf] font-medium">Intelligent routing + multi-tenancy</span>
-        {' · cost per agent that scales'}
+        <span className="text-[#cfcfcf] font-bold block">Intelligent routing + multi-tenancy</span>
+        <span className="block mt-0.5">cost per agent that scales</span>
       </>
     ),
     highlight: true,
@@ -47,8 +41,8 @@ const cards: Card[] = [
     desc: "Every agent action lands in a tamper-evident record. You don't infer what an agent did from scattered logs — you have one definitive, audit-ready answer for regulators and customers.",
     feature: (
       <>
-        <span className="text-[#cfcfcf] font-medium">Tamper-evident audit</span>
-        {' · one definitive record'}
+        <span className="text-[#cfcfcf] font-bold block">Tamper-evident audit</span>
+        <span className="block mt-0.5">one definitive record</span>
       </>
     ),
   },
@@ -58,17 +52,17 @@ export function WhyDifferentSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
 
-      {/* Subtle dotted background */}
+      {/* Background grid texture — match the rest of the content slides */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            'radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)',
-          backgroundSize: '34px 34px',
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
         }}
       />
 
-      <div className="relative z-10 h-full flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-8 lg:py-12 gap-5 lg:gap-7">
+      <div className="relative z-10 h-full flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-10 lg:py-14 gap-6 lg:gap-10">
 
         {/* Header */}
         <div className="shrink-0">
@@ -78,39 +72,39 @@ export function WhyDifferentSlide() {
             className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.4em] uppercase font-bold"
             style={{ fontFamily: mono }}
           >
-            Why we're different
+            Why we’re different
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[40px] sm:text-[60px] lg:text-[88px] xl:text-[104px] leading-[0.95] tracking-tight uppercase mt-2"
+            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[60px] xl:text-[72px] leading-[0.96] tracking-tight uppercase mt-3"
             style={{ fontFamily: display }}
           >
-            BUILT TO RUN AGENTS AT SCALE —<br />
-            <span className="text-orange-400">SECURELY, EFFICIENTLY, PROVABLY.</span>
+            <span className="block">BUILT TO RUN AGENTS AT SCALE —</span>
+            <span className="block text-orange-400">SECURELY, EFFICIENTLY, PROVABLY.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.25, duration: 0.5 }}
-            className="text-[#cfcfcf] text-sm sm:text-base lg:text-lg leading-relaxed mt-4 lg:mt-5 max-w-5xl"
-            style={{ fontFamily: sans }}
+            className="text-[#cfcfcf] text-xs sm:text-sm lg:text-base leading-[1.55] mt-4 lg:mt-5 max-w-5xl"
+            style={{ fontFamily: mono }}
           >
-            <span className="text-[#fefefe] font-medium">Unicity is the first secure, efficient, and provable agent compute platform</span>{' '}
+            <span className="text-[#fefefe] font-bold">Unicity is the first secure, efficient, and provable agent compute platform</span>{' '}
             — built for agents that move real money.
           </motion.p>
         </div>
 
         {/* 3 cards */}
-        <div className="grid grid-cols-3 gap-4 lg:gap-6 shrink-0">
+        <div className="grid grid-cols-3 gap-4 lg:gap-5 shrink-0">
           {cards.map((c, i) => (
             <motion.div
               key={c.num}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 + i * 0.1, duration: 0.5 }}
-              className="rounded-2xl px-5 lg:px-6 py-5 lg:py-7 flex flex-col"
+              className="rounded-2xl px-5 lg:px-6 py-5 lg:py-6 flex flex-col"
               style={{
                 background: c.highlight
                   ? 'rgba(255,106,0,0.06)'
@@ -121,7 +115,7 @@ export function WhyDifferentSlide() {
               }}
             >
               <p
-                className={`text-[10px] sm:text-xs lg:text-sm tracking-[0.24em] uppercase ${
+                className={`text-[10px] sm:text-xs lg:text-sm tracking-[0.28em] uppercase font-bold ${
                   c.highlight ? 'text-orange-400' : 'text-[#9a9a9a]'
                 }`}
                 style={{ fontFamily: mono }}
@@ -129,7 +123,7 @@ export function WhyDifferentSlide() {
                 {c.num}
               </p>
               <p
-                className={`text-xl sm:text-2xl lg:text-3xl xl:text-[2rem] font-bold leading-[1.04] mt-3 lg:mt-4 ${
+                className={`text-xl sm:text-2xl lg:text-[28px] xl:text-[32px] leading-[1.05] tracking-tight uppercase mt-3 lg:mt-4 ${
                   c.highlight ? 'text-orange-400' : 'text-[#fefefe]'
                 }`}
                 style={{ fontFamily: display }}
@@ -137,20 +131,20 @@ export function WhyDifferentSlide() {
                 {c.benefit}
               </p>
               <p
-                className="text-[#b4b4b4] text-xs sm:text-sm lg:text-base leading-relaxed mt-3 lg:mt-4"
-                style={{ fontFamily: sans }}
+                className="text-[#b4b4b4] text-[11px] sm:text-xs lg:text-sm leading-[1.55] mt-3 lg:mt-4 mb-5 lg:mb-7"
+                style={{ fontFamily: mono }}
               >
                 {c.desc}
               </p>
-              <p
-                className="text-[#8a8a8a] text-[10px] sm:text-xs lg:text-sm leading-snug mt-auto pt-3 lg:pt-4"
+              <div
+                className="text-[#8a8a8a] text-[10px] sm:text-xs lg:text-sm leading-snug mt-auto pt-4 lg:pt-5"
                 style={{
-                  fontFamily: sans,
-                  borderTop: '1px solid #1e1e1e',
+                  fontFamily: mono,
+                  borderTop: '1px solid #2a2a2a',
                 }}
               >
                 {c.feature}
-              </p>
+              </div>
             </motion.div>
           ))}
         </div>

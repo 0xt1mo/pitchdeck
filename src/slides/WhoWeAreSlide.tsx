@@ -127,10 +127,10 @@ export function WhoWeAreSlide() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-3 text-[#fefefe]/85 text-sm sm:text-base lg:text-lg leading-relaxed max-w-5xl"
-            style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }}
+            className="mt-3 text-[#fefefe]/85 text-xs sm:text-sm lg:text-base leading-[1.55] max-w-5xl"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            <span className="text-[#fefefe] font-semibold">Unicity Labs.</span> PhDs in machine learning and cryptography with fifteen years building nation-state-grade security infrastructure for <span className="text-orange-400 font-semibold">DARPA, NATO, Lockheed, Verizon, and Maersk</span>. Now applying that to the rails your agents transact on.
+            <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs in machine learning and cryptography with fifteen years building nation-state-grade security infrastructure for <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed, Verizon, and Maersk</span>. Now applying that to the rails your agents transact on.
           </motion.p>
         </div>
 

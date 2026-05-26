@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 
 const useCases = [
   {
@@ -42,68 +41,74 @@ const useCases = [
 
 export function AstridUseCasesSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
-      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
-        <video className="w-full h-full object-cover opacity-15" autoPlay muted loop playsInline src={splashVideoUrl} />
-        <div className="absolute inset-0 bg-[#060606]/50" />
-      </div>
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
 
-      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-10 sm:py-14 lg:py-16 justify-center gap-6">
+      {/* Background grid texture — match the rest of the deck */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
+
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-16 pt-8 pb-14 lg:pt-10 lg:pb-16 justify-center gap-6 lg:gap-8">
 
         {/* Header */}
         <div className="shrink-0">
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-            className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
+            className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.4em] uppercase font-bold"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             Appendix — Kernel
           </motion.p>
           <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
+            className="text-[#fefefe] text-[36px] sm:text-[54px] lg:text-[72px] xl:text-[84px] leading-[0.95] tracking-tight uppercase mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}>
             SWAP A CAPSULE.{' '}
             <span className="text-orange-400">CHANGE EVERYTHING.</span>
           </motion.h1>
-          <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-2" />
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-3 text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed max-w-4xl"
+            className="mt-4 lg:mt-5 text-[#fefefe]/80 text-xs sm:text-sm lg:text-base leading-[1.55]"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Because intelligence is no longer baked into the OS, anyone can change how AOS thinks without touching a single line of core code. <span className="text-orange-400">Swap a capsule, change the config, restart.</span> That's it.
+            Because intelligence is no longer baked into the OS, anyone can change how AOS thinks without touching a single line of core code.{' '}
+            <span className="text-orange-400 font-bold">Swap a capsule, change the config, restart.</span>{' '}
+            That's it.
           </motion.p>
         </div>
 
-        {/* Use case grid */}
-        <div className="grid grid-cols-3 grid-rows-2 gap-3 sm:gap-4 shrink-0">
+        {/* Use case grid — 3 cols × 2 rows */}
+        <div className="grid grid-cols-3 grid-rows-2 gap-3 sm:gap-4 lg:gap-5 shrink-0">
           {useCases.map((uc, i) => (
             <motion.div key={uc.title}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 + i * 0.08, duration: 0.4 }}
-              className="rounded-xl border p-4 sm:p-5 flex flex-col"
+              transition={{ delay: 0.4 + i * 0.07, duration: 0.4 }}
+              className="rounded-xl p-4 lg:p-5 flex flex-col"
               style={{
-                borderColor: `${uc.color}25`,
-                background: `${uc.color}06`,
+                borderLeft: `3px solid ${uc.color}`,
+                border: `1px solid ${uc.color}28`,
+                borderLeftWidth: '3px',
+                borderLeftColor: uc.color,
+                background: `linear-gradient(180deg, ${uc.color}08 0%, rgba(10,10,15,0.5) 100%)`,
               }}>
-              <h3 className="text-base sm:text-lg lg:text-xl mb-1"
-                style={{ fontFamily: "'Geist Mono', monospace", color: uc.color }}>
+              <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-[26px] leading-[1.05] tracking-tight uppercase mb-1.5"
+                style={{ fontFamily: "'Anton', sans-serif", color: uc.color }}>
                 {uc.title}
               </h3>
-              <p className="text-[#fefefe]/35 text-[9px] sm:text-[10px] mb-2"
+              <p className="text-[#fefefe]/40 text-[9px] sm:text-[10px] lg:text-[11px] mb-3 tracking-[0.2em] uppercase font-bold"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>
                 {uc.audience}
               </p>
-              <p className="text-[#fefefe]/60 text-[10px] sm:text-xs leading-relaxed flex-1"
+              <p className="text-[#fefefe]/70 text-[10px] sm:text-[11px] lg:text-xs leading-[1.55] flex-1"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>
                 {uc.desc}
               </p>
             </motion.div>
           ))}
         </div>
-
-        {/* Logo */}
 
       </div>
     </div>

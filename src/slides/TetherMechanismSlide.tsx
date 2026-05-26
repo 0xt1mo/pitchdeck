@@ -97,12 +97,12 @@ export function TetherMechanismSlide() {
         >
           <div className="shrink-0 w-[3px] lg:w-[4px] bg-orange-500 rounded-full" />
           <p
-            className="text-[#fefefe]/90 text-sm sm:text-base lg:text-lg xl:text-xl leading-snug"
-            style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }}
+            className="text-[#fefefe]/90 text-sm sm:text-base lg:text-lg leading-[1.5]"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            <span className="text-orange-400 font-semibold">Together:</span>{' '}
+            <span className="text-orange-400 font-bold">Together:</span>{' '}
             local AI agents that can use self-custodial wallets with{' '}
-            <span className="text-[#fefefe] font-semibold">limits, approvals, and proof</span>{' '}
+            <span className="text-[#fefefe] font-bold">limits, approvals, and proof</span>{' '}
             of what happened.
           </p>
         </motion.div>
@@ -137,12 +137,12 @@ function MechanismCard({ card, delay }: { card: Card; delay: number }) {
       </p>
 
       {/* Body */}
-      <div className="mt-5 lg:mt-6 flex flex-col gap-1.5">
+      <div className="mt-5 lg:mt-6 flex flex-col gap-1">
         {card.body.map((line, i) => (
           <p
             key={i}
-            className="text-[#fefefe]/90 text-sm sm:text-base lg:text-lg leading-snug"
-            style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }}
+            className="text-[#fefefe]/90 text-xs sm:text-sm lg:text-base leading-[1.5]"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
           >
             {line}
           </p>

@@ -68,6 +68,7 @@ import { TetherMechanismSlide } from './slides/TetherMechanismSlide';
 import { WhoWeAreSlide } from './slides/WhoWeAreSlide';
 import { ContactSlide } from './slides/ContactSlide';
 import { TetherContactSlide } from './slides/TetherContactSlide';
+import { TechnicalAppendixDividerSlide } from './slides/TechnicalAppendixDividerSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
@@ -93,11 +94,18 @@ const slides = [
   // ThankYouChatSlide,      // hidden — Thank You (rolled into ContactSlide closer)
 
   // ── APPENDIX — additional use case deep-dives ──
-  UseCasesAppendixSlide,   // 13. Appendix divider — Additional Use Cases
-  ShadowAISlide,           // 14. appendix — Agent Sprawl & Shadow AI
-  DLPSlide,                // 15. appendix — Data Loss Prevention
-  RunawayComputeSlide,     // 16. appendix — Cost Control
-  IntelligentRoutingSlide, // 17. appendix — Intelligent Routing
+  UseCasesAppendixSlide,   // 10. Appendix divider — Additional Use Cases
+  ShadowAISlide,           // 11. appendix — Agent Sprawl & Shadow AI
+  DLPSlide,                // 12. appendix — Data Loss Prevention
+  RunawayComputeSlide,     // 13. appendix — Cost Control
+  IntelligentRoutingSlide, // 14. appendix — Intelligent Routing
+
+  // ── TECHNICAL APPENDIX — under-the-hood architecture ──
+  TechnicalAppendixDividerSlide, // 15. Technical Appendix divider
+  AstridSlide,                   // 16. AOS: The Kernel
+  AstridComparisonSlide,         // 17. Why AOS — comparison table
+  AstridUseCasesSlide,           // 18. Swap a Capsule. Change Everything.
+  InterceptFabricSlide,          // 19. Security: Semantic Intercept Fabric
 
   // ── Hidden (other) ──
   // AstridSlide,            // AOS Kernel Architecture

@@ -101,8 +101,8 @@ async function exportPDF() {
       links.push({ pageIndex: slidePageIndex, ...a });
     }
 
-    const screenshotPath = path.join(tmpDir, `slide-${String(i).padStart(3, '0')}.png`);
-    await page.screenshot({ path: screenshotPath, type: 'png' });
+    const screenshotPath = path.join(tmpDir, `slide-${String(i).padStart(3, '0')}.jpg`);
+    await page.screenshot({ path: screenshotPath, type: 'jpeg', quality: 92 });
     screenshots.push(screenshotPath);
   }
 
@@ -112,7 +112,7 @@ async function exportPDF() {
 
   for (const imgPath of screenshots) {
     const imgBytes = fs.readFileSync(imgPath);
-    const img = await pdfDoc.embedPng(imgBytes);
+    const img = await pdfDoc.embedJpg(imgBytes);
 
     const pageWidth = VIEWPORT.width;
     const pageHeight = VIEWPORT.height;

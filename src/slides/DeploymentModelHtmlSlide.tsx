@@ -19,16 +19,6 @@ export function DeploymentModelHtmlSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
 
-      {/* Subtle dotted background */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            'radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)',
-          backgroundSize: '34px 34px',
-        }}
-      />
-
       <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-16 py-8 lg:py-10 gap-6 lg:gap-8">
 
         {/* Top spacer — small breathing room from the top edge */}
@@ -57,14 +47,11 @@ export function DeploymentModelHtmlSlide() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl xl:text-2xl leading-relaxed mt-3 lg:mt-5 max-w-5xl"
-            style={{
-              fontFamily:
-                '"Helvetica Neue", Helvetica, Arial, sans-serif',
-            }}
+            className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg xl:text-xl leading-[1.5] mt-3 lg:mt-5 max-w-5xl"
+            style={{ fontFamily: mono }}
           >
             QVAC on the user’s device. Astrid OS in your network.{' '}
-            <span className="text-[#fefefe] font-semibold">Agent activity and user data never leave your boundary.</span>
+            <span className="text-[#fefefe] font-bold">Agent activity and user data never leave your boundary.</span>
           </motion.p>
         </div>
 
