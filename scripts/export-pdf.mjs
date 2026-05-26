@@ -7,7 +7,7 @@ const URL = process.argv[2] || 'http://localhost:5174';
 const MAIN_SLIDES_ONLY = process.argv.includes('--main-only');
 const SKIP_TITLE = process.argv.includes('--skip-title');
 const OUTPUT = process.argv.find(a => a.endsWith('.pdf')) || 'pitchdeck.pdf';
-const VIEWPORT = { width: 1440, height: 900, deviceScaleFactor: 3 };
+const VIEWPORT = { width: 1440, height: 900, deviceScaleFactor: 2 };
 
 async function exportPDF() {
   console.log(`🚀 Launching browser...`);
@@ -52,7 +52,7 @@ async function exportPDF() {
     await new Promise(r => setTimeout(r, 3000));
 
     // Hide nav bar and slide counter, then inject logo
-    await page.evaluate(() => {
+    await page.evaluate((slideIdx) => {
       document.querySelectorAll('.fixed.bottom-0').forEach(el => {
         el.style.display = 'none';
       });
@@ -60,6 +60,14 @@ async function exportPDF() {
         el.textContent?.match(/^\d+ \/ \d+$/) && el.children.length === 0
       );
       if (counter) counter.style.display = 'none';
+
+      // On the cover slide, hide the bottom HUD bar (small "Unicity" text)
+      // — it competes with the big Unicity wordmark up top.
+      if (slideIdx === 0) {
+        document.querySelectorAll('div.absolute.bottom-6').forEach(el => {
+          el.style.display = 'none';
+        });
+      }
 
       // Inject Unicity logo bottom-right
       const existing = document.getElementById('pdf-logo');
@@ -73,7 +81,7 @@ async function exportPDF() {
         pointerEvents: 'none',
       });
       document.body.appendChild(logo);
-    });
+    }, i);
 
     // When --skip-title, boost video opacity on all slides for PDF
     if (SKIP_TITLE) {
@@ -81,6 +89,31 @@ async function exportPDF() {
         document.querySelectorAll('video').forEach(v => {
           v.style.opacity = '0.35';
         });
+      });
+    }
+
+    // ── PDF-only cover slide override (slide 0) ──
+    // Force "FOR TETHER AI." onto its own line and tighten the headline size.
+    // This change is applied ONLY during PDF capture; the live deck keeps its original headline.
+    if (i === 0) {
+      await page.evaluate(() => {
+        const h1 = document.querySelector('h1');
+        if (!h1) return;
+        const orangeSpan = h1.querySelector('span.text-orange-400');
+        if (orangeSpan) orangeSpan.style.display = 'block';
+        // Wrap the leading "THE AGENT OS" text node in a block span
+        const firstText = [...h1.childNodes].find(
+          (n) => n.nodeType === 3 && n.textContent.trim() === 'THE AGENT OS'
+        );
+        if (firstText) {
+          const wrap = document.createElement('span');
+          wrap.style.display = 'block';
+          wrap.textContent = 'THE AGENT OS';
+          h1.replaceChild(wrap, firstText);
+        }
+        // Slightly tighter headline size + leading for the 2-line layout
+        h1.style.fontSize = '128px';
+        h1.style.lineHeight = '0.96';
       });
     }
 
