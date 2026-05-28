@@ -19,16 +19,6 @@ export function DeploymentModelHtmlSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
 
-      {/* Subtle dotted background */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            'radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)',
-          backgroundSize: '34px 34px',
-        }}
-      />
-
       <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-16 py-8 lg:py-10 gap-6 lg:gap-8">
 
         {/* Top spacer — small breathing room from the top edge */}
@@ -51,20 +41,17 @@ export function DeploymentModelHtmlSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[48px] lg:text-[68px] xl:text-[80px] leading-[0.95] tracking-tight uppercase mt-2"
             style={{ fontFamily: display }}
           >
-            DEPLOYMENT INSIDE <span className="text-orange-400">OPERATOR INFRASTRUCTURE</span>
+            RUNS INSIDE <span className="text-orange-400">YOUR INFRASTRUCTURE.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl xl:text-2xl leading-relaxed mt-3 lg:mt-5 max-w-5xl"
-            style={{
-              fontFamily:
-                '"Helvetica Neue", Helvetica, Arial, sans-serif',
-            }}
+            className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg xl:text-xl leading-[1.5] mt-3 lg:mt-5 max-w-5xl"
+            style={{ fontFamily: mono }}
           >
-            Agents run on your kernel, on your infrastructure —{' '}
-            <span className="text-[#fefefe] font-semibold">your data and the customer moment never leave your network.</span>
+            QVAC on the user’s device. Astrid OS in your network.{' '}
+            <span className="text-[#fefefe] font-bold">Agent activity and user data never leave your boundary.</span>
           </motion.p>
         </div>
 
@@ -115,38 +102,43 @@ export function DeploymentModelHtmlSlide() {
               }}
             />
 
-            {/* ────── Internal boxes ────── */}
+            {/* ────── Internal boxes — evenly distributed ────── */}
+            {/* Layout math (enclosure 6%→90% = 84% inner height):
+                  row heights: 8.5 + 10 + 9.5 + 32 = 60%
+                  5 gaps: (84 − 60) / 5 = 4.8% each
+                  positions: 10.8 · 24.1 · 38.9 · 53.2 */}
 
             {/* Entry: Frameworks */}
-            <Box left="4%" top="9.5%" width="20.5%" height="8.5%" align="center"
+            <Box left="4%" top="10.8%" width="20.5%" height="8.5%" align="center"
               title="Frameworks" />
 
             {/* Entry: Internal LLM */}
-            <Box left="26.5%" top="9.5%" width="20.5%" height="8.5%" align="center"
+            <Box left="26.5%" top="10.8%" width="20.5%" height="8.5%" align="center"
               title="Internal LLM" />
 
             {/* Semantic Intercept Fabric (gate) */}
-            <GateBox left="4%" top="23%" width="43%" height="10%"
+            <GateBox left="4%" top="24.1%" width="43%" height="10%"
               title="Semantic Intercept Fabric"
               subtitle="One gate · single egress · allow / block / flag" />
 
             {/* Agent Registry (gate) */}
-            <GateBox left="4%" top="40%" width="43%" height="9.5%"
+            <GateBox left="4%" top="38.9%" width="43%" height="9.5%"
               title="Agent Registry"
               subtitle="Cryptographic identity · scoped, revocable" />
 
-            {/* AOS hosting environment */}
-            <AOSBox left="4%" top="57%" width="43%" height="28%" />
+            {/* AOS hosting environment — taller to contain its sub-boxes */}
+            <AOSBox left="4%" top="53.2%" width="43%" height="32%" />
 
-            {/* ────── External boxes ────── */}
+            {/* ────── External boxes — evenly distributed ────── */}
+            {/* 3 × 11% boxes, 4 equal gaps of 12.75% across the 84% enclosure */}
 
-            <Box left="74%" top="11.5%" width="23%" height="11%"
+            <Box left="74%" top="18.75%" width="23%" height="11%"
               title="External LLM" />
 
-            <Box left="74%" top="25%" width="23%" height="11%"
+            <Box left="74%" top="42.5%" width="23%" height="11%"
               title="Mobile App (hosted)" />
 
-            <Box left="74%" top="38.5%" width="23%" height="11%"
+            <Box left="74%" top="66.25%" width="23%" height="11%"
               title="External agent" />
 
             {/* ────── SVG OVERLAY — only the connecting arrows ────── */}
@@ -166,40 +158,48 @@ export function DeploymentModelHtmlSlide() {
                 </marker>
               </defs>
 
-              {/* Grey two-way arrows between left-column layers */}
+              {/* Grey two-way arrows between left-column layers.
+                  Y coordinates derived from updated even-distribution layout:
+                    Frameworks bottom = 19.3% × 760 = 147
+                    SIF top           = 24.1% × 760 = 183
+                    SIF bottom        = 34.1% × 760 = 259
+                    Registry top      = 38.9% × 760 = 296
+                    Registry bottom   = 48.4% × 760 = 368
+                    AOS top           = 53.2% × 760 = 404 */}
               <g stroke="rgba(254,254,254,0.45)" strokeWidth={2}>
                 {/* Frameworks ↔ SIF */}
-                <line x1={210} y1={138} x2={210} y2={174}
+                <line x1={210} y1={147} x2={210} y2={183}
                   markerStart="url(#dep-arr-grey)" markerEnd="url(#dep-arr-grey)" />
                 {/* Internal LLM ↔ SIF */}
-                <line x1={525} y1={138} x2={525} y2={174}
+                <line x1={525} y1={147} x2={525} y2={183}
                   markerStart="url(#dep-arr-grey)" markerEnd="url(#dep-arr-grey)" />
                 {/* SIF ↔ Registry */}
-                <line x1={367} y1={253} x2={367} y2={304}
+                <line x1={367} y1={259} x2={367} y2={296}
                   markerStart="url(#dep-arr-grey)" markerEnd="url(#dep-arr-grey)" />
                 {/* Registry ↔ AOS */}
-                <line x1={367} y1={378} x2={367} y2={430}
+                <line x1={367} y1={368} x2={367} y2={404}
                   markerStart="url(#dep-arr-grey)" markerEnd="url(#dep-arr-grey)" />
               </g>
 
               {/* Orange bracket routing from SIF out to External LLM, Mobile App,
                   and External agent. Bus sits at x=740 (outside the 50% left enclosure).
                   Y positions match each right-side box's vertical center on the
-                  760-unit canvas:
-                    External LLM        top:11.5% + h:11%/2 = 17%   → y=129
-                    Mobile App (hosted) top:25%   + h:11%/2 = 30.5% → y=232
-                    External agent      top:38.5% + h:11%/2 = 44%   → y=334  */}
+                  760-unit canvas (even-distribution layout):
+                    External LLM        top:18.75% + h:11%/2 = 24.25% → y=184
+                    Mobile App (hosted) top:42.5%  + h:11%/2 = 48%    → y=365
+                    External agent      top:66.25% + h:11%/2 = 71.75% → y=545
+                    SIF center y        = 29.1% × 760              → y=221 */}
               <g stroke="#FF6A00" strokeWidth={2} fill="none">
                 {/* SIF right edge → vertical bus */}
-                <line x1={665} y1={213} x2={740} y2={213} />
-                {/* Vertical bus (spans LLM Y → Agent Y) */}
-                <line x1={740} y1={129} x2={740} y2={334} />
+                <line x1={665} y1={221} x2={740} y2={221} />
+                {/* Vertical bus (spans External LLM Y → External agent Y) */}
+                <line x1={740} y1={184} x2={740} y2={545} />
                 {/* Bus → External LLM (top) — arrow tip lands at box left edge (74% = x=1036) */}
-                <line x1={740} y1={129} x2={1030} y2={129} markerEnd="url(#dep-arr-orange)" />
+                <line x1={740} y1={184} x2={1030} y2={184} markerEnd="url(#dep-arr-orange)" />
                 {/* Bus → Mobile App (hosted) (middle) */}
-                <line x1={740} y1={232} x2={1030} y2={232} markerEnd="url(#dep-arr-orange)" />
+                <line x1={740} y1={365} x2={1030} y2={365} markerEnd="url(#dep-arr-orange)" />
                 {/* Bus → External agent (bottom) */}
-                <line x1={740} y1={334} x2={1030} y2={334} markerEnd="url(#dep-arr-orange)" />
+                <line x1={740} y1={545} x2={1030} y2={545} markerEnd="url(#dep-arr-orange)" />
               </g>
             </svg>
 
@@ -274,13 +274,13 @@ function GateBox({
       }}
     >
       <p
-        className="text-orange-400 text-lg sm:text-xl lg:text-2xl uppercase leading-tight"
+        className="text-orange-400 text-sm sm:text-base lg:text-lg uppercase leading-tight"
         style={{ fontFamily: display, letterSpacing: '0.01em' }}
       >
         {title}
       </p>
       {subtitle && (
-        <p className="text-[#d59a6f] text-xs sm:text-sm lg:text-base mt-1 leading-snug">
+        <p className="text-[#d59a6f] text-[10px] sm:text-xs lg:text-sm mt-1 leading-snug">
           {subtitle}
         </p>
       )}
@@ -295,7 +295,7 @@ function AOSBox({
 }) {
   return (
     <div
-      className="absolute rounded-[11px] flex flex-col px-4 lg:px-6 py-3 lg:py-4"
+      className="absolute rounded-[11px] flex flex-col px-4 lg:px-6 py-3"
       style={{
         left, top, width, height,
         background: 'rgba(255,106,0,0.08)',
@@ -304,25 +304,25 @@ function AOSBox({
       }}
     >
       <p
-        className="text-orange-400 text-lg sm:text-xl lg:text-2xl uppercase leading-tight"
+        className="text-orange-400 text-sm sm:text-base lg:text-lg uppercase leading-tight"
         style={{ fontFamily: display, letterSpacing: '0.01em' }}
       >
         AOS · Hosting Environment
       </p>
-      <p className="text-[#d59a6f] text-xs sm:text-sm lg:text-base mt-1 leading-snug">
+      <p className="text-[#d59a6f] text-[10px] sm:text-xs lg:text-sm mt-1 leading-snug">
         Enforcement kernel · WASM sandbox · budgets
       </p>
-      <div className="flex gap-3 lg:gap-5 mt-3 lg:mt-4">
+      <div className="flex-1 flex gap-3 lg:gap-4 mt-3 min-h-0">
         {[0, 1, 2].map((i) => (
           <div
             key={i}
-            className="flex-1 rounded-[9px] flex items-center justify-center h-12 sm:h-14 lg:h-16"
+            className="flex-1 rounded-[9px] flex items-center justify-center min-h-0"
             style={{
               background: 'rgba(255,106,0,0.05)',
               border: '1px solid rgba(255,106,0,0.35)',
             }}
           >
-            <p className="text-[#e0b893] text-sm sm:text-base lg:text-lg font-medium whitespace-nowrap">
+            <p className="text-[#e0b893] text-[10px] sm:text-xs lg:text-sm font-medium whitespace-nowrap">
               Agent Sandbox
             </p>
           </div>

@@ -40,6 +40,7 @@ import { TeamSlide } from './slides/TeamSlide';
 import { RaiseSlide } from './slides/RaiseSlide';
 import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
 import { AppendixSlide } from './slides/AppendixSlide';
+import { TechnicalAppendixDividerSlide } from './slides/TechnicalAppendixDividerSlide';
 import { KernelDividerSlide, BlockchainDividerSlide, ProductDividerSlide } from './slides/SectionDividerSlide';
 import { AstridSlide } from './slides/AstridSlide';
 import { AstridComparisonSlide } from './slides/AstridComparisonSlide';
@@ -95,8 +96,14 @@ const slides = [
   RunawayComputeSlide,     // 16. appendix — Cost Control
   IntelligentRoutingSlide, // 17. appendix — Intelligent Routing
 
+  // ── TECHNICAL APPENDIX — Kernel & Security deep-dives ──
+  TechnicalAppendixDividerSlide, // 18. Technical Appendix divider
+  AstridSlide,             // 19. AOS: The Kernel
+  AstridComparisonSlide,   // 20. Why AOS — comparison table
+  AstridUseCasesSlide,     // 21. Swap a Capsule. Change Everything.
+  InterceptFabricSlide,    // 22. Semantic Intercept Fabric
+
   // ── Hidden (other) ──
-  // AstridSlide,            // AOS Kernel Architecture
   // CompetitionMinimalSlide, // Competition / Everyone else watches the agent
   // SemanticFirewallSlide,  // The Semantic Firewall
   // DeploymentModelSlide,   // earlier all-SVG version
@@ -136,9 +143,6 @@ const slides = [
   // ChainAgnosticSlide,      // hidden — Chain-Agnostic Operations
   // AgentsSmartContractsSlide, // hidden — Agents-as-Smart-Contracts
   // TokenSlide,              // hidden — Tokenomics
-  // AstridComparisonSlide,   // hidden — Why AOS
-  // AstridUseCasesSlide,     // hidden — Swap Capsule
-  // InterceptFabricSlide,    // hidden — Security Fabric
   // AgentSphereDashboardSlide, // hidden — original 4-pillar enterprise dashboard
   // RetrofitSlide,           // hidden — You Can't Retrofit an EVM into Autonomous AI
 ];

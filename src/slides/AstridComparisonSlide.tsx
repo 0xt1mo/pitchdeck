@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
 
 const columns = [
   'Single user local dev',
@@ -23,59 +22,67 @@ const astridRow = { approach: 'AOS', values: ['Yes', 'Yes', 'Yes', 'Yes', 'Yes',
 
 function CellValue({ value }: { value: string }) {
   if (value === 'Yes') return <span className="text-emerald-400 font-bold">{value}</span>;
-  if (value === 'No') return <span className="text-red-400/60">{value}</span>;
-  return <span className="text-yellow-400/70">{value}</span>;
+  if (value === 'No') return <span className="text-red-400/55">{value}</span>;
+  return <span className="text-yellow-400/75">{value}</span>;
 }
 
 export function AstridComparisonSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto">
-      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
-        <video className="w-full h-full object-cover opacity-15" autoPlay muted loop playsInline src={splashVideoUrl} />
-        <div className="absolute inset-0 bg-[#060606]/50" />
-      </div>
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
 
-      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-10 sm:py-14 lg:py-16 justify-center gap-6">
+      {/* Background grid texture — match the rest of the deck */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
+
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-16 pt-8 pb-14 lg:pt-10 lg:pb-16 justify-center gap-6 lg:gap-8">
 
         {/* Header */}
         <div className="shrink-0">
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-            className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
+            className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.4em] uppercase font-bold"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             Appendix — Kernel
           </motion.p>
           <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.95] tracking-tight mt-1"
+            className="text-[#fefefe] text-[36px] sm:text-[54px] lg:text-[72px] xl:text-[84px] leading-[0.95] tracking-tight uppercase mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            WHY{' '}<span className="text-orange-400">AOS</span>
+            WHY <span className="text-orange-400">AOS</span>
           </motion.h1>
-          <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-orange-500 to-transparent origin-left mt-2" />
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-3 text-[#fefefe]/70 text-xs sm:text-sm leading-relaxed max-w-4xl"
+            className="mt-4 lg:mt-5 text-[#fefefe]/80 text-xs sm:text-sm lg:text-base leading-[1.55]"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-
-            Existing approaches each solve part of the problem — system prompts control behaviour, containers isolate execution, policy engines enforce rules. But none deliver the full stack: <span className="text-orange-400">multi-user isolation, swappable components, audit, and sandboxing</span> in a single runtime.
-            Today's agent frameworks give you a customizable brain with <span className="text-orange-400">the keys to the house</span>. AOS gives you a pluggable brain in a padded room with a mail slot — the loop is <span className="text-orange-400">isolated from everything it controls</span>. It can't bypass the sandbox, skip the audit, or access tools it hasn't been granted. Swap it without touching anything else, because it communicates through a standard bus, not direct function calls.
+            Existing approaches each solve part of the problem — system prompts control behaviour, containers isolate execution, policy engines enforce rules. But none deliver the full stack:{' '}
+            <span className="text-orange-400 font-bold">multi-user isolation, swappable components, audit, and sandboxing</span>{' '}
+            in a single runtime. AOS gives you a pluggable brain in a padded room with a mail slot — the loop is{' '}
+            <span className="text-orange-400 font-bold">isolated from everything it controls</span>.
+            It can't bypass the sandbox, skip the audit, or access tools it hasn't been granted.
           </motion.p>
         </div>
 
-        {/* Table */}
-        <div className="flex items-center justify-center shrink-0">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="w-full max-w-4xl">
+        {/* Table — full width */}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="shrink-0 w-full">
+          <div
+            className="rounded-xl overflow-hidden"
+            style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+          >
             <table className="w-full border-collapse" style={{ fontFamily: "'Geist Mono', monospace" }}>
               <thead>
-                <tr className="border-b border-white/[0.08]">
-                  <th className="text-left py-3 pr-4 text-[#fefefe]/50 text-[9px] sm:text-[10px] uppercase tracking-wider w-[18%]">
+                <tr style={{ background: 'rgba(255,255,255,0.02)' }}>
+                  <th className="text-left py-4 pl-5 pr-4 text-[#fefefe]/55 text-[10px] sm:text-[11px] lg:text-xs uppercase tracking-[0.18em] font-bold w-[22%]">
                     Approach
                   </th>
                   {columns.map((col) => (
-                    <th key={col} className="text-center py-3 px-2 text-[#fefefe]/40 text-[8px] sm:text-[9px] uppercase tracking-wider">
+                    <th key={col} className="text-center py-4 px-2 text-[#fefefe]/45 text-[9px] sm:text-[10px] lg:text-[11px] uppercase tracking-[0.14em] font-bold">
                       {col}
                     </th>
                   ))}
@@ -87,39 +94,43 @@ export function AstridComparisonSlide() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.5 + i * 0.06 }}
-                    className="border-b border-white/[0.04]">
-                    <td className="py-3 pr-4 text-[#fefefe]/70 text-[10px] sm:text-xs">
+                    style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                    <td className="py-3.5 pl-5 pr-4 text-[#fefefe]/80 text-[11px] sm:text-xs lg:text-sm">
                       {row.approach}
                     </td>
                     {row.values.map((val, j) => (
-                      <td key={j} className="py-3 px-2 text-[10px] sm:text-xs text-center">
+                      <td key={j} className="py-3.5 px-2 text-[11px] sm:text-xs lg:text-sm text-center">
                         <CellValue value={val} />
                       </td>
                     ))}
                   </motion.tr>
                 ))}
 
-                {/* Astrid row — highlighted */}
+                {/* AOS row — strongly highlighted */}
                 <motion.tr
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.9, duration: 0.4 }}
-                  className="border-t-2 border-orange-500/30 bg-orange-500/[0.06]">
-                  <td className="py-3.5 pr-4 text-orange-400 text-xs sm:text-sm font-bold">
-                    {astridRow.approach}
+                  style={{
+                    background: 'linear-gradient(90deg, rgba(249,115,22,0.14) 0%, rgba(249,115,22,0.06) 100%)',
+                    borderTop: '2px solid rgba(249,115,22,0.55)',
+                  }}>
+                  <td
+                    className="py-4 pl-5 pr-4 text-orange-400 text-sm sm:text-base lg:text-lg font-bold tracking-[0.1em]"
+                    style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.06em' }}
+                  >
+                    AOS
                   </td>
                   {astridRow.values.map((val, j) => (
-                    <td key={j} className="py-3.5 px-2 text-center">
-                      <span className="text-orange-400 text-xs sm:text-sm font-bold">{val}</span>
+                    <td key={j} className="py-4 px-2 text-center">
+                      <span className="text-orange-400 text-xs sm:text-sm lg:text-base font-bold">{val}</span>
                     </td>
                   ))}
                 </motion.tr>
               </tbody>
             </table>
-          </motion.div>
-        </div>
-
-        {/* Logo */}
+          </div>
+        </motion.div>
 
       </div>
     </div>
