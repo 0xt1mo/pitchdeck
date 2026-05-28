@@ -26,14 +26,14 @@ const founders = [
     ],
   },
   {
-    name: 'Eric Leandri',
-    role: 'Chairman',
-    photo: '/team/eric.png',
-    linkedin: 'https://www.linkedin.com/in/ericleandri/',
+    name: 'Alan Radi',
+    role: 'Commercial',
+    photo: '/team/Alan Portrait.jpg',
+    photoStyle: { transform: 'translateY(-8%) scale(1.3)', transformOrigin: '50% 50%' },
+    linkedin: 'https://www.linkedin.com/in/alanradi/',
     lines: [
-      'AI Visionary',
-      'CEO, Aleria (UAE Sovereign AI)',
-      '1,000+ customers · 250K agents live',
+      '12 years implementing CX AI for Global B2C brands',
+      'Apple · Google · Verizon · Pepsi · DHL',
     ],
   },
 ];
