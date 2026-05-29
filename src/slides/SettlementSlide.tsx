@@ -1,119 +1,66 @@
 import { motion } from 'framer-motion';
 
-type ArrowStep = { num: number; label: string; from: number; to: number; highlight?: boolean };
-type SelfStep = { num: number; label: string; at: number; highlight?: boolean };
-type Step = ArrowStep | SelfStep;
+const mono = "'Geist Mono', monospace";
+const anton = "'Anton', sans-serif";
+const ORANGE = '#f97316';
+const GREY = 'rgba(254,254,254,0.55)';
+const GREY_DIM = 'rgba(254,254,254,0.4)';
 
-function isSelf(s: Step): s is SelfStep {
-  return 'at' in s;
-}
-
-const PARTICIPANTS = ['Buyer', 'Oracle', 'Seller'];
-const STEPS: Step[] = [
-  { num: 1, from: 0, to: 2, label: 'token + transaction' },
-  { num: 2, from: 2, to: 1, label: 'state transition request' },
-  { num: 3, from: 1, to: 2, label: 'exclusion proof — immediate', highlight: true },
-  { num: 4, at: 2, label: 'release', highlight: true },
-  { num: 5, from: 1, to: 2, label: 'inclusion proof — finality (~1s)' },
-];
-
-const ROW_H = 40;
-const HEAD_H = 36;
-const VB_W = 740;
-
-function FlowDiagram() {
-  const n = PARTICIPANTS.length;
-  const gap = (VB_W - 100) / (n - 1);
-  const offset = 50;
-  const cx = (i: number) => offset + i * gap;
-  const vbH = HEAD_H + STEPS.length * ROW_H + 24;
-
+function SpatialFlowDiagram() {
   return (
-    <svg viewBox={`0 0 ${VB_W} ${vbH}`} className="w-full h-auto">
+    <svg viewBox="0 0 1000 470" className="w-full h-auto max-h-[54vh]">
       <defs>
-        <marker id="ar-set" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-          <path d="M0,0.5 L7,3 L0,5.5" fill="rgba(254,254,254,0.5)" />
+        <marker id="setArO" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M2 1L8 5L2 9" fill="none" stroke={ORANGE} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
         </marker>
-        <marker id="al-set" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto-start-reverse">
-          <path d="M0,0.5 L7,3 L0,5.5" fill="rgba(254,254,254,0.5)" />
-        </marker>
-        <marker id="ar-set-h" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-          <path d="M0,0.5 L7,3 L0,5.5" fill="#f97316" />
-        </marker>
-        <marker id="al-set-h" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto-start-reverse">
-          <path d="M0,0.5 L7,3 L0,5.5" fill="#f97316" />
-        </marker>
+        <radialGradient id="setGlow" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stopColor="rgba(249,115,22,0.22)" />
+          <stop offset="100%" stopColor="rgba(249,115,22,0)" />
+        </radialGradient>
       </defs>
 
-      {/* Participant headers + lifelines */}
-      {PARTICIPANTS.map((p, i) => {
-        const x = cx(i);
-        return (
-          <g key={p}>
-            <text x={x} y={20} textAnchor="middle" fill="#fefefe" fontSize="11"
-              fontFamily="Geist Mono, monospace" style={{ opacity: 0.85 }}>{p}</text>
-            <line x1={x} y1={32} x2={x} y2={vbH - 8}
-              stroke="rgba(255,255,255,0.18)" strokeDasharray="4 3" />
-          </g>
-        );
-      })}
+      {/* glow behind recipient */}
+      <circle cx="810" cy="350" r="165" fill="url(#setGlow)" />
 
-      {/* Steps */}
-      {STEPS.map((step, idx) => {
-        const y = HEAD_H + idx * ROW_H;
-        const accent = step.highlight ? '#f97316' : 'rgba(254,254,254,0.55)';
-        const labelColor = step.highlight ? '#f97316' : 'rgba(254,254,254,0.7)';
+      {/* ===== UNIQUENESS ORACLE — top center ===== */}
+      <rect x="280" y="20" width="440" height="96" rx="16" fill="#0e0e12" stroke="rgba(254,254,254,0.22)" strokeWidth="1.3" />
+      <text x="500" y="54" textAnchor="middle" fontFamily={mono} fontSize="16" fill={GREY} letterSpacing="3">UNIQUENESS ORACLE</text>
+      <text x="500" y="86" textAnchor="middle" fontFamily={mono} fontSize="19" fill="#fefefe">certifies that no other spend exists</text>
 
-        if (isSelf(step)) {
-          const x = cx(step.at);
-          return (
-            <g key={step.num}>
-              {/* Number badge */}
-              <circle cx={offset - 30} cy={y + 18} r={10}
-                fill={step.highlight ? '#f97316' : 'rgba(255,255,255,0.05)'}
-                stroke={step.highlight ? '#f97316' : 'rgba(254,254,254,0.4)'} strokeWidth={0.8} />
-              <text x={offset - 30} y={y + 22} textAnchor="middle"
-                fill={step.highlight ? '#fff' : 'rgba(254,254,254,0.7)'} fontSize="9"
-                fontFamily="Geist Mono, monospace" fontWeight="bold">{step.num}</text>
-              {/* Self-action box — slim button to the left of seller lifeline */}
-              <rect x={x - 84} y={y + 8} width={70} height={22} rx={4}
-                fill={step.highlight ? 'rgba(249,115,22,0.18)' : 'rgba(255,255,255,0.06)'}
-                stroke={step.highlight ? '#f97316' : 'rgba(254,254,254,0.3)'} strokeWidth={1} />
-              <text x={x - 49} y={y + 23} textAnchor="middle" fill={step.highlight ? '#fff' : 'rgba(254,254,254,0.85)'}
-                fontSize="10" fontFamily="Geist Mono, monospace" fontWeight="bold">{step.label}</text>
-            </g>
-          );
-        }
+      {/* ===== SENDER — bottom left ===== */}
+      <rect x="55" y="285" width="290" height="130" rx="16" fill="#0e0e12" stroke="rgba(254,254,254,0.22)" strokeWidth="1.3" />
+      <text x="200" y="323" textAnchor="middle" fontFamily={mono} fontSize="16" fill={GREY} letterSpacing="3">SENDER</text>
+      <text x="200" y="361" textAnchor="middle" fontFamily={mono} fontSize="23" fill="#fefefe">holds the token</text>
+      <text x="200" y="393" textAnchor="middle" fontFamily={mono} fontSize="15" fill={GREY}>signs the transaction</text>
 
-        const x1 = cx(step.from);
-        const x2 = cx(step.to);
-        const right = x2 > x1;
-        const mid = (x1 + x2) / 2;
-        const arrowY = y + 22;
+      {/* ===== RECIPIENT — bottom right (highlight) ===== */}
+      <rect x="675" y="285" width="270" height="130" rx="16" fill="rgba(249,115,22,0.08)" stroke={ORANGE} strokeWidth="2" />
+      <text x="810" y="323" textAnchor="middle" fontFamily={mono} fontSize="16" fill="rgba(251,146,60,0.9)" letterSpacing="3">RECIPIENT</text>
+      <text x="810" y="361" textAnchor="middle" fontFamily={mono} fontSize="23" fill={ORANGE} fontWeight="bold">verifies locally</text>
+      <text x="810" y="393" textAnchor="middle" fontFamily={mono} fontSize="15" fill={GREY}>accepts the token</text>
 
-        return (
-          <g key={step.num}>
-            {/* Number badge */}
-            <circle cx={offset - 30} cy={arrowY} r={10}
-              fill={step.highlight ? '#f97316' : 'rgba(255,255,255,0.05)'}
-              stroke={step.highlight ? '#f97316' : 'rgba(254,254,254,0.4)'} strokeWidth={0.8} />
-            <text x={offset - 30} y={arrowY + 4} textAnchor="middle"
-              fill={step.highlight ? '#fff' : 'rgba(254,254,254,0.7)'} fontSize="9"
-              fontFamily="Geist Mono, monospace" fontWeight="bold">{step.num}</text>
+      {/* ===== diagonal channel: claim ↑ (left) / proof ↓ (right) ===== */}
+      <line x1="315" y1="283" x2="445" y2="120" stroke={ORANGE} strokeWidth="2" markerEnd="url(#setArO)" />
+      <line x1="500" y1="120" x2="370" y2="283" stroke={ORANGE} strokeWidth="2" markerEnd="url(#setArO)" />
+      <text x="330" y="205" textAnchor="end" fontFamily={mono} fontSize="17" fill={GREY}>claim uniqueness</text>
+      <text x="490" y="205" textAnchor="start" fontFamily={mono} fontSize="17" fill={GREY}>uniqueness proof</text>
 
-            {/* Label */}
-            <text x={mid} y={y + 12} textAnchor="middle" fill={labelColor}
-              fontSize="9.5" fontFamily="Geist Mono, monospace">{step.label}</text>
-            {/* Arrow */}
-            <line
-              x1={right ? x1 + 5 : x1 - 5} y1={arrowY}
-              x2={right ? x2 - 5 : x2 + 5} y2={arrowY}
-              stroke={accent} strokeWidth={1.2}
-              markerEnd={`url(#${right ? (step.highlight ? 'ar-set-h' : 'ar-set') : (step.highlight ? 'al-set-h' : 'al-set')})`}
-            />
-          </g>
-        );
-      })}
+      {/* ===== horizontal send: token + tx + proof ===== */}
+      <line x1="345" y1="350" x2="675" y2="350" stroke={ORANGE} strokeWidth="2.2" markerEnd="url(#setArO)" />
+      <text x="510" y="330" textAnchor="middle" fontFamily={mono} fontSize="17" fill={ORANGE}>token + transaction + proof</text>
+      <text x="500" y="450" textAnchor="middle" fontFamily={mono} fontSize="14" fill={GREY_DIM}>any transport — email, NOSTR, QR, direct</text>
+
+      {/* ===== step badges ===== */}
+      {[
+        { n: 1, x: 380, y: 201 },
+        { n: 2, x: 435, y: 201 },
+        { n: 3, x: 510, y: 350 },
+      ].map(({ n, x, y }) => (
+        <g key={n}>
+          <circle cx={x} cy={y} r="15" fill={ORANGE} />
+          <text x={x} y={y + 1} textAnchor="middle" dominantBaseline="central" fontFamily={mono} fontSize="16" fontWeight="bold" fill="#0a0a0a">{n}</text>
+        </g>
+      ))}
     </svg>
   );
 }
@@ -121,44 +68,52 @@ function FlowDiagram() {
 export function SettlementSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-6 sm:px-10 lg:px-16 py-6 sm:py-8 lg:py-10 justify-center gap-4">
+      <div
+        className="fixed inset-0 z-[1] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 60% 50% at 30% 35%, rgba(249,115,22,0.07) 0%, transparent 70%)' }}
+      />
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-7 sm:py-9 lg:py-10 justify-center gap-5 lg:gap-6">
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-            className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Appendix — Blockchain
+          <motion.p
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}
+            className="text-[#fefefe]/45 text-[11px] lg:text-xs tracking-[0.3em] uppercase"
+            style={{ fontFamily: mono }}
+          >
+            Tradeoff · 01
           </motion.p>
-          <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[26px] sm:text-[36px] lg:text-[44px] leading-[1.05] tracking-tight mt-1"
-            style={{ fontFamily: "'Anton', sans-serif" }}>
-            SETTLEMENT AT <span className="text-orange-400">MACHINE SPEED</span>
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
+            className="text-orange-400 text-[44px] sm:text-[68px] lg:text-[84px] leading-[0.9] tracking-tight"
+            style={{ fontFamily: anton }}
+          >
+            SPEED
           </motion.h1>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="mt-2 text-[#fefefe]/85 text-xs sm:text-sm lg:text-base max-w-5xl leading-relaxed"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Tokens transfer directly between parties. The recipient obtains an immediate exclusion proof from the Oracle and releases on receipt. Inclusion proof confirms finality ~1 second later. No mempool, no consensus wait, no settlement delay.
+          <motion.p
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.6 }}
+            className="text-[#fefefe] text-lg sm:text-2xl lg:text-3xl leading-snug mt-2"
+            style={{ fontFamily: anton }}
+          >
+            FAST SETTLEMENT, NO BOTTLENECKS
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-[#fefefe]/80 text-sm sm:text-base lg:text-xl leading-relaxed mt-3 max-w-5xl"
+            style={{ fontFamily: mono }}
+          >
+            Transactions move directly between parties. <span className="text-orange-400">No shared validator set</span>, so every spend runs independently of every other.
           </motion.p>
         </div>
 
         {/* Flow diagram */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="shrink-0 rounded-xl p-4 lg:p-5"
-          style={{
-            border: '1px solid rgba(249,115,22,0.5)',
-            background: '#0a0a0f',
-          }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="shrink-0 flex items-center justify-center w-full max-w-6xl mx-auto"
         >
-          <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.3em] uppercase font-bold mb-1"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Default Transaction Flow
-          </p>
-          <FlowDiagram />
+          <SpatialFlowDiagram />
         </motion.div>
 
       </div>

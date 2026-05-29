@@ -4,6 +4,27 @@ import { IntroSlide } from './slides/IntroSlide';
 import { CoverSlide } from './slides/CoverSlide';
 import { PromiseSlide } from './slides/PromiseSlide';
 import { SharedLedgerSlide } from './slides/SharedLedgerSlide';
+import { AtomOfFinanceSlide } from './slides/AtomOfFinanceSlide';
+import { DesignCriteriaSlide } from './slides/DesignCriteriaSlide';
+import { StateOfArtSlide } from './slides/StateOfArtSlide';
+import { BearerObjectSlide } from './slides/BearerObjectSlide';
+import { EdgeModelSlide } from './slides/EdgeModelSlide';
+import { ProofPapersSlide } from './slides/ProofPapersSlide';
+import { NoBridgeRiskSlide } from './slides/NoBridgeRiskSlide';
+import { MonolithSlide } from './slides/MonolithSlide';
+import { ChainOneThingSlide } from './slides/ChainOneThingSlide';
+import { TradeOffSlide } from './slides/TradeOffSlide';
+import { CoreOperationSlide } from './slides/CoreOperationSlide';
+import { DeFiDividerSlide } from './slides/DeFiDividerSlide';
+import { AtomicityChallengeSlide } from './slides/AtomicityChallengeSlide';
+import { IntroducingUnicityDivider, TradeoffsDivider, AtomicityProblemDivider, MathWorthItDivider, NewFinancialSystemDivider, EmissionDivider } from './slides/SectionDividers';
+import { ProgrammableTokensSlide } from './slides/ProgrammableTokensSlide';
+import { SpeedSlide, ThroughputSlide, PrivacySlide } from './slides/AxisTradeoffSlides';
+import { NoTransactionsSlide } from './slides/NoTransactionsSlide';
+import { GenesisMintSlide } from './slides/GenesisMintSlide';
+import { NativeAssetMintSlide } from './slides/NativeAssetMintSlide';
+import { MintFromChainsSlide } from './slides/MintFromChainsSlide';
+import { AtomicSwapsSlide } from './slides/AtomicSwapsSlide';
 import { AgentsSlide } from './slides/AgentsSlide';
 import { EdgePayoffSlide } from './slides/EdgePayoffSlide';
 import { UnbundledPayoffSlide } from './slides/UnbundledPayoffSlide';
@@ -43,60 +64,77 @@ import { ZKOracleSlide } from './slides/ZKOracleSlide';
 import { PermissionlessSlide } from './slides/PermissionlessSlide';
 import { SettlementSlide } from './slides/SettlementSlide';
 import { AgentsSmartContractsSlide } from './slides/AgentsSmartContractsSlide';
+import { ClobComparisonSlide } from './slides/ClobComparisonSlide';
+import { AgenticDeFiSlide } from './slides/AgenticDeFiSlide';
+import { AutonomousCorpsSlide } from './slides/AutonomousCorpsSlide';
 import { ChainAgnosticSlide } from './slides/ChainAgnosticSlide';
 import { DemoSlide } from './slides/DemoSlide';
 import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  CoverSlide,              // 1. Cover — Unicity logo + Seed Round Extension
-  IntroSlide,              // 2. Thesis — Autonomous AI needs an internet built for machines
-  // ── Architecture arc (3–8) ──
-  ProblemSlide,            // 3. What Autonomy Demands — The Fourth Rebuild
-  // SolutionIntroSlide,   // hidden — Unicity OS: A Secure OS for AI Agents
-  AutonomyStackSlide,      // 4. The Protocol Stack for the Agentic Internet
-  // CompleteAutonomyStackSlide, // hidden — The First Complete Stack Built For Machines
-  TeamSlide,               // 6. Founders
-  // ArchitectureStackSlide, // hidden — The Secure OS for Agents
-  AgentsSlide,             // 7. The Unicity L1 — Why a Purpose Built Chain
-  EdgePayoffSlide,         // 7. The Unlock — What This Unlocks
-  CompetitiveLandscapeSlide, // 8. Competitive Landscape — OS, not chain. Private state.
-  // ── Commercial arc (9–14) ──
-  // WedgeSlide,           // hidden — Wedge content folded into UseCasesSlide title
-  UseCasesSlide,           // 9. Land on Security. Revenue Today.
-  MarketSlide,             // 11. Market Opportunity — trillion-dollar rebuild
-  GoToMarketSlide,         // 12. Beachhead: The UAE
-  // SecurityNetworkSlide, // hidden — Zero Trust Enterprise Network
-  ProtocolSlide,           // 13. x402 Live Demo
-  // AgentSprawlSlide,     // hidden — Case Study: Agent Sprawl
-  ThePathSlide,            // 14. Current Status and How We Win
-  RaiseSlide,              // 15. The Ask — Seed Round Extension
-  // AgentSphereDashboardSlide moved to appendix (was split into AgentSprawlSlide + WedgeSlide for main deck)
-  // UnbundledPayoffSlide, // hidden — merged Unbundling + Unlocks attempt
-  // AutonomyStackSlide,   // hidden — Protocol Stack for the Agentic Internet
-  // ProjectionsSlide,     // The World If We Win — hidden
-  // BusinessModelSlide,   // hidden — Business Model — Four Surfaces. One Platform.
-  ResourcesSlide,          // 16. Resources
-  ThankYouChatSlide,       // 17. Thank You
-  // ── 17+ Appendix — technical deep-dives ──
-  AppendixDividerSlide,    // Appendix · Technology — section break
-  CompetitionSlide,        // Competition — Why It Is Different (architectural arc)
-  // SharedLedgerSlide,    // hidden — Every blockchain from Bitcoin to MegaETH is the same 17-year-old design
-  // IntellectualArcSlide, // hidden — Unbundling what the network has to do
-  // PromiseSlide,         // hidden — Satoshi: Peer-to-Peer Electronic Cash
-  BlockchainArchSlide,     // Protocol Stack
-  ZKOracleSlide,           // ZK Oracle
-  PermissionlessSlide,     // Hierarchical Scaling
-  SettlementSlide,         // Settlement
-  ChainAgnosticSlide,      // Chain-Agnostic Operations
-  AgentsSmartContractsSlide, // Agents-as-Smart-Contracts
-  TokenSlide,              // Tokenomics — end of blockchain section
-  AstridSlide,             // AOS kernel
-  AstridComparisonSlide,   // Why AOS
-  AstridUseCasesSlide,     // Swap Capsule
-  InterceptFabricSlide,    // Security Fabric
-  // AgentSphereDashboardSlide, // hidden — original 4-pillar enterprise dashboard
-  // RetrofitSlide,        // hidden — You Can't Retrofit an EVM into Autonomous AI
+  // ── Problem ──
+  CoverSlide,                // 1. Cover — Rebuilding the Foundations of Decentralized Finance
+  PromiseSlide,              // 2. Satoshi: P2P Electronic Cash — every chain since strayed to ledgers
+  SharedLedgerSlide,         // 3. The Industry — every blockchain is the same 17-year-old shared-ledger design
+  StateOfArtSlide,           // 4. The Trilemma — Unicity claims the center
+  // ── Introducing Unicity ──
+  IntroducingUnicityDivider, // 5. Divider — Introducing Unicity
+  BearerObjectSlide,         // 6. Tokens as Bearer Objects
+  ProgrammableTokensSlide,   // 7. Tokens are programmable (predicates)
+  AgentsSlide,               // 8. Unicity L1 — a chain that only generates proofs (architecture)
+  MonolithSlide,             // 9. Historically, blockchains did four things. Unicity does one.
+  ChainOneThingSlide,        // 10. The edge does the rest — unlimited parallelism
+  CompetitionSlide,          // 11. The Inevitable Endpoint for Blockchain
+  ProofPapersSlide,          // 12. Here's the Math — three formal papers
+  NoTransactionsSlide,       // 13. A blockchain with no transactions — 3 layers + core idea
+  // ── Tradeoffs ──
+  TradeoffsDivider,          // 13. Divider — What are the Tradeoffs
+  SettlementSlide,           // 14. Speed — Settlement at machine speed (transaction sequence diagram)
+  ThroughputSlide,           // 15. Throughput / Friction
+  PrivacySlide,              // 16. Privacy
+  NoBridgeRiskSlide,         // 17. Trustless Bridges: Local Verifiability — Unicity SOL
+  // ── Building DeFi ──
+  AtomicityProblemDivider,   // 18. One Hard Problem: Atomicity (the hard problem from the tradeoffs divider)
+  CoreOperationSlide,        // 19. The Core Operation of DeFi — the atomic swap
+  AtomicSwapsSlide,          // 20. The Unicity Trustless Atomic Swap — HTLC vs predicate swap
+  DeFiDividerSlide,          // 21. Divider — What can you build? (composable protocols, leads into examples)
+  // AgentsSmartContractsSlide, // (hidden — Agents: the new smart contracts; re-add later)
+  ClobComparisonSlide,       // 22. CEX speed · DEX custody · dark-pool privacy (Unicity CLOB)
+  AgenticDeFiSlide,          // 24. Agentic DeFi — an economy of machines (agent mesh)
+  // AutonomousCorpsSlide,   // (hidden — Decentralized Autonomous Corporations / autonomous reinsurance; re-add later)
+  MathWorthItDivider,        // 25. The math is harder. But it's worth it.
+  NewFinancialSystemDivider, // 26. What you get: massively parallel · private · decentralized
+  // ── Emission ──
+  EmissionDivider,           // 22. Divider — Emission (tokenomics)
+  GenesisMintSlide,          // 23. Genesis: minting a token off-chain (3 facts → genesis token)
+  NativeAssetMintSlide,      // 24. Anyone can mint. Trivially. (native non-currency assets)
+  MintFromChainsSlide,       // 25. Minting from other chains (Unicity SOL — cross-chain, no bridge)
+  // ── Close ──
+  ResourcesSlide,            // 23. Resources
+  ThankYouChatSlide,         // 24. Thank You
+  // ── Hidden ──
+  // TradeOffSlide,         // The Trade — give up / get (replaced by Speed/Throughput/Privacy)
+  // AtomicityChallengeSlide, // merged into CoreOperationSlide header
+  // EdgeModelSlide, AtomOfFinanceSlide, DesignCriteriaSlide, EdgePayoffSlide, ProtocolSlide,
+  // IntroSlide, ProblemSlide, AutonomyStackSlide, TeamSlide, CompetitiveLandscapeSlide,
+  // UseCasesSlide, MarketSlide, GoToMarketSlide, ThePathSlide, RaiseSlide — older slides
+  // ── Appendix — technical deep-dives (all hidden) ──
+  // AppendixDividerSlide,    // Appendix · Technology — section break
+  // IntellectualArcSlide,    // Unbundling what the network has to do
+  // BlockchainArchSlide,     // Protocol Stack
+  // ZKOracleSlide,           // ZK Oracle
+  // PermissionlessSlide,     // Hierarchical Scaling
+  // SettlementSlide,         // Settlement
+  // ChainAgnosticSlide,      // Chain-Agnostic Operations
+  // AgentsSmartContractsSlide, // Agents-as-Smart-Contracts
+  // TokenSlide,              // Tokenomics
+  // AstridSlide,             // AOS kernel
+  // AstridComparisonSlide,   // Why AOS
+  // AstridUseCasesSlide,     // Swap Capsule
+  // InterceptFabricSlide,    // Security Fabric
+  // AgentSphereDashboardSlide, // original 4-pillar enterprise dashboard
+  // RetrofitSlide,           // You Can't Retrofit an EVM into Autonomous AI
 ];
 
 export default function App() {

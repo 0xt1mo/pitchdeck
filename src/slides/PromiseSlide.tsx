@@ -58,12 +58,16 @@ export function PromiseSlide() {
           style={{ borderTop: '1px solid rgba(249,115,22,0.3)' }}
         >
           <p
-            className="text-[#fefefe]/90 text-base sm:text-lg lg:text-2xl leading-snug max-w-5xl"
+            className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg leading-relaxed max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Agents need what Satoshi promised — <span className="text-orange-400">P2P value transfer</span>.
-            <br />
-            Directly, privately, instantly. Like cash.
+            Satoshi proposed peer-to-peer electronic cash. The industry built ledgers with <span className="text-orange-400">decentralization theatre</span> and got <span className="text-orange-400">co-opted by Wall Street</span>.
+          </p>
+          <p
+            className="text-[#fefefe]/90 text-sm sm:text-base lg:text-lg leading-relaxed max-w-5xl"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
+            Unicity delivers on the original spec: <span className="text-orange-400">no ledger, no validators, no referees</span>. Just bearer cash, peer-to-peer. The foundation on which we're <span className="text-orange-400">rebuilding DeFi</span>.
           </p>
         </motion.div>
 

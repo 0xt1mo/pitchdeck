@@ -39,29 +39,9 @@ export function SharedLedgerSlide() {
             className="text-[#fefefe]/85 text-lg sm:text-xl lg:text-2xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            A globally shared asset ledger. Competition for blockspace. Gas fees.
-          </p>
-          <p
-            className="text-[#fefefe]/65 text-base sm:text-lg lg:text-xl italic leading-relaxed mt-3 pb-5"
-            style={{
-              fontFamily: "'Geist Mono', monospace",
-              borderBottom: '1px solid rgba(249,115,22,0.25)',
-            }}
-          >
-            The wrong design for billions of agents transacting at machine speed.
+            A shared ledger. A set of validators verifying <span className="text-orange-400 font-semibold">transactions</span>.
           </p>
         </motion.div>
-
-        {/* Punch */}
-        <motion.h2
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="text-orange-400 text-[24px] sm:text-[32px] lg:text-[42px] leading-[0.95] tracking-tight shrink-0"
-          style={{ fontFamily: "'Anton', sans-serif" }}
-        >
-          THE SHARED LEDGER IS THE BOTTLENECK.
-        </motion.h2>
 
       </div>
     </div>

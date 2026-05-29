@@ -40,17 +40,12 @@ export function CoverSlide() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="flex flex-col items-center gap-3"
         >
-          <p
-            className="text-orange-400 text-sm sm:text-base lg:text-lg tracking-[0.4em] uppercase font-bold"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            Investor Deck
-          </p>
           <h1
-            className="text-[#fefefe] text-[40px] sm:text-[60px] lg:text-[80px] leading-[0.95] tracking-tight uppercase text-center"
+            className="text-[#fefefe] text-[34px] sm:text-[52px] lg:text-[72px] leading-[0.98] tracking-tight uppercase text-center max-w-5xl"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            SEED ROUND <span className="text-orange-400">EXTENSION</span>
+            Rebuilding the Foundations of{' '}
+            <span className="text-orange-400">Decentralized Finance</span>
           </h1>
         </motion.div>
 
