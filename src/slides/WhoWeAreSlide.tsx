@@ -105,7 +105,7 @@ export function WhoWeAreSlide() {
         }}
       />
 
-      <div className="relative z-10 h-full flex flex-col px-12 lg:px-20 pt-6 pb-20 lg:pt-6 lg:pb-24 justify-center gap-3">
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 pt-6 pb-20 lg:pt-6 lg:pb-24 justify-center gap-3">
 
         {/* Header */}
         <div className="shrink-0">

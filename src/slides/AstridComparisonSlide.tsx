@@ -116,7 +116,7 @@ export function AstridComparisonSlide() {
                     borderTop: '2px solid rgba(249,115,22,0.55)',
                   }}>
                   <td
-                    className="py-4 pl-5 pr-4 text-orange-400 text-sm sm:text-base lg:text-lg font-bold tracking-[0.1em]"
+                    className="py-4 pl-5 pr-4 text-orange-400 text-sm sm:text-base lg:text-lg"
                     style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.06em' }}
                   >
                     AOS

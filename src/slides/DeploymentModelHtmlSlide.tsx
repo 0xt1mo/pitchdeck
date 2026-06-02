@@ -21,9 +21,6 @@ export function DeploymentModelHtmlSlide() {
 
       <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-16 py-8 lg:py-10 gap-6 lg:gap-8">
 
-        {/* Top spacer — small breathing room from the top edge */}
-        <div className="shrink-0" style={{ height: '0' }} />
-
         {/* Header */}
         <div className="shrink-0">
           <motion.p
@@ -280,7 +277,7 @@ function GateBox({
         {title}
       </p>
       {subtitle && (
-        <p className="text-[#d59a6f] text-[10px] sm:text-xs lg:text-sm mt-1 leading-snug">
+        <p className="text-orange-400/70 text-[10px] sm:text-xs lg:text-sm mt-1 leading-snug">
           {subtitle}
         </p>
       )}
@@ -309,7 +306,7 @@ function AOSBox({
       >
         AOS · Hosting Environment
       </p>
-      <p className="text-[#d59a6f] text-[10px] sm:text-xs lg:text-sm mt-1 leading-snug">
+      <p className="text-orange-400/70 text-[10px] sm:text-xs lg:text-sm mt-1 leading-snug">
         Enforcement kernel · WASM sandbox · budgets
       </p>
       <div className="flex-1 flex gap-3 lg:gap-4 mt-3 min-h-0">
@@ -322,7 +319,7 @@ function AOSBox({
               border: '1px solid rgba(255,106,0,0.35)',
             }}
           >
-            <p className="text-[#e0b893] text-[10px] sm:text-xs lg:text-sm font-medium whitespace-nowrap">
+            <p className="text-orange-400/70 text-[10px] sm:text-xs lg:text-sm font-medium whitespace-nowrap">
               Agent Sandbox
             </p>
           </div>

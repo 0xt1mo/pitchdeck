@@ -6,7 +6,7 @@ export function TechnicalAppendixDividerSlide() {
 
       {/* Subtle radial glow */}
       <div
-        className="fixed inset-0 z-[1] pointer-events-none"
+        className="absolute inset-0 z-[1] pointer-events-none"
         style={{
           background:
             'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(249,115,22,0.06) 0%, transparent 70%)',
