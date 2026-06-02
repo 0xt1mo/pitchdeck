@@ -146,10 +146,7 @@ export function TelecomUseCasesSlide() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.5 }}
               className="text-[#c4c4c4] text-sm sm:text-base lg:text-lg leading-relaxed mt-4 lg:mt-5"
-              style={{
-                fontFamily:
-                  '"Helvetica Neue", Helvetica, Arial, sans-serif',
-              }}
+              style={{ fontFamily: mono }}
             >
               Both ship as your own infrastructure — or white-labeled and resold to your enterprise customers. Core use cases:
             </motion.p>
@@ -172,20 +169,14 @@ export function TelecomUseCasesSlide() {
                   </span>
                   <div className="flex-1 min-w-0">
                     <h3
-                      className="text-[#fefefe]/90 text-[15px] sm:text-[17px] lg:text-[19px] xl:text-[21px] leading-[1.15] tracking-tight uppercase font-bold"
-                      style={{
-                        fontFamily:
-                          '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                      }}
+                      className="text-[#fefefe]/90 text-[15px] sm:text-[17px] lg:text-[19px] xl:text-[21px] leading-[1.15] tracking-tight uppercase"
+                      style={{ fontFamily: display }}
                     >
                       {g.title}
                     </h3>
                     <p
                       className="text-[#fefefe]/65 text-[12px] sm:text-[13px] lg:text-[14px] xl:text-[15px] leading-snug mt-1"
-                      style={{
-                        fontFamily:
-                          '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                      }}
+                      style={{ fontFamily: mono }}
                     >
                       {g.body}
                     </p>

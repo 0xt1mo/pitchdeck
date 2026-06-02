@@ -54,10 +54,7 @@ export function TelecomOpportunitySlide() {
 
           <div
             className="flex flex-col gap-4 lg:gap-6"
-            style={{
-              fontFamily:
-                '"Helvetica Neue", Helvetica, Arial, sans-serif',
-            }}
+            style={{ fontFamily: mono }}
           >
             <p className="text-[#fefefe] text-xl sm:text-2xl lg:text-3xl xl:text-[2.25rem] leading-[1.25] font-medium">
               The only question is{' '}

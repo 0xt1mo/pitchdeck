@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const mono = "'Geist Mono', monospace";
 const display = "'Anton', sans-serif";
-const sans = '"Helvetica Neue", Helvetica, Arial, sans-serif';
+const sans = "'Geist Mono', monospace";
 
 type Card = {
   num: string;

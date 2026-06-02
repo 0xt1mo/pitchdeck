@@ -4,6 +4,16 @@ export function ProblemSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
 
+      {/* Background grid texture — consistent across the deck */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
+
       <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16 justify-center gap-8 lg:gap-12">
 
         {/* Eyebrow — connects back to the previous slide's "who runs it" question */}
@@ -53,10 +63,7 @@ export function ProblemSlide() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
           className="text-lg sm:text-xl lg:text-2xl xl:text-[1.75rem] leading-relaxed shrink-0 max-w-6xl"
-          style={{
-            fontFamily:
-              '"Helvetica Neue", Helvetica, Arial, sans-serif',
-          }}
+          style={{ fontFamily: "'Geist Mono', monospace" }}
         >
           <span className="text-[#fefefe] font-semibold">You shipped Mobile.</span>{' '}
           <span className="text-[#fefefe]/85">Agentic is next — and it needs</span>{' '}

@@ -7,7 +7,11 @@ const URL = process.argv[2] || 'http://localhost:5174';
 const MAIN_SLIDES_ONLY = process.argv.includes('--main-only');
 const SKIP_TITLE = process.argv.includes('--skip-title');
 const OUTPUT = process.argv.find(a => a.endsWith('.pdf')) || 'pitchdeck.pdf';
-const VIEWPORT = { width: 1440, height: 900, deviceScaleFactor: 3 };
+// Tunable for file-size optimization (defaults preserve original lossless output).
+const SCALE = Number(process.env.PDF_SCALE || 3);
+const FORMAT = (process.env.PDF_FORMAT || 'png').toLowerCase(); // 'png' | 'jpeg'
+const QUALITY = Number(process.env.PDF_QUALITY || 82);          // jpeg only, 0-100
+const VIEWPORT = { width: 1440, height: 900, deviceScaleFactor: SCALE };
 
 async function exportPDF() {
   console.log(`🚀 Launching browser...`);
@@ -101,8 +105,13 @@ async function exportPDF() {
       links.push({ pageIndex: slidePageIndex, ...a });
     }
 
-    const screenshotPath = path.join(tmpDir, `slide-${String(i).padStart(3, '0')}.png`);
-    await page.screenshot({ path: screenshotPath, type: 'png' });
+    const ext = FORMAT === 'jpeg' ? 'jpg' : 'png';
+    const screenshotPath = path.join(tmpDir, `slide-${String(i).padStart(3, '0')}.${ext}`);
+    await page.screenshot(
+      FORMAT === 'jpeg'
+        ? { path: screenshotPath, type: 'jpeg', quality: QUALITY }
+        : { path: screenshotPath, type: 'png' }
+    );
     screenshots.push(screenshotPath);
   }
 
@@ -112,7 +121,9 @@ async function exportPDF() {
 
   for (const imgPath of screenshots) {
     const imgBytes = fs.readFileSync(imgPath);
-    const img = await pdfDoc.embedPng(imgBytes);
+    const img = FORMAT === 'jpeg'
+      ? await pdfDoc.embedJpg(imgBytes)
+      : await pdfDoc.embedPng(imgBytes);
 
     const pageWidth = VIEWPORT.width;
     const pageHeight = VIEWPORT.height;
@@ -158,9 +169,11 @@ async function exportPDF() {
   fs.writeFileSync(OUTPUT, pdfBytes);
   console.log(`✅ PDF saved to ${OUTPUT} (${screenshots.length} slides, ${(pdfBytes.length / 1024 / 1024).toFixed(1)}MB)`);
 
-  // Cleanup
-  for (const f of screenshots) fs.unlinkSync(f);
-  fs.rmdirSync(tmpDir);
+  // Cleanup (skip with KEEP_TMP=1 to inspect rendered frames)
+  if (!process.env.KEEP_TMP) {
+    for (const f of screenshots) fs.unlinkSync(f);
+    fs.rmdirSync(tmpDir);
+  }
 
   await browser.close();
 }
