@@ -114,12 +114,6 @@ export function ContactSlide() {
         >
           Unicity · Get Started
         </span>
-        <span
-          className="text-[#fefefe]/35 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em] uppercase font-bold"
-          style={{ fontFamily: mono }}
-        >
-          Unicity
-        </span>
       </div>
     </div>
   );

@@ -35,12 +35,6 @@ export function CoverSlide() {
         >
           Platform Overview
         </span>
-        <span
-          className="text-[#fefefe]/45 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em] uppercase font-bold"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          Unicity
-        </span>
       </div>
 
       {/* Left vertical orange bar */}
@@ -94,20 +88,6 @@ export function CoverSlide() {
           transition={{ delay: 1, duration: 0.6 }}
           className="h-[1px] w-40 sm:w-56 lg:w-72 bg-orange-500/60 origin-left shrink-0"
         />
-
-        {/* Credits */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.05, duration: 0.5 }}
-          className="flex flex-col gap-1 shrink-0"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          <p className="text-[#fefefe]/65 text-[10px] sm:text-xs lg:text-sm tracking-[0.24em] uppercase">
-            Mike Gault · CEO ·{' '}
-            <span className="text-orange-400/85 tracking-normal normal-case">mike@unicity-labs.com</span>
-          </p>
-        </motion.div>
 
       </div>
     </div>
