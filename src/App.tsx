@@ -1,150 +1,59 @@
 import { useEffect, useCallback, useState } from 'react';
-import './sphereInit'; // Start SDK initialization eagerly on page load
-import { IntroSlide } from './slides/IntroSlide';
+
+// ── INTRO (Telecom intro logic) + THE PLATFORM (run · manage · contain · secure agents) ──
 import { CoverSlide } from './slides/CoverSlide';
-import { PromiseSlide } from './slides/PromiseSlide';
-import { SharedLedgerSlide } from './slides/SharedLedgerSlide';
-import { AgentsSlide } from './slides/AgentsSlide';
-import { EdgePayoffSlide } from './slides/EdgePayoffSlide';
-import { UnbundledPayoffSlide } from './slides/UnbundledPayoffSlide';
-import { RetrofitSlide } from './slides/RetrofitSlide';
-import { CompetitionSlide } from './slides/CompetitionSlide';
-import { MarketSlide } from './slides/MarketSlide';
-import { ResourcesSlide } from './slides/ResourcesSlide';
+import { TelecomOpportunitySlide } from './slides/TelecomOpportunitySlide';
 import { ProblemSlide } from './slides/ProblemSlide';
+import { MarketSlide } from './slides/MarketSlide';
 import { AutonomyStackSlide } from './slides/AutonomyStackSlide';
-import { CompleteAutonomyStackSlide } from './slides/CompleteAutonomyStackSlide';
-import { SolutionIntroSlide } from './slides/SolutionIntroSlide';
-import { ArchitectureStackSlide } from './slides/ArchitectureStackSlide';
-import { CompetitiveLandscapeSlide } from './slides/CompetitiveLandscapeSlide';
-import { SecurityNetworkSlide } from './slides/SecurityNetworkSlide';
-import { UseCasesSlide } from './slides/UseCasesSlide';
-import { SemanticFirewallSlide } from './slides/SemanticFirewallSlide';
-import { IndirectInjectionSlide } from './slides/IndirectInjectionSlide';
+import { WhyDifferentSlide } from './slides/WhyDifferentSlide';
 import { ShadowAISlide } from './slides/ShadowAISlide';
 import { DLPSlide } from './slides/DLPSlide';
 import { RunawayComputeSlide } from './slides/RunawayComputeSlide';
 import { IntelligentRoutingSlide } from './slides/IntelligentRoutingSlide';
-import { AgentSphereDashboardSlide } from './slides/AgentSphereDashboardSlide';
-import { AgentSprawlSlide } from './slides/AgentSprawlSlide';
-import { WedgeSlide } from './slides/WedgeSlide';
-import { ProtocolSlide } from './slides/ProtocolSlide';
-import { GoToMarketSlide } from './slides/GoToMarketSlide';
-import { ProjectionsSlide } from './slides/ProjectionsSlide';
-import { TokenSlide } from './slides/TokenSlide';
-import { BusinessModelSlide } from './slides/BusinessModelSlide';
-import { IntellectualArcSlide } from './slides/IntellectualArcSlide';
-import { AppendixDividerSlide } from './slides/AppendixDividerSlide';
-import { ThePathSlide } from './slides/ThePathSlide';
-import { TeamSlide } from './slides/TeamSlide';
-import { RaiseSlide } from './slides/RaiseSlide';
-import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
-import { AppendixSlide } from './slides/AppendixSlide';
+import { DeploymentModelHtmlSlide } from './slides/DeploymentModelHtmlSlide';
+import { SalesTrackRecordSlide } from './slides/sales/SalesTrackRecordSlide';
+import { ContactSlide } from './slides/ContactSlide';
+
+// ── TECHNICAL APPENDIX — how the platform works (supporting tech) ──
 import { TechnicalAppendixDividerSlide } from './slides/TechnicalAppendixDividerSlide';
-import { KernelDividerSlide, BlockchainDividerSlide, ProductDividerSlide } from './slides/SectionDividerSlide';
 import { AstridSlide } from './slides/AstridSlide';
 import { AstridComparisonSlide } from './slides/AstridComparisonSlide';
 import { AstridUseCasesSlide } from './slides/AstridUseCasesSlide';
-import { BlockchainArchSlide } from './slides/BlockchainArchSlide';
-import { ZKOracleSlide } from './slides/ZKOracleSlide';
-import { PermissionlessSlide } from './slides/PermissionlessSlide';
-import { SettlementSlide } from './slides/SettlementSlide';
-import { AgentsSmartContractsSlide } from './slides/AgentsSmartContractsSlide';
-import { ChainAgnosticSlide } from './slides/ChainAgnosticSlide';
-import { DemoSlide } from './slides/DemoSlide';
 import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
-import { CompetitionMinimalSlide } from './slides/CompetitionMinimalSlide';
-import { EnterpriseDeploymentSlide } from './slides/EnterpriseDeploymentSlide';
-import { DeploymentModelSlide } from './slides/DeploymentModelSlide';
-import { DeploymentModelHtmlSlide } from './slides/DeploymentModelHtmlSlide';
-import { ConciergeSlide } from './slides/ConciergeSlide';
-import { OperatorPayoffSlide } from './slides/OperatorPayoffSlide';
-import { TelecomUseCasesSlide } from './slides/TelecomUseCasesSlide';
-import { UseCasesAppendixSlide } from './slides/UseCasesAppendixSlide';
-import { WhyDifferentSlide } from './slides/WhyDifferentSlide';
-import { TelecomOpportunitySlide } from './slides/TelecomOpportunitySlide';
-import { WhoWeAreSlide } from './slides/WhoWeAreSlide';
-import { ContactSlide } from './slides/ContactSlide';
+import { ProofPapersSlide } from './slides/ProofPapersSlide';
+
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  // ── ACT I — The Moment ──
-  CoverSlide,                // 1. Cover — Unicity for Telecom
-  TelecomOpportunitySlide,   // 2. The Opportunity — Every subscriber gets a Personal AI Agent
-  ProblemSlide,              // 3. The Fourth Rebuild of Compute
-  MarketSlide,               // 4. Market Opportunity
+  // ── ACT I — THE SETUP (the shift → the opportunity → the scale) ──
+  CoverSlide,                 // 1.  Cover — The secure agentic compute platform for Enterprise
+  ProblemSlide,               // 2.  The Shift — the fourth rebuild of computing
+  TelecomOpportunitySlide,    // 3.  The Opportunity — every enterprise runs thousands of agents
+  MarketSlide,                // 4.  And it's a trillion-dollar layer (NVIDIA · Gartner · McKinsey)
 
-  // ── ACT II — The Platform ──
-  AutonomyStackSlide,        // 5. Unicity: The Secure AI Compute Platform
-  WhyDifferentSlide,         // 6. The first secure, affordable, provable platform
+  // ── ACT II — THE PLATFORM ──
+  AutonomyStackSlide,         // 5.  Unicity: the secure AI compute platform (the platform stack)
+  WhyDifferentSlide,          // 6.  Secure · efficient · provable
 
-  // ── ACT III — The Story ──
-  ConciergeSlide,            // 7. Subscriber concierge — what subscribers see
-  OperatorPayoffSlide,       // 8. Every tap is revenue you own — the operator's view
-  TelecomUseCasesSlide,      // 9. New value-added services for enterprise + consumer
+  // ── ACT III — THE PLATFORM IN ACTION (run · manage · contain · secure) ──
+  ShadowAISlide,              // 7.  See every agent — agent sprawl & shadow AI (manage)
+  DLPSlide,                   // 8.  Data Loss Prevention (secure)
+  RunawayComputeSlide,        // 9.  Cost control — every agent gets a budget (manage)
+  IntelligentRoutingSlide,    // 10. Intelligent routing — right model per task (run)
 
-  // ── ACT IV — The Proof ──
-  DeploymentModelHtmlSlide,  // 10. Deployment inside operator infrastructure
-  WhoWeAreSlide,             // 11. Team
-  ContactSlide,              // 12. Get Started — Own the agent layer / Book a live demo
-  // ThankYouChatSlide,      // hidden — Thank You (rolled into ContactSlide closer)
+  // ── ACT IV — PROOF IT'S READY ──
+  DeploymentModelHtmlSlide,   // 11. Runs inside your infrastructure
+  SalesTrackRecordSlide,      // 12. The team's track record — Guardtime / 0 breaches
+  ContactSlide,               // 13. Let us show you. 20 minutes. One working flow.
 
-  // ── APPENDIX — additional use case deep-dives ──
-  UseCasesAppendixSlide,   // 13. Appendix divider — Additional Use Cases
-  ShadowAISlide,           // 14. appendix — Agent Sprawl & Shadow AI
-  DLPSlide,                // 15. appendix — Data Loss Prevention
-  RunawayComputeSlide,     // 16. appendix — Cost Control
-  IntelligentRoutingSlide, // 17. appendix — Intelligent Routing
-
-  // ── TECHNICAL APPENDIX — Kernel & Security deep-dives ──
-  TechnicalAppendixDividerSlide, // 18. Technical Appendix divider
-  AstridSlide,             // 19. AOS: The Kernel
-  AstridComparisonSlide,   // 20. Why AOS — comparison table
-  AstridUseCasesSlide,     // 21. Swap a Capsule. Change Everything.
-  InterceptFabricSlide,    // 22. Semantic Intercept Fabric
-
-  // ── Hidden (other) ──
-  // CompetitionMinimalSlide, // Competition / Everyone else watches the agent
-  // SemanticFirewallSlide,  // The Semantic Firewall
-  // DeploymentModelSlide,   // earlier all-SVG version
-  // EnterpriseDeploymentSlide, // older MSSP version
-  // UseCasesSlide,          // Enterprise Case Studies (replaced by TelecomUseCasesSlide)
-  // ── Hidden ──
-  // IntroSlide,             // Autonomous AI needs an internet built for machines
-  // SolutionIntroSlide,     // Unicity OS: A Secure OS for AI Agents
-  // CompleteAutonomyStackSlide, // The First Complete Stack Built For Machines
-  // GoToMarketSlide,        // Beachhead: The UAE
-  // TeamSlide,              // Founders Who've Done This Before (replaced by WhoWeAreSlide)
-  // ArchitectureStackSlide, // The Secure OS for Agents
-  // AgentsSlide,            // The Unicity L1
-  // EdgePayoffSlide,        // What This Unlocks
-  // CompetitiveLandscapeSlide, // We're Betting on a Different Architecture
-  // WedgeSlide,             // Wedge content folded into UseCasesSlide
-  // SecurityNetworkSlide,   // Zero Trust Enterprise Network
-  // ProtocolSlide,          // x402 Live Demo
-  // AgentSprawlSlide,       // Case Study: Agent Sprawl
-  // ThePathSlide,           // Current Status and How We Win
-  // RaiseSlide,             // From Mainnet Launch to Initial Scale
-  // IndirectInjectionSlide, // Stopping the Indirect Injection
-  // UnbundledPayoffSlide,   // merged Unbundling + Unlocks attempt
-  // ProjectionsSlide,       // The World If We Win
-  // BusinessModelSlide,     // Business Model — Four Surfaces. One Platform.
-  // ResourcesSlide,         // Essential Resources
-  // ── Appendix — all hidden ──
-  // AppendixDividerSlide,    // hidden — Appendix · Technology section break
-  // CompetitionSlide,        // hidden — Competition / architectural arc
-  // SharedLedgerSlide,       // hidden — Every blockchain from Bitcoin to MegaETH is the same 17-year-old design
-  // IntellectualArcSlide,    // hidden — Unbundling what the network has to do
-  // PromiseSlide,            // hidden — Satoshi: Peer-to-Peer Electronic Cash
-  // BlockchainArchSlide,     // hidden — Protocol Stack
-  // ZKOracleSlide,           // hidden — ZK Oracle
-  // PermissionlessSlide,     // hidden — Hierarchical Scaling
-  // SettlementSlide,         // hidden — Settlement
-  // ChainAgnosticSlide,      // hidden — Chain-Agnostic Operations
-  // AgentsSmartContractsSlide, // hidden — Agents-as-Smart-Contracts
-  // TokenSlide,              // hidden — Tokenomics
-  // AgentSphereDashboardSlide, // hidden — original 4-pillar enterprise dashboard
-  // RetrofitSlide,           // hidden — You Can't Retrofit an EVM into Autonomous AI
+  // ── TECHNICAL APPENDIX — how the platform works (supporting) ──
+  TechnicalAppendixDividerSlide, // 14. Technical Appendix divider
+  AstridSlide,                // 15. AOS: the kernel (runs agents)
+  AstridComparisonSlide,      // 16. Why AOS
+  AstridUseCasesSlide,        // 17. Swap a capsule (contains agents)
+  InterceptFabricSlide,       // 18. Semantic Intercept Fabric (secures agents)
+  ProofPapersSlide,           // 19. The proof underneath — here's the math
 ];
 
 export default function App() {
@@ -208,7 +117,7 @@ export default function App() {
 
   return (
     <div className="h-full w-full relative">
-      <CurrentSlideComponent onNext={() => { goToSlide(currentSlide + 1); }} goToSlide={goToSlide} />
+      <CurrentSlideComponent />
       {currentSlide > 0 && (
         <div
           className="fixed bottom-4 left-6 sm:left-10 lg:left-16 z-[101] text-[#fefefe]/40 text-base sm:text-lg font-medium select-none pointer-events-none"

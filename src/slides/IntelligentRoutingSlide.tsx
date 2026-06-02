@@ -46,6 +46,17 @@ const properties = [
 export function IntelligentRoutingSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+
+      {/* Background grid texture — consistent across the deck */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
+
       <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-16 py-6 sm:py-8 lg:py-10 justify-center gap-5 lg:gap-6">
 
         {/* Header */}
@@ -58,7 +69,7 @@ export function IntelligentRoutingSlide() {
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
             <span className="inline-block w-6 h-[2px] bg-orange-500" />
-            Capability · Orchestrating the Agent Mesh
+            The Platform In Action · 4 of 4
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -67,7 +78,7 @@ export function IntelligentRoutingSlide() {
             className="text-[32px] sm:text-[48px] lg:text-[68px] xl:text-[80px] leading-[0.95] tracking-tight uppercase mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            <span className="text-[#fefefe]">COST OPTIMIZATION:</span>{' '}
+            <span className="text-[#fefefe]">THE RIGHT MODEL FOR EVERY TASK:</span>{' '}
             <span className="text-orange-400">INTELLIGENT ROUTING.</span>
           </motion.h1>
           <motion.p

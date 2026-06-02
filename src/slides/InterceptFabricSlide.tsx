@@ -67,6 +67,16 @@ export function InterceptFabricSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
 
+      {/* Background grid texture — consistent across the deck */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
+
       <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-16 pt-8 pb-14 lg:pt-10 lg:pb-16 justify-center gap-6 lg:gap-8">
 
         {/* Header */}
@@ -128,7 +138,7 @@ export function InterceptFabricSlide() {
                 {[
                   { n: '1', name: 'Rule engine', text: 'High-performance pattern matching, candidate identification, rule evaluation. Dynamic rule updates.' },
                   { n: '2', name: 'ML Detection', text: 'Low-latency inference and anomaly detection. Plugin-expandable (ONNX-compatible) model loading.' },
-                  { n: '3', name: 'DLP scanning', text: 'For secrets / IP exfiltration — pattern matching plus name-entity recognition.' },
+                  { n: '3', name: 'DLP scanning', text: 'For secrets / IP exfiltration — pattern matching plus named-entity recognition.' },
                 ].map((item) => (
                   <div key={item.n} className="flex gap-3 items-start">
                     <span

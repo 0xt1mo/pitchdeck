@@ -30,13 +30,24 @@ const cards: Card[] = [
     quote: 'Generative and agentic AI could add up to $4.4 trillion in annual productivity value across the global economy — much of it consumed at the edge.',
     author: 'McKinsey Global Institute, 2025',
     bigNumber: '$4.4T',
-    bigSub: 'annual value at stake · landing on subscriber lines',
+    bigSub: 'annual value at stake · landing inside the enterprise',
   },
 ];
 
 export function MarketSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+
+      {/* Background grid texture — consistent across the deck */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
+
       <div className="relative z-10 h-full flex flex-col justify-center gap-5 lg:gap-7 px-8 sm:px-12 lg:px-16 py-8 sm:py-10 lg:py-12">
 
         {/* Header */}
@@ -47,7 +58,7 @@ export function MarketSlide() {
             className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Market Opportunity
+            The Market · The Layer 87% Are Missing
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}

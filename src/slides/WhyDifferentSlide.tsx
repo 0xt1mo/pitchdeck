@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const mono = "'Geist Mono', monospace";
 const display = "'Anton', sans-serif";
-const sans = '"Helvetica Neue", Helvetica, Arial, sans-serif';
+const sans = "'Geist Mono', monospace";
 
 type Card = {
   num: string;
@@ -26,13 +26,8 @@ const cards: Card[] = [
   },
   {
     num: '02 · Efficiently',
-    benefit: (
-      <>
-        A price point that<br />
-        works at scale
-      </>
-    ),
-    desc: "Intelligent routing sends each task to the cheapest model that can handle it, and multi-tenancy packs many agents onto the same hardware. Together they bring the cost per agent low enough to offer one to every subscriber — and still hold a margin when you resell.",
+    benefit: 'A price that scales',
+    desc: "Intelligent routing sends each task to the cheapest capable model, and multi-tenancy packs many agents onto shared hardware — bringing cost per agent low enough to put one behind every workflow.",
     feature: (
       <>
         <span className="text-[#cfcfcf] font-medium">Intelligent routing + multi-tenancy</span>
@@ -58,13 +53,13 @@ export function WhyDifferentSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
 
-      {/* Subtle dotted background */}
+      {/* Background grid texture — consistent across the deck */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            'radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)',
-          backgroundSize: '34px 34px',
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
         }}
       />
 
@@ -78,7 +73,7 @@ export function WhyDifferentSlide() {
             className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.4em] uppercase font-bold"
             style={{ fontFamily: mono }}
           >
-            Why we're different
+            Why Different · Secure, Efficient, Provable
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -98,7 +93,7 @@ export function WhyDifferentSlide() {
             style={{ fontFamily: sans }}
           >
             <span className="text-[#fefefe] font-medium">Unicity is the first secure, efficient, and provable agent compute platform</span>{' '}
-            — built for telecom from day one.
+            — built for regulated enterprise and government from day one.
           </motion.p>
         </div>
 
@@ -113,11 +108,11 @@ export function WhyDifferentSlide() {
               className="rounded-2xl px-5 lg:px-6 py-5 lg:py-7 flex flex-col"
               style={{
                 background: c.highlight
-                  ? 'rgba(255,106,0,0.06)'
-                  : 'rgba(255,255,255,0.012)',
+                  ? 'rgba(255,106,0,0.09)'
+                  : 'rgba(255,255,255,0.045)',
                 border: c.highlight
                   ? '1px solid rgba(255,106,0,0.55)'
-                  : '1px solid #2c2c2c',
+                  : '1px solid #363636',
               }}
             >
               <p

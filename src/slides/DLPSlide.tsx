@@ -18,6 +18,17 @@ const bullets = [
 export function DLPSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+
+      {/* Background grid texture — consistent across the deck */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
+
       <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-8 sm:py-10 lg:py-12 justify-center gap-6 lg:gap-7">
 
         <div className="shrink-0">
@@ -28,7 +39,7 @@ export function DLPSlide() {
             className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.4em] uppercase font-bold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Use Case · Data Loss Prevention
+            The Platform In Action · 2 of 4
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}

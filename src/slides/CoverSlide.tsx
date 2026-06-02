@@ -33,7 +33,7 @@ export function CoverSlide() {
           className="text-[#fefefe]/45 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em] uppercase"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Platform Overview
+          Enterprise
         </span>
         <span
           className="text-[#fefefe]/45 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em] uppercase font-bold"
@@ -72,7 +72,7 @@ export function CoverSlide() {
           className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.32em] uppercase font-bold shrink-0 -mt-2"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Platform Overview · 2026
+          Enterprise · 2026
         </motion.p>
 
         {/* Headline */}
@@ -84,7 +84,7 @@ export function CoverSlide() {
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
           THE SECURE AGENTIC COMPUTE PLATFORM{' '}
-          <span className="text-orange-400">FOR TELECOM.</span>
+          <span className="text-orange-400">FOR ENTERPRISE.</span>
         </motion.h1>
 
         {/* Divider */}
@@ -103,9 +103,8 @@ export function CoverSlide() {
           className="flex flex-col gap-1 shrink-0"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          <p className="text-[#fefefe]/65 text-[10px] sm:text-xs lg:text-sm tracking-[0.24em] uppercase">
-            Mike Gault · CEO ·{' '}
-            <span className="text-orange-400/85 tracking-normal normal-case">mike@unicity-labs.com</span>
+          <p className="text-[#fefefe]/55 text-xs sm:text-sm lg:text-base tracking-[0.04em] normal-case">
+            Built by the team behind 15 years of sovereign-grade cryptographic infrastructure.
           </p>
         </motion.div>
 

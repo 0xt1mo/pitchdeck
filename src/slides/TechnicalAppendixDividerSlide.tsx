@@ -4,12 +4,13 @@ export function TechnicalAppendixDividerSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
 
-      {/* Subtle radial glow */}
+      {/* Background grid texture — consistent across the deck */}
       <div
-        className="fixed inset-0 z-[1] pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          background:
-            'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(249,115,22,0.06) 0%, transparent 70%)',
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
         }}
       />
 
@@ -23,7 +24,7 @@ export function TechnicalAppendixDividerSlide() {
           className="text-orange-400 text-sm sm:text-base lg:text-lg tracking-[0.4em] uppercase font-bold"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Section
+          Appendix
         </motion.p>
 
         {/* Headline */}
@@ -54,7 +55,7 @@ export function TechnicalAppendixDividerSlide() {
           className="text-[#fefefe]/70 text-base sm:text-lg lg:text-xl tracking-[0.18em] uppercase text-center"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          AOS Kernel · Why AOS · Swappable Capsules · Semantic Intercept Fabric
+          AOS Kernel · Why AOS · Semantic Intercept Fabric · Proofs of Uniqueness
         </motion.p>
 
       </div>

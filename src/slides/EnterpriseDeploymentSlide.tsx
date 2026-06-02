@@ -264,7 +264,7 @@ function Box({
   twoLine?: boolean;
 }) {
   // Title can be split across 2 lines for narrow boxes
-  let titleEls: JSX.Element;
+  let titleEls: import('react').ReactElement;
   if (twoLine && title.includes('·')) {
     const idx = title.indexOf('·');
     const a = title.slice(0, idx).trim();

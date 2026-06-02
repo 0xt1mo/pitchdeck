@@ -25,6 +25,17 @@ const cards: Card[] = [
 export function EdgePayoffSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+
+      {/* Background grid texture — consistent across the deck */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
+
       <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-8 sm:py-10 lg:py-12 justify-center gap-6 lg:gap-8">
 
         {/* Headline */}

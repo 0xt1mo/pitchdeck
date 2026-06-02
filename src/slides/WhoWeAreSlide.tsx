@@ -33,7 +33,7 @@ const founders = [
     lines: [
       'AI Visionary',
       'CEO, Aleria (UAE Sovereign AI)',
-      '1,000+ customers · 250K agents live',
+      'Aleria: 1,000+ customers · 250K agents live',
     ],
   },
 ];

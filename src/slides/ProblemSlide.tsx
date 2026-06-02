@@ -1,68 +1,85 @@
 import { motion } from 'framer-motion';
 
+const mono = "'Geist Mono', monospace";
+const display = "'Anton', sans-serif";
+
 export function ProblemSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
 
-      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-10 sm:py-14 lg:py-16 justify-center gap-8 lg:gap-12">
+      {/* Background grid texture — consistent across the deck */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
 
-        {/* Eyebrow — connects back to the previous slide's "who runs it" question */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.4em] uppercase font-bold shrink-0"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          Why now
-        </motion.p>
+      <div className="relative z-10 h-full flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-12 lg:py-16 gap-7 lg:gap-10">
 
-        {/* Massive headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
+        {/* Header block — eyebrow, headline, era */}
+        <div className="flex flex-col gap-4 lg:gap-6 shrink-0">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.4em] uppercase font-bold"
+            style={{ fontFamily: mono }}
+          >
+            The Shift
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-[40px] sm:text-[60px] lg:text-[88px] xl:text-[104px] leading-[0.92] tracking-tight uppercase"
+            style={{ fontFamily: display }}
+          >
+            <span className="text-[#fefefe]">THE FOURTH REBUILD</span>{' '}
+            <span className="text-orange-400">OF COMPUTING.</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="text-base sm:text-lg lg:text-2xl leading-snug text-[#fefefe]/80"
+            style={{ fontFamily: mono }}
+          >
+            Mainframe <span className="text-orange-400">→</span> Client-server{' '}
+            <span className="text-orange-400">→</span> Cloud{' '}
+            <span className="text-orange-400">→</span> Mobile{' '}
+            <span className="text-orange-400">→</span>{' '}
+            <span className="text-orange-400">AI agents</span>
+          </motion.p>
+        </div>
+
+        {/* Body — on the orange bar, calm two-size hierarchy */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-[56px] sm:text-[88px] lg:text-[128px] xl:text-[148px] leading-[0.92] tracking-tight uppercase shrink-0 -mt-4 lg:-mt-6"
-          style={{ fontFamily: "'Anton', sans-serif" }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="shrink-0 flex items-start gap-5 lg:gap-7 max-w-5xl"
         >
-          <span className="text-[#fefefe]">THE FOURTH REBUILD</span>{' '}
-          <span className="text-orange-400">OF COMPUTE.</span>
-        </motion.h1>
+          <div className="shrink-0 w-[3px] lg:w-[4px] self-stretch bg-orange-500 rounded-full" />
 
-        {/* Era progression — Mobile pulled out as the telco's last win */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.35, duration: 0.5 }}
-          className="text-xl sm:text-2xl lg:text-[32px] leading-snug shrink-0"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          <span className="text-[#fefefe]/55">Mainframe</span>
-          <span className="text-[#fefefe]/35"> → </span>
-          <span className="text-[#fefefe]/55">Client-server</span>
-          <span className="text-[#fefefe]/35"> → </span>
-          <span className="text-[#fefefe]/55">Cloud</span>
-          <span className="text-[#fefefe]/35"> → </span>
-          <span className="text-[#fefefe] font-bold">Mobile</span>
-          <span className="text-orange-400"> → Agentic</span>
-        </motion.p>
-
-        {/* Tagline — bridges Mobile → Agentic for a telco audience */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          className="text-lg sm:text-xl lg:text-2xl xl:text-[1.75rem] leading-relaxed shrink-0 max-w-6xl"
-          style={{
-            fontFamily:
-              '"Helvetica Neue", Helvetica, Arial, sans-serif',
-          }}
-        >
-          <span className="text-[#fefefe] font-semibold">You shipped Mobile.</span>{' '}
-          <span className="text-[#fefefe]/85">Agentic is next — and it needs</span>{' '}
-          <span className="text-orange-400 font-semibold">identity, execution, governance, and payments</span>{' '}
-          <span className="text-[#fefefe]/85">rebuilt for machines without a human in the loop.</span>
-        </motion.p>
+          <div className="flex flex-col gap-5 lg:gap-6" style={{ fontFamily: mono }}>
+            <p className="text-[#fefefe] text-xl sm:text-2xl lg:text-[28px] leading-[1.35] font-medium">
+              Each shift changed how systems are built and controlled.{' '}
+              <span className="text-orange-400">This shift changes who takes the action.</span>
+            </p>
+            <p className="text-[#fefefe]/55 text-sm sm:text-base lg:text-lg leading-[1.6]">
+              Agents can now use tools, call APIs, touch data, trigger workflows, and move value — on behalf of people and teams.
+            </p>
+            <p className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg leading-[1.6]">
+              This creates the need for a setup that manages Identity, Execution, Governance, and Payments —{' '}
+              <span className="text-orange-400">before the fact, not after.</span>
+            </p>
+          </div>
+        </motion.div>
 
       </div>
     </div>

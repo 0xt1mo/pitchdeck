@@ -132,6 +132,17 @@ export function AstridComparisonSlide() {
           </div>
         </motion.div>
 
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.1, duration: 0.5 }}
+          className="shrink-0 text-[#fefefe]/40 text-[11px] lg:text-[13px] leading-snug mt-3"
+          style={{ fontFamily: "'Geist Mono', monospace" }}
+        >
+          The cost: AOS requires running the kernel in-path.{' '}
+          <span className="text-orange-400/80">That is the point.</span>
+        </motion.p>
+
       </div>
     </div>
   );

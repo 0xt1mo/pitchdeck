@@ -66,7 +66,7 @@ function StackDiagram() {
         fontFamily={fontTitle} letterSpacing="0.08em">USER SPACE</text>
       <text x={px + 122} y={y0 + 20} fill="rgba(254,254,254,0.32)" fontSize="9"
         fontFamily={font}>User-facing tools &amp; agent frameworks</text>
-      {['Claude Code', 'OpenClaw', 'Agent Tools', 'LLM Frontends'].map((t, i) => (
+      {['Claude Code', 'LangChain', 'Agent Tools', 'LLM Frontends'].map((t, i) => (
         <g key={t}>
           <rect x={userTags[i].x} y={y0 + 34} width={userTags[i].w} height={30} rx={6}
             fill="rgba(59,130,246,0.08)" stroke="rgba(59,130,246,0.22)" strokeWidth={1} />
@@ -157,14 +157,24 @@ function StackDiagram() {
 
 const keyPoints = [
   { title: 'User-Space Microkernel', text: 'AOS models itself as an OS — with syscalls, airlocks, and user-space isolation. The kernel (aos9d) and system SDK (aos9-sys) are the only core components.' },
-  { title: 'WASM Capsule Sandbox', text: 'All plugins run as WASM capsules inside a sandboxed runtime. OpenClaw plugins are compiled into capsules via aos9-openclaw, with host calls thunked into aos9::sys.' },
+  { title: 'WASM Capsule Sandbox', text: 'All plugins run as WASM capsules inside a sandboxed runtime. Agent plugins are compiled into capsules, with host calls thunked into the system SDK.' },
   { title: 'Enforcement Layer', text: 'Security interception, budget enforcement, and audit logging happen at the runtime level — below the agent, not beside it. Tools cannot bypass the kernel.' },
-  { title: 'Everything Is User-Space', text: 'CLIs, OpenClaw, frontends, and even LLM providers are external user-space components communicating over IPC. The kernel stays minimal and ignorant of legacy ABIs.' },
+  { title: 'Everything Is User-Space', text: 'CLIs, agent frameworks, frontends, and even LLM providers are external user-space components communicating over IPC. The kernel stays minimal and ignorant of legacy ABIs.' },
 ];
 
 export function AstridSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+
+      {/* Background grid texture — consistent across the deck */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
 
       <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-16 pt-8 pb-14 lg:pt-10 lg:pb-16 justify-center gap-5 lg:gap-6">
 
@@ -186,7 +196,7 @@ export function AstridSlide() {
             transition={{ delay: 0.3 }}
             className="mt-3 text-[#fefefe]/80 text-xs sm:text-sm lg:text-base leading-[1.55]"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            AOS is the secure enforcement kernel that tools like Claude Code and OpenClaw run{' '}
+            AOS is the secure enforcement kernel that tools like Claude Code and LangChain run{' '}
             <span className="text-orange-400 font-bold">on top of</span>, not alongside. A user-space microkernel with syscalls, airlocks, and sandboxed isolation — the kernel stays minimal while everything else lives in user-space.
           </motion.p>
         </div>

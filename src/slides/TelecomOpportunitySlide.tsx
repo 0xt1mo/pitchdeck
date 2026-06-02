@@ -17,7 +17,7 @@ export function TelecomOpportunitySlide() {
         }}
       />
 
-      <div className="relative z-10 h-full flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-10 lg:py-14 gap-6 lg:gap-8">
+      <div className="relative z-10 h-full flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-10 lg:py-12 gap-6 lg:gap-8">
 
         {/* Eyebrow */}
         <motion.p
@@ -35,37 +35,34 @@ export function TelecomOpportunitySlide() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-[#fefefe] text-[36px] sm:text-[52px] lg:text-[80px] xl:text-[96px] leading-[0.95] tracking-tight uppercase shrink-0 -mt-2"
+          className="text-[34px] sm:text-[50px] lg:text-[76px] xl:text-[90px] leading-[0.95] tracking-tight uppercase shrink-0 -mt-2"
           style={{ fontFamily: display }}
         >
-          EVERY SUBSCRIBER IS ABOUT TO GET A{' '}
-          <span className="text-orange-400">PERSONAL AI AGENT.</span>
+          EVERY ENTERPRISE IS ABOUT TO RUN{' '}
+          <span className="text-orange-400">THOUSANDS OF AGENTS.</span>
         </motion.h1>
 
-        {/* Pull-quote — the strategic question, framed for impact */}
+        {/* Pull-quote — the principle, the control layer, the payoff */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="shrink-0 mt-4 lg:mt-6 flex items-start gap-5 lg:gap-7 max-w-6xl"
+          className="shrink-0 mt-2 lg:mt-4 flex items-start gap-5 lg:gap-7 max-w-6xl"
         >
-          {/* Orange vertical rule — quote bar */}
           <div className="shrink-0 w-[3px] lg:w-[4px] self-stretch bg-orange-500 rounded-full" />
 
-          <div
-            className="flex flex-col gap-4 lg:gap-6"
-            style={{
-              fontFamily:
-                '"Helvetica Neue", Helvetica, Arial, sans-serif',
-            }}
-          >
-            <p className="text-[#fefefe] text-xl sm:text-2xl lg:text-3xl xl:text-[2.25rem] leading-[1.25] font-medium">
-              The only question is{' '}
-              <span className="text-orange-400 font-bold">who runs it.</span>
+          <div className="flex flex-col gap-4 lg:gap-5" style={{ fontFamily: mono }}>
+            <p className="text-[#fefefe] text-xl sm:text-2xl lg:text-3xl xl:text-[2.1rem] leading-[1.25] font-medium">
+              Each one needs{' '}
+              <span className="text-orange-400 font-bold">permission before it acts,</span> and{' '}
+              <span className="text-orange-400 font-bold">proof after it acts.</span>
             </p>
-            <p className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl xl:text-[1.5rem] leading-[1.45] font-light">
-              Own that layer and it becomes your{' '}
-              <span className="text-[#fefefe] font-semibold">highest-margin product since data.</span>
+            <p className="text-[#fefefe]/70 text-base sm:text-lg lg:text-xl leading-[1.5]">
+              Define what every agent can access, which tools it can use, what actions need approval, what limits apply, and what record is left behind.
+            </p>
+            <p className="text-[#fefefe]/90 text-base sm:text-lg lg:text-xl xl:text-[1.4rem] leading-[1.4] font-light">
+              Put agents behind real workflows —{' '}
+              <span className="text-[#fefefe] font-semibold">with boundaries, approvals, and evidence.</span>
             </p>
           </div>
         </motion.div>

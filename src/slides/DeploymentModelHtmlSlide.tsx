@@ -19,6 +19,16 @@ export function DeploymentModelHtmlSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
 
+      {/* Background grid texture — consistent across the deck */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
+
       <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-16 py-8 lg:py-10 gap-6 lg:gap-8">
 
         {/* Top spacer — small breathing room from the top edge */}
@@ -32,7 +42,7 @@ export function DeploymentModelHtmlSlide() {
             className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.4em] uppercase font-bold"
             style={{ fontFamily: mono }}
           >
-            Deployment
+            Deployment · Proven Inside Your Boundary
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -50,8 +60,9 @@ export function DeploymentModelHtmlSlide() {
             className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg xl:text-xl leading-[1.5] mt-3 lg:mt-5 max-w-5xl"
             style={{ fontFamily: mono }}
           >
-            QVAC on the user’s device. Astrid OS in your network.{' '}
-            <span className="text-[#fefefe] font-bold">Agent activity and user data never leave your boundary.</span>
+            Your models on your hardware. The AOS kernel in your network.{' '}
+            <span className="text-[#fefefe] font-bold">Agent activity and your data never leave your boundary.</span>{' '}
+            <span className="text-orange-400 font-bold">Air-gap compatible — no outbound dependency to operate.</span>
           </motion.p>
         </div>
 

@@ -43,7 +43,7 @@ function RoundsDiagram() {
         letterSpacing="1.5">CONSENSUS LAYER (PoW + BFT)</text>
 
       {/* Block boxes */}
-      {rounds.map((r, i) => {
+      {rounds.map((_r, i) => {
         const x = startX + i * (blockW + gap);
         return (
           <g key={`block-${i}`}>
@@ -58,7 +58,7 @@ function RoundsDiagram() {
       })}
 
       {/* Down arrows + ZK proof labels */}
-      {rounds.map((r, i) => {
+      {rounds.map((_r, i) => {
         const x = startX + i * (blockW + gap) + blockW / 2;
         return (
           <g key={`down-${i}`}>
@@ -94,7 +94,7 @@ function RoundsDiagram() {
       <text x={W - 22} y={roundY + 32} fill="rgba(254,254,254,0.5)" fontSize="9" fontFamily={font}>time →</text>
 
       {/* Down arrows from rounds + requests/proofs label */}
-      {rounds.map((r, i) => {
+      {rounds.map((_r, i) => {
         const x = startX + i * (blockW + gap) + blockW / 2;
         return (
           <g key={`bot-${i}`}>

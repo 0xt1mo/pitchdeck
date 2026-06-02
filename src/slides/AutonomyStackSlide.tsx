@@ -13,18 +13,18 @@ const stack: StackLayer[] = [
     product: 'AGENT FRAMEWORKS',
     label: 'THE APPLICATION LAYER',
     detail: 'Bring your own agent — any framework, any model.',
-    tags: 'LANGCHAIN · OPENCLAW · AUTOGEN · CUSTOM',
+    tags: 'CLAUDE CODE · LANGCHAIN · AUTOGEN · CUSTOM',
     variant: 'top',
   },
   {
     product: 'UNICITY AOS',
     label: 'MULTI-TENANT SECURE OS',
-    detail: 'Executes the agents. Capsules provide multi-tenancy and isolation. Every prompt, tool call, and decision passes through it — proactive safety policy, goal focus and budget enforcement, with tokenized execution trace for analysis and compliance, with hard policy rules on tool interactions.',
+    detail: 'Executes every agent in an isolated capsule. Every prompt, tool call, and decision passes through it — policy, budget, and a tokenized trace for compliance.',
     tags: 'KERNEL · POLICY · INTERCEPT',
     variant: 'mid',
   },
   {
-    product: 'UNICITY BLOCKCHAIN',
+    product: 'UNICITY PROOF LAYER',
     label: 'PROOF SYSTEM · FORMAL VERIFICATION',
     detail: 'State tokenization. Verifiable execution. Cryptographic identity. Value transfer.',
     tags: '',
@@ -42,6 +42,17 @@ const requirements = [
 export function AutonomyStackSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+
+      {/* Background grid texture — consistent across the deck */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
+
       <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-5 sm:py-6 lg:py-8 justify-center gap-3 lg:gap-4">
 
         {/* Header */}
@@ -53,7 +64,7 @@ export function AutonomyStackSlide() {
             className="text-orange-400 text-sm tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            The Platform
+            The Platform · Before And After, One Stack
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -62,7 +73,7 @@ export function AutonomyStackSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[36px] lg:text-[52px] xl:text-[68px] 2xl:text-[80px] leading-[0.95] tracking-tight uppercase mt-2 whitespace-nowrap"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            UNICITY: THE SECURE AI <span className="text-orange-400">COMPUTE PLATFORM.</span>
+            ONE PROTOCOL STACK FOR <span className="text-orange-400">EVERY AGENT YOU RUN.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
