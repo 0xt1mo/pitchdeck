@@ -50,8 +50,8 @@ export function DeploymentModelHtmlSlide() {
             className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg xl:text-xl leading-[1.5] mt-3 lg:mt-5 max-w-5xl"
             style={{ fontFamily: mono }}
           >
-            QVAC on the user’s device. Astrid OS in your network.{' '}
-            <span className="text-[#fefefe] font-bold">Agent activity and user data never leave your boundary.</span>
+            Agents run on your kernel, on your infrastructure —{' '}
+            <span className="text-[#fefefe] font-bold">your data and the customer moment never leave your network.</span>
           </motion.p>
         </div>
 

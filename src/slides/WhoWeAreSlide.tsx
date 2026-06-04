@@ -26,14 +26,13 @@ const founders = [
     ],
   },
   {
-    name: 'Eric Leandri',
-    role: 'Chairman',
-    photo: '/team/eric.png',
-    linkedin: 'https://www.linkedin.com/in/ericleandri/',
+    name: 'Sylvain Mathieu Lamarche',
+    role: 'Senior Advisor',
+    photo: '/team/sylvain.jpeg',
+    linkedin: 'https://www.linkedin.com/in/sylvain-mathieu-lamarche-0b47711a/',
     lines: [
       'AI Visionary',
-      'CEO, Aleria (UAE Sovereign AI)',
-      '1,000+ customers · 250K agents live',
+      'President, Movidone',
     ],
   },
 ];

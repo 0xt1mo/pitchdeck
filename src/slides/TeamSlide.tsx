@@ -54,9 +54,8 @@ const developers = [
 
 const advisors = [
   { name: 'Carlos Domingo', company: 'Securitize', linkedin: 'https://www.linkedin.com/in/carlosdomingo/' },
-  { name: 'Eric Leandri', company: 'Aleria AI', linkedin: 'https://www.linkedin.com/in/ericleandri/' },
   { name: 'Arnold Lee', company: 'Sphere', linkedin: 'https://www.linkedin.com/in/arnoldhlee/' },
-  { name: 'Sylvain LaMarche', company: 'Movidone', linkedin: 'https://www.linkedin.com/in/sylvain-mathieu-lamarche-0b47711a/' },
+  { name: 'Sylvain Mathieu Lamarche', company: 'Movidone', linkedin: 'https://www.linkedin.com/in/sylvain-mathieu-lamarche-0b47711a/' },
 ];
 
 const LinkedInBadge = ({ href, size = 5 }: { href: string; size?: number }) => (
