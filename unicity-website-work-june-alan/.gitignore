@@ -1,0 +1,8 @@
+# local preview server / tooling — not part of the deliverable
+node_modules/
+_*.mjs
+*.log
+
+# stale intermediate build artifacts
+gaming-main.html
+gaming-remediated.html
