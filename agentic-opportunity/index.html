@@ -469,6 +469,17 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
   .tlproof .pulse{display:none;}
   .tline .spine{animation:none;transform:scaleY(var(--prog,.5));}
 }
+.ico{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:middle;flex:none;width:16px;height:16px;}
+.kick .ico{width:15px;height:15px;vertical-align:-.2em;margin-right:.7em;}
+.ix4 .ixr{grid-template-columns:30px 40px 140px 1fr;}
+.ix4 .ixr .ico{width:21px;height:21px;color:var(--orange);}
+.fr .fd{display:flex;align-items:center;gap:.55em;}
+.fr .fd .ico{width:13px;height:13px;}
+.cdom{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.cdom > div{background:var(--bg);padding:13px 15px;display:flex;align-items:center;gap:11px;}
+.cdom .ico{width:19px;height:19px;color:var(--orange);}
+.cdom b{display:block;font-family:var(--disp);font-size:15px;letter-spacing:.04em;color:var(--ink);text-transform:uppercase;line-height:1;}
+.cdom span{display:block;margin-top:4px;font:700 7.5px/1.4 var(--mono);letter-spacing:.13em;color:var(--faint);text-transform:uppercase;}
 </style>
 </head>
 <body>
@@ -573,7 +584,7 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
 <path d="M608.199 30.1722H588.198C585.717 30.1722 584.357 31.4674 584.357 33.8293C584.357 36.1912 585.717 37.4865 588.198 37.4865H608.199C610.679 37.4865 612.039 36.1912 612.039 33.8293C612.039 31.4674 610.679 30.1722 608.199 30.1722Z" fill="#FEFEFE"/>
 <path d="M626.04 20.1145H595.878C593.398 20.1145 592.038 21.4098 592.038 23.7717C592.038 26.1336 593.398 27.4288 595.878 27.4288H626.04C628.52 27.4288 629.88 26.1336 629.88 23.7717C629.88 21.4098 628.52 20.1145 626.04 20.1145Z" fill="#FEFEFE"/>
 <path d="M629.08 10.0569H600.038C597.558 10.0569 596.198 11.3521 596.198 13.714C596.198 16.0759 597.558 17.3712 600.038 17.3712H629.08C631.56 17.3712 632.92 16.0759 632.92 13.714C632.92 11.3521 631.56 10.0569 629.08 10.0569Z" fill="#FEFEFE"/>
-<path d="M632.2 0.00106812H606.439C603.959 0.00106812 602.599 1.29631 602.599 3.65821C602.599 6.02012 603.959 7.31535 606.439 7.31535H632.2C634.681 7.31535 636.041 6.02012 636.041 3.65821C636.041 1.29631 634.681 0.00106812 632.2 0.00106812Z" fill="#FEFEFE"/></symbol></defs></svg>
+<path d="M632.2 0.00106812H606.439C603.959 0.00106812 602.599 1.29631 602.599 3.65821C602.599 6.02012 603.959 7.31535 606.439 7.31535H632.2C634.681 7.31535 636.041 6.02012 636.041 3.65821C636.041 1.29631 634.681 0.00106812 632.2 0.00106812Z" fill="#FEFEFE"/></symbol><symbol id="ic-sec" viewBox="0 0 24 24"><path d="M12 2.6l7.4 3.1v5.2c0 4.6-3.1 7.9-7.4 9.6-4.3-1.7-7.4-5-7.4-9.6V5.7L12 2.6z"/><path d="M8.7 12.1l2.2 2.2 4.4-4.6"/></symbol><symbol id="ic-gov" viewBox="0 0 24 24"><rect x="5.2" y="3.2" width="13.6" height="17.6" rx="1.2"/><path d="M8.2 8h7.6M8.2 12h7.6M8.2 16h4.6"/></symbol><symbol id="ic-net" viewBox="0 0 24 24"><circle cx="5.2" cy="6" r="2.1"/><circle cx="18.8" cy="6" r="2.1"/><circle cx="12" cy="18" r="2.1"/><path d="M6.9 7.3l3.7 8.8M17.1 7.3l-3.7 8.8M7.3 6h9.4"/></symbol><symbol id="ic-pay" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.4"/><path d="M12 6.6v10.8M9.4 9.6h5.2M9.4 14.4h5.2"/></symbol></defs></svg>
 
 
 <div class="hint" id="hint">ARROWS · SPACE · SWIPE · G = INDEX · P = AUTOPLAY · R = RECORD · F = FULLSCREEN · B = BLACKOUT</div>
@@ -593,15 +604,23 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
       <div class="kick rv" style="--d:.05s">2026 INDUSTRY REPORT <span class="sep">·</span> UNICITY LABS</div>
     </div>
     <div>
-      <h1 class="rv" style="--d:.15s;font-size:182px;line-height:.86;letter-spacing:-.012em">THE AGENTIC<br>OPPORTUNITY<span class="accent">.</span></h1>
-      <p class="lede rv" style="--d:.35s;margin-top:30px;max-width:720px">What autonomous AI actually means for <b>security</b>, <b>governance</b>, <b>networking</b>, and <b>payments</b> — with the evidence.</p>
+      <h1 class="rv" style="--d:.15s;font-size:168px;line-height:.84;letter-spacing:-.014em">THE AGENTIC<br><span style="color:var(--orange)">OPPORTUNITY</span><span class="accent">.</span></h1>
+      <p class="lede rv" style="--d:.32s;margin-top:26px;max-width:720px">What autonomous AI actually means for <b>security</b>, <b>governance</b>, <b>networking</b>, and <b>payments</b> — with the evidence.</p>
     </div>
-    <div class="rv" style="--d:.55s;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;border-top:1px solid var(--rule);padding-top:22px">
-      <div style="display:flex;align-items:flex-end;gap:22px">
-        <span class="num" data-to="88" data-suf="%" data-dur="1900" style="font-family:var(--disp);font-size:96px;line-height:.78;color:var(--orange);font-variant-numeric:tabular-nums">0%</span>
-        <span style="font:700 11px/1.55 var(--mono);letter-spacing:.06em;color:var(--ink);text-transform:uppercase;max-width:300px;padding-bottom:8px">of AI agent projects never reach production<br><span style="color:var(--faint);font-weight:400;letter-spacing:.04em">why — and who profits when that changes</span></span>
+    <div>
+      <div class="cdom rv" style="--d:.5s">
+        <div><svg class="ico"><use href="#ic-sec"/></svg><div><b>Security</b><span>Inspection before execution</span></div></div>
+        <div><svg class="ico"><use href="#ic-gov"/></svg><div><b>Governance</b><span>Tamper-evident evidence</span></div></div>
+        <div><svg class="ico"><use href="#ic-net"/></svg><div><b>Networking</b><span>Protocol-agnostic identity</span></div></div>
+        <div><svg class="ico"><use href="#ic-pay"/></svg><div><b>Payments</b><span>Settlement at the edge</span></div></div>
       </div>
-      <div class="kick" style="color:var(--faint);padding-bottom:10px">TALLINN <span class="sep">·</span> ZUG</div>
+      <div class="rv" style="--d:.62s;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-top:22px">
+        <div style="display:flex;align-items:flex-end;gap:20px">
+          <span class="num" data-to="88" data-suf="%" data-dur="1900" style="font-family:var(--disp);font-size:82px;line-height:.78;color:var(--orange);font-variant-numeric:tabular-nums">0%</span>
+          <span style="font:700 10.5px/1.55 var(--mono);letter-spacing:.05em;color:var(--ink);text-transform:uppercase;max-width:280px;padding-bottom:6px">of AI agent projects never reach production<br><span style="color:var(--faint);font-weight:400;letter-spacing:.03em">why — and who profits when that changes</span></span>
+        </div>
+        <div class="kick" style="color:var(--faint);padding-bottom:8px">TALLINN <span class="sep">·</span> ZUG</div>
+      </div>
     </div>
   </div><div class="foot"><span class="fl"><svg class="logo" viewBox="0 0 641 128" role="img" aria-label="Unicity"><use href="#ulogo"/></svg><span>THE AGENTIC OPPORTUNITY — UNICITY LABS 2026</span></span><span class="fp">01 / 17</span></div></div>
 </section>
@@ -655,17 +674,17 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
     </div>
     <p class="lede rv" style="--d:.5s;margin-top:26px;max-width:860px">The returns concentrate where infrastructure already exists — banking, financial services, insurance lead because they already operate identity, settlement, and audit rails. <b>The agentic opportunity is not what agents can do. It is what happens when they do it</b> — and it decomposes into exactly four domains.</p>
     <div class="ix4 rv" style="--d:.65s">
-      <div class="ixr"><span class="no">01</span><span class="nm">SECURITY</span><span class="cl">INSPECTION BEFORE EXECUTION</span></div>
-      <div class="ixr"><span class="no">02</span><span class="nm">GOVERNANCE</span><span class="cl">TAMPER-EVIDENT · REGULATOR-READY EVIDENCE</span></div>
-      <div class="ixr"><span class="no">03</span><span class="nm">NETWORKING</span><span class="cl">PROTOCOL-AGNOSTIC · IDENTITY-MANDATORY</span></div>
-      <div class="ixr"><span class="no">04</span><span class="nm">PAYMENTS</span><span class="cl">SETTLEMENT AT THE AGENT EDGE</span></div>
+      <div class="ixr"><svg class="ico"><use href="#ic-sec"/></svg><span class="no">01</span><span class="nm">SECURITY</span><span class="cl">INSPECTION BEFORE EXECUTION</span></div>
+      <div class="ixr"><svg class="ico"><use href="#ic-gov"/></svg><span class="no">02</span><span class="nm">GOVERNANCE</span><span class="cl">TAMPER-EVIDENT · REGULATOR-READY EVIDENCE</span></div>
+      <div class="ixr"><svg class="ico"><use href="#ic-net"/></svg><span class="no">03</span><span class="nm">NETWORKING</span><span class="cl">PROTOCOL-AGNOSTIC · IDENTITY-MANDATORY</span></div>
+      <div class="ixr"><svg class="ico"><use href="#ic-pay"/></svg><span class="no">04</span><span class="nm">PAYMENTS</span><span class="cl">SETTLEMENT AT THE AGENT EDGE</span></div>
     </div>
   </div><div class="foot"><span class="fl"><svg class="logo" viewBox="0 0 641 128" role="img" aria-label="Unicity"><use href="#ulogo"/></svg><span>THE AGENTIC OPPORTUNITY — UNICITY LABS 2026</span></span><span class="fp">03 / 17</span></div></div>
 </section>
 
 <section class="sl" data-ch="01 — SECURITY · THE ZERO-CLICK ERA">
   <div class="stage"><div class="inner">
-    <div class="kick rv">01 — SECURITY <span class="sep">·</span> THE ZERO-CLICK ERA</div>
+    <div class="kick rv"><svg class="ico"><use href="#ic-sec"/></svg>01 — SECURITY <span class="sep">·</span> THE ZERO-CLICK ERA</div>
     <h2 class="rv" style="--d:.1s">THE EXECUTION PROBLEM<span class="accent">.</span></h2>
     <div class="cols" style="margin-top:20px">
       <div>
@@ -717,7 +736,7 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
 
 <section class="sl" data-ch="02 — GOVERNANCE · SHADOW AI &amp; EVIDENCE">
   <div class="stage"><div class="inner">
-    <div class="kick rv">02 — GOVERNANCE <span class="sep">·</span> SHADOW AI &amp; EVIDENCE</div>
+    <div class="kick rv"><svg class="ico"><use href="#ic-gov"/></svg>02 — GOVERNANCE <span class="sep">·</span> SHADOW AI &amp; EVIDENCE</div>
     <h2 class="rv" style="--d:.1s">THE EVIDENCE PROBLEM<span class="accent">.</span></h2>
     <div class="cols" style="margin-top:20px">
       <div>
@@ -772,7 +791,7 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
 
 <section class="sl" data-ch="03 — NETWORKING · A2A · MCP · CROSS-ENTERPRISE">
   <div class="stage"><div class="inner">
-    <div class="kick rv">03 — NETWORKING <span class="sep">·</span> A2A · MCP · CROSS-ENTERPRISE</div>
+    <div class="kick rv"><svg class="ico"><use href="#ic-net"/></svg>03 — NETWORKING <span class="sep">·</span> A2A · MCP · CROSS-ENTERPRISE</div>
     <h2 class="rv" style="--d:.1s">THE INTEROPERABILITY PROBLEM<span class="accent">.</span></h2>
     <div class="cols" style="margin-top:20px">
       <div>
@@ -819,7 +838,7 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
 
 <section class="sl" data-ch="04 — PAYMENTS · SETTLEMENT AT THE EDGE">
   <div class="stage"><div class="inner">
-    <div class="kick rv">04 — PAYMENTS <span class="sep">·</span> SETTLEMENT AT THE EDGE</div>
+    <div class="kick rv"><svg class="ico"><use href="#ic-pay"/></svg>04 — PAYMENTS <span class="sep">·</span> SETTLEMENT AT THE EDGE</div>
     <h2 class="rv" style="--d:.1s">THE SETTLEMENT PROBLEM<span class="accent">.</span></h2>
     <div class="cols" style="margin-top:20px">
       <div>
@@ -999,10 +1018,10 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
     <div class="kick rv">CLOSING <span class="sep">·</span> THE SUBSTRATE THESIS</div>
     <h2 class="rv" style="--d:.1s;font-size:34px">FOUR CHAPTERS. ONE PRIMITIVE<span class="accent">.</span></h2>
     <div class="fourrow rv" style="--d:.25s">
-      <div class="fr"><span class="fd">01 · SECURITY</span><p>An instruction stopped before it executes.</p></div>
-      <div class="fr"><span class="fd">02 · GOVERNANCE</span><p>An action signed into evidence.</p></div>
-      <div class="fr"><span class="fd">03 · NETWORKING</span><p>A negotiation between strangers' machines.</p></div>
-      <div class="fr"><span class="fd">04 · PAYMENTS</span><p>A payment that settles at the edge.</p></div>
+      <div class="fr"><span class="fd"><svg class="ico"><use href="#ic-sec"/></svg>01 · SECURITY</span><p>An instruction stopped before it executes.</p></div>
+      <div class="fr"><span class="fd"><svg class="ico"><use href="#ic-gov"/></svg>02 · GOVERNANCE</span><p>An action signed into evidence.</p></div>
+      <div class="fr"><span class="fd"><svg class="ico"><use href="#ic-net"/></svg>03 · NETWORKING</span><p>A negotiation between strangers' machines.</p></div>
+      <div class="fr"><span class="fd"><svg class="ico"><use href="#ic-pay"/></svg>04 · PAYMENTS</span><p>A payment that settles at the edge.</p></div>
     </div>
     <p class="lede rv" style="--d:.45s;margin-top:16px;max-width:940px">Each reduces to one primitive — <b>a self-contained proof of what happened, who acted, and under what authority.</b> That primitive takes two layers: a <b>runtime</b> that mints it — running the agent, inspecting every step, stopping it before it acts — and a <b>chain</b> that settles it, so the proof holds anywhere, without trusting the operator, the platform, or the counterparty. Build both, and security, governance, networking, and payments stop being four products. <em>They become four views of one substrate.</em> The rails already move the money — the substrate gives the machine that moves it a passport it carries itself.</p>
     </div>
@@ -1101,23 +1120,11 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
     var to = parseFloat(el.getAttribute('data-to'));
     var dec = parseInt(el.getAttribute('data-dec')||'0',10);
     var suf = el.getAttribute('data-suf')||'';
-    var dur = Math.min(parseInt(el.getAttribute('data-dur')||'1400',10), 1200);
-    var from = parseFloat(el.getAttribute('data-from')||'0');
-    if (reduced){ el.textContent = to.toFixed(dec)+suf; return; }
-    var t0 = null;
-    function frame(ts){
-      if(!t0) t0 = ts;
-      var p = Math.min((ts - t0)/dur, 1);
-      el.textContent = (from + (to-from)*easeOut(p)).toFixed(dec)+suf;
-      if (p < 1) requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
+    el.textContent = to.toFixed(dec)+suf;
   }
   function playCounters(slide){
     var nums = slide.querySelectorAll('.num');
-    for (var i=0;i<nums.length;i++){
-      (function(el,d){ setTimeout(function(){ runCounter(el); }, d); })(nums[i], 780 + i*120);
-    }
+    for (var i=0;i<nums.length;i++){ runCounter(nums[i]); }
   }
 
   /* ---------- live EU AI Act countdown · per-second ---------- */
