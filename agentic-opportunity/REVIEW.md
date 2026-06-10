@@ -198,3 +198,18 @@ Gartner 40%/~130 vendors/15% autonomous decisions, MIT-SMR×BCG 35% adoption, De
 ## Open — owner's call
 
 - **ABU DHABI** was removed pending confirmation. If Unicity Labs has a genuine UAE/ADGM office or registration, restoring it is a one-line edit (`TALLINN · ZUG · ABU DHABI`).
+
+---
+
+## Source-folder reconciliation (2026-06-10)
+
+After the web-only fact-check, the report's actual provenance surfaced: `~/Downloads/Market Data/` (21 PDFs + ~23 images). Reconciling the deck against the **primary sources Alan actually used** caught two places where the web-based pass had "corrected" *away* from the real source:
+
+| Claim | Web pass said | Primary source says | Fix |
+|---|---|---|---|
+| $7.5T monthly on-chain | attributed to "Artemis, 2026" | **Money Movement 2.0** (51 Insights, 2026): *"Monthly on-chain settlement hit $7.5 trillion in March 2026, surpassing the U.S. ACH network for the first time"* | caption + source line re-attributed to Money Movement 2.0 (kept the global/trading-inclusive caveat — the report itself notes only ~$400B is real-world payments ex-trading/bots) |
+| 12× governance | "AI governance **tools**" | **Databricks State of AI Agents 2026** (p5/p26): *"Companies that **actively use** AI governance put over 12× more AI projects into production"* | reverted to **"ACTIVE AI GOVERNANCE"** — the deck's original wording was faithful to the source |
+
+Primary-source **confirmations** (deck was right): 70–90% programmatic stablecoin volume (Money Movement 2.0, verbatim); 69,000 x402 agents + 165M txns, Apr 2026 (Money Movement 2.0); 327% multi-agent growth + 78% multi-LLM, Oct 2025 (Databricks). Money Movement 2.0's *"$400B real-world payments excluding trading and bots"* independently backs the deck's x402 skepticism.
+
+Not in the folder (so web-sourced, no primary to contradict): **Cisco 59/61%** (the 2024→2025 edition bump is a judgment call — revertible) and **171% ROI / PagerDuty**. The rest of the folder is supplementary research from adjacent domains (Magnet Forensics DFIR, CockroachDB RAG, Legitima/Gartner compliance, Gartner AI-TRiSM & shadow-AI figures) — useful background, not deck stats.
