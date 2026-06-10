@@ -287,6 +287,27 @@ h2{font-size:clamp(38px,7.2vw,104px);margin-top:18px;}
 .gi{width:22px;height:22px;display:block;color:var(--orange)}
 .ki{width:13px;height:13px;display:inline-block;vertical-align:-2px;margin-right:9px;color:var(--orange)}
 @media (max-width:640px){.gi{width:18px;height:18px}}
+.tlstack{margin-top:clamp(18px,2.6vw,30px);display:flex;flex-direction:column;gap:0;max-width:940px}
+.tlagent{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:11px 20px;border:1px dashed var(--rule);border-radius:10px}
+.tlagent .tll{font-family:var(--disp);font-size:17px;color:var(--dim);letter-spacing:.02em}
+.tlagent .tlr{font:700 9px/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.tlbound{font:700 8.5px/1.5 var(--mono);letter-spacing:.3em;text-transform:uppercase;color:var(--faint);padding:7px 2px;text-align:center}
+.tlbound.across{color:var(--orange)}
+.tllayer{position:relative;background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:16px 22px}
+.tllayer.ch{border-color:rgba(255,106,31,.42);background:linear-gradient(180deg,rgba(255,106,31,.07),rgba(255,106,31,.015))}
+.tlhead{display:flex;align-items:baseline;gap:13px}
+.tlno{font:700 11px/1 var(--mono);color:var(--faint);letter-spacing:.2em}
+.tlname{font-family:var(--disp);font-size:clamp(21px,2.9vw,30px);color:var(--ink);letter-spacing:.02em}
+.tllayer.ch .tlname{color:var(--orange)}
+.tlmint{margin-left:auto;font:700 9px/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--orange)}
+.tlverbs{margin-top:7px;font:600 10.5px/1.65 var(--mono);letter-spacing:.05em;color:var(--dim);text-transform:uppercase}
+.tldomains{margin-top:11px;display:flex;gap:24px}
+.tld{display:flex;align-items:center;gap:7px;font:700 10.5px/1 var(--mono);letter-spacing:.16em;color:var(--ink)}
+.tld .ki{margin-right:0;width:14px;height:14px}
+.tlproof{display:flex;align-items:center;justify-content:center;gap:14px;padding:9px 0;flex-wrap:wrap}
+.tlproof span{font-family:var(--disp);font-size:14px;letter-spacing:.12em;color:var(--orange)}
+.tlproof em{font:600 9px/1.4 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--faint);font-style:normal}
+@media(max-width:640px){.tldomains{gap:14px}.tlname{font-size:20px}.tlagent{flex-direction:column;align-items:flex-start;gap:4px}.tlmint{display:none}}
 </style>
 </head>
 <body>
@@ -300,7 +321,7 @@ h2{font-size:clamp(38px,7.2vw,104px);margin-top:18px;}
 <!-- HUD -->
 <header class="hud" aria-hidden="true">
   <div class="wm">UNICITY<i>.</i></div>
-  <div class="ch"><span id="chname">COVER</span><b id="chidx">01 / 15</b></div>
+  <div class="ch"><span id="chname">COVER</span><b id="chidx">01 / 16</b></div>
 </header>
 <div class="hint" id="hint">SCROLL · ARROWS · SPACE · SWIPE</div>
 <div class="navbtns">
@@ -652,23 +673,48 @@ h2{font-size:clamp(38px,7.2vw,104px);margin-top:18px;}
   </div>
 </section>
 
-<!-- 14 · CLOSE -->
+<!-- 14 · ARCHITECTURE -->
+<section class="sl" data-ch="THE ARCHITECTURE · TWO LAYERS, ONE PROOF">
+  <div class="wrap">
+    <div class="kick rv">THE ARCHITECTURE <span class="sep">·</span> ONE PRIMITIVE, TWO LAYERS</div>
+    <h2 class="rv" style="--d:.1s;font-size:clamp(32px,5vw,68px)">TWO LAYERS.<br>ONE PROOF<span class="accent">.</span></h2>
+    <div class="tlstack rv" style="--d:.3s">
+      <div class="tlagent"><span class="tll">YOUR AGENT</span><span class="tlr">ANY FRAMEWORK · ANY MODEL · RUNS AS-IS</span></div>
+      <div class="tlbound">INSIDE YOUR WALLS</div>
+      <div class="tllayer">
+        <div class="tlhead"><span class="tlno">01</span><span class="tlname">THE RUNTIME</span><span class="tlmint">MINTS THE PROOF</span></div>
+        <div class="tlverbs">RUNS THE AGENT · INSPECTS EVERY STEP · STOPS IT BEFORE IT ACTS · SIGNS WHAT IT DID</div>
+        <div class="tldomains"><span class="tld"><svg class="ki"><use href="#ic-shield"/></svg>SECURITY</span><span class="tld"><svg class="ki"><use href="#ic-record"/></svg>GOVERNANCE</span></div>
+      </div>
+      <div class="tlproof"><span>&darr; THE PROOF</span><em>what happened · who acted · under what authority</em></div>
+      <div class="tllayer ch">
+        <div class="tlhead"><span class="tlno">02</span><span class="tlname">THE CHAIN</span><span class="tlmint">SETTLES THE PROOF</span></div>
+        <div class="tlverbs">CARRIES IDENTITY &amp; VALUE · SETTLES AT THE EDGE · VERIFIES WITHOUT A TRUSTED MIDDLE</div>
+        <div class="tldomains"><span class="tld"><svg class="ki"><use href="#ic-nodes"/></svg>NETWORKING</span><span class="tld"><svg class="ki"><use href="#ic-coin"/></svg>PAYMENTS</span></div>
+      </div>
+      <div class="tlbound across">ACROSS EVERY WALL &rarr; VERIFIED AT THE EDGE BY ANY COUNTERPARTY, WITHOUT TRUST</div>
+    </div>
+    <p class="punch rv" style="--d:.8s">Everyone else has one layer. <i>Unicity runs both</i> — so the proof an agent makes inside your walls is the proof a stranger&rsquo;s agent can check outside them.</p>
+  </div>
+</section>
+
+<!-- 15 · CLOSE -->
 <section class="sl" data-ch="CLOSING · THE SUBSTRATE THESIS">
   <div class="wrap">
     <div class="kick rv">CLOSING <span class="sep">·</span> THE SUBSTRATE THESIS</div>
     <h2 class="rv" style="--d:.1s;font-size:clamp(34px,5.6vw,76px)">FOUR CHAPTERS. ONE PRIMITIVE<span class="accent">.</span></h2>
-    <p class="lede rv" style="--d:.3s;margin-top:22px;max-width:880px">An instruction intercepted before execution. An action signed into evidence. A negotiation between strangers' machines. A payment that settles at the edge. Each reduces to the same requirement: <b>a self-contained, verifiable proof of what happened, who acted, and under what authority</b> — proof that holds without trusting the operator, the platform, or the counterparty. Build that primitive once, and security, governance, networking, and payments stop being four products. <em>They become four views of one substrate.</em></p>
+    <p class="lede rv" style="--d:.3s;margin-top:22px;max-width:880px">An instruction stopped before it executes. An action signed into evidence. A negotiation between strangers' machines. A payment that settles at the edge. Each reduces to one primitive — <b>a self-contained proof of what happened, who acted, and under what authority.</b> That primitive takes two layers: a <b>runtime</b> that mints it — running the agent, inspecting every step, stopping it before it acts — and a <b>chain</b> that settles it, so the proof holds anywhere, without trusting the operator, the platform, or the counterparty. Build both, and security, governance, networking, and payments stop being four products. <em>They become four views of one substrate.</em></p>
     <div class="closer rv" style="--d:.55s;margin-top:40px">EVERYONE'S BUILDING AGENTS.<br>THE WINNERS ARE BUILDING<br>THE <span class="accent">SUBSTRATE.</span></div>
     <div class="tagline rv" style="--d:.85s">ARCHITECTURE, NOT POLICY · PROOF, NOT PROMISES</div>
   </div>
 </section>
 
-<!-- 15 · CTA -->
+<!-- 16 · CTA -->
 <section class="sl" data-ch="SEE IT RUNNING · LIVE">
   <div class="wrap">
     <div class="kick rv">SEE IT RUNNING <span class="sep">·</span> LIVE</div>
     <h2 class="rv" style="--d:.1s">WATCH AN AGENT TRY TO<br>BREAK THE RULES — <span class="accent">AND FAIL.</span></h2>
-    <p class="lede rv" style="--d:.3s;margin-top:22px;max-width:760px">Live: an autonomous agent attempts an unauthorized action. It is inspected, intercepted, and signed into the audit record — <b>before the tool call executes.</b> That is the substrate, working.</p>
+    <p class="lede rv" style="--d:.3s;margin-top:22px;max-width:760px">Live: an autonomous agent attempts an unauthorized action. The <b>runtime</b> inspects it, stops it before the tool call executes, and signs the attempt into a proof — one the <b>chain</b> can settle. That is both layers, working.</p>
     <p class="lede rv" style="--d:.45s;margin-top:14px;max-width:760px">Bring the Readiness Model — <em>we'll score your environment against it in the first fifteen minutes.</em></p>
     <a class="cta rv" style="--d:.6s" href="https://unicity.ai" target="_blank" rel="noopener">BOOK THE DEMO <span class="arr">→</span></a>
     <div class="ctameta rv" style="--d:.75s">UNICITY.AI · LINKEDIN/UNICITY-LABS</div>

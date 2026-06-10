@@ -1,6 +1,6 @@
 # THE AGENTIC OPPORTUNITY — Unicity Labs 2026 (Live Deck)
 
-A 15-slide fullscreen presentation: an expert overview of the agentic-AI market that
+A 16-slide fullscreen presentation: an expert overview of the agentic-AI market that
 decomposes the opportunity into four domains — **security, governance, networking,
 payments** — and resolves them to one primitive (the "substrate"), positioning Unicity
 without ever hard-selling it until the close. Original mold built with Fable; developed,
@@ -20,7 +20,19 @@ nodes · coin), added as an inline SVG sprite — used in the slide-3 four-domai
 echoed small on each domain section's eyebrow. No icon library, no decoration; the glyphs
 carry the four-domain taxonomy so you always know which domain a slide belongs to.
 
-**2. Fact-grounding pass.** Every statistic was web-verified against primary sources and
+**2. "Two layers, one proof" — the architecture, made explicit (new signature slide).**
+The deck's "substrate" was a one-word umbrella over two genuinely distinct layers — so
+it now *earns* the word. A new slide (14) shows the real stack: a **runtime** that mints
+the proof (runs the agent, inspects every step, stops it before it acts, signs what it
+did — Security + Governance, *inside your walls*) and a **chain** that settles it
+(carries identity & value, settles at the edge, verifies without a trusted middle —
+Networking + Payments, *across* them). The four domain glyphs now do real semantic work,
+mapping to their layer. The moat line: *"Everyone else has one layer. Unicity runs
+both."* The close and the live-demo slide were rewritten to match (the demo's intercept
+is now correctly attributed to the runtime, not the chain — fixing the one category
+error the review caught). Kept product-name-free, so the deck stays subtle.
+
+**3. Fact-grounding pass.** Every statistic was web-verified against primary sources and
 every Unicity claim checked against the actual whitepaper/docs (see `REVIEW.md` for the
 full audit). Corrections applied:
 
@@ -61,7 +73,9 @@ local Downloads) carries the same content; the corrections above apply to it too
 ## Still open (your call — flagged in REVIEW.md, not yet changed)
 
 - A few **should-fix** softenings (e.g. "instant, without trust" → "~2s inclusion proof"
-  for cryptographer precision; the Readiness Model scores 3 columns for 4 domains).
-- The deeper **two-layer framing** (runtime guard layer vs. settlement chain) — kept as
-  the single "substrate" thesis for rhetorical force; tighten only if a technical
-  audience needs the distinction made explicit.
+  for cryptographer precision).
+- The **Readiness Model** (slide 12) could now adopt the two-layer cut directly — its
+  columns becoming runtime-side (enforcement, record) vs chain-side (identity,
+  settlement), which also closes the 3-columns-for-4-domains gap. Left for a later pass.
+- The **objection slide** (13) could be recast around "nobody runs both layers" now that
+  the architecture slide establishes them — optional reinforcement.
