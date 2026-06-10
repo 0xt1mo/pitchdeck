@@ -760,10 +760,10 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
     <div class="cols" style="margin-top:18px">
       <div>
         <div class="clock rv" style="--d:.25s">
-          <div class="t">T−<span id="tminus">··</span></div>
-          <div class="cap">DAYS UNTIL HIGH-RISK AI OBLIGATIONS GO LIVE ACROSS THE EU<em>August 2, 2026</em><span class="live"><i></i>RECOMPUTED LIVE — RIGHT NOW</span></div>
+          <div class="t"><span id="tminus">··</span></div>
+          <div class="cap">DAYS UNTIL THE EU'S HIGH-RISK AI RULES TAKE EFFECT<em>August 2, 2026</em><span class="live"><i></i>COUNTING DOWN LIVE</span></div>
         </div>
-        <div class="hmsrow rv" style="--d:.4s"><b id="hms">··<i> : </i>··<i> : </i>··</b><em>TO THE SECOND — SHRINKING WHILE YOU READ</em></div>
+        <div class="hmsrow rv" style="--d:.4s"><b id="hms">··<i> : </i>··<i> : </i>··</b><em>HOURS · MINUTES · SECONDS — STILL COUNTING</em></div>
         <div class="fines rv" style="--d:.55s">
           <div class="fine"><div class="fv">€35M / 7%</div><div class="fl">PROHIBITED AI PRACTICES — OF GLOBAL TURNOVER</div></div>
           <div class="fine"><div class="fv">€15M / 3%</div><div class="fl">HIGH-RISK NON-COMPLIANCE</div></div>
@@ -775,7 +775,7 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
         <div class="tl"><span class="d">FEB 02 2025</span><span class="w"><b>Prohibited practices enforceable.</b> Social scoring, manipulative AI, unauthorized biometric surveillance — banned outright.</span><span class="s">IN FORCE</span></div>
         <div class="tl"><span class="d">AUG 02 2025</span><span class="w"><b>General-purpose AI obligations begin.</b> A one-year adjustment period applies; the Commission's enforcement powers over GPAI providers phase in from 2 Aug 2026.</span><span class="s">IN FORCE</span></div>
         <div class="tlnow rv" style="--d:.6s" aria-hidden="true"><span>NOW · <b id="nowdate"></b></span><i></i></div>
-        <div class="tl"><span class="d">AUG 02 2026</span><span class="w"><b>High-risk obligations go live.</b> Hiring, credit, access-to-services systems must show risk management, data governance, traceability, human oversight — continuously.</span><span class="s hot" id="tstat">T−··</span></div>
+        <div class="tl"><span class="d">AUG 02 2026</span><span class="w"><b>High-risk obligations go live.</b> Hiring, credit, access-to-services systems must show risk management, data governance, traceability, human oversight — continuously.</span><span class="s hot" id="tstat">SOON</span></div>
         <div class="tl"><span class="d">AUG 02 2027</span><span class="w"><b>Full application.</b> Extends to high-risk AI embedded in regulated products — medical devices, vehicles, aviation.</span><span class="s">AHEAD</span></div>
       </div>
     </div>
@@ -1133,7 +1133,7 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
       var rem = ms % 86400000;
       var h = Math.floor(rem/3600000), m = Math.floor(rem%3600000/60000), s = Math.floor(rem%60000/1000);
       if (t1) t1.textContent = d;
-      if (t2) t2.textContent = 'T\u2212' + d + ' DAYS';
+      if (t2) t2.textContent = 'IN ' + d + ' DAYS';
       if (hm) hm.innerHTML = pad(h)+'<i> : </i>'+pad(m)+'<i> : </i>'+pad(s);
     } else {
       if (t1) t1.textContent = '0';
