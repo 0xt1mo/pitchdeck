@@ -1,106 +1,150 @@
-# THE AGENTIC OPPORTUNITY — Unicity Labs 2026 (Live Deck)
+# THE AGENTIC OPPORTUNITY
+**Unicity Labs — 2026 Industry Report**
 
-A **17-slide** fullscreen presentation: an expert overview of the agentic-AI market that
-decomposes the opportunity into four domains — **security, governance, networking,
-payments** — and resolves them to one primitive (the "substrate"), positioning Unicity
-without ever hard-selling it until the close. Original mold built with Fable; developed,
-icon-enhanced, and fact-grounded here, then re-developed into **v4** (richer layout +
-live counters; Claude design + Fable 5 Max) and finalized, then deepened into **v5** by
-absorbing the Market Data knowledge bank — see the *v4 finalize pass* in `REVIEW.md` and
-the full *v5 enrichment* in `V5-BLUEPRINT.md`.
+> What autonomous AI actually means for security, governance, networking, and payments —
+> read from where the market is *spending*, not from where analysts are guessing.
 
-## v5 — knowledge-bank enrichment (current)
+A self-contained, 17-slide live deck that decomposes the agentic-AI market into four
+domains and resolves them to a single primitive. But the deck is only the surface. Beneath
+it is a market-intelligence pipeline: a specialized scout operation, a consolidated
+knowledge bank, a multi-stage adversarial verification process, and a cross-source
+synthesis — rendered in Unicity's restrained, architecturally-precise register.
 
-`index.html` is the **v5** deck. It mines 19 source documents (`~/Downloads/Market Data/`)
-and folds their convergent evidence into the four-domain spine — depth and corroboration,
-not new surface area. The production gap becomes quadruple-sourced consensus (Databricks ·
-Camunda · Cisco · Deepgram); the two-layer architecture becomes convergent industry
-structure (Red Hat · Camunda · industrial control already run the split); the payments
-chapter is reframed from "demand hasn't arrived" to **"the gap was never demand — it is
-identity"** (Money Movement 2.0, Mar 2026). One new slide — *the white space, drawn*:
-Coinbase's real chokepoint vs. a portable proof. Full insight + slide-by-slide map +
-sourcing caveats in **`V5-BLUEPRINT.md`**.
+---
 
-## View it
+## 1 · The method — reading the market by its budgets
 
-Open **`index.html`** directly in any browser — it's fully self-contained (fonts inlined
-as base64, no external assets, no server). Navigate with **arrow keys · space · scroll ·
-swipe**; the prev/next buttons work too. Live touches: a scramble counter on each stat
-and a **recomputed-live** EU AI Act countdown.
+Most industry reports are desk research: one analyst's view, assembled from public
+summaries and second-hand citation. This report inverts the method. It reads the market by
+its **active spend**.
 
-## What changed from the mold (this branch)
+A specialized **scout operation** continuously captures the content that companies are
+*currently spending advertising and marketing budget to distribute* — the gated reports,
+sponsored ebooks, and lead-generation assets that brands are paying, right now, to put in
+front of buyers. That captured corpus is a live signal of conviction: a map of where the
+industry is concentrating attention and capital this cycle, in the categories it is
+willing to fund.
 
-**1. A minimal, clean icon system.** Four line-style domain glyphs (shield · record ·
-nodes · coin), added as an inline SVG sprite — used in the slide-3 four-domain index and
-echoed small on each domain section's eyebrow. No icon library, no decoration; the glyphs
-carry the four-domain taxonomy so you always know which domain a slide belongs to.
+The premise is simple, and it is the project's edge:
 
-**2. "Two layers, one proof" — the architecture, made explicit (new signature slide).**
-The deck's "substrate" was a one-word umbrella over two genuinely distinct layers — so
-it now *earns* the word. A new slide (14) shows the real stack: a **runtime** that mints
-the proof (runs the agent, inspects every step, stops it before it acts, signs what it
-did — Security + Governance, *inside your walls*) and a **chain** that settles it
-(carries identity & value, settles at the edge, verifies without a trusted middle —
-Networking + Payments, *across* them). The four domain glyphs now do real semantic work,
-mapping to their layer. The moat line: *"Everyone else has one layer. Unicity runs
-both."* The close and the live-demo slide were rewritten to match (the demo's intercept
-is now correctly attributed to the runtime, not the chain — fixing the one category
-error the review caught). Kept product-name-free, so the deck stays subtle.
+> **What a market pays to say about itself is a higher-fidelity signal than what it says
+> for free.** A vendor's free blog is opinion. A report it is actively promoting behind a
+> form is a bet. The scout captures the bets — then the report reads them against each
+> other.
 
-**3. Fact-grounding pass.** Every statistic was web-verified against primary sources and
-every Unicity claim checked against the actual whitepaper/docs (see `REVIEW.md` for the
-full audit). Corrections applied:
+The current corpus spans the players actively funding the agentic narrative — among them
+Databricks (*State of AI Agents 2026*), 51 Insights (*Money Movement 2.0*), Deepgram,
+Red Hat, Camunda, Securiti, Nexer / Kairos, Google Cloud, O'Reilly, and Magnet Forensics —
+across data infrastructure, payments, security, governance, and commerce. Captured not
+because they are well-known, but because they are **what the market is paying to say
+today**.
 
-| Was | Now | Why |
-|---|---|---|
-| HQ "Stockholm" | **Tallinn** | Unicity Labs OÜ is registered in Tallinn, Estonia |
-| "88% of AI **agents**" | "88% of AI agent **projects**" | denominator: 88% is a project/pilot failure rate, not an agent or org figure |
-| "the lethal trifecta" (3rd leg = execution) | "all three at once — the job description" | the coined term's real third leg is exfiltration; dropped the misused label, kept the three forces |
-| 7× governance / 68% / 81% / $4.9M | **97% / 63% / $4.44M / $670K** (IBM 2025) | the originals were uncited / misparaphrased / stale; replaced with directly-attributable IBM *Cost of a Data Breach 2025* figures |
-| "production **unlock**" | "the gate to production" | "unlock" is a banned buzzword |
-| 23% of B2B POs ≈ $180B | 33% of enterprise software agentic by 2028 (Gartner) | the $180B figure was unverifiable; replaced with the verified Gartner number |
-| 171% ROI / "192% in US" | "ROI reported … — vendor surveys, 2026" | rests on vendor surveys; attributed honestly, dropped the spurious-precision US figure |
-| x402 "$17K" daily volume | **$28K** (CoinDesk, Mar 2026) + "wash trading" | $17K appeared in no source; CoinDesk reports ~$28K |
-| Visa "3–9 months KYC / $250M floor" | "issuer-side verification — the intermediary at the center" | the numbers were single-source hearsay; kept the structural point |
-| on-chain "already past ACH" | "on par with US ACH" | the figure is global/trading-inclusive vs US-only ACH |
-| 327% "one-year" / "46% compounding" | "in four months (Databricks, Jun–Oct 2025)" | 327% is a 4-month figure; the 46% was fabricated |
-| EU AI Act: AI Office "gains enforcement" Aug 2025 | enforcement powers "phase in from 2 Aug 2026" | GPAI obligations apply 2025; Commission enforcement begins 2026 |
-| Digital Omnibus "in trilogue" | "provisional agreement May 2026 … not yet adopted" | status moved on; "not law" still holds |
-| "semantic inspection" / "meaning" | "inspection" / "intent, not just keywords" | "semantic inspection" traces to a separate (Aleria) concept; downgraded to what the Unicity runtime actually does |
-| protocol stewards | ACP = OpenAI **+ Stripe**; x402/MPP = Coinbase · Stripe | accuracy |
+## 2 · The pipeline — signal → thesis
 
-**Brand boundary — clean.** The review confirms **zero Aleria leakage** (no AOS-9,
-AgentStack-as-Aleria, AgentSphere, "Aleria L1", SIF, 225K/145×) and **zero
-customer/heritage misattribution** — the discipline that mattered most.
+**Capture → Consolidate → Verify → Synthesize → Render.** Each stage is deliberate, and
+the verification stages are adversarial by design.
 
-**CTA domain:** **unicity.ai** (canonical). `unicity-labs.com` 301-redirects to it; the
-deck prints `unicity.ai` directly. The LinkedIn slug stays `linkedin/unicity-labs`.
+1. **Capture.** The scout operation surfaces the actively-advertised corpus — the spend
+   signal.
+2. **Consolidate.** Each source is read in depth (its thesis absorbed, not skimmed for
+   numbers) and mined for its strongest data, arguments, and surprises — with every figure
+   tied to a page and a publisher.
+3. **Verify.** Every statistic is fact-checked against a primary source, then reconciled
+   against the *captured document itself* — which repeatedly catches where the open web has
+   drifted from the source a brand actually published. (Two such drifts were corrected here:
+   a settlement figure mis-attributed by the web to the wrong analyst, and a governance
+   stat the web had paraphrased away from its own wording.) Independent reviewers
+   adversarially re-check anything not rock-solid; the default is *refuted until proven*.
+4. **Synthesize.** The highest-value output is the **cross-source insight** — the
+   second-order thesis that emerges only by connecting independently-funded reports. When
+   four vendors who do not cite each other land on the identical finding, an assertion
+   becomes a consensus.
+5. **Render.** The synthesis is composed into the live deck, fact-grounded line by line,
+   in voice and on brand.
 
-## Files
+### What cross-source synthesis buys you
 
-- `index.html` — the developed, self-contained deck (the deliverable, v5).
-- `V5-BLUEPRINT.md` — the knowledge-bank enrichment: cross-source insights, the slide-by-
-  slide change map, and the sourcing caveats.
-- `REVIEW.md` — the full fact-check: must-fix / should-fix / what's strong, a
-  source-strength ledger, the Aleria–Unicity boundary note, the v4 finalize pass, and the
-  primary-source reconciliation.
+A few of the convergences that only this method surfaces:
 
-The long-form companion (`Unicity_Agentic_Opportunity_Report_MASTER.html`, in Alan's
-local Downloads) carries the same content; the corrections above apply to it too.
+- **The production gap is quadruple-sourced.** Databricks, Camunda, Cisco, and Deepgram —
+  four independently-funded datasets — find the same 60-to-90-point chasm between *using*
+  an agent and *trusting one in production*, and every one names the cause as trust, not
+  model quality. The report's spine stops being Unicity's claim and becomes the 2026
+  literature's consensus.
+- **The architecture is convergent industry structure.** Red Hat ("decision engine vs.
+  execution plane"), Camunda ("the orchestrator is not an agent"), and industrial control
+  ("enforcement regardless of agent reasoning") each separate the same two layers — without
+  knowing Unicity exists. The report positions Unicity as the missing *cryptographic,
+  portable* half of a split the market already runs.
+- **The buyers spec'd the primitive.** A mainstream retail consultancy (Nexer) names AP2 as
+  "the cryptographic security necessary for agents to make verifiable, autonomous
+  purchases," and GS1 frames the constraint as "trust, not tech" — the report's entire
+  thesis, arrived at independently by the people who would buy it.
 
-## v4 finalize pass (2026-06-10)
+## 3 · The argument
 
-`index.html` is now the **v4** deck, verified before shipping. A 29-agent workflow
-web-checked the ~18 new statistics v4 introduced against primary sources (adversarial
-second pass on anything shaky) plus brand-boundary and coherence audits. Brand boundary
-re-confirmed **clean** (zero Aleria leakage, product-name-free, no misattribution); all
-prior corrections survived the redesign; the deck is self-contained and the live counters
-render correctly. **2 must-fixes** (171% ROI relabel → PagerDuty 2025 *expected*; "Seven"
-→ "Six" protocols) and a set of precision/coherence fixes were applied — full table in
-`REVIEW.md` → *v4 finalize pass*.
+The report decomposes the agentic opportunity into **four domains** — security,
+governance, networking, payments — and shows that each reduces to **one primitive**: a
+self-contained proof of *what happened, who acted, and under what authority*.
 
-## Still open — owner's call
+That primitive takes **two layers**:
 
-- **ABU DHABI** was removed from the cover (now `TALLINN · ZUG`) — no primary source places
-  a Unicity office in the UAE (it traces to an investor's HQ + search-AI hallucinations).
-  If there's a real UAE/ADGM presence, restoring it is a one-line edit.
+- **The runtime** mints the proof — running the agent, inspecting every step, stopping it
+  before it acts, signing what it did. (Security · Governance, *inside the walls*.)
+- **The chain** settles the proof — carrying identity and value, settling at the edge,
+  verifying without a trusted middle. (Networking · Payments, *across the walls*.)
+
+> *Everyone else has one layer. Unicity runs both* — so the proof an agent makes inside
+> your walls is the proof a stranger's agent can check outside them. **Two layers, one
+> proof.** Positioned without a hard sell until the close.
+
+## 4 · The artifact
+
+`index.html` — a **17-slide, fully self-contained live deck**. No build, no server, no
+external assets: fonts inlined as base64, single file. Open it in any browser; navigate
+with **arrow keys · space · scroll · swipe**. Live touches include a per-second EU AI Act
+compliance countdown that recomputes as you read.
+
+**Design & voice DNA.** `--bg:#030303` near-black, a single accent orange `#FF6A1F`, Anton
+display + Geist Mono — and a four-domain line-glyph icon system (shield · record · nodes ·
+coin). The copy holds a restrained, systems-oriented register throughout: one specific
+claim per number, em-dash unpacking, the endgame named rather than the product. No hype.
+
+**PDF.** `export-pdf.mjs` regenerates a retina-crisp PDF (puppeteer + pdf-lib, 2×
+deviceScaleFactor + JPEG q85 ≈ 4.9 MB for 17 pages, no visible loss):
+
+```
+node agentic-opportunity/export-pdf.mjs
+```
+
+## 5 · In this folder
+
+| File | What it is |
+|---|---|
+| `index.html` | The deck — the deliverable. |
+| `V5-BLUEPRINT.md` | The knowledge-bank synthesis: the cross-source insights, the slide-by-slide grounding map, and the sourcing caveats. |
+| `REVIEW.md` | The verification record: the full fact-check, the brand-boundary audit, and the primary-source reconciliation. |
+| `export-pdf.mjs` | The PDF exporter (the PDF itself is gitignored; regenerate on demand). |
+
+## 6 · Discipline & provenance
+
+The project's credibility rests on three rules, enforced at every stage:
+
+- **Fact-grounding.** Every statistic is traceable to a primary source with an as-of date;
+  weaker / secondary-sourced figures are flagged as directional, not presented as primary
+  (e.g. the Morgan Stanley and Securiti figures); honest caveats are kept where the data is
+  trading-inclusive or edition-specific.
+- **Brand-boundary integrity.** The deck is product-name-free until a subtle close and
+  carries **zero leakage** of any separate company's IP — verified on every pass. It sells
+  the *category* (the substrate), never a SKU.
+- **No misattribution.** No third party's stat, customer, or pedigree is implied to be
+  Unicity's own; the breadth of credited sources is itself the credibility signal.
+
+## 7 · Status
+
+Shipped on the `agentic-opportunity` branch for team collaboration. One item is left for
+the owner's call: whether `ABU DHABI` belongs on the cover (currently `TALLINN · ZUG`) — no
+primary source places a Unicity office in the UAE, so it is a one-line re-add if there is a
+real presence.
+
+*Built with Fable; consolidated, verified, and synthesized here in 0xt1mo's register.*
