@@ -4,7 +4,9 @@ A 16-slide fullscreen presentation: an expert overview of the agentic-AI market 
 decomposes the opportunity into four domains — **security, governance, networking,
 payments** — and resolves them to one primitive (the "substrate"), positioning Unicity
 without ever hard-selling it until the close. Original mold built with Fable; developed,
-icon-enhanced, and fact-grounded here.
+icon-enhanced, and fact-grounded here, then re-developed into **v4** (richer layout +
+live counters; Claude design + Fable 5 Max) and finalized — see the *v4 finalize pass*
+in `REVIEW.md`.
 
 ## View it
 
@@ -70,12 +72,19 @@ deck prints `unicity.ai` directly. The LinkedIn slug stays `linkedin/unicity-lab
 The long-form companion (`Unicity_Agentic_Opportunity_Report_MASTER.html`, in Alan's
 local Downloads) carries the same content; the corrections above apply to it too.
 
-## Still open (your call — flagged in REVIEW.md, not yet changed)
+## v4 finalize pass (2026-06-10)
 
-- A few **should-fix** softenings (e.g. "instant, without trust" → "~2s inclusion proof"
-  for cryptographer precision).
-- The **Readiness Model** (slide 12) could now adopt the two-layer cut directly — its
-  columns becoming runtime-side (enforcement, record) vs chain-side (identity,
-  settlement), which also closes the 3-columns-for-4-domains gap. Left for a later pass.
-- The **objection slide** (13) could be recast around "nobody runs both layers" now that
-  the architecture slide establishes them — optional reinforcement.
+`index.html` is now the **v4** deck, verified before shipping. A 29-agent workflow
+web-checked the ~18 new statistics v4 introduced against primary sources (adversarial
+second pass on anything shaky) plus brand-boundary and coherence audits. Brand boundary
+re-confirmed **clean** (zero Aleria leakage, product-name-free, no misattribution); all
+prior corrections survived the redesign; the deck is self-contained and the live counters
+render correctly. **2 must-fixes** (171% ROI relabel → PagerDuty 2025 *expected*; "Seven"
+→ "Six" protocols) and a set of precision/coherence fixes were applied — full table in
+`REVIEW.md` → *v4 finalize pass*.
+
+## Still open — owner's call
+
+- **ABU DHABI** was removed from the cover (now `TALLINN · ZUG`) — no primary source places
+  a Unicity office in the UAE (it traces to an investor's HQ + search-AI hallucinations).
+  If there's a real UAE/ADGM presence, restoring it is a one-line edit.

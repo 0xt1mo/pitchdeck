@@ -152,3 +152,49 @@ This is a strong, on-voice document. The argumentative spine — the four-domain
 ## Note on the Aleria–Unicity brand boundary
 
 The report **respects the boundary well** — and that is its standout discipline. A full-text scan finds none of Aleria's product names or vanity metrics (AOS-9, AgentStack-as-Aleria, AgentSphere, "Aleria L1," SIF/"Semantic Intercept Fabric," 225K agents, 1,000+ customers, 145x, 450+ connectors), and the report sells the *category* ("the substrate") rather than a SKU, which avoids collision cleanly. The one place the boundary thins is conceptual, not nominal: the load-bearing security primitive "semantic inspection / inspecting the meaning of every instruction" (UNICITY03/04) traces to Aleria's website-deck "Semantic Intercept Fabric" concept and is **not** in the Unicity KB (which describes only "input classification"). The fix is to downgrade that phrasing to what AstridOS actually does — using genuine Unicity terms — and to keep the literal "SIF" and "sub-20ms" out (they currently are out; keep it that way). The CTA domain (`unicity-labs.com`) is a separate brand-consistency point, not Aleria leakage: it 301-redirects live to unicity.ai, so it is not a blocking error — optionally print the canonical `unicity.ai` to match the PR/LinkedIn convention.
+
+---
+
+# v4 FINALIZE PASS — 2026-06-10
+
+The deck was re-developed externally (Claude design + Fable 5 Max) into `Agentic_Opportunity_v4_1900.html` — richer layout, live counters, and **~18 new statistics** not present in the originally fact-checked version. This pass verified the v4 before shipping it as `index.html`: a 29-agent workflow web-checked every new claim against primary sources (with an adversarial second pass on anything not rock-solid) plus brand-boundary and coherence audits.
+
+**Brand boundary: CLEAN (re-confirmed on v4).** Zero Aleria leakage (no Aleria/AOS-9/AgentSphere/AgentStack/AstridOS/SIF/225K/145×), product-name-free, no customer/heritage misattribution, every third-party stat externally credited. The one prior conceptual thinness ("semantic inspection") is already resolved — v4 says "inspection / intent, not just keywords."
+
+**All prior corrections survived** the redesign (Tallinn, "agent **projects**", IBM 97%/63%/$4.44M/$670K, Gartner 33%, Databricks 327%/4mo, x402 $28K, ACP = OpenAI+Stripe, no "unlock"/"lethal trifecta", unicity.ai CTA).
+
+**Self-contained + live:** only external ref is the `unicity.ai` CTA link; 3 fonts inlined; JS valid; EU AI Act countdown targets `Date.UTC(2026,7,1,22,0,0)` = Aug 2 2026 00:00 CEST (Brussels midnight) — timezone-correct. All 16 slides render headless with counters landing on corrected values (verified by screenshot).
+
+## Applied — must-fix (2)
+
+| # | Was | Now | Why |
+|---|---|---|---|
+| 1 | 171% "AVG ROI **REPORTED** FOR AGENTIC PROGRAMS **THAT REACH PRODUCTION** — VENDOR SURVEYS, **2026**" | "AVG ROI ENTERPRISES **EXPECT** FROM AGENTIC AI — **PAGERDUTY SURVEY, 2025**" | PagerDuty's 171% is a forward-looking *expectation*, not a realized return; "that reach production" is a citation-chain mutation (absent from the primary); survey is 2025 and is one named source, not plural "vendor surveys" |
+| 2 | "**Seven** protocols announced in eighteen months" | "**Six** protocols…" | The table has 6 rows and the punch says "Six standards" — "Seven" was an investor-visible contradiction |
+
+## Applied — should-fix (precision / coherence)
+
+| Slide | Was | Now | Why |
+|---|---|---|---|
+| Cover | TALLINN · ZUG · **ABU DHABI** | TALLINN · ZUG | Abu Dhabi traces only to investor Tawasal's HQ + search-AI hallucinations; no primary source places a Unicity office there *(owner can confirm — see below)* |
+| Prize | 59% / "ONLY **15% CALL THEIR INFRASTRUCTURE** AI-READY" | 61% / "FEWER THAN 1 IN 6 HAVE **NETWORKS READY FOR AI**" | refreshed 2024→2025 Cisco edition (59→61); the 15% is network-specific & measured, not a whole-infrastructure self-report; "fewer than 1 in 6" also kills a duplicate "15%" colliding with the Gartner stat on the same slide |
+| Governance | "12× … WITH **ACTIVE AI GOVERNANCE**" | "12× … WITH **AI GOVERNANCE TOOLS**" | Databricks' signal is use of its governance *tools* (telemetry), not abstract governance |
+| Payments | "$7.5T … ON PAR WITH US ACH" (no caveat) | + "Artemis, 2026 — global & trading-inclusive vs US-only ACH" | the figure is correct but global/trading-inclusive vs US-only ACH; without the caveat the comparison misleads |
+| Payments | "a thousand merchants are agent-enabled — … **single digits**" | "real agent-initiated transactions still number in the **hundreds, not the millions**" | the merchant/single-digit counts were unsourced; grounded in Visa's reported hundreds; also removed a duplicated "wash trading" clause |
+| Exhibit-Payments | "Verification travels with the value" (twice on slide) | "Proof rides with the value" (edge pane) | de-duplicated the refrain within one frame |
+| Framework | "Nothing below L2 survives **contact with** production" | "…survives **production at scale**" | reconciles with L1's "SHIPS NARROW, LOW-RISK WORKFLOWS" |
+| Architecture | kick "ONE PRIMITIVE, TWO LAYERS" vs hero "TWO LAYERS. ONE PROOF." | both "TWO LAYERS, ONE PROOF" | one ordering per slide |
+| Source line | "CISCO AI READINESS INDEX · … · COINDESK ON-CHAIN ANALYSIS" | "CISCO … INDEX **2025** · **PAGERDUTY** · … · COINDESK · **ARTEMIS** ON-CHAIN ANALYSIS" | attribution accuracy (Artemis did the on-chain analysis; PagerDuty now cited; Cisco edition dated) |
+
+## Verified solid — NOT changed
+
+Gartner 40%/~130 vendors/15% autonomous decisions, MIT-SMR×BCG 35% adoption, Deloitte 11% in production, EchoLeak CVE-2025-32711 (9.3, Microsoft rating) / ForcedLeak 9.4 (Noma) / Morris II (Cornell Tech), $5 expired domain, Stripe **288 products** (Stripe Sessions 2026), x402 **69,000 agents** claimed vs $28K real, **$7.5T** monthly on-chain figure itself, **70–90%** stablecoin programmatic (Money Movement 2.0), Databricks **78%** multi-LLM, EU AI Act penalty tiers (€35M/7% · €15M/3% · €7.5M/1%, exact per Art. 99), and the **protocol-steward table** — including **x402/MPP = Coinbase · Stripe** (the Linux Foundation's own release names Stripe as an x402 developer, so Stripe is *not* stripped).
+
+## Deliberately left as-is
+
+- **Gartner "over 40%" / "at least 15%" / "over 12×":** the deck prints flat 40%/15%/12×, which *understates* the sourced floors — conservative, not misleading; left for clean counter animation.
+- **EU high-risk timeline (Aug 2 2026 / 2027):** the deck already carries the honest "Digital Omnibus provisional May 2026, not yet law — until then, August 2 stands" caveat; defensible as written.
+
+## Open — owner's call
+
+- **ABU DHABI** was removed pending confirmation. If Unicity Labs has a genuine UAE/ADGM office or registration, restoring it is a one-line edit (`TALLINN · ZUG · ABU DHABI`).
