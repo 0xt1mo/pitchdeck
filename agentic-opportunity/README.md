@@ -46,8 +46,8 @@ full audit). Corrections applied:
 AgentStack-as-Aleria, AgentSphere, "Aleria L1", SIF, 225K/145×) and **zero
 customer/heritage misattribution** — the discipline that mattered most.
 
-**Note:** `unicity-labs.com` (the CTA) is **not** an error — it 301-redirects to unicity.ai.
-Left as-is; optionally print `unicity.ai` to match the LinkedIn/PR convention.
+**CTA domain:** **unicity.ai** (canonical). `unicity-labs.com` 301-redirects to it; the
+deck prints `unicity.ai` directly. The LinkedIn slug stays `linkedin/unicity-labs`.
 
 ## Files
 
