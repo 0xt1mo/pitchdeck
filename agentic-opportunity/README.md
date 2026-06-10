@@ -1,12 +1,25 @@
 # THE AGENTIC OPPORTUNITY — Unicity Labs 2026 (Live Deck)
 
-A 16-slide fullscreen presentation: an expert overview of the agentic-AI market that
+A **17-slide** fullscreen presentation: an expert overview of the agentic-AI market that
 decomposes the opportunity into four domains — **security, governance, networking,
 payments** — and resolves them to one primitive (the "substrate"), positioning Unicity
 without ever hard-selling it until the close. Original mold built with Fable; developed,
 icon-enhanced, and fact-grounded here, then re-developed into **v4** (richer layout +
-live counters; Claude design + Fable 5 Max) and finalized — see the *v4 finalize pass*
-in `REVIEW.md`.
+live counters; Claude design + Fable 5 Max) and finalized, then deepened into **v5** by
+absorbing the Market Data knowledge bank — see the *v4 finalize pass* in `REVIEW.md` and
+the full *v5 enrichment* in `V5-BLUEPRINT.md`.
+
+## v5 — knowledge-bank enrichment (current)
+
+`index.html` is the **v5** deck. It mines 19 source documents (`~/Downloads/Market Data/`)
+and folds their convergent evidence into the four-domain spine — depth and corroboration,
+not new surface area. The production gap becomes quadruple-sourced consensus (Databricks ·
+Camunda · Cisco · Deepgram); the two-layer architecture becomes convergent industry
+structure (Red Hat · Camunda · industrial control already run the split); the payments
+chapter is reframed from "demand hasn't arrived" to **"the gap was never demand — it is
+identity"** (Money Movement 2.0, Mar 2026). One new slide — *the white space, drawn*:
+Coinbase's real chokepoint vs. a portable proof. Full insight + slide-by-slide map +
+sourcing caveats in **`V5-BLUEPRINT.md`**.
 
 ## View it
 
@@ -65,9 +78,12 @@ deck prints `unicity.ai` directly. The LinkedIn slug stays `linkedin/unicity-lab
 
 ## Files
 
-- `index.html` — the developed, self-contained deck (the deliverable).
+- `index.html` — the developed, self-contained deck (the deliverable, v5).
+- `V5-BLUEPRINT.md` — the knowledge-bank enrichment: cross-source insights, the slide-by-
+  slide change map, and the sourcing caveats.
 - `REVIEW.md` — the full fact-check: must-fix / should-fix / what's strong, a
-  source-strength ledger, and the Aleria–Unicity boundary note.
+  source-strength ledger, the Aleria–Unicity boundary note, the v4 finalize pass, and the
+  primary-source reconciliation.
 
 The long-form companion (`Unicity_Agentic_Opportunity_Report_MASTER.html`, in Alan's
 local Downloads) carries the same content; the corrections above apply to it too.
