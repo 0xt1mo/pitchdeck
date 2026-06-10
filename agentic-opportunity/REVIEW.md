@@ -195,9 +195,9 @@ Gartner 40%/~130 vendors/15% autonomous decisions, MIT-SMR×BCG 35% adoption, De
 - **Gartner "over 40%" / "at least 15%" / "over 12×":** the deck prints flat 40%/15%/12×, which *understates* the sourced floors — conservative, not misleading; left for clean counter animation.
 - **EU high-risk timeline (Aug 2 2026 / 2027):** the deck already carries the honest "Digital Omnibus provisional May 2026, not yet law — until then, August 2 stands" caveat; defensible as written.
 
-## Open — owner's call
+## Resolved
 
-- **ABU DHABI** was removed pending confirmation. If Unicity Labs has a genuine UAE/ADGM office or registration, restoring it is a one-line edit (`TALLINN · ZUG · ABU DHABI`).
+- **ABU DHABI** — restored. It was held back during the fact-check because no *public* primary source corroborated a UAE office (the only Abu Dhabi link in the seed-round PR was the investor's HQ). The owner has since confirmed the presence against the organization's own records, so the cover reads **TALLINN · ZUG · ABU DHABI**. The lesson stands: the fact-grounding gate applies to the company's own facts too — claims wait for corroboration, then ship.
 
 ---
 

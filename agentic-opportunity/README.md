@@ -142,9 +142,9 @@ The project's credibility rests on three rules, enforced at every stage:
 
 ## 7 · Status
 
-Shipped on the `agentic-opportunity` branch for team collaboration. One item is left for
-the owner's call: whether `ABU DHABI` belongs on the cover (currently `TALLINN · ZUG`) — no
-primary source places a Unicity office in the UAE, so it is a one-line re-add if there is a
-real presence.
+Shipped on the `agentic-opportunity` branch for team collaboration. The cover footprint
+reads **Tallinn · Zug · Abu Dhabi** — the UAE presence confirmed against the organization's
+own records (it had been held back only until a primary source corroborated it; the
+fact-grounding discipline applies to the company's own facts too).
 
 *Built with Fable; consolidated, verified, and synthesized here in 0xt1mo's register.*
