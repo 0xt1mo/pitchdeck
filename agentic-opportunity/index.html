@@ -587,16 +587,22 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
 <aside class="ledger" id="ledger" aria-label="Session record"><header><span class="t1">SESSION RECORD</span><span class="t2" id="ledmeta">APPEND-ONLY · EVERY VIEW SIGNED</span></header><div class="lrows" id="lrows"></div></aside>
 
 <section class="sl" data-ch="2026 INDUSTRY REPORT">
-  <div class="stage"><canvas class="lattice" aria-hidden="true"></canvas><div class="inner">
-    <div class="coverlogo rv" style="--d:0s"><svg class="logo" viewBox="0 0 641 128" role="img" aria-label="Unicity"><use href="#ulogo"/></svg></div>
-    <div class="kick rv" style="--d:.05s">2026 INDUSTRY REPORT <span class="sep">·</span> UNICITY LABS</div>
-    <h1 class="rv" style="--d:.15s">THE AGENTIC<br>OPPORTUNITY<span class="accent">.</span></h1>
-    <p class="lede rv" style="--d:.35s;margin-top:20px">What autonomous AI actually means for <b>security</b>, <b>governance</b>, <b>networking</b>, and <b>payments</b> — with the evidence.</p>
-    <div class="mega rv" style="--d:.55s;margin-top:22px">
-      <div class="n"><span class="num" data-to="88" data-suf="%" data-dur="1900">0%</span></div>
-      <div class="cap">of AI agent projects never reach production.<em>This report is about why — and who profits when that changes.</em></div>
+  <div class="stage"><div class="inner spread">
+    <div>
+      <div class="coverlogo rv" style="--d:0s"><svg class="logo" viewBox="0 0 641 128" role="img" aria-label="Unicity"><use href="#ulogo"/></svg></div>
+      <div class="kick rv" style="--d:.05s">2026 INDUSTRY REPORT <span class="sep">·</span> UNICITY LABS</div>
     </div>
-    <div class="kick rv" style="--d:.8s;margin-top:40px;color:var(--faint)">TALLINN · ZUG</div>
+    <div>
+      <h1 class="rv" style="--d:.15s;font-size:182px;line-height:.86;letter-spacing:-.012em">THE AGENTIC<br>OPPORTUNITY<span class="accent">.</span></h1>
+      <p class="lede rv" style="--d:.35s;margin-top:30px;max-width:720px">What autonomous AI actually means for <b>security</b>, <b>governance</b>, <b>networking</b>, and <b>payments</b> — with the evidence.</p>
+    </div>
+    <div class="rv" style="--d:.55s;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;border-top:1px solid var(--rule);padding-top:22px">
+      <div style="display:flex;align-items:flex-end;gap:22px">
+        <span class="num" data-to="88" data-suf="%" data-dur="1900" style="font-family:var(--disp);font-size:96px;line-height:.78;color:var(--orange);font-variant-numeric:tabular-nums">0%</span>
+        <span style="font:700 11px/1.55 var(--mono);letter-spacing:.06em;color:var(--ink);text-transform:uppercase;max-width:300px;padding-bottom:8px">of AI agent projects never reach production<br><span style="color:var(--faint);font-weight:400;letter-spacing:.04em">why — and who profits when that changes</span></span>
+      </div>
+      <div class="kick" style="color:var(--faint);padding-bottom:10px">TALLINN <span class="sep">·</span> ZUG</div>
+    </div>
   </div><div class="foot"><span class="fl"><svg class="logo" viewBox="0 0 641 128" role="img" aria-label="Unicity"><use href="#ulogo"/></svg><span>THE AGENTIC OPPORTUNITY — UNICITY LABS 2026</span></span><span class="fp">01 / 17</span></div></div>
 </section>
 
@@ -664,7 +670,7 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
     <div class="cols" style="margin-top:20px">
       <div>
         <div class="mega rv" style="--d:.25s">
-          <div class="n"><span class="num scramble" data-to="0" data-dur="1600">8</span></div>
+          <div class="n"><span class="num" data-from="8" data-to="0" data-dur="1600">8</span></div>
           <div class="cap">HUMAN CLICKS REQUIRED TO COMPROMISE AN ENTERPRISE AI AGENT<em>EchoLeak · ForcedLeak · Morris II</em></div>
         </div>
         <div class="lede rv" style="--d:.5s;margin-top:16px">
@@ -946,7 +952,7 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
         <div class="tlverbs">RUNS THE AGENT · INSPECTS EVERY STEP · STOPS IT BEFORE IT ACTS · SIGNS WHAT IT DID</div>
         <div class="tldomains"><span class="tld">SECURITY</span><span class="tld">GOVERNANCE</span></div>
       </div>
-      <div class="tlproof"><i class="pulse" aria-hidden="true"></i><span>&darr; THE PROOF</span><em>what happened · who acted · under what authority</em></div>
+      <div class="tlproof"><span>&darr; THE PROOF</span><em>what happened · who acted · under what authority</em></div>
       <div class="tllayer ch">
         <div class="tlhead"><span class="tlno">02</span><span class="tlname">THE CHAIN</span><span class="tlmint">SETTLES THE PROOF</span></div>
         <div class="tlverbs">CARRIES IDENTITY &amp; VALUE · SETTLES AT THE EDGE · VERIFIES WITHOUT A TRUSTED MIDDLE</div>
@@ -988,7 +994,7 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
 </section>
 
 <section class="sl" data-ch="CLOSING · THE SUBSTRATE THESIS">
-  <div class="stage"><canvas class="lattice" aria-hidden="true"></canvas><div class="inner spread">
+  <div class="stage"><div class="inner spread">
     <div>
     <div class="kick rv">CLOSING <span class="sep">·</span> THE SUBSTRATE THESIS</div>
     <h2 class="rv" style="--d:.1s;font-size:34px">FOUR CHAPTERS. ONE PRIMITIVE<span class="accent">.</span></h2>
@@ -1096,18 +1102,13 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
     var dec = parseInt(el.getAttribute('data-dec')||'0',10);
     var suf = el.getAttribute('data-suf')||'';
     var dur = Math.min(parseInt(el.getAttribute('data-dur')||'1400',10), 1200);
-    var scramble = el.classList.contains('scramble');
+    var from = parseFloat(el.getAttribute('data-from')||'0');
     if (reduced){ el.textContent = to.toFixed(dec)+suf; return; }
     var t0 = null;
     function frame(ts){
       if(!t0) t0 = ts;
       var p = Math.min((ts - t0)/dur, 1);
-      if (scramble){
-        if (p < 1){ el.textContent = String(Math.floor(Math.random()*9)+1); }
-        else { el.textContent = to.toFixed(dec)+suf; }
-      } else {
-        el.textContent = (to*easeOut(p)).toFixed(dec)+suf;
-      }
+      el.textContent = (from + (to-from)*easeOut(p)).toFixed(dec)+suf;
       if (p < 1) requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
@@ -1201,10 +1202,6 @@ body.mobile .tline .spine,.ovshell .pulse{display:none;}
       if (t){ interacted = true; if(autoOn) setAuto(false); go(parseInt(t.getAttribute('data-n'),10)); }
     });
     f.insertBefore(pr, f.firstChild);
-    var fh = document.createElement('span');
-    fh.className = 'fh';
-    fh.title = 'SESSION-SIGNED VIEW \u2014 PRESS R FOR THE RECORD';
-    f.insertBefore(fh, f.querySelector('.fp'));
     rails.push(row);
   });
 
