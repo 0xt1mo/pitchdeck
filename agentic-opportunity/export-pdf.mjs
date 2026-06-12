@@ -20,8 +20,23 @@ await p.setViewport({ width:VW, height:VH, deviceScaleFactor:SCALE });
 await p.goto(FILE, { waitUntil:'networkidle0' });
 // reveals -> final state (every slide fully painted); hide all nav chrome
 await p.addStyleTag({ content:
-  '.rv,.rx{opacity:1!important;transform:none!important;animation:none!important}' +
-  '.navbtns,.hint,.autochip,.hud,.ledger,.ov,.blk0{display:none!important}' });
+  // force EVERY reveal to its final state — incl. the trifecta (.blk/.op/.triresult, slam ends 2.05s in)
+  '.rv,.rx,.blk,.op,.triresult,h1 .c{opacity:1!important;transform:none!important;animation:none!important}' +
+  '.navbtns,.hint,.autochip,.hud,.ledger,.ov,.blk0{display:none!important}' +
+  // ladder climb is transient — capture its settled end state (bar on L3 only)
+  '.lv::before{animation:none!important;opacity:0!important}' +
+  '.sl.is-active .ladder .lv:nth-child(2)::before{opacity:1!important}' });
+// static-document framing for the compliance clock: a PDF can't count down,
+// so the live-ticker copy becomes a creation-date stamp (the HTML deck keeps the live clock)
+await p.evaluate(() => {
+  const M = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  const d = new Date();
+  const ds = M[d.getMonth()] + ' ' + (d.getDate() < 10 ? '0' : '') + d.getDate() + ' ' + d.getFullYear();
+  const live = document.querySelector('.clock .live');
+  if (live) live.innerHTML = 'AS OF DOCUMENT CREATION · ' + ds;
+  const em = document.querySelector('.hmsrow em');
+  if (em) em.textContent = 'HOURS · MINUTES · SECONDS — AT DOCUMENT CREATION';
+});
 await sleep(900);
 const N = await p.evaluate(() => document.querySelectorAll('.sl').length);
 
