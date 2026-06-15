@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const team = [
   { name: 'Mike Gault', role: 'CEO', bio: 'PhD Engineering · Founder Guardtime (ADX:IHC) · MD Barclays Capital' },
   { name: 'Tony Kenyon', role: 'Product', bio: 'PhD Machine Learning · Vitruvian · BT · Nokia' },
-  { name: 'Alan Radi', role: 'Commercial', bio: 'Zain · Etisalat · Dubai Government' },
+  { name: 'Nitish Malik', role: 'Senior Advisor', bio: 'Aleria · Etisalat' },
 ];
 
 const proof = [

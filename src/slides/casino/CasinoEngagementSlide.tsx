@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export function CasinoRetentionSlide() {
+export function CasinoEngagementSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
       <div className="relative z-10 h-full flex flex-col px-12 lg:px-20 py-10 lg:py-14 justify-center gap-8">
@@ -16,7 +16,7 @@ export function CasinoRetentionSlide() {
               className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Nº 04 · Retention
+              Nº 04 · Engagement
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, x: -40 }}
@@ -25,8 +25,8 @@ export function CasinoRetentionSlide() {
               className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[64px] leading-[0.98] tracking-tight mt-3 uppercase"
               style={{ fontFamily: "'Anton', sans-serif" }}
             >
-              Retention becomes{' '}
-              <span className="text-orange-400">a conversation.</span>
+              Agents keep players{' '}
+              <span className="text-orange-400">in the game.</span>
             </motion.h1>
             <motion.div
               initial={{ scaleX: 0 }}
@@ -35,42 +35,19 @@ export function CasinoRetentionSlide() {
               className="h-[2px] w-24 lg:w-32 bg-orange-500 origin-left mt-5"
               style={{ boxShadow: '0 0 8px rgba(249,115,22,0.7)' }}
             />
-
-            {/* Stat */}
-            <div className="flex items-baseline gap-4 mt-8">
-              <motion.span
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-[#fefefe]/60 text-[64px] lg:text-[88px] leading-[0.9] uppercase"
-                style={{ fontFamily: "'Anton', sans-serif" }}
-              >
-                92%
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.55 }}
-                className="text-orange-400 text-[64px] lg:text-[88px] leading-[0.9] uppercase"
-                style={{ fontFamily: "'Anton', sans-serif" }}
-              >
-                Ignored.
-              </motion.span>
-            </div>
-
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-              className="text-[#fefefe]/75 text-base sm:text-lg leading-relaxed max-w-xl mt-7"
+              transition={{ delay: 0.6 }}
+              className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl leading-relaxed max-w-xl mt-7"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Operators spend <span className="text-[#fefefe] font-semibold">$5–10 per active player per year</span> on CRM platforms to send promotional emails that ninety-two per cent never open. The agent is the channel the player already uses — the Friday reload arrives in chat, when it matters.{' '}
-              <span className="text-orange-400 font-semibold">Delivered: one hundred per cent.</span>
+              Push notifications get ignored. The agent runs a <span className="text-[#fefefe] font-semibold">live activity stream</span> — tournaments, new slots, jackpots, trending tables — and acts on the ones the player cares about.{' '}
+              <span className="text-orange-400 font-semibold">Always-on engagement, one tap from a wager.</span>
             </motion.p>
           </div>
 
-          {/* Right column — retention screenshot */}
+          {/* Right column — engagement stream screenshot */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -84,8 +61,8 @@ export function CasinoRetentionSlide() {
             <span className="absolute bottom-0 right-0 w-5 h-5 border-r-2 border-b-2 border-orange-500" />
 
             <img
-              src="/images/casino-retention.png"
-              alt="Concierge applying the Friday reload bonus to the player's wallet"
+              src="/images/casino-engagement.png"
+              alt="Concierge live activity stream of MagicCasino engagement prompts"
               className="block mx-auto w-full max-w-[340px] h-auto"
               style={{ filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }}
             />

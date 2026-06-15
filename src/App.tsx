@@ -1,8 +1,11 @@
 import { useEffect, useCallback, useState } from 'react';
+import { CasinoTitleSlide } from './slides/casino/CasinoTitleSlide';
 import { CasinoCoverSlide } from './slides/casino/CasinoCoverSlide';
+import { CasinoCacSlide } from './slides/casino/CasinoCacSlide';
+import { CasinoEngagementSlide } from './slides/casino/CasinoEngagementSlide';
 import { CasinoOnboardingSlide } from './slides/casino/CasinoOnboardingSlide';
 import { CasinoRetentionSlide } from './slides/casino/CasinoRetentionSlide';
-import { CasinoLoyaltySlide } from './slides/casino/CasinoLoyaltySlide';
+// import { CasinoLoyaltySlide } from './slides/casino/CasinoLoyaltySlide'; // hidden
 import { CasinoCostSlide } from './slides/casino/CasinoCostSlide';
 import { CasinoTeamSlide } from './slides/casino/CasinoTeamSlide';
 import { CasinoPlatformSlide } from './slides/casino/CasinoPlatformSlide';
@@ -24,20 +27,23 @@ import { SalesContactSlide } from './slides/sales/SalesContactSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  CasinoCoverSlide,             // 1. Cover — Your next million customers won't arrive as humans
-  CasinoWhyNowSlide,            // 2. Why Now — Web → Mobile → Agentic
-  CasinoIntroducingUnicitySlide,// 3. Introducing Unicity — secure agentic OS for gaming
-  CasinoOnboardingSlide,        // 4. Onboarding — signup funnel was built for humans
-  CasinoCostSlide,              // 5. Cost — Thirty years of on-ramp friction
-  CasinoRetentionSlide,         // 6. Retention — 92% ignored
-  CasinoLoyaltySlide,           // 7. Loyalty — Personalisation that actually personalises
+  CasinoTitleSlide,             // 1. Title — Agents at the front door
+  CasinoCoverSlide,             // 2. Cover — A New VIP Agent Has Entered The Room
+  CasinoWhyNowSlide,            // 3. Why Now — Web → Mobile → AI
+  CasinoEngagementSlide,        // 4. Engagement — Agents keep players in the game
+  CasinoCacSlide,               // 5. Acquisition — Agents are your new acquisition channel (CAC)
+  CasinoOnboardingSlide,        // 6. Onboarding — Agents automate KYC
+  CasinoCostSlide,              // 7. Cost — Agents reduce payments friction
+  CasinoRetentionSlide,         // 8. Retention — 92% ignored
+  // CasinoLoyaltySlide,        // hidden — Loyalty — Personalisation that actually personalises
+  CasinoIntroducingUnicitySlide,// 9. Introducing Unicity — secure AI OS for gaming
   // CasinoComplianceSlide,     // hidden — Your regulatory moat, built into the rail
-  CasinoAutonomyStackSlide,     // 8. The Stack — operating system for autonomous AI
-  CasinoDashboardSlide,         // 9. Enterprise Console — pillar dashboards
-  CasinoPlatformSlide,          // 10. What Unicity Is — 6 platform pillars
+  CasinoAutonomyStackSlide,     // 10. The Stack — operating system for autonomous AI
+  CasinoDashboardSlide,         // 11. Enterprise Console — pillar dashboards
+  CasinoPlatformSlide,          // 12. What Unicity Is — 6 platform pillars
   // CasinoArchitectureSlide,   // hidden — Player wallet to operator wallet
-  CasinoAskSlide,               // 11. The Ask — 45 days to production
-  CasinoTeamSlide,              // 12. Who We Are — team + globe
+  CasinoAskSlide,               // 13. The Ask — 45 days to production
+  CasinoTeamSlide,              // 14. Who We Are — team + globe
   SalesContactSlide,            // 13. See It In Action / Contact
   SalesIntroSlide,              // 14. Intro
   SalesAgentsComingSlide,       // 15. Agents are coming

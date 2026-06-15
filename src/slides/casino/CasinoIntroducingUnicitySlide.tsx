@@ -186,7 +186,7 @@ function UnicityDiagram() {
           stroke="#FF6A1F" strokeWidth="1.5"
           filter="drop-shadow(0 0 8px rgba(255,106,31,0.25))" />
         <text x="354" y="140" fontFamily="Geist Mono" fontSize="10" letterSpacing="3" fill="#FF6A1F" fontWeight="600">UNICITY AOS</text>
-        <text x="354" y="162" fontFamily="Anton" fontSize="20" letterSpacing="1" fill="#FEFEFE">AGENTIC OS</text>
+        <text x="354" y="162" fontFamily="Anton" fontSize="20" letterSpacing="1" fill="#FEFEFE">AI OS</text>
         <text x="354" y="184" fontFamily="Geist Mono" fontSize="9" letterSpacing="2" fill="rgba(255,106,31,0.85)">IDENTITY  ·  VALUE  ·  SETTLEMENT  ·  AUDIT</text>
 
         {/* Dashed leaders from AOS down to each box */}

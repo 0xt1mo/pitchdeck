@@ -30,8 +30,8 @@ export function CasinoCostSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[60px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Thirty years of on-ramp friction.{' '}
-            <span className="text-orange-400">Gone.</span>
+            Agents reduce{' '}
+            <span className="text-orange-400">payments friction.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -106,68 +106,28 @@ export function CasinoCostSlide() {
             ))}
           </div>
 
-          {/* Right — composite stat + architecture */}
+          {/* Right — agent wallet screenshot */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="flex flex-col justify-center gap-7 lg:gap-8 pl-8 lg:pl-10"
+            className="relative flex items-center justify-center pl-8 lg:pl-10"
             style={{ borderLeft: '1px solid rgba(255,255,255,0.10)' }}
           >
-            <div className="flex flex-col gap-1">
-              <div
-                className="text-[#fefefe]/40 text-[11px] lg:text-[13px] tracking-[0.32em] uppercase font-semibold"
-                style={{ fontFamily: "'Geist Mono', monospace" }}
-              >
-                Composite On-Ramp Cost · Today
-              </div>
-              <h3
-                className="text-orange-400 text-[88px] sm:text-[112px] lg:text-[132px] leading-[0.92] tracking-[-0.005em] uppercase"
-                style={{ fontFamily: "'Anton', sans-serif" }}
-              >
-                15–35%
-              </h3>
-              <div
-                className="text-[#fefefe] text-[24px] sm:text-[28px] lg:text-[34px] leading-tight tracking-[0.04em] uppercase"
-                style={{ fontFamily: "'Anton', sans-serif" }}
-              >
-                Of GGR.
-              </div>
-              <div
-                className="text-[#fefefe]/40 text-[10px] lg:text-xs tracking-[0.12em] uppercase mt-2"
-                style={{ fontFamily: "'Geist Mono', monospace" }}
-              >
-                Edgar Dunn · Aeropay · EPI · 2025–26
-              </div>
-            </div>
+            {/* Bracket corners */}
+            <span className="absolute top-0 left-8 lg:left-10 w-5 h-5 border-l-2 border-t-2 border-orange-500" />
+            <span className="absolute top-0 right-0 w-5 h-5 border-r-2 border-t-2 border-orange-500" />
+            <span className="absolute bottom-0 left-8 lg:left-10 w-5 h-5 border-l-2 border-b-2 border-orange-500" />
+            <span className="absolute bottom-0 right-0 w-5 h-5 border-r-2 border-b-2 border-orange-500" />
 
-            <p
-              className="text-[#fefefe]/78 text-sm lg:text-base leading-[1.6] pt-5"
-              style={{
-                fontFamily: "'Geist Mono', monospace",
-                borderTop: '1px solid rgba(255,255,255,0.10)',
-              }}
-            >
-              Players hold regulated stablecoins — <span className="text-[#fefefe] font-semibold">USDC, EURC, MiCA-compliant</span> — in agent wallets, KYC'd upstream by regulated issuers and exchanges. When the agent opens a session, the money is already there.{' '}
-              <span className="text-orange-400 font-semibold">No card network. No PSP stack. No deposit funnel.</span> Once the wager arrives, your platform runs exactly as it does today.
-            </p>
+            <img
+              src="/images/casino-wallet.png"
+              alt="Agent topping up the MagicCasino wallet via the concierge"
+              className="block mx-auto w-full max-w-[280px] h-auto"
+              style={{ filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }}
+            />
           </motion.div>
         </div>
-
-        {/* Closing footer */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.0, duration: 0.6 }}
-          className="text-[#fefefe]/65 text-[22px] sm:text-[26px] lg:text-[32px] leading-tight tracking-tight uppercase pt-5 shrink-0"
-          style={{
-            fontFamily: "'Anton', sans-serif",
-            borderTop: '1px solid rgba(249,115,22,0.25)',
-          }}
-        >
-          The agentic interface{' '}
-          <span className="text-orange-400">solves your on-ramp problem.</span>
-        </motion.p>
       </div>
     </div>
   );

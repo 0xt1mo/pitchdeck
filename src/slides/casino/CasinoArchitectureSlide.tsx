@@ -119,7 +119,7 @@ function ArchDiagram() {
         <circle cx="84" cy="106" r="11" fill="#FF6A1F" />
         <text x="84" y="111" fontFamily="Geist Mono" fontSize="11" fontWeight="700" fill="#060606" textAnchor="middle">K</text>
         <text x="106" y="103" fontFamily="Geist Mono" fontSize="13" fill="#FEFEFE" fontWeight="600">AGENT · KELLY</text>
-        <text x="106" y="118" fontFamily="Geist Mono" fontSize="10" letterSpacing="1" fill="rgba(254,254,254,0.42)">bound to Alan · OpenClaw</text>
+        <text x="106" y="118" fontFamily="Geist Mono" fontSize="10" letterSpacing="1" fill="rgba(254,254,254,0.42)">bound to Nitish · OpenClaw</text>
 
         <rect x="72" y="142" width="336" height="158" fill="rgba(0,0,0,0.4)" stroke="rgba(255,106,31,0.45)" strokeWidth="1" />
         <text x="86" y="166" fontFamily="Geist Mono" fontSize="10" letterSpacing="3" fill="#FF6A1F">WALLET</text>

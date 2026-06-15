@@ -21,7 +21,7 @@ const eras = [
   },
   {
     tag: '03 · The Third Wave',
-    name: 'Agentic',
+    name: 'AI',
     year: '2026 · Now',
     arrival: 'The agent arrives.',
     fact: (
@@ -183,21 +183,6 @@ export function CasinoWhyNowSlide() {
             );
           })}
         </div>
-
-        {/* Closing footer */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.0, duration: 0.6 }}
-          className="text-[#fefefe]/65 text-[20px] sm:text-[24px] lg:text-[32px] leading-tight tracking-tight uppercase pt-5 shrink-0"
-          style={{
-            fontFamily: "'Anton', sans-serif",
-            borderTop: '1px solid rgba(249,115,22,0.25)',
-          }}
-        >
-          Two interfaces. Two generations of winners.{' '}
-          <span className="text-orange-400">The third one is here.</span>
-        </motion.p>
       </div>
     </div>
   );

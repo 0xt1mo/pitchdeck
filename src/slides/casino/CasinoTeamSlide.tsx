@@ -26,14 +26,11 @@ const founders = [
     ],
   },
   {
-    name: 'Alan Radi',
-    role: 'Gaming Vertical',
-    photo: '/team/Alan Portrait.jpg',
-    photoStyle: { transform: 'translateY(-8%) scale(1.3)', transformOrigin: '50% 50%' },
-    linkedin: 'https://www.linkedin.com/in/alanradi/',
+    name: 'Nitish Malik',
+    role: 'Senior Advisor',
+    photo: '',
     lines: [
-      '12 years implementing CX AI for Global B2C brands',
-      'Apple · Google · Verizon · Pepsi · DHL',
+      'Aleria · Etisalat',
     ],
   },
 ];
@@ -151,8 +148,17 @@ export function CasinoTeamSlide() {
                 className="flex items-start gap-5"
               >
                 <div className="relative shrink-0">
-                  <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden ring-2 ring-orange-500/30">
-                    <img src={f.photo} alt={f.name} className="w-full h-full object-cover" style={(f as { photoStyle?: CSSProperties }).photoStyle} />
+                  <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden ring-2 ring-orange-500/30 flex items-center justify-center bg-white/[0.04]">
+                    {f.photo ? (
+                      <img src={f.photo} alt={f.name} className="w-full h-full object-cover" style={(f as { photoStyle?: CSSProperties }).photoStyle} />
+                    ) : (
+                      <span
+                        className="text-[#fefefe]/50 text-2xl lg:text-3xl font-bold"
+                        style={{ fontFamily: "'Geist Mono', monospace" }}
+                      >
+                        {f.name.split(' ').map((n) => n[0]).join('')}
+                      </span>
+                    )}
                   </div>
                   {f.linkedin && <LinkedInBadge href={f.linkedin} />}
                 </div>
