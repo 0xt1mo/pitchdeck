@@ -28,9 +28,9 @@ export function CompetitionMinimalSlide() {
           className="text-[28px] sm:text-[40px] lg:text-[56px] xl:text-[64px] leading-[0.98] tracking-tight uppercase shrink-0"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          <span className="text-[#fefefe]">EVERYONE ELSE WATCHES THE AGENT.</span>
+          <span className="text-[#fefefe]">OFF CHAIN TOKENS CAN INTEGRATE INTO AN OS.</span>
           <br />
-          <span className="text-orange-400">WE RUN IT AND PROVE ITS EXECUTION.</span>
+          <span className="text-orange-400">LEDGER ENTRIES CANNOT.</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -41,7 +41,7 @@ export function CompetitionMinimalSlide() {
           className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl leading-snug shrink-0 max-w-6xl"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Verifiable execution and cryptographic guarantees of security — not behavioral inference, not log signals.{' '}
+          Tokens prove agent state and give verifiable agent execution. Cryptographic guarantees of security — not behavioral inference, not log signals.{' '}
           <span className="text-orange-400 font-bold">Proof.</span>
         </motion.p>
 

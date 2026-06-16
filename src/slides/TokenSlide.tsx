@@ -3,34 +3,34 @@ import { useState } from 'react';
 import { ResponsivePie } from '@nivo/pie';
 
 const slices = [
-  { id: 'Ecosystem', value: 39.3, color: '#f97316' },
+  { id: 'Foundation', value: 23, color: '#9ca3af' },
+  { id: 'Ecosystem Grants', value: 23, color: '#f97316' },
   { id: 'Investors', value: 20, color: '#fefefe' },
-  { id: 'Foundation', value: 20, color: '#9ca3af' },
-  { id: 'Community', value: 11.2, color: '#6b7280' },
-  { id: 'Founding Team', value: 5.5, color: '#e5e7eb' },
-  { id: 'Liquidity', value: 4, color: '#4b5563' },
+  { id: 'Team & contributors', value: 15, color: '#e5e7eb' },
+  { id: 'Community', value: 15, color: '#6b7280' },
+  { id: 'Exchange Liquidity', value: 4, color: '#4b5563' },
 ];
 
 const chain = [
   {
     num: '01',
-    title: 'Subscription revenue',
-    desc: 'Subscription revenue scales linearly with subscribers.',
+    title: 'Subscription = access',
+    desc: 'Every agent buys a token-denominated subscription to transact.',
   },
   {
     num: '02',
     title: 'Validator yield',
-    desc: 'Validators/Oracle operators earn a share of subscription revenue.',
+    desc: 'Subscription revenue flows to the validators and Oracle operators who secure the network.',
   },
   {
     num: '03',
-    title: 'Stake requirement',
-    desc: 'Slot value = capitalized yield. Validators stake to participate.',
+    title: 'Stake to operate',
+    desc: "Running a validator slot requires staked token; a slot's value rises with the revenue it earns.",
   },
   {
     num: '04',
-    title: 'Token demand',
-    desc: 'Stake locks supply. Demand scales structurally with subscriber count.',
+    title: 'Demand locks supply',
+    desc: 'More subscribers → more revenue → more token staked and locked. Demand scales with subscriber count.',
   },
 ];
 
@@ -125,7 +125,7 @@ export function TokenSlide() {
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
             className="mt-2 text-[#fefefe]/85 text-xs sm:text-sm lg:text-base max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            All network access requires native currency denominated subscriptions, creating direct, proportional token demand.
+            Every agent needs a token-denominated subscription to transact. The token is gas, not a means of payment — so demand scales directly with network usage.
           </motion.p>
         </div>
 
@@ -170,7 +170,7 @@ export function TokenSlide() {
           <div className="flex flex-col gap-3">
             <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.3em] uppercase font-bold"
               style={{ fontFamily: "'Geist Mono', monospace" }}>
-              Allocation — 10B Supply
+              Allocation — Initial 10B Supply
             </p>
 
             <div className="flex items-center gap-4 lg:gap-6">
@@ -207,7 +207,7 @@ export function TokenSlide() {
                       </div>
                       <span className="text-[#fefefe] text-xs sm:text-sm font-bold tabular-nums"
                         style={{ fontFamily: "'Geist Mono', monospace" }}>
-                        {Number.isInteger(slice.value) ? `${slice.value.toFixed(1)}%` : `${slice.value}%`}
+                        {`${slice.value}%`}
                       </span>
                     </motion.div>
                   );
@@ -228,7 +228,7 @@ export function TokenSlide() {
               </p>
               <p className="text-[#fefefe]/75 text-xs sm:text-sm leading-relaxed mt-1.5"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>
-                Standard cliffs and linear vesting for team and investors.
+                Uncapped supply, 5%→2% inflation tail funding validators. Standard cliffs and linear vesting for team and investors; full schedule in the tokenomics doc.
               </p>
             </motion.div>
           </div>

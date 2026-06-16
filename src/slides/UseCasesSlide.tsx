@@ -56,17 +56,50 @@ export function UseCasesSlide() {
           </motion.p>
         </div>
 
+        {/* 5-pill use case row — key elements, surfaced at top */}
+        <div className="grid grid-cols-5 gap-2.5 lg:gap-3 shrink-0">
+          {pills.map((p, i) => (
+            <motion.div
+              key={p.label}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.3 + i * 0.06 }}
+              className="rounded-lg px-4 lg:px-5 py-4 lg:py-6"
+              style={{
+                background: `rgba(${p.color},${p.bgAlpha})`,
+                border: `1px solid rgba(${p.color},${p.borderAlpha})`,
+              }}
+            >
+              <p
+                className="text-base lg:text-xl font-bold tracking-[0.05em] uppercase mb-2"
+                style={{
+                  fontFamily: "'Geist Mono', monospace",
+                  color: p.neutral ? 'rgba(255,255,255,0.9)' : `rgb(${p.color})`,
+                }}
+              >
+                {p.label}
+              </p>
+              <p
+                className="text-[#fefefe]/75 text-sm lg:text-base leading-snug"
+                style={{ fontFamily: "'Geist Mono', monospace" }}
+              >
+                {p.detail}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
         {/* Dominant dashboard screenshot */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35, duration: 0.6 }}
+          transition={{ delay: 0.7, duration: 0.6 }}
           className="rounded-xl overflow-hidden w-full shrink-0"
           style={{
             border: '1px solid rgba(249,115,22,0.40)',
             background: '#0a0a0a',
             boxShadow: 'none',
-            maxHeight: '52vh',
+            maxHeight: '36vh',
           }}
         >
           <img
@@ -76,39 +109,6 @@ export function UseCasesSlide() {
             style={{ maxHeight: '52vh' }}
           />
         </motion.div>
-
-        {/* 5-pill use case row */}
-        <div className="grid grid-cols-5 gap-2.5 lg:gap-3 shrink-0">
-          {pills.map((p, i) => (
-            <motion.div
-              key={p.label}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.55 + i * 0.06 }}
-              className="rounded-md px-3 lg:px-3.5 py-2.5 lg:py-3"
-              style={{
-                background: `rgba(${p.color},${p.bgAlpha})`,
-                border: `1px solid rgba(${p.color},${p.borderAlpha})`,
-              }}
-            >
-              <p
-                className="text-[11px] lg:text-xs font-bold tracking-[0.05em] uppercase mb-1"
-                style={{
-                  fontFamily: "'Geist Mono', monospace",
-                  color: p.neutral ? 'rgba(255,255,255,0.9)' : `rgb(${p.color})`,
-                }}
-              >
-                {p.label}
-              </p>
-              <p
-                className="text-[#fefefe]/70 text-[11px] lg:text-xs leading-snug"
-                style={{ fontFamily: "'Geist Mono', monospace" }}
-              >
-                {p.detail}
-              </p>
-            </motion.div>
-          ))}
-        </div>
 
       </div>
     </div>

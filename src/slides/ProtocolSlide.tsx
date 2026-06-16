@@ -164,8 +164,8 @@ export function ProtocolSlide() {
             transition={{ duration: 0.7 }}
             className="text-[28px] sm:text-[40px] lg:text-[56px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            <span className="text-[#fefefe]">LIVE DEMO:</span>{' '}
-            <span className="text-orange-400">X402 USDT AT 3M TPS WITH PRIVACY AND COMPLIANCE.</span>
+            <span className="text-[#fefefe]">CASE STUDY:</span>{' '}
+            <span className="text-orange-400">X402 AT SCALE.</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}

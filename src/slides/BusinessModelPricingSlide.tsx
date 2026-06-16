@@ -19,13 +19,6 @@ const tiers: Tier[] = [
   },
   {
     tier: 'TIER 2',
-    name: 'TEAM',
-    price: '$99',
-    unit: 'per agent / month',
-    bullets: ['Hosted runtime', 'Basic SIF policies', 'Audit logs', 'Email support'],
-  },
-  {
-    tier: 'TIER 3',
     name: 'ENTERPRISE',
     price: '$250',
     unit: 'per agent / month',
@@ -33,7 +26,7 @@ const tiers: Tier[] = [
     flagship: true,
   },
   {
-    tier: 'TIER 4',
+    tier: 'TIER 3',
     name: 'SOVEREIGN',
     price: 'Custom',
     unit: 'government & regulated',
@@ -81,8 +74,8 @@ export function BusinessModelPricingSlide() {
           </motion.p>
         </div>
 
-        {/* 4-tier grid */}
-        <div className="grid grid-cols-4 gap-3 lg:gap-4 shrink-0">
+        {/* 3-tier grid */}
+        <div className="grid grid-cols-3 gap-3 lg:gap-4 shrink-0">
           {tiers.map((t, i) => (
             <motion.div
               key={t.tier}
