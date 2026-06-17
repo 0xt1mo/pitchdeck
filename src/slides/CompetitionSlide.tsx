@@ -37,15 +37,6 @@ export function CompetitionSlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-orange-400 text-sm sm:text-base lg:text-lg tracking-[0.4em] uppercase font-bold"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            Competition
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -53,8 +44,8 @@ export function CompetitionSlide() {
             className="text-[28px] sm:text-[40px] lg:text-[52px] xl:text-[60px] leading-[0.95] tracking-tight uppercase shrink-0 mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            <span className="text-[#fefefe]">UNICITY IS THE INEVITABLE ENDPOINT</span>{' '}
-            <span className="text-orange-400">FOR BLOCKCHAIN.</span>
+            <span className="text-[#fefefe]">THE INEVITABLE UNBUNDLING OF</span>{' '}
+            <span className="text-orange-400">BLOCKCHAIN.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -82,13 +73,13 @@ export function CompetitionSlide() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35 + i * 0.1, duration: 0.5 }}
-              className="flex flex-col gap-1 lg:gap-1.5 px-4 lg:px-5 py-2 lg:py-2.5"
+              className="flex flex-col gap-2 lg:gap-3 px-5 lg:px-7 py-6 lg:py-9"
               style={{
                 borderLeft: i > 0 ? '1px solid rgba(249,115,22,0.15)' : 'none',
               }}
             >
               <p
-                className={`text-xs sm:text-sm lg:text-base tracking-[0.18em] ${
+                className={`text-sm sm:text-base lg:text-lg tracking-[0.18em] ${
                   g.highlight ? 'text-orange-400' : 'text-[#fefefe]/50'
                 }`}
                 style={{ fontFamily: "'Geist Mono', monospace" }}
@@ -96,7 +87,7 @@ export function CompetitionSlide() {
                 {g.year}
               </p>
               <h3
-                className={`text-[20px] sm:text-[26px] lg:text-[32px] leading-none tracking-tight uppercase ${
+                className={`text-[28px] sm:text-[36px] lg:text-[46px] leading-none tracking-tight uppercase ${
                   g.highlight ? 'text-orange-400' : 'text-[#fefefe]/55'
                 }`}
                 style={{ fontFamily: "'Anton', sans-serif" }}
@@ -104,7 +95,7 @@ export function CompetitionSlide() {
                 {g.name}
               </h3>
               <p
-                className={`text-sm sm:text-base lg:text-lg font-bold leading-snug ${
+                className={`text-base sm:text-lg lg:text-2xl font-bold leading-snug ${
                   g.highlight ? 'text-orange-400' : 'text-[#fefefe]/85'
                 }`}
                 style={{ fontFamily: "'Geist Mono', monospace" }}
@@ -112,7 +103,7 @@ export function CompetitionSlide() {
                 {g.summary}
               </p>
               <p
-                className={`text-xs sm:text-sm lg:text-base italic leading-snug ${
+                className={`text-sm sm:text-base lg:text-lg italic leading-snug ${
                   g.highlight ? 'text-[#fefefe]/85' : 'text-[#fefefe]/55'
                 }`}
                 style={{ fontFamily: "'Geist Mono', monospace" }}

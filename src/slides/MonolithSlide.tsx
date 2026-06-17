@@ -1,19 +1,42 @@
 import { motion } from 'framer-motion';
+import { Github } from 'lucide-react';
 
 const mono = { fontFamily: "'Geist Mono', monospace" };
 const anton = { fontFamily: "'Anton', sans-serif" };
 
-const jobs = [
-  { name: 'TRANSACTION VALIDATION', desc: 're-executes every transaction' },
-  { name: 'TRANSACTION STORAGE', desc: 'keeps the full ledger forever' },
-  { name: 'PROVE UNIQUENESS', desc: 'proves no double-spend' },
-  { name: 'COMMUNICATION CHANNEL', desc: 'peer-to-peer broadcast network' },
+const cards = [
+  {
+    title: 'COMMUNICATION',
+    desc: 'the asset carries its own proof — the wire just moves bytes',
+    pills: ['NOSTR', 'EMAIL', 'SOCIAL'],
+  },
+  {
+    title: 'STORAGE',
+    desc: 'state lives with the owner, not on every node',
+    pills: ['BROWSER', 'IPFS', 'DEVICE'],
+  },
+  {
+    title: 'VALIDATION',
+    desc: 'the recipient verifies — no validator set in the path',
+    pills: ['CLIENT-SIDE', 'IN PARALLEL'],
+  },
 ];
+
+function Pill({ children }: { children: React.ReactNode }) {
+  return (
+    <span
+      className="rounded-md border border-[#fefefe]/20 px-3 py-1.5 text-xs lg:text-sm tracking-wide text-[#fefefe]/70"
+      style={mono}
+    >
+      {children}
+    </span>
+  );
+}
 
 export function MonolithSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-8 sm:py-10 lg:py-12 justify-center gap-6 lg:gap-8">
+      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-20 py-7 sm:py-9 lg:py-11 justify-center gap-6 lg:gap-7">
 
         {/* Header */}
         <div className="shrink-0">
@@ -21,67 +44,66 @@ export function MonolithSlide() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[22px] sm:text-[34px] lg:text-[48px] leading-[1.08] tracking-tight whitespace-nowrap"
+            className="text-[#fefefe] text-[30px] sm:text-[46px] lg:text-[62px] leading-[1.0] tracking-tight"
             style={anton}
           >
-            <span className="text-[#fefefe]">HISTORICALLY, BLOCKCHAINS DID FOUR THINGS.</span>
-            <br />
-            <span className="text-orange-400">UNICITY DOES ONE.</span>
+            UNICITY PROVES UNIQUENESS: <span className="text-orange-400">NOTHING ELSE</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-[#fefefe]/60 text-sm sm:text-base lg:text-xl leading-relaxed mt-3"
+            className="text-[#fefefe]/75 text-base sm:text-lg lg:text-2xl leading-relaxed mt-4 max-w-5xl"
             style={mono}
           >
-            The other three happen off-chain, at the edge — by the parties who care.
+            Proving no double-spend is the Oracle's only job. Transaction validation, storage and P2P communication are all <span className="text-orange-400">off-chain</span> — handled with traditional tools, by the parties who care.
           </motion.p>
         </div>
 
-        {/* Comparison */}
-        <div className="shrink-0 grid grid-cols-[1fr_1fr] gap-10 lg:gap-16 items-center">
-
-          {/* Left — a traditional chain: four coupled jobs */}
-          <motion.div
-            initial={{ opacity: 0, x: -16 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
+        {/* Off-chain — three edge cards */}
+        <div className="shrink-0">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.45, duration: 0.5 }}
+            className="text-[#fefefe]/45 text-xs lg:text-base tracking-[0.3em] uppercase mb-5"
+            style={mono}
           >
-            <p className="text-[#fefefe]/40 text-[11px] lg:text-sm tracking-[0.3em] uppercase mb-4" style={mono}>
-              A Traditional Chain
-            </p>
-            <div className="flex flex-col gap-3 lg:gap-3.5">
-              {jobs.map((job) => (
-                <div
-                  key={job.name}
-                  className="rounded-r-xl border-l-2 border-[#fefefe]/25 bg-[#fefefe]/[0.04] px-5 lg:px-6 py-3 lg:py-3.5"
-                >
-                  <h3 className="text-[#fefefe] text-lg lg:text-2xl leading-none" style={anton}>{job.name}</h3>
-                  <p className="text-[#fefefe]/50 text-xs lg:text-sm mt-1.5" style={mono}>{job.desc}</p>
+            Off-chain · Traditional Tools
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="grid grid-cols-3 gap-5 lg:gap-7"
+          >
+            {cards.map((card) => (
+              <div key={card.title} className="rounded-2xl border border-[#fefefe]/12 bg-[#fefefe]/[0.03] p-6 lg:p-8 flex flex-col">
+                <h3 className="text-[#fefefe] text-3xl lg:text-[40px] leading-none" style={anton}>{card.title}</h3>
+                <p className="text-[#fefefe]/65 text-sm lg:text-lg leading-snug mt-4 mb-6" style={mono}>{card.desc}</p>
+                <div className="flex flex-wrap gap-2.5 mt-auto">
+                  {card.pills.map((pill) => <Pill key={pill}>{pill}</Pill>)}
                 </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Right — Unicity, one on-chain job */}
-          <motion.div
-            initial={{ opacity: 0, x: 16 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.55, duration: 0.5 }}
-            className="flex flex-col items-center text-center"
-          >
-            <p className="text-orange-400 text-xs lg:text-sm tracking-[0.4em] uppercase mb-4" style={mono}>
-              Unicity
-            </p>
-            <h3 className="text-orange-400 text-[44px] sm:text-[60px] lg:text-[80px] leading-[0.92]" style={anton}>
-              PROVE<br />UNIQUENESS.
-            </h3>
-            <p className="text-orange-400/70 text-sm lg:text-lg leading-relaxed mt-5 max-w-md" style={mono}>
-              The chain's only job. Everything else is delegated to the holder, the recipient, or any transport.
-            </p>
+              </div>
+            ))}
           </motion.div>
         </div>
+
+        {/* See for yourself */}
+        <motion.a
+          href="https://github.com/unicity-sphere/sphere-sdk"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="shrink-0 self-start inline-flex items-center gap-2.5 rounded-full border border-orange-500/70 bg-orange-500/[0.08] px-5 py-2.5 transition-colors duration-300 hover:bg-orange-500/[0.16]"
+        >
+          <Github className="w-4 h-4 text-orange-400" strokeWidth={1.5} />
+          <span className="text-orange-400 text-sm lg:text-base" style={mono}>
+            See for yourself — github.com/unicity-sphere/sphere-sdk
+          </span>
+        </motion.a>
 
       </div>
     </div>

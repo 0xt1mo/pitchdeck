@@ -145,19 +145,12 @@ export function PrivacySlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}
-            className="text-[#fefefe]/45 text-[11px] lg:text-xs tracking-[0.3em] uppercase"
-            style={mono}
-          >
-            Tradeoff · 03
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
-            className="text-orange-400 text-[44px] sm:text-[68px] lg:text-[84px] leading-[0.9] tracking-tight"
+            className="text-orange-400 text-[34px] sm:text-[52px] lg:text-[64px] leading-[0.92] tracking-tight"
             style={anton}
           >
-            PRIVACY
+            TOTAL PRIVACY BY DEFAULT
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.25, duration: 0.6 }}
@@ -187,16 +180,6 @@ export function PrivacySlide() {
             </div>
           ))}
         </motion.div>
-
-        {/* Footer */}
-        <motion.p
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9, duration: 0.6 }}
-          className="shrink-0 text-xs lg:text-sm tracking-[0.2em] uppercase pt-3"
-          style={{ ...mono, borderTop: '1px solid rgba(249,115,22,0.3)' }}
-        >
-          <span className="text-orange-400">The Cost&nbsp;&nbsp;</span>
-          <span className="text-[#fefefe]/45">You custody your own tokens and proofs · lose them, lose the asset</span>
-        </motion.p>
 
       </div>
     </div>
@@ -238,11 +221,12 @@ function ScaleDiagram() {
       <rect x="110" y="8" width="200" height="44" rx="8" fill="rgba(249,115,22,0.1)" stroke={ORANGE} strokeWidth="1.3" />
       <text x="210" y="27" textAnchor="middle" fontFamily={antonF} fontSize="13" fill={ORANGE}>CONSENSUS LAYER</text>
       <text x="210" y="42" textAnchor="middle" fontFamily={monoF} fontSize="9" fill={GREY}>certifies one root per round</text>
-      <text x="118" y="74" fontFamily={monoF} fontSize="9" fill={GREY}>ZK proof</text>
       {/* shards */}
       {shards.map(([name, x, ax]) => (
         <g key={name}>
           <line x1={x + 58} y1="100" x2={ax} y2="54" stroke={ORANGE} strokeWidth="1.5" markerEnd="url(#thAr)" />
+          <rect x={(x + 58 + ax) / 2 - 22} y="70" width="44" height="14" rx="3" fill="#060606" stroke="rgba(249,115,22,0.45)" strokeWidth="0.8" />
+          <text x={(x + 58 + ax) / 2} y="80" textAnchor="middle" fontFamily={monoF} fontSize="8" fill={ORANGE}>ZK Proof</text>
           <rect x={x} y="100" width="116" height="48" rx="7" fill="rgba(255,255,255,0.04)" stroke="rgba(254,254,254,0.2)" strokeWidth="1" />
           <text x={x + 58} y="120" textAnchor="middle" fontFamily={antonF} fontSize="12" fill="#fefefe">{name}</text>
           <text x={x + 58} y="134" textAnchor="middle" fontFamily={monoF} fontSize="8.5" fill={GREY}>30K tx/sec</text>
@@ -273,7 +257,7 @@ export function ThroughputSlide() {
             className="text-[#fefefe]/85 text-base sm:text-lg lg:text-2xl leading-snug mt-2 max-w-5xl"
             style={mono}
           >
-            The chain never validates transactions. Cost per tx collapses; throughput scales horizontally.
+            The Oracle never validates transactions. Cost per tx collapses; throughput scales horizontally.
           </motion.p>
         </div>
 
@@ -286,7 +270,7 @@ export function ThroughputSlide() {
             className="flex flex-col justify-between gap-5 lg:gap-7"
           >
             <Stat big="30,000" unit="tx/sec" label="Per Shard" desc="on a single consumer-class CPU · Plonky3 AIR + Poseidon2" />
-            <Stat big="<1" unit="microcent / tx" label="Sub-cent · Sub-millicent · Sub-microcent" desc="the chain certifies one consistency proof per round — not each transaction" />
+            <Stat big="<1" unit="microcent / tx" label="Sub-cent · Sub-millicent · Sub-microcent" desc="the Oracle certifies one consistency proof per round — not each transaction" />
             <Stat big="∞" unit="shards" label="Horizontal Scale" desc="each shard adds another 30K tx/sec · proofs stay succinct" />
           </motion.div>
 
@@ -295,12 +279,12 @@ export function ThroughputSlide() {
             initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5, duration: 0.5 }}
             className="rounded-2xl border border-[#fefefe]/12 bg-[#fefefe]/[0.02] p-5 lg:p-6 flex flex-col gap-3.5"
           >
-            <p className="text-orange-400/80 text-[10px] lg:text-xs tracking-[0.3em] uppercase" style={mono}>How It Scales</p>
+            <p className="text-[#fefefe] text-2xl lg:text-4xl leading-none" style={anton}>INSIDE THE ORACLE</p>
             <ScaleDiagram />
             <div className="border-t border-[#fefefe]/12 pt-3.5 space-y-2.5">
               <p className="text-[#fefefe]/70 text-xs lg:text-sm leading-snug" style={mono}>
                 <span className="text-orange-400 font-semibold">Why it's cheap. </span>
-                The chain never re-executes a transaction — it certifies one prior-state-preservation proof per round: a single SNARK, ~45 ms to verify.
+                The Oracle never re-executes a transaction — it certifies one prior-state-preservation proof per round: a single SNARK, ~45 ms to verify.
               </p>
               <p className="text-[#fefefe]/70 text-xs lg:text-sm leading-snug" style={mono}>
                 <span className="text-orange-400 font-semibold">Why it scales. </span>

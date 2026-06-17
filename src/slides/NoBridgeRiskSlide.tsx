@@ -31,22 +31,22 @@ export function SolMintFlowDiagram() {
 
       {/* THE UNICITY L1 (top) */}
       <rect x="470" y="18" width="510" height="86" rx="14" fill="rgba(249,115,22,0.06)" stroke={ORANGE} strokeWidth="1.8" />
-      <text x="725" y="54" textAnchor="middle" fontFamily={anton} fontSize="23" fill={ORANGE} letterSpacing="0.03em">THE UNICITY L1</text>
-      <text x="725" y="80" textAnchor="middle" fontFamily={monoS} fontSize="13" fill="#d9d4cc">mints the Unicity SOL token — local, self-contained</text>
+      <text x="725" y="54" textAnchor="middle" fontFamily={anton} fontSize="23" fill={ORANGE} letterSpacing="0.03em">UNICITY</text>
+      <text x="725" y="80" textAnchor="middle" fontFamily={monoS} fontSize="13" fill="#d9d4cc">mints the Unicity XPL token — local, self-contained</text>
 
       {/* FLOW eyebrow */}
       <text x="24" y="232" fontFamily={monoS} fontSize="13" fill={ORANGE} letterSpacing="3">FLOW</text>
 
-      {/* SOLANA CONTRACT */}
+      {/* PLASMA CONTRACT */}
       <rect x="24" y="250" width="300" height="110" rx="12" fill="#131210" stroke="rgba(254,254,254,0.16)" strokeWidth="1.5" />
       <SolIcon cx={70} cy={305} />
-      <text x="104" y="300" fontFamily={anton} fontSize="19" fill="#fefefe">SOLANA CONTRACT</text>
-      <text x="104" y="324" fontFamily={monoS} fontSize="12" fill={GREY}>SOL locked · ledger rules</text>
+      <text x="104" y="300" fontFamily={anton} fontSize="19" fill="#fefefe">PLASMA CONTRACT</text>
+      <text x="104" y="324" fontFamily={monoS} fontSize="12" fill={GREY}>XPL locked · ledger rules</text>
 
-      {/* UNICITY SOL (highlighted) */}
+      {/* UNICITY XPL (highlighted) */}
       <rect x="470" y="242" width="300" height="128" rx="12" fill="rgba(249,115,22,0.07)" stroke={ORANGE} strokeWidth="2" />
       <SolIcon cx={516} cy={300} />
-      <text x="552" y="296" fontFamily={anton} fontSize="19" fill="#fefefe">UNICITY SOL</text>
+      <text x="552" y="296" fontFamily={anton} fontSize="19" fill="#fefefe">UNICITY XPL</text>
       <text x="552" y="320" fontFamily={monoS} fontSize="12" fill={GREY}>local · self-contained</text>
       <text x="486" y="352" fontFamily={monoS} fontSize="12.5" fill={ORANGE}>carries its own state + proof</text>
 
@@ -55,22 +55,22 @@ export function SolMintFlowDiagram() {
       <text x="918" y="302" textAnchor="middle" fontFamily={anton} fontSize="17" fill="#fefefe">HOLDER</text>
       <text x="918" y="324" textAnchor="middle" fontFamily={monoS} fontSize="12" fill={GREY}>verifies</text>
 
-      {/* arrow: SOLANA -> UNICITY SOL */}
+      {/* arrow: SOLANA -> UNICITY XPL */}
       <text x="397" y="298" textAnchor="middle" fontFamily={monoS} fontSize="11" fill={GREY}>represented as</text>
       <line x1="330" y1="306" x2="462" y2="306" stroke={LINE} strokeWidth="1.8" markerEnd="url(#arGrey)" />
 
-      {/* mint up / proof down — between UNICITY SOL and THE UNICITY L1 */}
+      {/* mint up / proof down — between UNICITY XPL and THE UNICITY L1 */}
       <line x1="600" y1="238" x2="600" y2="110" stroke={ORANGE} strokeWidth="2" markerEnd="url(#arOrange)" />
       <line x1="664" y1="110" x2="664" y2="238" stroke={LINE} strokeWidth="1.8" markerEnd="url(#arGrey)" />
       <text x="590" y="178" textAnchor="end" fontFamily={monoS} fontSize="12.5" fill={ORANGE}>mint</text>
       <text x="674" y="178" textAnchor="start" fontFamily={monoS} fontSize="12.5" fill={GREY}>proof</text>
 
-      {/* arrow: UNICITY SOL -> HOLDER */}
+      {/* arrow: UNICITY XPL -> HOLDER */}
       <line x1="776" y1="306" x2="848" y2="306" stroke={LINE} strokeWidth="1.8" markerEnd="url(#arGrey)" />
 
-      {/* feedback: HOLDER -> SOLANA CONTRACT */}
+      {/* feedback: HOLDER -> PLASMA CONTRACT */}
       <path d="M918 360 L918 426 L92 426 L92 366" fill="none" stroke={LINE} strokeWidth="1.8" markerEnd="url(#arGrey)" />
-      <text x="505" y="418" textAnchor="middle" fontFamily={monoS} fontSize="13" fill={GREY}>verifies the lock directly against the Solana contract</text>
+      <text x="505" y="418" textAnchor="middle" fontFamily={monoS} fontSize="13" fill={GREY}>verifies the lock directly against the Plasma contract</text>
     </svg>
   );
 }
@@ -89,7 +89,8 @@ export function NoBridgeRiskSlide() {
             className="text-[#fefefe] text-[30px] sm:text-[46px] lg:text-[60px] leading-[1.0] tracking-tight"
             style={{ fontFamily: anton }}
           >
-            BRIDGES ARE <span className="text-orange-400">ELIMINATED</span>
+            BRIDGES ARE ELIMINATED:{' '}
+            <span className="text-orange-400">SOURCE TOKENS ARE VERIFIED DIRECTLY</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -98,7 +99,7 @@ export function NoBridgeRiskSlide() {
             className="text-[#fefefe]/80 text-base sm:text-lg lg:text-2xl leading-relaxed mt-3"
             style={mono}
           >
-            A Unicity SOL token — verified straight from Solana. No bridge to trust.
+            A Unicity XPL token — verified straight from Plasma. No bridge to trust.
           </motion.p>
         </div>
 

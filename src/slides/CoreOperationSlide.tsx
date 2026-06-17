@@ -46,15 +46,6 @@ export function CoreOperationSlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-[#fefefe]/40 text-[11px] lg:text-xs tracking-[0.3em] uppercase mb-3"
-            style={{ fontFamily: mono }}
-          >
-            The Core Operation of DeFi
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}

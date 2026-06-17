@@ -80,10 +80,6 @@ export function ResourcesSlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Resources
-          </p>
           <h1 className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1"
             style={{ fontFamily: "'Anton', sans-serif" }}>
             ESSENTIAL{' '}

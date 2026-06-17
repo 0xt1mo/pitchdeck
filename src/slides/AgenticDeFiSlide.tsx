@@ -119,13 +119,6 @@ export function AgenticDeFiSlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}
-            className="text-orange-400 text-[11px] lg:text-sm tracking-[0.35em] uppercase mb-2"
-            style={mono}
-          >
-            Building on Unicity
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
             className="text-[32px] sm:text-[48px] lg:text-[58px] leading-[0.95] tracking-tight"

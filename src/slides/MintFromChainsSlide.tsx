@@ -11,15 +11,6 @@ export function MintFromChainsSlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-orange-400 text-[11px] lg:text-sm tracking-[0.35em] uppercase mb-2"
-            style={mono}
-          >
-            Minting Path · 3 of 3 <span className="text-[#fefefe]/55">· Token Genesis · Cross-Chain Assets</span>
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}

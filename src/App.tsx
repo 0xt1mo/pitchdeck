@@ -2,7 +2,7 @@ import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
 import { IntroSlide } from './slides/IntroSlide';
 import { CoverSlide } from './slides/CoverSlide';
-import { PromiseSlide } from './slides/PromiseSlide';
+// import { PromiseSlide } from './slides/PromiseSlide'; // hidden
 import { SharedLedgerSlide } from './slides/SharedLedgerSlide';
 import { AtomOfFinanceSlide } from './slides/AtomOfFinanceSlide';
 import { DesignCriteriaSlide } from './slides/DesignCriteriaSlide';
@@ -10,20 +10,22 @@ import { StateOfArtSlide } from './slides/StateOfArtSlide';
 import { BearerObjectSlide } from './slides/BearerObjectSlide';
 import { EdgeModelSlide } from './slides/EdgeModelSlide';
 import { ProofPapersSlide } from './slides/ProofPapersSlide';
+import { TokenObjectSlide } from './slides/TokenObjectSlide';
 import { NoBridgeRiskSlide } from './slides/NoBridgeRiskSlide';
 import { MonolithSlide } from './slides/MonolithSlide';
-import { ChainOneThingSlide } from './slides/ChainOneThingSlide';
+// import { ChainOneThingSlide } from './slides/ChainOneThingSlide'; // merged into MonolithSlide
 import { TradeOffSlide } from './slides/TradeOffSlide';
 import { CoreOperationSlide } from './slides/CoreOperationSlide';
-import { DeFiDividerSlide } from './slides/DeFiDividerSlide';
+// import { DeFiDividerSlide } from './slides/DeFiDividerSlide'; // hidden
 import { AtomicityChallengeSlide } from './slides/AtomicityChallengeSlide';
-import { IntroducingUnicityDivider, TradeoffsDivider, AtomicityProblemDivider, MathWorthItDivider, NewFinancialSystemDivider, EmissionDivider } from './slides/SectionDividers';
+import { TradeoffsDivider, AtomicityProblemDivider, MathWorthItDivider, NewFinancialSystemDivider } from './slides/SectionDividers';
 import { ProgrammableTokensSlide } from './slides/ProgrammableTokensSlide';
 import { SpeedSlide, ThroughputSlide, PrivacySlide } from './slides/AxisTradeoffSlides';
-import { NoTransactionsSlide } from './slides/NoTransactionsSlide';
-import { GenesisMintSlide } from './slides/GenesisMintSlide';
-import { NativeAssetMintSlide } from './slides/NativeAssetMintSlide';
-import { MintFromChainsSlide } from './slides/MintFromChainsSlide';
+import { ComplianceSlide } from './slides/ComplianceSlide';
+// import { NoTransactionsSlide } from './slides/NoTransactionsSlide'; // hidden
+// import { GenesisMintSlide } from './slides/GenesisMintSlide'; // hidden — emission
+// import { NativeAssetMintSlide } from './slides/NativeAssetMintSlide'; // hidden — emission
+// import { MintFromChainsSlide } from './slides/MintFromChainsSlide'; // hidden — emission
 import { AtomicSwapsSlide } from './slides/AtomicSwapsSlide';
 import { AgentsSlide } from './slides/AgentsSlide';
 import { EdgePayoffSlide } from './slides/EdgePayoffSlide';
@@ -44,6 +46,7 @@ import { AgentSphereDashboardSlide } from './slides/AgentSphereDashboardSlide';
 import { AgentSprawlSlide } from './slides/AgentSprawlSlide';
 import { WedgeSlide } from './slides/WedgeSlide';
 import { ProtocolSlide } from './slides/ProtocolSlide';
+import { AgenticDACSlide } from './slides/AgenticDACSlide';
 import { GoToMarketSlide } from './slides/GoToMarketSlide';
 import { ProjectionsSlide } from './slides/ProjectionsSlide';
 import { TokenSlide } from './slides/TokenSlide';
@@ -65,7 +68,7 @@ import { PermissionlessSlide } from './slides/PermissionlessSlide';
 import { SettlementSlide } from './slides/SettlementSlide';
 import { AgentsSmartContractsSlide } from './slides/AgentsSmartContractsSlide';
 import { ClobComparisonSlide } from './slides/ClobComparisonSlide';
-import { AgenticDeFiSlide } from './slides/AgenticDeFiSlide';
+// import { AgenticDeFiSlide } from './slides/AgenticDeFiSlide'; // hidden — duplicate
 import { AutonomousCorpsSlide } from './slides/AutonomousCorpsSlide';
 import { ChainAgnosticSlide } from './slides/ChainAgnosticSlide';
 import { DemoSlide } from './slides/DemoSlide';
@@ -75,44 +78,47 @@ import { SlideNavigation } from './components/SlideNavigation';
 const slides = [
   // ── Problem ──
   CoverSlide,                // 1. Cover — Rebuilding the Foundations of Decentralized Finance
-  PromiseSlide,              // 2. Satoshi: P2P Electronic Cash — every chain since strayed to ledgers
+  // PromiseSlide,           // hidden — Satoshi: P2P Electronic Cash
   SharedLedgerSlide,         // 3. The Industry — every blockchain is the same 17-year-old shared-ledger design
   StateOfArtSlide,           // 4. The Trilemma — Unicity claims the center
   // ── Introducing Unicity ──
-  IntroducingUnicityDivider, // 5. Divider — Introducing Unicity
+  // IntroducingUnicityDivider, // hidden — Divider — Introducing Unicity
   BearerObjectSlide,         // 6. Tokens as Bearer Objects
   ProgrammableTokensSlide,   // 7. Tokens are programmable (predicates)
   AgentsSlide,               // 8. Unicity L1 — a chain that only generates proofs (architecture)
-  MonolithSlide,             // 9. Historically, blockchains did four things. Unicity does one.
-  ChainOneThingSlide,        // 10. The edge does the rest — unlimited parallelism
+  MonolithSlide,             // 9. Unicity proves uniqueness; the rest handled with traditional tools (merged)
   CompetitionSlide,          // 11. The Inevitable Endpoint for Blockchain
-  ProofPapersSlide,          // 12. Here's the Math — three formal papers
-  NoTransactionsSlide,       // 13. A blockchain with no transactions — 3 layers + core idea
+  TokenObjectSlide,          // 12. Tokens are objects, not ledger entries — native OS data type
+  // NoTransactionsSlide,    // hidden — A blockchain with no transactions
   // ── Tradeoffs ──
   TradeoffsDivider,          // 13. Divider — What are the Tradeoffs
   SettlementSlide,           // 14. Speed — Settlement at machine speed (transaction sequence diagram)
   ThroughputSlide,           // 15. Throughput / Friction
-  PrivacySlide,              // 16. Privacy
-  NoBridgeRiskSlide,         // 17. Trustless Bridges: Local Verifiability — Unicity SOL
+  ComplianceSlide,           // 16. Compliance — enforced at the protocol level
+  PrivacySlide,              // 17. Privacy
+  NoBridgeRiskSlide,         // 18. Trustless Bridges: Local Verifiability — Unicity SOL
   // ── Building DeFi ──
   AtomicityProblemDivider,   // 18. One Hard Problem: Atomicity (the hard problem from the tradeoffs divider)
   CoreOperationSlide,        // 19. The Core Operation of DeFi — the atomic swap
   AtomicSwapsSlide,          // 20. The Unicity Trustless Atomic Swap — HTLC vs predicate swap
-  DeFiDividerSlide,          // 21. Divider — What can you build? (composable protocols, leads into examples)
+  AgenticDACSlide,           // 21. Agentic DeFi — an economy of machines (animated agent mesh)
+  // DeFiDividerSlide,       // hidden — Divider — What can you build?
   // AgentsSmartContractsSlide, // (hidden — Agents: the new smart contracts; re-add later)
+  ProtocolSlide,             // x402 — live demo / case study (from investor deck)
   ClobComparisonSlide,       // 22. CEX speed · DEX custody · dark-pool privacy (Unicity CLOB)
-  AgenticDeFiSlide,          // 24. Agentic DeFi — an economy of machines (agent mesh)
+  // AgenticDeFiSlide,       // hidden — duplicate of bulletin-board economy-of-machines slide
   // AutonomousCorpsSlide,   // (hidden — Decentralized Autonomous Corporations / autonomous reinsurance; re-add later)
   MathWorthItDivider,        // 25. The math is harder. But it's worth it.
   NewFinancialSystemDivider, // 26. What you get: massively parallel · private · decentralized
-  // ── Emission ──
-  EmissionDivider,           // 22. Divider — Emission (tokenomics)
-  GenesisMintSlide,          // 23. Genesis: minting a token off-chain (3 facts → genesis token)
-  NativeAssetMintSlide,      // 24. Anyone can mint. Trivially. (native non-currency assets)
-  MintFromChainsSlide,       // 25. Minting from other chains (Unicity SOL — cross-chain, no bridge)
+  // ── Emission (hidden) ──
+  // EmissionDivider,           // Divider — Emission (tokenomics)
+  // GenesisMintSlide,          // Genesis: minting a token off-chain
+  // NativeAssetMintSlide,      // Anyone can mint. Trivially.
+  // MintFromChainsSlide,       // Minting from other chains (Unicity SOL)
   // ── Close ──
-  ResourcesSlide,            // 23. Resources
-  ThankYouChatSlide,         // 24. Thank You
+  ProofPapersSlide,          // Don't take our word for it: here's the math
+  ResourcesSlide,            // Resources
+  ThankYouChatSlide,         // Thank You
   // ── Hidden ──
   // TradeOffSlide,         // The Trade — give up / get (replaced by Speed/Throughput/Privacy)
   // AtomicityChallengeSlide, // merged into CoreOperationSlide header

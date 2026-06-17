@@ -26,15 +26,6 @@ export function ProgrammableTokensSlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-orange-400 text-[11px] lg:text-xs tracking-[0.4em] uppercase mb-3"
-            style={mono}
-          >
-            The Execution Layer
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -79,7 +70,7 @@ export function ProgrammableTokensSlide() {
           >
             <p className="text-orange-400/80 text-[10px] lg:text-xs tracking-[0.25em] uppercase" style={mono}>The Condition</p>
             <h3 className="text-[#fefefe] text-2xl lg:text-4xl leading-none mt-2" style={anton}>A SPENDING RULE</h3>
-            <p className="text-[#fefefe]/65 text-xs lg:text-sm mt-2.5 leading-snug" style={mono}>baked into the token the moment it's issued</p>
+            <p className="text-[#fefefe]/65 text-xs lg:text-sm mt-2.5 leading-snug" style={mono}>updated by users during transactions</p>
           </div>
 
           <Arrow />
@@ -99,15 +90,15 @@ export function ProgrammableTokensSlide() {
           transition={{ delay: 0.65, duration: 0.6 }}
           className="shrink-0"
         >
-          <p className="text-orange-400/70 text-[10px] lg:text-xs tracking-[0.3em] uppercase mb-3" style={mono}>A Few of the Rules You Can Set</p>
+          <p className="text-orange-400/80 text-sm lg:text-lg tracking-[0.3em] uppercase mb-4" style={mono}>A Few of the Rules You Can Set</p>
           <div className="grid grid-cols-4 gap-3 lg:gap-4">
             {rules.map(({ Icon, title, desc }) => (
-              <div key={title} className="border-l-2 border-orange-500 bg-[#fefefe]/[0.02] rounded-r-lg pl-3 pr-2 py-3">
-                <div className="flex items-center gap-2">
-                  <Icon className="w-4 h-4 lg:w-5 lg:h-5 text-orange-400 shrink-0" strokeWidth={1.7} />
-                  <h4 className="text-[#fefefe] text-sm lg:text-lg leading-none" style={anton}>{title}</h4>
+              <div key={title} className="border-l-2 border-orange-500 bg-[#fefefe]/[0.02] rounded-r-lg pl-4 pr-3 py-4 lg:py-5">
+                <div className="flex items-center gap-2.5">
+                  <Icon className="w-5 h-5 lg:w-7 lg:h-7 text-orange-400 shrink-0" strokeWidth={1.7} />
+                  <h4 className="text-[#fefefe] text-base lg:text-2xl leading-none" style={anton}>{title}</h4>
                 </div>
-                <p className="text-[#fefefe]/50 text-[11px] lg:text-xs mt-1.5" style={mono}>{desc}</p>
+                <p className="text-[#fefefe]/60 text-xs lg:text-base mt-2.5" style={mono}>{desc}</p>
               </div>
             ))}
           </div>

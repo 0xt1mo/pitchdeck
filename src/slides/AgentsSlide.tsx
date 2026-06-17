@@ -28,7 +28,7 @@ function UnicityArchitectureDiagram() {
 
       {/* ===== BLOCKCHAIN (centered top, dominant) ===== */}
       <rect x="270" y="10" width="460" height="126" rx="20" fill="rgba(249,115,22,0.08)" stroke={ORANGE} strokeWidth="2.2" />
-      <text x="500" y="68" textAnchor="middle" fontFamily={anton} fontSize="44" fill={ORANGE} letterSpacing="0.04em">BLOCKCHAIN</text>
+      <text x="500" y="68" textAnchor="middle" fontFamily={anton} fontSize="36" fill={ORANGE} letterSpacing="0.04em">UNIQUENESS ORACLE</text>
       <text x="500" y="110" textAnchor="middle" fontFamily={mono} fontSize="17" fill="#e4ded6" fontStyle="italic">"has this token been spent?" — yes / no</text>
 
       {/* ===== commit ↑ / proof ↓ channel (compact) ===== */}
@@ -59,8 +59,6 @@ function UnicityArchitectureDiagram() {
       <text x="446" y="296" textAnchor="middle" dominantBaseline="central" fontFamily={anton} fontSize="21" fill="#ffffff">TOKEN</text>
       <text x="556" y="296" textAnchor="middle" dominantBaseline="central" fontFamily={mono} fontSize="18" fill={ORANGE}>+ PROOF</text>
 
-      {/* caption */}
-      <text x="500" y="392" textAnchor="middle" fontFamily={mono} fontSize="18" fill={GREY} letterSpacing="2">PEER-TO-PEER · NO SHARED LEDGER</text>
     </svg>
   );
 }
@@ -84,7 +82,7 @@ export function AgentsSlide() {
             className="text-[30px] sm:text-[44px] lg:text-[58px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: anton }}
           >
-            <span className="text-[#fefefe]">THE BLOCKCHAIN GENERATES</span>{' '}
+            <span className="text-[#fefefe]">UNICITY GENERATES</span>{' '}
             <span className="text-orange-400">PROOFS OF UNIQUENESS (SINGLE SPEND)</span>
           </motion.h1>
 
@@ -95,7 +93,7 @@ export function AgentsSlide() {
             className="text-[#fefefe]/80 text-base sm:text-lg lg:text-2xl leading-snug mt-3 max-w-5xl"
             style={{ fontFamily: mono }}
           >
-            The chain just provides a proof of single-spend — <span className="text-orange-400">without ever seeing the transaction</span>.
+            Our invention is a <span className="text-orange-400">Uniqueness Oracle</span> — decentralized infrastructure that <span className="text-orange-400">proves the absence of double-spend without seeing transactions</span>.
           </motion.p>
         </div>
 

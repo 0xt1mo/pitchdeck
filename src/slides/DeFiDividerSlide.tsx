@@ -14,16 +14,6 @@ export function DeFiDividerSlide() {
 
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-8 sm:px-12 lg:px-20 gap-6 lg:gap-8">
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="text-orange-400 text-xs lg:text-sm tracking-[0.45em] uppercase"
-          style={mono}
-        >
-          Build on Unicity
-        </motion.p>
-
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

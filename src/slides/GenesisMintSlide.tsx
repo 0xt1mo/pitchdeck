@@ -21,13 +21,6 @@ export function GenesisMintSlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}
-            className="text-orange-400 text-[11px] lg:text-sm tracking-[0.35em] uppercase"
-            style={mono}
-          >
-            Minting Path · 1 of 3 <span className="text-[#fefefe]/55">· Token Genesis · Native Currency</span>
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
             className="text-[32px] sm:text-[48px] lg:text-[62px] leading-[1.0] tracking-tight mt-2"

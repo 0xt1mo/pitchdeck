@@ -76,13 +76,6 @@ export function SettlementSlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}
-            className="text-[#fefefe]/45 text-[11px] lg:text-xs tracking-[0.3em] uppercase"
-            style={{ fontFamily: mono }}
-          >
-            Tradeoff · 01
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
             className="text-orange-400 text-[44px] sm:text-[68px] lg:text-[84px] leading-[0.9] tracking-tight"
@@ -102,7 +95,7 @@ export function SettlementSlide() {
             className="text-[#fefefe]/80 text-sm sm:text-base lg:text-xl leading-relaxed mt-3 max-w-5xl"
             style={{ fontFamily: mono }}
           >
-            Transactions move directly between parties. <span className="text-orange-400">No shared validator set</span>, so every spend runs independently of every other.
+            Tokens move directly between parties <span className="text-orange-400">at machine speed</span>.
           </motion.p>
         </div>
 

@@ -78,10 +78,9 @@ export function IntroducingUnicityDivider() {
 export function TradeoffsDivider() {
   return (
     <Divider
-      eyebrow="Be Honest"
-      titleWhite="FOUR WINS."
+      titleWhite="FIVE WINS."
       titleOrange="ONE HARD PROBLEM."
-      subtitle="Every architecture has a cost. Ours bought us four things — and left us one problem worth solving."
+      subtitle="Every architecture has a cost. Ours buys us five things — and leaves us one hard problem to solve."
     />
   );
 }

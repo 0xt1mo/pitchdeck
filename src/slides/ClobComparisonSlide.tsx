@@ -32,15 +32,16 @@ function Dot({ kind }: { kind: Status }) {
 }
 
 type Cell = { s: Status; t: string };
-type Row = { prop: string; binance: Cell; uniswap: Cell; unicity: Cell };
+type Row = { prop: string; binance: Cell; uniswap: Cell; hyperliquid: Cell; unicity: Cell };
 
 const rows: Row[] = [
-  { prop: 'Match speed', binance: { s: 'good', t: '<1 ms' }, uniswap: { s: 'bad', t: '12 s block' }, unicity: { s: 'win', t: '<1 ms' } },
-  { prop: 'Gas per trade', binance: { s: 'good', t: '$0' }, uniswap: { s: 'bad', t: '$5–$50' }, unicity: { s: 'win', t: '$0' } },
-  { prop: 'Self-custody', binance: { s: 'bad', t: 'Exchange-held' }, uniswap: { s: 'good', t: 'Smart contract' }, unicity: { s: 'win', t: 'You hold the keys' } },
-  { prop: 'Privacy', binance: { s: 'bad', t: 'Operator sees all' }, uniswap: { s: 'bad', t: 'Fully public' }, unicity: { s: 'win', t: 'Unlinkable' } },
-  { prop: 'MEV / sandwich', binance: { s: 'half', t: 'Internal front-run' }, uniswap: { s: 'bad', t: 'Public mempool' }, unicity: { s: 'win', t: 'No mempool' } },
-  { prop: 'Settlement', binance: { s: 'bad', t: 'Internal IOU' }, uniswap: { s: 'good', t: 'On-chain' }, unicity: { s: 'win', t: 'Sub-second, trustless' } },
+  { prop: 'Match speed', binance: { s: 'good', t: '<1 ms' }, uniswap: { s: 'bad', t: '12 s block' }, hyperliquid: { s: 'good', t: '~0.2 s' }, unicity: { s: 'win', t: '~0.2 s' } },
+  { prop: 'Gas per trade', binance: { s: 'good', t: '$0' }, uniswap: { s: 'bad', t: '$5–$50' }, hyperliquid: { s: 'good', t: '$0' }, unicity: { s: 'win', t: '$0' } },
+  { prop: 'Self-custody', binance: { s: 'bad', t: 'Exchange-held' }, uniswap: { s: 'good', t: 'Smart contract' }, hyperliquid: { s: 'good', t: 'Non-custodial' }, unicity: { s: 'win', t: 'You hold the keys' } },
+  { prop: 'Privacy', binance: { s: 'bad', t: 'Operator sees all' }, uniswap: { s: 'bad', t: 'Fully public' }, hyperliquid: { s: 'bad', t: 'Public positions' }, unicity: { s: 'win', t: 'Unlinkable' } },
+  { prop: 'MEV / sandwich', binance: { s: 'half', t: 'Internal front-run' }, uniswap: { s: 'bad', t: 'Public mempool' }, hyperliquid: { s: 'half', t: 'Validator-ordered' }, unicity: { s: 'win', t: 'No mempool' } },
+  { prop: 'Settlement', binance: { s: 'bad', t: 'Internal IOU' }, uniswap: { s: 'good', t: 'On-chain' }, hyperliquid: { s: 'good', t: 'Sub-second' }, unicity: { s: 'win', t: 'Sub-second' } },
+  { prop: 'Decentralized', binance: { s: 'bad', t: 'Centralized' }, uniswap: { s: 'good', t: 'Permissionless' }, hyperliquid: { s: 'bad', t: 'Admin keys' }, unicity: { s: 'win', t: 'Permissionless' } },
 ];
 
 function valueClass(s: Status) {
@@ -81,7 +82,7 @@ export function ClobComparisonSlide() {
             style={anton}
           >
             <span className="text-[#fefefe]">CEX SPEED. DEX CUSTODY.</span>{' '}
-            <span className="text-orange-400">DARK-POOL PRIVACY.</span>
+            <span className="text-orange-400">PRIVATE AND COMPLIANT.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -101,7 +102,7 @@ export function ClobComparisonSlide() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.6 }}
           className="shrink-0 relative grid w-full max-w-6xl mx-auto"
-          style={{ gridTemplateColumns: '30% 22% 22% 26%' }}
+          style={{ gridTemplateColumns: '22% 17% 17% 18% 26%' }}
         >
           {/* highlight panel behind Unicity column */}
           <div
@@ -110,13 +111,13 @@ export function ClobComparisonSlide() {
           />
 
           {/* header row */}
-          {['PROPERTY', 'BINANCE', 'UNISWAP', 'UNICITY CLOB'].map((h, i) => (
+          {['PROPERTY', 'BINANCE', 'UNISWAP', 'HYPERLIQUID', 'UNICITY CLOB'].map((h, i) => (
             <div
               key={h}
               className="relative z-10 px-4 lg:px-6 py-3 border-b border-white/20"
             >
               <span
-                className={`text-[11px] sm:text-xs lg:text-sm tracking-[0.25em] uppercase ${i === 3 ? 'text-orange-400' : 'text-[#fefefe]/45'}`}
+                className={`text-[11px] sm:text-xs lg:text-sm tracking-[0.25em] uppercase ${i === 4 ? 'text-orange-400' : 'text-[#fefefe]/45'}`}
                 style={mono}
               >
                 {h}
@@ -138,6 +139,7 @@ export function ClobComparisonSlide() {
               </div>,
               <ValueCell key={`${r.prop}-b`} cell={r.binance} last={last} />,
               <ValueCell key={`${r.prop}-u`} cell={r.uniswap} last={last} />,
+              <ValueCell key={`${r.prop}-h`} cell={r.hyperliquid} last={last} />,
               <ValueCell key={`${r.prop}-x`} cell={r.unicity} last={last} />,
             ];
           })}

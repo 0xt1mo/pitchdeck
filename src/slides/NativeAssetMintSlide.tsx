@@ -28,13 +28,6 @@ export function NativeAssetMintSlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}
-            className="text-orange-400 text-[11px] lg:text-sm tracking-[0.35em] uppercase"
-            style={mono}
-          >
-            Minting Path · 2 of 3 <span className="text-[#fefefe]/55">· Token Genesis · Native Non-Currency Assets</span>
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
             className="text-[34px] sm:text-[54px] lg:text-[72px] leading-[1.0] tracking-tight mt-2"
