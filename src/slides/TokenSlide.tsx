@@ -14,8 +14,8 @@ const slices = [
 const chain = [
   {
     num: '01',
-    title: 'Subscription = access',
-    desc: 'Every agent buys a token-denominated subscription to transact.',
+    title: 'access',
+    desc: 'Every agent needs Unicity native currency tokens to transact.',
   },
   {
     num: '02',
@@ -125,7 +125,7 @@ export function TokenSlide() {
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
             className="mt-2 text-[#fefefe]/85 text-xs sm:text-sm lg:text-base max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Every agent needs a token-denominated subscription to transact. The token is gas, not a means of payment — so demand scales directly with network usage.
+            Every agent needs Unicity native currency tokens to transact. The token is gas, not a means of payment — so demand scales directly with network usage.
           </motion.p>
         </div>
 

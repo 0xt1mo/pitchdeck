@@ -148,7 +148,7 @@ export function GoToMarketSlide() {
               className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg leading-snug"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Strategic distribution partner, majority-owned by IHC. Channels Unicity into every regulated AI deployment in the UAE.
+              Strategic distribution partner. Channels Unicity into regulated AI deployments in the UAE.
             </p>
 
             {/* Big stats */}

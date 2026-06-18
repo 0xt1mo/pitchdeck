@@ -12,7 +12,7 @@ const stack: StackLayer[] = [
   {
     product: 'AGENT FRAMEWORKS',
     label: 'THE APPLICATION LAYER',
-    detail: 'Bring your own agent — any framework, any model.',
+    detail: 'Bring your own agent — any harness, framework or model.',
     tags: 'LANGCHAIN · OPENCLAW · AUTOGEN · CUSTOM',
     variant: 'top',
   },
@@ -72,7 +72,7 @@ export function AutonomyStackSlide() {
             className="mt-3 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Unicity is the compute platform that sits below agents — providing verifiable execution, policy enforcement, and settlement.
+            Unicity is the compute platform that sits under agents — an actual OS, like Linux, purpose-built for agents.
           </motion.p>
         </div>
 

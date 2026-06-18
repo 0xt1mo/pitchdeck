@@ -1,5 +1,67 @@
+import { Fragment } from 'react';
 import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
+
+const ORANGE = '#f97316';
+
+const generations = [
+  { year: '2009', name: 'BITCOIN', desc: 'Correctness + ordering + uniqueness', load: 1.0 },
+  { year: '2023', name: 'SUI / FASTPAY', desc: 'Correctness + uniqueness', load: 0.55 },
+  { year: '2026', name: 'UNICITY', desc: 'Uniqueness only', load: 0.2, highlight: true },
+];
+
+function UnbundlingStrip() {
+  return (
+    <div className="flex flex-col">
+      <p className="text-orange-400/80 text-[10px] lg:text-xs tracking-[0.3em] uppercase mb-2" style={{ fontFamily: "'Geist Mono', monospace" }}>
+        A decade of unbundling
+      </p>
+      {generations.map((g, i) => (
+        <Fragment key={g.name}>
+          <div
+            className={`rounded-xl border px-4 lg:px-5 py-2.5 lg:py-3 ${
+              g.highlight ? 'border-orange-500 bg-orange-500/[0.07]' : 'border-white/12 bg-white/[0.02]'
+            }`}
+          >
+            <div className="flex items-baseline gap-2.5">
+              <span
+                className={`text-xs lg:text-sm ${g.highlight ? 'text-orange-400' : 'text-[#fefefe]/45'}`}
+                style={{ fontFamily: "'Geist Mono', monospace" }}
+              >
+                {g.year}
+              </span>
+              <span
+                className={`text-lg lg:text-2xl leading-none ${g.highlight ? 'text-orange-400' : 'text-[#fefefe]/80'}`}
+                style={{ fontFamily: "'Anton', sans-serif" }}
+              >
+                {g.name}
+              </span>
+            </div>
+            <div className="mt-2.5 h-2 rounded-full bg-white/[0.08] overflow-hidden">
+              <div
+                className="h-full rounded-full"
+                style={{
+                  width: `${g.load * 100}%`,
+                  background: g.highlight ? ORANGE : 'rgba(254,254,254,0.4)',
+                  boxShadow: g.highlight ? '0 0 10px rgba(249,115,22,0.6)' : 'none',
+                }}
+              />
+            </div>
+            <p
+              className="text-[11px] lg:text-sm text-[#fefefe]/60 mt-2 leading-snug"
+              style={{ fontFamily: "'Geist Mono', monospace" }}
+            >
+              {g.desc}
+            </p>
+          </div>
+          {i < generations.length - 1 && (
+            <div className="flex justify-center text-orange-400/55 text-base lg:text-xl leading-none py-0.5">↓</div>
+          )}
+        </Fragment>
+      ))}
+    </div>
+  );
+}
 
 export function AgentsSlide() {
   return (
@@ -35,15 +97,24 @@ export function AgentsSlide() {
           <span className="text-orange-400">the network attests uniqueness, nothing else. Tokens are self-contained and move P2P with transaction validation at the edge.</span>
         </motion.p>
 
-        {/* Architecture diagram */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-          className="flex items-center justify-center shrink-0 mt-1"
-        >
-          <UnicityArchitectureDiagram />
-        </motion.div>
+        {/* Body — unbundling timeline beside the architecture */}
+        <div className="shrink-0 grid grid-cols-[minmax(230px,0.85fr)_2fr] gap-5 lg:gap-8 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -14 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.45, duration: 0.5 }}
+          >
+            <UnbundlingStrip />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+            className="flex items-center justify-center"
+          >
+            <UnicityArchitectureDiagram />
+          </motion.div>
+        </div>
 
       </div>
     </div>
@@ -73,7 +144,7 @@ function UnicityArchitectureDiagram() {
       viewBox={`0 0 ${W} ${H}`}
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      className="w-full h-auto max-w-[1080px]"
+      className="w-full h-auto max-h-[58vh]"
     >
       <title>Unicity architecture — peer-to-peer with a uniqueness oracle</title>
 

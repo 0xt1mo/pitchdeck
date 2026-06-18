@@ -34,6 +34,15 @@ export function ConciergeSlide() {
             CASE STUDY: TELECOM SUBSCRIBER{' '}
             <span className="text-orange-400">AGENT FOR EVERY SIM.</span>
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl leading-snug mt-3 max-w-4xl"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
+            A personal AI concierge for every subscriber — running on the operator's own infrastructure.
+          </motion.p>
         </div>
 
         {/* Phone fan — flexbox row, center bigger and on top with overlap via negative margins */}

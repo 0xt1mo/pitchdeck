@@ -25,35 +25,17 @@ export function UseCasesSlide() {
         {/* Header row: eyebrow + headline left, tagline right */}
         <div className="flex items-end justify-between gap-8 shrink-0">
           <div>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.4em] uppercase font-bold"
-              style={{ fontFamily: "'Geist Mono', monospace" }}
-            >
-              Product
-            </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="text-[32px] sm:text-[44px] lg:text-[60px] xl:text-[68px] leading-[0.95] tracking-tight uppercase mt-2"
+              className="text-[28px] sm:text-[40px] lg:text-[56px] xl:text-[64px] leading-[0.95] tracking-tight uppercase"
               style={{ fontFamily: "'Anton', sans-serif" }}
             >
-              <span className="text-[#fefefe]">ENTERPRISE USE CASES,</span>{' '}
-              <span className="text-orange-400">SHIPPING.</span>
+              <span className="text-[#fefefe]">CASE STUDY: ENTERPRISE SECURE</span>{' '}
+              <span className="text-orange-400">COMPUTE PLATFORM.</span>
             </motion.h1>
           </div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.25, duration: 0.5 }}
-            className="text-[#fefefe]/65 text-xs sm:text-sm lg:text-base leading-snug text-right max-w-[340px] shrink-0 pb-1"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            The Unicity operator console.<br />One pane of glass across every agent workload.
-          </motion.p>
         </div>
 
         {/* 5-pill use case row — key elements, surfaced at top */}
@@ -64,7 +46,7 @@ export function UseCasesSlide() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.3 + i * 0.06 }}
-              className="rounded-lg px-4 lg:px-5 py-4 lg:py-6"
+              className="rounded-lg px-4 lg:px-5 py-6 lg:py-10"
               style={{
                 background: `rgba(${p.color},${p.bgAlpha})`,
                 border: `1px solid rgba(${p.color},${p.borderAlpha})`,
@@ -89,25 +71,29 @@ export function UseCasesSlide() {
           ))}
         </div>
 
-        {/* Dominant dashboard screenshot */}
+        {/* Try it now CTA */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.6 }}
-          className="rounded-xl overflow-hidden w-full shrink-0"
-          style={{
-            border: '1px solid rgba(249,115,22,0.40)',
-            background: '#0a0a0a',
-            boxShadow: 'none',
-            maxHeight: '36vh',
-          }}
+          className="shrink-0 flex items-center gap-4 lg:gap-5 flex-wrap"
         >
-          <img
-            src="/dashboards/overview.png"
-            alt="Unicity operator console — Agent Sphere overview"
-            className="w-full h-full object-cover object-top"
-            style={{ maxHeight: '52vh' }}
-          />
+          <span className="text-[#fefefe]/55 text-sm lg:text-lg" style={{ fontFamily: "'Geist Mono', monospace" }}>
+            Live in production —
+          </span>
+          <a
+            href="https://console.unicity.network"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 lg:gap-4 rounded-full border-2 border-orange-500 bg-orange-500/[0.1] px-6 lg:px-8 py-3 lg:py-4 transition-colors duration-300 hover:bg-orange-500/[0.2]"
+          >
+            <span className="text-orange-400 text-lg lg:text-2xl tracking-wide" style={{ fontFamily: "'Anton', sans-serif" }}>
+              TRY IT NOW
+            </span>
+            <span className="text-[#fefefe] text-base lg:text-xl" style={{ fontFamily: "'Geist Mono', monospace" }}>
+              console.unicity.network →
+            </span>
+          </a>
         </motion.div>
 
       </div>

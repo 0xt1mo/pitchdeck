@@ -76,7 +76,7 @@ function Diagram({
           <g key={p}>
             <rect x={x - 38} y={6} width={76} height={28} rx={5}
               fill="rgba(255,255,255,0.05)" stroke={accent} strokeWidth={0.8} />
-            <text x={x} y={25} textAnchor="middle" fill="#fefefe" fontSize="10"
+            <text x={x} y={25} textAnchor="middle" fill="#fefefe" fontSize="12"
               fontFamily="Geist Mono, monospace" style={{ opacity: 0.9 }}>{p}</text>
             <line x1={x} y1={38} x2={x} y2={vbH - 8}
               stroke="rgba(255,255,255,0.25)" strokeDasharray="4 3" />
@@ -96,8 +96,8 @@ function Diagram({
                 fill="rgba(255,255,255,0.04)" stroke={accent} strokeWidth={0.6} />
               <circle cx={x - 20} cy={y + 15} r={9} fill="rgba(255,255,255,0.06)" stroke={accent} strokeWidth={0.4} />
               <text x={x - 20} y={y + 19} textAnchor="middle" fill={accent}
-                fontSize="8.5" fontWeight="bold">{step.num}</text>
-              <text x={x + 16} y={y + 18} fill="rgba(254,254,254,0.7)" fontSize="9"
+                fontSize="10.5" fontWeight="bold">{step.num}</text>
+              <text x={x + 16} y={y + 18} fill="rgba(254,254,254,0.7)" fontSize="11"
                 fontFamily="Geist Mono, monospace">{step.label}</text>
             </g>
           );
@@ -113,7 +113,7 @@ function Diagram({
           <g key={step.num}>
             {/* Label above arrow */}
             <text x={mid} y={y + 10} textAnchor="middle" fill="rgba(254,254,254,0.65)"
-              fontSize="8.5" fontFamily="Geist Mono, monospace">{step.label}</text>
+              fontSize="10.5" fontFamily="Geist Mono, monospace">{step.label}</text>
             {/* Arrow line */}
             <line
               x1={right ? x1 + 5 : x1 - 5} y1={arrowY}
@@ -124,7 +124,7 @@ function Diagram({
             {/* Number badge on arrow */}
             <circle cx={mid} cy={arrowY} r={9} fill="rgba(6,6,6,0.9)" stroke={accent} strokeWidth={0.5} />
             <text x={mid} y={arrowY + 3.5} textAnchor="middle" fill={accent}
-              fontSize="8" fontWeight="bold">{step.num}</text>
+              fontSize="10" fontWeight="bold">{step.num}</text>
           </g>
         );
       })}
@@ -165,7 +165,7 @@ export function ProtocolSlide() {
             className="text-[28px] sm:text-[40px] lg:text-[56px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}>
             <span className="text-[#fefefe]">CASE STUDY:</span>{' '}
-            <span className="text-orange-400">X402 AT SCALE.</span>
+            <span className="text-orange-400">X402 — THE MESSAGE IS THE SETTLEMENT.</span>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -199,11 +199,11 @@ export function ProtocolSlide() {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="flex flex-col">
             <div className="flex items-center gap-3 mb-2">
-              <h2 className="text-[#fefefe]/80 text-sm sm:text-base tracking-[0.1em] uppercase"
+              <h2 className="text-[#fefefe]/80 text-lg sm:text-2xl lg:text-3xl tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Anton', sans-serif" }}>
                 Traditional Blockchain X402
               </h2>
-              <span className="px-2 py-0.5 rounded-full bg-red-500/15 border border-red-500/25 text-red-400 text-[10px] tracking-wider uppercase font-semibold"
+              <span className="px-2 py-0.5 rounded-full bg-red-500/15 border border-red-500/25 text-red-400 text-xs lg:text-sm tracking-wider uppercase font-semibold"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>12 steps</span>
             </div>
             <div className="rounded-xl border border-white/[0.15] p-2 sm:p-3 h-[520px] flex justify-center"
@@ -218,11 +218,11 @@ export function ProtocolSlide() {
             transition={{ delay: 0.7, duration: 0.6 }}
             className="flex flex-col">
             <div className="flex items-center gap-3 mb-2">
-              <h2 className="text-orange-400 text-sm sm:text-base tracking-[0.1em] uppercase"
+              <h2 className="text-orange-400 text-lg sm:text-2xl lg:text-3xl tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Anton', sans-serif" }}>
                 Unicity Frictionless X402
               </h2>
-              <span className="px-2 py-0.5 rounded-full bg-orange-500/15 border border-orange-500/25 text-orange-400 text-[10px] tracking-wider uppercase font-semibold"
+              <span className="px-2 py-0.5 rounded-full bg-orange-500/15 border border-orange-500/25 text-orange-400 text-xs lg:text-sm tracking-wider uppercase font-semibold"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>5 steps</span>
             </div>
             <div className="rounded-xl border border-orange-500/50 p-2 sm:p-3 h-[520px] flex justify-center"

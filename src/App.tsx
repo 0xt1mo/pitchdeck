@@ -1,27 +1,29 @@
 import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
-// import { IntroSlide } from './slides/IntroSlide'; // hidden
+import { IntroSlide } from './slides/IntroSlide';
 import { CoverSlide } from './slides/CoverSlide';
 import { PromiseSlide } from './slides/PromiseSlide';
 import { SharedLedgerSlide } from './slides/SharedLedgerSlide';
 import { AgentsSlide } from './slides/AgentsSlide';
+import { TokenObjectSlide } from './slides/TokenObjectSlide';
 // import { EdgePayoffSlide } from './slides/EdgePayoffSlide'; // hidden — appendix
 import { UnbundledPayoffSlide } from './slides/UnbundledPayoffSlide';
 import { RetrofitSlide } from './slides/RetrofitSlide';
 // import { CompetitionSlide } from './slides/CompetitionSlide'; // hidden — appendix
 import { MarketSlide } from './slides/MarketSlide';
-import { BusinessModelPricingSlide } from './slides/BusinessModelPricingSlide';
-import { CompetitionMinimalSlide } from './slides/CompetitionMinimalSlide';
-import { DefensibilitySlide } from './slides/DefensibilitySlide';
+// import { BusinessModelPricingSlide } from './slides/BusinessModelPricingSlide'; // hidden
+// import { CompetitionMinimalSlide } from './slides/CompetitionMinimalSlide'; // hidden
+// import { DefensibilitySlide } from './slides/DefensibilitySlide'; // hidden
 import { ResourcesSlide } from './slides/ResourcesSlide';
-import { ProblemSlide } from './slides/ProblemSlide';
+// import { ProblemSlide } from './slides/ProblemSlide'; // hidden
 import { AutonomyStackSlide } from './slides/AutonomyStackSlide';
 import { CompleteAutonomyStackSlide } from './slides/CompleteAutonomyStackSlide';
 import { SolutionIntroSlide } from './slides/SolutionIntroSlide';
 import { ArchitectureStackSlide } from './slides/ArchitectureStackSlide';
 // import { CompetitiveLandscapeSlide } from './slides/CompetitiveLandscapeSlide'; // hidden — appendix
 import { SecurityNetworkSlide } from './slides/SecurityNetworkSlide';
-import { UseCasesSlide } from './slides/UseCasesSlide';
+// import { UseCasesSlide } from './slides/UseCasesSlide'; // hidden
+import { DeploymentModelHtmlSlide } from './slides/DeploymentModelHtmlSlide';
 import { AgentSphereDashboardSlide } from './slides/AgentSphereDashboardSlide';
 import { AgentSprawlSlide } from './slides/AgentSprawlSlide';
 import { WedgeSlide } from './slides/WedgeSlide';
@@ -41,6 +43,7 @@ import { ThePathSlide } from './slides/ThePathSlide';
 import { TeamSlide } from './slides/TeamSlide';
 import { RaiseSlide } from './slides/RaiseSlide';
 import { InvestmentSlide } from './slides/InvestmentSlide';
+import { TractionSlide } from './slides/TractionSlide';
 import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
 import { AppendixSlide } from './slides/AppendixSlide';
 import { KernelDividerSlide, BlockchainDividerSlide, ProductDividerSlide } from './slides/SectionDividerSlide';
@@ -60,31 +63,34 @@ import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
   CoverSlide,              // 1. Cover — Unicity logo + Seed Round Extension
-  // IntroSlide,           // hidden — Thesis — Autonomous AI needs an internet built for machines
+  IntroSlide,              // 2. Thesis — Autonomous AI needs an internet built for machines
   // ── Architecture arc (3–8) ──
-  ProblemSlide,            // 3. What Autonomy Demands — The Fourth Rebuild
+  // ProblemSlide,         // hidden — What Autonomy Demands — The Fourth Rebuild
   // SolutionIntroSlide,   // hidden — Unicity OS: A Secure OS for AI Agents
   AutonomyStackSlide,      // 4. The Protocol Stack for the Agentic Internet
   // CompleteAutonomyStackSlide, // hidden — The First Complete Stack Built For Machines
   TeamSlide,               // 6. Founders
+  MarketSlide,             // Market Opportunity — trillion-dollar rebuild
   // ArchitectureStackSlide, // hidden — The Secure OS for Agents
   // AgentsSlide,          // appendix — The Unicity Blockchain: Why a Purpose Built Chain
   // EdgePayoffSlide,      // appendix — What This Unlocks
   // CompetitiveLandscapeSlide, // appendix — We're Betting on a Different Architecture
   // ── Commercial arc (9–14) ──
   // WedgeSlide,           // hidden — Wedge content folded into UseCasesSlide title
-  UseCasesSlide,           // 9. Land on Security. Revenue Today.
-  ProtocolSlide,           // Case Study — x402 Live Demo
+  // UseCasesSlide,        // hidden — Case Study: Enterprise Secure Compute Platform (pills)
+  DeploymentModelHtmlSlide, // Runs inside your infrastructure
   ConciergeSlide,          // Case Study — Subscriber Concierge (Telco)
-  MarketSlide,             // 11. Market Opportunity — trillion-dollar rebuild
+  ProtocolSlide,           // Case Study — x402 Live Demo
   AgentsSlide,             // The Unicity Blockchain — Why A Purpose Built Chain
-  CompetitionMinimalSlide, // 12. Competition — Everyone else watches the agent. We run it.
-  DefensibilitySlide,      // 12b. Defensibility — patented today, verified-by-construction tomorrow
-  BusinessModelPricingSlide, // 13. Business Model — Open Core / Per Agent Pricing
+  TokenObjectSlide,        // Tokens are native data types, not ledger entries
+  // CompetitionMinimalSlide, // hidden — Off-chain tokens can integrate into an OS. Ledger entries cannot.
+  // DefensibilitySlide,   // hidden — Defensibility: today and tomorrow
+  // BusinessModelPricingSlide, // hidden — Open Core / Per Agent Pricing
   GoToMarketSlide,         // 13. Beachhead: The UAE
   // SecurityNetworkSlide, // hidden — Zero Trust Enterprise Network
   // AgentSprawlSlide,     // hidden — Case Study: Agent Sprawl
   // ThePathSlide,         // hidden — Current Status and How We Win
+  TractionSlide,           // Traction — devs, testnet, pipeline, signed channel
   InvestmentSlide,         // 15. The Investment — $5M seed, Q3 2026, 18 mo runway
   TokenSlide,              // 16. Token Design and Tokenomics
   ResourcesSlide,          // 17. Resources
