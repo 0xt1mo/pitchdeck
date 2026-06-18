@@ -50,7 +50,7 @@ export function SalesInterceptFabricSlide() {
             className="text-[#fefefe]/65 text-base lg:text-lg mt-2 italic"
             style={{ fontFamily: font }}
           >
-            A semantic firewall — content-aware, not just action-based.
+            Um firewall semântico — consciente do conteúdo, não apenas baseado em ações.
           </motion.p>
         </div>
 
@@ -63,28 +63,28 @@ export function SalesInterceptFabricSlide() {
             className="flex flex-col gap-5"
           >
             <p className="text-[#fefefe]/85 text-base lg:text-lg leading-relaxed" style={{ fontFamily: font }}>
-              <span className="text-orange-400 font-bold">Semantic</span> controls — prompt injection, data leakage, exfiltration — with domain-specific ontologies.
+              Controles <span className="text-orange-400 font-bold">semânticos</span> — prompt injection, vazamento de dados, exfiltração — com ontologias específicas de domínio.
             </p>
 
             <div>
               <p className="text-[#fefefe] text-base lg:text-lg font-bold mb-3" style={{ fontFamily: font }}>
-                A layered model:
+                Um modelo em camadas:
               </p>
               <ol className="space-y-3 list-decimal list-inside">
                 <li className="text-[#fefefe]/85 text-sm lg:text-base leading-relaxed" style={{ fontFamily: font }}>
-                  <span className="text-orange-400 font-bold">Rule engine</span> — high-performance pattern matching with dynamic rule updates.
+                  <span className="text-orange-400 font-bold">Motor de regras</span> — correspondência de padrões de alta performance com atualização dinâmica de regras.
                 </li>
                 <li className="text-[#fefefe]/85 text-sm lg:text-base leading-relaxed" style={{ fontFamily: font }}>
-                  <span className="text-orange-400 font-bold">ML detection</span> — low-latency inference, anomaly detection, ONNX-compatible plugins.
+                  <span className="text-orange-400 font-bold">Detecção por ML</span> — inferência de baixa latência, detecção de anomalias, plugins compatíveis com ONNX.
                 </li>
                 <li className="text-[#fefefe]/85 text-sm lg:text-base leading-relaxed" style={{ fontFamily: font }}>
-                  <span className="text-orange-400 font-bold">DLP scanning</span> — secrets, PII, IP exfiltration via pattern matching + NER.
+                  <span className="text-orange-400 font-bold">Varredura DLP</span> — segredos, PII, exfiltração de propriedade intelectual via correspondência de padrões + NER.
                 </li>
               </ol>
             </div>
 
             <p className="text-[#fefefe]/65 text-sm lg:text-base leading-relaxed" style={{ fontFamily: font }}>
-              Rust implementation. Sub-20ms classification tuned to risk tolerance and content depth.
+              Implementação em Rust. Classificação em menos de 20ms, ajustada à tolerância a risco e à profundidade do conteúdo.
             </p>
           </motion.div>
 
@@ -94,34 +94,34 @@ export function SalesInterceptFabricSlide() {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="flex flex-col items-center gap-0"
           >
-            <Box label="Policy Dashboard" variant="yellow" />
+            <Box label="Painel de Políticas" variant="yellow" />
             <Arrow />
-            <Box label="Unified Server (HTTP)" sub="normalisation · cleanup · scrubbing" variant="white" />
+            <Box label="Servidor Unificado (HTTP)" sub="normalização · limpeza · sanitização" variant="white" />
             <Arrow />
 
             <div className="grid grid-cols-3 gap-2 w-full">
-              <Box label="Rule Engine" sub="fast matching" variant="white" />
-              <Box label="ML Detection" sub="anomaly detection" variant="white" />
-              <Box label="DLP Scanner" sub="secrets, PII" variant="white" />
+              <Box label="Motor de Regras" sub="correspondência rápida" variant="white" />
+              <Box label="Detecção por ML" sub="detecção de anomalias" variant="white" />
+              <Box label="Scanner DLP" sub="segredos, PII" variant="white" />
             </div>
             <Arrow />
 
             <div className="flex items-center gap-4 w-full">
               <div className="flex-1">
-                <Box label="Decision Engine" sub="scoring · thresholds" variant="white" />
+                <Box label="Motor de Decisão" sub="pontuação · limiares" variant="white" />
               </div>
               <svg width="32" height="12" viewBox="0 0 30 10" className="shrink-0 text-[#fefefe]/50">
                 <path d="M0 5h24M21 2l4 3-4 3" stroke="currentColor" strokeWidth="1.5" fill="none" strokeDasharray="3 3" />
               </svg>
               <div className="shrink-0 flex flex-col gap-0.5 text-sm font-bold leading-tight" style={{ fontFamily: font }}>
-                <span className="text-green-400">Allow</span>
-                <span className="text-red-400">Block</span>
-                <span className="text-yellow-400">Flag</span>
+                <span className="text-green-400">Permitir</span>
+                <span className="text-red-400">Bloquear</span>
+                <span className="text-yellow-400">Sinalizar</span>
               </div>
             </div>
             <Arrow />
 
-            <Box label="Cryptographic Audit Layer" variant="yellow" />
+            <Box label="Camada de Auditoria Criptográfica" variant="yellow" />
           </motion.div>
 
         </div>

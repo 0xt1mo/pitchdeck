@@ -22,7 +22,7 @@ export function SalesIntroSlide() {
           className="text-orange-400 text-xs sm:text-sm tracking-[0.5em] uppercase mb-10"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Confidential
+          Confidencial
         </motion.p>
 
         <motion.h1
@@ -32,7 +32,7 @@ export function SalesIntroSlide() {
           className="text-[#fefefe] text-[44px] sm:text-[64px] lg:text-[88px] leading-[0.9] tracking-tight text-center"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          SECURE <span className="text-orange-400">AGENTIC AI</span>
+          IA DE AGENTES <span className="text-orange-400">SEGURA</span>
         </motion.h1>
 
         <motion.div

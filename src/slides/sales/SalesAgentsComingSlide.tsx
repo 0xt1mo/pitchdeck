@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 
 const stats = [
-  { value: '$400B+', label: 'Agentic AI market by 2030', color: 'rgba(245,158,11,0.9)' },
-  { value: '88%', label: 'of organisations reported AI agent security incidents', color: 'rgba(239,68,68,0.8)' },
-  { value: '14%', label: 'of agents went live with security approval', color: 'rgba(239,68,68,0.55)' },
+  { value: '$400B+', label: 'mercado de IA de agentes até 2030', color: 'rgba(245,158,11,0.9)' },
+  { value: '88%', label: 'das organizações relataram incidentes de segurança com agentes de IA', color: 'rgba(239,68,68,0.8)' },
+  { value: '14%', label: 'dos agentes entraram em produção com aprovação de segurança', color: 'rgba(239,68,68,0.55)' },
 ];
 
 const SYSTEM_FONT = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
@@ -22,8 +22,8 @@ export function SalesAgentsComingSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            AGENTIC AI IS HERE.{' '}
-            <span className="text-orange-400">EVERY GOVERNMENT, EVERY ENTERPRISE</span>
+            A IA DE AGENTES CHEGOU.{' '}
+            <span className="text-orange-400">TODO GOVERNO, TODA EMPRESA</span>
           </motion.h1>
         </div>
 
@@ -69,14 +69,14 @@ export function SalesAgentsComingSlide() {
 
               {/* Text */}
               <div className="text-[15px] lg:text-[16px] text-[#e7e9ea] leading-[1.45] flex-1">
-                Under the directives of the President of the UAE, we launch a new government model.{' '}
+                Sob as diretrizes do Presidente dos Emirados Árabes Unidos, lançamos um novo modelo de governo.{' '}
                 <span className="font-bold">
-                  Within two years, 50% of government sectors, services, and operations will run on Agentic AI,
+                  Em dois anos, 50% dos setores, serviços e operações do governo funcionarão com IA de agentes,
                 </span>{' '}
-                making the UAE the first government globally to operate at this scale through autonomous systems.
+                tornando os Emirados Árabes Unidos o primeiro governo do mundo a operar nessa escala por meio de sistemas autônomos.
                 <br />
                 <br />
-                <span className="font-bold">AI is no longer a tool.</span> It analyses, decides, executes, and improves in real time. It will become our executive partner.
+                <span className="font-bold">A IA não é mais uma ferramenta.</span> Ela analisa, decide, executa e melhora em tempo real. Ela se tornará nosso parceiro executivo.
               </div>
 
               {/* Time */}
@@ -84,7 +84,7 @@ export function SalesAgentsComingSlide() {
                 className="text-[13px] text-[#71767b] mt-3 pt-3"
                 style={{ borderTop: '1px solid #2f3336' }}
               >
-                3:33 PM · Apr 23, 2026
+                15:33 · 23 de abr. de 2026
               </div>
             </div>
 

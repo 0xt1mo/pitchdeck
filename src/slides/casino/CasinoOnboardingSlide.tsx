@@ -25,8 +25,8 @@ export function CasinoOnboardingSlide() {
               className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[64px] leading-[0.98] tracking-tight mt-3 uppercase"
               style={{ fontFamily: "'Anton', sans-serif" }}
             >
-              Agents automate{' '}
-              <span className="text-orange-400">KYC.</span>
+              Agentes automatizam{' '}
+              <span className="text-orange-400">o KYC.</span>
             </motion.h1>
             <motion.div
               initial={{ scaleX: 0 }}
@@ -54,7 +54,7 @@ export function CasinoOnboardingSlide() {
                   className="text-[#fefefe]/40 text-[11px] tracking-[0.18em] uppercase mt-1"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
-                  Human funnel
+                  Funil humano
                 </span>
               </motion.div>
               <motion.div
@@ -67,13 +67,13 @@ export function CasinoOnboardingSlide() {
                   className="text-orange-400 text-[52px] lg:text-[72px] leading-[0.9] uppercase"
                   style={{ fontFamily: "'Anton', sans-serif" }}
                 >
-                  30% Lost.
+                  30% Perdidos.
                 </span>
                 <span
                   className="text-[#fefefe]/40 text-[11px] tracking-[0.18em] uppercase mt-1"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
-                  To abandonment
+                  Por abandono
                 </span>
               </motion.div>
             </div>
@@ -85,8 +85,8 @@ export function CasinoOnboardingSlide() {
               className="text-[#fefefe]/75 text-base sm:text-lg leading-relaxed max-w-xl mt-8"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              The human onboarding funnel costs twenty-five minutes and loses thirty per cent of attempted players to abandonment, KYC drop-off, and card decline. The agent confirms once — credentials verified upstream, account live, bonus loaded.{' '}
-              <span className="text-orange-400 font-semibold">Agents automate the KYC process.</span>
+              O funil de onboarding humano custa vinte e cinco minutos e perde trinta por cento dos jogadores que tentam se cadastrar por abandono, desistência no KYC e recusa de cartão. O agente confirma uma única vez — credenciais verificadas a montante, conta ativa, bônus carregado.{' '}
+              <span className="text-orange-400 font-semibold">Agentes automatizam o processo de KYC.</span>
             </motion.p>
           </div>
 

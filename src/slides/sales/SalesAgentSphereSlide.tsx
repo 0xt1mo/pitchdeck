@@ -4,11 +4,11 @@ const CX = 300;
 const CY = 300;
 
 const enterprises = [
-  { name: 'BANK A', color: '#3b82f6', angle: -90, dist: 210, agents: 4 },
-  { name: 'INSURER', color: '#ec4899', angle: -18, dist: 220, agents: 3 },
-  { name: 'LOGISTICS', color: '#a855f7', angle: 54, dist: 210, agents: 3 },
-  { name: 'BANK B', color: '#f59e0b', angle: 126, dist: 220, agents: 4 },
-  { name: 'TELCO', color: '#06b6d4', angle: 198, dist: 210, agents: 3 },
+  { name: 'BANCO A', color: '#3b82f6', angle: -90, dist: 210, agents: 4 },
+  { name: 'SEGURADORA', color: '#ec4899', angle: -18, dist: 220, agents: 3 },
+  { name: 'LOGÍSTICA', color: '#a855f7', angle: 54, dist: 210, agents: 3 },
+  { name: 'BANCO B', color: '#f59e0b', angle: 126, dist: 220, agents: 4 },
+  { name: 'TELECOM', color: '#06b6d4', angle: 198, dist: 210, agents: 3 },
 ];
 
 function NetworkDiagram() {
@@ -194,20 +194,20 @@ function NetworkDiagram() {
 
 const features = [
   {
-    title: 'AGENT DISCOVERY',
-    text: 'Agents find each other. Machine-readable identity, capabilities, and reputation. No directory, no registry — permissionless and decentralised.',
+    title: 'DESCOBERTA DE AGENTES',
+    text: 'Os agentes se encontram. Identidade, capacidades e reputação legíveis por máquina. Sem diretório, sem registro — sem permissão e descentralizado.',
   },
   {
-    title: 'P2P MESSAGING',
-    text: 'Direct agent-to-agent communication via NOSTR relays. Private, encrypted, no intermediary. Agents negotiate, collaborate, and coordinate autonomously.',
+    title: 'MENSAGERIA P2P',
+    text: 'Comunicação direta entre agentes via relays NOSTR. Privada, criptografada, sem intermediário. Os agentes negociam, colaboram e coordenam de forma autônoma.',
   },
   {
-    title: 'INTENT-BASED TRADING',
-    text: 'A marketplace where agents express intent and settle trades. Permissionless, private, and fast enough for agent-speed settlement.',
+    title: 'NEGOCIAÇÃO BASEADA EM INTENÇÃO',
+    text: 'Um marketplace onde os agentes expressam intenção e liquidam negociações. Sem permissão, privado e rápido o suficiente para liquidação na velocidade dos agentes.',
   },
   {
-    title: 'PROTOCOL AGNOSTIC',
-    text: 'MCP, A2A, X402. Any chain. Extreme throughput.',
+    title: 'AGNÓSTICO DE PROTOCOLO',
+    text: 'MCP, A2A, X402. Qualquer chain. Throughput extremo.',
   },
 ];
 
@@ -224,7 +224,7 @@ export function SalesAgentSphereSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            AGENTSPHERE: <span className="text-orange-400">THE AGENT ECONOMY</span>
+            AGENTSPHERE: <span className="text-orange-400">A ECONOMIA DE AGENTES</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -233,7 +233,7 @@ export function SalesAgentSphereSlide() {
             className="mt-3 text-[#fefefe]/85 text-base lg:text-lg max-w-4xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Agents discover each other, communicate, trade, and build trust — all on decentralised infrastructure.
+            Os agentes se descobrem, se comunicam, negociam e constroem confiança — tudo em infraestrutura descentralizada.
           </motion.p>
         </div>
 

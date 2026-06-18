@@ -2,17 +2,17 @@ import { motion } from 'framer-motion';
 
 const bars = [
   {
-    label: 'Governance &\nSecurity Blocks',
+    label: 'Bloqueios de Governança\ne Segurança',
     value: 46,
     width: 88,
     fill: 'linear-gradient(90deg, rgba(245,158,11,0.15) 0%, rgba(245,158,11,0.5) 100%)',
     valueColor: 'rgba(245,158,11,0.9)',
     labelColor: 'rgba(245,158,11,0.8)',
     labelBold: true,
-    annotation: '← This is what we solve',
+    annotation: '← É isto que resolvemos',
   },
   {
-    label: 'Data Access &\nPrivacy Risks',
+    label: 'Riscos de Acesso a Dados\ne Privacidade',
     value: 32,
     width: 62,
     fill: 'linear-gradient(90deg, rgba(239,68,68,0.1) 0%, rgba(239,68,68,0.3) 100%)',
@@ -20,7 +20,7 @@ const bars = [
     labelColor: 'rgba(255,255,255,0.4)',
   },
   {
-    label: 'Operational\nReliability',
+    label: 'Confiabilidade\nOperacional',
     value: 14,
     width: 38,
     fill: 'linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.08) 100%)',
@@ -28,7 +28,7 @@ const bars = [
     labelColor: 'rgba(255,255,255,0.4)',
   },
   {
-    label: 'ROI Justification\nUnclear',
+    label: 'Justificativa de ROI\nIncerta',
     value: 8,
     width: 28,
     fill: 'linear-gradient(90deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.06) 100%)',
@@ -50,8 +50,8 @@ export function SalesPilotPurgatorySlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            THE BIGGEST BLOCKER TO PRODUCTION IS{' '}
-            <span className="text-orange-400">SECURITY.</span>
+            O MAIOR OBSTÁCULO PARA A PRODUÇÃO É A{' '}
+            <span className="text-orange-400">SEGURANÇA.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -60,8 +60,8 @@ export function SalesPilotPurgatorySlide() {
             className="mt-4 text-[#fefefe]/70 text-lg sm:text-xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Gartner forecasts that a massive portion of agentic AI projects will fail to reach production by 2027.{' '}
-            <span className="text-orange-400/80 font-bold">The #1 reason: governance and security.</span>
+            A Gartner prevê que uma enorme parcela dos projetos de IA de agentes não chegará à produção até 2027.{' '}
+            <span className="text-orange-400/80 font-bold">O motivo nº 1: governança e segurança.</span>
           </motion.p>
         </div>
 
@@ -129,7 +129,7 @@ export function SalesPilotPurgatorySlide() {
               fontFamily: "'Geist Mono', monospace",
             }}
           >
-            Source: Gartner 2026 — Primary Blockers to Agentic AI Production
+            Fonte: Gartner 2026 — Principais Obstáculos à Produção de IA de Agentes
           </motion.div>
         </div>
 
@@ -147,13 +147,13 @@ export function SalesPilotPurgatorySlide() {
             className="text-lg lg:text-2xl italic leading-snug text-[#fefefe] font-bold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            "If we let the animal out of the cage today, nobody's ready for it."
+            "Se soltarmos o animal da jaula hoje, ninguém está preparado para isso."
           </p>
           <p
             className="text-sm lg:text-base mt-3 tracking-wide font-bold"
             style={{ fontFamily: "'Geist Mono', monospace", color: '#fca5a5' }}
           >
-            Kevin Mandia, founder of Mandiant · RSA 2026
+            Kevin Mandia, fundador da Mandiant · RSA 2026
           </p>
         </motion.div>
       </div>

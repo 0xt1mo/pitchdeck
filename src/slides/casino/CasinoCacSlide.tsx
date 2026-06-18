@@ -16,7 +16,7 @@ export function CasinoCacSlide() {
               className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Nº 03 · Acquisition
+              Nº 03 · Aquisição
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, x: -40 }}
@@ -25,8 +25,8 @@ export function CasinoCacSlide() {
               className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[64px] leading-[0.98] tracking-tight mt-3 uppercase"
               style={{ fontFamily: "'Anton', sans-serif" }}
             >
-              Agents are your new{' '}
-              <span className="text-orange-400">acquisition channel.</span>
+              Agentes são seu novo{' '}
+              <span className="text-orange-400">canal de aquisição.</span>
             </motion.h1>
             <motion.div
               initial={{ scaleX: 0 }}
@@ -42,8 +42,8 @@ export function CasinoCacSlide() {
               className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl leading-relaxed max-w-xl mt-7"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Today you buy each funded player for <span className="text-[#fefefe] font-semibold">hundreds of dollars</span> — paid search, affiliate revenue share, welcome bonuses — and wait a year to break even. When the player's agent recommends you, the customer arrives <span className="text-[#fefefe] font-semibold">pre-qualified and ready to wager.</span>{' '}
-              <span className="text-orange-400 font-semibold">Win the agent's trust and your CAC collapses.</span>
+              Hoje você compra cada jogador com saldo por <span className="text-[#fefefe] font-semibold">centenas de dólares</span> — busca paga, revenue share de afiliados, bônus de boas-vindas — e espera um ano para empatar. Quando o agente do jogador recomenda você, o cliente chega <span className="text-[#fefefe] font-semibold">pré-qualificado e pronto para apostar.</span>{' '}
+              <span className="text-orange-400 font-semibold">Conquiste a confiança do agente e seu CAC despenca.</span>
             </motion.p>
           </div>
 
@@ -62,7 +62,7 @@ export function CasinoCacSlide() {
 
             <img
               src="/images/casino-agent-intent.png"
-              alt="Agent asking the concierge what games are available"
+              alt="Agente perguntando ao concierge quais jogos estão disponíveis"
               className="block mx-auto w-full max-w-[340px] h-auto"
               style={{ filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }}
             />

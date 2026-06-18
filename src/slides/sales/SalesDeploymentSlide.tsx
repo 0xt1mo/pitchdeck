@@ -2,37 +2,37 @@ import { motion } from 'framer-motion';
 
 const models = [
   {
-    title: 'CLOUD',
-    subtitle: 'Managed Service',
+    title: 'NUVEM',
+    subtitle: 'Serviço Gerenciado',
     points: [
-      'Zero operational overhead',
-      'Multi-tenant with cryptographic isolation',
-      'Automatic updates, SLA-backed',
-      'Fastest path to production',
+      'Zero overhead operacional',
+      'Multi-tenant com isolamento criptográfico',
+      'Atualizações automáticas, com SLA',
+      'Caminho mais rápido para produção',
     ],
-    best: 'Teams that want speed without operational burden.',
+    best: 'Equipes que querem velocidade sem peso operacional.',
   },
   {
     title: 'ON-PREMISE',
-    subtitle: 'Your infrastructure',
+    subtitle: 'Sua infraestrutura',
     points: [
-      'Full control of data and environment',
-      'Your brand, your billing',
-      'We provide runtime and L3 support',
-      'Private cloud or bare metal',
+      'Controle total dos dados e do ambiente',
+      'Sua marca, seu faturamento',
+      'Fornecemos o runtime e suporte L3',
+      'Nuvem privada ou bare metal',
     ],
-    best: 'Enterprises with data residency or compliance requirements.',
+    best: 'Empresas com requisitos de residência de dados ou conformidade.',
   },
   {
     title: 'AIR-GAPPED',
-    subtitle: 'Sovereign deployment',
+    subtitle: 'Implantação soberana',
     points: [
-      'Data never leaves the perimeter',
-      'Zero external network access',
-      'Full isolation',
-      'Full offline operation',
+      'Os dados nunca saem do perímetro',
+      'Zero acesso a redes externas',
+      'Isolamento total',
+      'Operação totalmente offline',
     ],
-    best: 'Defence, government, regulated industries.',
+    best: 'Defesa, governo, setores regulados.',
   },
 ];
 
@@ -46,12 +46,12 @@ export function SalesDeploymentSlide() {
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight"
             style={{ fontFamily: "'Anton', sans-serif" }}>
-            DEPLOY HOW <span className="text-orange-400">YOU NEED IT</span>
+IMPLANTE DO <span className="text-orange-400">JEITO QUE VOCÊ PRECISA</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
             className="mt-4 text-[#fefefe]/70 text-lg sm:text-xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Same runtime. Same security guarantees. Same APIs. The deployment model changes where it runs — not what it does.
+            Mesmo runtime. Mesmas garantias de segurança. Mesmas APIs. O modelo de implantação muda onde ele roda — não o que ele faz.
           </motion.p>
         </div>
 
@@ -89,7 +89,7 @@ export function SalesDeploymentSlide() {
 
                   <div className="mt-5 pt-4" style={{ borderTop: '1px solid rgba(249,115,22,0.1)' }}>
                     <p className="text-[#fefefe]/50 text-xs uppercase tracking-wider mb-1"
-                      style={{ fontFamily: "'Geist Mono', monospace" }}>Best for</p>
+                      style={{ fontFamily: "'Geist Mono', monospace" }}>Ideal para</p>
                     <p className="text-[#fefefe]/85 text-sm font-bold leading-relaxed"
                       style={{ fontFamily: "'Geist Mono', monospace" }}>
                       {m.best}

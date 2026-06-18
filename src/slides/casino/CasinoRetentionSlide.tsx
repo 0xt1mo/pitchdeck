@@ -16,7 +16,7 @@ export function CasinoRetentionSlide() {
               className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Nº 04 · Retention
+              Nº 04 · Retenção
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, x: -40 }}
@@ -25,8 +25,8 @@ export function CasinoRetentionSlide() {
               className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[64px] leading-[0.98] tracking-tight mt-3 uppercase"
               style={{ fontFamily: "'Anton', sans-serif" }}
             >
-              Retention becomes{' '}
-              <span className="text-orange-400">a conversation.</span>
+              A retenção vira{' '}
+              <span className="text-orange-400">uma conversa.</span>
             </motion.h1>
             <motion.div
               initial={{ scaleX: 0 }}
@@ -54,7 +54,7 @@ export function CasinoRetentionSlide() {
                 className="text-orange-400 text-[64px] lg:text-[88px] leading-[0.9] uppercase"
                 style={{ fontFamily: "'Anton', sans-serif" }}
               >
-                Ignored.
+                Ignorado.
               </motion.span>
             </div>
 
@@ -65,8 +65,8 @@ export function CasinoRetentionSlide() {
               className="text-[#fefefe]/75 text-base sm:text-lg leading-relaxed max-w-xl mt-7"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Operators spend <span className="text-[#fefefe] font-semibold">$5–10 per active player per year</span> on CRM platforms to send promotional emails that ninety-two per cent never open. The agent is the channel the player already uses — the Friday reload arrives in chat, when it matters.{' '}
-              <span className="text-orange-400 font-semibold">Delivered: one hundred per cent.</span>
+              Os operadores gastam <span className="text-[#fefefe] font-semibold">$5–10 por jogador ativo por ano</span> em plataformas de CRM para enviar e-mails promocionais que noventa e dois por cento nunca abrem. O agente é o canal que o jogador já usa — o reload de sexta-feira chega no chat, na hora certa.{' '}
+              <span className="text-orange-400 font-semibold">Entregue: cem por cento.</span>
             </motion.p>
           </div>
 

@@ -13,7 +13,7 @@ export function SalesContactSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            SEE IT <span className="text-orange-400">IN ACTION.</span>
+            VEJA EM <span className="text-orange-400">AÇÃO.</span>
           </motion.h1>
         </div>
 
@@ -36,13 +36,13 @@ export function SalesContactSlide() {
                 className="text-orange-400 text-xl lg:text-2xl font-bold mb-2"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                Book a Live Demo
+                Agende uma Demonstração ao Vivo
               </p>
               <p
                 className="text-[#fefefe]/80 text-sm lg:text-base leading-relaxed"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                See an agent open a session, place a wager, settle — end-to-end.
+                Veja um agente abrir uma sessão, fazer uma aposta e liquidar — de ponta a ponta.
               </p>
             </div>
 

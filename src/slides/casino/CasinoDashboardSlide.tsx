@@ -2,26 +2,26 @@ import { motion } from 'framer-motion';
 
 const pillars = [
   {
-    label: 'Security',
-    desc: 'Semantic intercept fabric — every payload checked at runtime.',
+    label: 'Segurança',
+    desc: 'Malha de interceptação semântica — cada payload verificado em tempo de execução.',
     img: '/dashboards/security.png',
     accent: '#ef4444',
   },
   {
-    label: 'Governance',
-    desc: 'Live policy library, approvals, and full audit ledger.',
+    label: 'Governança',
+    desc: 'Biblioteca de políticas ao vivo, aprovações e registro de auditoria completo.',
     img: '/dashboards/governance.png',
     accent: '#22c55e',
   },
   {
-    label: 'Networking',
-    desc: 'Open lanes across A2A, MCP, x402 — counterparty-aware.',
+    label: 'Redes',
+    desc: 'Canais abertos em A2A, MCP, x402 — cientes da contraparte.',
     img: '/dashboards/networking.png',
     accent: '#a855f7',
   },
   {
-    label: 'Payments',
-    desc: 'Cash flow, rail balances and per-agent budgets in real time.',
+    label: 'Pagamentos',
+    desc: 'Fluxo de caixa, saldos de rails e orçamentos por agente em tempo real.',
     img: '/dashboards/payments.png',
     accent: '#f59e0b',
   },
@@ -41,7 +41,7 @@ export function CasinoDashboardSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            The Enterprise Console
+            O Console Empresarial
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -50,8 +50,8 @@ export function CasinoDashboardSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[1.05] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            One pane of glass for{' '}
-            <span className="text-orange-400">every agent, every policy, every payment.</span>
+            Um único painel para{' '}
+            <span className="text-orange-400">cada agente, cada política, cada pagamento.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -60,7 +60,7 @@ export function CasinoDashboardSlide() {
             className="mt-2 text-[#fefefe]/85 text-xs sm:text-sm max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Identity, delegation, policy, settlement and audit — unified into a single operator surface. Not rip and replace. A control plane that sits under any agent deployment.
+            Identidade, delegação, política, liquidação e auditoria — unificadas em uma única superfície para o operador. Não é arrancar e substituir. Um plano de controle que fica abaixo de qualquer implantação de agentes.
           </motion.p>
         </div>
 
@@ -80,7 +80,7 @@ export function CasinoDashboardSlide() {
             >
               <img
                 src={p.img}
-                alt={`${p.label} dashboard`}
+                alt={`painel de ${p.label}`}
                 className="w-full h-full object-contain object-top"
               />
               <div

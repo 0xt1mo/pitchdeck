@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 
 const team = [
-  { name: 'Mike Gault', role: 'CEO', bio: 'PhD Engineering · Founder Guardtime (ADX:IHC) · MD Barclays Capital' },
-  { name: 'Tony Kenyon', role: 'Product', bio: 'PhD Machine Learning · Vitruvian · BT · Nokia' },
-  { name: 'Nitish Malik', role: 'Senior Advisor', bio: 'Aleria · Etisalat' },
+  { name: 'Mike Gault', role: 'CEO', bio: 'PhD em Engenharia · Fundador da Guardtime (ADX:IHC) · MD no Barclays Capital' },
+  { name: 'Tony Kenyon', role: 'Produto', bio: 'PhD em Machine Learning · Vitruvian · BT · Nokia' },
+  { name: 'Nitish Malik', role: 'Conselheiro Sênior', bio: 'Aleria · Etisalat' },
 ];
 
 const proof = [
-  { label: 'Founded', value: 'Guardtime — DARPA, NATO, Lockheed, Ericsson, Maersk' },
-  { label: 'VC Backed', value: 'Blockchange Capital, Outlier Ventures' },
+  { label: 'Fundou', value: 'Guardtime — DARPA, NATO, Lockheed, Ericsson, Maersk' },
+  { label: 'Aporte de VC', value: 'Blockchange Capital, Outlier Ventures' },
 ];
 
 export function SalesAboutSlide() {
@@ -23,8 +23,8 @@ export function SalesAboutSlide() {
           className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight shrink-0"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          15 YEARS OF{' '}
-          <span className="text-orange-400">CRYPTOGRAPHIC INFRASTRUCTURE.</span>
+          15 ANOS DE{' '}
+          <span className="text-orange-400">INFRAESTRUTURA CRIPTOGRÁFICA.</span>
         </motion.h1>
 
         <div className="grid grid-cols-[420px_1fr] gap-10 lg:gap-14 shrink-0 items-start">
@@ -40,7 +40,7 @@ export function SalesAboutSlide() {
             >
               <img
                 src="/award-ceremony.jpg"
-                alt="Guardtime award at the World Government Summit"
+                alt="Prêmio da Guardtime no World Government Summit"
                 className="w-full h-[230px] object-cover"
                 style={{ objectPosition: 'center 20%' }}
               />
@@ -54,7 +54,7 @@ export function SalesAboutSlide() {
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
               <span className="text-orange-400 font-bold">World Government Summit, Dubai.</span>{' '}
-              Mike Gault receiving the award for Best Emerging Technology in Government from HH Sheikh Mohammed bin Rashid Al Maktoum.
+              Mike Gault recebendo o prêmio de Melhor Tecnologia Emergente em Governo de Sua Alteza o Xeique Mohammed bin Rashid Al Maktoum.
             </motion.p>
 
             <motion.div
@@ -94,7 +94,7 @@ export function SalesAboutSlide() {
                 borderBottom: '1px solid rgba(255,255,255,0.08)',
               }}
             >
-              Leadership
+              Liderança
             </motion.p>
 
             <div className="flex flex-col">

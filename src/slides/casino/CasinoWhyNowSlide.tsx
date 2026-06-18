@@ -2,38 +2,38 @@ import { motion } from 'framer-motion';
 
 const eras = [
   {
-    tag: '01 · The First Wave',
+    tag: '01 · A Primeira Onda',
     name: 'Web',
     year: '1995',
-    arrival: 'The browser arrives.',
-    fact: <>InterCasino launches 1995. Bet365 founded 2000. Online gambling reaches $1bn by 2003.</>,
-    impact: <>Winners: operators who treated the web as the platform. Losers: high-street bookmakers who treated it as a side channel.</>,
+    arrival: 'O navegador chega.',
+    fact: <>O InterCasino é lançado em 1995. A Bet365 é fundada em 2000. O jogo online atinge US$ 1 bi até 2003.</>,
+    impact: <>Vencedores: operadores que trataram a web como a plataforma. Perdedores: casas de apostas tradicionais que a trataram como um canal secundário.</>,
     state: 'past' as const,
   },
   {
-    tag: '02 · The Second Wave',
+    tag: '02 · A Segunda Onda',
     name: 'Mobile',
     year: '2008',
-    arrival: 'The smartphone arrives.',
-    fact: <>App Store launches 2008. Mobile overtakes desktop in regulated markets by 2014. FanDuel and DraftKings build $5bn+ businesses on the new interface.</>,
-    impact: <>Winners: operators who built mobile-first. Losers: operators who ported the website.</>,
+    arrival: 'O smartphone chega.',
+    fact: <>A App Store é lançada em 2008. O mobile supera o desktop nos mercados regulados até 2014. FanDuel e DraftKings constroem negócios de mais de US$ 5 bi sobre a nova interface.</>,
+    impact: <>Vencedores: operadores que construíram mobile-first. Perdedores: operadores que apenas portaram o site.</>,
     state: 'past' as const,
   },
   {
-    tag: '03 · The Third Wave',
+    tag: '03 · A Terceira Onda',
     name: 'AI',
-    year: '2026 · Now',
-    arrival: 'The agent arrives.',
+    year: '2026 · Agora',
+    arrival: 'O agente chega.',
     fact: (
       <>
-        <span className="text-[#fefefe] font-semibold">Agents are the fastest-growing channel in commerce.</span> The infrastructure is in production: Mastercard and Santander cleared Europe's first live agent-initiated bank payment in March. Visa Intelligent Commerce and Mastercard Agent Pay are rolling out across US cardholders.{' '}
-        <span className="text-orange-400 font-semibold">The category is six months old and already real.</span>
+        <span className="text-[#fefefe] font-semibold">Os agentes são o canal que mais cresce no comércio.</span> A infraestrutura já está em produção: Mastercard e Santander concluíram o primeiro pagamento bancário ao vivo iniciado por agente na Europa em março. Visa Intelligent Commerce e Mastercard Agent Pay estão sendo lançados para portadores de cartão nos EUA.{' '}
+        <span className="text-orange-400 font-semibold">A categoria tem seis meses de vida e já é real.</span>
       </>
     ),
     impact: (
       <>
-        Winners: operators who are agent-readable first.{' '}
-        <span className="text-orange-400 font-semibold">The window is three years. It just opened.</span>
+        Vencedores: operadores que são legíveis por agentes primeiro.{' '}
+        <span className="text-orange-400 font-semibold">A janela é de três anos. Ela acabou de se abrir.</span>
       </>
     ),
     state: 'now' as const,
@@ -54,7 +54,7 @@ export function CasinoWhyNowSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 11 · Why Now
+Nº 11 · Por Que Agora
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -63,8 +63,8 @@ export function CasinoWhyNowSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Every twenty years, the interface changes.{' '}
-            <span className="text-orange-400">The operator who moves first defines the era.</span>
+            A cada vinte anos, a interface muda.{' '}
+            <span className="text-orange-400">O operador que se move primeiro define a era.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -80,7 +80,7 @@ export function CasinoWhyNowSlide() {
             className="mt-4 text-[#fefefe]/75 text-sm lg:text-base leading-relaxed max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Two interfaces shaped this industry — the web and the mobile app. Each had a window of about three years where the early movers became the giants of the next two decades. The third interface is here.
+            Duas interfaces moldaram este setor — a web e o app mobile. Cada uma teve uma janela de cerca de três anos em que os pioneiros se tornaram os gigantes das duas décadas seguintes. A terceira interface chegou.
           </motion.p>
         </div>
 

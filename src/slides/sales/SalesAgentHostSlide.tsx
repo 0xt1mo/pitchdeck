@@ -31,7 +31,7 @@ function StackDiagram() {
       <text x={px + 16} y={y0 + 24} fill="#3b82f6" fontSize="14" fontWeight="bold"
         fontFamily={fontTitle} letterSpacing="0.08em">USER SPACE</text>
       <text x={px + 145} y={y0 + 24} fill="rgba(254,254,254,0.3)" fontSize="9"
-        fontFamily={font}>User-facing tools &amp; agent frameworks</text>
+        fontFamily={font}>Ferramentas e frameworks de agentes voltados ao usuário</text>
       {['Claude Code', 'OpenClaw', 'Custom Agent Tools', 'LLM Frontends'].map((t, i) => {
         const tx = px + 16 + i * 115;
         return (
@@ -58,8 +58,8 @@ function StackDiagram() {
       <text x={px + 16} y={y1 + 24} fill="#f97316" fontSize="15" fontWeight="bold"
         fontFamily={fontTitle} letterSpacing="0.08em">AOS-9 RUNTIME</text>
       <text x={px + 180} y={y1 + 24} fill="rgba(254,254,254,0.35)" fontSize="9"
-        fontFamily={font}>User-space microkernel — enforcement layer</text>
-      {['Security Interceptor', 'WASM Sandbox', 'Capsule Engine'].map((t, i) => {
+        fontFamily={font}>Microkernel em user-space — camada de aplicação de políticas</text>
+      {['Interceptor de Segurança', 'WASM Sandbox', 'Capsule Engine'].map((t, i) => {
         const tx = px + 16 + i * 148;
         return (
           <g key={t}>
@@ -70,7 +70,7 @@ function StackDiagram() {
           </g>
         );
       })}
-      {['Audit & Budgets', 'IPC Message Bus'].map((t, i) => {
+      {['Auditoria e Orçamentos', 'Barramento de Mensagens IPC'].map((t, i) => {
         const tx = px + 16 + i * 148;
         return (
           <g key={t}>
@@ -93,9 +93,9 @@ function StackDiagram() {
       <text x={px + 16} y={y2 + 24} fill="#6366f1" fontSize="14" fontWeight="bold"
         fontFamily={fontTitle} letterSpacing="0.08em">HOST OS</text>
       <text x={px + 105} y={y2 + 24} fill="rgba(254,254,254,0.3)" fontSize="9"
-        fontFamily={font}>Underlying operating system</text>
-      {['Linux', 'macOS', 'Container Runtimes'].map((t, i) => {
-        const tw = t === 'Container Runtimes' ? 130 : 80;
+        fontFamily={font}>Sistema operacional subjacente</text>
+      {['Linux', 'macOS', 'Runtimes de Contêiner'].map((t, i) => {
+        const tw = t === 'Runtimes de Contêiner' ? 130 : 80;
         const tx = px + 16 + (i === 0 ? 0 : i === 1 ? 90 : 180);
         return (
           <g key={t}>
@@ -111,10 +111,10 @@ function StackDiagram() {
 }
 
 const keyPoints = [
-  { title: 'User-Space Microkernel', text: 'AOS-9 models itself as an OS — with syscalls, airlocks, and user-space isolation. The kernel (aos9d) and system SDK (aos9-sys) are the only core components.' },
-  { title: 'WASM Capsule Sandbox', text: 'All plugins run as WASM capsules inside a sandboxed runtime. OpenClaw plugins are compiled into capsules via aos9-openclaw, with host calls thunked into aos9::sys.' },
-  { title: 'Enforcement Layer', text: 'Security interception, budget enforcement, and audit logging happen at the runtime level — below the agent, not beside it. Tools cannot bypass the kernel.' },
-  { title: 'Everything Is User-Space', text: 'CLIs, OpenClaw, frontends, and even LLM providers are external user-space components communicating over IPC. The kernel stays minimal and ignorant of legacy ABIs.' },
+  { title: 'Microkernel em User-Space', text: 'O AOS-9 se modela como um OS — com syscalls, airlocks e isolamento em user-space. O kernel (aos9d) e o SDK de sistema (aos9-sys) são os únicos componentes centrais.' },
+  { title: 'WASM Capsule Sandbox', text: 'Todos os plugins rodam como capsules WASM dentro de um runtime em sandbox. Os plugins OpenClaw são compilados em capsules via aos9-openclaw, com chamadas ao host roteadas para aos9::sys.' },
+  { title: 'Camada de Aplicação de Políticas', text: 'A interceptação de segurança, a aplicação de orçamentos e o registro de auditoria acontecem no nível do runtime — abaixo do agente, não ao lado dele. As ferramentas não conseguem contornar o kernel.' },
+  { title: 'Tudo É User-Space', text: 'CLIs, OpenClaw, frontends e até provedores de LLM são componentes externos em user-space que se comunicam via IPC. O kernel permanece mínimo e alheio a ABIs legados.' },
 ];
 
 export function SalesAgentHostSlide() {
@@ -133,7 +133,7 @@ export function SalesAgentHostSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight"
             style={{ fontFamily: "'Anton', sans-serif" }}>
             <span className="text-orange-400">AOS-9</span>{' '}
-            — THE SECURE AGENTIC RUNTIME
+            — O RUNTIME AGÊNTICO SEGURO
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -142,8 +142,8 @@ export function SalesAgentHostSlide() {
             transition={{ delay: 0.3 }}
             className="mt-4 text-[#fefefe]/85 text-base lg:text-lg leading-relaxed max-w-4xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
-            AOS-9 is the secure enforcement OS that tools like Claude Code and OpenClaw run <span className="text-orange-400">on top of</span>, not alongside.
-            A user-space microkernel with syscalls, airlocks, and sandboxed isolation — the kernel stays minimal while everything else lives in user-space.
+            O AOS-9 é o OS de segurança e aplicação de políticas sobre o qual ferramentas como Claude Code e OpenClaw <span className="text-orange-400">rodam por cima</span>, não ao lado.
+            Um microkernel em user-space com syscalls, airlocks e isolamento em sandbox — o kernel permanece mínimo enquanto todo o resto vive em user-space.
           </motion.p>
         </div>
 

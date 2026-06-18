@@ -1,32 +1,32 @@
 import { motion } from 'framer-motion';
 
 const pillars = [
-  { title: 'Security', desc: 'Kernel-level enforcement.', color: '#fbbf24', bg: 'rgba(245,158,11,0.10)', border: 'rgba(245,158,11,0.35)' },
-  { title: 'Safety', desc: 'Cryptographic isolation.', color: '#60a5fa', bg: 'rgba(59,130,246,0.10)', border: 'rgba(59,130,246,0.30)' },
-  { title: 'Verifiability', desc: 'Verifiable execution.', color: '#34d399', bg: 'rgba(16,185,129,0.10)', border: 'rgba(16,185,129,0.30)' },
+  { title: 'Segurança', desc: 'Aplicação em nível de kernel.', color: '#fbbf24', bg: 'rgba(245,158,11,0.10)', border: 'rgba(245,158,11,0.35)' },
+  { title: 'Proteção', desc: 'Isolamento criptográfico.', color: '#60a5fa', bg: 'rgba(59,130,246,0.10)', border: 'rgba(59,130,246,0.30)' },
+  { title: 'Verificabilidade', desc: 'Execução verificável.', color: '#34d399', bg: 'rgba(16,185,129,0.10)', border: 'rgba(16,185,129,0.30)' },
 ];
 
 const products = [
   {
     name: 'AOS-9',
-    role: 'The Platform',
-    desc: 'Secure multi-tenant hosting. Any agent framework or harness. Plug-and-play OpenClaw plugins and Hermes memory — with security guaranteed.',
+    role: 'A Plataforma',
+    desc: 'Hospedagem multilocatário segura. Qualquer framework ou harness de agente. Plugins OpenClaw e memória Hermes plug-and-play — com segurança garantida.',
     color: '#fbbf24',
     bg: 'rgba(245,158,11,0.08)',
     border: 'rgba(245,158,11,0.30)',
   },
   {
     name: 'AGENTSTACK',
-    role: 'The Toolkit',
-    desc: 'Semantic Intercept Fabric — transport-layer security the model cannot see or bypass. Any LLM, any framework.',
+    role: 'O Kit de Ferramentas',
+    desc: 'Semantic Intercept Fabric — segurança na camada de transporte que o modelo não consegue ver nem contornar. Qualquer LLM, qualquer framework.',
     color: '#60a5fa',
     bg: 'rgba(59,130,246,0.08)',
     border: 'rgba(59,130,246,0.30)',
   },
   {
     name: 'AGENTSPHERE',
-    role: 'The Network',
-    desc: 'Agents discover each other and settle on the Unicity L1. Intent-based trading at scale.',
+    role: 'A Rede',
+    desc: 'Os agentes se descobrem e liquidam na Unicity L1. Negociação baseada em intenção em escala.',
     color: '#34d399',
     bg: 'rgba(16,185,129,0.08)',
     border: 'rgba(16,185,129,0.30)',
@@ -47,7 +47,7 @@ export function SalesOverviewSlide() {
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
             UNICITY:{' '}
-            <span className="text-orange-400">SECURITY. SAFETY. VERIFIABILITY.</span>
+            <span className="text-orange-400">SEGURANÇA. PROTEÇÃO. VERIFICABILIDADE.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -56,7 +56,7 @@ export function SalesOverviewSlide() {
             className="mt-4 text-[#fefefe]/85 text-lg lg:text-xl max-w-4xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            The Unicity platform enables <span className="text-orange-400 font-bold">security, safety and verifiability</span> for agentic operations.
+            A plataforma Unicity oferece <span className="text-orange-400 font-bold">segurança, proteção e verificabilidade</span> para operações de agentes.
           </motion.p>
         </div>
 

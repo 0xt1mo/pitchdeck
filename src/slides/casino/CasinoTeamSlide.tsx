@@ -9,8 +9,8 @@ const founders = [
     photo: '/team/mike.jpg',
     linkedin: 'https://www.linkedin.com/in/mikegault1/',
     lines: [
-      'PhD Electrical Engineering',
-      'Built & exited Guardtime (ADX:IHC)',
+      'PhD em Engenharia Elétrica',
+      'Construiu e fez exit da Guardtime (ADX:IHC)',
       'Ex-MD, Barclays Capital',
     ],
   },
@@ -20,14 +20,14 @@ const founders = [
     photo: '/team/tony.png',
     linkedin: 'https://www.linkedin.com/in/tonykenyon/',
     lines: [
-      'PhD Machine Learning',
-      '25 years shipping enterprise AI & infra',
-      'Principal Architect: BT, Nokia, A10',
+      'PhD em Machine Learning',
+      '25 anos entregando IA e infraestrutura empresarial',
+      'Arquiteto Principal: BT, Nokia, A10',
     ],
   },
   {
     name: 'Nitish Malik',
-    role: 'Senior Advisor',
+    role: 'Conselheiro Sênior',
     photo: '',
     lines: [
       'Aleria · Etisalat',
@@ -102,7 +102,7 @@ export function CasinoTeamSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 08 · Who We Are
+            Nº 08 · Quem Somos
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -111,10 +111,10 @@ export function CasinoTeamSlide() {
             className="text-[#fefefe] text-[22px] sm:text-[32px] lg:text-[42px] leading-[1.0] tracking-tight mt-2 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Who are we?
+            Quem somos?
             <br />
-            Founders who've{' '}
-            <span className="text-orange-400">done this before.</span>
+            Fundadores que já{' '}
+            <span className="text-orange-400">fizeram isso antes.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -130,7 +130,7 @@ export function CasinoTeamSlide() {
             className="mt-3 text-[#fefefe]/85 text-xs sm:text-sm lg:text-base leading-snug max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            <span className="text-[#fefefe] font-semibold">Unicity Labs.</span> A team of PhDs in machine learning and cryptography with deep experience building agentic systems — applying fifteen years of nation-state-grade cryptographic engineering to the rail your agents transact on.
+            <span className="text-[#fefefe] font-semibold">Unicity Labs.</span> Uma equipe de PhDs em machine learning e criptografia com profunda experiência na construção de sistemas de agentes — aplicando quinze anos de engenharia criptográfica de nível nação-estado ao rail no qual seus agentes transacionam.
           </motion.p>
         </div>
 
@@ -204,7 +204,7 @@ export function CasinoTeamSlide() {
               className="text-orange-400 text-sm lg:text-base tracking-[0.32em] uppercase font-semibold mb-2 self-start"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Where We Operate
+              Onde Operamos
             </p>
             <Globe />
           </motion.div>
@@ -222,7 +222,7 @@ export function CasinoTeamSlide() {
             className="text-[#fefefe]/45 text-[10px] lg:text-xs tracking-[0.32em] uppercase font-semibold mb-2"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Cryptographic infrastructure trusted by
+            Infraestrutura criptográfica confiada por
           </p>
           <div className="flex items-center justify-between gap-6 lg:gap-8 flex-wrap">
             {clients.map((c) => (
