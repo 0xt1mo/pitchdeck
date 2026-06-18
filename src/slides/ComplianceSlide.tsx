@@ -85,6 +85,13 @@ export function ComplianceSlide() {
           >
             TOKENS CAN'T BE RECEIVED WITHOUT THE RIGHT CREDENTIALS.
           </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35, duration: 0.6 }}
+            className="text-[#fefefe] text-lg sm:text-2xl lg:text-3xl leading-snug mt-1"
+            style={anton}
+          >
+            <span className="text-orange-400">ENTIRE HISTORY</span> CAN BE VERIFIED COMPLIANT.
+          </motion.p>
         </div>
 
         {/* Diagram */}
