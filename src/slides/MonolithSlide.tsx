@@ -8,7 +8,7 @@ const cards = [
   {
     title: 'COMMUNICATION',
     desc: 'the asset carries its own proof — the wire just moves bytes',
-    pills: ['NOSTR', 'EMAIL', 'SOCIAL'],
+    pills: ['NOSTR', 'EMAIL', 'SOCIAL', 'HOLEPUNCH'],
   },
   {
     title: 'STORAGE',

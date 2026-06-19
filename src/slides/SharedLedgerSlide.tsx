@@ -58,7 +58,7 @@ export function SharedLedgerSlide() {
             <motion.text
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.25 }}
               x="265" y="58" textAnchor="middle" fontFamily={ANTON} fontSize="38" fill="rgba(254,254,254,0.95)" letterSpacing="0.04em"
-            >ON-CHAIN STABLECOIN</motion.text>
+            >PLASMA USDT</motion.text>
 
             {ledgerRows.map((y, i) => (
               y === CHOSEN ? null : (

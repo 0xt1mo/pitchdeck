@@ -2,6 +2,7 @@ import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
 import { IntroSlide } from './slides/IntroSlide';
 import { CoverSlide } from './slides/CoverSlide';
+import { DemoAgendaSlide } from './slides/DemoAgendaSlide';
 // import { PromiseSlide } from './slides/PromiseSlide'; // hidden
 import { SharedLedgerSlide } from './slides/SharedLedgerSlide';
 import { AtomOfFinanceSlide } from './slides/AtomOfFinanceSlide';
@@ -22,6 +23,7 @@ import { TradeoffsDivider, AtomicityProblemDivider, MathWorthItDivider, NewFinan
 import { ProgrammableTokensSlide } from './slides/ProgrammableTokensSlide';
 import { SpeedSlide, ThroughputSlide, PrivacySlide } from './slides/AxisTradeoffSlides';
 import { ComplianceSlide } from './slides/ComplianceSlide';
+import { CompliantByConstructionSlide } from './slides/CompliantByConstructionSlide';
 // import { NoTransactionsSlide } from './slides/NoTransactionsSlide'; // hidden
 // import { GenesisMintSlide } from './slides/GenesisMintSlide'; // hidden — emission
 // import { NativeAssetMintSlide } from './slides/NativeAssetMintSlide'; // hidden — emission
@@ -76,8 +78,9 @@ import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
+  DemoAgendaSlide,           // 1. What we'll demo today (agenda)
   // ── Problem ──
-  CoverSlide,                // 1. Cover — Rebuilding the Foundations of Decentralized Finance
+  CoverSlide,                // 2. Cover — Rebuilding the Foundations of Decentralized Finance
   // PromiseSlide,           // hidden — Satoshi: P2P Electronic Cash
   SharedLedgerSlide,         // 3. The Industry — every blockchain is the same 17-year-old shared-ledger design
   StateOfArtSlide,           // 4. The Trilemma — Unicity claims the center
@@ -95,6 +98,7 @@ const slides = [
   SettlementSlide,           // 14. Speed — Settlement at machine speed (transaction sequence diagram)
   ThroughputSlide,           // 15. Throughput / Friction
   ComplianceSlide,           // 16. Compliance — enforced at the protocol level
+  CompliantByConstructionSlide, // Compliance in the wallet, not the middle (vs Coinbase x402)
   PrivacySlide,              // 17. Privacy
   NoBridgeRiskSlide,         // 18. Trustless Bridges: Local Verifiability — Unicity SOL
   // ── Building DeFi ──
