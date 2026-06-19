@@ -31,6 +31,13 @@ export function TokenObjectSlide() {
           >
             With the ledger gone, the token is a self-contained object — and an object is something an operating system can hold, like a file.
           </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4, duration: 0.6 }}
+            className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl leading-snug mt-2.5 max-w-5xl"
+            style={mono}
+          >
+            Developers need the Unicity native currency in order to mint and move tokens.
+          </motion.p>
         </div>
 
         {/* Diagram — the OS box */}

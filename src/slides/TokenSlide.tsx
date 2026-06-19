@@ -14,7 +14,7 @@ const slices = [
 const chain = [
   {
     num: '01',
-    title: 'access',
+    title: 'Access',
     desc: 'Every agent needs Unicity native currency tokens to transact.',
   },
   {

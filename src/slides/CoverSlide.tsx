@@ -44,20 +44,6 @@ export function CoverSlide() {
         </span>
       </motion.div>
 
-      {/* Top-right HUD */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-        className="absolute top-6 right-8 lg:top-10 lg:right-16 z-10"
-      >
-        <span
-          className="text-[#fefefe]/50 text-xs sm:text-sm lg:text-base tracking-[0.32em] uppercase"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          Rev. 2026.05
-        </span>
-      </motion.div>
 
       {/* Bottom HUD */}
       <motion.div
@@ -95,8 +81,6 @@ export function CoverSlide() {
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
           <span className="text-[#fefefe]">INVESTOR DECK.</span>
-          <br />
-          <span className="text-orange-400">MAY 2026.</span>
         </motion.h1>
 
         {/* Accent line */}
