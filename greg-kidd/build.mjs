@@ -13,7 +13,7 @@ const DG={}; for(const k of ['xform','oracle','compliance','swap','hub','bearer'
 const dia=(k,maxw,mt=16)=>`<div style="width:100%;max-width:${maxw}px;margin:${mt}px auto 0">${DG[k]}</div>`;
 
 const CSS=`
-:root{--bg:#060606;--ink:#FEFEFE;--o:#FF6A1F;--dim:#B5B5AF;--faint:#74746E;--rule:#242422;--card:#101010;--owash:rgba(255,106,31,.07);--oline:rgba(255,106,31,.42);--bad:#8a8a84;}
+:root{--bg:#060606;--ink:#FEFEFE;--o:#FF6A1F;--dim:#B8B8B2;--faint:#74746E;--rule:#242422;--card:#101010;--owash:rgba(255,106,31,.07);--oline:rgba(255,106,31,.42);--bad:#8a8a84;}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#000}
 .slide{position:relative;width:1600px;height:900px;background:var(--bg);color:var(--ink);overflow:hidden;font-family:"Geist Mono",monospace;-webkit-font-smoothing:antialiased}
@@ -21,35 +21,36 @@ body{background:#000}
 .glow{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 60% 50% at 50% 46%,rgba(255,106,31,.08),transparent 70%)}
 .pad{position:relative;z-index:2;height:100%;padding:56px 80px 64px;display:flex;flex-direction:column;justify-content:center}
 .anton{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em}
-.kick{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--faint)}
+.kick{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--faint)}
 .kick b{color:var(--o);font-weight:400}
-h2{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;font-size:40px;line-height:1.04;letter-spacing:.006em;margin-top:13px;max-width:28ch}
+h2{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;font-size:35px;line-height:1.08;letter-spacing:.004em;margin-top:13px;max-width:30ch}
 h2 .o{color:var(--o)}
-.lead{margin-top:14px;font-size:15px;line-height:1.62;color:var(--dim);max-width:90ch}
+.lead{margin-top:15px;font-size:15px;line-height:1.62;color:var(--dim);max-width:92ch}
 .lead b{color:var(--ink);font-weight:600}
 .lead .o{color:var(--o);font-weight:600}
-.cl{margin-top:10px;font-size:14.5px;line-height:1.56;color:var(--dim)}
+.cl{margin-top:11px;font-size:14.5px;line-height:1.58;color:var(--dim);max-width:64ch}
 .cl b{color:var(--ink);font-weight:600}
 .cl .o{color:var(--o)}
-.punch{margin-top:24px;padding:13px 0 0 16px;border-left:2px solid var(--o);font-size:16px;line-height:1.45;color:var(--ink);font-weight:500}
+.punch{margin-top:24px;padding:13px 0 0 16px;border-left:2px solid var(--o);font-size:16px;line-height:1.46;color:var(--ink);font-weight:500;max-width:80ch}
 .punch .o{color:var(--o)}
-.cols{display:flex;gap:48px;align-items:center;padding-top:22px}
+.cols{display:flex;gap:50px;align-items:center;padding-top:20px}
 .col{flex:1;min-width:0}
-.mega{font-family:"Anton",sans-serif;font-size:158px;line-height:.84;color:var(--o);letter-spacing:-.01em}
-.megaq{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-top:8px;max-width:30ch}
-.principle .pr{display:flex;align-items:baseline;gap:16px;padding:16px 0;border-top:1px solid var(--rule)}
+.mega{font-family:"Anton",sans-serif;font-size:150px;line-height:.84;color:var(--o);letter-spacing:-.01em}
+.megaq{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-top:8px;max-width:32ch}
+.principle{margin-top:8px}
+.principle .pr{display:flex;align-items:baseline;gap:18px;padding:18px 0;border-top:1px solid var(--rule)}
 .principle .pr:last-child{border-bottom:1px solid var(--rule)}
 .principle .a{color:var(--o);font-family:"Anton",sans-serif;font-size:16px}
-.principle .t{color:var(--dim);font-size:14.5px}.principle .t b{color:var(--ink);font-weight:600;display:block;font-size:15px;margin-bottom:2px}
+.principle .t{color:var(--dim);font-size:14.5px}.principle .t b{color:var(--ink);font-weight:600;display:block;font-size:16px;margin-bottom:3px;font-family:"Anton",sans-serif;letter-spacing:.01em;text-transform:uppercase}
 .principle .r{margin-left:auto;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
 .ok{color:var(--o)} .no{color:#9a9a92}
 .stats{display:flex;flex-direction:column;gap:12px}
 .stat{border:1px solid var(--rule);border-radius:7px;background:var(--card);padding:14px 16px}
 .stat .v{font-family:"Anton",sans-serif;font-size:21px;color:var(--ink)}.stat .v .o{color:var(--o)}
-.stat .k{font-size:11px;color:var(--faint);margin-top:5px;letter-spacing:.04em}
+.stat .k{font-size:11px;color:var(--faint);margin-top:5px;letter-spacing:.04em;line-height:1.4}
 .foot{position:absolute;left:80px;right:80px;bottom:26px;z-index:2;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule);padding-top:12px;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
 .foot .lg svg{height:13px;width:auto;opacity:.8}
-.cardrow{display:flex;gap:16px;margin-top:14px}
+.cardrow{display:flex;gap:16px;margin-top:16px}
 .c3{flex:1;border:1px solid var(--rule);border-left:2px solid var(--o);border-radius:6px;background:var(--card);padding:15px 18px}
 .c3 .ct{font-family:"Anton",sans-serif;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--o)}
 .c3 .cb{font-size:12.5px;line-height:1.5;color:var(--dim);margin-top:9px}.c3 .cb b{color:var(--ink);font-weight:600}
@@ -60,12 +61,12 @@ h2 .o{color:var(--o)}
 .band .bc{font-size:12.5px;color:var(--dim);letter-spacing:.04em}
 .band.sub{border-color:var(--oline);background:linear-gradient(90deg,var(--owash),transparent)}
 .band.sub .bl{color:var(--o)} .band.sub .bc{color:var(--o)}
-.askbox{margin-top:14px;border:1px solid var(--oline);border-radius:8px;background:linear-gradient(180deg,var(--owash),transparent);padding:18px 24px}
-.askbox .big{font-family:"Anton",sans-serif;font-size:22px;color:var(--ink)}.askbox .big .o{color:var(--o)}
+.askbox{margin-top:16px;border:1px solid var(--oline);border-radius:8px;background:linear-gradient(180deg,var(--owash),transparent);padding:18px 24px}
+.askbox .big{font-family:"Anton",sans-serif;font-size:21px;color:var(--ink)}.askbox .big .o{color:var(--o)}
 .askbox .ml{font-size:13px;color:var(--dim);margin-top:9px;line-height:1.5}.askbox .ml b{color:var(--ink)}
-.closer{margin-top:18px;font-family:"Anton",sans-serif;font-size:25px;line-height:1.1;text-transform:uppercase;color:var(--ink);max-width:34ch}
+.closer{margin-top:18px;font-size:16px;line-height:1.5;color:var(--ink);font-weight:500;max-width:88ch}
 .closer .o{color:var(--o)}
-.tag{margin-top:13px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--o)}
+.tag{margin-top:14px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--o)}
 .src{margin-top:8px;font-size:9.5px;letter-spacing:.06em;color:var(--faint)}
 `;
 
@@ -74,201 +75,194 @@ let T=0;
 const foot=(n)=>`<div class="foot"><span class="lg"><svg viewBox="0 0 641 128"><use href="#ulogo"/></svg></span><span>Unicity · Seed proposal · Confidential — for Greg Kidd</span><span>${String(n).padStart(2,'0')} / ${T}</span></div>`;
 
 const SL=[
-// 1 COVER — the hero's quest
+// 1 COVER
 n=>`<div class="slide"><div class="grid"></div><div class="glow"></div>
 <div class="pad" style="align-items:center;justify-content:center;text-align:center">
   <svg viewBox="0 0 641 128" style="height:56px;width:auto;margin-bottom:30px"><use href="#ulogo"/></svg>
   <div class="kick">Unicity &middot; a seed proposal for Greg Kidd</div>
-  <h2 class="anton" style="font-size:52px;max-width:24ch;margin-top:24px;text-align:center">Thirty years, one fight: <span class="o">a fair shot at your own money.</span></h2>
-  <div class="lead" style="text-align:center;max-width:82ch">Cut out the middleman. Prove who's really on the other end. Let the money move. You shipped the first two for a generation — and the third never held. This is the piece that was always missing, and the team that finally built it.</div>
-  <div style="margin-top:40px;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint)">Tallinn · Zug · Abu Dhabi</div>
+  <h2 class="anton" style="font-size:46px;max-width:26ch;margin-top:24px;text-align:center;line-height:1.06">Fair access has always come down to <span class="o">three problems</span>. The third is still open.</h2>
+  <div class="lead" style="text-align:center;max-width:86ch">Cut out the middleman, prove who is on the other end, let the money move. The first two were solved a decade ago. The third is the hardest — a payment that settles between strangers, carries its own rule, and never lands on someone else's ledger. That is the part Unicity builds.</div>
+  <div style="margin-top:26px;font-size:12px;color:var(--faint);max-width:70ch">The cryptography is done and open-source. We will be straight about what is still being built.</div>
+  <div style="margin-top:30px;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint)">Tallinn · Zug · Abu Dhabi</div>
 </div></div>`,
 
-// 2 THE QUEST — three things
-n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE QUEST · <b>FAIR ACCESS</b>')}
-  <h2>Fair access always came down to <span class="o">three things</span>.</h2>
-  <div class="cols"><div class="col" style="flex:1.25">
-    <div class="principle">
-      <div class="pr"><span class="a">→</span><div class="t"><b>Cut out the middleman</b>Square, Dwolla, the whole peer-to-peer wave — you backed it.</div><div class="r ok">done</div></div>
-      <div class="pr"><span class="a">→</span><div class="t"><b>Move the money freely</b>Solana, Ripple — value at the speed of a message.</div><div class="r ok">done</div></div>
-      <div class="pr"><span class="a">→</span><div class="t"><b>Prove who's really there</b>Every attempt to make identity actually count has stalled.</div><div class="r no">still open</div></div>
-    </div>
-  </div><div class="col">
-    <div class="lead" style="margin-top:0">Two of these changed the world. The third — proving who's on the other end in a way that <b>counts</b> — is still open. It's the hardest one. And it's the piece everything else has been quietly waiting on.</div>
-  </div></div>
-  <div class="punch">You backed all three. <span class="o">Only one is still unfinished.</span></div>
+// 2 THE THREE PROBLEMS
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'FAIR ACCESS · <b>THE THREE PROBLEMS</b>')}
+  <h2>Fair access has always come down to <span class="o">three problems</span>.</h2>
+  <div class="principle" style="max-width:108ch">
+    <div class="pr"><span class="a">→</span><div class="t"><b>Cut out the middleman</b>A decade of open infrastructure solved that.</div><div class="r ok">solved</div></div>
+    <div class="pr"><span class="a">→</span><div class="t"><b>Let value move freely</b>Stablecoins now settle hundreds of billions a year between any two parties.</div><div class="r ok">solved</div></div>
+    <div class="pr"><span class="a">→</span><div class="t"><b>Prove who is on the other end</b>So the money itself knows who may receive it. The hardest of the three.</div><div class="r no">still open</div></div>
+  </div>
+  <div class="punch">Two were solved a decade ago. <span class="o">The third is where the work is now.</span></div>
 </div>${foot(n)}`,
 
-// 3 THE WOUND — GlobaliD
-n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE PIECE THAT NEVER HELD · <b>GLOBALID</b>')}
-  <h2>You bet your career on it. It was right. <span class="o">It was early.</span></h2>
-  <div class="cols" style="align-items:center"><div class="col" style="flex:1.3">
-    <div class="cl">GlobaliD wasn't wrong about identity. It was years ahead of everyone.</div>
-    <div class="cl">It didn't stall on the cryptography. It stalled because nobody ever <b>had</b> to use it.</div>
-    <div class="cl">You could always skip the check and nothing broke — so people skipped it.</div>
-    <div class="cl">And it wasn't just you. Microsoft shut its identity chain in 2023. Trinsic folded before one credential was ever reused. The whole field hit the same wall.</div>
+// 3 THE WOUND
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE WOUND · <b>WHY IDENTITY NEVER HELD</b>')}
+  <h2>Identity reached the right architecture <span class="o">before the market could carry it</span>.</h2>
+  <div class="cols" style="align-items:center"><div class="col" style="flex:1.35">
+    <div class="cl" style="max-width:none">GlobaliD had the architecture right early. The market couldn't carry it yet, and the mission moved into USBC.</div>
+    <div class="cl" style="max-width:none">The cryptography was solved a decade ago. The gap was structural — the credential lived beside the transaction, so nothing in the system ever required carrying it. A check that can be skipped without breaking the flow gets skipped.</div>
+    <div class="cl" style="max-width:none">The whole field stalled at the same place. Microsoft retired did:ion in 2023; Trinsic wound down before a credential was reused twice. Same wall, every time.</div>
   </div><div class="col">
-    <svg width="100%" height="230" viewBox="0 0 420 230">
-      <line x1="40" y1="190" x2="400" y2="190" stroke="#2a2a26"/><line x1="40" y1="34" x2="40" y2="190" stroke="#2a2a26"/>
-      <path d="M40 186 L150 142 L240 114 L320 106 L400 104" fill="none" stroke="var(--bad)" stroke-width="2"/>
-      <circle cx="240" cy="114" r="4" fill="#0E0E0C" stroke="var(--bad)"/><text x="240" y="98" fill="var(--faint)" font-family="Geist Mono" font-size="12" text-anchor="middle">Microsoft did:ion, 2023</text>
-      <circle cx="320" cy="106" r="4" fill="#0E0E0C" stroke="var(--bad)"/><text x="336" y="94" fill="var(--faint)" font-family="Geist Mono" font-size="12">Trinsic folds</text>
-      <text x="220" y="218" fill="var(--faint)" font-family="Geist Mono" font-size="12" text-anchor="middle">digital identity — climbs, then flattens</text>
+    <svg width="100%" height="220" viewBox="0 0 420 220">
+      <line x1="40" y1="184" x2="400" y2="184" stroke="#2a2a26"/><line x1="40" y1="34" x2="40" y2="184" stroke="#2a2a26"/>
+      <path d="M40 180 L150 138 L240 112 L320 104 L400 102" fill="none" stroke="var(--bad)" stroke-width="2"/>
+      <circle cx="240" cy="112" r="4" fill="#0E0E0C" stroke="var(--bad)"/><text x="240" y="96" fill="var(--faint)" font-family="Geist Mono" font-size="12" text-anchor="middle">Microsoft did:ion, 2023</text>
+      <circle cx="320" cy="104" r="4" fill="#0E0E0C" stroke="var(--bad)"/><text x="335" y="92" fill="var(--faint)" font-family="Geist Mono" font-size="12">Trinsic winds down</text>
+      <text x="220" y="212" fill="var(--faint)" font-family="Geist Mono" font-size="12" text-anchor="middle">digital identity — climbs, then flattens</text>
     </svg>
   </div></div>
-  <div class="punch">The problem was never better identity. <span class="o">It was that nothing ever forced anyone to carry it.</span></div>
+  <div class="punch">Every design put identity alongside the money, <span class="o">where traffic had a way around it.</span></div>
 </div>${foot(n)}`,
 
-// 4 HIS ANSWER — USBC
-n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'WHAT YOU DID NEXT · <b>USBC</b>')}
-  <h2>So you stopped bolting identity on. <span class="o">You put it inside the money.</span></h2>
-  <div class="lead" style="max-width:96ch">USBC: a real dollar, in a real bank, that knows who's allowed to hold it. Identity stopped being a checkbox sitting next to the payment — it became part of the dollar itself. You found the answer the hard way, and you proved it works. On one bank charter.</div>
-  <div class="cols" style="padding-top:18px"><div class="col">
-    <div class="cl"><b>The instinct is exactly right.</b> Put the rule where the money is, not in a system off to the side that everyone can route around.</div>
+// 4 USBC
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE FIELD · <b>USBC</b>')}
+  <h2>USBC put identity <span class="o">inside the dollar</span> — the correct conclusion.</h2>
+  <div class="cols" style="align-items:flex-start;padding-top:24px"><div class="col">
+    <div class="cl" style="max-width:none;margin-top:0">A regulated tokenized deposit: identity carried in the money itself, settled under one OCC charter. The rule lives where the value lives, so there is nothing for traffic to route around.</div>
   </div><div class="col">
-    <div class="cl">The only question left is how to make it true <b>everywhere</b> — for a counterparty who doesn't bank where you bank, at a speed no bank can keep up with.</div>
+    <div class="cl" style="max-width:none;margin-top:0">Inside a single charter it settles cleanly. The open question is what holds the same property across two charters — or between parties who share no trusted middle.</div>
   </div></div>
-  <div class="punch">You already know the answer. <span class="o">We built the part that makes it work past your own four walls.</span></div>
+  <div class="punch">One charter answers it at home. <span class="o">Holding it between strangers, at machine speed, is the part still unbuilt.</span></div>
 </div>${foot(n)}`,
 
-// 5 THE DRAGON — machines
-n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad">${kick(n,'WHAT CHANGED · <b>THE BUYER SHOWED UP</b>')}
-  <h2>Something arrived that the old system <span class="o">was never built to serve</span>.</h2>
-  <div class="cols"><div class="col" style="flex:none"><div class="mega">57.5%</div><div class="megaq">of the internet's traffic is already machines, not people — and climbing (Cloudflare, 2026)</div></div>
-  <div class="col"><div class="cl" style="font-size:15px">And they've started paying each other — roughly <b>100 million machine payments on Base in nine months</b>.</div>
-    <div class="cl">A machine can't sit on hold while a middleman checks it. It has to prove who it is <b>inside</b> the payment, or it doesn't move at all.</div>
-    <div class="punch" style="margin-top:18px">For the first time there's a buyer that <span class="o">can't skip the check</span> — the one your identity thesis was always waiting for.</div>
+// 5 THE MACHINE ECONOMY
+n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad">${kick(n,'WHAT CHANGED · <b>THE MACHINE ECONOMY</b>')}
+  <h2>Most of the traffic online is <span class="o">already machines</span> — and they have started paying each other.</h2>
+  <div class="cols"><div class="col" style="flex:none"><div class="mega">57.5%</div><div class="megaq">of web requests are automated, not human — Cloudflare, 2026, and climbing</div></div>
+  <div class="col"><div class="cl" style="font-size:15px;max-width:none;margin-top:0">Machines have begun settling value directly — roughly <b>100 million payments on Base in nine months</b> (Chainalysis). Payments are messaging on steroids, and the messaging now runs at machine scale.</div>
+    <div class="cl" style="max-width:none">A machine cannot wait on hold while an intermediary clears it. It proves what it is in-band, and the payment settles in the same step.</div>
+    <div class="punch" style="margin-top:18px">At machine speed, <span class="o">the check has to travel with the money.</span></div>
   </div></div>
 </div>${foot(n)}`,
 
-// 6 SHOW — take it off the ledger (xform)
+// 6 XFORM
 n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'HOW IT WORKS · <b>TAKE IT OFF THE LEDGER</b>')}
-  <h2>Take the dollar off the ledger. <span class="o">Make it a file you hold.</span></h2>
-  <div class="lead" style="max-width:104ch">Today a stablecoin is a row in a database somebody else keeps, and every move asks that database for permission. We turn the dollar into a self-contained file — yours to hold, yours to hand over. It goes straight from you to me, like passing cash, and the chain's only job is to make sure you didn't already spend it.</div>
-  ${dia('xform',1180,18)}
-  <div class="punch">Off the ledger. <span class="o">Into your hands.</span></div>
+  <h2>A dollar on-chain is a row in <span class="o">a ledger someone else keeps</span>.</h2>
+  <div class="lead" style="max-width:106ch">Every move asks that ledger for permission first — the value lives in the database, not the hand that holds it. Unicity reduces it to a bearer file: the dollar carries its own value and moves directly between two parties, the way cash changes hands. The chain answers one question — has this been spent — and stays blind to the payment around it.</div>
+  ${dia('xform',1180,20)}
 </div>${foot(n)}`,
 
-// 7 SHOW — check it yourself (bearer)
-n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'HOW IT WORKS · <b>CHECK IT YOURSELF</b>')}
-  <h2>Hand someone a ten-dollar bill — <span class="o">they don't phone a committee.</span></h2>
-  <div class="lead" style="max-width:106ch">They check it themselves, in a second, in their hand. A Unicity token works the same way: it carries its own proof. I hand it to you, you check it on the spot — no chain to call, no ledger to ask, nobody standing in the middle of the two of us.</div>
-  ${dia('bearer',920,26)}
-  <div class="punch">The proof travels with the money. <span class="o">The handoff needs nobody's permission.</span></div>
+// 7 BEARER
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'HOW IT WORKS · <b>BEARER VERIFICATION</b>')}
+  <h2>A ten-dollar note settles the moment it changes hands — <span class="o">nobody sends it to a committee</span>.</h2>
+  <div class="lead" style="max-width:106ch">Cash carries its own proof: the recipient checks the note in hand and the transfer is final — no ledger to query, no clearer in the middle. A Unicity token moves the same way. The proof travels inside it, and the recipient verifies it on arrival, against the token alone.</div>
+  ${dia('bearer',920,28)}
+  <div class="punch">Settlement happens at the point of receipt, <span class="o">with no third party in the path.</span></div>
 </div>${foot(n)}`,
 
-// 8 SHOW — one question (oracle + reframe)
+// 8 ORACLE
 n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'HOW IT WORKS · <b>ONE QUESTION</b>')}
-  <h2>The only job a chain ever had: <span class="o">stop you spending the same dollar twice.</span></h2>
+  <h2>The only job a chain ever had: <span class="o">has this been spent?</span></h2>
   <div class="cols" style="align-items:center;padding-top:18px"><div class="col" style="flex:1.05">
-    <div class="cl" style="font-size:15px">Not to validate the world. Not to put everything in global order. One question: <b>has this been spent — yes or no?</b></div>
-    <div class="cl">Everyone built cathedrals on top of that one question. We didn't. We built the thing that answers only it — and it never even sees your payment.</div>
-    <div class="cl">Three thin layers: secure the base, store the yes-or-no, and let everyone transact off to the side.</div>
-    <div class="punch" style="margin-top:18px">A blockchain with almost nothing left to do. <span class="o">That's the whole point.</span></div>
+    <div class="cl" style="font-size:15px;max-width:none;margin-top:0">Global ordering, world state, smart-contract execution — every other job a blockchain took on was built on top of that one answer. Unicity keeps the answer and lets the rest go.</div>
+    <div class="cl" style="max-width:none">The oracle holds one thing: a proof that each token state is unique. It returns spent or unspent, and never sees the payment itself.</div>
+    <div class="cl" style="max-width:none">Three thin layers — consensus secures the base, the oracle holds the yes-or-no, holders transact client-side.</div>
+    <div class="punch" style="margin-top:18px">A chain with almost nothing left to do. <span class="o">That is the design.</span></div>
   </div><div class="col" style="flex:.95">${dia('oracle',560,0)}</div></div>
 </div>${foot(n)}`,
 
-// 9 THE GIFT — compliance in the money (heals the wound)
-n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE MISSING PIECE · <b>NOW IT LIVES IN THE MONEY</b>')}
-  <h2>The dollar checks who's allowed to hold it — <span class="o">by itself.</span></h2>
-  <div class="lead" style="max-width:108ch">Write the rule into the file: who can receive this — KYC, jurisdiction, sanctions. The money won't move to someone who doesn't pass. Not because a monitor catches it afterward — because the transfer simply can't happen. This is the exact piece GlobaliD never had, and the reason it stalled. You can't skip it. The money won't let you.</div>
+// 9 COMPLIANCE
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'ARCHITECTURE · <b>THE MISSING PIECE</b>')}
+  <h2>The rule lives <span class="o">inside the token</span>.</h2>
+  <div class="lead" style="max-width:110ch">Each token carries its own receive-condition — KYC, jurisdiction, sanctions status. A transfer completes only if the recipient satisfies the predicate the token carries. The check happens in the construction of the transfer itself: there is no issuer to call, and no monitor reading the flow after settlement. A transfer to a party that fails the predicate cannot be constructed. This is the piece GlobaliD lacked — identity that binds to the movement of value, instead of sitting to one side where traffic could pass it by.</div>
   ${dia('compliance',1020,14)}
-  <div class="punch">The credential isn't checked at the door. <span class="o">It is the door.</span></div>
+  <div class="punch">Manage the risk inside the asset, and <span class="o">there is no flow left to catch afterward.</span></div>
 </div>${foot(n)}`,
 
-// 10 TRILEMMA — why not fix the old thing
-n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'WHY NOT JUST FIX THE OLD THING · <b>THE TRADEOFF</b>')}
-  <h2>On a shared ledger you get two of three. <span class="o">Never all three.</span></h2>
+// 10 TRILEMMA
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'ARCHITECTURE · <b>THE TRADEOFF</b>')}
+  <h2>Privacy, compliance, and speed <span class="o">pull against each other</span> on a shared ledger.</h2>
   <div class="cols" style="align-items:center;padding-top:18px"><div class="col">
-    <div class="cl" style="font-size:15px">Privacy. Compliance. Speed.</div>
-    <div class="cl">Make it private and you blind the auditors. Add the cryptography to satisfy them, and the speed dies — down to one payment a second.</div>
-    <div class="cl">Everyone's been stuck picking two. We're not — because we threw out the shared ledger that forces the choice in the first place.</div>
-    <div class="punch" style="margin-top:18px">We didn't win the tradeoff. <span class="o">We deleted the thing that causes it.</span></div>
+    <div class="cl" style="font-size:15px;max-width:none;margin-top:0">Make the transactions private and the auditors go blind. Add the cryptography that lets them see again, and throughput collapses toward one payment a second.</div>
+    <div class="cl" style="max-width:none">The conflict is structural. As long as every party reads from and writes to the same ledger, two of the three hold at once — never all three.</div>
+    <div class="cl" style="max-width:none">Remove the shared ledger, and the three have nothing left to contend over.</div>
+    <div class="punch" style="margin-top:18px">Take away the thing they fight on, and <span class="o">the trade-off has nowhere to live.</span></div>
   </div><div class="col">${dia('trilemma',470,0)}</div></div>
 </div>${foot(n)}`,
 
-// 11 SWAP — you can trade on it
-n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'IT IS NOT A TOY · <b>YOU CAN TRADE ON IT</b>')}
-  <h2>Two strangers trade. No middleman holding the money. <span class="o">No timer to miss.</span></h2>
-  <div class="lead" style="max-width:106ch">The hard part of cash-like money is the trade: how do two people swap without someone in the middle holding both sides? The old fix is a countdown clock — claim in time or lose everything. Ours: both sides lock in, and either the trade happens or everyone walks away with what they came with. No deadline. No chasing.</div>
-  ${dia('swap',880,12)}
+// 11 SWAP
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'BUILT FOR TRADE · <b>THE SWAP</b>')}
+  <h2>The hard part of cash-like money is <span class="o">the trade</span>.</h2>
+  <div class="lead" style="max-width:112ch">Holding a token that carries its own proof is the easy half. The trade is the hard half — two parties swapping value with no one in the middle to hold both legs. The standard fix is a hash-time-locked contract: a countdown, claim inside the window or the swap unwinds. The window is also the attack surface — one side stalls, runs the clock, and walks. That griefing problem has dogged atomic swaps for a decade. Unicity drops the clock: each side commits independently against the other's proof, and the swap forms for both at once, or never forms and each token stays exactly where it sat.</div>
+  ${dia('swap',860,14)}
 </div>${foot(n)}`,
 
-// 12 HUB — what it becomes
-n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'WHAT IT BECOMES · <b>MACHINES RUN THE MARKET</b>')}
-  <h2>Once a trade needs no middleman, <span class="o">the market runs itself.</span></h2>
+// 12 HUB
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE MACHINE MARKET · <b>WHAT IT BECOMES</b>')}
+  <h2>When two agents settle directly, <span class="o">the exchange in the middle has nothing left to do</span>.</h2>
   <div class="cols" style="align-items:center;padding-top:16px"><div class="col" style="flex:1.05">
-    <div class="cl" style="font-size:15px">Stack trustless trades and you get something new: agents posting what they want, finding each other, and settling directly — no exchange in the middle, no human in the loop.</div>
-    <div class="cl">This is the economy your Trace Labs bet was pointing at. It has been missing one thing the whole time: a place to settle.</div>
-    <div class="punch" style="margin-top:16px">The agents are coming. <span class="o">They need somewhere to settle.</span></div>
+    <div class="cl" style="font-size:15px;max-width:none;margin-top:0">At volume, trustless transfers compose into a market that coordinates itself — agents discover, negotiate, and settle peer to peer, each transfer carrying its own proof and its own receive-condition.</div>
+    <div class="cl" style="max-width:none">Agentic data is the first case to reach scale. A model buys a dataset, an attestation, a unit of compute — and the payment settles in the same step that proves what it is.</div>
+    <div class="punch" style="margin-top:16px">Settlement is the substrate <span class="o">the machine market runs on.</span></div>
   </div><div class="col" style="flex:.95">${dia('hub',520,0)}</div></div>
 </div>${foot(n)}`,
 
-// 13 TEAM — who we are
-n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'WHO WE ARE · <b>NOT A CRYPTO TEAM</b>')}
-  <h2>The team a government <span class="o">already trusts with its records</span>.</h2>
-  <div class="cols"><div class="col"><div class="cl" style="margin-top:0">We built KSI — the system Estonia's government has run on since 2012. eIDAS-grade.</div>
-    <div class="cl">The same design held <b>300,000 payments a second</b> in the central bank's own digital-currency test.</div>
-    <div class="cl">And we'll tell you straight: the core is live and open-source, the repos are a bit of a mess, and full credential support is still being built. We're protocol engineers, not lawyers — we'll show you exactly what runs.</div>
-    <div class="punch" style="margin-top:18px">Fifteen years building infrastructure regulators already rely on. <span class="o">Not a casino.</span></div>
+// 13 TEAM
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'WHO WE ARE · <b>THE KSI TEAM</b>')}
+  <h2>The team that built the system <span class="o">Estonia's e-government runs on</span>.</h2>
+  <div class="cols" style="align-items:center"><div class="col">
+    <div class="cl" style="max-width:none;margin-top:0">KSI has secured Estonia's e-government records in production since 2012, eIDAS-grade.</div>
+    <div class="cl" style="max-width:none">The same KSI design held 300,000 transactions a second in Eesti Pank's 2021 digital-currency test — the lineage, not a live Unicity benchmark.</div>
+    <div class="cl" style="max-width:none">We will be straight about the state of it: the core is live and open-source, the repos are rough in places, and full credential support is still being built. We are protocol engineers, not lawyers.</div>
   </div><div class="col"><div class="stats">
-    <div class="stat"><div class="v">2012</div><div class="k">KSI live across Estonia's e-government — in production since</div></div>
-    <div class="stat"><div class="v"><span class="o">300,000+</span> / sec</div><div class="k">payments held in the Eesti Pank 2021 digital-currency test (the team's KSI design)</div></div>
-    <div class="stat"><div class="v">eIDAS-grade</div><div class="k">built for the EU's trust-services rules — government-grade</div></div>
+    <div class="stat"><div class="v">2012</div><div class="k">KSI securing Estonia's e-government records in production since</div></div>
+    <div class="stat"><div class="v"><span class="o">300,000</span> / sec</div><div class="k">held in Eesti Pank's 2021 digital-currency test — the team's KSI design</div></div>
+    <div class="stat"><div class="v">eIDAS-grade</div><div class="k">built to the EU's trust-services standard</div></div>
   </div></div></div>
 </div>${foot(n)}`,
 
-// 14 PROOF — trust the math
-n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'DO NOT TRUST THE PITCH · <b>TRUST THE MATH</b>')}
-  <h2>The white paper is marketing. I cringe at it. <span class="o">These are the real thing.</span></h2>
-  <div class="lead" style="max-width:104ch">Three math papers. Drop them into any model you like and it'll check our work for you — no double-spend, real privacy, trustless trades. What's actually proven is the privacy and the no-double-spend. The speed is by design — not a benchmark we're waving around.</div>
+// 14 PROOF
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'PROOF · <b>TRUST THE MATH</b>')}
+  <h2>The white paper is marketing. <span class="o">The work is three math papers.</span></h2>
+  <div class="lead" style="max-width:108ch">We cringe at the white paper. The substance sits in three papers on GitHub — drop them into any model and it will check the proofs: privacy on both sides, and no double-spend. Throughput is a matter of sharding, by design; it was never claimed as a benchmark.</div>
   <div class="cardrow">
-    <div class="c3"><div class="ct">The plumbing</div><div class="cb"><b>Unicity Infrastructure: the Aggregation Layer</b> — off-chain &amp; offline tokens; zero-knowledge proofs, no trusted setup.</div><div class="cb" style="color:var(--faint);margin-top:10px">github.com/unicitynetwork/aggr-layer-paper</div></div>
-    <div class="c3"><div class="ct">The security proof</div><div class="cb"><b>The Unicity Execution Layer</b> — no double-spend; nothing blocks; privacy on both the service and the user side.</div><div class="cb" style="color:var(--faint);margin-top:10px">github.com/unicitynetwork/execution-model-tex</div></div>
-    <div class="c3"><div class="ct">Rules &amp; trades</div><div class="cb"><b>Unicity: Predicates &amp; Atomic Swaps</b> — the rule that lives in the token, and trustless trades.</div><div class="cb" style="color:var(--faint);margin-top:10px">github.com/unicitynetwork/unicity-predicates-tex</div></div>
+    <div class="c3"><div class="ct">Aggregation</div><div class="cb">Off-chain and offline tokens; zero-knowledge proofs, no trusted setup.</div><div class="cb" style="color:var(--faint);margin-top:10px">github.com/unicitynetwork/aggr-layer-paper</div></div>
+    <div class="c3"><div class="ct">Execution</div><div class="cb">No double-spend; privacy held service-side and user-side; nothing waiting on a gatekeeper.</div><div class="cb" style="color:var(--faint);margin-top:10px">github.com/unicitynetwork/execution-model-tex</div></div>
+    <div class="c3"><div class="ct">Predicates &amp; swaps</div><div class="cb">The rule lives in the token; two strangers trade with no party between them.</div><div class="cb" style="color:var(--faint);margin-top:10px">github.com/unicitynetwork/unicity-predicates-tex</div></div>
   </div>
-  <div class="punch">Proof, <span class="o">not promises.</span></div>
+  <div class="punch">Public on GitHub, <span class="o">open to anyone who wants to read the proofs.</span></div>
 </div>${foot(n)}`,
 
-// 15 BOUNDARY — back to USBC
-n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'BACK TO USBC · <b>WHAT ONE BANK CANNOT DO</b>')}
-  <h2>A charter only settles for <span class="o">its own members.</span></h2>
-  <div class="cols" style="align-items:center;padding-top:16px"><div class="col" style="flex:1.2">
-    <div class="cl" style="font-size:15px">USBC proves the whole idea: identity belongs inside the money. <b>It works.</b></div>
-    <div class="cl">But a dollar in your Tulsa bank can't settle with someone who banks somewhere else — not without a trusted middleman in between. And a machine moving at machine speed can't stop to phone your bank for permission.</div>
-    <div class="cl">The space between banks — and between machines — is the one thing a single charter can't build for itself.</div>
+// 15 BOUNDARY
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'BACK TO USBC · <b>THE LIMIT OF ONE CHARTER</b>')}
+  <h2>A charter settles cleanly <span class="o">inside its own walls</span>.</h2>
+  <div class="cols" style="align-items:center;padding-top:18px"><div class="col" style="flex:1.25">
+    <div class="cl" style="font-size:15px;max-width:none;margin-top:0">USBC reaches the right answer: identity inside the dollar, one OCC charter, a real deposit at a real bank. Within its own membership, it holds.</div>
+    <div class="cl" style="max-width:none">Across two charters, settlement still wants a trusted party in the middle — and a machine moving at machine speed has no human to clear it.</div>
+    <div class="cl" style="max-width:none">The settlement layer across charters, and across machines, is the one thing a charter cannot build for itself.</div>
   </div><div class="col"><div style="border:1px solid var(--oline);border-radius:8px;background:linear-gradient(180deg,var(--owash),transparent);padding:22px 24px">
-    <div style="font-family:'Anton',sans-serif;font-size:17px;color:var(--ink);line-height:1.2">USBC<br><span style="color:var(--faint);font-size:12px;font-family:'Geist Mono',monospace;letter-spacing:.04em">identity inside the money · one charter</span></div>
+    <div style="font-family:'Anton',sans-serif;font-size:17px;color:var(--ink);line-height:1.2">USBC<br><span style="color:var(--faint);font-size:12px;font-family:'Geist Mono',monospace;letter-spacing:.04em">identity inside the dollar · one charter</span></div>
     <div style="text-align:center;color:var(--o);font-family:'Anton',sans-serif;font-size:22px;margin:12px 0">↓</div>
-    <div style="font-family:'Anton',sans-serif;font-size:17px;color:var(--o);line-height:1.2">UNICITY<br><span style="color:var(--faint);font-size:12px;font-family:'Geist Mono',monospace;letter-spacing:.04em">the same idea · every counterparty, every speed</span></div>
+    <div style="font-family:'Anton',sans-serif;font-size:17px;color:var(--o);line-height:1.2">UNICITY<br><span style="color:var(--faint);font-size:12px;font-family:'Geist Mono',monospace;letter-spacing:.04em">the same rule · across charters, across machines</span></div>
   </div></div></div>
-  <div class="punch">We're not replacing what you built. <span class="o">We're what lets it reach everyone else.</span></div>
 </div>${foot(n)}`,
 
-// 16 MAP — where it sits
-n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'WHERE THIS SITS · <b>UNDER EVERYTHING YOU HAVE FUNDED</b>')}
-  <h2>Every bet you made assumed this layer <span class="o">was already there</span>.</h2>
-  <div class="lead" style="margin-top:6px;max-width:98ch">It wasn't. Identity, payments, exchanges, compute, banking — 250 companies, each one quietly counting on a place to settle that nobody had actually built.</div>
+// 16 MAP
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'WHERE THIS SITS · <b>THE LAYER UNDER THE PORTFOLIO</b>')}
+  <h2>A portfolio shaped like this assumes one thing all the way through: <span class="o">a place to settle</span>.</h2>
+  <div class="lead" style="margin-top:8px;max-width:104ch">Identity, payments, exchanges, compute, tokenized money — five layers, 250 companies, each one resting on a place where a transfer becomes final with its rule still attached. That layer was assumed, not built.</div>
   <div class="bands">
     <div class="band"><div class="bl">Identity<span>who can act</span></div><div class="bc">GlobaliD · Indicio · Terminal 3</div></div>
     <div class="band"><div class="bl">Payments<span>how value moves</span></div><div class="bc">Ripple · Square · Robinhood</div></div>
     <div class="band"><div class="bl">Exchanges &amp; Custody<span>where value is held</span></div><div class="bc">Coinbase · Uphold</div></div>
     <div class="band"><div class="bl">Data · Compute · Speed<span>what it runs on</span></div><div class="bc">Filecoin · Solana · Brave</div></div>
-    <div class="band"><div class="bl">Banking &amp; Tokenized Money<span>money with rules inside</span></div><div class="bc">Vast Bank · USBC</div></div>
-    <div class="band sub"><div class="bl">Where it settles<span>the piece nobody built</span></div><div class="bc">UNICITY — the layer all 250 bets assumed was there</div></div>
+    <div class="band"><div class="bl">Tokenized Money<span>money with a rule inside</span></div><div class="bc">Vast Bank · USBC</div></div>
+    <div class="band sub"><div class="bl">Where it settles<span>the layer assumed all the way through</span></div><div class="bc">UNICITY — where a transfer becomes final with its rule still attached</div></div>
   </div>
 </div>${foot(n)}`,
 
-// 17 ASK — finish what you started
-n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad">${kick(n,'THE ASK · <b>FINISH WHAT YOU STARTED</b>')}
-  <h2>You started this thirty years ago. <span class="o">This is the piece that finishes it.</span></h2>
-  <div class="lead" style="max-width:102ch">Speed — you funded it. Peer-to-peer — you funded it. Identity inside the money — you're building it. The only thing missing was a place for all of it to settle, where the rule travels with the money and nothing moves without it. That's what we built.</div>
+// 17 ASK
+n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad">${kick(n,'THE ASK · <b>CO-BUILD</b>')}
+  <h2>Put the rule where the money is, and make it hold <span class="o">between strangers</span>.</h2>
+  <div class="lead" style="max-width:104ch">The first two of the three problems were solved a decade ago. The third — settlement that holds between two parties who share no bank and no trusted middle — is the part we built.</div>
   <div class="askbox">
     <div class="big">Raising <span class="o">$5M Seed</span> · $25M cap / $50M token FDV · SAFE + token warrant.</div>
-    <div class="ml">The first build is the obvious one: a <b>USBC dollar that settles the instant the credential checks out</b> — identity inside the money, everywhere, not just inside one bank.</div>
+    <div class="ml">First build: a <b>USBC dollar that settles the moment the credential checks out</b>. The rule travels inside the money — who may receive it, under what jurisdiction — so a transfer that cannot satisfy it is never constructed. Identity inside the dollar, between any two parties, at machine speed.</div>
   </div>
-  <div class="closer">You proved it on one charter. <span class="o">Let's make it true everywhere.</span></div>
-  <div class="tag">Architecture, not policy · Proof, not promises.</div>
+  <div class="closer">A single charter settles at home. <span class="o">This is the layer that carries the same rule between two banks, or two machines, that share nothing else.</span></div>
+  <div class="tag">Architecture · proof · public on GitHub</div>
   <div class="src">Cloudflare · Chainalysis · Eesti Pank · USBC press · github.com/unicitynetwork</div>
 </div>${foot(n)}`,
 ];
@@ -293,4 +287,4 @@ await b.close(); console.log('rendered',pngs.length,'PNGs');
 const pdf=await PDFDocument.create();
 for(const fp of pngs){const img=await pdf.embedPng(fs.readFileSync(fp));const pg=pdf.addPage([1600,900]);pg.drawImage(img,{x:0,y:0,width:1600,height:900});}
 fs.writeFileSync(DIR+'/Unicity_HardYaka_Seed_Deck.pdf',await pdf.save());
-console.log('wrote Unicity_HardYaka_Seed_Deck_v5.pdf');
+console.log('wrote Unicity_HardYaka_Seed_Deck_v6.pdf');

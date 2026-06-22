@@ -47,7 +47,9 @@ Structure borrowed from *Storyteller Tactics*: **Hero & Guide** (Greg is the her
 
 All seven protocol infographics are ported faithfully from the Unicity protocol deck (`tech-finance`) and live in `diagrams/` as self-contained, recolored SVG — they carry the *show* in show-don't-tell: the **ledger→bearer transformation** (slide 6), the **bearer A→token+proof→B flow** (7), the **uniqueness-oracle stack** (8), the **receive-predicate branch** (9), the **trilemma Venn** (10), the **HTLC-vs-predicate swap** (11), the **agentic hub** (12).
 
-The voice is taken from how Unicity actually talks in the room — plain, first-principles, anti-fluff, radically honest, never abstract: *a fair shot at your own money · it was right, it was early · the buyer that can't skip the check · the only job a chain ever had is to stop double-spends · hand someone a ten, they don't phone a committee · the white paper is marketing, the math is the proof · not a casino.* No jargon, no "rail," no "forcing function" on a headline — the way a person would actually say it.
+The copy was rewritten by a fleet trained on Unicity's own voice data (the 0xt1mo guide, the live decks, the room transcript, the Paolo/Tether register) against an enforced **Voice Bible**. The posture is **the Paolo register**: a deeply-informed protocol team speaking peer-to-peer about the ideas, the history, and the architecture — describing the problem precisely and letting Greg draw his own conclusions. It never narrates his biography at him, never dares or instructs him, never flatters.
+
+Enforced bans (verified zero in the build): the *not-X-but-Y* / reflexive-negation tic; second-person "you/your"; the word "rail"; "forcing function" in a headline; hype adjectives. Exemplars of the register: *the only job a chain ever had is to answer one question — has this been spent · a ten-dollar note settles the moment it changes hands, nobody sends it to a committee · the white paper is marketing; the work is three math papers · we're protocol engineers, not lawyers.*
 
 ## Rebuild
 
