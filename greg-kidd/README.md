@@ -17,7 +17,7 @@ Structure borrowed from *Storyteller Tactics*: **Hero & Guide** (Greg is the her
 | File | What it is |
 |---|---|
 | `OUTREACH-NOTE.md` | The 3-line note that gets the meeting. **Send this first** — the deck is the leave-behind. |
-| `index.html` | The 17-slide deck (self-contained; open in a browser). |
+| `index.html` | The 13-slide deck (self-contained; open in a browser). |
 | `Unicity_HardYaka_Seed_Deck.pdf` | The deck as a 16:9 PDF. |
 | `slides/` | Per-slide PNG renders. |
 | `build.mjs` | Reproducible build — renders `index.html`, `slides/`, and the PDF. |
@@ -25,23 +25,21 @@ Structure borrowed from *Storyteller Tactics*: **Hero & Guide** (Greg is the her
 
 ## The arc
 
-1. **Cover** — thirty years, one fight: a fair shot at your own money
-2. **The quest** — fair access always came down to three things; two shipped, one never held
-3. **The wound** — GlobaliD: you bet your career on it; it was right, it was early
-4. **What you did next** — USBC: you stopped bolting identity on, you put it inside the money
-5. **What changed** — the buyer showed up: the internet is mostly machines, and a machine can't skip the check
-6. **How it works ①** — take the dollar off the ledger, make it a file you hold *(transformation)*
-7. **How it works ②** — hand someone a ten, they don't phone a committee *(bearer flow)*
-8. **How it works ③** — the only job a chain ever had: stop double-spends *(uniqueness oracle)*
-9. **The missing piece** — the dollar checks who's allowed to hold it, by itself *(receive predicate)*
-10. **The tradeoff** — on a shared ledger you get two of three, never all three *(trilemma)*
-11. **It's not a toy** — two strangers trade, no middleman, no timer *(atomic swap)*
-12. **What it becomes** — once a trade needs no middleman, the market runs itself *(agentic hub)*
-13. **Who we are** — the team a government already trusts with its records *(KSI + radical honesty)*
-14. **Trust the math** — the white paper is marketing; these three papers are the real thing
-15. **Back to USBC** — a charter only settles for its own members; the space between is what we built
-16. **Where this sits** — every bet you funded assumed this layer was already there *(portfolio map)*
-17. **The ask** — you started this thirty years ago; finish it. A $5M co-build.
+1. **Cover** — fair access has come down to three problems; the third is still open
+2. **The three problems** — two solved a decade ago, the third is the hard one: the money itself has to know who may receive it
+3. **The field** — identity reached the right architecture before the market could carry it; GlobaliD stalled, USBC put it inside the dollar (settles in one charter, not across)
+4. **The machine economy** — most online traffic is already machines, and they have started paying each other *(the turn)*
+5. **Off the ledger** — a dollar on-chain is a row someone else keeps; Unicity makes it a bearer file *(transformation)*
+6. **One question** — the only job a chain ever had: has this been spent *(uniqueness oracle)*
+7. **The rule inside the token** — the money checks who may receive it; a failing transfer can't be constructed *(receive predicate)*
+8. **The tradeoff dissolves** — privacy, compliance, and speed only fight on a shared ledger *(trilemma)*
+9. **The trade** — two parties swap, no middleman holding both legs, no clock to stall inside *(atomic swap)*
+10. **The machine market** — settle directly and the exchange in the middle has nothing left to do *(agentic hub)*
+11. **The team** — the team that built the system Estonia's e-government runs on *(KSI + radical honesty)*
+12. **Proof** — the white paper is marketing; the work is three math papers
+13. **The ask** — put the rule where the money is, make it hold between strangers; a $5M co-build, then the full-width close
+
+*Distilled from 17 → 13 by a council of deck-authors (narrative architect, minimalist, investor whisperer, voice keeper, the explainer, visual editor): the spine is told once and accelerates, the turn moves up, six mechanism slides become four, the second ending is cut, the orange punch-line is rationed to ~5 slides, and the best sentence is held for the full-width climax. The 13 headlines, read alone in order, carry the whole argument.*
 
 ## Infographics & voice
 
