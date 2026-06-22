@@ -17,7 +17,7 @@ Structure borrowed from *Storyteller Tactics*: **Hero & Guide** (Greg is the her
 | File | What it is |
 |---|---|
 | `OUTREACH-NOTE.md` | The 3-line note that gets the meeting. **Send this first** — the deck is the leave-behind. |
-| `index.html` | The 13-slide deck (self-contained; open in a browser). |
+| `index.html` | The 20-slide deck (self-contained; open in a browser). |
 | `Unicity_HardYaka_Seed_Deck.pdf` | The deck as a 16:9 PDF. |
 | `slides/` | Per-slide PNG renders. |
 | `build.mjs` | Reproducible build — renders `index.html`, `slides/`, and the PDF. |
@@ -25,19 +25,28 @@ Structure borrowed from *Storyteller Tactics*: **Hero & Guide** (Greg is the her
 
 ## The arc
 
-1. **Cover** — fair access has come down to three problems; the third is still open
-2. **The three problems** — two solved a decade ago, the third is the hard one: the money itself has to know who may receive it
-3. **The field** — identity reached the right architecture before the market could carry it; GlobaliD stalled, USBC put it inside the dollar (settles in one charter, not across)
-4. **The machine economy** — most online traffic is already machines, and they have started paying each other *(the turn)*
-5. **Off the ledger** — a dollar on-chain is a row someone else keeps; Unicity makes it a bearer file *(transformation)*
-6. **One question** — the only job a chain ever had: has this been spent *(uniqueness oracle)*
-7. **The rule inside the token** — the money checks who may receive it; a failing transfer can't be constructed *(receive predicate)*
-8. **The tradeoff dissolves** — privacy, compliance, and speed only fight on a shared ledger *(trilemma)*
-9. **The trade** — two parties swap, no middleman holding both legs, no clock to stall inside *(atomic swap)*
-10. **The machine market** — settle directly and the exchange in the middle has nothing left to do *(agentic hub)*
-11. **The team** — the team that built the system Estonia's e-government runs on *(KSI + radical honesty)*
-12. **Proof** — the white paper is marketing; the work is three math papers
-13. **The ask** — put the rule where the money is, make it hold between strangers; a $5M co-build, then the full-width close
+1. **Cover** — Cut out the middleman · Move the value freely · Prove who is on the other end (the third is what Unicity builds)
+2. **The three problems** — two solved a decade ago; the hard one is proving who is on the other end
+3. **The field** — identity reached the right architecture before the market could carry it; GlobaliD stalled, USBC put it inside the dollar
+4. **The machine economy** — most traffic is already machines, and they have started paying each other *(57.5% · the turn)*
+5. **Why every shared ledger hits a wall** — broadcast / order / validate / record, for everyone — the ceiling is the design *(new)*
+6. **Off the ledger** — a dollar on-chain is a row someone keeps; Unicity makes it a bearer file *(transformation diagram)*
+7. **One question** — the only job a chain ever had: has this been spent *(uniqueness oracle)*
+8. **What moves to the edge** — communication / storage / validation leave the chain; uniqueness is all that stays *(new)*
+9. **The inevitable unbundling** — Bitcoin 2009 → FastPay 2023 → Unicity 2026 *(new · statement turn)*
+10. **The architecture** — RandomX PoW + chained HotStuff + ZK oracle on-chain; SDK + agent execution layer off-chain *(new · the stack)*
+11. **The rule inside the token** — the money checks who may receive it; a failing transfer can't be constructed *(receive predicate)*
+12. **Three observers** — the network, the sender, anyone who knows your address — none can learn anything *(new · proven privacy)*
+13. **No bridge, nothing to hack** — a locked source asset is verified directly; no bridge, no custodian *(new · objection-killer)*
+14. **Five wins, one hard problem** — removing the shared ledger buys five; atomicity is the one it leaves *(new · statement turn)*
+15. **The trade** — two parties swap, no middleman holding both legs, no clock, no MEV *(atomic swap)*
+16. **Scale by adding shards** — the oracle never validates; throughput grows horizontally *(new · ~30k/shard, design)*
+17. **The machine market** — CEX speed · DEX custody · private and compliant (the only column green on every row) *(new · CLOB matrix)*
+18. **What gets built** — a decentralized autonomous corporation, built for BlackRock (autonomous reinsurance) *(new · the DAC)*
+19. **The vision of the titans** — Circle, Solana, Cardano, Greg/USBC all optimize the ledger; Unicity eliminates it *(new · external validation)*
+20. **The team, the proof, the ask** — Guardtime/KSI lineage · three math papers · a $5M co-build, then the full-width close
+
+*v2 (deeper): excavated from the full 26-slide protocol deck + the scalability report + the propositional-development notes. 13 → 20 — the story spine preserved, now showing what Unicity IS as a system. Every technical claim fact-tagged: **proven** (privacy + no-double-spend only), **design** (~30k tx/sec per shard, sharding, AIR+Plonky3, no-trusted-setup, PoW+BFT), **lineage** (300k tx/sec Eesti Pank 2021 / KSI / DoD·DARPA·NATO — the team's history, never a live Unicity number). No arXiv IDs; Plasma never named; USBC respected.*
 
 *Distilled from 17 → 13 by a council of deck-authors (narrative architect, minimalist, investor whisperer, voice keeper, the explainer, visual editor): the spine is told once and accelerates, the turn moves up, six mechanism slides become four, the second ending is cut, the orange punch-line is rationed to ~5 slides, and the best sentence is held for the full-width climax. The 13 headlines, read alone in order, carry the whole argument.*
 

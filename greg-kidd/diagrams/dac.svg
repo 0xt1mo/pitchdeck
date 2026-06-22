@@ -1,0 +1,84 @@
+<svg viewBox="0 0 1280 540" width="100%" style="height:auto">
+  <defs>
+    <filter id="dac_ringBlur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" />
+    </filter>
+  </defs>
+
+  <!-- CAPITAL ring -->
+  <g>
+    <circle cx="235" cy="300" r="185" fill="none" stroke="#FF6A1F" stroke-width="4" opacity="0.45" filter="url(#dac_ringBlur)" />
+    <circle cx="235" cy="300" r="185" fill="rgba(255,106,31,0.012)" stroke="rgba(255,106,31,0.5)" stroke-width="1.6" />
+    <text x="235" y="87" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="16" fill="rgba(254,254,254,0.5)" letter-spacing="4">CAPITAL</text>
+    <line x1="193" y1="97" x2="277" y2="97" stroke="rgba(254,254,254,0.18)" stroke-width="1" />
+  </g>
+
+  <!-- UNDERWRITING ring -->
+  <g>
+    <circle cx="640" cy="300" r="195" fill="none" stroke="#FF6A1F" stroke-width="4" opacity="0.45" filter="url(#dac_ringBlur)" />
+    <circle cx="640" cy="300" r="195" fill="rgba(255,106,31,0.012)" stroke="rgba(255,106,31,0.5)" stroke-width="1.6" />
+    <text x="640" y="77" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="16" fill="rgba(254,254,254,0.5)" letter-spacing="4">UNDERWRITING</text>
+    <line x1="598" y1="87" x2="682" y2="87" stroke="rgba(254,254,254,0.18)" stroke-width="1" />
+  </g>
+
+  <!-- CESSION ring -->
+  <g>
+    <circle cx="1045" cy="300" r="185" fill="none" stroke="#FF6A1F" stroke-width="4" opacity="0.45" filter="url(#dac_ringBlur)" />
+    <circle cx="1045" cy="300" r="185" fill="rgba(255,106,31,0.012)" stroke="rgba(255,106,31,0.5)" stroke-width="1.6" />
+    <text x="1045" y="87" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="16" fill="rgba(254,254,254,0.5)" letter-spacing="4">CESSION</text>
+    <line x1="1003" y1="97" x2="1087" y2="97" stroke="rgba(254,254,254,0.18)" stroke-width="1" />
+  </g>
+
+  <!-- Inter-ring flow: capacity -> -->
+  <g>
+    <line x1="408" y1="300" x2="472" y2="300" stroke="rgba(255,106,31,0.5)" stroke-width="2" stroke-linecap="round" />
+    <g><circle cx="420" cy="300" r="6" fill="rgba(255,106,31,0.2)" /><circle cx="420" cy="300" r="2.6" fill="#FF6A1F" /></g>
+    <g><circle cx="440" cy="300" r="6" fill="rgba(255,106,31,0.2)" /><circle cx="440" cy="300" r="2.6" fill="#FF6A1F" /></g>
+    <g><circle cx="460" cy="300" r="6" fill="rgba(255,106,31,0.2)" /><circle cx="460" cy="300" r="2.6" fill="#FF6A1F" /></g>
+  </g>
+  <text x="440" y="278" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="13" fill="rgba(251,146,60,0.85)">capacity &#8594;</text>
+
+  <!-- Inter-ring flow: premiums -> -->
+  <g>
+    <line x1="822" y1="285" x2="878" y2="285" stroke="rgba(255,106,31,0.5)" stroke-width="2" stroke-linecap="round" />
+    <g><circle cx="832" cy="285" r="6" fill="rgba(255,106,31,0.2)" /><circle cx="832" cy="285" r="2.6" fill="#FF6A1F" /></g>
+    <g><circle cx="850" cy="285" r="6" fill="rgba(255,106,31,0.2)" /><circle cx="850" cy="285" r="2.6" fill="#FF6A1F" /></g>
+    <g><circle cx="868" cy="285" r="6" fill="rgba(255,106,31,0.2)" /><circle cx="868" cy="285" r="2.6" fill="#FF6A1F" /></g>
+  </g>
+  <text x="850" y="262" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="13" fill="rgba(251,146,60,0.85)">premiums &#8594;</text>
+
+  <!-- Inter-ring flow: <- claims -->
+  <g>
+    <line x1="822" y1="320" x2="878" y2="320" stroke="rgba(255,106,31,0.5)" stroke-width="2" stroke-linecap="round" />
+    <g><circle cx="832" cy="320" r="6" fill="rgba(255,106,31,0.2)" /><circle cx="832" cy="320" r="2.6" fill="#FF6A1F" /></g>
+    <g><circle cx="850" cy="320" r="6" fill="rgba(255,106,31,0.2)" /><circle cx="850" cy="320" r="2.6" fill="#FF6A1F" /></g>
+    <g><circle cx="868" cy="320" r="6" fill="rgba(255,106,31,0.2)" /><circle cx="868" cy="320" r="2.6" fill="#FF6A1F" /></g>
+  </g>
+  <text x="850" y="344" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="13" fill="rgba(251,146,60,0.85)">&#8592; claims</text>
+
+  <!-- Agent nodes: CAPITAL -->
+  <g><circle cx="180" cy="190" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="180" y="190" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">C1</text><text x="180" y="223" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">treasury</text></g>
+  <g><circle cx="285" cy="180" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="285" y="180" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">C2</text><text x="285" y="213" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">deposits</text></g>
+  <g><circle cx="145" cy="290" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="145" y="290" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">C3</text><text x="145" y="323" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">LP tokens</text></g>
+  <g><circle cx="290" cy="305" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="290" y="305" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">C4</text><text x="290" y="338" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">accounting</text></g>
+  <g><circle cx="170" cy="400" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="170" y="400" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">C5</text><text x="170" y="433" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">payout</text></g>
+  <g><circle cx="280" cy="420" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="280" y="420" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">C6</text><text x="280" y="453" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">governance</text></g>
+
+  <!-- Agent nodes: UNDERWRITING -->
+  <g><circle cx="530" cy="190" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="530" y="190" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">U1</text><text x="530" y="223" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">risk model</text></g>
+  <g><circle cx="630" cy="165" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="630" y="165" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">U2</text><text x="630" y="198" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">pricing</text></g>
+  <g><circle cx="735" cy="215" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="735" y="215" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">U3</text><text x="735" y="248" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">reserves</text></g>
+  <g><circle cx="545" cy="310" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="545" y="310" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">U4</text><text x="545" y="343" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">policy issuance</text></g>
+  <g><circle cx="680" cy="325" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="680" y="325" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">U5</text><text x="680" y="358" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">trigger oracle</text></g>
+  <g><circle cx="520" cy="420" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="520" y="420" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">U6</text><text x="520" y="453" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">claims</text></g>
+  <g><circle cx="630" cy="450" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="630" y="450" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">U7</text><text x="630" y="483" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">audit</text></g>
+  <g><circle cx="735" cy="415" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="735" y="415" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">U8</text><text x="735" y="448" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">solvency</text></g>
+
+  <!-- Agent nodes: CESSION -->
+  <g><circle cx="930" cy="190" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="930" y="190" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">D1</text><text x="930" y="223" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">intake</text></g>
+  <g><circle cx="1035" cy="170" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="1035" y="170" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">D2</text><text x="1035" y="203" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">cedent KYC</text></g>
+  <g><circle cx="955" cy="305" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="955" y="305" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">D3</text><text x="955" y="338" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">contract</text></g>
+  <g><circle cx="1065" cy="325" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="1065" y="325" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">D4</text><text x="1065" y="358" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">premium</text></g>
+  <g><circle cx="920" cy="415" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="920" y="415" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">D5</text><text x="920" y="448" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">loss adj.</text></g>
+  <g><circle cx="1030" cy="430" r="19" fill="#140f0a" stroke="#FF6A1F" stroke-width="1.4" /><text x="1030" y="430" text-anchor="middle" dominant-baseline="central" font-family="'Geist Mono', monospace" font-weight="bold" font-size="14" fill="#fb923c">D6</text><text x="1030" y="463" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11.5" fill="rgba(254,254,254,0.5)">payout</text></g>
+</svg>

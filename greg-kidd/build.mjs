@@ -9,13 +9,14 @@ const puppeteer=(await import(pathToFileURL(R+'/puppeteer/lib/cjs/puppeteer/pupp
 const { PDFDocument }=await import(pathToFileURL(R+'/pdf-lib/cjs/index.js').href);
 const defs=fs.readFileSync(path.join(DIR,'assets','logo-defs.html'),'utf8');
 fs.mkdirSync(path.join(DIR,'slides'),{recursive:true});
-const DG={}; for(const k of ['xform','oracle','compliance','swap','hub','trilemma']){
+const DG={}; for(const k of ['xform','oracle','compliance','swap','archstack','nobridge','dac','shards']){
   let s=fs.readFileSync(`${DIR}/diagrams/${k}.svg`,'utf8').replace(/max-height:\s*\d+px/g,'height:auto');
   if(k==='xform') s=s.replace(/font-size="38"/g,'font-size="21"');
   if(k==='swap'){ s=s.replace(/<text x="0" y="38"[\s\S]*?<\/text>/,'').replace(/<text x="0" y="74"[\s\S]*?<\/text>/,'').replace('viewBox="0 0 1000 560"','viewBox="0 100 1000 462"'); }
   DG[k]=s;
 }
 const dia=(k,maxw)=>`<div style="width:100%;max-width:${maxw}px;margin:0 auto">${DG[k]}</div>`;
+const mech=(c)=>'<div class="mech">'+c.map(x=>'<div class="m"><div class="ml2">'+x[0]+'</div><div class="md">'+x[1]+'</div></div>').join('')+'</div>';
 
 const CSS=`
 :root{--bg:#060606;--ink:#FEFEFE;--o:#FF6A1F;--dim:#B8B8B2;--faint:#74746E;--rule:#242422;--card:#101010;--owash:rgba(255,106,31,.07);--oline:rgba(255,106,31,.42);--bad:#8a8a84;
@@ -31,62 +32,90 @@ body{background:#000}
 .kick b{color:var(--o);font-weight:400}
 h2{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;font-size:33px;line-height:1.1;letter-spacing:.005em;margin-top:13px}
 h2 .o{color:var(--o)}
-.lead{margin-top:16px;font-size:15px;line-height:1.62;color:var(--dim);max-width:98ch}
+.lead{margin-top:16px;font-size:15px;line-height:1.62;color:var(--dim);max-width:104ch}
 .lead b{color:var(--ink);font-weight:600}.lead .o{color:var(--o);font-weight:600}
-.dwrap{margin-top:40px;display:flex;justify-content:center}
-.punch{margin-top:var(--s4);padding:0 0 0 var(--s2);border-left:2px solid var(--o);font-size:16.5px;line-height:1.45;color:var(--ink);font-weight:500;max-width:78ch}
+.dwrap{margin-top:34px;display:flex;justify-content:center}
+.punch{margin-top:var(--s4);padding:0 0 0 var(--s2);border-left:2px solid var(--o);font-size:16.5px;line-height:1.45;color:var(--ink);font-weight:500;max-width:90ch}
 .punch .o{color:var(--o)}
-.cols{display:flex;gap:56px;align-items:center;margin-top:40px}
+.cols{display:flex;gap:56px;align-items:center;margin-top:34px}
 .col{flex:1;min-width:0}
-/* big stat */
-.statline{display:flex;align-items:center;gap:48px;margin-top:44px}
-.mega{font-family:"Anton",sans-serif;font-size:200px;line-height:.8;color:var(--o);letter-spacing:-.01em}
+.statline{display:flex;align-items:center;gap:48px;margin-top:40px}
+.mega{font-family:"Anton",sans-serif;font-size:188px;line-height:.8;color:var(--o);letter-spacing:-.01em}
 .megaq{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-top:10px;max-width:30ch;line-height:1.5}
-/* principle rows */
-.principle{margin-top:40px}
-.principle .pr{display:flex;align-items:center;gap:var(--s4);padding:30px 0;border-top:1px solid var(--rule)}
+.principle{margin-top:34px}
+.principle .pr{display:flex;align-items:center;gap:var(--s4);padding:26px 0;border-top:1px solid var(--rule)}
 .principle .pr:last-child{border-bottom:1px solid var(--rule)}
-.principle .a{color:var(--o);font-family:"Anton",sans-serif;font-size:18px}
+.principle .a{color:var(--o);font-family:"Anton",sans-serif;font-size:18px;flex:none;width:32px}
 .principle .t{color:var(--dim);font-size:15px}.principle .t b{color:var(--ink);font-weight:600;display:block;font-size:19px;margin-bottom:4px;font-family:"Anton",sans-serif;letter-spacing:.01em;text-transform:uppercase}
 .principle .r{margin-left:auto;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
 .ok{color:#9a9a92} .open{color:var(--o)}
 .note{margin-top:var(--s4);font-size:13px;color:var(--faint);letter-spacing:.02em}
-/* 3-col row (team stats / proof cards) */
-.row3{display:flex;gap:18px;margin-top:44px}
-.cell{flex:1;border:1px solid var(--rule);border-top:2px solid var(--o);border-radius:8px;background:var(--card);padding:24px 22px}
-.cell .v{font-family:"Anton",sans-serif;font-size:30px;color:var(--ink)}.cell .v .o{color:var(--o)}
-.cell .ct{font-family:"Anton",sans-serif;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--o)}
-.cell .k{font-size:12px;color:var(--dim);margin-top:12px;letter-spacing:.02em;line-height:1.5}
-.cell .repo{font-size:11px;color:var(--faint);margin-top:14px}
-.mech{display:flex;gap:46px;margin-top:38px}
+/* mechanics band */
+.mech{display:flex;gap:46px;margin-top:34px}
 .mech .m{flex:1;border-left:2px solid var(--o);padding-left:18px}
 .mech .ml2{font-family:"Anton",sans-serif;font-size:15px;letter-spacing:.03em;text-transform:uppercase;color:var(--o)}
 .mech .md{font-size:12.5px;line-height:1.5;color:var(--dim);margin-top:9px}
-.foot{position:absolute;left:var(--mx);right:var(--mx);bottom:30px;z-index:2;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule);padding-top:14px;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
-.foot .lg svg{height:13px;width:auto;opacity:.8}
-.askbox{margin-top:40px;border:1px solid var(--oline);border-radius:10px;background:linear-gradient(180deg,var(--owash),transparent);padding:26px 30px}
-.askbox .big{font-family:"Anton",sans-serif;font-size:26px;color:var(--ink)}.askbox .big .o{color:var(--o)}
-.askbox .ml{font-size:14px;color:var(--dim);margin-top:12px;line-height:1.55;max-width:104ch}.askbox .ml b{color:var(--ink)}
-.recap{margin-top:var(--s4);font-size:15px;color:var(--dim);line-height:1.6;max-width:none}.recap b{color:var(--ink)}
-/* statement slide */
+/* boxed cards row (3 or 4) */
+.row3{display:flex;gap:18px;margin-top:36px}
+.cell{flex:1;border:1px solid var(--rule);border-top:2px solid var(--o);border-radius:8px;background:var(--card);padding:22px 20px}
+.cell .v{font-family:"Anton",sans-serif;font-size:28px;color:var(--ink)}.cell .v .o{color:var(--o)}
+.cell .ct{font-family:"Anton",sans-serif;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--o)}
+.cell .k{font-size:12px;color:var(--dim);margin-top:11px;letter-spacing:.02em;line-height:1.5}
+.cell .repo{font-size:11px;color:var(--faint);margin-top:13px}
+/* timeline 3-col */
+.tl{display:flex;gap:22px;margin-top:38px}
+.tlc{flex:1;border-top:1px solid var(--rule);padding-top:18px}
+.tlc.last{border-top-color:var(--o)}
+.tlc .yr{font-family:"Anton",sans-serif;font-size:15px;letter-spacing:.1em;color:var(--faint)}
+.tlc.last .yr{color:var(--o)}
+.tlc .nm{font-family:"Anton",sans-serif;font-size:22px;text-transform:uppercase;color:var(--ink);margin-top:8px}
+.tlc.last .nm{color:var(--o)}
+.tlc .ds{font-size:13px;color:var(--dim);margin-top:10px;line-height:1.55}
+/* observer rows */
+.obs{margin-top:30px}
+.obs .o1{display:flex;align-items:baseline;gap:var(--s4);padding:22px 0;border-top:1px solid var(--rule)}
+.obs .o1:last-child{border-bottom:1px solid var(--rule)}
+.obs .ol{font-family:"Anton",sans-serif;font-size:18px;text-transform:uppercase;color:var(--ink);width:340px;flex:none}
+.obs .od{font-size:14px;color:var(--dim);line-height:1.55}.obs .od b{color:var(--ink)}
+.obs .tag{margin-left:auto;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--o);white-space:nowrap}
+/* comparison table */
+.tbl{margin-top:34px;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.trow{display:grid;border-bottom:1px solid var(--rule)}
+.trow:last-child{border-bottom:none}
+.trow.head{background:rgba(255,255,255,.025)}
+.tc{padding:13px 16px;font-size:12.5px;line-height:1.4;border-right:1px solid var(--rule)}
+.tc:last-child{border-right:none}
+.trow.head .tc{font-family:"Anton",sans-serif;text-transform:uppercase;letter-spacing:.04em;font-size:12px;color:var(--faint)}
+.trow.head .tc.u{color:var(--o)}
+.tc.lbl{color:var(--dim);font-family:"Anton",sans-serif;font-size:12.5px;letter-spacing:.02em;text-transform:uppercase}
+.tc.mut{color:var(--faint)}
+.tc.win{color:var(--o)}
+.trow .tc.ucol{background:rgba(255,106,31,.05)}
+/* statement */
 .statement{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:60px;line-height:1.04;letter-spacing:.004em;text-align:center}
 .statement .o{color:var(--o)}
 .crule{height:1px;width:280px;background:linear-gradient(90deg,transparent,var(--oline),transparent);margin:36px auto}
-.sub{font-size:15px;line-height:1.6;color:var(--dim);max-width:64ch;text-align:center;margin:0 auto}
+.sub{font-size:15px;line-height:1.6;color:var(--dim);max-width:72ch;text-align:center;margin:0 auto}
 .fp{margin-top:44px;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--faint)}
+.foot{position:absolute;left:var(--mx);right:var(--mx);bottom:30px;z-index:2;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule);padding-top:14px;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.foot .lg svg{height:13px;width:auto;opacity:.8}
+.askbox{margin-top:30px;border:1px solid var(--oline);border-radius:10px;background:linear-gradient(180deg,var(--owash),transparent);padding:22px 26px}
+.askbox .big{font-family:"Anton",sans-serif;font-size:22px;color:var(--ink)}.askbox .big .o{color:var(--o)}
+.askbox .ml{font-size:13px;color:var(--dim);margin-top:10px;line-height:1.55;max-width:110ch}.askbox .ml b{color:var(--ink)}
+.finale{margin-top:26px;font-family:"Anton",sans-serif;text-transform:uppercase;font-size:25px;line-height:1.1;letter-spacing:.003em;color:var(--ink);max-width:none}
+.finale .o{color:var(--o)}
+.src{position:absolute;left:var(--mx);bottom:54px;font-size:9.5px;letter-spacing:.06em;color:var(--faint);z-index:2}
 `;
 
 const kick=(n,t)=>`<div class="kick">${String(n).padStart(2,'0')} · ${t}</div>`;
 let T=0;
 const foot=(n)=>`<div class="foot"><span class="lg"><svg viewBox="0 0 641 128"><use href="#ulogo"/></svg></span><span>Unicity · Seed proposal · Confidential — for Greg Kidd</span><span>${String(n).padStart(2,'0')} / ${T}</span></div>`;
-// diagram slide: header (kicker + 1-line headline + 1 lead) then a BIG diagram that fills
 const DS=(n,kk,h,lead,diagram,extra='')=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,kk)}<h2>${h}</h2><div class="lead">${lead}</div></div><div class="dwrap">${diagram}</div>${extra}</div>${foot(n)}</div>`;
-const mech=(c)=>'<div class="mech">'+c.map(x=>'<div class="m"><div class="ml2">'+x[0]+'</div><div class="md">'+x[1]+'</div></div>').join('')+'</div>';
+const HD=(n,kk,h,body)=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,kk)}<h2>${h}</h2></div>${body}</div>${foot(n)}</div>`;
 
 const SL=[
-// 1 COVER — statement
-n=>`<div class="slide"><div class="grid"></div><div class="glow"></div>
-<div class="pad cover">
+// 1 COVER
+n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad cover">
   <svg viewBox="0 0 641 128" style="height:96px;width:auto"><use href="#ulogo"/></svg>
   <div class="crule" style="margin:52px auto 48px"></div>
   <div class="statement" style="font-size:46px;line-height:1.16">Cut out the middleman.<br>Move the value freely.<br><span class="o">Prove who is on the other end.</span></div>
@@ -94,20 +123,19 @@ n=>`<div class="slide"><div class="grid"></div><div class="glow"></div>
   <div class="fp">Tallinn · Zug · Abu Dhabi</div>
 </div></div>`,
 
-// 2 THE THREE PROBLEMS — big full-width rows fill
-n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,'FAIR ACCESS · <b>THE THREE PROBLEMS</b>')}<h2>The hard one: <span class="o">proving who is on the other end.</span></h2></div>
-  <div class="principle">
+// 2 THREE PROBLEMS
+n=>HD(n,'FAIR ACCESS · <b>THE THREE PROBLEMS</b>','The hard one: <span class="o">proving who is on the other end.</span>',
+  `<div class="principle">
     <div class="pr"><span class="a">01</span><div class="t"><b>Cut out the middleman</b>A decade of open infrastructure settled it.</div><div class="r ok">solved</div></div>
     <div class="pr"><span class="a">02</span><div class="t"><b>Let value move freely</b>Stablecoins now move hundreds of billions a year.</div><div class="r ok">solved</div></div>
     <div class="pr"><span class="a">03</span><div class="t"><b>Prove who is on the other end</b>So the money itself knows who may receive it.</div><div class="r open">still open</div></div>
   </div>
-  <div class="note">The rest of this is how the money proves it — with the math, and the team behind it.</div>
-</div>${foot(n)}</div>`,
+  <div class="note">The rest of this is how the money proves it — with the math, and the team behind it.</div>`),
 
-// 3 THE FIELD — 2-col text + chart
+// 3 THE FIELD
 n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,'THE FIELD · <b>IDENTITY, AND WHERE IT STOPPED</b>')}<h2>Identity reached the right architecture <span class="o">before the market could carry it.</span></h2></div>
   <div class="cols"><div class="col" style="flex:1.15">
-    <div class="lead" style="margin-top:0;max-width:none">GlobaliD had it early; the field stalled at the same wall — Microsoft retired did:ion in 2023, Trinsic wound down. The credential lived beside the transaction, and a check that can be skipped gets skipped.</div>
+    <div class="lead" style="margin-top:0;max-width:none">GlobaliD had it early; the field stalled at the same wall — did:ion retired in 2023, Trinsic wound down. The credential lived beside the transaction, and a check that can be skipped gets skipped.</div>
     <div class="lead" style="max-width:none">USBC drew the right conclusion: put identity inside the dollar. Inside one charter it settles. Across strangers, it does not.</div>
   </div><div class="col" style="flex:1">
     <svg width="100%" viewBox="0 0 520 300" style="height:auto">
@@ -120,91 +148,155 @@ n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr"
   </div></div>
 </div>${foot(n)}</div>`,
 
-// 4 THE MACHINE ECONOMY — big mega
+// 4 MACHINE ECONOMY
 n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad"><div class="hdr">${kick(n,'WHAT CHANGED · <b>THE MACHINE ECONOMY</b>')}<h2>Most of the traffic online is already machines — <span class="o">and they have started paying each other.</span></h2></div>
   <div class="statline"><div style="flex:none"><div class="mega">57.5%</div><div class="megaq">of web requests are automated, not human — Cloudflare, 2026</div></div>
   <div style="flex:1">
-    <div class="lead" style="margin-top:0;max-width:none;font-size:16px">Those machines have begun settling value directly — roughly <b>100 million payments on Base in nine months</b> (Chainalysis). A machine cannot wait on hold while an intermediary clears it.</div>
-    <div class="punch" style="margin-top:28px">At machine speed, <span class="o">the check has to travel with the money.</span></div>
+    <div class="lead" style="margin-top:0;max-width:none;font-size:16px">Those machines have begun settling value directly — roughly <b>100 million payments on Base in nine months</b> (Chainalysis), about thirty-one cents each. Legacy rails carry a fee floor above thirty cents, so sub-dollar machine payments are impossible on the old infrastructure.</div>
+    <div class="punch" style="margin-top:26px">A machine cannot wait on hold while an intermediary clears it. <span class="o">The check has to travel with the money.</span></div>
   </div></div>
 </div>${foot(n)}</div>`,
 
-// 5 OFF THE LEDGER — big xform
+// 5 WHY EVERY SHARED LEDGER HITS A WALL
+n=>HD(n,'THE STRUCTURAL LIMIT · <b>THE SHARED LEDGER</b>','Every shared ledger does the same four things <span class="o">for everyone.</span>',
+  `<div class="lead" style="max-width:108ch">Proof-of-work, proof-of-stake, or DPoS — a shared ledger must broadcast, order, validate and record every transaction in global state. That requirement is the ceiling, and the privacy machines need (ZK, FHE) collapses it further. When billions of sub-cent agent events arrive, every node must process every one.</div>
+  <div class="row3">
+    <div class="cell"><div class="ct">Broadcast</div><div class="k">Every node hears every transaction.</div></div>
+    <div class="cell"><div class="ct">Order</div><div class="k">Global agreement on the sequence of all of them.</div></div>
+    <div class="cell"><div class="ct">Validate</div><div class="k">Every node re-runs every transaction.</div></div>
+    <div class="cell"><div class="ct">Record</div><div class="k">Every node stores the whole global state, forever.</div></div>
+  </div>
+  <div class="punch">You cannot optimise your way out of this. <span class="o">The bottleneck is the design, not the implementation.</span></div>`),
+
+// 6 OFF THE LEDGER
 n=>DS(n,'HOW IT WORKS · <b>OFF THE LEDGER</b>',
   'A dollar on-chain is a row in <span class="o">a ledger someone else keeps.</span>',
-  'Unicity makes it a bearer file: it carries its own value, moves directly between two parties the way cash changes hands, and the recipient verifies it on arrival against the token alone.',
+  'Unicity makes it a bearer file — a native data type, like a file or a process the system holds. It carries its own value and its own proof, moves directly between two parties the way cash changes hands, and the recipient verifies it on arrival against the token alone.',
   dia('xform',1040),
   mech([['Self-contained','The value lives in the file, not a row a network keeps for you.'],['Self-proving','It carries its own proof of validity, minted against a locked source-chain asset.'],['Verifies on arrival','The recipient checks it locally, offline, over any channel, with no chain to call.']])),
 
-// 6 ONE QUESTION — header + oracle + mechanics band
+// 7 ONE QUESTION
 n=>DS(n,'HOW IT WORKS · <b>ONE QUESTION</b>',
   'The only job a chain ever had: <span class="o">has this been spent?</span>',
-  'It is the inevitable end of blockchain — validators that answer one question, and never read the transaction to answer it.',
-  dia('oracle',600),
-  mech([['Network unbundled','Bitcoin verified correctness and ordering; Unicity drops both and certifies uniqueness alone.'],['Opaque commitment','The oracle never sees the data, the counterparties, or the amount — only spent or unspent.'],['Proves the tree, not the trade','A zero-knowledge proof attests the sparse-Merkle-tree state transition, not each payment one by one.']])),
+  'The network receives an opaque commitment and answers one thing — spent or unspent — never the data, the counterparties, or the amount. It is the inevitable end of blockchain unbundling: the chain keeps the one job no one else can do, and everything else moves to the edge.',
+  dia('oracle',560),
+  mech([['Opaque commitment','The oracle sees only spent or unspent, never the trade itself.'],['Proves the tree, not the trade','A zero-knowledge proof attests the sparse-Merkle-tree state transition, not each payment.'],['Three proof types','Inclusion (registered, eternal), exclusion (low-latency settlement), unicity (the tree has not forked).']])),
 
-// 7 THE RULE INSIDE THE TOKEN — big compliance
-n=>DS(n,'HOW IT WORKS · <b>THE RULE INSIDE THE TOKEN</b>',
+// 8 NOTHING ELSE — what moves to the edge
+n=>HD(n,'THE ARCHITECTURE · <b>WHAT MOVES TO THE EDGE</b>','Unicity proves uniqueness. <span class="o">Nothing else.</span>',
+  `<div class="lead" style="max-width:108ch">Proving no double-spend is the oracle's only job. The three things a normal blockchain does for everyone — communication, storage, validation — move off-chain to the parties who actually care, handled with ordinary tools. That relocation, not a throughput number, is why it scales.</div>
+  <div class="row3">
+    <div class="cell"><div class="ct">Communication</div><div class="k">The asset carries its own proof; the wire just moves bytes — NOSTR, email, QR.</div></div>
+    <div class="cell"><div class="ct">Storage</div><div class="k">State lives with the owner, not on every node — browser, device, IPFS.</div></div>
+    <div class="cell"><div class="ct">Validation</div><div class="k">The recipient verifies; no validator set in the path — client-side, in parallel.</div></div>
+  </div>
+  <div class="note">A named primitive, not a novelty: client-side validation and single-use seals (Bitcoin Optech, RGB, Nervos CKB).</div>`),
+
+// 9 THE INEVITABLE UNBUNDLING
+n=>HD(n,'THE ARC · <b>WHY THIS WAS COMING</b>','The inevitable unbundling of blockchain. <span class="o">We took it to its conclusion.</span>',
+  `<div class="lead" style="max-width:96ch">Each generation of consensus removed work from the network.</div>
+  <div class="tl">
+    <div class="tlc"><div class="yr">2009 · BITCOIN</div><div class="nm">Correctness<br>+ ordering</div><div class="ds">Every node certifies every transaction and agrees on the order.</div></div>
+    <div class="tlc"><div class="yr">2023 · SUI · FASTPAY</div><div class="nm">Correctness<br>only</div><div class="ds">Global ordering removed for assets that share no state.</div></div>
+    <div class="tlc last"><div class="yr">2026 · UNICITY</div><div class="nm">Uniqueness<br>only</div><div class="ds">The network attests one thing — has this been spent. Correctness moves to the edge.</div></div>
+  </div>
+  <div class="punch">Not a competitor to chains — <span class="o">the logical endpoint of a decade of consensus research.</span></div>`),
+
+// 10 THE ARCHITECTURE STACK
+n=>DS(n,'WHO BUILT IT · <b>THE STACK</b>',
+  'A minimal chain, <span class="o">and an economy that runs off it.</span>',
+  'The consensus layer stays deliberately small; everything a user experiences is off-chain, joined by a thin SDK. We use proof-of-work to replicate Bitcoin\'s trust model: trust no one. This is the engineering, not a roadmap.',
+  dia('archstack',520),
+  mech([['On-chain, minimal','RandomX proof-of-work, then chained HotStuff for ~1s finality, then the uniqueness oracle.'],['The SDK','A thin bridge in JS, Java and Rust between off-chain agents and on-chain proofs.'],['Agent execution layer','Transport (I2P, TCP/IP), messaging (NOSTR), storage, runtime — all peer-to-peer.']])),
+
+// 11 THE RULE INSIDE THE TOKEN
+n=>DS(n,'COMPLIANCE · <b>THE RULE INSIDE THE TOKEN</b>',
   'The rule lives <span class="o">inside the token.</span>',
-  'Each token carries its own receive-condition — KYC, jurisdiction, sanctions. A transfer to a party that fails it cannot be constructed: there is no issuer to call, and no monitor reading the flow afterward.',
+  'Each token carries its own receive-condition — KYC, jurisdiction, sanctions — a more advanced version of Bitcoin\'s locking script. A transfer to a party that fails it cannot be constructed: no issuer to call, no monitor afterward. The issuer and verifier are configurable, and the token\'s whole history can be verified compliant.',
   dia('compliance',980),
-  mech([['Receive predicate','The token carries the condition that gates receipt: KYC, jurisdiction, accreditation.'],['Protocol-enforced','The check lives in the asset, not an app or custodian, so there is no intermediary to bypass.'],['Issuer-defined, in-band','The issuer sets who may hold it once; an unsatisfied transfer fails locally, with no callback.']])),
+  mech([['Programmable','Signature, multi-sig, k-of-n threshold or time-lock, written once and travelling with the token.'],['Protocol-enforced','The check lives in the asset, not an app or custodian — no intermediary to bypass.'],['Issuer-defined, in-band','The issuer sets who may hold it once; an unsatisfied transfer fails locally, with no callback.']])),
 
-// 8 THE TRADEOFF — 2-col text + trilemma
-n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,'THE CONSEQUENCE · <b>THE TRADEOFF DISSOLVES</b>')}<h2>Privacy, compliance, and speed pull against each other <span class="o">on a shared ledger.</span></h2></div>
-  <div class="cols"><div class="col" style="flex:1.1">
-    <div class="lead" style="margin-top:0;max-width:none;font-size:16px">Make payments private and the auditors go blind; add the cryptography that lets them see again and throughput collapses toward one a second.</div>
-    <div class="lead" style="max-width:none">Remove the shared ledger, and the three have nothing left to contend over. The privacy is proven on both sides — the network never sees the transaction — so there is no audit blindness to trade against.</div>
-  </div><div class="col" style="flex:.9">${dia('trilemma',560)}</div></div>
+// 12 THREE OBSERVERS
+n=>HD(n,'PRIVACY · <b>PROVEN, NOT ASSERTED</b>','Total privacy by default. Three observers. <span class="o">None can learn anything.</span>',
+  `<div class="lead" style="max-width:100ch">The privacy claim is what the papers prove — against three concrete adversaries.</div>
+  <div class="obs">
+    <div class="o1"><div class="ol">The network</div><div class="od">Sees only opaque, perfectly-hiding commitments — never amounts, parties, or balances — and cannot link two consecutive transactions of the same token.</div><div class="tag">proven</div></div>
+    <div class="o1"><div class="ol">The sender</div><div class="od">Cannot watch when, or to whom, you later spend what they sent you.</div><div class="tag">proven</div></div>
+    <div class="o1"><div class="ol">Anyone who knows your address</div><div class="od">You publish one persistent key; every sender derives a fresh, indistinguishable transaction key against it.</div><div class="tag">proven</div></div>
+  </div>`),
+
+// 13 NO BRIDGE
+n=>DS(n,'RISK · <b>NO BRIDGE, NOTHING TO HACK</b>',
+  'Bridges are eliminated. <span class="o">The source asset is verified directly.</span>',
+  'Bridge hacks are the largest loss category in crypto. Unicity has no bridge. A locked source-chain asset is represented as a self-contained token that carries its own state and proof; the recipient verifies the lock directly against the source contract — Unicity does not validate the source chain, recipients do.',
+  dia('nobridge',1080),
+  mech([['No bridge','There is no cross-chain message to forge and no pooled liquidity to drain.'],['No custodian','No third party holds the asset between chains; the holder verifies the lock itself.'],['Nothing to hack','The most dangerous middleman in crypto is structurally gone.']])),
+
+// 14 FIVE WINS, ONE HARD PROBLEM
+n=>`<div class="slide"><div class="grid"></div><div class="pad cover">
+  <div class="statement" style="font-size:64px">Five wins.<br><span class="o">One hard problem.</span></div>
+  <div class="crule"></div>
+  <div class="sub" style="max-width:80ch">Removing the shared ledger buys five things — speed, throughput, privacy, compliance, no bridge — and leaves one: with no shared state, atomicity has to be enforced by the tokens themselves. That is what predicates solve.</div>
 </div>${foot(n)}</div>`,
 
-// 9 THE TRADE — big swap
-n=>DS(n,'THE CONSEQUENCE · <b>THE TRADE</b>',
+// 15 THE TRADE
+n=>DS(n,'MARKET MICROSTRUCTURE · <b>THE TRADE</b>',
   'The hard part of cash-like money is <span class="o">the trade.</span>',
-  'Two parties swap with no one in the middle to hold both legs. The old fix is a timed lock, and the clock is the attack surface — one side stalls and walks. Unicity drops the clock: both commit independently, and the swap forms for both at once or never.',
+  'Two parties swap with no one in the middle to hold both legs. The old fix is a timed lock, and the clock is the attack surface — one side stalls and walks. Unicity drops the clock: both commit independently, and the swap forms for both at once or never. This is the atom that turns bearer tokens into a market.',
   dia('swap',840),
-  mech([['No clock','Both parties commit independently against a shared reference: no deadline, no refund timer.'],['Both or neither','Both locked, the swap completes; either walks away, both keep their token. Capital is never trapped on a timer.'],['No mempool, no MEV','It runs off-chain at machine speed, immune to front-running and mempool games.']])),
+  mech([['No clock','Both commit independently against a shared reference: no deadline, no refund timer.'],['Both or neither','Both locked, the swap completes; either walks away, both keep their token. Capital is never trapped.'],['No mempool, no MEV','It runs off-chain at machine speed, immune to front-running and mempool games.']])),
 
-// 10 THE MACHINE MARKET — big hub
-n=>DS(n,'WHERE IT LEADS · <b>THE MACHINE MARKET</b>',
-  'When two agents settle directly, <span class="o">the exchange in the middle has nothing left to do.</span>',
-  'At volume, trustless transfers compose into a market that coordinates itself. Agentic data reaches scale first — an agent buys a dataset, an attestation, a unit of compute, and the payment settles in the same step that proves what it is.',
-  dia('hub',1080)),
+// 16 SCALE BY ADDING SHARDS
+n=>DS(n,'SCALABILITY · <b>HORIZONTAL BY DESIGN</b>',
+  'The oracle never validates transactions. <span class="o">Throughput scales by adding shards.</span>',
+  'Because the oracle re-executes nothing — it certifies one consistency proof per round, not each payment — cost per transaction collapses and capacity grows by adding shards, not by raising a limit. The oracle is itself permissionless and redundant, so it is not a new central chokepoint.',
+  dia('shards',1080),
+  mech([['~30,000 / sec per shard','A design figure on a single consumer CPU — Plonky3 AIR, no trusted setup. Stated, not a live benchmark.'],['Sub-microcent per proof','Each new shard adds capacity; the proofs stay succinct.'],['Permissionless, redundant','Independent staked aggregators join freely; sub-trees run in parallel, with no global bottleneck.']])),
 
-// 11 THE TEAM — header + body + 3-col stat row
-n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,'WHO WE ARE · <b>THE KSI TEAM</b>')}<h2>The team that built the system <span class="o">Estonia's e-government runs on.</span></h2>
-  <div class="lead">We founded Guardtime and built KSI — ledgerless verification for the Estonian digital state, the US DoD, DARPA and NATO. A proven blueprint, not greenfield research. The core is live and open-source; full credential support is still being built. We are protocol engineers, not lawyers.</div></div>
-  <div class="row3">
-    <div class="cell"><div class="v">2012</div><div class="k">KSI securing Estonia's e-government records in production, eIDAS-grade</div></div>
-    <div class="cell"><div class="v"><span class="o">300,000</span>/s</div><div class="k">held in Eesti Pank's 2021 digital-currency test — the team's KSI design</div></div>
-    <div class="cell"><div class="v">Open source</div><div class="k">the core runs today; we will show you exactly what is built and what is not</div></div>
+// 17 THE MACHINE MARKET — CLOB matrix
+n=>HD(n,'THE PAYOFF · <b>THE MACHINE MARKET</b>','CEX speed. DEX custody. <span class="o">Private and compliant.</span>',
+  `<div class="lead" style="max-width:104ch">When two agents settle directly, the venue in the middle has nothing left to do. Binance has the speed. Uniswap has the custody. Neither has the privacy. Unicity has all three.</div>
+  <div class="tbl">
+    <div class="trow head" style="grid-template-columns:1.5fr 1fr 1fr 1fr 1.1fr"><div class="tc"></div><div class="tc">Binance</div><div class="tc">Uniswap</div><div class="tc">Hyperliquid</div><div class="tc u">Unicity</div></div>
+    <div class="trow" style="grid-template-columns:1.5fr 1fr 1fr 1fr 1.1fr"><div class="tc lbl">Speed</div><div class="tc">sub-second</div><div class="tc mut">block time</div><div class="tc">fast</div><div class="tc win ucol">sub-second</div></div>
+    <div class="trow" style="grid-template-columns:1.5fr 1fr 1fr 1fr 1.1fr"><div class="tc lbl">Self-custody</div><div class="tc mut">custodial</div><div class="tc">you hold keys</div><div class="tc">you hold keys</div><div class="tc win ucol">you hold keys</div></div>
+    <div class="trow" style="grid-template-columns:1.5fr 1fr 1fr 1fr 1.1fr"><div class="tc lbl">Privacy</div><div class="tc mut">operator sees all</div><div class="tc mut">fully public</div><div class="tc mut">public positions</div><div class="tc win ucol">unlinkable</div></div>
+    <div class="trow" style="grid-template-columns:1.5fr 1fr 1fr 1fr 1.1fr"><div class="tc lbl">MEV</div><div class="tc mut">operator order</div><div class="tc mut">sandwiched</div><div class="tc mut">mempool</div><div class="tc win ucol">no mempool</div></div>
+    <div class="trow" style="grid-template-columns:1.5fr 1fr 1fr 1fr 1.1fr"><div class="tc lbl">Compliance</div><div class="tc">off-chain KYC</div><div class="tc mut">none</div><div class="tc mut">none</div><div class="tc win ucol">in the asset</div></div>
+  </div>`),
+
+// 18 WHAT GETS BUILT — the DAC
+n=>DS(n,'WHAT GETS BUILT · <b>AN ECONOMY OF MACHINES</b>',
+  'A whole company, <span class="o">run by a swarm of agents.</span>',
+  'This is not a roadmap. We built a decentralized autonomous corporation for BlackRock — a fully autonomous parametric, weather-based insurer: capital, underwriting and cession run by agents transacting on Unicity tokens bound to conditional-ownership rules. Agents are the new smart contracts — verifiable code, off-chain, operating on bearer assets.',
+  dia('dac',1000),
+  mech([['Capital','Capacity is committed and tracked on-chain-proven bearer tokens.'],['Underwriting','Premiums priced and bound by predicate to the policy\'s receive-condition.'],['Cession','Claims and reinsurance settle agent-to-agent, with no venue in the middle.']])),
+
+// 19 VISION OF THE TITANS
+n=>HD(n,'EXTERNAL VALIDATION · <b>EVERYONE CONFIRMS THE DIAGNOSIS</b>','The serious players are spending billions <span class="o">to escape the ledgers they built.</span>',
+  `<div class="lead" style="max-width:106ch">An independent analysis of Allaire (Circle), Yakovenko (Solana), Hoskinson (Cardano) and Greg Kidd found unanimous agreement on the coming machine-driven liquidity shock. They optimise the ledger. Unicity removes it.</div>
+  <div class="tbl">
+    <div class="trow head" style="grid-template-columns:1.1fr 2.4fr 1fr"><div class="tc">Player</div><div class="tc">Their move</div><div class="tc u">Approach</div></div>
+    <div class="trow" style="grid-template-columns:1.1fr 2.4fr 1fr"><div class="tc lbl">Circle</div><div class="tc">Pivoted to infrastructure — the Arc L1, a $222M presale, bought Malachite.</div><div class="tc mut">optimise the ledger</div></div>
+    <div class="trow" style="grid-template-columns:1.1fr 2.4fr 1fr"><div class="tc lbl">Solana</div><div class="tc">Alpenglow cut finality to ~150ms — and its own co-founder concedes a physical ceiling.</div><div class="tc mut">optimise the ledger</div></div>
+    <div class="trow" style="grid-template-columns:1.1fr 2.4fr 1fr"><div class="tc lbl">Cardano</div><div class="tc">Midnight adds zero-knowledge selective-disclosure privacy.</div><div class="tc mut">optimise the ledger</div></div>
+    <div class="trow" style="grid-template-columns:1.1fr 2.4fr 1fr"><div class="tc lbl">USBC · Greg Kidd</div><div class="tc">Put identity inside the dollar — the right conclusion, on one charter.</div><div class="tc mut">the right idea</div></div>
+    <div class="trow" style="grid-template-columns:1.1fr 2.4fr 1fr"><div class="tc lbl" style="color:var(--o)">Unicity</div><div class="tc win ucol">Removes the shared ledger at the data-structure level.</div><div class="tc win ucol">eliminate it</div></div>
+  </div>`),
+
+// 20 TEAM + PROOF + ASK
+n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad"><div class="hdr">${kick(n,'THE TEAM, THE PROOF & THE ASK · <b>CO-BUILD</b>')}<h2>We built this once before. <span class="o">Now make it hold between strangers.</span></h2></div>
+  <div class="row3" style="margin-top:30px">
+    <div class="cell"><div class="ct">The team</div><div class="k">Founded Guardtime, built KSI — ledgerless verification for the Estonian e-state, the US DoD, DARPA and NATO. In production since 2012, eIDAS-grade. KSI held <b style="color:var(--ink)">300,000 tx/sec</b> in Eesti Pank's 2021 test — the lineage, not a live Unicity number.</div></div>
+    <div class="cell"><div class="ct">The proof</div><div class="k">Three math papers prove only privacy and no-double-spend — drop them in any model and it checks. Throughput is a sharding design result, named as such. All public on github.com/unicitynetwork.</div></div>
+    <div class="cell"><div class="ct">The ask</div><div class="k"><b style="color:var(--ink)">$5M Seed</b> · $25M cap / $50M token FDV · SAFE + token warrant. First build: a USBC dollar that settles the moment the credential checks out — you supply the regulatory layer we openly lack.</div></div>
   </div>
-</div>${foot(n)}</div>`,
-
-// 12 PROOF — header + body + 3-col cards
-n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,'PROOF · <b>READ THE MATH</b>')}<h2>The white paper is marketing. <span class="o">The work is three math papers.</span></h2>
-  <div class="lead">Only the privacy and no-double-spend results are proven theorems — drop the papers into any model and it will check them. Throughput is a sharding design result, named as such. All public on GitHub.</div></div>
-  <div class="row3">
-    <div class="cell"><div class="ct">Aggregation</div><div class="k">Off-chain and offline tokens; zero-knowledge proofs, no trusted setup.</div><div class="repo">github.com/unicitynetwork/aggr-layer-paper</div></div>
-    <div class="cell"><div class="ct">Execution</div><div class="k">No double-spend; privacy held service-side and user-side.</div><div class="repo">github.com/unicitynetwork/execution-model-tex</div></div>
-    <div class="cell"><div class="ct">Predicates &amp; swaps</div><div class="k">The rule lives in the token; two parties trade with no one between them.</div><div class="repo">github.com/unicitynetwork/unicity-predicates-tex</div></div>
-  </div>
-</div>${foot(n)}</div>`,
-
-// 13 THE ASK — header + ask box + recap + big finale
-n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad"><div class="hdr">${kick(n,'THE ASK · <b>CO-BUILD</b>')}<h2>Put the rule where the money is, <span class="o">and make it hold between strangers.</span></h2></div>
-  <div class="askbox">
-    <div class="big">Raising <span class="o">$5M Seed</span> · $25M cap / $50M token FDV · SAFE + token warrant.</div>
-    <div class="ml">First build: a <b>USBC dollar that settles the moment the credential checks out</b> — the rule travels inside the money, so a transfer that cannot satisfy it is never constructed.</div>
-  </div>
-  <div class="recap">The first two problems were solved a decade ago. The third — <b>money that knows who may receive it, between strangers, at machine speed</b> — is the part we built.</div>
-  <div class="statement" style="font-size:34px;text-align:left;margin-top:40px;max-width:none">A single charter settles at home.<br><span class="o">This is the layer that carries the same rule between two banks, or two machines, that share nothing else.</span></div>
+  <div class="finale">A single charter settles at home. <span class="o">This is the layer that carries the same rule between two banks, or two machines, that share nothing else.</span></div>
 </div>${foot(n)}</div>`,
 ];
 
 T=SL.length;
 const S=SL.map((f,i)=>f(i+1));
-
 const html=`<!DOCTYPE html><html><head><meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -212,16 +304,15 @@ const html=`<!DOCTYPE html><html><head><meta charset="utf-8">
 <div style="display:flex;flex-direction:column;align-items:center;gap:24px;padding:24px;background:#000">${S.join('\n')}</div></body></html>`;
 fs.writeFileSync(DIR+'/index.html',html);
 console.log('wrote index.html ('+S.length+' slides)');
-
 const b=await puppeteer.launch({headless:'new',args:['--no-sandbox']});
 const p=await b.newPage(); await p.setViewport({width:1680,height:960,deviceScaleFactor:2});
-await p.goto('file://'+DIR+'/index.html',{waitUntil:'networkidle0'}); await new Promise(r=>setTimeout(r,900));
-const wraps=await p.evaluate(()=>Array.from(document.querySelectorAll('.pad:not(.cover) > .hdr > h2, .pad > .hdr h2')).map(h=>({t:h.textContent.slice(0,24),lines:Math.round(h.getBoundingClientRect().height/(parseFloat(getComputedStyle(h).lineHeight)))})));
-console.log('headline line-counts:', JSON.stringify(wraps));
+await p.goto('file://'+DIR+'/index.html',{waitUntil:'networkidle0'}); await new Promise(r=>setTimeout(r,1000));
+const over=await p.evaluate(()=>Array.from(document.querySelectorAll('.pad')).map((el,i)=>({n:i+1,oflow:el.scrollHeight>el.clientHeight?el.scrollHeight-el.clientHeight:0})).filter(x=>x.oflow>2));
+console.log('overflow:',JSON.stringify(over));
 const els=await p.$$('.slide'); const pngs=[];
 for(let i=0;i<els.length;i++){const fp=`${DIR}/slides/slide-${String(i+1).padStart(2,'0')}.png`;await els[i].screenshot({path:fp});pngs.push(fp);}
 await b.close(); console.log('rendered',pngs.length,'PNGs');
 const pdf=await PDFDocument.create();
 for(const fp of pngs){const img=await pdf.embedPng(fs.readFileSync(fp));const pg=pdf.addPage([1600,900]);pg.drawImage(img,{x:0,y:0,width:1600,height:900});}
 fs.writeFileSync(DIR+'/Unicity_HardYaka_Seed_Deck.pdf',await pdf.save());
-console.log('wrote Unicity_HardYaka_Seed_Deck_v10.pdf');
+console.log('wrote Unicity_HardYaka_Seed_Deck_v11.pdf');
