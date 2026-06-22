@@ -58,6 +58,10 @@ h2 .o{color:var(--o)}
 .cell .ct{font-family:"Anton",sans-serif;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--o)}
 .cell .k{font-size:12px;color:var(--dim);margin-top:12px;letter-spacing:.02em;line-height:1.5}
 .cell .repo{font-size:11px;color:var(--faint);margin-top:14px}
+.mech{display:flex;gap:46px;margin-top:38px}
+.mech .m{flex:1;border-left:2px solid var(--o);padding-left:18px}
+.mech .ml2{font-family:"Anton",sans-serif;font-size:15px;letter-spacing:.03em;text-transform:uppercase;color:var(--o)}
+.mech .md{font-size:12.5px;line-height:1.5;color:var(--dim);margin-top:9px}
 .foot{position:absolute;left:var(--mx);right:var(--mx);bottom:30px;z-index:2;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule);padding-top:14px;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
 .foot .lg svg{height:13px;width:auto;opacity:.8}
 .askbox{margin-top:40px;border:1px solid var(--oline);border-radius:10px;background:linear-gradient(180deg,var(--owash),transparent);padding:26px 30px}
@@ -76,7 +80,8 @@ const kick=(n,t)=>`<div class="kick">${String(n).padStart(2,'0')} · ${t}</div>`
 let T=0;
 const foot=(n)=>`<div class="foot"><span class="lg"><svg viewBox="0 0 641 128"><use href="#ulogo"/></svg></span><span>Unicity · Seed proposal · Confidential — for Greg Kidd</span><span>${String(n).padStart(2,'0')} / ${T}</span></div>`;
 // diagram slide: header (kicker + 1-line headline + 1 lead) then a BIG diagram that fills
-const DS=(n,kk,h,lead,diagram,punch='')=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,kk)}<h2>${h}</h2><div class="lead">${lead}</div></div><div class="dwrap">${diagram}</div>${punch?`<div class="punch">${punch}</div>`:''}</div>${foot(n)}</div>`;
+const DS=(n,kk,h,lead,diagram,extra='')=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,kk)}<h2>${h}</h2><div class="lead">${lead}</div></div><div class="dwrap">${diagram}</div>${extra}</div>${foot(n)}</div>`;
+const mech=(c)=>'<div class="mech">'+c.map(x=>'<div class="m"><div class="ml2">'+x[0]+'</div><div class="md">'+x[1]+'</div></div>').join('')+'</div>';
 
 const SL=[
 // 1 COVER — statement
@@ -128,28 +133,28 @@ n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div clas
 n=>DS(n,'HOW IT WORKS · <b>OFF THE LEDGER</b>',
   'A dollar on-chain is a row in <span class="o">a ledger someone else keeps.</span>',
   'Unicity makes it a bearer file: it carries its own value, moves directly between two parties the way cash changes hands, and the recipient verifies it on arrival against the token alone.',
-  dia('xform',1360)),
+  dia('xform',1040),
+  mech([['Self-contained','The value lives in the file, not a row a network keeps for you.'],['Self-proving','It carries its own proof of validity, minted against a locked source-chain asset.'],['Verifies on arrival','The recipient checks it locally, offline, over any channel, with no chain to call.']])),
 
-// 6 ONE QUESTION — 2-col text + oracle
-n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,'HOW IT WORKS · <b>ONE QUESTION</b>')}<h2>The only job a chain ever had: <span class="o">has this been spent?</span></h2></div>
-  <div class="cols"><div class="col" style="flex:1.05">
-    <div class="lead" style="margin-top:0;max-width:none;font-size:16px">Every other job a blockchain took on was built on top of that one answer.</div>
-    <div class="lead" style="max-width:none">The oracle holds a proof that each token state is unique — it returns spent or unspent, and never sees the payment.</div>
-  </div><div class="col" style="flex:1.1">${dia('oracle',640)}</div></div>
-</div>${foot(n)}</div>`,
+// 6 ONE QUESTION — header + oracle + mechanics band
+n=>DS(n,'HOW IT WORKS · <b>ONE QUESTION</b>',
+  'The only job a chain ever had: <span class="o">has this been spent?</span>',
+  'It is the inevitable end of blockchain — validators that answer one question, and never read the transaction to answer it.',
+  dia('oracle',600),
+  mech([['Network unbundled','Bitcoin verified correctness and ordering; Unicity drops both and certifies uniqueness alone.'],['Opaque commitment','The oracle never sees the data, the counterparties, or the amount — only spent or unspent.'],['Proves the tree, not the trade','A zero-knowledge proof attests the sparse-Merkle-tree state transition, not each payment one by one.']])),
 
 // 7 THE RULE INSIDE THE TOKEN — big compliance
 n=>DS(n,'HOW IT WORKS · <b>THE RULE INSIDE THE TOKEN</b>',
   'The rule lives <span class="o">inside the token.</span>',
   'Each token carries its own receive-condition — KYC, jurisdiction, sanctions. A transfer to a party that fails it cannot be constructed: there is no issuer to call, and no monitor reading the flow afterward.',
-  dia('compliance',1280),
-  'Manage the risk inside the asset, and <span class="o">there is no flow left to catch afterward.</span>'),
+  dia('compliance',980),
+  mech([['Receive predicate','The token carries the condition that gates receipt: KYC, jurisdiction, accreditation.'],['Protocol-enforced','The check lives in the asset, not an app or custodian, so there is no intermediary to bypass.'],['Issuer-defined, in-band','The issuer sets who may hold it once; an unsatisfied transfer fails locally, with no callback.']])),
 
 // 8 THE TRADEOFF — 2-col text + trilemma
 n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,'THE CONSEQUENCE · <b>THE TRADEOFF DISSOLVES</b>')}<h2>Privacy, compliance, and speed pull against each other <span class="o">on a shared ledger.</span></h2></div>
   <div class="cols"><div class="col" style="flex:1.1">
     <div class="lead" style="margin-top:0;max-width:none;font-size:16px">Make payments private and the auditors go blind; add the cryptography that lets them see again and throughput collapses toward one a second.</div>
-    <div class="lead" style="max-width:none">Remove the shared ledger, and the three have nothing left to contend over.</div>
+    <div class="lead" style="max-width:none">Remove the shared ledger, and the three have nothing left to contend over. The privacy is proven on both sides — the network never sees the transaction — so there is no audit blindness to trade against.</div>
   </div><div class="col" style="flex:.9">${dia('trilemma',560)}</div></div>
 </div>${foot(n)}</div>`,
 
@@ -157,7 +162,8 @@ n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr"
 n=>DS(n,'THE CONSEQUENCE · <b>THE TRADE</b>',
   'The hard part of cash-like money is <span class="o">the trade.</span>',
   'Two parties swap with no one in the middle to hold both legs. The old fix is a timed lock, and the clock is the attack surface — one side stalls and walks. Unicity drops the clock: both commit independently, and the swap forms for both at once or never.',
-  dia('swap',1180)),
+  dia('swap',840),
+  mech([['No clock','Both parties commit independently against a shared reference: no deadline, no refund timer.'],['Both or neither','Both locked, the swap completes; either walks away, both keep their token. Capital is never trapped on a timer.'],['No mempool, no MEV','It runs off-chain at machine speed, immune to front-running and mempool games.']])),
 
 // 10 THE MACHINE MARKET — big hub
 n=>DS(n,'WHERE IT LEADS · <b>THE MACHINE MARKET</b>',
@@ -167,7 +173,7 @@ n=>DS(n,'WHERE IT LEADS · <b>THE MACHINE MARKET</b>',
 
 // 11 THE TEAM — header + body + 3-col stat row
 n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,'WHO WE ARE · <b>THE KSI TEAM</b>')}<h2>The team that built the system <span class="o">Estonia's e-government runs on.</span></h2>
-  <div class="lead">KSI has secured Estonia's e-government records in production since 2012. The same design held 300,000 transactions a second in Eesti Pank's 2021 digital-currency test — the lineage we come from. The core is live and open-source; full credential support is still being built. We are protocol engineers, not lawyers.</div></div>
+  <div class="lead">We founded Guardtime and built KSI — ledgerless verification for the Estonian digital state, the US DoD, DARPA and NATO. A proven blueprint, not greenfield research. The core is live and open-source; full credential support is still being built. We are protocol engineers, not lawyers.</div></div>
   <div class="row3">
     <div class="cell"><div class="v">2012</div><div class="k">KSI securing Estonia's e-government records in production, eIDAS-grade</div></div>
     <div class="cell"><div class="v"><span class="o">300,000</span>/s</div><div class="k">held in Eesti Pank's 2021 digital-currency test — the team's KSI design</div></div>
@@ -177,7 +183,7 @@ n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr"
 
 // 12 PROOF — header + body + 3-col cards
 n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,'PROOF · <b>READ THE MATH</b>')}<h2>The white paper is marketing. <span class="o">The work is three math papers.</span></h2>
-  <div class="lead">Drop them into any model and it will check the proofs: privacy on both sides, no double-spend. Throughput is a sharding result. Public on GitHub, open to anyone who wants to read them.</div></div>
+  <div class="lead">Only the privacy and no-double-spend results are proven theorems — drop the papers into any model and it will check them. Throughput is a sharding design result, named as such. All public on GitHub.</div></div>
   <div class="row3">
     <div class="cell"><div class="ct">Aggregation</div><div class="k">Off-chain and offline tokens; zero-knowledge proofs, no trusted setup.</div><div class="repo">github.com/unicitynetwork/aggr-layer-paper</div></div>
     <div class="cell"><div class="ct">Execution</div><div class="k">No double-spend; privacy held service-side and user-side.</div><div class="repo">github.com/unicitynetwork/execution-model-tex</div></div>
@@ -218,4 +224,4 @@ await b.close(); console.log('rendered',pngs.length,'PNGs');
 const pdf=await PDFDocument.create();
 for(const fp of pngs){const img=await pdf.embedPng(fs.readFileSync(fp));const pg=pdf.addPage([1600,900]);pg.drawImage(img,{x:0,y:0,width:1600,height:900});}
 fs.writeFileSync(DIR+'/Unicity_HardYaka_Seed_Deck.pdf',await pdf.save());
-console.log('wrote Unicity_HardYaka_Seed_Deck_v9.pdf');
+console.log('wrote Unicity_HardYaka_Seed_Deck_v10.pdf');
