@@ -83,23 +83,23 @@ h2 .o{color:var(--o)}
 .pull b{color:var(--ink);font-weight:600}.pull .o{color:var(--o)}
 `;
 
-const T=15;
+const kick=(n,t)=>`<div class="kick">${String(n).padStart(2,'0')} · ${t}</div>`;
+let T=0;
 const foot=(n)=>`<div class="foot"><span class="lg"><svg viewBox="0 0 641 128"><use href="#ulogo"/></svg></span><span>Unicity · Seed proposal · Confidential — Greg Kidd / Hard Yaka</span><span>${String(n).padStart(2,'0')} / ${T}</span></div>`;
-const kick=(t)=>`<div class="kick">${t}</div>`;
-const S=[];
 
+const SL=[
 // 1 COVER
-S.push(`<div class="slide"><div class="grid"></div><div class="glow"></div>
+n=>`<div class="slide"><div class="grid"></div><div class="glow"></div>
 <div class="pad" style="align-items:center;justify-content:center;text-align:center">
   <svg viewBox="0 0 641 128" style="height:58px;width:auto;margin-bottom:28px"><use href="#ulogo"/></svg>
   <div class="kick">Unicity Labs &middot; a settlement substrate &middot; Seed</div>
   <h2 class="anton" style="font-size:52px;max-width:30ch;margin-top:22px;text-align:center">The first rail where the credential lives <span class="o">inside</span> the transfer.</h2>
   <div class="lead" style="text-align:center;max-width:80ch">A thirty-year campaign to give people fair access — cut the middleman, prove the identity, move the value freely. One piece was always missing: a settlement layer where the credential is <b>inside the transaction, not beside it</b>. That layer now exists.</div>
   <div style="margin-top:40px;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint)">Tallinn · Zug · Abu Dhabi</div>
-</div></div>`);
+</div></div>`,
 
 // 2 THROUGHLINE
-S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('02 · THE THROUGHLINE · <b>FAIR ACCESS</b>')}
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE THROUGHLINE · <b>FAIR ACCESS</b>')}
   <h2>Every bet assumed a layer <span class="o">none of them own</span>.</h2>
   <div class="cols"><div class="col" style="flex:1.2">
     <div class="principle">
@@ -111,10 +111,10 @@ S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('02 �
     <div class="lead" style="margin-top:0">Fair access needs three things to be real. Two have been shipped for decades. The third — identity that <b>cannot be skipped</b> — is the piece the rails themselves never carried.</div>
   </div></div>
   <div class="punch">The credential always sat next to the transaction. <span class="o">Nothing broke if you skipped it.</span></div>
-</div>${foot(2)}</div>`);
+</div>${foot(n)}`,
 
 // 3 TEAM
-S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('03 · THE TEAM · <b>TALLINN</b>')}
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE TEAM · <b>TALLINN</b>')}
   <h2>The team that built the <span class="o">backbone a nation runs on</span>.</h2>
   <div class="cols"><div class="col"><div class="lead" style="margin-top:0">The team built Guardtime / KSI — the cryptographic backbone running across Estonian e-government since 2012, eIDAS-aligned. The same KSI architecture sustained <b>300,000+ payments per second</b> in the Eesti Pank 2021 CBDC experiment.</div>
     <div class="punch" style="margin-top:22px;border:none;padding-left:0">Settlement infrastructure proven at the scale of a state — <span class="o">not a throughput claim about Unicity</span>.</div>
@@ -123,20 +123,20 @@ S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('03 �
     <div class="stat"><div class="v"><span class="o">300,000+</span> tx/sec</div><div class="k">Eesti Pank 2021 CBDC test — the team's KSI lineage</div></div>
     <div class="stat"><div class="v">eIDAS-aligned</div><div class="k">EU trust-services environment — government-grade</div></div>
   </div></div></div>
-</div>${foot(3)}</div>`);
+</div>${foot(n)}`,
 
 // 4 WHY NOW
-S.push(`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad">${kick('04 · WHY NOW · <b>THE BUYER</b>')}
+n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad">${kick(n,'WHY NOW · <b>THE BUYER</b>')}
   <h2>The buyer that forces the layer <span class="o">has arrived</span>.</h2>
   <div class="cols"><div class="col" style="flex:none"><div class="mega">57.5%</div><div class="megaq">of web requests are automated — not on-chain (Cloudflare, 2026)</div></div>
   <div class="col"><div class="cl" style="font-size:15px"><b>Two facts, kept separate.</b> The majority actor on the internet is already a machine. And those machines have started paying — roughly <b>100M x402 transactions on Base in nine months</b> (Chainalysis); real volume still tiny.</div>
     <div class="cl" style="font-size:14px">x402 works — but it is fifteen steps of facilitators and settlement. When the asset moves peer-to-peer, <b>the message is the settlement</b>.</div>
     <div class="punch" style="margin-top:18px">An agent cannot round-trip a centralized check. <span class="o">It verifies in-band, at the edge — or it cannot transact at all.</span></div>
   </div></div>
-</div>${foot(4)}</div>`);
+</div>${foot(n)}`,
 
 // 5 DIAGNOSIS
-S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('05 · THE DIAGNOSIS · <b>RIGHT, BUT EARLY</b>')}
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE DIAGNOSIS · <b>RIGHT, BUT EARLY</b>')}
   <h2>Right thesis. <span class="o">No forcing function</span>.</h2>
   <div class="cols" style="align-items:center"><div class="col" style="flex:1.25">
     <div class="cl">Self-sovereign identity was correct, and early.</div>
@@ -154,10 +154,10 @@ S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('05 �
     </svg>
   </div></div>
   <div class="punch">The missing piece was never better identity. <span class="o">It was a settlement layer where the asset refuses to move without it.</span></div>
-</div>${foot(5)}</div>`);
+</div>${foot(n)}`,
 
 // 6 PORTFOLIO MAP
-S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('06 · THE PORTFOLIO MAP · <b>WHERE WE SIT</b>')}
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE PORTFOLIO MAP · <b>WHERE WE SIT</b>')}
   <h2>The floor under <span class="o">250 bets</span>.</h2>
   <div class="lead" style="margin-top:6px;max-width:96ch">Bets across identity, payments, exchanges, compute, and banking — each one assuming a settlement layer it does not own.</div>
   <div class="bands">
@@ -168,43 +168,62 @@ S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('06 �
     <div class="band"><div class="bl">Banking &amp; Tokenized Money<span>money with rules inside</span></div><div class="bc">Vast Bank · USBC</div></div>
     <div class="band sub"><div class="bl">Settlement Substrate<span>what it all settles on</span></div><div class="bc">UNICITY — the layer none of the bets occupy, and the one they all silently assume</div></div>
   </div>
-</div>${foot(6)}</div>`);
+</div>${foot(n)}`,
 
-// 7 THE BEARER INSTRUMENT (xform)
-S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('07 · THE MOVE · <b>STOP MAINTAINING THE MONEY</b>')}
+// 7 THE TRADEOFF (trilemma)
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE TRADEOFF · <b>A SHARED LEDGER</b>')}
+  <h2>Privacy, compliance, throughput. <span class="o">Pick two.</span></h2>
+  <div class="cols" style="align-items:center;padding-top:18px"><div class="col">
+    <div class="cl" style="font-size:15px">On a shared ledger every transaction is public — easy to audit, impossible to keep private.</div>
+    <div class="cl">Add cryptography to win privacy back and throughput collapses — down to one transaction a second. The privacy tech kills the speed.</div>
+    <div class="cl">Machine-speed money needs all three at once. On a shared ledger, you cannot have them.</div>
+    <div class="punch" style="margin-top:18px">So we didn't optimize the ledger. <span class="o">We removed the thing that forces the tradeoff.</span></div>
+  </div><div class="col">${dia('trilemma',470,0)}</div></div>
+</div>${foot(n)}`,
+
+// 8 THE MOVE (xform)
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE MOVE · <b>STOP MAINTAINING THE MONEY</b>')}
   <h2>Make the money a thing you <span class="o">hold</span> — not an entry someone keeps.</h2>
   <div class="lead" style="margin-top:8px;max-width:104ch">Today a stablecoin is a row on a shared ledger — every participant maintains it, every transfer asks the ledger's permission. The move is simple: take that entry and make the asset a <b>self-contained file</b>. A native data type, not a row. It moves agent-to-agent like cash — and the chain's only remaining job is to prove it wasn't spent twice.</div>
   ${dia('xform',1180,18)}
   <div class="punch">Satoshi titled it peer-to-peer electronic cash. <span class="o">Seventeen years later it is neither. This is.</span></div>
-</div>${foot(7)}</div>`);
+</div>${foot(n)}`,
 
-// 8 THE CHAIN'S ONLY JOB (oracle)
-S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('08 · THE ARCHITECTURE · <b>ONE IRREDUCIBLE JOB</b>')}
+// 9 LIKE CASH (bearer)
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'PEER TO PEER · <b>LIKE CASH</b>')}
+  <h2>Verify it yourself. <span class="o">Like cash.</span></h2>
+  <div class="lead" style="margin-top:8px;max-width:106ch">When someone hands you a $10 note, you don't send it to a committee to ask if it's real — you check it yourself. A Unicity token works the same way: it carries its own proof. It moves agent-to-agent, and the recipient verifies it <b>on arrival</b> — no chain to call, no ledger to ask.</div>
+  ${dia('bearer',920,26)}
+  <div class="punch">The proof travels with the asset. <span class="o">The transfer needs no one's permission.</span></div>
+</div>${foot(n)}`,
+
+// 10 THE CHAIN'S ONLY JOB (oracle)
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE ARCHITECTURE · <b>ONE IRREDUCIBLE JOB</b>')}
   <h2>The chain's only job is to <span class="o">prevent double-spending</span>.</h2>
   <div class="cols" style="align-items:center;padding-top:18px"><div class="col" style="flex:1.05">
     <div class="cl" style="font-size:15px">That was always the point — not validation, not global order. Just one question: <b>has this token been spent?</b> The uniqueness oracle answers yes or no, and never sees the transaction.</div>
-    <div class="cl">Everything else — the transfer, the proof — moves peer-to-peer. The recipient verifies it himself.</div>
-    <div class="cl"><b>Like cash.</b> When someone hands you a $10 note, you don't send it to a committee. You check it yourself. The token carries its own proof.</div>
+    <div class="cl">It isn't validating transactions anymore, so the work collapses — and the burden of proof moves to the recipient.</div>
+    <div class="cl">Three layers: consensus secures the base, the oracle stores only uniqueness proofs, execution happens client-side and off-chain.</div>
     <div class="punch" style="margin-top:18px">A blockchain reduced to its <span class="o">one irreducible job</span>.</div>
   </div><div class="col" style="flex:.95">${dia('oracle',560,0)}</div></div>
-</div>${foot(8)}</div>`);
+</div>${foot(n)}`,
 
-// 9 COMPLIANCE BY CONSTRUCTION (compliance)
-S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('09 · THE FORCING FUNCTION · <b>THE RECEIVE PREDICATE</b>')}
+// 11 COMPLIANCE BY CONSTRUCTION (compliance)
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE FORCING FUNCTION · <b>THE RECEIVE PREDICATE</b>')}
   <h2>Compliance by construction. <span class="o">Not a guy in the middle</span>.</h2>
   <div class="lead" style="margin-top:6px;max-width:108ch">Coinbase's agent-payment standard works — with a facilitator in the middle, watching every transaction. We put the rule <b>inside the token</b>. Each token carries its own predicate — who may receive it: KYC, jurisdiction, accreditation. The transfer will not complete unless the recipient satisfies it. No monitor, no middleman to bypass. The predicate checks a self-contained attestation in-band — no issuer callback at settlement.</div>
   ${dia('compliance',1020,14)}
   <div class="punch">The credential isn't checked at the door. <span class="o">It is the door.</span></div>
-</div>${foot(9)}</div>`);
+</div>${foot(n)}`,
 
-// 10 THE SWAP (swap)
-S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('10 · MARKET MICROSTRUCTURE · <b>THE SWAP</b>')}
+// 12 THE SWAP (swap)
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'MARKET MICROSTRUCTURE · <b>THE SWAP</b>')}
   <div class="lead" style="margin-top:0;max-width:104ch">On a shared ledger, atomicity is free — a contract executes or it doesn't. Off-chain, both legs must settle with no middleman holding the float. The HTLC's answer is a timer and a griefing window. Ours: both parties commit independently — the swap completes, or everyone keeps their token.</div>
   ${dia('swap',880,12)}
-</div>${foot(10)}</div>`);
+</div>${foot(n)}`,
 
-// 11 LIFE ARC
-S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('11 · THE LIFE ARC · <b>IDENTITY INSIDE THE MONEY</b>')}
+// 13 LIFE ARC
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE LIFE ARC · <b>IDENTITY INSIDE THE MONEY</b>')}
   <h2>You already reached this conclusion. <span class="o">You built it inside one bank.</span></h2>
   <div class="spine">
     <div class="node"><div class="nn">dNet</div><div class="nd">cut the middleman</div></div>
@@ -217,10 +236,10 @@ S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('11 �
   </div>
   <div class="pull">“Identity in itself is not that interesting. It's what you can do with it.” &nbsp;→&nbsp; <b>A credential only does something if the asset cannot move without it.</b></div>
   <div class="cl" style="margin-top:14px;max-width:104ch">USBC's tokenized deposit is a U.S.-dollar bank deposit with identity embedded in it — identity inside the money, on an OCC-chartered bank, explicitly not a synthetic stablecoin. <b>That is the receive predicate, discovered the hard way, on a single charter.</b></div>
-</div>${foot(11)}</div>`);
+</div>${foot(n)}`,
 
-// 12 PROOF
-S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('12 · THE PROOF · <b>PUBLIC & FORMAL</b>')}
+// 14 PROOF
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE PROOF · <b>PUBLIC & FORMAL</b>')}
   <h2>Don't take our word for it. <span class="o">Here's the math.</span></h2>
   <div class="lead" style="margin-top:6px;max-width:104ch">The white paper is marketing — we cringe at it. These three are math. Drop them into any model and it will prove the protocol to you: no double-spend, service- and user-side privacy, trustless swaps.</div>
   <div class="cardrow">
@@ -229,10 +248,10 @@ S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('12 �
     <div class="c3"><div class="ct">Predicates &amp; swaps</div><div class="cb"><b>Unicity: Predicates &amp; Atomic Swaps</b> — programmable predicates; trustless atomic swaps.</div><div class="cb" style="color:var(--faint);margin-top:10px">github.com/unicitynetwork/unicity-predicates-tex</div></div>
   </div>
   <div class="punch">What's proven is <span class="o">privacy and no-double-spend</span>. Scalability is by sharding — stated as the design, not claimed as a benchmark.</div>
-</div>${foot(12)}</div>`);
+</div>${foot(n)}`,
 
-// 13 THE BOUNDARY
-S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('13 · THE BOUNDARY · <b>WHAT A CHARTER CANNOT CROSS</b>')}
+// 15 THE BOUNDARY
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE BOUNDARY · <b>WHAT A CHARTER CANNOT CROSS</b>')}
   <h2>A charter settles for its members.<br>The space <span class="o">between charters</span> has to be built.</h2>
   <div class="steel"><div class="sl">The strongest version of the argument</div><div class="st">“A permissioned chain on one bank charter already puts identity inside the money — USBC proves it works. Why generalize?”</div></div>
   <div class="reb">
@@ -241,10 +260,10 @@ S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('13 �
     <div class="ri"><span class="n">3</span><span class="x">An agent at machine speed cannot phone any single charter's verifier in-band. Cross-charter, cross-agent settlement is the one thing a charter structurally can't do — <b>no matter how good the charter</b>.</span></div>
   </div>
   <div class="punch">Unicity is the layer that lets a USBC deposit settle to a counterparty on a different charter. <span class="o">USBC reached it on one charter; this generalizes the move — it doesn't replace it.</span></div>
-</div>${foot(13)}</div>`);
+</div>${foot(n)}`,
 
-// 14 LIVE + AGENTIC (hub)
-S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('14 · THE STATE OF PLAY · <b>LIVE</b>')}
+// 16 LIVE + AGENTIC (hub)
+n=>`<div class="slide"><div class="grid"></div><div class="pad">${kick(n,'THE STATE OF PLAY · <b>LIVE</b>')}
   <h2>Agents discover, transact, and settle <span class="o">today</span>.</h2>
   <div class="cols" style="align-items:center;padding-top:16px"><div class="col" style="flex:1.05">
     <div class="cl" style="font-size:15px">A running demonstration, not a forecast — agents post intents to a shared board, transact peer-to-peer, and settle on the substrate now.</div>
@@ -252,10 +271,10 @@ S.push(`<div class="slide"><div class="grid"></div><div class="pad">${kick('14 �
     <div class="cl" style="color:var(--faint)">Pipeline: sovereign and stablecoin-issuer engagements in confidential discussions — references on request.</div>
     <div class="punch" style="margin-top:16px">The architecture isn't a roadmap slide. <span class="o">The primitive runs.</span></div>
   </div><div class="col" style="flex:.95">${dia('hub',520,0)}</div></div>
-</div>${foot(14)}</div>`);
+</div>${foot(n)}`,
 
-// 15 CLOSE + ASK
-S.push(`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad">${kick('15 · THE ASK · <b>A CO-BUILD</b>')}
+// 17 CLOSE + ASK
+n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad">${kick(n,'THE ASK · <b>A CO-BUILD</b>')}
   <h2>One layer down from where the thesis <span class="o">already arrived</span>.</h2>
   <div class="lead" style="margin-top:8px;max-width:102ch">Identity inside the money. Compliance that travels with the asset. Settlement with no shared ledger. The conclusion USBC reached on one bank charter — generalized to a layer any issuer can settle on. Not a vendor. Not another L1 chasing throughput. The settlement layer for machine commerce — the chain only prevents double-spend; everything below it is the substrate.</div>
   <div class="askbox">
@@ -265,7 +284,11 @@ S.push(`<div class="slide"><div class="grid"></div><div class="glow"></div><div 
   <div class="closer">The idea is already validated &mdash; on one charter. <span class="o">This is the layer that lets it hold everywhere.</span></div>
   <div class="tag">Architecture, not policy · Proof, not promises.</div>
   <div class="src">Cloudflare · Chainalysis · Eesti Pank · USBC press · github.com/unicitynetwork</div>
-</div>${foot(15)}</div>`);
+</div>${foot(n)}`,
+];
+
+T=SL.length;
+const S=SL.map((f,i)=>f(i+1));
 
 const html=`<!DOCTYPE html><html><head><meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -284,4 +307,4 @@ await b.close(); console.log('rendered',pngs.length,'PNGs');
 const pdf=await PDFDocument.create();
 for(const fp of pngs){const img=await pdf.embedPng(fs.readFileSync(fp));const pg=pdf.addPage([1600,900]);pg.drawImage(img,{x:0,y:0,width:1600,height:900});}
 fs.writeFileSync(DIR+'/Unicity_HardYaka_Seed_Deck.pdf',await pdf.save());
-console.log('wrote Unicity_HardYaka_Seed_Deck_v3.pdf');
+console.log('wrote Unicity_HardYaka_Seed_Deck_v4.pdf');
