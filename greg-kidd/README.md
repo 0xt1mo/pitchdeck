@@ -25,18 +25,23 @@ And the buyer has finally arrived: the agent that cannot round-trip a centralize
 
 1. Cover — the credential lives *inside* the transfer
 2. The throughline — every bet assumed a layer none of them own
-3. The team — KSI / Estonia (credibility gate, moved early)
-4. Why now — the majority actor online is already a machine
+3. The team — KSI / Estonia, the backbone a nation runs on (credibility gate, moved early)
+4. Why now — the majority actor online is already a machine; the message is the settlement
 5. **The diagnosis — right thesis, no forcing function** (the GlobaliD post-mortem)
 6. **The portfolio map — the floor under 250 bets** (where Unicity sits)
-7. The receive predicate — compliance the asset enforces on itself (answers revocation)
-8. The model — tokens move P2P, the chain just proves
-9. The swap — both parties commit, nobody chases a timeout
-10. **The life arc — you already reached this conclusion, inside one bank**
-11. Proof — three formal papers on GitHub
-12. The boundary — what a charter structurally cannot cross
-13. Live — agents discover, transact, and settle today
-14. The ask — a $5M co-build, one layer down
+7. **The move — make the money a thing you hold** (ledger entry → self-contained bearer file)
+8. The architecture — the chain's only job is to prevent double-spending (the uniqueness oracle)
+9. **Compliance by construction — not a guy in the middle** (the receive predicate)
+10. The swap — both parties commit, nobody chases a timeout
+11. **The life arc — you already reached this conclusion, inside one bank**
+12. Proof — three formal papers; the white paper is marketing, these are math
+13. The boundary — what a charter structurally cannot cross
+14. Live — agents discover, transact, and settle today
+15. The ask — a $5M co-build, one layer down
+
+## Infographics & voice
+
+The protocol infographics are ported faithfully from the Unicity protocol deck (`tech-finance`) and live in `diagrams/` as self-contained, recolored SVG: the **ledger→bearer transformation** (slide 7), the **uniqueness-oracle stack** (8), the **receive-predicate branch** (9), the **HTLC-vs-predicate swap** (10), the **agentic hub** (14). The voice is taken from how Unicity presents in the room — first-principles, anti-fluff, radically honest: *the chain's only job is to prevent double-spending · verify it like cash · compliance by construction, not a guy in the middle · the message is the settlement · the white paper is marketing, the math is the proof.*
 
 ## Rebuild
 

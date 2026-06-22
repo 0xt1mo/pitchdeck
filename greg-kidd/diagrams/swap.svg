@@ -1,0 +1,87 @@
+<svg viewBox="0 0 1000 560" width="100%" style="height:auto;max-height:560px" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="swap_ar" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#FF6A1F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+    </marker>
+    <linearGradient id="swap_gradNeutral" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(255,255,255,0.055)" />
+      <stop offset="1" stop-color="rgba(255,255,255,0.015)" />
+    </linearGradient>
+    <linearGradient id="swap_gradRed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(224,86,78,0.16)" />
+      <stop offset="1" stop-color="rgba(224,86,78,0.04)" />
+    </linearGradient>
+    <linearGradient id="swap_gradOrange" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(255,106,31,0.13)" />
+      <stop offset="1" stop-color="rgba(255,106,31,0.03)" />
+    </linearGradient>
+    <linearGradient id="swap_gradOrangeStrong" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(255,106,31,0.2)" />
+      <stop offset="1" stop-color="rgba(255,106,31,0.05)" />
+    </linearGradient>
+    <linearGradient id="swap_gradGreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(110,231,135,0.13)" />
+      <stop offset="1" stop-color="rgba(110,231,135,0.035)" />
+    </linearGradient>
+  </defs>
+
+  <!-- ============ HEADER ============ -->
+  <text x="0" y="38" font-family="'Anton', sans-serif" font-size="46" letter-spacing="-1" fill="#fefefe">THE UNICITY <tspan fill="#FF6A1F">TRUSTLESS ATOMIC SWAP</tspan></text>
+  <text x="0" y="74" font-family="'Geist Mono', monospace" font-size="17" fill="rgba(254,254,254,0.7)">Both parties commit independently — the swap completes, or everyone keeps their token.</text>
+
+  <!-- ============ LEFT COLUMN — HTLC ============ -->
+  <text x="0" y="118" font-family="'Geist Mono', monospace" font-size="13" letter-spacing="3.9" fill="#e0564e">HASHED TIMELOCK (HTLC)</text>
+
+  <!-- Step 1 -->
+  <rect x="0" y="132" width="455" height="50" rx="12" fill="url(#swap_gradNeutral)" stroke="rgba(254,254,254,0.12)" stroke-width="1" />
+  <text x="22" y="163" font-family="'Geist Mono', monospace" font-size="18"><tspan fill="rgba(254,254,254,0.48)">1 ·</tspan><tspan fill="rgba(254,254,254,0.88)"> A locks, reveals hash y</tspan></text>
+
+  <!-- Step 2 -->
+  <rect x="0" y="192" width="455" height="50" rx="12" fill="url(#swap_gradNeutral)" stroke="rgba(254,254,254,0.12)" stroke-width="1" />
+  <text x="22" y="223" font-family="'Geist Mono', monospace" font-size="18"><tspan fill="rgba(254,254,254,0.48)">2 ·</tspan><tspan fill="rgba(254,254,254,0.88)"> B locks against same y</tspan></text>
+
+  <!-- Step 3 -->
+  <rect x="0" y="252" width="455" height="50" rx="12" fill="url(#swap_gradNeutral)" stroke="rgba(254,254,254,0.12)" stroke-width="1" />
+  <text x="22" y="283" font-family="'Geist Mono', monospace" font-size="18"><tspan fill="rgba(254,254,254,0.48)">3 ·</tspan><tspan fill="rgba(254,254,254,0.88)"> A claims, revealing preimage x</tspan></text>
+
+  <!-- Step 4 (danger) -->
+  <rect x="0" y="312" width="455" height="50" rx="12" fill="url(#swap_gradRed)" stroke="rgba(224,86,78,0.6)" stroke-width="1" />
+  <text x="22" y="343" font-family="'Geist Mono', monospace" font-size="18"><tspan fill="rgba(224,86,78,0.55)">4 ·</tspan><tspan fill="#ff8a7a"> B must claim before timeout</tspan></text>
+
+  <!-- The timing trap callout -->
+  <rect x="0" y="376" width="455" height="92" rx="16" fill="url(#swap_gradRed)" stroke="rgba(224,86,78,0.6)" stroke-width="1" />
+  <text x="24" y="414" font-family="'Anton', sans-serif" font-size="24" fill="#ff8a7a">THE TIMING TRAP</text>
+  <text x="24" y="444" font-family="'Geist Mono', monospace" font-size="15" fill="rgba(254,254,254,0.8)">B late on step 4 — a dropped connection — and A</text>
+  <text x="24" y="462" font-family="'Geist Mono', monospace" font-size="15" fill="rgba(254,254,254,0.8)">keeps both.</text>
+
+  <!-- ============ DIVIDER (dashed) ============ -->
+  <line x1="500" y1="100" x2="500" y2="468" stroke="rgba(254,254,254,0.2)" stroke-width="1" stroke-dasharray="6 6" />
+
+  <!-- ============ RIGHT COLUMN — Unicity Predicate Swap ============ -->
+  <text x="545" y="118" font-family="'Geist Mono', monospace" font-size="13" letter-spacing="3.9" fill="#86efac">UNICITY PREDICATE SWAP</text>
+
+  <!-- commit row: A COMMITS / B COMMITS -->
+  <rect x="545" y="132" width="218" height="68" rx="16" fill="url(#swap_gradOrange)" stroke="rgba(255,106,31,0.7)" stroke-width="1" />
+  <text x="654" y="166" text-anchor="middle" font-family="'Anton', sans-serif" font-size="22" fill="#fefefe">A COMMITS</text>
+  <text x="654" y="188" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="13" fill="rgba(254,254,254,0.55)">locks their token</text>
+
+  <rect x="782" y="132" width="218" height="68" rx="16" fill="url(#swap_gradOrange)" stroke="rgba(255,106,31,0.7)" stroke-width="1" />
+  <text x="891" y="166" text-anchor="middle" font-family="'Anton', sans-serif" font-size="22" fill="#fefefe">B COMMITS</text>
+  <text x="891" y="188" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="13" fill="rgba(254,254,254,0.55)">locks their token</text>
+
+  <!-- converging arrows (original inline svg 0 0 460 46, mapped over x 545..1000 y 210..256) -->
+  <path d="M664 212 C 713 230, 738 240, 757 252" fill="none" stroke="#FF6A1F" stroke-width="2.2" marker-end="url(#swap_ar)" />
+  <path d="M881 212 C 832 230, 807 240, 788 252" fill="none" stroke="#FF6A1F" stroke-width="2.2" marker-end="url(#swap_ar)" />
+
+  <!-- Unicity service -->
+  <rect x="545" y="262" width="455" height="68" rx="16" fill="url(#swap_gradOrangeStrong)" stroke="rgba(255,106,31,0.9)" stroke-width="1" />
+  <text x="772" y="296" text-anchor="middle" font-family="'Anton', sans-serif" font-size="22" fill="#FF6A1F">UNICITY SERVICE</text>
+  <text x="772" y="318" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="14" fill="rgba(254,254,254,0.8)">the shared reference</text>
+
+  <!-- Automatic fairness callout -->
+  <rect x="545" y="342" width="455" height="126" rx="16" fill="url(#swap_gradGreen)" stroke="rgba(110,231,135,0.6)" stroke-width="1" />
+  <text x="569" y="380" font-family="'Anton', sans-serif" font-size="24" fill="#86efac">AUTOMATIC FAIRNESS</text>
+  <text x="569" y="410" font-family="'Geist Mono', monospace" font-size="15"><tspan fill="#86efac">✓</tspan><tspan fill="rgba(254,254,254,0.85)"> both locked → swap completes</tspan></text>
+  <text x="569" y="432" font-family="'Geist Mono', monospace" font-size="15"><tspan fill="#86efac">✓</tspan><tspan fill="rgba(254,254,254,0.85)"> either walked away → both refunded</tspan></text>
+  <text x="569" y="454" font-family="'Geist Mono', monospace" font-size="15"><tspan fill="#86efac">✓</tspan><tspan fill="rgba(254,254,254,0.85)"> no deadlines, no chasing, done</tspan></text>
+</svg>
