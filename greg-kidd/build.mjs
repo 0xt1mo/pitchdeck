@@ -27,8 +27,8 @@ body{background:#000}
 .glow{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 60% 50% at 50% 46%,rgba(255,106,31,.08),transparent 70%)}
 .pad{position:relative;z-index:2;height:100%;padding:var(--mt) var(--mx) var(--mb);display:flex;flex-direction:column;justify-content:flex-start}
 .pad.cover{justify-content:center;align-items:center;text-align:center}
-.head{flex:0 0 auto;min-height:150px}
-.body{flex:1 1 auto;display:flex;flex-direction:column;justify-content:flex-start;padding-top:var(--s4)}
+.head{flex:0 0 auto;min-height:148px}
+.body{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center;padding-top:0}
 .anton{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em}
 .kick{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--faint)}
 .kick b{color:var(--o);font-weight:400}
@@ -43,7 +43,7 @@ h2 .o{color:var(--o)}
 .mega{font-family:"Anton",sans-serif;font-size:168px;line-height:.82;color:var(--o);letter-spacing:-.01em}
 .megaq{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-top:var(--s2);max-width:30ch;line-height:1.4}
 .principle{margin-top:0;max-width:none}
-.principle .pr{display:flex;align-items:baseline;gap:var(--s3);padding:var(--s2) 0;border-top:1px solid var(--rule)}
+.principle .pr{display:flex;align-items:baseline;gap:var(--s3);padding:var(--s4) 0;border-top:1px solid var(--rule)}
 .principle .pr:last-child{border-bottom:1px solid var(--rule)}
 .principle .a{color:var(--o);font-family:"Anton",sans-serif;font-size:16px}
 .principle .t{color:var(--dim);font-size:15px}.principle .t b{color:var(--ink);font-weight:600;display:block;font-size:17px;margin-bottom:3px;font-family:"Anton",sans-serif;letter-spacing:.01em;text-transform:uppercase}
@@ -203,7 +203,7 @@ n=>S2(n,'PROOF · <b>READ THE MATH</b>',
   <div class="punch">Public on GitHub, <span class="o">open to anyone who wants to read the proofs.</span></div>`),
 
 // 13 THE ASK
-n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad"><div class="head">${kick(n,'THE ASK · <b>CO-BUILD</b>')}<h2>Put the rule where the money is,<br>and make it hold <span class="o">between strangers</span>.</h2></div><div class="body">
+n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad"><div class="head">${kick(n,'THE ASK · <b>CO-BUILD</b>')}<h2 style="font-size:33px;max-width:none">Put the rule where the money is, and make it hold <span class="o">between strangers</span>.</h2></div><div class="body">
   <div class="askbox">
     <div class="big">Raising <span class="o">$5M Seed</span> · $25M cap / $50M token FDV · SAFE + token warrant.</div>
     <div class="ml">First build: a <b>USBC dollar that settles the moment the credential checks out</b> — the rule travels inside the money, so a transfer that cannot satisfy it is never constructed.</div>
