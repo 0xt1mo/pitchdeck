@@ -84,19 +84,19 @@ n=>`<div class="slide"><div class="grid"></div><div class="glow"></div>
 <div class="pad cover">
   <svg viewBox="0 0 641 128" style="height:96px;width:auto"><use href="#ulogo"/></svg>
   <div class="crule" style="margin:52px auto 48px"></div>
-  <div class="statement" style="font-size:62px">Three problems.<br><span class="o">One still open.</span></div>
-  <div class="sub" style="margin-top:44px">Fair access has always come down to three. The third — proving who is on the other end — is the part Unicity builds.</div>
+  <div class="statement" style="font-size:46px;line-height:1.16">Cut out the middleman.<br>Move the value freely.<br><span class="o">Prove who is on the other end.</span></div>
+  <div class="sub" style="margin-top:42px;max-width:74ch">Fair access takes all three. The first two were solved a decade ago. The third — a dollar that knows who may receive it — is what Unicity builds.</div>
   <div class="fp">Tallinn · Zug · Abu Dhabi</div>
 </div></div>`,
 
 // 2 THE THREE PROBLEMS — big full-width rows fill
-n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,'FAIR ACCESS · <b>THE THREE PROBLEMS</b>')}<h2>Two were solved a decade ago. <span class="o">The third is the hard one.</span></h2></div>
+n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,'FAIR ACCESS · <b>THE THREE PROBLEMS</b>')}<h2>The hard one: <span class="o">proving who is on the other end.</span></h2></div>
   <div class="principle">
     <div class="pr"><span class="a">01</span><div class="t"><b>Cut out the middleman</b>A decade of open infrastructure settled it.</div><div class="r ok">solved</div></div>
     <div class="pr"><span class="a">02</span><div class="t"><b>Let value move freely</b>Stablecoins now move hundreds of billions a year.</div><div class="r ok">solved</div></div>
     <div class="pr"><span class="a">03</span><div class="t"><b>Prove who is on the other end</b>So the money itself knows who may receive it.</div><div class="r open">still open</div></div>
   </div>
-  <div class="note">We come back to the third with the money, the math, and the team.</div>
+  <div class="note">The rest of this is how the money proves it — with the math, and the team behind it.</div>
 </div>${foot(n)}</div>`,
 
 // 3 THE FIELD — 2-col text + chart
