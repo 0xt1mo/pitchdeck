@@ -1,21 +1,23 @@
 # Unicity × Greg Kidd / Hard Yaka — Seed Proposal
 
-A seed-investor deck pitching **Unicity** as *the settlement layer for fair access*, written for **Greg Kidd** (Hard Yaka). It reframes the Unicity protocol deck around Greg's own thirty-year campaign — cut the middleman, prove the identity, move the value freely — and the one piece the rails never carried: **a settlement layer where the credential is load-bearing, not optional.**
+A seed-investor deck pitching **Unicity** to **Greg Kidd** (Hard Yaka) — written as a *story*, not a feature list. Greg is the hero; Unicity is the guide that hands him the missing piece. It reframes the Unicity protocol deck around his thirty-year campaign for fair access — cut out the middleman, prove who's really there, let the money move — and the one piece that never held: a place for value to settle where the rule lives *inside the money*, so nothing moves unless it's satisfied.
 
-## The thesis (the meeting-winner)
+## The story
 
-Greg's identity bet — GlobaliD — was **right, but early**. It didn't fail on cryptography; it stalled because self-sovereign identity had **no economic forcing function**. The credential always sat *next to* the transaction, never inside it — skip the check and nothing broke.
+Greg's identity bet — GlobaliD — was **right, but early**. It didn't fail on cryptography; it stalled because nobody ever *had* to use it: the credential always sat next to the payment, and you could skip it with nothing broken. (Microsoft shut its identity chain in 2023; Trinsic folded before a credential was ever reused — the whole field hit the same wall.)
 
-> **Unicity's receive predicate is the first rail where the asset cannot move unless the credential is present — the forcing function the thesis never had.**
+He learned the lesson and built **USBC**: identity *inside* the money, on one bank charter. That instinct is exactly right — the only question left is how to make it true everywhere.
 
-And the buyer has finally arrived: the agent that cannot round-trip a centralized check and must verify in-band, at the edge. Greg already reached this conclusion building **USBC** (identity inside the money, on one bank charter). Unicity is that move generalized one layer down — *a rail USBC could settle on, not one that competes with it.*
+> **The buyer that can't skip the check has finally arrived: the machine. Unicity is where USBC's move works everywhere — the credential lives inside the asset, so the money won't move unless the rule is satisfied. The piece GlobaliD never had.**
+
+Structure borrowed from *Storyteller Tactics*: **Hero & Guide** (Greg is the hero, Unicity the guide), **Man in a Hole** (GlobaliD = the fall, the machine economy = the climb out), **The Dragon & the City** (machines as threat *and* opportunity), and the **POPP** pitch arc (problem → opportunity → practical → promise).
 
 ## What's here
 
 | File | What it is |
 |---|---|
 | `OUTREACH-NOTE.md` | The 3-line note that gets the meeting. **Send this first** — the deck is the leave-behind. |
-| `index.html` | The 14-slide deck (self-contained; open in a browser). |
+| `index.html` | The 17-slide deck (self-contained; open in a browser). |
 | `Unicity_HardYaka_Seed_Deck.pdf` | The deck as a 16:9 PDF. |
 | `slides/` | Per-slide PNG renders. |
 | `build.mjs` | Reproducible build — renders `index.html`, `slides/`, and the PDF. |
@@ -23,27 +25,29 @@ And the buyer has finally arrived: the agent that cannot round-trip a centralize
 
 ## The arc
 
-1. Cover — the credential lives *inside* the transfer
-2. The throughline — every bet assumed a layer none of them own
-3. The team — KSI / Estonia, the backbone a nation runs on (credibility gate, moved early)
-4. Why now — the majority actor online is already a machine; the message is the settlement
-5. **The diagnosis — right thesis, no forcing function** (the GlobaliD post-mortem)
-6. **The portfolio map — the floor under 250 bets** (where Unicity sits)
-7. **The tradeoff — privacy / compliance / throughput, pick two** (the trilemma)
-8. **The move — make the money a thing you hold** (ledger entry → self-contained bearer file)
-9. **Verify it yourself, like cash** (the bearer flow — proof travels with the asset)
-10. The architecture — the chain's only job is to prevent double-spending (the uniqueness oracle)
-11. **Compliance by construction — not a guy in the middle** (the receive predicate)
-12. The swap — both parties commit, nobody chases a timeout
-13. **The life arc — you already reached this conclusion, inside one bank**
-14. Proof — three formal papers; the white paper is marketing, these are math
-15. The boundary — what a charter structurally cannot cross
-16. Live — agents discover, transact, and settle today
-17. The ask — a $5M co-build, one layer down
+1. **Cover** — thirty years, one fight: a fair shot at your own money
+2. **The quest** — fair access always came down to three things; two shipped, one never held
+3. **The wound** — GlobaliD: you bet your career on it; it was right, it was early
+4. **What you did next** — USBC: you stopped bolting identity on, you put it inside the money
+5. **What changed** — the buyer showed up: the internet is mostly machines, and a machine can't skip the check
+6. **How it works ①** — take the dollar off the ledger, make it a file you hold *(transformation)*
+7. **How it works ②** — hand someone a ten, they don't phone a committee *(bearer flow)*
+8. **How it works ③** — the only job a chain ever had: stop double-spends *(uniqueness oracle)*
+9. **The missing piece** — the dollar checks who's allowed to hold it, by itself *(receive predicate)*
+10. **The tradeoff** — on a shared ledger you get two of three, never all three *(trilemma)*
+11. **It's not a toy** — two strangers trade, no middleman, no timer *(atomic swap)*
+12. **What it becomes** — once a trade needs no middleman, the market runs itself *(agentic hub)*
+13. **Who we are** — the team a government already trusts with its records *(KSI + radical honesty)*
+14. **Trust the math** — the white paper is marketing; these three papers are the real thing
+15. **Back to USBC** — a charter only settles for its own members; the space between is what we built
+16. **Where this sits** — every bet you funded assumed this layer was already there *(portfolio map)*
+17. **The ask** — you started this thirty years ago; finish it. A $5M co-build.
 
 ## Infographics & voice
 
-All seven protocol infographics are ported faithfully from the Unicity protocol deck (`tech-finance`) and live in `diagrams/` as self-contained, recolored SVG: the **trilemma Venn** (slide 7), the **ledger→bearer transformation** (8), the **bearer A→token+proof→B flow** (9), the **uniqueness-oracle stack** (10), the **receive-predicate branch** (11), the **HTLC-vs-predicate swap** (12), the **agentic hub** (16). The voice is taken from how Unicity presents in the room — first-principles, anti-fluff, radically honest: *privacy/compliance/throughput, pick two · the chain's only job is to prevent double-spending · verify it like cash · compliance by construction, not a guy in the middle · the message is the settlement · the white paper is marketing, the math is the proof.*
+All seven protocol infographics are ported faithfully from the Unicity protocol deck (`tech-finance`) and live in `diagrams/` as self-contained, recolored SVG — they carry the *show* in show-don't-tell: the **ledger→bearer transformation** (slide 6), the **bearer A→token+proof→B flow** (7), the **uniqueness-oracle stack** (8), the **receive-predicate branch** (9), the **trilemma Venn** (10), the **HTLC-vs-predicate swap** (11), the **agentic hub** (12).
+
+The voice is taken from how Unicity actually talks in the room — plain, first-principles, anti-fluff, radically honest, never abstract: *a fair shot at your own money · it was right, it was early · the buyer that can't skip the check · the only job a chain ever had is to stop double-spends · hand someone a ten, they don't phone a committee · the white paper is marketing, the math is the proof · not a casino.* No jargon, no "rail," no "forcing function" on a headline — the way a person would actually say it.
 
 ## Rebuild
 
