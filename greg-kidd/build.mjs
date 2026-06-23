@@ -152,7 +152,7 @@ n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr"
 n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad"><div class="hdr">${kick(n,'THE ACTOR CHANGED · <b>THE AGENTIC ECONOMY</b>')}<h2>Agentic payments are no longer a demo. <span class="o">The machines have started paying each other directly.</span></h2></div>
   <div class="statline"><div style="flex:none"><div class="mega">57.5%</div><div class="megaq">of web requests are automated, not human — Cloudflare, 2026</div></div>
   <div style="flex:1">
-    <div class="lead" style="margin-top:0;max-width:none;font-size:16px">Payments are messaging on steroids — and the machines have started sending. About <b>100 million on-chain payments crossed Base in nine months</b> (Chainalysis); Mastercard now builds payment infrastructure for machines. The amounts are small. The frequency is high. The path may cross cards, wallets, APIs and stablecoins. The problem is trust.</div>
+    <div class="lead" style="margin-top:0;max-width:none;font-size:16px">More than <b>100 million on-chain payments</b> have crossed Base in nine months (Chainalysis), and Mastercard now builds payment infrastructure for machines. The amounts are small. The frequency is high. The path may cross cards, wallets, APIs and stablecoins. The problem is trust.</div>
     <div class="punch" style="margin-top:26px">Who authorised it, who may receive it, the limit, why it settles — <span class="o">the proof rides with the money.</span></div>
   </div></div>
 </div>${foot(n)}</div>`,
