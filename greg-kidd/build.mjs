@@ -119,7 +119,7 @@ n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div clas
   <svg viewBox="0 0 641 128" style="height:96px;width:auto"><use href="#ulogo"/></svg>
   <div class="crule" style="margin:52px auto 48px"></div>
   <div class="statement" style="font-size:56px;line-height:1.05">Securing the<br><span class="o">Agentic Economy.</span></div>
-  <div class="sub" style="margin-top:38px;max-width:80ch">The internet is already mostly machines — and they have begun to pay each other. No shared ledger can settle them at machine speed. Unicity can: the money carries its own proof of who may receive it, and verifies on arrival.</div>
+  <div class="sub" style="margin-top:38px;max-width:80ch">Machines now pay each other at software speed — and no shared ledger can settle them. Unicity can: the money carries its own proof of who may receive it, and verifies on arrival.</div>
   <div class="fp">A seed proposal for Greg Kidd</div>
 </div></div>`,
 
@@ -135,8 +135,8 @@ n=>HD(n,'FAIR ACCESS · <b>THE THREE PROBLEMS</b>','Fair access takes three thin
 // 3 THE FIELD
 n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,'THE FIELD · <b>IDENTITY, AND WHERE IT STOPPED</b>')}<h2>Identity reached the right architecture <span class="o">before the market could carry it.</span></h2></div>
   <div class="cols"><div class="col" style="flex:1.15">
-    <div class="lead" style="margin-top:0;max-width:none">Self-sovereign identity had the third problem right, early. The field stalled at the same wall — did:ion retired in 2023, Trinsic wound down. The credential sat beside the transaction, and a check that can be skipped gets skipped.</div>
-    <div class="lead" style="max-width:none">USBC drew the right conclusion: put identity inside the dollar. On one bank charter it settles. Across charters — between strangers — it cannot. That gap is the third problem, still open.</div>
+    <div class="lead" style="margin-top:0;max-width:none">Self-sovereign identity had the third problem right, early: identity is permission to act. The field stalled at the same wall — did:ion retired in 2023, Trinsic wound down. The credential sat beside the transaction, and a check that can be skipped gets skipped.</div>
+    <div class="lead" style="max-width:none">USBC drew the right conclusion: put identity inside the dollar. On one bank charter it settles. Across charters — between strangers — it cannot. Closing that gap is the build.</div>
   </div><div class="col" style="flex:1">
     <svg width="100%" viewBox="0 0 520 300" style="height:auto">
       <line x1="52" y1="252" x2="492" y2="252" stroke="#2a2a26"/><line x1="52" y1="44" x2="52" y2="252" stroke="#2a2a26"/>
@@ -149,10 +149,10 @@ n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr"
 </div>${foot(n)}</div>`,
 
 // 4 MACHINE ECONOMY
-n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad"><div class="hdr">${kick(n,'THE ACTOR CHANGED · <b>THE AGENTIC ECONOMY</b>')}<h2>Most of the internet is already machines — <span class="o">and they have started to pay each other.</span></h2></div>
+n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad"><div class="hdr">${kick(n,'THE ACTOR CHANGED · <b>THE AGENTIC ECONOMY</b>')}<h2>Most of the internet is already machines — <span class="o">and they have started paying each other directly.</span></h2></div>
   <div class="statline"><div style="flex:none"><div class="mega">57.5%</div><div class="megaq">of web requests are automated, not human — Cloudflare, 2026</div></div>
   <div style="flex:1">
-    <div class="lead" style="margin-top:0;max-width:none;font-size:16px">This is machine finance, and it has already started. About <b>100 million on-chain payments crossed Base in nine months</b> (Chainalysis); Mastercard now runs an agent-payment system for machines. The amounts are tiny — cents — and that is the point. The old payment systems have a fee floor above thirty cents, so a machine paying a machine cannot use them.</div>
+    <div class="lead" style="margin-top:0;max-width:none;font-size:16px">Payments are messaging on steroids — and the machines have started sending. About <b>100 million on-chain payments crossed Base in nine months</b> (Chainalysis); Mastercard now runs an agent-payment system for machines. The amounts are tiny — cents — and that is the point. The old payment systems have a fee floor above thirty cents, so a machine paying a machine cannot use them.</div>
     <div class="punch" style="margin-top:26px">A machine cannot wait on hold while an intermediary clears it. <span class="o">The proof has to travel with the money.</span></div>
   </div></div>
 </div>${foot(n)}</div>`,
@@ -178,13 +178,13 @@ n=>DS(n,'HOW IT WORKS · <b>OFF THE LEDGER</b>',
 // 7 ONE QUESTION
 n=>DS(n,'HOW IT WORKS · <b>ONE QUESTION</b>',
   'The only job a chain ever had: <span class="o">has this been spent?</span>',
-  'Take everything else away and one job remains — stop the same money being spent twice. The network receives an opaque commitment and answers exactly that: spent, or unspent. Never the data, the parties, or the amount. Sophisticated cryptography — a trivial question.',
+  'Take everything else away and one job remains — stop the same money being spent twice. The network receives an opaque commitment and answers exactly that: spent, or unspent. Never the data, the parties, or the amount. Hard cryptography — one trivial question.',
   dia('oracle',560),
   mech([['Opaque commitment','The oracle sees only spent or unspent, never the trade itself.'],['Proves the tree, not the trade','A zero-knowledge proof attests the sparse-Merkle-tree state transition, not each payment.'],['Three proof types','Inclusion (registered, eternal), exclusion (low-latency settlement), unicity (the tree has not forked).']])),
 
 // 8 NOTHING ELSE — what moves to the edge
-n=>HD(n,'THE ARCHITECTURE · <b>WHAT MOVES TO THE EDGE</b>','Unicity proves uniqueness. <span class="o">Nothing else.</span>',
-  `<div class="lead" style="max-width:90ch">Everything a normal blockchain does for everyone — communication, storage, validation — moves to the parties who actually care, handled with ordinary tools. Verification is done by interested parties only, independent of every other transaction. That relocation, not a throughput number, is why it scales.</div>
+n=>HD(n,'THE ARCHITECTURE · <b>WHAT MOVES TO THE EDGE</b>','Everything else moves to the edge. <span class="o">Only uniqueness stays.</span>',
+  `<div class="lead" style="max-width:90ch">Everything a normal blockchain does for everyone — communication, storage, validation — moves to the parties who actually care, handled with ordinary tools. Each transaction is verified on its own, independent of every other one. That relocation, not a throughput number, is why it scales.</div>
   <div class="row3">
     <div class="cell"><div class="ct">Communication</div><div class="k">The asset carries its own proof; the wire just moves bytes — NOSTR, email, QR.</div></div>
     <div class="cell"><div class="ct">Storage</div><div class="k">State lives with the owner, not on every node — browser, device, IPFS.</div></div>
@@ -200,7 +200,7 @@ n=>HD(n,'THE ARC · <b>WHY THIS WAS COMING</b>','The unbundling of the blockchai
     <div class="tlc"><div class="yr">2023 · SUI · FASTPAY</div><div class="nm">Correctness<br>only</div><div class="ds">Global ordering removed for assets that share no state.</div></div>
     <div class="tlc last"><div class="yr">2026 · UNICITY</div><div class="nm">Uniqueness<br>only</div><div class="ds">The network attests one thing — has this been spent. Correctness moves to the edge.</div></div>
   </div>
-  <div class="punch">Not a competitor to chains — <span class="o">the logical endpoint of a decade of consensus research.</span></div>`),
+  <div class="punch"><span class="o">The logical endpoint of a decade of consensus research</span> — not a competitor to chains.</div>`),
 
 // 10 THE ARCHITECTURE STACK
 n=>DS(n,'WHO BUILT IT · <b>THE STACK</b>',
@@ -212,9 +212,9 @@ n=>DS(n,'WHO BUILT IT · <b>THE STACK</b>',
 // 11 THE RULE INSIDE THE TOKEN
 n=>DS(n,'COMPLIANCE · <b>THE RULE INSIDE THE TOKEN</b>',
   'The rule lives <span class="o">inside the money.</span>',
-  'Each token carries its own receive-condition — KYC, jurisdiction, sanctions — an advanced form of Bitcoin\'s locking script. A transfer to a party that fails it cannot be constructed. No issuer to call, no monitor after the fact: the asset attests its own compliance, never the private data behind it.',
+  'Each token carries its own receive-condition — KYC, jurisdiction, sanctions — an advanced form of Bitcoin\'s locking script. A transfer to a party that fails it cannot be constructed. The asset attests its own compliance — never the private data behind it.',
   dia('compliance',980),
-  mech([['Programmable','Signature, multi-sig, k-of-n threshold or time-lock, written once and travelling with the token.'],['Protocol-enforced','The check lives in the asset, not an app or custodian — no intermediary to bypass.'],['Risk managed, not avoided','The issuer sets who may hold the token; a rogue counterparty is quarantined, not walled out.']])),
+  mech([['Programmable','Signature, multi-sig, k-of-n threshold or time-lock, written once and travelling with the token.'],['Protocol-enforced','The check lives in the asset, not an app or custodian — no intermediary to bypass.'],['Risk managed, not avoided','The issuer sets who may hold the token; a rogue counterparty is on the platform and contained, not kept out.']])),
 
 // 12 THREE OBSERVERS
 n=>HD(n,'PRIVACY · <b>PROVEN, NOT ASSERTED</b>','Total privacy by default — <span class="o">against three observers, proven.</span>',
@@ -236,7 +236,7 @@ n=>DS(n,'RISK · <b>NO BRIDGE, NOTHING TO HACK</b>',
 n=>`<div class="slide"><div class="grid"></div><div class="pad cover">
   <div class="statement" style="font-size:64px">Five wins.<br><span class="o">One hard problem.</span></div>
   <div class="crule"></div>
-  <div class="sub" style="max-width:80ch">Removing the shared ledger buys five things — speed, throughput, privacy, compliance, no bridge. It leaves one. With no shared state, the tokens themselves must enforce atomicity — and that is the trade.</div>
+  <div class="sub" style="max-width:80ch">Remove the shared ledger and five things follow — speed, scale, privacy, compliance, no bridge. One remains. With no shared state, the tokens themselves must enforce atomicity — and that is the trade.</div>
 </div>${foot(n)}</div>`,
 
 // 15 THE TRADE
@@ -249,13 +249,13 @@ n=>DS(n,'MARKET MICROSTRUCTURE · <b>THE TRADE</b>',
 // 16 SCALE BY ADDING SHARDS
 n=>DS(n,'SCALABILITY · <b>HORIZONTAL BY DESIGN</b>',
   'The oracle validates nothing. <span class="o">Throughput is added, not rationed.</span>',
-  'The oracle re-executes nothing — it certifies one consistency proof per round, not each payment. So cost per transaction collapses, and capacity grows the way servers do: add a shard. It is permissionless and redundant, so it is not a new chokepoint.',
+  'The oracle re-executes nothing — it certifies one consistency proof per round, not each payment. Cost per transaction collapses. Capacity grows the way servers do: add a shard. Permissionless and redundant, so it is not a new chokepoint.',
   dia('shards',1080),
   mech([['Add a shard, +30,000 tx/sec','A design figure on a single consumer CPU — Plonky3 AIR, no trusted setup. Stated, not a live benchmark.'],['Sub-microcent per proof','Each new shard adds capacity; the proofs stay succinct.'],['Permissionless, redundant','Independent staked aggregators join freely; sub-trees run in parallel, with no global bottleneck.']])),
 
 // 17 THE MACHINE MARKET — CLOB matrix
 n=>HD(n,'THE PAYOFF · <b>THE MACHINE MARKET</b>','CEX speed. DEX custody. <span class="o">Private and compliant.</span>',
-  `<div class="lead" style="max-width:90ch">When two agents settle directly, the venue in the middle has nothing left to do. Binance has the speed. Uniswap has the custody. Neither has the privacy, and neither was built for a machine. Unicity is the first with all of it.</div>
+  `<div class="lead" style="max-width:90ch">When two agents settle directly, the venue in the middle has nothing left to do. Binance has the speed. Uniswap has the custody. Neither has the privacy, and neither was built for a machine. Unicity has all of it, with no venue at all.</div>
   <div class="tbl">
     <div class="trow head" style="grid-template-columns:1.5fr 1fr 1fr 1fr 1.1fr"><div class="tc"></div><div class="tc">Binance</div><div class="tc">Uniswap</div><div class="tc">Hyperliquid</div><div class="tc u">Unicity</div></div>
     <div class="trow" style="grid-template-columns:1.5fr 1fr 1fr 1fr 1.1fr"><div class="tc lbl">Speed</div><div class="tc">sub-second</div><div class="tc mut">block time</div><div class="tc">fast</div><div class="tc win ucol">sub-second</div></div>
@@ -274,7 +274,7 @@ n=>DS(n,'WHAT GETS BUILT · <b>AN ECONOMY OF MACHINES</b>',
 
 // 19 VISION OF THE TITANS
 n=>HD(n,'EXTERNAL VALIDATION · <b>EVERYONE CONFIRMS THE DIAGNOSIS</b>','The serious players are spending billions <span class="o">to escape the ledgers they built.</span>',
-  `<div class="lead" style="max-width:90ch">Read Allaire, Yakovenko, Hoskinson and Kidd side by side and the conclusion is the same: a machine-driven liquidity shock is coming, and today's ledgers cannot take it. They optimise the ledger. Unicity removes it.</div>
+  `<div class="lead" style="max-width:90ch">Allaire, Yakovenko, Hoskinson and Kidd reach the same conclusion: a machine-driven liquidity shock is coming, and today's ledgers cannot take it. They optimise the ledger. Unicity removes it.</div>
   <div class="tbl">
     <div class="trow head" style="grid-template-columns:1.1fr 2.4fr 1fr"><div class="tc">Player</div><div class="tc">Their move</div><div class="tc u">Approach</div></div>
     <div class="trow" style="grid-template-columns:1.1fr 2.4fr 1fr"><div class="tc lbl">Circle</div><div class="tc">Pivoted to infrastructure — the Arc L1, a $222M presale, bought Malachite.</div><div class="tc mut">optimise the ledger</div></div>
