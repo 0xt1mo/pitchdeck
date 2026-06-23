@@ -166,7 +166,7 @@ n=>HD(n,'THE STRUCTURAL LIMIT · <b>THE SHARED LEDGER</b>','A shared ledger was 
     <div class="cell"><div class="ct">Validate</div><div class="k">Every node re-runs every transaction.</div></div>
     <div class="cell"><div class="ct">Record</div><div class="k">Every node stores the whole global state, forever.</div></div>
   </div>
-  <div class="punch">The bottleneck is the design, not the implementation. <span class="o">So Unicity removes the shared ledger.</span></div>`),
+  <div class="punch">The limit is structural — no implementation escapes it. <span class="o">Unicity removes the shared ledger.</span></div>`),
 
 // 6 OFF THE LEDGER
 n=>DS(n,'HOW IT WORKS · <b>OFF THE LEDGER</b>',
