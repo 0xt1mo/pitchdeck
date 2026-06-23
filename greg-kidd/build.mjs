@@ -111,15 +111,15 @@ const SL=[
   <div class="crule"></div>
   <div class="ctitle">Securing the <span class="o">Agentic Economy</span></div>
   <div class="csub">A strategic seed proposal for Greg Kidd · Hard Yaka</div>
-  <div class="ccore">The autonomous machine economy is bottlenecked by fragmented authorization and slow settlement infrastructure. Unicity binds the proof of <b>identity</b> and <b>permission</b> directly to the payment asset itself.</div>
+  <div class="ccore">The machine economy cannot run on human infrastructure. Unicity embeds <b>identity, permissions, and settlement</b> directly into the digital asset.</div>
 `,' cover'),
 // 2 MARKET SHIFT
 ()=>SLD(2,`${head('The actor has changed: <span class="o">the rise of machine finance</span>','Autonomous agents now initiate high-frequency, micro-value transactions at scale.')}
   <div class="statrow"><div style="flex:none"><div class="mega">57.5%</div><div class="megacap">of web requests are automated, not human — Cloudflare, 2026</div></div>
-  <div class="core">Traditional infrastructure cannot settle that volume securely, and the failure point is <b>trust</b>. Standard payment networks cannot natively verify an agent's authorization, enforce a spending limit, or prove a recipient's identity without slow central intermediaries. Unicity makes the cryptographic <b>proof of authority travel with the money</b>.</div></div>`),
+  <div class="core">Machine commerce requires machine trust. Legacy networks cannot verify an AI agent's authority or enforce a budget without centralized bottlenecks. Unicity forces the cryptographic <b>proof of authority to travel natively with the money</b>.</div></div>`),
 // 3 BOTTLENECK
 ()=>SLD(3,`${head('The structural bottleneck: <span class="o">the shared ledger</span>','Global consensus architectures cannot physically process machine-speed commerce.')}
-  <div class="core">Traditional blockchains require every node to broadcast, order, validate, and record every transaction. This shared-ledger design imposes a permanent ceiling on throughput and privacy. True <b>peer-to-peer settlement</b> requires eliminating the shared ledger entirely.</div>
+  <div class="core">The shared ledger is a permanent ceiling on scale and privacy. Forcing billions of micro-transactions through a global queue guarantees network collapse. True <b>peer-to-peer settlement</b> requires eliminating the shared ledger entirely.</div>
   <div class="cells">
     <div class="cell"><div class="ct">Broadcast</div><div class="ck">Every node hears every transaction.</div></div>
     <div class="cell"><div class="ct">Order</div><div class="ck">Global agreement on the sequence of all of them.</div></div>
@@ -128,22 +128,22 @@ const SL=[
   </div>`),
 // 4 TRILEMMA (new)
 ()=>SLD(4,`${head('The stablecoin trilemma: <span class="o">pick two</span>','Every digital-dollar design has been forced to sacrifice one of compliance, privacy, or throughput.')}
-  <div class="two"><div class="cL"><div class="core">A public ledger delivers compliance and throughput, but it exposes every balance and counterparty. Add zero-knowledge proofs and privacy returns, but throughput collapses under the proving cost. Greg Kidd's payments portfolio lives inside this trade-off. Unicity is the first protocol to hold <b>all three at once</b>, because it never places the transaction on a shared ledger to begin with.</div></div><div class="cR">${dia('trilemma')}</div></div>`),
+  <div class="two"><div class="cL"><div class="core">A public ledger delivers compliance and throughput, but it exposes every balance and counterparty. Add zero-knowledge proofs and privacy returns, but throughput collapses under the proving cost. The entire payment landscape is trapped in this trade-off. Unicity is the first protocol to hold <b>all three at once</b>, because it never places the transaction on a shared ledger to begin with.</div></div><div class="cR">${dia('trilemma')}</div></div>`),
 // 5 INFRASTRUCTURE GAP
-()=>SLD(5,`${head('The final infrastructure gap: <span class="o">embedded identity</span>','The market solved disintermediation and value transfer. It has not solved decentralized counterparty verification.')}
+()=>SLD(5,`${head('The final infrastructure gap: <span class="o">embedded identity</span>','We solved disintermediation. We solved digital value. Counterparty verification remains broken.')}
   <div class="pts">
     <div class="pt"><div class="n">01</div><div class="b"><div class="bt">Disintermediation</div><div class="bd">Open infrastructure bypassed the legacy financial middleman.</div></div><div class="s ok">solved</div></div>
     <div class="pt"><div class="n">02</div><div class="b"><div class="bt">Digital value</div><div class="bd">Stablecoins now settle tens of trillions of dollars a year.</div></div><div class="s ok">solved</div></div>
     <div class="pt"><div class="n">03</div><div class="b"><div class="bt">Cryptographic identity</div><div class="bd">No blockchain can natively verify a recipient's legal or operational standing before a transaction executes.</div></div><div class="s no">unsolved</div></div>
   </div>
-  <div class="close">Unicity was engineered to close <span class="o">the third gap</span>.</div>`),
+  <div class="close">Unicity was engineered to close <span class="o">this final gap</span>.</div>`),
 // 6 SIDE-CAR TO PROTOCOL
 ()=>SLD(6,`${head('From side-car to protocol: <span class="o">evolving digital identity</span>','Verification must be built into the asset, not layered on as an optional application check.')}
   <div class="core" style="font-size:15.5px;max-width:106ch">Early self-sovereign identity stalled because the credential sat parallel to the transaction, and a check that can be skipped gets skipped. USBC drew the right conclusion: identity and compliance must reside <b>inside the dollar itself</b>. Unicity supplies the underlying protocol that makes embedded identity strictly enforceable across any jurisdiction.</div>
   <div class="rule"></div>`),
 // 7 BEARER INSTRUMENTS
 ()=>diaslide(7,'From ledger entries to <span class="o">bearer instruments</span>','Off-chain settlement restores the properties of physical cash to digital stablecoins.',
-  `A standard on-chain stablecoin is only an entry on a shared ledger. Unicity converts it into a <b>self-contained, self-proving bearer instrument</b>. The value and the proof of validity live within the object, so the asset moves <b>peer-to-peer</b> across any transport layer (NOSTR, HTTP, QR) with no centralized ledger lookup.`,'xform'),
+  `On-chain stablecoins are just ledger entries. Unicity converts them into <b>self-contained, self-proving bearer instruments</b>. The asset carries its own proof of validity, moving <b>peer-to-peer</b> across any transport layer (HTTP, QR, NOSTR) with zero ledger lookups.`,'xform'),
 // 8 ORACLE + UNBUNDLING TIMELINE
 ()=>SLD(8,`${head('The uniqueness oracle: <span class="o">unbundling consensus</span>','Each generation of consensus removed work from the network. Unicity keeps only the irreducible function.')}
   <div class="two" style="margin-top:22px"><div class="cL"><div class="core">Unicity introduces the <b>Uniqueness Oracle</b>, which attests to one thing: has this token been spent? Because the Oracle never re-executes transactions or reads payloads, throughput scales horizontally — <b>by design, 30,000 transactions per second per shard</b> at sub-microcent cost.</div></div><div class="cR">${dia('oracle')}</div></div>
@@ -154,7 +154,7 @@ const SL=[
   </div>`),
 // 9 RECEIVE PREDICATE
 ()=>diaslide(9,'Protocol-enforced compliance: <span class="o">the receive predicate</span>','Cryptographically gating asset transfers without sacrificing peer-to-peer privacy.',
-  `Standard compliance puts a central facilitator on a public ledger, which breaks enterprise privacy. Unicity uses the <b>Receive Predicate</b> instead. KYC, jurisdiction, and accreditation are programmed by the issuer directly into the bearer asset and enforced before receipt is allowed. If the recipient cannot satisfy the predicate locally, the transfer cannot execute. <b>The asset enforces its own compliance.</b>`,'compliance'),
+  `Compliance should not require a central facilitator. Unicity introduces the <b>Receive Predicate</b>. KYC, jurisdiction, and accreditation are programmed directly into the asset and enforced before receipt is allowed. If the recipient cannot satisfy the predicate locally, the transfer mathematically fails. <b>The asset enforces its own compliance.</b>`,'compliance'),
 // 10 PRIVACY
 ()=>SLD(10,`${head('Privacy by construction: <span class="o">proven against every observer</span>','Confidentiality is a founding property of the protocol, not a check added at the application layer.')}
   <div class="core">The privacy holds against all three observers in any transaction, and the mathematical papers prove it — which is what makes Unicity viable for the institutional and machine-to-machine flows that public ledgers expose.</div>
@@ -204,7 +204,7 @@ const SL=[
   </div>`),
 // 15 AGENTIC DAC
 ()=>diaslide(15,'What gets built: <span class="o">the agentic corporation</span>','Agents become the new smart contracts, executing verifiable logic directly on bearer assets.',
-  `Unicity built a decentralized autonomous corporation for BlackRock: a weather-based parametric insurer whose capital, underwriting, and reinsurance cession all run as agents transacting in Unicity tokens. The logic is verifiable code, the settlement is peer-to-peer, and the compliance travels inside each asset. This is the natural application of <b>identity-bound, machine-speed settlement</b>.`,'dac'),
+  `Unicity built a decentralized autonomous corporation for BlackRock: a weather-based parametric insurer whose capital, underwriting, and reinsurance cession all run as agents transacting in Unicity tokens. The logic is verifiable code, the settlement is peer-to-peer, and the compliance travels inside each asset. Settlement is only the entry point. <b>The same protocol runs the entire corporation.</b>`,'dac'),
 // 16 INCUMBENTS VALIDATE
 ()=>SLD(16,`${head('The incumbents validate <span class="o">the diagnosis</span>','The largest payments and crypto players are spending billions to work around the ledger architecture they built.')}
   <div class="core" style="max-width:none">Google's AP2 authorizes the agent and Coinbase's x402 settles the payment, while the major chains optimize the ledger underneath. Each layer holds one fragment of the proof, so the mandate and the audit trail scatter across separate systems. <b>Unicity keeps the entire proof inside the asset.</b></div>
