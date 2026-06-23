@@ -40,6 +40,7 @@ body{background:#000}
 .two .cL{flex:0 0 44%;max-width:44%}.two .cL .core{margin-top:0;max-width:none}
 .two .cR{flex:1;min-width:0;display:flex;justify-content:center}
 .dia{width:100%}.dia svg{display:block;width:100%;height:auto;max-height:400px}
+.diafull{margin-top:22px;display:flex;justify-content:center}.diafull svg{display:block;width:100%;max-width:1340px;height:auto;max-height:482px}
 .statrow{display:flex;gap:52px;align-items:center;margin-top:20px}
 .mega{font-family:"Anton",sans-serif;font-size:168px;line-height:.8;color:var(--o);letter-spacing:-.01em;flex:none}
 .megacap{font-size:15.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);margin-top:12px;max-width:30ch;line-height:1.5}
@@ -102,7 +103,7 @@ let T=18;
 const foot=(n)=>`<div class="foot"><span class="lg"><svg viewBox="0 0 641 128"><use href="#ulogo"/></svg></span><span>Unicity · Seed proposal · Confidential — for Greg Kidd</span><span>${String(n).padStart(2,'0')} / ${T}</span></div>`;
 const head=(hmain,hsub)=>`<div class="hmain">${hmain}</div><div class="hsub">${hsub}</div>`;
 const SLD=(n,inner,cover='')=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad${cover}">${inner}</div>${cover?'':foot(n)}</div>`;
-const diaslide=(n,hm,hs,core,k)=>SLD(n,`${head(hm,hs)}<div class="two"><div class="cL"><div class="core">${core}</div></div><div class="cR">${dia(k)}</div></div>`);
+const diaslide=(n,hm,hs,core,k)=>SLD(n,`${head(hm,hs)}<div class="core">${core}</div><div class="diafull">${dia(k)}</div>`);
 
 const SL=[
 // 1 COVER
@@ -110,7 +111,7 @@ const SL=[
   <svg viewBox="0 0 641 128" style="height:80px;width:auto"><use href="#ulogo"/></svg>
   <div class="crule"></div>
   <div class="ctitle">Securing the <span class="o">Agentic Economy</span></div>
-  <div class="csub">A strategic seed proposal for Hard Yaka</div>
+  <div class="csub">A strategic seed proposal for Greg Kidd</div>
   <div class="ccore">The machine economy cannot run on human infrastructure. Unicity embeds <b>identity, permissions, and settlement</b> directly into the digital asset.</div>
 `,' cover'),
 // 2 MARKET SHIFT
@@ -168,7 +169,7 @@ const SL=[
   `A cross-chain bridge concentrates risk by holding value and trusting a relayed instruction. Unicity eliminates bridges entirely. A locked source-chain asset becomes a self-contained bearer token, and the recipient verifies the lock directly against the source contract. No cross-chain message exists to forge, no pooled liquidity to drain, and no custodian to compromise.`,'nobridge'),
 // 12 ATOMIC SWAP
 ()=>diaslide(12,'The atomic swap: <span class="o">settlement without an intermediary</span>','Trustless atomic swaps between self-contained bearer assets.',
-  `The conventional fix for trustless exchange is a timed lock (HTLC), but the clock becomes an attack surface where one side can stall and walk away. Unicity removes the clock using <b>Predicate Swaps</b>. Both parties commit independently, and the swap forms for both at once or not at all. Settlement runs off-chain at machine speed with <b>no mempool and no MEV</b>.`,'swap'),
+  `The conventional fix for trustless exchange is a timed lock (HTLC), but the clock becomes an attack surface where one side can stall and walk away. Unicity removes the clock using <b>Predicate Swaps</b>: both parties commit independently, and the swap forms for both at once or not at all. Settlement runs off-chain at machine speed with <b>no mempool and no MEV</b>.`,'swap'),
 // 13 X402 (new)
 ()=>SLD(13,`${head('X402, rebuilt: <span class="o">twelve steps to five</span>','Eliminating the network friction that operators spend billions trying to solve.')}
   <div class="core" style="max-width:none">The x402 standard enables machine payments over HTTP, but legacy models still route settlement through a slow facilitator and a public chain. By embedding authorization and proof directly into the bearer token, Unicity cuts the payment handshake from 12 steps to 5. The transaction clears instantly between client and server.</div>
