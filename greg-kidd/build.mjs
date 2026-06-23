@@ -110,16 +110,16 @@ const SL=[
   <svg viewBox="0 0 641 128" style="height:80px;width:auto"><use href="#ulogo"/></svg>
   <div class="crule"></div>
   <div class="ctitle">Securing the <span class="o">Agentic Economy</span></div>
-  <div class="csub">A strategic seed proposal for Greg Kidd · Hard Yaka</div>
+  <div class="csub">A strategic seed proposal for Hard Yaka</div>
   <div class="ccore">The machine economy cannot run on human infrastructure. Unicity embeds <b>identity, permissions, and settlement</b> directly into the digital asset.</div>
 `,' cover'),
 // 2 MARKET SHIFT
-()=>SLD(2,`${head('The actor has changed: <span class="o">the rise of machine finance</span>','Autonomous agents now initiate high-frequency, micro-value transactions at scale.')}
+()=>SLD(2,`${head('The macro shift: <span class="o">machine commerce requires machine trust</span>','Autonomous agents now initiate high-frequency, micro-value transactions at scale.')}
   <div class="statrow"><div style="flex:none"><div class="mega">57.5%</div><div class="megacap">of web requests are automated, not human — Cloudflare, 2026</div></div>
-  <div class="core">Machine commerce requires machine trust. Legacy networks cannot verify an AI agent's authority or enforce a budget without centralized bottlenecks. Unicity forces the cryptographic <b>proof of authority to travel natively with the money</b>.</div></div>`),
+  <div class="core">Automated systems already generate the majority of web requests. Legacy networks cannot verify an AI agent's authority or enforce a budget without centralized bottlenecks. Unicity forces the cryptographic <b>proof of authority to travel natively with the money</b>.</div></div>`),
 // 3 BOTTLENECK
-()=>SLD(3,`${head('The structural bottleneck: <span class="o">the shared ledger</span>','Global consensus architectures cannot physically process machine-speed commerce.')}
-  <div class="core">The shared ledger is a permanent ceiling on scale and privacy. Forcing billions of micro-transactions through a global queue guarantees network collapse. True <b>peer-to-peer settlement</b> requires eliminating the shared ledger entirely.</div>
+()=>SLD(3,`${head('The structural bottleneck: <span class="o">the shared ledger</span>','The shared ledger is a permanent ceiling on scale and privacy.')}
+  <div class="core">Traditional blockchains require every node to broadcast, order, validate, and record every transaction. Forcing billions of micro-transactions through a global queue guarantees network collapse. True <b>peer-to-peer settlement</b> requires eliminating the shared ledger entirely.</div>
   <div class="cells">
     <div class="cell"><div class="ct">Broadcast</div><div class="ck">Every node hears every transaction.</div></div>
     <div class="cell"><div class="ct">Order</div><div class="ck">Global agreement on the sequence of all of them.</div></div>
@@ -127,10 +127,10 @@ const SL=[
     <div class="cell"><div class="ct">Record</div><div class="ck">Every node stores the whole state, forever.</div></div>
   </div>`),
 // 4 TRILEMMA (new)
-()=>SLD(4,`${head('The stablecoin trilemma: <span class="o">pick two</span>','Every digital-dollar design has been forced to sacrifice one of compliance, privacy, or throughput.')}
-  <div class="two"><div class="cL"><div class="core">A public ledger delivers compliance and throughput, but it exposes every balance and counterparty. Add zero-knowledge proofs and privacy returns, but throughput collapses under the proving cost. The entire payment landscape is trapped in this trade-off. Unicity is the first protocol to hold <b>all three at once</b>, because it never places the transaction on a shared ledger to begin with.</div></div><div class="cR">${dia('trilemma')}</div></div>`),
+()=>SLD(4,`${head('The stablecoin trilemma: <span class="o">pick two</span>','Every digital-dollar design has been forced to sacrifice compliance, privacy, or throughput.')}
+  <div class="two"><div class="cL"><div class="core">A public ledger delivers compliance and throughput, but exposes every balance and counterparty. Add zero-knowledge proofs and privacy returns, but throughput collapses under the proving cost. The current payment landscape is trapped in this trade-off. Unicity is the first protocol to solve <b>all three simultaneously</b>, because it never places the transaction on a shared ledger to begin with.</div></div><div class="cR">${dia('trilemma')}</div></div>`),
 // 5 INFRASTRUCTURE GAP
-()=>SLD(5,`${head('The final infrastructure gap: <span class="o">embedded identity</span>','We solved disintermediation. We solved digital value. Counterparty verification remains broken.')}
+()=>SLD(5,`${head('The final infrastructure gap: <span class="o">embedded identity</span>','We solved disintermediation and digital value. Counterparty verification remains broken.')}
   <div class="pts">
     <div class="pt"><div class="n">01</div><div class="b"><div class="bt">Disintermediation</div><div class="bd">Open infrastructure bypassed the legacy financial middleman.</div></div><div class="s ok">solved</div></div>
     <div class="pt"><div class="n">02</div><div class="b"><div class="bt">Digital value</div><div class="bd">Stablecoins now settle tens of trillions of dollars a year.</div></div><div class="s ok">solved</div></div>
@@ -139,14 +139,14 @@ const SL=[
   <div class="close">Unicity was engineered to close <span class="o">this final gap</span>.</div>`),
 // 6 SIDE-CAR TO PROTOCOL
 ()=>SLD(6,`${head('From side-car to protocol: <span class="o">evolving digital identity</span>','Verification must be built into the asset, not layered on as an optional application check.')}
-  <div class="core" style="font-size:15.5px;max-width:106ch">Early self-sovereign identity stalled because the credential sat parallel to the transaction, and a check that can be skipped gets skipped. USBC drew the right conclusion: identity and compliance must reside <b>inside the dollar itself</b>. Unicity supplies the underlying protocol that makes embedded identity strictly enforceable across any jurisdiction.</div>
+  <div class="core" style="font-size:15.5px;max-width:106ch">Early self-sovereign identity stalled because the credential sat parallel to the transaction, and checks that can be skipped get skipped. Identity and compliance must reside <b>inside the dollar itself</b>. Unicity supplies the underlying protocol that makes embedded identity strictly enforceable across any jurisdiction.</div>
   <div class="rule"></div>`),
 // 7 BEARER INSTRUMENTS
 ()=>diaslide(7,'From ledger entries to <span class="o">bearer instruments</span>','Off-chain settlement restores the properties of physical cash to digital stablecoins.',
   `On-chain stablecoins are just ledger entries. Unicity converts them into <b>self-contained, self-proving bearer instruments</b>. The asset carries its own proof of validity, moving <b>peer-to-peer</b> across any transport layer (HTTP, QR, NOSTR) with zero ledger lookups.`,'xform'),
 // 8 ORACLE + UNBUNDLING TIMELINE
 ()=>SLD(8,`${head('The uniqueness oracle: <span class="o">unbundling consensus</span>','Each generation of consensus removed work from the network. Unicity keeps only the irreducible function.')}
-  <div class="two" style="margin-top:22px"><div class="cL"><div class="core">Unicity introduces the <b>Uniqueness Oracle</b>, which attests to one thing: has this token been spent? Because the Oracle never re-executes transactions or reads payloads, throughput scales horizontally — <b>by design, 30,000 transactions per second per shard</b> at sub-microcent cost.</div></div><div class="cR">${dia('oracle')}</div></div>
+  <div class="two" style="margin-top:22px"><div class="cL"><div class="core">Unicity introduces the <b>Uniqueness Oracle</b>, which attests to one thing only: has this token been spent? Because the Oracle never re-executes transactions or reads payloads, throughput scales horizontally — <b>by design, 30,000 transactions per second per shard</b>.</div></div><div class="cR">${dia('oracle')}</div></div>
   <div class="tl">
     <div class="tlc"><div class="yr">2009 · BITCOIN</div><div class="nm">Correctness + ordering</div><div class="ds">Every node certifies every transaction and agrees the global order.</div></div>
     <div class="tlc"><div class="yr">2023 · SUI · FASTPAY</div><div class="nm">Correctness only</div><div class="ds">Global ordering dropped for assets that share no state.</div></div>
@@ -154,24 +154,24 @@ const SL=[
   </div>`),
 // 9 RECEIVE PREDICATE
 ()=>diaslide(9,'Protocol-enforced compliance: <span class="o">the receive predicate</span>','Cryptographically gating asset transfers without sacrificing peer-to-peer privacy.',
-  `Compliance should not require a central facilitator. Unicity introduces the <b>Receive Predicate</b>. KYC, jurisdiction, and accreditation are programmed directly into the asset and enforced before receipt is allowed. If the recipient cannot satisfy the predicate locally, the transfer mathematically fails. <b>The asset enforces its own compliance.</b>`,'compliance'),
+  `Compliance should not require a central facilitator. Unicity introduces the <b>Receive Predicate</b>. KYC, jurisdiction, and accreditation are programmed directly into the asset. If the recipient cannot satisfy the predicate locally, the transfer mathematically fails. <b>The asset enforces its own compliance.</b>`,'compliance'),
 // 10 PRIVACY
-()=>SLD(10,`${head('Privacy by construction: <span class="o">proven against every observer</span>','Confidentiality is a founding property of the protocol, not a check added at the application layer.')}
-  <div class="core">The privacy holds against all three observers in any transaction, and the mathematical papers prove it — which is what makes Unicity viable for the institutional and machine-to-machine flows that public ledgers expose.</div>
+()=>SLD(10,`${head('Privacy by construction: <span class="o">proven against every observer</span>','Absolute confidentiality is the prerequisite for institutional capital flows.')}
+  <div class="core">Confidentiality is a founding property of the protocol, not an application-layer afterthought. Privacy is mathematically proven against all three observers.</div>
   <div class="obs">
     <div class="o1"><div class="ol">The network</div><div class="od">Sees only opaque commitments. It cannot read amounts, parties, or balances, nor link one transfer to the next.</div><div class="tg">proven</div></div>
     <div class="o1"><div class="ol">The sender</div><div class="od">Cannot watch where or when the recipient later spends what was sent.</div><div class="tg">proven</div></div>
     <div class="o1"><div class="ol">Anyone with the address</div><div class="od">Sees one published key; every sender derives a fresh, indistinguishable transaction key.</div><div class="tg">proven</div></div>
   </div>`),
 // 11 NO BRIDGE
-()=>diaslide(11,'No bridge, <span class="o">nothing to hack</span>','Cross-chain bridges are the largest loss category in crypto because they custody the asset and forward a forgeable message.',
-  `A bridge concentrates risk by holding value and trusting a relayed instruction. Unicity holds nothing. A locked source-chain asset becomes a self-contained bearer token, and the recipient verifies the lock directly against the source contract. No cross-chain message exists to forge, no pooled liquidity to drain, and no custodian to compromise. The asset <b>proves its own provenance</b>.`,'nobridge'),
+()=>diaslide(11,'No bridge, <span class="o">nothing to hack</span>','Eliminating the largest loss category in digital finance.',
+  `A cross-chain bridge concentrates risk by holding value and trusting a relayed instruction. Unicity eliminates bridges entirely. A locked source-chain asset becomes a self-contained bearer token, and the recipient verifies the lock directly against the source contract. No cross-chain message exists to forge, no pooled liquidity to drain, and no custodian to compromise.`,'nobridge'),
 // 12 ATOMIC SWAP
-()=>diaslide(12,'The atomic swap: <span class="o">settlement without an intermediary</span>','The hardest problem in cash-like money is the trade, where two parties exchange value with no one holding both legs.',
-  `The conventional fix is a timed lock, but the clock becomes the attack surface, because one side can stall and walk away. Unicity removes the clock. Both parties commit independently, and the swap either forms for both at once or not at all. Settlement runs off-chain at machine speed with <b>no mempool and no MEV</b> — the precondition for autonomous agents trading directly with one another.`,'swap'),
+()=>diaslide(12,'The atomic swap: <span class="o">settlement without an intermediary</span>','Trustless atomic swaps between self-contained bearer assets.',
+  `The conventional fix for trustless exchange is a timed lock (HTLC), but the clock becomes an attack surface where one side can stall and walk away. Unicity removes the clock using <b>Predicate Swaps</b>. Both parties commit independently, and the swap forms for both at once or not at all. Settlement runs off-chain at machine speed with <b>no mempool and no MEV</b>.`,'swap'),
 // 13 X402 (new)
-()=>SLD(13,`${head('X402, rebuilt: <span class="o">twelve steps to five</span>','Removing the facilitator and the shared ledger cuts the agent-payment handshake by more than half.')}
-  <div class="core" style="max-width:none">The x402 standard lets an agent pay for a resource over HTTP, but settlement still routes through a facilitator and a public chain. The bearer token carries its own authorization and proof, so the payment clears directly between client and server — the kind of friction reduction a payments operator like Square measures in basis points.</div>
+()=>SLD(13,`${head('X402, rebuilt: <span class="o">twelve steps to five</span>','Eliminating the network friction that operators spend billions trying to solve.')}
+  <div class="core" style="max-width:none">The x402 standard enables machine payments over HTTP, but legacy models still route settlement through a slow facilitator and a public chain. By embedding authorization and proof directly into the bearer token, Unicity cuts the payment handshake from 12 steps to 5. The transaction clears instantly between client and server.</div>
   <div class="x4">
     <div class="pan"><div class="ph"><span>Traditional x402</span><span class="pn">12 steps</span></div>
       <div class="stp"><span class="i">1</span>Client requests the resource</div>
@@ -193,21 +193,21 @@ const SL=[
       <div class="elsub">No facilitator. No shared ledger. No block wait.</div></div>
   </div>`),
 // 14 MACHINE MARKET
-()=>SLD(14,`${head('The machine market: <span class="o">what if there were no venue?</span>','When two agents settle directly, the exchange in the middle has nothing left to do.')}
-  <div class="core" style="max-width:none">Centralized exchanges deliver speed but custody the assets. Decentralized exchanges preserve self-custody but expose every order publicly and were never built for a machine counterparty. Unicity combines exchange-grade speed, self-custody, privacy, and protocol-enforced compliance with no venue at all.</div>
+()=>SLD(14,`${head('The machine market: <span class="o">venue-free trading</span>','CEX speed, DEX custody, with native privacy and compliance.')}
+  <div class="core" style="max-width:none">Legacy venues force institutional compromises. Unicity is the only protocol delivering sub-second settlement and strict self-custody, while maintaining unlinkable privacy and protocol-enforced compliance, with no venue at all.</div>
   <div class="tbl">
-    <div class="trow head" style="grid-template-columns:1.4fr 1fr 1fr 1fr 1.1fr"><div class="tc"></div><div class="tc">Binance</div><div class="tc">Uniswap</div><div class="tc">Hyperliquid</div><div class="tc u">Unicity</div></div>
-    <div class="trow" style="grid-template-columns:1.4fr 1fr 1fr 1fr 1.1fr"><div class="tc lbl">Speed</div><div class="tc">sub-second</div><div class="tc mut">block time</div><div class="tc">fast</div><div class="tc win ucol">sub-second</div></div>
-    <div class="trow" style="grid-template-columns:1.4fr 1fr 1fr 1fr 1.1fr"><div class="tc lbl">Self-custody</div><div class="tc mut">custodial</div><div class="tc">you hold keys</div><div class="tc">you hold keys</div><div class="tc win ucol">you hold keys</div></div>
-    <div class="trow" style="grid-template-columns:1.4fr 1fr 1fr 1fr 1.1fr"><div class="tc lbl">Privacy</div><div class="tc mut">operator sees all</div><div class="tc mut">fully public</div><div class="tc mut">public positions</div><div class="tc win ucol">unlinkable</div></div>
-    <div class="trow" style="grid-template-columns:1.4fr 1fr 1fr 1fr 1.1fr"><div class="tc lbl">Compliance</div><div class="tc">off-chain KYC</div><div class="tc mut">none</div><div class="tc mut">none</div><div class="tc win ucol">in the asset</div></div>
+    <div class="trow head" style="grid-template-columns:1.3fr 1.2fr 1.2fr 1.2fr"><div class="tc"></div><div class="tc">Legacy CEX</div><div class="tc">Legacy DEX</div><div class="tc u">Unicity</div></div>
+    <div class="trow" style="grid-template-columns:1.3fr 1.2fr 1.2fr 1.2fr"><div class="tc lbl">Speed</div><div class="tc">sub-second</div><div class="tc mut">block time</div><div class="tc win ucol">sub-second</div></div>
+    <div class="trow" style="grid-template-columns:1.3fr 1.2fr 1.2fr 1.2fr"><div class="tc lbl">Custody</div><div class="tc mut">custodial</div><div class="tc">self-custodial</div><div class="tc win ucol">self-custodial</div></div>
+    <div class="trow" style="grid-template-columns:1.3fr 1.2fr 1.2fr 1.2fr"><div class="tc lbl">Privacy</div><div class="tc mut">operator sees all</div><div class="tc mut">fully public</div><div class="tc win ucol">unlinkable</div></div>
+    <div class="trow" style="grid-template-columns:1.3fr 1.2fr 1.2fr 1.2fr"><div class="tc lbl">Compliance</div><div class="tc mut">off-chain</div><div class="tc mut">none</div><div class="tc win ucol">in the asset</div></div>
   </div>`),
 // 15 AGENTIC DAC
 ()=>diaslide(15,'What gets built: <span class="o">the agentic corporation</span>','Agents become the new smart contracts, executing verifiable logic directly on bearer assets.',
-  `Unicity built a decentralized autonomous corporation for BlackRock: a weather-based parametric insurer whose capital, underwriting, and reinsurance cession all run as agents transacting in Unicity tokens. The logic is verifiable code, the settlement is peer-to-peer, and the compliance travels inside each asset. Settlement is only the entry point. <b>The same protocol runs the entire corporation.</b>`,'dac'),
+  `Unicity engineered a decentralized autonomous corporation for BlackRock: a weather-based parametric insurer. Capital provisioning, underwriting, and reinsurance cession all run as autonomous agents transacting in Unicity tokens. Settlement is only the entry point. <b>The same protocol orchestrates the entire corporation.</b>`,'dac'),
 // 16 INCUMBENTS VALIDATE
-()=>SLD(16,`${head('The incumbents validate <span class="o">the diagnosis</span>','The largest payments and crypto players are spending billions to work around the ledger architecture they built.')}
-  <div class="core" style="max-width:none">Google's AP2 authorizes the agent and Coinbase's x402 settles the payment, while the major chains optimize the ledger underneath. Each layer holds one fragment of the proof, so the mandate and the audit trail scatter across separate systems. <b>Unicity keeps the entire proof inside the asset.</b></div>
+()=>SLD(16,`${head('The incumbents validate <span class="o">the diagnosis</span>','The market is spending billions to optimize the ledger. We eliminated it.')}
+  <div class="core" style="max-width:none">The largest players are spending billions to work around the ledger they built. Each holds only a fragment of the proof: authorization here, settlement there, the audit trail reconstructed across systems. <b>Unicity keeps authorization, settlement, and the audit trail whole, inside the asset.</b></div>
   <div class="tbl">
     <div class="trow head" style="grid-template-columns:1.1fr 2.4fr 1fr"><div class="tc">Player</div><div class="tc">Their move</div><div class="tc u">Approach</div></div>
     <div class="trow" style="grid-template-columns:1.1fr 2.4fr 1fr"><div class="tc lbl">Circle</div><div class="tc">Pivoted to infrastructure — the Arc L1, a $222M presale, bought Malachite.</div><div class="tc mut">optimise the ledger</div></div>
@@ -216,17 +216,17 @@ const SL=[
     <div class="trow" style="grid-template-columns:1.1fr 2.4fr 1fr"><div class="tc lbl" style="color:var(--o)">Unicity</div><div class="tc win ucol">Keeps authorization, settlement, and the audit trail inside the asset.</div><div class="tc win ucol">keep it whole</div></div>
   </div>`),
 // 17 TEAM
-()=>SLD(17,`${head('The team: <span class="o">sovereign-grade verification, built before</span>','The architects shipped nation-scale cryptographic infrastructure long before agentic finance had a name.')}
+()=>SLD(17,`${head('The team: <span class="o">sovereign-grade verification</span>','Shipping nation-scale cryptographic infrastructure before agentic finance had a name.')}
   <div class="cells" style="margin-top:30px">
     <div class="cell"><div class="ct">The team</div><div class="ck">Built Guardtime's <b>KSI</b> — the verification layer deployed with the Estonian Government, Lockheed Martin, Boeing and NATO. In production since 2012, eIDAS-grade. That lineage sustained <b>300,000 tx/sec</b> in Eesti Pank's 2021 test (heritage, not a live Unicity figure).</div></div>
     <div class="cell"><div class="ct">The proof</div><div class="ck">Three mathematical papers prove the <b>privacy</b> and <b>no-double-spend</b> guarantees. Drop them into any model and they check. All public on github.com/unicitynetwork. The proof is verifiable today, not asserted.</div></div>
     <div class="cell"><div class="ct">The alignment</div><div class="ck">Identity, speed, and peer-to-peer settlement, bound into one instrument — the fair-access infrastructure Hard Yaka has backed across a generation of payments companies.</div></div>
   </div>`),
 // 18 ASK
-()=>SLD(18,`${head('The ask: <span class="o">$5M to settle the first compliant dollar</span>','A seed round to ship a USBC-style dollar that settles the instant the credential checks out.')}
+()=>SLD(18,`${head('The ask: <span class="o">$5M to settle the first compliant dollar</span>','Accelerating the deployment of compliant, peer-to-peer stablecoins.')}
   <div class="askbox"><div class="big"><span class="o">$5M Seed</span> · $25M cap / $50M token FDV · SAFE + token warrant</div>
-  <div class="ml">The first build is a compliant dollar that settles peer-to-peer the moment the Receive Predicate is satisfied, with the partner supplying the regulatory layer. This binds <b>identity, speed, and settlement</b> into a single instrument — precisely the fair-access infrastructure Hard Yaka has backed across a generation of payments companies.</div></div>
-  <div class="close" style="margin-top:26px">One charter settles at home. <span class="o">Unicity carries the same rule between any two parties that share nothing else.</span></div>`),
+  <div class="ml">The immediate objective is to partner with a regulated issuer to ship a compliant dollar that settles peer-to-peer the moment the Receive Predicate is satisfied. This binds <b>identity, speed, and settlement</b> into a single instrument.</div></div>
+  <div class="close" style="margin-top:26px">Institutions rely on walled gardens for compliance. <span class="o">Unicity embeds that compliance directly into the dollar.</span></div>`),
 ];
 
 const S=SL.map((f,i)=>f(i+1));
