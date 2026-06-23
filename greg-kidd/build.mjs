@@ -28,11 +28,11 @@ body{background:#000}
 .glow{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(255,106,31,.08),transparent 70%)}
 .pad{position:relative;z-index:2;height:100%;padding:54px var(--mx) 84px;display:flex;flex-direction:column;justify-content:center}
 .pad.cover{align-items:center;text-align:center}
-.kick{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--faint)}
+.kick{font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--faint)}
 .kick b{color:var(--o);font-weight:400}
 h2{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;font-size:33px;line-height:1.1;letter-spacing:.005em;margin-top:13px}
 h2 .o{color:var(--o)}
-.lead{margin-top:16px;font-size:15px;line-height:1.62;color:var(--dim);max-width:104ch}
+.lead{margin-top:16px;font-size:16px;line-height:1.62;color:var(--dim);max-width:104ch}
 .lead b{color:var(--ink);font-weight:600}.lead .o{color:var(--o);font-weight:600}
 .dwrap{margin-top:34px;display:flex;justify-content:center}
 .punch{margin-top:var(--s4);padding:0 0 0 var(--s2);border-left:2px solid var(--o);font-size:16.5px;line-height:1.45;color:var(--ink);font-weight:500;max-width:90ch}
@@ -41,7 +41,7 @@ h2 .o{color:var(--o)}
 .col{flex:1;min-width:0}
 .statline{display:flex;align-items:center;gap:48px;margin-top:40px}
 .mega{font-family:"Anton",sans-serif;font-size:188px;line-height:.8;color:var(--o);letter-spacing:-.01em}
-.megaq{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-top:10px;max-width:30ch;line-height:1.5}
+.megaq{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-top:10px;max-width:30ch;line-height:1.5}
 .principle{margin-top:34px}
 .principle .pr{display:flex;align-items:center;gap:var(--s4);padding:26px 0;border-top:1px solid var(--rule)}
 .principle .pr:last-child{border-bottom:1px solid var(--rule)}
@@ -49,19 +49,19 @@ h2 .o{color:var(--o)}
 .principle .t{color:var(--dim);font-size:15px}.principle .t b{color:var(--ink);font-weight:600;display:block;font-size:19px;margin-bottom:4px;font-family:"Anton",sans-serif;letter-spacing:.01em;text-transform:uppercase}
 .principle .r{margin-left:auto;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
 .ok{color:#9a9a92} .open{color:var(--o)}
-.note{margin-top:var(--s4);font-size:13px;color:var(--faint);letter-spacing:.02em}
+.note{margin-top:var(--s4);font-size:14px;color:var(--faint);letter-spacing:.02em}
 /* mechanics band */
 .mech{display:flex;gap:46px;margin-top:34px}
 .mech .m{flex:1;border-left:2px solid var(--o);padding-left:18px}
 .mech .ml2{font-family:"Anton",sans-serif;font-size:15px;letter-spacing:.03em;text-transform:uppercase;color:var(--o)}
-.mech .md{font-size:12.5px;line-height:1.5;color:var(--dim);margin-top:9px}
+.mech .md{font-size:14px;line-height:1.5;color:var(--dim);margin-top:9px}
 /* boxed cards row (3 or 4) */
 .row3{display:flex;gap:18px;margin-top:36px}
 .cell{flex:1;border:1px solid var(--rule);border-top:2px solid var(--o);border-radius:8px;background:var(--card);padding:22px 20px}
 .cell .v{font-family:"Anton",sans-serif;font-size:28px;color:var(--ink)}.cell .v .o{color:var(--o)}
 .cell .ct{font-family:"Anton",sans-serif;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--o)}
-.cell .k{font-size:12px;color:var(--dim);margin-top:11px;letter-spacing:.02em;line-height:1.5}
-.cell .repo{font-size:11px;color:var(--faint);margin-top:13px}
+.cell .k{font-size:13.5px;color:var(--dim);margin-top:11px;letter-spacing:.02em;line-height:1.5}
+.cell .repo{font-size:12.5px;color:var(--faint);margin-top:13px}
 /* timeline 3-col */
 .tl{display:flex;gap:22px;margin-top:38px}
 .tlc{flex:1;border-top:1px solid var(--rule);padding-top:18px}
@@ -70,24 +70,24 @@ h2 .o{color:var(--o)}
 .tlc.last .yr{color:var(--o)}
 .tlc .nm{font-family:"Anton",sans-serif;font-size:22px;text-transform:uppercase;color:var(--ink);margin-top:8px}
 .tlc.last .nm{color:var(--o)}
-.tlc .ds{font-size:13px;color:var(--dim);margin-top:10px;line-height:1.55}
+.tlc .ds{font-size:14px;color:var(--dim);margin-top:10px;line-height:1.55}
 /* observer rows */
 .obs{margin-top:30px}
 .obs .o1{display:flex;align-items:baseline;gap:var(--s4);padding:22px 0;border-top:1px solid var(--rule)}
 .obs .o1:last-child{border-bottom:1px solid var(--rule)}
 .obs .ol{font-family:"Anton",sans-serif;font-size:18px;text-transform:uppercase;color:var(--ink);width:340px;flex:none}
-.obs .od{font-size:14px;color:var(--dim);line-height:1.55}.obs .od b{color:var(--ink)}
+.obs .od{font-size:15px;color:var(--dim);line-height:1.55}.obs .od b{color:var(--ink)}
 .obs .tag{margin-left:auto;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--o);white-space:nowrap}
 /* comparison table */
 .tbl{margin-top:34px;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
 .trow{display:grid;border-bottom:1px solid var(--rule)}
 .trow:last-child{border-bottom:none}
 .trow.head{background:rgba(255,255,255,.025)}
-.tc{padding:13px 16px;font-size:12.5px;line-height:1.4;border-right:1px solid var(--rule)}
+.tc{padding:13px 16px;font-size:13.5px;line-height:1.4;border-right:1px solid var(--rule)}
 .tc:last-child{border-right:none}
-.trow.head .tc{font-family:"Anton",sans-serif;text-transform:uppercase;letter-spacing:.04em;font-size:12px;color:var(--faint)}
+.trow.head .tc{font-family:"Anton",sans-serif;text-transform:uppercase;letter-spacing:.04em;font-size:12.5px;color:var(--faint)}
 .trow.head .tc.u{color:var(--o)}
-.tc.lbl{color:var(--dim);font-family:"Anton",sans-serif;font-size:12.5px;letter-spacing:.02em;text-transform:uppercase}
+.tc.lbl{color:var(--dim);font-family:"Anton",sans-serif;font-size:13.5px;letter-spacing:.02em;text-transform:uppercase}
 .tc.mut{color:var(--faint)}
 .tc.win{color:var(--o)}
 .trow .tc.ucol{background:rgba(255,106,31,.05)}
@@ -97,14 +97,14 @@ h2 .o{color:var(--o)}
 .crule{height:1px;width:280px;background:linear-gradient(90deg,transparent,var(--oline),transparent);margin:36px auto}
 .sub{font-size:15px;line-height:1.6;color:var(--dim);max-width:72ch;text-align:center;margin:0 auto}
 .fp{margin-top:44px;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--faint)}
-.foot{position:absolute;left:var(--mx);right:var(--mx);bottom:30px;z-index:2;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule);padding-top:14px;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.foot{position:absolute;left:var(--mx);right:var(--mx);bottom:30px;z-index:2;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule);padding-top:14px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
 .foot .lg svg{height:13px;width:auto;opacity:.8}
 .askbox{margin-top:30px;border:1px solid var(--oline);border-radius:10px;background:linear-gradient(180deg,var(--owash),transparent);padding:22px 26px}
 .askbox .big{font-family:"Anton",sans-serif;font-size:22px;color:var(--ink)}.askbox .big .o{color:var(--o)}
-.askbox .ml{font-size:13px;color:var(--dim);margin-top:10px;line-height:1.55;max-width:110ch}.askbox .ml b{color:var(--ink)}
+.askbox .ml{font-size:14px;color:var(--dim);margin-top:10px;line-height:1.55;max-width:110ch}.askbox .ml b{color:var(--ink)}
 .finale{margin-top:26px;font-family:"Anton",sans-serif;text-transform:uppercase;font-size:25px;line-height:1.1;letter-spacing:.003em;color:var(--ink);max-width:none}
 .finale .o{color:var(--o)}
-.src{position:absolute;left:var(--mx);bottom:54px;font-size:9.5px;letter-spacing:.06em;color:var(--faint);z-index:2}
+.src{position:absolute;left:var(--mx);bottom:54px;font-size:11px;letter-spacing:.06em;color:var(--faint);z-index:2}
 `;
 
 const kick=(n,t)=>`<div class="kick">${String(n).padStart(2,'0')} · ${t}</div>`;
@@ -118,9 +118,9 @@ const SL=[
 n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad cover">
   <svg viewBox="0 0 641 128" style="height:96px;width:auto"><use href="#ulogo"/></svg>
   <div class="crule" style="margin:52px auto 48px"></div>
-  <div class="statement" style="font-size:46px;line-height:1.16">Cut out the middleman.<br>Move the value freely.<br><span class="o">Prove who is on the other end.</span></div>
-  <div class="sub" style="margin-top:42px;max-width:74ch">Fair access takes all three. The first two were solved a decade ago. The third — a dollar that knows who may receive it — is what Unicity builds.</div>
-  <div class="fp">Tallinn · Zug · Abu Dhabi</div>
+  <div class="statement" style="font-size:58px;line-height:1.04">Securing the<br><span class="o">Agentic Economy.</span></div>
+  <div class="sub" style="margin-top:40px;max-width:82ch">The machine economy is here — and a shared ledger cannot verify a fast-moving actor in real time. Unicity is the cure: settlement that proves who may receive it, at the edge, in private.</div>
+  <div class="fp">A seed proposal for Greg Kidd &middot; Tallinn · Zug · Abu Dhabi</div>
 </div></div>`,
 
 // 2 THREE PROBLEMS
@@ -149,16 +149,16 @@ n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr"
 </div>${foot(n)}</div>`,
 
 // 4 MACHINE ECONOMY
-n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad"><div class="hdr">${kick(n,'WHAT CHANGED · <b>THE MACHINE ECONOMY</b>')}<h2>Most of the traffic online is already machines — <span class="o">and they have started paying each other.</span></h2></div>
+n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad"><div class="hdr">${kick(n,'THE ACTOR CHANGED · <b>THE AGENTIC ECONOMY</b>')}<h2>Most of the traffic online is already machines — <span class="o">and they have started paying each other.</span></h2></div>
   <div class="statline"><div style="flex:none"><div class="mega">57.5%</div><div class="megaq">of web requests are automated, not human — Cloudflare, 2026</div></div>
   <div style="flex:1">
-    <div class="lead" style="margin-top:0;max-width:none;font-size:16px">Those machines have begun settling value directly — roughly <b>100 million payments on Base in nine months</b> (Chainalysis), about thirty-one cents each. Legacy rails carry a fee floor above thirty cents, so sub-dollar machine payments are impossible on the old infrastructure.</div>
+    <div class="lead" style="margin-top:0;max-width:none;font-size:16px">Those machines have begun settling value directly — roughly <b>100 million payments on Base in nine months</b> (Chainalysis), about thirty-one cents each. The old payment systems carry a fee floor above thirty cents, so sub-dollar machine payments cannot exist on them.</div>
     <div class="punch" style="margin-top:26px">A machine cannot wait on hold while an intermediary clears it. <span class="o">The check has to travel with the money.</span></div>
   </div></div>
 </div>${foot(n)}</div>`,
 
 // 5 WHY EVERY SHARED LEDGER HITS A WALL
-n=>HD(n,'THE STRUCTURAL LIMIT · <b>THE SHARED LEDGER</b>','Every shared ledger does the same four things <span class="o">for everyone.</span>',
+n=>HD(n,'THE STRUCTURAL LIMIT · <b>THE SHARED LEDGER</b>','A shared ledger cannot verify a fast actor <span class="o">in real time.</span>',
   `<div class="lead" style="max-width:108ch">Proof-of-work, proof-of-stake, or DPoS — a shared ledger must broadcast, order, validate and record every transaction in global state. That requirement is the ceiling, and the privacy machines need (ZK, FHE) collapses it further. When billions of sub-cent agent events arrive, every node must process every one.</div>
   <div class="row3">
     <div class="cell"><div class="ct">Broadcast</div><div class="k">Every node hears every transaction.</div></div>
@@ -178,7 +178,7 @@ n=>DS(n,'HOW IT WORKS · <b>OFF THE LEDGER</b>',
 // 7 ONE QUESTION
 n=>DS(n,'HOW IT WORKS · <b>ONE QUESTION</b>',
   'The only job a chain ever had: <span class="o">has this been spent?</span>',
-  'The network receives an opaque commitment and answers one thing — spent or unspent — never the data, the counterparties, or the amount. It is the inevitable end of blockchain unbundling: the chain keeps the one job no one else can do, and everything else moves to the edge.',
+  'The cure is sophisticated in its cryptography and simple in its composition: the network receives an opaque commitment and answers one thing — spent or unspent — never the data, the parties, or the amount. The chain keeps the one job no one else can do; everything else moves to the edge.',
   dia('oracle',560),
   mech([['Opaque commitment','The oracle sees only spent or unspent, never the trade itself.'],['Proves the tree, not the trade','A zero-knowledge proof attests the sparse-Merkle-tree state transition, not each payment.'],['Three proof types','Inclusion (registered, eternal), exclusion (low-latency settlement), unicity (the tree has not forked).']])),
 
@@ -218,7 +218,7 @@ n=>DS(n,'COMPLIANCE · <b>THE RULE INSIDE THE TOKEN</b>',
 
 // 12 THREE OBSERVERS
 n=>HD(n,'PRIVACY · <b>PROVEN, NOT ASSERTED</b>','Total privacy by default. Three observers. <span class="o">None can learn anything.</span>',
-  `<div class="lead" style="max-width:100ch">The privacy claim is what the papers prove — against three concrete adversaries.</div>
+  `<div class="lead" style="max-width:100ch">Privacy was a founding principle of the design, and the papers prove it — against three concrete adversaries.</div>
   <div class="obs">
     <div class="o1"><div class="ol">The network</div><div class="od">Sees only opaque, perfectly-hiding commitments — never amounts, parties, or balances — and cannot link two consecutive transactions of the same token.</div><div class="tag">proven</div></div>
     <div class="o1"><div class="ol">The sender</div><div class="od">Cannot watch when, or to whom, you later spend what they sent you.</div><div class="tag">proven</div></div>
@@ -287,7 +287,7 @@ n=>HD(n,'EXTERNAL VALIDATION · <b>EVERYONE CONFIRMS THE DIAGNOSIS</b>','The ser
 // 20 TEAM + PROOF + ASK
 n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad"><div class="hdr">${kick(n,'THE TEAM, THE PROOF & THE ASK · <b>CO-BUILD</b>')}<h2>We built this once before. <span class="o">Now make it hold between strangers.</span></h2></div>
   <div class="row3" style="margin-top:30px">
-    <div class="cell"><div class="ct">The team</div><div class="k">Founded Guardtime, built KSI — ledgerless verification for the Estonian e-state, the US DoD, DARPA and NATO. In production since 2012, eIDAS-grade. KSI held <b style="color:var(--ink)">300,000 tx/sec</b> in Eesti Pank's 2021 test — the lineage, not a live Unicity number.</div></div>
+    <div class="cell"><div class="ct">The team</div><div class="k">The cryptographers behind Unicity built Guardtime / KSI — sovereign-grade verification deployed with the Estonian Government, Lockheed Martin, Boeing and NATO. In production since 2012, eIDAS-grade. KSI held <b style="color:var(--ink)">300,000 tx/sec</b> in Eesti Pank's 2021 test — the lineage, not a live Unicity number.</div></div>
     <div class="cell"><div class="ct">The proof</div><div class="k">Three math papers prove only privacy and no-double-spend — drop them in any model and it checks. Throughput is a sharding design result, named as such. All public on github.com/unicitynetwork.</div></div>
     <div class="cell"><div class="ct">The ask</div><div class="k"><b style="color:var(--ink)">$5M Seed</b> · $25M cap / $50M token FDV · SAFE + token warrant. First build: a USBC dollar that settles the moment the credential checks out — you supply the regulatory layer we openly lack.</div></div>
   </div>
@@ -296,7 +296,8 @@ n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div clas
 ];
 
 T=SL.length;
-const S=SL.map((f,i)=>f(i+1));
+const ORDER=[0,3,4,1,2,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+const S=ORDER.map((idx,pos)=>SL[idx](pos+1));
 const html=`<!DOCTYPE html><html><head><meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -315,4 +316,4 @@ await b.close(); console.log('rendered',pngs.length,'PNGs');
 const pdf=await PDFDocument.create();
 for(const fp of pngs){const img=await pdf.embedPng(fs.readFileSync(fp));const pg=pdf.addPage([1600,900]);pg.drawImage(img,{x:0,y:0,width:1600,height:900});}
 fs.writeFileSync(DIR+'/Unicity_HardYaka_Seed_Deck.pdf',await pdf.save());
-console.log('wrote Unicity_HardYaka_Seed_Deck_v11.pdf');
+console.log('wrote Unicity_HardYaka_Seed_Deck.pdf');

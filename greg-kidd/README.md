@@ -1,6 +1,6 @@
 # Unicity × Greg Kidd / Hard Yaka — Seed Proposal
 
-A seed-investor deck pitching **Unicity** to **Greg Kidd** (Hard Yaka) — written as a *story*, not a feature list. Greg is the hero; Unicity is the guide that hands him the missing piece. It reframes the Unicity protocol deck around his thirty-year campaign for fair access — cut out the middleman, prove who's really there, let the money move — and the one piece that never held: a place for value to settle where the rule lives *inside the money*, so nothing moves unless it's satisfied.
+A seed-investor deck pitching **Unicity** to **Greg Kidd** (Hard Yaka), framed around **Securing the Agentic Economy** — the machine economy is here, a shared ledger cannot verify a fast-moving actor in real time, and Unicity is the cure. Written as a *story*, not a feature list. Greg is the hero; Unicity is the guide that hands him the missing piece. It carries his thirty-year campaign for fair access — cut out the middleman, prove who's really there, let the money move — into the agentic era, where the buyer that can't skip the check has finally arrived: the machine.
 
 ## The story
 
@@ -25,18 +25,18 @@ Structure borrowed from *Storyteller Tactics*: **Hero & Guide** (Greg is the her
 
 ## The arc
 
-1. **Cover** — Cut out the middleman · Move the value freely · Prove who is on the other end (the third is what Unicity builds)
-2. **The three problems** — two solved a decade ago; the hard one is proving who is on the other end
-3. **The field** — identity reached the right architecture before the market could carry it; GlobaliD stalled, USBC put it inside the dollar
-4. **The machine economy** — most traffic is already machines, and they have started paying each other *(57.5% · the turn)*
-5. **Why every shared ledger hits a wall** — broadcast / order / validate / record, for everyone — the ceiling is the design *(new)*
+1. **Cover** — *Securing the Agentic Economy* — the machine economy is here; a shared ledger cannot verify a fast actor in real time; Unicity is the cure
+2. **The agentic economy** — most traffic is already machines, and they have started paying each other *(57.5% · the turn)*
+3. **Why a shared ledger can't verify a fast actor in real time** — broadcast / order / validate / record, for everyone — the ceiling is the design
+4. **The three problems** — fair access takes three; two solved a decade ago, the open one is proving who is on the other end
+5. **The field** — identity reached the right architecture before the market could carry it; GlobaliD stalled, USBC put it inside the dollar
 6. **Off the ledger** — a dollar on-chain is a row someone keeps; Unicity makes it a bearer file *(transformation diagram)*
-7. **One question** — the only job a chain ever had: has this been spent *(uniqueness oracle)*
+7. **One question** — the only job a chain ever had: has this been spent — sophisticated in cryptography, simple in composition *(uniqueness oracle)*
 8. **What moves to the edge** — communication / storage / validation leave the chain; uniqueness is all that stays *(new)*
 9. **The inevitable unbundling** — Bitcoin 2009 → FastPay 2023 → Unicity 2026 *(new · statement turn)*
 10. **The architecture** — RandomX PoW + chained HotStuff + ZK oracle on-chain; SDK + agent execution layer off-chain *(new · the stack)*
 11. **The rule inside the token** — the money checks who may receive it; a failing transfer can't be constructed *(receive predicate)*
-12. **Three observers** — the network, the sender, anyone who knows your address — none can learn anything *(new · proven privacy)*
+12. **Three observers** — privacy as a founding principle: the network, the sender, anyone who knows your address — none can learn anything *(proven)*
 13. **No bridge, nothing to hack** — a locked source asset is verified directly; no bridge, no custodian *(new · objection-killer)*
 14. **Five wins, one hard problem** — removing the shared ledger buys five; atomicity is the one it leaves *(new · statement turn)*
 15. **The trade** — two parties swap, no middleman holding both legs, no clock, no MEV *(atomic swap)*
@@ -44,9 +44,9 @@ Structure borrowed from *Storyteller Tactics*: **Hero & Guide** (Greg is the her
 17. **The machine market** — CEX speed · DEX custody · private and compliant (the only column green on every row) *(new · CLOB matrix)*
 18. **What gets built** — a decentralized autonomous corporation, built for BlackRock (autonomous reinsurance) *(new · the DAC)*
 19. **The vision of the titans** — Circle, Solana, Cardano, Greg/USBC all optimize the ledger; Unicity eliminates it *(new · external validation)*
-20. **The team, the proof, the ask** — Guardtime/KSI lineage · three math papers · a $5M co-build, then the full-width close
+20. **The team, the proof, the ask** — Guardtime/KSI with the Estonian Government, Lockheed Martin, Boeing & NATO · three math papers · a $5M co-build, then the full-width close
 
-*v2 (deeper): excavated from the full 26-slide protocol deck + the scalability report + the propositional-development notes. 13 → 20 — the story spine preserved, now showing what Unicity IS as a system. Every technical claim fact-tagged: **proven** (privacy + no-double-spend only), **design** (~30k tx/sec per shard, sharding, AIR+Plonky3, no-trusted-setup, PoW+BFT), **lineage** (300k tx/sec Eesti Pank 2021 / KSI / DoD·DARPA·NATO — the team's history, never a live Unicity number). No arXiv IDs; Plasma never named; USBC respected.*
+*v2 (deeper): excavated from the full 26-slide protocol deck + the scalability report + the propositional-development notes. 13 → 20 — the story spine preserved, now showing what Unicity IS as a system. Every technical claim fact-tagged: **proven** (privacy + no-double-spend only), **design** (~30k tx/sec per shard, sharding, AIR+Plonky3, no-trusted-setup, PoW+BFT), **lineage** (300k tx/sec Eesti Pank 2021 / KSI / Estonian Government·Lockheed Martin·Boeing·NATO — the team's history, never a live Unicity number). No arXiv IDs; Plasma never named; USBC respected.*
 
 *Distilled from 17 → 13 by a council of deck-authors (narrative architect, minimalist, investor whisperer, voice keeper, the explainer, visual editor): the spine is told once and accelerates, the turn moves up, six mechanism slides become four, the second ending is cut, the orange punch-line is rationed to ~5 slides, and the best sentence is held for the full-width climax. The 13 headlines, read alone in order, carry the whole argument.*
 
@@ -68,7 +68,7 @@ node greg-kidd/build.mjs   # requires puppeteer + pdf-lib in the repo node_modul
 
 - **57.5%** = *web requests* (Cloudflare), **not on-chain** — qualifier stays on-slide.
 - **x402 ~100M tx on Base / 9mo** (Chainalysis) — transaction count only; real volume is tiny.
-- **300,000+ tx/sec** = the team's **KSI lineage** in the Eesti Pank 2021 CBDC test — *never* "the ECB tested Unicity."
+- **300,000+ tx/sec** = the team's **KSI lineage** in the Eesti Pank 2021 CBDC test — *never* "the ECB tested Unicity." The cryptographers' heritage runs through the **Estonian Government, Lockheed Martin, Boeing & NATO**.
 - The papers prove **privacy + no-double-spend** only — *never* throughput; scalability is "by sharding, as design."
 - **eIDAS-aligned**, not accredited. Greg **founded** GlobaliD; was Ripple **early-investor + CRO**.
 - GlobaliD **never reached escape velocity / migrated into USBC** — never "shut down."
