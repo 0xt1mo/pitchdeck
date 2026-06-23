@@ -119,7 +119,7 @@ n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div clas
   <svg viewBox="0 0 641 128" style="height:96px;width:auto"><use href="#ulogo"/></svg>
   <div class="crule" style="margin:52px auto 48px"></div>
   <div class="statement" style="font-size:56px;line-height:1.05">Securing the<br><span class="o">Agentic Economy.</span></div>
-  <div class="sub" style="margin-top:38px;max-width:80ch">Machines now pay each other at software speed — and no shared ledger can settle them. Unicity can: the money carries its own proof of who may receive it, and verifies on arrival.</div>
+  <div class="sub" style="margin-top:38px;max-width:80ch">Machines pay each other across cards, wallets, APIs and stablecoins — authority, permission and settlement evidence stay scattered. Unicity makes the proof travel with the payment.</div>
   <div class="fp">A seed proposal for Greg Kidd</div>
 </div></div>`,
 
@@ -128,7 +128,7 @@ n=>HD(n,'FAIR ACCESS · <b>THE THREE PROBLEMS</b>','Fair access takes three thin
   `<div class="principle">
     <div class="pr"><span class="a">01</span><div class="t"><b>Cut out the middleman</b>A decade of open infrastructure settled it.</div><div class="r ok">solved</div></div>
     <div class="pr"><span class="a">02</span><div class="t"><b>Let value move freely</b>Stablecoins now settle tens of trillions a year.</div><div class="r ok">solved</div></div>
-    <div class="pr"><span class="a">03</span><div class="t"><b>Prove who is on the other end</b>So the money itself knows who may receive it.</div><div class="r open">still open</div></div>
+    <div class="pr"><span class="a">03</span><div class="t"><b>Prove who is on the other end</b>The payment itself knows who may receive it.</div><div class="r open">still open</div></div>
   </div>
   <div class="note">The third is the problem that decides fair access. It is the one Unicity builds.</div>`),
 
@@ -136,7 +136,7 @@ n=>HD(n,'FAIR ACCESS · <b>THE THREE PROBLEMS</b>','Fair access takes three thin
 n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr">${kick(n,'THE FIELD · <b>IDENTITY, AND WHERE IT STOPPED</b>')}<h2>Identity reached the right architecture <span class="o">before the market could carry it.</span></h2></div>
   <div class="cols"><div class="col" style="flex:1.15">
     <div class="lead" style="margin-top:0;max-width:none">Self-sovereign identity had the third problem right, early: identity is permission to act. The field stalled at the same wall — did:ion retired in 2023, Trinsic wound down. The credential sat beside the transaction, and a check that can be skipped gets skipped.</div>
-    <div class="lead" style="max-width:none">USBC drew the right conclusion: put identity inside the dollar. On one bank charter it settles. Across charters — between strangers — it cannot. Closing that gap is the build.</div>
+    <div class="lead" style="max-width:none">USBC drew the right conclusion: put identity inside the dollar. On one charter it settles. Between charters — between strangers — it cannot. Closing that gap is the build.</div>
   </div><div class="col" style="flex:1">
     <svg width="100%" viewBox="0 0 520 300" style="height:auto">
       <line x1="52" y1="252" x2="492" y2="252" stroke="#2a2a26"/><line x1="52" y1="44" x2="52" y2="252" stroke="#2a2a26"/>
@@ -149,11 +149,11 @@ n=>`<div class="slide"><div class="grid"></div><div class="pad"><div class="hdr"
 </div>${foot(n)}</div>`,
 
 // 4 MACHINE ECONOMY
-n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad"><div class="hdr">${kick(n,'THE ACTOR CHANGED · <b>THE AGENTIC ECONOMY</b>')}<h2>Most of the internet is already machines — <span class="o">and they have started paying each other directly.</span></h2></div>
+n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad"><div class="hdr">${kick(n,'THE ACTOR CHANGED · <b>THE AGENTIC ECONOMY</b>')}<h2>Agentic payments are no longer a demo. <span class="o">The machines have started paying each other directly.</span></h2></div>
   <div class="statline"><div style="flex:none"><div class="mega">57.5%</div><div class="megaq">of web requests are automated, not human — Cloudflare, 2026</div></div>
   <div style="flex:1">
-    <div class="lead" style="margin-top:0;max-width:none;font-size:16px">Payments are messaging on steroids — and the machines have started sending. About <b>100 million on-chain payments crossed Base in nine months</b> (Chainalysis); Mastercard now runs an agent-payment system for machines. The amounts are tiny — cents — and that is the point. The old payment systems have a fee floor above thirty cents, so a machine paying a machine cannot use them.</div>
-    <div class="punch" style="margin-top:26px">A machine cannot wait on hold while an intermediary clears it. <span class="o">The proof has to travel with the money.</span></div>
+    <div class="lead" style="margin-top:0;max-width:none;font-size:16px">Payments are messaging on steroids — and the machines have started sending. About <b>100 million on-chain payments crossed Base in nine months</b> (Chainalysis); Mastercard now builds payment infrastructure for machines. The amounts are small. The frequency is high. The path may cross cards, wallets, APIs and stablecoins. The problem is trust.</div>
+    <div class="punch" style="margin-top:26px">Who authorised it, who may receive it, the limit, why it settles — <span class="o">the proof rides with the money.</span></div>
   </div></div>
 </div>${foot(n)}</div>`,
 
@@ -212,7 +212,7 @@ n=>DS(n,'WHO BUILT IT · <b>THE STACK</b>',
 // 11 THE RULE INSIDE THE TOKEN
 n=>DS(n,'COMPLIANCE · <b>THE RULE INSIDE THE TOKEN</b>',
   'The rule lives <span class="o">inside the money.</span>',
-  'Each token carries its own receive-condition — KYC, jurisdiction, sanctions — an advanced form of Bitcoin\'s locking script. A transfer to a party that fails it cannot be constructed. The asset attests its own compliance — never the private data behind it.',
+  'Each token carries its own receive-condition — who may receive it, the jurisdiction, the limit. A transfer that fails it cannot be constructed. The asset attests its own compliance, never the private data behind it. The proof travels with the payment.',
   dia('compliance',980),
   mech([['Programmable','Signature, multi-sig, k-of-n threshold or time-lock, written once and travelling with the token.'],['Protocol-enforced','The check lives in the asset, not an app or custodian — no intermediary to bypass.'],['Risk managed, not avoided','The issuer sets who may hold the token; a rogue counterparty is on the platform and contained, not kept out.']])),
 
@@ -255,7 +255,7 @@ n=>DS(n,'SCALABILITY · <b>HORIZONTAL BY DESIGN</b>',
 
 // 17 THE MACHINE MARKET — CLOB matrix
 n=>HD(n,'THE PAYOFF · <b>THE MACHINE MARKET</b>','CEX speed. DEX custody. <span class="o">Private and compliant.</span>',
-  `<div class="lead" style="max-width:90ch">When two agents settle directly, the venue in the middle has nothing left to do. Binance has the speed. Uniswap has the custody. Neither has the privacy, and neither was built for a machine. Unicity has all of it, with no venue at all.</div>
+  `<div class="lead" style="max-width:90ch">When two agents settle directly, the venue has nothing left to do. Binance has the speed. Uniswap has the custody. Neither has the privacy, and neither was built for a machine payment. Unicity has all of it, with no venue at all.</div>
   <div class="tbl">
     <div class="trow head" style="grid-template-columns:1.5fr 1fr 1fr 1fr 1.1fr"><div class="tc"></div><div class="tc">Binance</div><div class="tc">Uniswap</div><div class="tc">Hyperliquid</div><div class="tc u">Unicity</div></div>
     <div class="trow" style="grid-template-columns:1.5fr 1fr 1fr 1fr 1.1fr"><div class="tc lbl">Speed</div><div class="tc">sub-second</div><div class="tc mut">block time</div><div class="tc">fast</div><div class="tc win ucol">sub-second</div></div>
@@ -274,7 +274,7 @@ n=>DS(n,'WHAT GETS BUILT · <b>AN ECONOMY OF MACHINES</b>',
 
 // 19 VISION OF THE TITANS
 n=>HD(n,'EXTERNAL VALIDATION · <b>EVERYONE CONFIRMS THE DIAGNOSIS</b>','The serious players are spending billions <span class="o">to escape the ledgers they built.</span>',
-  `<div class="lead" style="max-width:90ch">Allaire, Yakovenko, Hoskinson and Kidd reach the same conclusion: a machine-driven liquidity shock is coming, and today's ledgers cannot take it. They optimise the ledger. Unicity removes it.</div>
+  `<div class="lead" style="max-width:90ch">AP2 authorises, x402 settles, the players below optimise the ledger — the mandate and the audit trail scatter across layers. They split the proof. Unicity keeps it in the asset.</div>
   <div class="tbl">
     <div class="trow head" style="grid-template-columns:1.1fr 2.4fr 1fr"><div class="tc">Player</div><div class="tc">Their move</div><div class="tc u">Approach</div></div>
     <div class="trow" style="grid-template-columns:1.1fr 2.4fr 1fr"><div class="tc lbl">Circle</div><div class="tc">Pivoted to infrastructure — the Arc L1, a $222M presale, bought Malachite.</div><div class="tc mut">optimise the ledger</div></div>
@@ -291,7 +291,7 @@ n=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div clas
     <div class="cell"><div class="ct">The proof</div><div class="k">Three math papers prove what matters — privacy and no-double-spend. Drop them in any model and they check. Throughput is a sharding design result, named as such. All public on github.com/unicitynetwork.</div></div>
     <div class="cell"><div class="ct">The ask</div><div class="k"><b style="color:var(--ink)">$5M Seed</b> · $25M cap / $50M token FDV · SAFE + token warrant. First build: a USBC dollar that settles the moment the credential checks out — Unicity brings the settlement; the partner brings the regulatory layer we openly lack.</div></div>
   </div>
-  <div class="finale">One charter settles at home. <span class="o">This is the layer that carries the same rule between two banks — or two machines — that share nothing else.</span></div>
+  <div class="finale">One charter settles at home. <span class="o">This is the layer that carries the rule and the proof between two banks — or two machines — that share nothing else.</span></div>
 </div>${foot(n)}</div>`,
 ];
 
