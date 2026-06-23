@@ -27,7 +27,7 @@ body{background:#000}
 .hmain{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;font-size:38px;line-height:1.12;letter-spacing:.006em;color:var(--ink);text-wrap:balance}
 .hmain .o{color:var(--o)}
 .hsub{font-size:20px;line-height:1.45;color:var(--ink);font-weight:500;margin-top:11px;max-width:98ch;letter-spacing:.005em}
-.core{font-size:18.5px;line-height:1.65;color:var(--dim);margin-top:16px;max-width:96ch}
+.core{font-size:18.5px;line-height:1.65;color:var(--dim);margin-top:16px;max-width:90ch;text-wrap:balance}
 .core b{color:var(--ink);font-weight:600}.core .o{color:var(--o);font-weight:600}
 .rule{height:1px;width:64px;background:var(--o);margin-top:24px;opacity:.8}
 .crule{height:1px;width:300px;background:linear-gradient(90deg,transparent,var(--oline),transparent);margin:46px auto 42px}
@@ -155,7 +155,7 @@ const SL=[
   </div>`),
 // 9 RECEIVE PREDICATE
 ()=>diaslide(9,'Protocol-enforced compliance: <span class="o">the receive predicate</span>','Cryptographically gating asset transfers without sacrificing peer-to-peer privacy.',
-  `Compliance should not require a central facilitator. Unicity introduces the <b>Receive Predicate</b>. KYC, jurisdiction, and accreditation are programmed directly into the asset. If the recipient cannot satisfy the predicate locally, the transfer mathematically fails. <b>The asset enforces its own compliance.</b>`,'compliance'),
+  `Compliance should not require a central facilitator. Unicity introduces the <b>Receive Predicate</b>. KYC, jurisdiction, and accreditation are programmed directly into the asset. If the recipient cannot satisfy the predicate locally, the transfer mathematically fails. <b style="white-space:nowrap">The asset enforces its own compliance.</b>`,'compliance'),
 // 10 PRIVACY
 ()=>SLD(10,`${head('Privacy by construction: <span class="o">proven against every observer</span>','Absolute confidentiality is the prerequisite for institutional capital flows.')}
   <div class="core">Confidentiality is a founding property of the protocol, not an application-layer afterthought. Privacy is mathematically proven against all three observers.</div>
@@ -169,7 +169,7 @@ const SL=[
   `A cross-chain bridge concentrates risk by holding value and trusting a relayed instruction. Unicity eliminates bridges entirely. A locked source-chain asset becomes a self-contained bearer token, and the recipient verifies the lock directly against the source contract. No cross-chain message exists to forge, no pooled liquidity to drain, and no custodian to compromise.`,'nobridge'),
 // 12 ATOMIC SWAP
 ()=>diaslide(12,'The atomic swap: <span class="o">settlement without an intermediary</span>','Trustless atomic swaps between self-contained bearer assets.',
-  `The conventional fix for trustless exchange is a timed lock (HTLC), but the clock becomes an attack surface where one side can stall and walk away. Unicity removes the clock using <b>Predicate Swaps</b>: both parties commit independently, and the swap forms for both at once or not at all. Settlement runs off-chain at machine speed with <b>no mempool and no MEV</b>.`,'swap'),
+  `The conventional fix for trustless exchange is a timed lock (HTLC), but the clock becomes an attack surface where one side can stall and walk away. Unicity removes the clock using <b style="white-space:nowrap">Predicate Swaps</b>: both parties commit independently, and the swap forms for both at once or not at all. Settlement runs off-chain at machine speed with <b style="white-space:nowrap">no mempool and no MEV</b>.`,'swap'),
 // 13 X402 (new)
 ()=>SLD(13,`${head('X402, rebuilt: <span class="o">twelve steps to five</span>','Eliminating the network friction that operators spend billions trying to solve.')}
   <div class="core" style="max-width:none">The x402 standard enables machine payments over HTTP, but legacy models still route settlement through a slow facilitator and a public chain. By embedding authorization and proof directly into the bearer token, Unicity cuts the payment handshake from 12 steps to 5. The transaction clears instantly between client and server.</div>
@@ -205,7 +205,7 @@ const SL=[
   </div>`),
 // 15 AGENTIC DAC
 ()=>diaslide(15,'What gets built: <span class="o">the agentic corporation</span>','Agents become the new smart contracts, executing verifiable logic directly on bearer assets.',
-  `Unicity engineered a decentralized autonomous corporation for BlackRock: a weather-based parametric insurer. Capital provisioning, underwriting, and reinsurance cession all run as autonomous agents transacting in Unicity tokens. Settlement is only the entry point. <b>The same protocol orchestrates the entire corporation.</b>`,'dac'),
+  `Unicity engineered a decentralized autonomous corporation for BlackRock: a weather-based parametric insurer. Capital provisioning, underwriting, and reinsurance cession all run as autonomous agents transacting in Unicity tokens. Settlement is only the entry point. <b style="white-space:nowrap">The same protocol orchestrates the entire corporation.</b>`,'dac'),
 // 16 INCUMBENTS VALIDATE
 ()=>SLD(16,`${head('The incumbents validate <span class="o">the diagnosis</span>','The market is spending billions to optimize the ledger. We eliminated it.')}
   <div class="core" style="max-width:none">The largest players are spending billions to work around the ledger they built. Each holds only a fragment of the proof: authorization here, settlement there, the audit trail reconstructed across systems. <b>Unicity keeps authorization, settlement, and the audit trail whole, inside the asset.</b></div>
