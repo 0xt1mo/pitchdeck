@@ -79,25 +79,29 @@ import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  CoverSlide,                // 1 · Securing the Agentic Economy (May-30 hero, for Greg)
-  GregShiftSlide,            // 2 · the macro shift (57.5%)
-  GregBottleneckSlide,       // 3 · the shared-ledger bottleneck
-  GregTrilemmaSlide,         // 4 · the stablecoin trilemma
-  GregGapSlide,              // 5 · the final infrastructure gap
-  GregSidecarSlide,          // 6 · from side-car to protocol
-  GregBearerSlide,           // 7 · bearer instruments
-  GregOracleSlide,           // 8 · the uniqueness oracle + unbundling
-  GregArchitectureSlide,     // 9 · the architecture
-  GregReceiveSlide,          // 10 · the receive predicate
-  GregPrivacySlide,          // 11 · privacy by construction
-  GregNoBridgeSlide,         // 12 · no bridge, nothing to hack
-  GregSwapSlide,             // 13 · the atomic swap
-  GregX402Slide,             // 14 · x402 twelve to five
-  GregMarketSlide,           // 15 · the machine market
-  GregDACSlide,              // 16 · the agentic corporation (BlackRock DAC)
-  GregIncumbentsSlide,       // 17 · the incumbents validate
-  GregTeamSlide,             // 18 · the team
-  GregAskSlide,              // 19 · the ask
+  CoverSlide,                // 1 · Securing the Agentic Economy (May-30 hero)
+  // ── ACT I — THE SHIFT ──
+  GregShiftSlide,            // 2 · the agents arrived, the rails didn't (57.5%)
+  // ── ACT II — WHY THE RAILS FAIL ──
+  GregBottleneckSlide,       // 3 · a machine can't wait for a shared ledger
+  GregTrilemmaSlide,         // 4 · every digital dollar gives one up
+  GregGapSlide,              // 5 · fair access still lacks one thing
+  GregSidecarSlide,          // 6 · which is why identity keeps failing
+  GregIncumbentsSlide,       // 7 · the market is spending billions and still missing it
+  // ── ACT III — THE ANSWER ──
+  GregBearerSlide,           // 8 · take the dollar off the ledger
+  GregOracleSlide,           // 9 · the network attests one thing
+  GregArchitectureSlide,     // 10 · the chain does one job
+  GregReceiveSlide,          // 11 · compliance needs no middleman
+  GregPrivacySlide,          // 12 · the open ledger goes dark
+  GregNoBridgeSlide,         // 13 · no bridge, nothing to hack
+  GregSwapSlide,             // 14 · settlement with no intermediary
+  GregX402Slide,             // 15 · twelve steps become five
+  GregMarketSlide,           // 16 · a market with no venue
+  GregDACSlide,              // 17 · a whole company run by agents
+  // ── ACT IV — PROOF & ASK ──
+  GregTeamSlide,             // 18 · we have built sovereign-grade before
+  GregAskSlide,              // 19 · $5M to settle the first compliant dollar
 ];
 
 export default function App() {

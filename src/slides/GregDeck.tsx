@@ -1,20 +1,21 @@
 import { DIAGRAMS } from '../gregDiagrams';
 
 /* ============================================================
-   OUR canonical HardYaka deck (greg-kidd/build.mjs, v12) rendered
-   in the May-30 Tether frame. Copy is verbatim from the canonical
-   build; emphasis markup (<b>, <span class="o">) preserved via the
-   .gx scope. Diagrams are our own SVGs, inlined so they inherit the
-   app's Anton / Geist Mono fonts.
+   OUR canonical HardYaka deck, reframed PROBLEM-FORWARD (70/30) in
+   the May-30 Tether frame. Act eyebrows signal the storyteller arc;
+   each headline/lead drives from the problem, the mechanism lands as
+   the punchline. Canonical bodies + our own diagrams preserved.
    ============================================================ */
 
 const mono = "'Geist Mono', monospace";
 const anton = "'Anton', sans-serif";
 
 const SCOPE = `
+.gx{font-family:'Geist Mono',monospace}
 .gx .o{color:#FF6A1F}
 .gx b{color:#FEFEFE;font-weight:600}
-.gx .dia svg, .gx .diafull svg, .gx .diastack svg{display:block;width:100%;height:auto}
+.gx .lblc{font-family:'Anton',sans-serif}
+.gx .dia svg{display:block;width:100%;height:auto}
 `;
 
 function Shell({ children }: { children: React.ReactNode }) {
@@ -30,10 +31,11 @@ function Shell({ children }: { children: React.ReactNode }) {
   );
 }
 
-function H({ main, sub }: { main: string; sub: string }) {
+function H({ act, main, sub }: { act: string; main: string; sub: string }) {
   return (
     <div className="shrink-0">
-      <h1 className="text-[#fefefe] uppercase text-[30px] sm:text-[40px] lg:text-[52px] leading-[1.08] tracking-tight" style={{ fontFamily: anton }} dangerouslySetInnerHTML={{ __html: main }} />
+      <p className="text-orange-400 text-[11px] sm:text-xs lg:text-sm tracking-[0.3em] uppercase mb-3" style={{ fontFamily: mono }}>{act}</p>
+      <h1 className="text-[#fefefe] uppercase text-[30px] sm:text-[40px] lg:text-[52px] leading-[1.06] tracking-tight" style={{ fontFamily: anton }} dangerouslySetInnerHTML={{ __html: main }} />
       <p className="text-[#fefefe] font-medium text-base sm:text-lg lg:text-2xl mt-3 max-w-[98ch] leading-snug" dangerouslySetInnerHTML={{ __html: sub }} />
     </div>
   );
@@ -57,26 +59,34 @@ function Two({ left, right }: { left: React.ReactNode; right: React.ReactNode })
 }
 
 const cellCls = 'flex-1 rounded-lg border border-[#2c2c2a] border-t-2 border-t-orange-500 bg-[#101010] p-4 lg:p-5';
-const ctCls = 'text-orange-400 uppercase tracking-wide text-base lg:text-xl';
+const ctCls = 'text-orange-400 uppercase tracking-wide text-base lg:text-xl lblc';
 const ckCls = 'text-[#D6D6D0] text-sm lg:text-lg mt-2 leading-snug';
 
-/* ── 2 · macro shift ── */
+const ACT1 = 'Act I · The shift';
+const ACT2 = 'Act II · Why the rails fail';
+const ACT2G = 'Act II · The gap';
+const ACT2S = 'Act II · The stakes';
+const ACT3 = 'Act III · The answer';
+const ACT4 = 'Act IV · The proof';
+const ACT4A = 'Act IV · The ask';
+
+/* ════════ ACT I — THE SHIFT ════════ */
 export function GregShiftSlide() {
   return (
     <Shell>
-      <H main='The macro shift: <span class="o">machine commerce requires machine trust</span>' sub="Autonomous agents now initiate high-frequency, micro-value transactions at scale." />
+      <H act={ACT1} main='The agents are here. <span class="o">The rails are not.</span>' sub="Most of the internet is already machines — and they have started to pay, at software speed." />
       <div className="shrink-0 flex items-start gap-10 lg:gap-14 mt-8">
         <div className="shrink-0">
           <div className="text-orange-400 leading-[0.8]" style={{ fontFamily: anton, fontSize: 'min(150px, 15vw)' }}>57.5%</div>
           <div className="text-[#9E9E96] uppercase tracking-wide text-sm lg:text-base mt-3 max-w-[30ch] leading-snug">of web requests are automated, not human — Cloudflare, 2026</div>
         </div>
-        <Core className="mt-0" html="Legacy networks cannot verify an agent's authority or enforce a budget without a centralized bottleneck. Unicity forces the <b>proof of authority to travel natively with the money</b>." />
+        <Core className="mt-0" html="Legacy networks cannot verify an agent's authority or hold it to a budget without a centralized chokepoint. For machines to transact, the <b>proof of authority has to travel with the money</b>." />
       </div>
     </Shell>
   );
 }
 
-/* ── 3 · bottleneck ── */
+/* ════════ ACT II — WHY THE RAILS FAIL ════════ */
 const bottleneck = [
   ['Broadcast', 'Every node hears every transaction.'],
   ['Order', 'Global agreement on the sequence of all of them.'],
@@ -86,8 +96,8 @@ const bottleneck = [
 export function GregBottleneckSlide() {
   return (
     <Shell>
-      <H main='The structural bottleneck: <span class="o">the shared ledger</span>' sub="The shared ledger is a permanent ceiling on scale and privacy." />
-      <Core html="Every node must broadcast, order, validate, and record every transaction. Machine-speed commerce requires eliminating the <b>shared ledger</b> entirely." />
+      <H act={ACT2} main='A machine cannot wait for <span class="o">a shared ledger.</span>' sub="The 17-year-old design behind every blockchain is a permanent ceiling on scale and privacy." />
+      <Core html="To add one transaction, every node must broadcast, order, validate, and record it. Machine-speed commerce requires removing the <b>shared ledger</b> entirely." />
       <div className="shrink-0 flex gap-4 mt-7">
         {bottleneck.map(([t, d]) => (
           <div key={t} className={cellCls}><div className={ctCls}>{t}</div><div className={ckCls}>{d}</div></div>
@@ -97,20 +107,18 @@ export function GregBottleneckSlide() {
   );
 }
 
-/* ── 4 · trilemma ── */
 export function GregTrilemmaSlide() {
   return (
     <Shell>
-      <H main='The stablecoin trilemma: <span class="o">pick two</span>' sub="Every digital-dollar design has been forced to sacrifice compliance, privacy, or throughput." />
+      <H act={ACT2} main='Every digital dollar <span class="o">gives one up.</span>' sub="Compliance, privacy, throughput — every design so far has been forced to pick two." />
       <Two
-        left={<Core className="mt-0" html="Every design so far sacrifices one of the three, and the whole payment landscape is trapped in the trade-off. Unicity solves <b>all three at once</b> — it never places the transaction on a shared ledger to begin with." />}
+        left={<Core className="mt-0" html="The whole payment landscape is trapped in the trade-off. Unicity is the first to hold <b>all three at once</b> — because it never places the transaction on a shared ledger to begin with." />}
         right={<Dia k="trilemma" max="46vh" />}
       />
     </Shell>
   );
 }
 
-/* ── 5 · infrastructure gap ── */
 const gap = [
   ['01', 'Disintermediation', 'Open infrastructure bypassed the legacy financial middleman.', 'solved', false],
   ['02', 'Digital value', 'Stablecoins now settle tens of trillions of dollars a year.', 'solved', false],
@@ -119,7 +127,7 @@ const gap = [
 export function GregGapSlide() {
   return (
     <Shell>
-      <H main='The final infrastructure gap: <span class="o">embedded identity</span>' sub="We solved disintermediation and digital value. Counterparty verification remains broken." />
+      <H act={ACT2G} main='Fair access still lacks <span class="o">one thing.</span>' sub="Disintermediation and digital value are solved. Proving who is on the other end was never built." />
       <div className="shrink-0 mt-6">
         {gap.map(([n, t, d, s, open], i) => (
           <div key={n as string} className={`flex items-baseline gap-6 py-4 border-t border-[#2c2c2a] ${i === gap.length - 1 ? 'border-b' : ''}`}>
@@ -137,29 +145,65 @@ export function GregGapSlide() {
   );
 }
 
-/* ── 6 · side-car to protocol ── */
 export function GregSidecarSlide() {
   return (
     <Shell>
-      <H main='From side-car to protocol: <span class="o">evolving digital identity</span>' sub="Verification must be built into the asset, not layered on as an optional application check." />
-      <Core html="Self-sovereign identity stalled because the credential sat beside the transaction, and a check that can be skipped gets skipped. Unicity puts identity <b>inside the asset</b> and makes it enforceable across any jurisdiction." />
+      <H act={ACT2G} main='Which is why identity <span class="o">keeps failing.</span>' sub="Bolt verification beside the transaction and a check that can be skipped gets skipped." />
+      <Core html="Self-sovereign identity stalled because the credential sat beside the transaction. Identity has to live <b>inside the asset</b> — enforceable across any jurisdiction, not optional at the application layer." />
       <div className="h-px w-16 bg-orange-500/80 mt-7" />
     </Shell>
   );
 }
 
-/* ── 7 · bearer instruments ── */
-export function GregBearerSlide() {
+/* the stakes — incumbents moved up to close the problem act */
+function Table({ cols, head, rows }: { cols: string; head: string[]; rows: (string | { v: string; cls?: string })[][] }) {
+  const cell = (c: string | { v: string; cls?: string }, key: number, isHead = false) => {
+    const v = typeof c === 'string' ? c : c.v;
+    const cls = typeof c === 'string' ? '' : c.cls || '';
+    return <div key={key} className={`px-4 lg:px-5 py-2.5 lg:py-3 text-base lg:text-xl leading-snug border-r border-[#2c2c2a] last:border-r-0 ${isHead ? 'uppercase tracking-wide text-[#9E9E96] text-sm lg:text-base' : ''} ${cls}`} style={isHead ? { fontFamily: anton } : undefined}>{v}</div>;
+  };
+  return (
+    <div className="shrink-0 mt-5 border border-[#2c2c2a] rounded-lg overflow-hidden">
+      <div className="grid border-b border-[#2c2c2a] bg-white/[0.025]" style={{ gridTemplateColumns: cols }}>{head.map((h, i) => cell(i === head.length - 1 ? { v: h, cls: 'text-orange-400' } : h, i, true))}</div>
+      {rows.map((r, ri) => (
+        <div key={ri} className="grid border-b border-[#2c2c2a] last:border-b-0" style={{ gridTemplateColumns: cols }}>{r.map((c, ci) => cell(c, ci))}</div>
+      ))}
+    </div>
+  );
+}
+const win = (v: string) => ({ v, cls: 'text-orange-400 bg-orange-500/[0.05]' });
+const mut = (v: string) => ({ v, cls: 'text-[#9E9E96]' });
+const lbl = (v: string) => ({ v, cls: 'text-[#D6D6D0] uppercase lblc' });
+
+export function GregIncumbentsSlide() {
   return (
     <Shell>
-      <H main='From ledger entries to <span class="o">bearer instruments</span>' sub="Off-chain settlement restores the properties of physical cash to digital stablecoins." />
-      <Core html="Unicity converts an on-chain stablecoin into a <b>self-contained, self-proving bearer instrument</b>. It carries its own proof and moves <b>peer-to-peer</b> over any channel — HTTP, QR, NOSTR — with zero ledger lookups." />
-      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="xform" max="50vh" /></div></div>
+      <H act={ACT2S} main='The market is spending billions — <span class="o">and still missing it.</span>' sub="Everyone is optimizing the ledger or splitting the proof across layers. No one keeps it whole." />
+      <Core html="That spend is the validation: the problem is real and unsolved. <b>Unicity keeps authorization, settlement, and the audit trail whole, inside the asset.</b>" />
+      <Table cols="1.1fr 2.4fr 1fr"
+        head={['Player', 'Their move', 'Approach']}
+        rows={[
+          [lbl('Circle'), 'Pivoted to infrastructure — the Arc L1, a $222M presale, bought Malachite.', mut('optimise the ledger')],
+          [lbl('Solana'), 'Alpenglow cut finality to ~150ms; its co-founder concedes a physical ceiling.', mut('optimise the ledger')],
+          [lbl('AP2 · x402'), 'Authorize in one layer, settle in another — the proof splits across the stack.', mut('split the proof')],
+          [{ v: 'Unicity', cls: 'text-orange-400 uppercase' }, win('Keeps authorization, settlement, and the audit trail inside the asset.'), win('keep it whole')],
+        ]}
+      />
     </Shell>
   );
 }
 
-/* ── 8 · oracle + unbundling timeline ── */
+/* ════════ ACT III — THE ANSWER ════════ */
+export function GregBearerSlide() {
+  return (
+    <Shell>
+      <H act={ACT3} main='So take the dollar <span class="o">off the ledger.</span>' sub="Off-chain settlement restores the properties of physical cash to a digital stablecoin." />
+      <Core html="Unicity converts an on-chain stablecoin into a <b>self-contained, self-proving bearer instrument</b>. It carries its own proof and moves <b>peer-to-peer</b> over any channel — HTTP, QR, NOSTR — with zero ledger lookups." />
+      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="xform" max="40vh" /></div></div>
+    </Shell>
+  );
+}
+
 const timeline = [
   ['2009 · BITCOIN', 'Correctness + ordering', 'Every node certifies every transaction and agrees the global order.', false],
   ['2023 · SUI · FASTPAY', 'Correctness only', 'Global ordering dropped for assets that share no state.', false],
@@ -168,9 +212,9 @@ const timeline = [
 export function GregOracleSlide() {
   return (
     <Shell>
-      <H main='The uniqueness oracle: <span class="o">unbundling consensus</span>' sub="Each generation of consensus removed work from the network. Unicity keeps only the irreducible function." />
+      <H act={ACT3} main='So the network attests <span class="o">one thing.</span>' sub="Each generation of consensus removed work from the network. Unicity keeps only the irreducible function." />
       <Two
-        left={<Core className="mt-0" html="The <b>Uniqueness Oracle</b> attests to one thing: has this token been spent? It never re-executes transactions or reads payloads, so throughput scales horizontally — <b>by design, 30,000 tx/sec per shard</b>." />}
+        left={<Core className="mt-0" html="The <b>Uniqueness Oracle</b> answers one question: has this token been spent? It never re-executes transactions or reads payloads, so throughput scales horizontally — <b>30,000 tx/sec per shard, by design</b>." />}
         right={<Dia k="oracle" max="38vh" />}
       />
       <div className="shrink-0 flex gap-5 mt-6">
@@ -186,31 +230,28 @@ export function GregOracleSlide() {
   );
 }
 
-/* ── 9 · architecture ── */
 export function GregArchitectureSlide() {
   return (
     <Shell>
-      <H main='The architecture: <span class="o">a minimal chain, an economy off it</span>' sub="Consensus stays minimal on-chain; everything an agent touches runs off-chain." />
+      <H act={ACT3} main='So the chain does <span class="o">one job.</span>' sub="Consensus stays minimal on-chain; everything an agent touches runs off-chain." />
       <Two
-        left={<Core className="mt-0" html="Proof-of-work, BFT finality, and the ZK oracle keep the chain minimal. Everything an agent touches runs off-chain — the SDK and the agent execution layer. <b>The chain does one job; the economy runs beside it.</b>" />}
-        right={<Dia k="archstack" max="52vh" />}
+        left={<Core className="mt-0" html="Proof-of-work, BFT finality, and the ZK oracle keep the chain minimal — the SDK and the agent execution layer run beside it. <b>The chain does one job; the economy runs off it.</b>" />}
+        right={<Dia k="archstack" max="56vh" />}
       />
     </Shell>
   );
 }
 
-/* ── 10 · receive predicate ── */
 export function GregReceiveSlide() {
   return (
     <Shell>
-      <H main='Protocol-enforced compliance: <span class="o">the receive predicate</span>' sub="Cryptographically gating asset transfers without sacrificing peer-to-peer privacy." />
+      <H act={ACT3} main='Now compliance needs <span class="o">no middleman.</span>' sub="Gate a transfer cryptographically, without surrendering peer-to-peer privacy." />
       <Core html="The <b>Receive Predicate</b> programs KYC, jurisdiction, and accreditation directly into the asset. If the recipient cannot satisfy it locally, the transfer mathematically fails — <b>the asset enforces its own compliance</b>." />
-      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="compliance" max="50vh" /></div></div>
+      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="compliance" max="40vh" /></div></div>
     </Shell>
   );
 }
 
-/* ── 11 · privacy ── */
 const observers = [
   ['The network', 'Sees only opaque commitments. It cannot read amounts, parties, or balances, nor link one transfer to the next.'],
   ['The sender', 'Cannot watch where or when the recipient later spends what was sent.'],
@@ -219,8 +260,8 @@ const observers = [
 export function GregPrivacySlide() {
   return (
     <Shell>
-      <H main='Privacy by construction: <span class="o">proven against every observer</span>' sub="Absolute confidentiality is the prerequisite for institutional capital flows." />
-      <Core html="Confidentiality is a founding property of the protocol — mathematically proven against all three observers." />
+      <H act={ACT3} main='And the open ledger <span class="o">goes dark.</span>' sub="Absolute confidentiality is the prerequisite for institutional capital flows." />
+      <Core html="Privacy is a founding property of the protocol, not an afterthought — mathematically proven against all three observers." />
       <div className="shrink-0 mt-5">
         {observers.map(([ol, od], i) => (
           <div key={ol} className={`flex items-baseline gap-7 py-3 border-t border-[#2c2c2a] ${i === observers.length - 1 ? 'border-b' : ''}`}>
@@ -234,29 +275,26 @@ export function GregPrivacySlide() {
   );
 }
 
-/* ── 12 · no bridge ── */
 export function GregNoBridgeSlide() {
   return (
     <Shell>
-      <H main='No bridge, <span class="o">nothing to hack</span>' sub="Eliminating the largest loss category in digital finance." />
+      <H act={ACT3} main='No bridge, <span class="o">nothing to hack.</span>' sub="The largest loss category in digital finance — designed out, not patched." />
       <Core html="Bridges concentrate risk: they hold value and relay a forgeable message. Unicity holds nothing — a locked source-chain asset becomes a self-contained token the recipient verifies directly against the source contract." />
-      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="nobridge" max="50vh" /></div></div>
+      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="nobridge" max="40vh" /></div></div>
     </Shell>
   );
 }
 
-/* ── 13 · atomic swap ── */
 export function GregSwapSlide() {
   return (
     <Shell>
-      <H main='The atomic swap: <span class="o">settlement without an intermediary</span>' sub="Trustless atomic swaps between self-contained bearer assets." />
+      <H act={ACT3} main='Settlement with <span class="o">no intermediary.</span>' sub="Trustless atomic swaps between self-contained bearer assets." />
       <Core html='The old fix is a timed lock, and the clock is the attack surface — one side stalls and walks. Unicity removes it with <b style="white-space:nowrap">Predicate Swaps</b>: both commit independently, and the swap forms for both at once or not at all.' />
-      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="swap" max="50vh" /></div></div>
+      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="swap" max="40vh" /></div></div>
     </Shell>
   );
 }
 
-/* ── 14 · x402 ── */
 const x402old = [
   ['1', 'Client requests the resource', false],
   ['2', 'Server returns 402 Payment Required', false],
@@ -278,7 +316,7 @@ const x402new = [
 export function GregX402Slide() {
   return (
     <Shell>
-      <H main='X402, rebuilt: <span class="o">twelve steps to five</span>' sub="Eliminating the network friction that operators spend billions trying to solve." />
+      <H act={ACT3} main='Twelve steps <span class="o">become five.</span>' sub="The same friction operators spend billions trying to solve — gone." />
       <Core html="Today x402 still routes settlement through a facilitator and a public chain. Unicity embeds authorization and proof in the token and cuts the handshake from <b>twelve steps to five</b>." />
       <div className="shrink-0 flex gap-7 mt-5 items-stretch">
         <div className="flex-1 rounded-lg border border-[#2c2c2a] bg-[#101010] p-4 lg:p-5">
@@ -300,32 +338,10 @@ export function GregX402Slide() {
   );
 }
 
-/* ── table helper for market / incumbents ── */
-function Table({ cols, head, rows }: { cols: string; head: string[]; rows: (string | { v: string; cls?: string })[][] }) {
-  const cell = (c: string | { v: string; cls?: string }, key: number, isHead = false) => {
-    const v = typeof c === 'string' ? c : c.v;
-    const cls = typeof c === 'string' ? '' : c.cls || '';
-    return <div key={key} className={`px-4 lg:px-5 py-2.5 lg:py-3 text-base lg:text-xl leading-snug border-r border-[#2c2c2a] last:border-r-0 ${isHead ? 'uppercase tracking-wide text-[#9E9E96] text-sm lg:text-base' : ''} ${cls}`} style={isHead ? { fontFamily: anton } : undefined}>{v}</div>;
-  };
-  return (
-    <div className="shrink-0 mt-5 border border-[#2c2c2a] rounded-lg overflow-hidden">
-      <div className="grid border-b border-[#2c2c2a] bg-white/[0.025]" style={{ gridTemplateColumns: cols }}>{head.map((h, i) => cell(i === head.length - 1 ? { v: h, cls: 'text-orange-400' } : h, i, true))}</div>
-      {rows.map((r, ri) => (
-        <div key={ri} className="grid border-b border-[#2c2c2a] last:border-b-0" style={{ gridTemplateColumns: cols }}>{r.map((c, ci) => cell(c, ci))}</div>
-      ))}
-    </div>
-  );
-}
-
-const win = (v: string) => ({ v, cls: 'text-orange-400 bg-orange-500/[0.05]' });
-const mut = (v: string) => ({ v, cls: 'text-[#9E9E96]' });
-const lbl = (v: string) => ({ v, cls: 'text-[#D6D6D0] uppercase' });
-
-/* ── 15 · machine market ── */
 export function GregMarketSlide() {
   return (
     <Shell>
-      <H main='The machine market: <span class="o">venue-free trading</span>' sub="CEX speed, DEX custody, with native privacy and compliance." />
+      <H act={ACT3} main='A market with <span class="o">no venue.</span>' sub="CEX speed and DEX custody, with native privacy and compliance — at once." />
       <Core html="Legacy venues force a compromise. Unicity delivers exchange speed, self-custody, privacy, and compliance — with <b>no venue at all</b>." />
       <Table cols="1.3fr 1.2fr 1.2fr 1.2fr"
         head={['', 'Legacy CEX', 'Legacy DEX', 'Unicity']}
@@ -340,37 +356,17 @@ export function GregMarketSlide() {
   );
 }
 
-/* ── 16 · agentic DAC ── */
 export function GregDACSlide() {
   return (
     <Shell>
-      <H main='What gets built: <span class="o">the agentic corporation</span>' sub="Agents become the new smart contracts, executing verifiable logic directly on bearer assets." />
+      <H act={ACT3} main='And a whole company <span class="o">run by agents.</span>' sub="Agents become the new smart contracts, executing verifiable logic directly on bearer assets." />
       <Core html="Unicity built a decentralized autonomous corporation for BlackRock — a parametric insurer whose capital, underwriting, and cession all run as agents. Settlement is only the entry point: <b>the same protocol runs the whole corporation</b>." />
       <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="dac" max="48vh" /></div></div>
     </Shell>
   );
 }
 
-/* ── 17 · incumbents ── */
-export function GregIncumbentsSlide() {
-  return (
-    <Shell>
-      <H main='The incumbents validate <span class="o">the diagnosis</span>' sub="The market is spending billions to optimize the ledger. We eliminated it." />
-      <Core html="The incumbents are spending billions to work around the ledger they built, splitting the proof across separate layers. <b>Unicity keeps authorization, settlement, and the audit trail whole, inside the asset.</b>" />
-      <Table cols="1.1fr 2.4fr 1fr"
-        head={['Player', 'Their move', 'Approach']}
-        rows={[
-          [lbl('Circle'), 'Pivoted to infrastructure — the Arc L1, a $222M presale, bought Malachite.', mut('optimise the ledger')],
-          [lbl('Solana'), 'Alpenglow cut finality to ~150ms; its co-founder concedes a physical ceiling.', mut('optimise the ledger')],
-          [lbl('AP2 · x402'), 'Authorize in one layer, settle in another — the proof splits across the stack.', mut('split the proof')],
-          [{ v: 'Unicity', cls: 'text-orange-400 uppercase' }, win('Keeps authorization, settlement, and the audit trail inside the asset.'), win('keep it whole')],
-        ]}
-      />
-    </Shell>
-  );
-}
-
-/* ── 18 · team ── */
+/* ════════ ACT IV — PROOF & ASK ════════ */
 const team = [
   ['The team', "Built Guardtime's <b>KSI</b> — the verification layer deployed with the Estonian Government, Lockheed Martin, Boeing and NATO. In production since 2012, eIDAS-grade. That lineage sustained <b>300,000 tx/sec</b> in Eesti Pank's 2021 test (heritage, not a live Unicity figure)."],
   ['The proof', 'Three mathematical papers prove the <b>privacy</b> and <b>no-double-spend</b> guarantees. Drop them into any model and they check. All public on github.com/unicitynetwork. The proof is verifiable today, not asserted.'],
@@ -379,7 +375,7 @@ const team = [
 export function GregTeamSlide() {
   return (
     <Shell>
-      <H main='The team: <span class="o">sovereign-grade verification</span>' sub="Shipping nation-scale cryptographic infrastructure before agentic finance had a name." />
+      <H act={ACT4} main='We have built sovereign-grade <span class="o">before.</span>' sub="Nation-scale cryptographic infrastructure, shipping since 2012 — before agentic finance had a name." />
       <div className="shrink-0 flex gap-5 mt-8">
         {team.map(([t, d]) => (
           <div key={t} className={cellCls}>
@@ -392,11 +388,10 @@ export function GregTeamSlide() {
   );
 }
 
-/* ── 19 · ask ── */
 export function GregAskSlide() {
   return (
     <Shell>
-      <H main='The ask: <span class="o">$5M to settle the first compliant dollar</span>' sub="Accelerating the deployment of compliant, peer-to-peer stablecoins." />
+      <H act={ACT4A} main='$5M to settle the <span class="o">first compliant dollar.</span>' sub="Accelerating the deployment of compliant, peer-to-peer stablecoins." />
       <div className="shrink-0 mt-7 rounded-xl p-6 lg:p-8" style={{ border: '1px solid rgba(255,106,31,0.4)', background: 'linear-gradient(180deg, rgba(255,106,31,0.06), transparent)' }}>
         <div className="text-[#fefefe] text-2xl lg:text-4xl" style={{ fontFamily: anton }}><span className="text-orange-400">$5M Seed</span> · $25M cap / $50M token FDV · SAFE + token warrant</div>
         <p className="text-[#D6D6D0] text-base lg:text-2xl mt-4 leading-relaxed max-w-[104ch]" dangerouslySetInnerHTML={{ __html: 'We will partner with a regulated issuer to ship a compliant dollar that settles peer-to-peer the moment the Receive Predicate is satisfied — binding <b style="color:#fefefe">identity, speed, and settlement</b> into one instrument.' }} />
