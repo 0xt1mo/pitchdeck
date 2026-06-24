@@ -7,7 +7,7 @@ const R=path.resolve(ROOT,'node_modules');
 const puppeteer=(await import(pathToFileURL(R+'/puppeteer/lib/cjs/puppeteer/puppeteer.js').href)).default;
 const { PDFDocument }=await import(pathToFileURL(R+'/pdf-lib/cjs/index.js').href);
 const defs=fs.readFileSync(DIR+'/assets/logo-defs.html','utf8');
-const DG={}; for(const k of ['xform','oracle','compliance','nobridge','swap','dac','trilemma']){
+const DG={}; for(const k of ['xform','oracle','compliance','nobridge','swap','dac','trilemma','archstack']){
   let s=fs.readFileSync(`${DIR}/diagrams/${k}.svg`,'utf8').replace(/max-height:\s*\d+px/g,'height:auto');
   if(k==='xform') s=s.replace(/font-size="38"/g,'font-size="22"');
   if(k==='swap'){ s=s.replace(/<text x="0" y="38"[\s\S]*?<\/text>/,'').replace(/<text x="0" y="74"[\s\S]*?<\/text>/,'').replace('viewBox="0 0 1000 560"','viewBox="0 100 1000 462"'); }
@@ -27,7 +27,7 @@ body{background:#000}
 .hmain{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;font-size:38px;line-height:1.12;letter-spacing:.006em;color:var(--ink);text-wrap:balance}
 .hmain .o{color:var(--o)}
 .hsub{font-size:20px;line-height:1.45;color:var(--ink);font-weight:500;margin-top:11px;max-width:98ch;letter-spacing:.005em}
-.core{font-size:18.5px;line-height:1.65;color:var(--dim);margin-top:16px;max-width:90ch;text-wrap:balance}
+.core{font-size:18.5px;line-height:1.65;color:var(--dim);margin-top:16px;max-width:none}
 .core b{color:var(--ink);font-weight:600}.core .o{color:var(--o);font-weight:600}
 .rule{height:1px;width:64px;background:var(--o);margin-top:24px;opacity:.8}
 .crule{height:1px;width:300px;background:linear-gradient(90deg,transparent,var(--oline),transparent);margin:46px auto 42px}
@@ -41,7 +41,8 @@ body{background:#000}
 .two .cR{flex:1;min-width:0;display:flex;justify-content:center}
 .dia{width:100%}.dia svg{display:block;width:100%;height:auto;max-height:400px}
 .diafull{margin-top:22px;display:flex;justify-content:center}.diafull svg{display:block;width:100%;max-width:1340px;height:auto;max-height:482px}
-.statrow{display:flex;gap:52px;align-items:center;margin-top:20px}
+.diastack{width:100%;display:flex;justify-content:center}.diastack svg{display:block;width:100%;height:auto;max-height:520px}
+.statrow{display:flex;gap:52px;align-items:flex-start;margin-top:52px}
 .mega{font-family:"Anton",sans-serif;font-size:168px;line-height:.8;color:var(--o);letter-spacing:-.01em;flex:none}
 .megacap{font-size:15.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);margin-top:12px;max-width:30ch;line-height:1.5}
 .statrow .core{margin-top:0}
@@ -99,7 +100,7 @@ body{background:#000}
 .foot .lg svg{height:13px;width:auto;opacity:.8}
 `;
 
-let T=18;
+let T=19;
 const foot=(n)=>`<div class="foot"><span class="lg"><svg viewBox="0 0 641 128"><use href="#ulogo"/></svg></span><span>Unicity · Seed proposal · Confidential — for Greg Kidd</span><span>${String(n).padStart(2,'0')} / ${T}</span></div>`;
 const head=(hmain,hsub)=>`<div class="hmain">${hmain}</div><div class="hsub">${hsub}</div>`;
 const SLD=(n,inner,cover='')=>`<div class="slide"><div class="grid"></div><div class="glow"></div><div class="pad${cover}">${inner}</div>${cover?'':foot(n)}</div>`;
@@ -153,7 +154,10 @@ const SL=[
     <div class="tlc"><div class="yr">2023 · SUI · FASTPAY</div><div class="nm">Correctness only</div><div class="ds">Global ordering dropped for assets that share no state.</div></div>
     <div class="tlc last"><div class="yr">2026 · UNICITY</div><div class="nm">Uniqueness only</div><div class="ds">The network attests one thing. Correctness moves to the edge.</div></div>
   </div>`),
-// 9 RECEIVE PREDICATE
+// 9 THE ARCHITECTURE / THE STACK
+()=>SLD(9,`${head('The architecture: <span class="o">a minimal chain, an economy off it</span>','Consensus stays minimal on-chain; everything an agent touches runs off-chain.')}
+  <div class="two" style="margin-top:26px"><div class="cL"><div class="core">Proof-of-work and BFT finality secure a deliberately minimal chain, and the ZK Uniqueness Oracle is its only on-chain function. Everything an agent touches runs off-chain and peer-to-peer: the Token Operations SDK and the agent execution layer. <b>The chain does one job; the economy runs beside it.</b></div></div><div class="cR"><div class="diastack">${DG['archstack']}</div></div></div>`),
+// 10 RECEIVE PREDICATE
 ()=>diaslide(9,'Protocol-enforced compliance: <span class="o">the receive predicate</span>','Cryptographically gating asset transfers without sacrificing peer-to-peer privacy.',
   `Compliance should not require a central facilitator. Unicity introduces the <b>Receive Predicate</b>. KYC, jurisdiction, and accreditation are programmed directly into the asset. If the recipient cannot satisfy the predicate locally, the transfer mathematically fails. <b style="white-space:nowrap">The asset enforces its own compliance.</b>`,'compliance'),
 // 10 PRIVACY
