@@ -11,12 +11,16 @@ const DG={}; for(const k of ['xform','oracle','compliance','nobridge','swap','da
   let s=fs.readFileSync(`${DIR}/diagrams/${k}.svg`,'utf8').replace(/max-height:\s*\d+px/g,'height:auto');
   if(k==='xform') s=s.replace(/font-size="38"/g,'font-size="22"');
   if(k==='swap'){ s=s.replace(/<text x="0" y="38"[\s\S]*?<\/text>/,'').replace(/<text x="0" y="74"[\s\S]*?<\/text>/,'').replace('viewBox="0 0 1000 560"','viewBox="0 100 1000 462"'); }
+  // legibility: raise the smallest annotation text to ~15 and brighten the one dim gray
+  s=s.replace(/font-size="14"/g,'font-size="15.5"');
+  for(const sz of ['13.5','13','12.5','12','11']) s=s.replace(new RegExp('font-size="'+sz.replace('.','\\.')+'"','g'),'font-size="15"');
+  s=s.replace(/#8f8f88/gi,'#b2b2aa');
   DG[k]=s;
 }
 const dia=(k)=>`<div class="dia">${DG[k]}</div>`;
 
 const CSS=`
-:root{--bg:#060606;--ink:#FEFEFE;--o:#FF6A1F;--dim:#B6B6B0;--faint:#74746E;--rule:#262624;--card:#101010;--owash:rgba(255,106,31,.06);--oline:rgba(255,106,31,.4);--bad:#8a8a84;--mx:88px;}
+:root{--bg:#060606;--ink:#FEFEFE;--o:#FF6A1F;--dim:#D6D6D0;--faint:#9E9E96;--rule:#2c2c2a;--card:#101010;--owash:rgba(255,106,31,.06);--oline:rgba(255,106,31,.4);--bad:#a8a8a0;--mx:88px;}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#000}
 .slide{position:relative;width:1600px;height:900px;background:var(--bg);color:var(--ink);overflow:hidden;font-family:"Geist","Inter",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
