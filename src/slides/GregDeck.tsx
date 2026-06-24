@@ -12,7 +12,7 @@ const anton = "'Anton', sans-serif";
 
 const SCOPE = `
 .gx{font-family:'Geist Mono',monospace}
-.gx .o{color:#FF6A1F}
+.gx .o{color:var(--color-orange-400)}
 .gx b{color:#FEFEFE;font-weight:600}
 .gx .lblc{font-family:'Anton',sans-serif}
 .gx .dia svg{display:block;width:100%;height:auto}
@@ -23,7 +23,7 @@ function Shell({ children }: { children: React.ReactNode }) {
     <div className="gx fixed inset-0 z-50 bg-[#060606] overflow-hidden">
       <style>{SCOPE}</style>
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px)', backgroundSize: '64px 64px' }} />
-      <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 58% 50% at 50% 48%, rgba(255,106,31,0.07), transparent 70%)' }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 58% 50% at 50% 48%, rgba(255,137,4,0.07), transparent 70%)' }} />
       <div className="relative z-10 h-full flex flex-col justify-center px-12 sm:px-16 lg:px-24 py-14 lg:py-20">
         {children}
       </div>
@@ -325,7 +325,7 @@ export function GregX402Slide() {
             <div key={i as string} className={`flex gap-3 py-1.5 text-sm lg:text-lg border-t border-white/5 first:border-t-0 ${gone ? 'text-[#5a5a55] line-through' : 'text-[#D6D6D0]'}`}><span className="text-[#9E9E96] w-4 shrink-0 no-underline">{i}</span>{t}</div>
           ))}
         </div>
-        <div className="flex-1 rounded-lg p-4 lg:p-5" style={{ border: '1px solid rgba(255,106,31,0.4)', background: 'linear-gradient(180deg, rgba(255,106,31,0.06), transparent)' }}>
+        <div className="flex-1 rounded-lg p-4 lg:p-5" style={{ border: '1px solid rgba(255,137,4,0.4)', background: 'linear-gradient(180deg, rgba(255,137,4,0.06), transparent)' }}>
           <div className="flex justify-between items-baseline uppercase tracking-wide text-orange-400 text-base lg:text-lg" style={{ fontFamily: anton }}><span>Unicity x402</span><span>5 steps</span></div>
           {x402new.map(([i, t]) => (
             <div key={i} className="flex gap-3 py-1.5 text-sm lg:text-lg border-t border-white/5 first:border-t-0 text-[#D6D6D0]"><span className="text-[#9E9E96] w-4 shrink-0">{i}</span>{t}</div>
@@ -409,7 +409,7 @@ export function GregAskSlide() {
   return (
     <Shell>
       <H act={ACT4A} main='Ship the <span class="o">first compliant dollar.</span>' sub="A regulated dollar that settles peer-to-peer the moment the Receive Predicate is satisfied." />
-      <div className="shrink-0 mt-7 rounded-xl p-6 lg:p-8" style={{ border: '1px solid rgba(255,106,31,0.4)', background: 'linear-gradient(180deg, rgba(255,106,31,0.06), transparent)' }}>
+      <div className="shrink-0 mt-7 rounded-xl p-6 lg:p-8" style={{ border: '1px solid rgba(255,137,4,0.4)', background: 'linear-gradient(180deg, rgba(255,137,4,0.06), transparent)' }}>
         <div className="text-[#fefefe] text-2xl lg:text-3xl" style={{ fontFamily: anton }}>Partner with a regulated issuer to bind <span className="text-orange-400">identity, speed, and settlement</span> into one instrument.</div>
         <p className="text-[#D6D6D0] text-base lg:text-2xl mt-4 leading-relaxed max-w-[104ch]">The first asset where the proof of who you are — and what you may do — travels with the money itself.</p>
       </div>
