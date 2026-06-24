@@ -140,7 +140,7 @@ export function GregGapSlide() {
           </div>
         ))}
       </div>
-      <p className="shrink-0 mt-6 text-[#fefefe] font-semibold text-xl lg:text-2xl">Unicity was engineered to close <span className="text-orange-400">this final gap</span>.</p>
+      <p className="shrink-0 mt-6 text-[#fefefe] font-semibold text-xl lg:text-2xl">Unicity closes it by putting identity <span className="text-orange-400">inside the asset</span> — where a check cannot be skipped.</p>
     </Shell>
   );
 }
@@ -199,7 +199,7 @@ export function GregBearerSlide() {
     <Shell>
       <H act={ACT3} main='So take the dollar <span class="o">off the ledger.</span>' sub="Make it carry its own proof — a digital dollar that settles like <b>cash in hand</b>, no ledger to ask permission." />
       <Core html="Unicity converts an on-chain stablecoin into a <b>self-contained, self-proving bearer instrument</b>. It carries its own proof and moves <b>peer-to-peer</b> over any channel — HTTP, QR, NOSTR — with <span class='o'>zero ledger lookups</span>." />
-      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="xform" max="40vh" /></div></div>
+      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="ledgerbearer" max="40vh" /></div></div>
     </Shell>
   );
 }
@@ -235,7 +235,7 @@ export function GregArchitectureSlide() {
     <Shell>
       <H act={ACT3} main='So the chain does <span class="o">one job.</span>' sub="Consensus secures the record and nothing more — <b>nothing an agent touches waits on it.</b>" />
       <Two
-        left={<Core className="mt-0" html="Proof-of-work, BFT finality, and the ZK oracle keep the chain minimal. Everything an agent touches runs off-chain — the SDK and the agent execution layer. <b>The chain does one job — the economy runs beside it.</b>" />}
+        left={<Core className="mt-0" html="Proof-of-work, BFT finality, and a ZK uniqueness oracle keep the chain minimal — the oracle attests one thing, whether a token has been spent, so throughput scales to <b>30,000 transactions per second per shard</b>. Everything an agent touches runs off-chain. <b>The chain does one job — the economy runs beside it.</b>" />}
         right={<Dia k="archstack" max="56vh" />}
       />
     </Shell>
@@ -289,7 +289,7 @@ export function GregSwapSlide() {
   return (
     <Shell>
       <H act={ACT3} main='So they settle with <span class="o">no clock to attack.</span>' sub="<b>Trustless atomic swaps</b> between self-contained bearer assets." />
-      <Core html='The old fix is a timed lock, and the clock is the attack surface — one side stalls and walks. Unicity removes it with <b style="white-space:nowrap">Predicate Swaps</b>: both commit independently, and the swap forms for both <b>at once or not at all</b>.' />
+      <Core html='The old fix is a timed lock, and the clock is the attack surface — one side stalls and walks. Unicity removes it with <b style="white-space:nowrap">Predicate Swaps</b>: both commit independently, and the swap forms for both <b>at once or not at all</b>. No bridge holds the value, either — a locked asset becomes a token the recipient verifies against its source, so the biggest loss in crypto has nothing left to drain.' />
       <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="swap" max="40vh" /></div></div>
     </Shell>
   );

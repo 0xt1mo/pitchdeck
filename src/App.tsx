@@ -80,29 +80,22 @@ import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  CoverSlide,                // 1 · Securing the Agentic Economy (May-30 hero)
-  // ── ACT I — THE SHIFT ──
-  GregShiftSlide,            // 2 · the agents arrived, the rails didn't (57.5%)
-  // ── ACT II — WHY THE RAILS FAIL ──
-  GregBottleneckSlide,       // 3 · a machine can't wait for a shared ledger
-  GregTrilemmaSlide,         // 4 · every digital dollar gives one up
-  GregGapSlide,              // 5 · fair access still lacks one thing
-  GregSidecarSlide,          // 6 · which is why identity keeps failing
-  GregIncumbentsSlide,       // 7 · the market is spending billions and still missing it
-  // ── ACT III — THE ANSWER ──
-  GregBearerSlide,           // 8 · take the dollar off the ledger
-  GregOracleSlide,           // 9 · the network attests one thing
-  GregArchitectureSlide,     // 10 · the chain does one job
-  GregReceiveSlide,          // 11 · compliance needs no middleman
-  GregPrivacySlide,          // 12 · the open ledger goes dark
-  GregNoBridgeSlide,         // 13 · no bridge, nothing to hack
-  GregSwapSlide,             // 14 · settlement with no intermediary
-  GregX402Slide,             // 15 · twelve steps become five
-  GregMarketSlide,           // 16 · a market with no venue
-  GregDACSlide,              // 17 · a whole company run by agents
-  // ── ACT IV — PROOF & ASK ──
-  WhoWeAreSlide,             // 18 · the team (Tether slide, as-is)
-  GregAskSlide,              // 19 · $5M to settle the first compliant dollar
+  CoverSlide,                // 1 · Securing the Agentic Economy
+  GregShiftSlide,            // 2 · the agents are here, nothing vouches for them
+  GregBottleneckSlide,       // 3 · a machine cannot wait for a shared ledger
+  GregTrilemmaSlide,         // 4 · every digital dollar trades one away
+  GregGapSlide,              // 5 · two are solved, one never was (folds the side-car point)
+  GregIncumbentsSlide,       // 6 · the market is spending billions and still missing it
+  GregBearerSlide,           // 7 · take the dollar off the ledger (bearer-transform graphic)
+  GregArchitectureSlide,     // 8 · the chain does one job (folds the oracle: attests one thing, 30k/shard)
+  GregReceiveSlide,          // 9 · compliance needs no middleman
+  GregPrivacySlide,          // 10 · the open ledger goes dark
+  GregSwapSlide,             // 11 · settle with no clock to attack (folds no-bridge)
+  GregX402Slide,             // 12 · twelve steps become five (peak)
+  GregMarketSlide,           // 13 · a market with no venue
+  GregDACSlide,              // 14 · a whole company run by agents
+  WhoWeAreSlide,             // 15 · the team (Tether slide, as-is)
+  GregAskSlide,              // 16 · ship the first compliant dollar
 ];
 
 export default function App() {
