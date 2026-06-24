@@ -43,7 +43,7 @@ function Core({ html, className = '' }: { html: string; className?: string }) {
   return <p className={`text-[#D6D6D0] text-base sm:text-lg lg:text-2xl leading-[1.5] mt-5 ${className}`} dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
-function Dia({ k, max = '38vh' }: { k: string; max?: string }) {
+function Dia({ k, max = '42vh' }: { k: string; max?: string }) {
   return <div className="dia w-full flex justify-center" style={{ maxHeight: max }} dangerouslySetInnerHTML={{ __html: DIAGRAMS[k] }} />;
 }
 
@@ -154,7 +154,7 @@ export function GregBearerSlide() {
     <Shell>
       <H main='From ledger entries to <span class="o">bearer instruments</span>' sub="Off-chain settlement restores the properties of physical cash to digital stablecoins." />
       <Core html="Unicity converts an on-chain stablecoin into a <b>self-contained, self-proving bearer instrument</b>. It carries its own proof and moves <b>peer-to-peer</b> over any channel — HTTP, QR, NOSTR — with zero ledger lookups." />
-      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1200px]"><Dia k="xform" max="40vh" /></div></div>
+      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="xform" max="50vh" /></div></div>
     </Shell>
   );
 }
@@ -171,7 +171,7 @@ export function GregOracleSlide() {
       <H main='The uniqueness oracle: <span class="o">unbundling consensus</span>' sub="Each generation of consensus removed work from the network. Unicity keeps only the irreducible function." />
       <Two
         left={<Core className="mt-0" html="The <b>Uniqueness Oracle</b> attests to one thing: has this token been spent? It never re-executes transactions or reads payloads, so throughput scales horizontally — <b>by design, 30,000 tx/sec per shard</b>." />}
-        right={<Dia k="oracle" max="30vh" />}
+        right={<Dia k="oracle" max="38vh" />}
       />
       <div className="shrink-0 flex gap-5 mt-6">
         {timeline.map(([yr, nm, ds, last]) => (
@@ -205,7 +205,7 @@ export function GregReceiveSlide() {
     <Shell>
       <H main='Protocol-enforced compliance: <span class="o">the receive predicate</span>' sub="Cryptographically gating asset transfers without sacrificing peer-to-peer privacy." />
       <Core html="The <b>Receive Predicate</b> programs KYC, jurisdiction, and accreditation directly into the asset. If the recipient cannot satisfy it locally, the transfer mathematically fails — <b>the asset enforces its own compliance</b>." />
-      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1200px]"><Dia k="compliance" max="40vh" /></div></div>
+      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="compliance" max="50vh" /></div></div>
     </Shell>
   );
 }
@@ -240,7 +240,7 @@ export function GregNoBridgeSlide() {
     <Shell>
       <H main='No bridge, <span class="o">nothing to hack</span>' sub="Eliminating the largest loss category in digital finance." />
       <Core html="Bridges concentrate risk: they hold value and relay a forgeable message. Unicity holds nothing — a locked source-chain asset becomes a self-contained token the recipient verifies directly against the source contract." />
-      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1200px]"><Dia k="nobridge" max="40vh" /></div></div>
+      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="nobridge" max="50vh" /></div></div>
     </Shell>
   );
 }
@@ -251,7 +251,7 @@ export function GregSwapSlide() {
     <Shell>
       <H main='The atomic swap: <span class="o">settlement without an intermediary</span>' sub="Trustless atomic swaps between self-contained bearer assets." />
       <Core html='The old fix is a timed lock, and the clock is the attack surface — one side stalls and walks. Unicity removes it with <b style="white-space:nowrap">Predicate Swaps</b>: both commit independently, and the swap forms for both at once or not at all.' />
-      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1200px]"><Dia k="swap" max="40vh" /></div></div>
+      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="swap" max="50vh" /></div></div>
     </Shell>
   );
 }
@@ -346,7 +346,7 @@ export function GregDACSlide() {
     <Shell>
       <H main='What gets built: <span class="o">the agentic corporation</span>' sub="Agents become the new smart contracts, executing verifiable logic directly on bearer assets." />
       <Core html="Unicity built a decentralized autonomous corporation for BlackRock — a parametric insurer whose capital, underwriting, and cession all run as agents. Settlement is only the entry point: <b>the same protocol runs the whole corporation</b>." />
-      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1180px]"><Dia k="dac" max="42vh" /></div></div>
+      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="dac" max="48vh" /></div></div>
     </Shell>
   );
 }
