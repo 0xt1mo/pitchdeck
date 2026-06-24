@@ -99,6 +99,14 @@ body{background:#000}
 .askbox .ml{font-size:22px;color:var(--dim);margin-top:12px;line-height:1.6;max-width:104ch}.askbox .ml b{color:var(--ink)}
 .foot{position:absolute;left:var(--mx);right:var(--mx);bottom:32px;z-index:2;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule);padding-top:13px;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
 .foot .lg svg{height:13px;width:auto;opacity:.8}
+@page{size:1600px 900px;margin:0}
+@media print{
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ html,body{background:#000;margin:0;padding:0}
+ body>div{display:block!important;padding:0!important;gap:0!important;background:#000!important;align-items:stretch!important}
+ .slide{break-after:page;page-break-after:always}
+ .slide:last-child{break-after:auto;page-break-after:avoid}
+}
 `;
 
 let T=19;
@@ -251,8 +259,6 @@ const chk=await p.evaluate(()=>Array.from(document.querySelectorAll('.slide')).m
 console.log('overflow/collide:',JSON.stringify(chk));
 const els=await p.$$('.slide'); const pngs=[];
 for(let i=0;i<els.length;i++){const fp=`${OUT}/slides/slide-${String(i+1).padStart(2,'0')}.png`;await els[i].screenshot({path:fp});pngs.push(fp);}
+await p.pdf({path:OUT+'/Unicity_HardYaka_Seed_Deck.pdf',printBackground:true,preferCSSPageSize:true,pageRanges:'1-'+pngs.length});
 await b.close();
-const pdf=await PDFDocument.create();
-for(const fp of pngs){const img=await pdf.embedPng(fs.readFileSync(fp));const pg=pdf.addPage([1600,900]);pg.drawImage(img,{x:0,y:0,width:1600,height:900});}
-fs.writeFileSync(OUT+'/Unicity_HardYaka_Seed_Deck.pdf',await pdf.save());
-console.log('wrote',pngs.length,'PNGs + PDF');
+console.log('wrote',pngs.length,'PNGs + vector PDF');
