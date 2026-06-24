@@ -74,7 +74,7 @@ const ACT4A = 'Act IV · The next step';
 export function GregShiftSlide() {
   return (
     <Shell>
-      <H act={ACT1} main='The agents are here. <span class="o">The rails are not.</span>' sub="Most of the internet is already machines — and they have started to pay, at software speed." />
+      <H act={ACT1} main='The agents are here. <span class="o">The rails are not.</span>' sub="They pay each other faster than any human rail can stop to ask who they are — or whether they should." />
       <div className="shrink-0 flex items-start gap-10 lg:gap-14 mt-8">
         <div className="shrink-0">
           <div className="text-orange-400 leading-[0.8]" style={{ fontFamily: anton, fontSize: 'min(150px, 15vw)' }}>57.5%</div>
@@ -178,7 +178,7 @@ const lbl = (v: string) => ({ v, cls: 'text-[#D6D6D0] uppercase lblc' });
 export function GregIncumbentsSlide() {
   return (
     <Shell>
-      <H act={ACT2S} main='The market is spending billions — <span class="o">and still missing it.</span>' sub="Everyone is optimizing the ledger or splitting the proof across layers. No one keeps it whole." />
+      <H act={ACT2S} main='The market is spending billions — <span class="o">and still missing it.</span>' sub="Each one optimizes the ledger, or routes around it by splitting the proof across layers. They treat the symptom — the ledger itself is the flaw." />
       <Core html="That spend is the validation: the problem is real and unsolved. <b>Unicity keeps authorization, settlement, and the audit trail whole, inside the asset.</b>" />
       <Table cols="1.1fr 2.4fr 1fr"
         head={['Player', 'Their move', 'Approach']}
@@ -413,7 +413,7 @@ export function GregAskSlide() {
         <div className="text-[#fefefe] text-2xl lg:text-3xl" style={{ fontFamily: anton }}>Partner with a regulated issuer to bind <span className="text-orange-400">identity, speed, and settlement</span> into one instrument.</div>
         <p className="text-[#D6D6D0] text-base lg:text-2xl mt-4 leading-relaxed max-w-[104ch]">The first asset where the proof of who you are — and what you may do — travels with the money itself.</p>
       </div>
-      <p className="shrink-0 mt-7 text-[#fefefe] font-semibold text-xl lg:text-2xl">Institutions rely on walled gardens for compliance. <span className="text-orange-400">Unicity embeds that compliance directly into the dollar.</span></p>
+      <p className="shrink-0 mt-7 text-[#fefefe] font-semibold text-xl lg:text-2xl">Compliance has always lived in a walled garden. <span className="text-orange-400">Put it inside the dollar, and you own the rail the agentic economy settles on.</span></p>
     </Shell>
   );
 }
