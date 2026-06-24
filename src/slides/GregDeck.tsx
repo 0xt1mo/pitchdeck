@@ -63,7 +63,7 @@ const ctCls = 'text-orange-400 uppercase tracking-wide text-base lg:text-xl lblc
 const ckCls = 'text-[#D6D6D0] text-sm lg:text-lg mt-2 leading-snug';
 
 const ACT1 = 'Act I · The shift';
-const ACT2 = 'Act II · Why the rails fail';
+const ACT2 = 'Act II · Why the design fails';
 const ACT2G = 'Act II · The gap';
 const ACT2S = 'Act II · The stakes';
 const ACT3 = 'Act III · The answer';
@@ -74,11 +74,11 @@ const ACT4A = 'Act IV · The next step';
 export function GregShiftSlide() {
   return (
     <Shell>
-      <H act={ACT1} main='The agents are here. <span class="o">The rails are not.</span>' sub="They pay each other faster than any human rail can stop to ask who they are — or whether they should." />
+      <H act={ACT1} main='The agents are here. <span class="o">Nothing vouches for them.</span>' sub="They pay each other faster than anything built for people can stop to ask who they are — or whether they should." />
       <div className="shrink-0 flex items-start gap-10 lg:gap-14 mt-8">
         <div className="shrink-0">
           <div className="text-orange-400 leading-[0.8]" style={{ fontFamily: anton, fontSize: 'min(150px, 15vw)' }}>57.5%</div>
-          <div className="text-[#9E9E96] uppercase tracking-wide text-sm lg:text-base mt-3 max-w-[30ch] leading-snug">of web requests are automated, not human — Cloudflare, 2026</div>
+          <div className="text-[#9E9E96] uppercase tracking-wide text-sm lg:text-base mt-3 max-w-[30ch] leading-snug">of all web requests are now automated — Cloudflare, 2026</div>
         </div>
         <Core className="mt-0" html="Legacy networks cannot verify an agent's authority or hold it to a budget without a centralized chokepoint. For machines to transact, the <b>proof of authority has to travel with the money</b>." />
       </div>
@@ -86,7 +86,7 @@ export function GregShiftSlide() {
   );
 }
 
-/* ════════ ACT II — WHY THE RAILS FAIL ════════ */
+/* ════════ ACT II — WHY THE DESIGN FAILS ════════ */
 const bottleneck = [
   ['Broadcast', 'Every node hears every transaction.'],
   ['Order', 'Global agreement on the sequence of all of them.'],
@@ -97,7 +97,7 @@ export function GregBottleneckSlide() {
   return (
     <Shell>
       <H act={ACT2} main='A machine cannot wait for <span class="o">a shared ledger.</span>' sub="Before one payment clears, <b>every node on earth</b> must hear it, agree where it falls in line, re-run it, and store it forever — the agent waits on a crowd of strangers reaching consensus." />
-      <Core html="Four jobs, repeated on every node, for every transaction — broadcast, order, validate, record. That is the tax the rail charges on each payment, and no machine moving at machine speed will pay it. The fix is not a faster ledger. It is <b>no shared ledger at all</b>." />
+      <Core html="Four jobs, repeated on every node, for every transaction — broadcast, order, validate, record. That is the toll the shared ledger charges on every payment, and no machine at machine speed will pay it. The answer is to remove the <b>shared ledger</b> entirely." />
       <div className="shrink-0 flex gap-4 mt-7">
         {bottleneck.map(([t, d]) => (
           <div key={t} className={cellCls}><div className={ctCls}>{t}</div><div className={ckCls}>{d}</div></div>
@@ -110,9 +110,9 @@ export function GregBottleneckSlide() {
 export function GregTrilemmaSlide() {
   return (
     <Shell>
-      <H act={ACT2} main='Every digital dollar <span class="o">trades one away.</span>' sub="Verified, private, instantly settled — put a dollar on open rails and the design forces you to <b>surrender one of the three</b>." />
+      <H act={ACT2} main='Every digital dollar <span class="o">trades one away.</span>' sub="Verified, private, instantly settled — move a dollar in the open and the design forces you to <b>surrender one of the three</b>." />
       <Two
-        left={<Core className="mt-0" html="The trade is not a choice — it is the shared ledger making it for you. Record every transfer in one place and you can have speed, or privacy, or proof of who is on the other end — <b>never all three at once</b>. Every dollar moving today already gave one up." />}
+        left={<Core className="mt-0" html="The shared ledger makes that trade for you. Record every transfer in one place, and you get speed, or privacy, or proof of who is on the other end — <b>never all three at once</b>. Every dollar moving today already gave one up." />}
         right={<Dia k="trilemma" max="46vh" />}
       />
     </Shell>
@@ -127,7 +127,7 @@ const gap = [
 export function GregGapSlide() {
   return (
     <Shell>
-      <H act={ACT2G} main='Two are solved. <span class="o">One never was.</span>' sub="Open rails removed the middleman. Stablecoins moved the value. But <b>proving who is on the other end</b> — the question no rail could stop to ask — was never built." />
+      <H act={ACT2G} main='Two are solved. <span class="o">One never was.</span>' sub="Open infrastructure removed the middleman. Stablecoins moved the value. But <b>proving who is on the other end</b> — the question nothing could stop to ask — was never built." />
       <div className="shrink-0 mt-6">
         {gap.map(([n, t, d, s, open], i) => (
           <div key={n as string} className={`flex items-baseline gap-6 py-4 border-t border-[#2c2c2a] ${i === gap.length - 1 ? 'border-b' : ''}`}>
@@ -261,7 +261,7 @@ export function GregPrivacySlide() {
   return (
     <Shell>
       <H act={ACT3} main='And the open ledger <span class="o">goes dark.</span>' sub="Three observers watch every public chain — the network, the sender, the address. <b>None of them can see in.</b>" />
-      <Core html="Privacy here is proven, not promised — a founding property of the protocol, closed against all three. The City does not enter rails it can be read on; this is the floor that lets institutional capital move at all." />
+      <Core html="Privacy is a founding property of the protocol, closed against all three observers. Institutions will not move capital where every balance can be read — this is the floor that lets them move at all." />
       <div className="shrink-0 mt-5">
         {observers.map(([ol, od], i) => (
           <div key={ol} className={`flex items-baseline gap-7 py-3 border-t border-[#2c2c2a] ${i === observers.length - 1 ? 'border-b' : ''}`}>
@@ -278,7 +278,7 @@ export function GregPrivacySlide() {
 export function GregNoBridgeSlide() {
   return (
     <Shell>
-      <H act={ACT3} main='No bridge, <span class="o">nothing to hack.</span>' sub="Every big crypto theft drains the same place — the bridge that <b>holds the pooled value</b>. So we built without one: <b>designed out, not patched.</b>" />
+      <H act={ACT3} main='No bridge, <span class="o">nothing to hack.</span>' sub="Every big crypto theft drains the same place — the bridge that <b>holds the pooled value</b>. So we built without one: <b>designed out at the root.</b>" />
       <Core html="Bridges concentrate risk: they hold value and relay a forgeable message. Unicity holds nothing — a locked source-chain asset becomes a self-contained token the recipient verifies directly against the source contract." />
       <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="nobridge" max="40vh" /></div></div>
     </Shell>
@@ -413,7 +413,7 @@ export function GregAskSlide() {
         <div className="text-[#fefefe] text-2xl lg:text-3xl" style={{ fontFamily: anton }}>Partner with a regulated issuer to bind <span className="text-orange-400">identity, speed, and settlement</span> into one instrument.</div>
         <p className="text-[#D6D6D0] text-base lg:text-2xl mt-4 leading-relaxed max-w-[104ch]">The first asset where the proof of who you are — and what you may do — travels with the money itself.</p>
       </div>
-      <p className="shrink-0 mt-7 text-[#fefefe] font-semibold text-xl lg:text-2xl">Compliance has always lived in a walled garden. <span className="text-orange-400">Put it inside the dollar, and you own the rail the agentic economy settles on.</span></p>
+      <p className="shrink-0 mt-7 text-[#fefefe] font-semibold text-xl lg:text-2xl">Compliance has always lived in a walled garden. <span className="text-orange-400">Put it inside the dollar, and you own the layer the agentic economy settles on.</span></p>
     </Shell>
   );
 }
