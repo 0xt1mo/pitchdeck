@@ -122,7 +122,7 @@ export function GregTrilemmaSlide() {
 const gap = [
   ['01', 'Disintermediation', 'Open infrastructure bypassed the legacy financial middleman.', 'solved', false],
   ['02', 'Digital value', 'Stablecoins now settle tens of trillions of dollars a year.', 'solved', false],
-  ['03', 'Cryptographic identity', "No blockchain can natively verify a recipient's legal or operational standing before a transaction executes.", 'unsolved', true],
+  ['03', 'Cryptographic identity', "No open settlement layer verifies a recipient's standing inside the asset before the transfer — the check sits in a separate venue, and gets skipped.", 'unsolved', true],
 ];
 export function GregGapSlide() {
   return (
@@ -235,7 +235,7 @@ export function GregArchitectureSlide() {
     <Shell>
       <H act={ACT3} main='So the chain does <span class="o">one job.</span>' sub="Consensus secures the record and nothing more — <b>nothing an agent touches waits on it.</b>" />
       <Two
-        left={<Core className="mt-0" html="Proof-of-work, BFT finality, and a ZK uniqueness oracle keep the chain minimal — the oracle attests one thing, whether a token has been spent, so throughput scales to <b>30,000 transactions per second per shard</b>. Everything an agent touches runs off-chain. <b>The chain does one job — the economy runs beside it.</b>" />}
+        left={<Core className="mt-0" html="Proof-of-work, BFT finality, and a ZK uniqueness oracle keep the chain minimal — the oracle attests one thing, whether a token has been spent, so throughput scales horizontally — <b>30,000 transactions per second per shard, by design</b>. Everything an agent touches runs off-chain. <b>The chain does one job — the economy runs beside it.</b>" />}
         right={<Dia k="archstack" max="56vh" />}
       />
     </Shell>
@@ -261,7 +261,7 @@ export function GregPrivacySlide() {
   return (
     <Shell>
       <H act={ACT3} main='And the open ledger <span class="o">goes dark.</span>' sub="Three observers watch every public chain — the network, the sender, the address. <b>None of them can see in.</b>" />
-      <Core html="Confidentiality is a founding property of the protocol, mathematically proven against all three observers. Absolute confidentiality is the floor for institutional capital flows." />
+      <Core html="Confidentiality is a founding property of the protocol, proven against all three observers — private to everyone, attestable to the one counterparty or regulator who has to be satisfied. That is the floor for institutional capital." />
       <div className="shrink-0 mt-5">
         {observers.map(([ol, od], i) => (
           <div key={ol} className={`flex items-baseline gap-7 py-3 border-t border-[#2c2c2a] ${i === observers.length - 1 ? 'border-b' : ''}`}>
@@ -360,7 +360,7 @@ export function GregDACSlide() {
   return (
     <Shell>
       <H act={ACT3} main='And a whole company <span class="o">run by agents.</span>' sub="No desk, no operator — the agents <b>are</b> the company, and the same protocol carrying the dollar carries them." />
-      <Core html="Unicity built a decentralized autonomous corporation for BlackRock — a parametric insurer whose capital, underwriting, and cession all run as agents. Settlement is only the entry point: <b>the same protocol runs the whole corporation</b>." />
+      <Core html="Unicity built BlackRock DAC — a reference parametric insurer, fully on-protocol, whose capital, underwriting, and cession all run as agents. Settlement is only the entry point: <b>the same protocol can run the whole corporation</b>." />
       <div className="shrink-0 mt-5 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="dac" max="56vh" /></div></div>
     </Shell>
   );
@@ -410,7 +410,7 @@ export function GregAskSlide() {
     <Shell>
       <H act={ACT4A} main='Ship the <span class="o">first compliant dollar.</span>' sub="A regulated dollar that settles peer-to-peer the moment the Receive Predicate is satisfied." />
       <div className="shrink-0 mt-7 rounded-xl p-6 lg:p-8" style={{ border: '1px solid rgba(255,137,4,0.4)', background: 'linear-gradient(180deg, rgba(255,137,4,0.06), transparent)' }}>
-        <div className="text-[#fefefe] text-2xl lg:text-3xl" style={{ fontFamily: anton }}>Partner with a regulated issuer to bind <span className="text-orange-400">identity, speed, and settlement</span> into one instrument.</div>
+        <div className="text-[#fefefe] text-2xl lg:text-3xl" style={{ fontFamily: anton }}>Co-design the Receive Predicate with a regulated deposit issuer — <span className="text-orange-400">the first dollar that settles the moment its counterparty clears.</span></div>
         <p className="text-[#D6D6D0] text-base lg:text-2xl mt-4 leading-relaxed max-w-[104ch]">The first asset where the proof of who you are — and what you may do — travels with the money itself.</p>
       </div>
       <p className="shrink-0 mt-7 text-[#fefefe] font-semibold text-xl lg:text-2xl">Compliance has always lived in a walled garden. <span className="text-orange-400">Put it inside the dollar, and you own the layer the agentic economy settles on.</span></p>

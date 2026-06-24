@@ -130,7 +130,7 @@ export function WhoWeAreSlide() {
             className="mt-3 text-[#fefefe]/85 text-xs sm:text-sm lg:text-base leading-[1.55] max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs in machine learning and cryptography with fifteen years building nation-state-grade security infrastructure for <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed, Verizon, and Maersk</span>. Now applying that to the rails your agents transact on.
+            <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs in machine learning and cryptography, with fifteen years building security infrastructure for <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed, Verizon, and Maersk</span>. Now applying that to the money your agents move.
           </motion.p>
         </div>
 
