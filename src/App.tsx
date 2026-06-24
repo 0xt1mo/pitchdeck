@@ -2,6 +2,7 @@ import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
 import { IntroSlide } from './slides/IntroSlide';
 import { CoverSlide } from './slides/CoverSlide';
+import { GregOpportunitySlide, GregGapSlide, GregIdentitySlide, GregTeamSlide, GregAskSlide } from './slides/GregSlides';
 import { DemoAgendaSlide } from './slides/DemoAgendaSlide';
 // import { PromiseSlide } from './slides/PromiseSlide'; // hidden
 import { SharedLedgerSlide } from './slides/SharedLedgerSlide';
@@ -78,72 +79,27 @@ import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  // ── Problem ──
-  CoverSlide,                // Cover — Securing the Agentic Economy (for Greg Kidd)
-  // PromiseSlide,           // hidden — Satoshi: P2P Electronic Cash
-  SharedLedgerSlide,         // 3. The Industry — every blockchain is the same 17-year-old shared-ledger design
-  StateOfArtSlide,           // 4. The Trilemma — Unicity claims the center
-  // ── Introducing Unicity ──
-  // IntroducingUnicityDivider, // hidden — Divider — Introducing Unicity
-  BearerObjectSlide,         // 6. Tokens as Bearer Objects
-  ProgrammableTokensSlide,   // 7. Tokens are programmable (predicates)
-  AgentsSlide,               // 8. Unicity L1 — a chain that only generates proofs (architecture)
-  MonolithSlide,             // 9. Unicity proves uniqueness; the rest handled with traditional tools (merged)
-  CompetitionSlide,          // 11. The Inevitable Endpoint for Blockchain
-  TokenObjectSlide,          // 12. Tokens are objects, not ledger entries — native OS data type
-  // NoTransactionsSlide,    // hidden — A blockchain with no transactions
-  // ── Tradeoffs ──
-  TradeoffsDivider,          // 13. Divider — What are the Tradeoffs
-  SettlementSlide,           // 14. Speed — Settlement at machine speed (transaction sequence diagram)
-  ThroughputSlide,           // 15. Throughput / Friction
-  ComplianceSlide,           // 16. Compliance — enforced at the protocol level
-  CompliantByConstructionSlide, // Compliance in the wallet, not the middle (vs Coinbase x402)
-  PrivacySlide,              // 17. Privacy
-  NoBridgeRiskSlide,         // 18. Trustless Bridges: Local Verifiability — Unicity SOL
-  // ── Building DeFi ──
-  AtomicityProblemDivider,   // 18. One Hard Problem: Atomicity (the hard problem from the tradeoffs divider)
-  CoreOperationSlide,        // 19. The Core Operation of DeFi — the atomic swap
-  AtomicSwapsSlide,          // 20. The Unicity Trustless Atomic Swap — HTLC vs predicate swap
-  AgenticDACSlide,           // 21. Agentic DeFi — an economy of machines (animated agent mesh)
-  // DeFiDividerSlide,       // hidden — Divider — What can you build?
-  // AgentsSmartContractsSlide, // (hidden — Agents: the new smart contracts; re-add later)
-  ProtocolSlide,             // x402 — live demo / case study (from investor deck)
-  ClobComparisonSlide,       // 22. CEX speed · DEX custody · dark-pool privacy (Unicity CLOB)
-  // AgenticDeFiSlide,       // hidden — duplicate of bulletin-board economy-of-machines slide
-  // AutonomousCorpsSlide,   // (hidden — Decentralized Autonomous Corporations / autonomous reinsurance; re-add later)
-  MathWorthItDivider,        // 25. The math is harder. But it's worth it.
-  NewFinancialSystemDivider, // 26. What you get: massively parallel · private · decentralized
-  // ── Emission (hidden) ──
-  // EmissionDivider,           // Divider — Emission (tokenomics)
-  // GenesisMintSlide,          // Genesis: minting a token off-chain
-  // NativeAssetMintSlide,      // Anyone can mint. Trivially.
-  // MintFromChainsSlide,       // Minting from other chains (Unicity SOL)
-  // ── Close ──
-  ProofPapersSlide,          // Don't take our word for it: here's the math
-  TeamSlide,                 // The team — done this before (Guardtime/KSI · DARPA/NATO/Lockheed)
-  RaiseSlide,                // The ask — $5M seed
-  // ── Hidden ──
-  // TradeOffSlide,         // The Trade — give up / get (replaced by Speed/Throughput/Privacy)
-  // AtomicityChallengeSlide, // merged into CoreOperationSlide header
-  // EdgeModelSlide, AtomOfFinanceSlide, DesignCriteriaSlide, EdgePayoffSlide, ProtocolSlide,
-  // IntroSlide, ProblemSlide, AutonomyStackSlide, TeamSlide, CompetitiveLandscapeSlide,
-  // UseCasesSlide, MarketSlide, GoToMarketSlide, ThePathSlide, RaiseSlide — older slides
-  // ── Appendix — technical deep-dives (all hidden) ──
-  // AppendixDividerSlide,    // Appendix · Technology — section break
-  // IntellectualArcSlide,    // Unbundling what the network has to do
-  // BlockchainArchSlide,     // Protocol Stack
-  // ZKOracleSlide,           // ZK Oracle
-  // PermissionlessSlide,     // Hierarchical Scaling
-  // SettlementSlide,         // Settlement
-  // ChainAgnosticSlide,      // Chain-Agnostic Operations
-  // AgentsSmartContractsSlide, // Agents-as-Smart-Contracts
-  // TokenSlide,              // Tokenomics
-  // AstridSlide,             // AOS kernel
-  // AstridComparisonSlide,   // Why AOS
-  // AstridUseCasesSlide,     // Swap Capsule
-  // InterceptFabricSlide,    // Security Fabric
-  // AgentSphereDashboardSlide, // original 4-pillar enterprise dashboard
-  // RetrofitSlide,           // You Can't Retrofit an EVM into Autonomous AI
+  CoverSlide,                // 1. Cover — Securing the Agentic Economy (prepared for Greg Kidd)
+  GregOpportunitySlide,      // 2. The machines have started paying each other (57.5%)
+  SharedLedgerSlide,         // 3. The shared-ledger bottleneck
+  StateOfArtSlide,           // 4. The stablecoin trilemma
+  GregGapSlide,              // 5. Fair access — the third problem (the Greg hook)
+  GregIdentitySlide,         // 6. From side-car to protocol (GlobaliD -> USBC)
+  BearerObjectSlide,         // 7. Tokens as bearer objects
+  AgentsSlide,               // 8. The chain only generates proofs (architecture)
+  MonolithSlide,             // 9. Proves uniqueness; the rest off-chain
+  ComplianceSlide,           // 10. Protocol-enforced compliance — the receive predicate
+  PrivacySlide,              // 11. Privacy by construction
+  NoBridgeRiskSlide,         // 12. No bridge, nothing to hack
+  CoreOperationSlide,        // 13. The core operation — the atomic swap
+  AtomicSwapsSlide,          // 14. HTLC vs predicate swap
+  ProtocolSlide,             // 15. x402 — twelve steps to five
+  ClobComparisonSlide,       // 16. The machine market — CEX speed, DEX custody, private
+  AgenticDACSlide,           // 17. What gets built — the agentic corporation
+  CompetitionSlide,          // 18. The incumbents validate the diagnosis
+  ProofPapersSlide,          // 19. The proof — the math
+  GregTeamSlide,             // 20. The team — we built this before
+  GregAskSlide,              // 21. The ask — $5M
 ];
 
 export default function App() {
