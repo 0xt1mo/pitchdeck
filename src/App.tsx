@@ -2,6 +2,7 @@ import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
 import { IntroSlide } from './slides/IntroSlide';
 import { CoverSlide } from './slides/CoverSlide';
+import { WhoWeAreSlide } from './slides/WhoWeAreSlide';
 import { GregShiftSlide, GregBottleneckSlide, GregTrilemmaSlide, GregGapSlide, GregSidecarSlide, GregBearerSlide, GregOracleSlide, GregArchitectureSlide, GregReceiveSlide, GregPrivacySlide, GregNoBridgeSlide, GregSwapSlide, GregX402Slide, GregMarketSlide, GregDACSlide, GregIncumbentsSlide, GregTeamSlide, GregAskSlide } from './slides/GregDeck';
 import { DemoAgendaSlide } from './slides/DemoAgendaSlide';
 // import { PromiseSlide } from './slides/PromiseSlide'; // hidden
@@ -100,7 +101,7 @@ const slides = [
   GregMarketSlide,           // 16 · a market with no venue
   GregDACSlide,              // 17 · a whole company run by agents
   // ── ACT IV — PROOF & ASK ──
-  GregTeamSlide,             // 18 · we have built sovereign-grade before
+  WhoWeAreSlide,             // 18 · the team (Tether slide, as-is)
   GregAskSlide,              // 19 · $5M to settle the first compliant dollar
 ];
 
