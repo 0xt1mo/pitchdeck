@@ -44,14 +44,14 @@ export function CoverSlide() {
             className="text-[#fefefe] text-[34px] sm:text-[52px] lg:text-[72px] leading-[0.98] tracking-tight uppercase text-center max-w-5xl"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            The{' '}
-            <span className="text-orange-400">Protocol</span>
+            Securing the{' '}
+            <span className="text-orange-400">Agentic Economy</span>
           </h1>
           <p
             className="text-[#fefefe]/70 text-sm sm:text-lg lg:text-2xl tracking-[0.28em] uppercase text-center"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            A New Agentic Financial System
+            A Strategic Seed Proposal for Greg Kidd
           </p>
         </motion.div>
 

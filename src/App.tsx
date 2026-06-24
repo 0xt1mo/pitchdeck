@@ -78,9 +78,8 @@ import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  DemoAgendaSlide,           // 1. What we'll demo today (agenda)
   // ── Problem ──
-  CoverSlide,                // 2. Cover — Rebuilding the Foundations of Decentralized Finance
+  CoverSlide,                // Cover — Securing the Agentic Economy (for Greg Kidd)
   // PromiseSlide,           // hidden — Satoshi: P2P Electronic Cash
   SharedLedgerSlide,         // 3. The Industry — every blockchain is the same 17-year-old shared-ledger design
   StateOfArtSlide,           // 4. The Trilemma — Unicity claims the center
@@ -121,8 +120,8 @@ const slides = [
   // MintFromChainsSlide,       // Minting from other chains (Unicity SOL)
   // ── Close ──
   ProofPapersSlide,          // Don't take our word for it: here's the math
-  ResourcesSlide,            // Resources
-  ThankYouChatSlide,         // Thank You
+  TeamSlide,                 // The team — done this before (Guardtime/KSI · DARPA/NATO/Lockheed)
+  RaiseSlide,                // The ask — $5M seed
   // ── Hidden ──
   // TradeOffSlide,         // The Trade — give up / get (replaced by Speed/Throughput/Privacy)
   // AtomicityChallengeSlide, // merged into CoreOperationSlide header
