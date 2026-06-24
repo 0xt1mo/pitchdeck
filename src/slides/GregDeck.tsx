@@ -80,7 +80,7 @@ export function GregShiftSlide() {
           <div className="text-orange-400 leading-[0.8]" style={{ fontFamily: anton, fontSize: 'min(150px, 15vw)' }}>57.5%</div>
           <div className="text-[#9E9E96] uppercase tracking-wide text-sm lg:text-base mt-3 max-w-[30ch] leading-snug">of all web requests are now automated — Cloudflare, 2026</div>
         </div>
-        <Core className="mt-0" html="Legacy networks cannot verify an agent's authority or enforce a budget without a centralized bottleneck. Unicity forces the <b>proof of authority to travel natively with the money</b>." />
+        <Core className="mt-0" html="Legacy networks cannot verify an agent's authority or enforce a budget without a centralized bottleneck. Unicity binds the <b>proof of authority to the money</b> — it travels with every transaction." />
       </div>
     </Shell>
   );
@@ -89,7 +89,7 @@ export function GregShiftSlide() {
 /* ════════ ACT II — WHY THE DESIGN FAILS ════════ */
 const bottleneck = [
   ['Broadcast', 'Every node hears every transaction.'],
-  ['Order', 'Global agreement on the sequence of all of them.'],
+  ['Order', 'Global agreement on the sequence of every one.'],
   ['Validate', 'Every node re-runs every one.'],
   ['Record', 'Every node stores the whole state, forever.'],
 ];
@@ -179,7 +179,7 @@ export function GregIncumbentsSlide() {
   return (
     <Shell>
       <H act={ACT2S} main='The market is spending billions — <span class="o">and still missing it.</span>' sub="Each one optimizes the ledger, or routes around it by splitting the proof across layers. They treat the symptom; the ledger itself is the flaw." />
-      <Core html="The incumbents are spending billions to work around the ledger they built, splitting the proof across separate layers. <b>Unicity keeps authorization, settlement, and the audit trail whole, inside the asset.</b>" />
+      <Core html="The incumbents are spending billions to work around the ledger they built, authorizing in one layer and settling in another. <b>Unicity keeps authorization, settlement, and the audit trail whole, inside the asset.</b>" />
       <Table cols="1.1fr 2.4fr 1fr"
         head={['Player', 'Their move', 'Approach']}
         rows={[
@@ -214,7 +214,7 @@ export function GregOracleSlide() {
     <Shell>
       <H act={ACT3} main='So the network attests <span class="o">one thing.</span>' sub="Watch three generations throw work overboard. <b>Bitcoin</b> made every node re-check every transaction. <b>FastPay</b> dropped global ordering. <b>Unicity</b> keeps one question — <b>has this token been spent?</b>" />
       <Two
-        left={<Core className="mt-0" html="The <b>Uniqueness Oracle</b> attests to one thing: has this token been spent? It never re-executes transactions or reads payloads, so throughput scales horizontally — <b>by design, 30,000 tx/sec per shard</b>." />}
+        left={<Core className="mt-0" html="The <b>Uniqueness Oracle</b> attests to one thing: has this token been spent? It never re-runs transactions or reads their contents, so adding shards adds throughput — <b>by design, 30,000 tx/sec per shard</b>." />}
         right={<Dia k="oracle" max="38vh" />}
       />
       <div className="shrink-0 flex gap-5 mt-6">
@@ -279,7 +279,7 @@ export function GregNoBridgeSlide() {
   return (
     <Shell>
       <H act={ACT3} main='No bridge, <span class="o">nothing to hack.</span>' sub="Every big crypto theft drains the same place — the bridge that <b>holds the pooled value</b>. So we built without one." />
-      <Core html="Bridges concentrate risk: they hold value and relay a forgeable message. Unicity holds nothing — a locked source-chain asset becomes a self-contained token the recipient verifies directly against the source contract." />
+      <Core html="Bridges hold value and relay a forgeable message. Unicity holds nothing — a locked source-chain asset becomes a self-contained token the recipient verifies directly against the source contract." />
       <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="nobridge" max="40vh" /></div></div>
     </Shell>
   );
