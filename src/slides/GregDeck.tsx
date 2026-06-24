@@ -132,7 +132,7 @@ export function GregGapSlide() {
         {gap.map(([n, t, d, s, open], i) => (
           <div key={n as string} className={`flex items-baseline gap-6 py-4 border-t border-[#2c2c2a] ${i === gap.length - 1 ? 'border-b' : ''}`}>
             <span className="text-orange-400 shrink-0 w-11 text-2xl lg:text-3xl" style={{ fontFamily: anton }}>{n}</span>
-            <div className="flex-1">
+            <div className="flex-1 min-w-0 pr-8">
               <div className="text-[#fefefe] uppercase text-xl lg:text-2xl" style={{ fontFamily: anton }}>{t}</div>
               <div className="text-[#D6D6D0] text-sm lg:text-lg mt-1 leading-snug">{d}</div>
             </div>
@@ -148,7 +148,7 @@ export function GregGapSlide() {
 export function GregSidecarSlide() {
   return (
     <Shell>
-      <H act={ACT2G} main='Which is why identity <span class="o">keeps failing.</span>' sub="Bolt verification beside the transaction and a check that can be skipped gets skipped." />
+      <H act={ACT2G} main='Which is why identity <span class="o">keeps failing.</span>' sub="Bolt-on verification sits beside the transaction — and a check that can be skipped gets skipped." />
       <Core html="Self-sovereign identity stalled because the credential sat beside the transaction. Identity has to live <b>inside the asset</b> — enforceable across any jurisdiction, not optional at the application layer." />
       <div className="h-px w-16 bg-orange-500/80 mt-7" />
     </Shell>
@@ -361,7 +361,7 @@ export function GregDACSlide() {
     <Shell>
       <H act={ACT3} main='And a whole company <span class="o">run by agents.</span>' sub="Agents become the new smart contracts, executing verifiable logic directly on bearer assets." />
       <Core html="Unicity built a decentralized autonomous corporation for BlackRock — a parametric insurer whose capital, underwriting, and cession all run as agents. Settlement is only the entry point: <b>the same protocol runs the whole corporation</b>." />
-      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="dac" max="48vh" /></div></div>
+      <div className="shrink-0 mt-5 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="dac" max="56vh" /></div></div>
     </Shell>
   );
 }
