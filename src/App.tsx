@@ -2,7 +2,7 @@ import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
 import { IntroSlide } from './slides/IntroSlide';
 import { CoverSlide } from './slides/CoverSlide';
-import { GregOpportunitySlide, GregGapSlide, GregIdentitySlide, GregTeamSlide, GregAskSlide } from './slides/GregSlides';
+import { GregShiftSlide, GregBottleneckSlide, GregTrilemmaSlide, GregGapSlide, GregSidecarSlide, GregBearerSlide, GregOracleSlide, GregArchitectureSlide, GregReceiveSlide, GregPrivacySlide, GregNoBridgeSlide, GregSwapSlide, GregX402Slide, GregMarketSlide, GregDACSlide, GregIncumbentsSlide, GregTeamSlide, GregAskSlide } from './slides/GregDeck';
 import { DemoAgendaSlide } from './slides/DemoAgendaSlide';
 // import { PromiseSlide } from './slides/PromiseSlide'; // hidden
 import { SharedLedgerSlide } from './slides/SharedLedgerSlide';
@@ -79,27 +79,25 @@ import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  CoverSlide,                // 1. Cover — Securing the Agentic Economy (prepared for Greg Kidd)
-  GregOpportunitySlide,      // 2. The machines have started paying each other (57.5%)
-  SharedLedgerSlide,         // 3. The shared-ledger bottleneck
-  StateOfArtSlide,           // 4. The stablecoin trilemma
-  GregGapSlide,              // 5. Fair access — the third problem (the Greg hook)
-  GregIdentitySlide,         // 6. From side-car to protocol (GlobaliD -> USBC)
-  BearerObjectSlide,         // 7. Tokens as bearer objects
-  AgentsSlide,               // 8. The chain only generates proofs (architecture)
-  MonolithSlide,             // 9. Proves uniqueness; the rest off-chain
-  ComplianceSlide,           // 10. Protocol-enforced compliance — the receive predicate
-  PrivacySlide,              // 11. Privacy by construction
-  NoBridgeRiskSlide,         // 12. No bridge, nothing to hack
-  CoreOperationSlide,        // 13. The core operation — the atomic swap
-  AtomicSwapsSlide,          // 14. HTLC vs predicate swap
-  ProtocolSlide,             // 15. x402 — twelve steps to five
-  ClobComparisonSlide,       // 16. The machine market — CEX speed, DEX custody, private
-  AgenticDACSlide,           // 17. What gets built — the agentic corporation
-  CompetitionSlide,          // 18. The incumbents validate the diagnosis
-  ProofPapersSlide,          // 19. The proof — the math
-  GregTeamSlide,             // 20. The team — we built this before
-  GregAskSlide,              // 21. The ask — $5M
+  CoverSlide,                // 1 · Securing the Agentic Economy (May-30 hero, for Greg)
+  GregShiftSlide,            // 2 · the macro shift (57.5%)
+  GregBottleneckSlide,       // 3 · the shared-ledger bottleneck
+  GregTrilemmaSlide,         // 4 · the stablecoin trilemma
+  GregGapSlide,              // 5 · the final infrastructure gap
+  GregSidecarSlide,          // 6 · from side-car to protocol
+  GregBearerSlide,           // 7 · bearer instruments
+  GregOracleSlide,           // 8 · the uniqueness oracle + unbundling
+  GregArchitectureSlide,     // 9 · the architecture
+  GregReceiveSlide,          // 10 · the receive predicate
+  GregPrivacySlide,          // 11 · privacy by construction
+  GregNoBridgeSlide,         // 12 · no bridge, nothing to hack
+  GregSwapSlide,             // 13 · the atomic swap
+  GregX402Slide,             // 14 · x402 twelve to five
+  GregMarketSlide,           // 15 · the machine market
+  GregDACSlide,              // 16 · the agentic corporation (BlackRock DAC)
+  GregIncumbentsSlide,       // 17 · the incumbents validate
+  GregTeamSlide,             // 18 · the team
+  GregAskSlide,              // 19 · the ask
 ];
 
 export default function App() {
