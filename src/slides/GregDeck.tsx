@@ -67,8 +67,8 @@ const ACT2 = 'Act II · Why the rails fail';
 const ACT2G = 'Act II · The gap';
 const ACT2S = 'Act II · The stakes';
 const ACT3 = 'Act III · The answer';
-const ACT4 = 'Act IV · The proof';
-const ACT4A = 'Act IV · The ask';
+const ACT4 = 'Act IV · The lineage';
+const ACT4A = 'Act IV · The next step';
 
 /* ════════ ACT I — THE SHIFT ════════ */
 export function GregShiftSlide() {
@@ -368,14 +368,31 @@ export function GregDACSlide() {
 
 /* ════════ ACT IV — PROOF & ASK ════════ */
 const team = [
-  ['The team', "Built Guardtime's <b>KSI</b> — the verification layer deployed with the Estonian Government, Lockheed Martin, Boeing and NATO. In production since 2012, eIDAS-grade. That lineage sustained <b>300,000 tx/sec</b> in Eesti Pank's 2021 test (heritage, not a live Unicity figure)."],
-  ['The proof', 'Three mathematical papers prove the <b>privacy</b> and <b>no-double-spend</b> guarantees. Drop them into any model and they check. All public on github.com/unicitynetwork. The proof is verifiable today, not asserted.'],
-  ['The alignment', 'Identity, speed, and peer-to-peer settlement, bound into one instrument — the fair-access infrastructure Hard Yaka has backed across a generation of payments companies.'],
+  ['The team', "Founders built Guardtime's <b>KSI</b> — sovereign-grade verification, in production since 2012, eIDAS-grade. That lineage sustained <b>300,000 tx/sec</b> in Eesti Pank's 2021 test (heritage, not a live Unicity figure)."],
+  ['The proof', 'Three mathematical papers prove the <b>privacy</b> and <b>no-double-spend</b> guarantees — public on github.com/unicitynetwork. Verifiable today, not asserted.'],
+  ['The alignment', 'Identity, speed, and peer-to-peer settlement in one instrument — the fair-access infrastructure Hard Yaka has backed for a generation.'],
+];
+const lineage = [
+  { name: 'NATO', file: 'nato.png', scale: 0.95 },
+  { name: 'DARPA', file: 'darpa.png', scale: 1 },
+  { name: 'Lockheed', file: 'lockheed.png', scale: 0.85 },
+  { name: 'Verizon', file: 'verizon.svg', scale: 0.72 },
+  { name: 'BIS', file: 'bis.png', scale: 0.70 },
+  { name: 'Maersk', file: 'maersk.png', scale: 0.75 },
+  { name: 'ESA', file: 'esa.png', scale: 0.95 },
 ];
 export function GregTeamSlide() {
   return (
     <Shell>
-      <H act={ACT4} main='We have built sovereign-grade <span class="o">before.</span>' sub="Nation-scale cryptographic infrastructure, shipping since 2012 — before agentic finance had a name." />
+      <H act={ACT4} main='Built by <span class="o">infrastructure veterans.</span>' sub="The cryptography behind Unicity has run at nation scale since 2012." />
+      <div className="shrink-0 mt-6">
+        <p className="text-[#9E9E96] uppercase tracking-[0.26em] text-xs lg:text-sm mb-4">Guardtime / KSI — deployed with</p>
+        <div className="flex items-center gap-8 lg:gap-14">
+          {lineage.map((l) => (
+            <img key={l.name} src={`/logos/${l.file}`} alt={l.name} className="h-8 lg:h-11 w-auto" style={{ filter: 'brightness(0) invert(1)', opacity: 0.72, transform: `scale(${l.scale})` }} />
+          ))}
+        </div>
+      </div>
       <div className="shrink-0 flex gap-5 mt-8">
         {team.map(([t, d]) => (
           <div key={t} className={cellCls}>
@@ -391,10 +408,10 @@ export function GregTeamSlide() {
 export function GregAskSlide() {
   return (
     <Shell>
-      <H act={ACT4A} main='$5M to settle the <span class="o">first compliant dollar.</span>' sub="Accelerating the deployment of compliant, peer-to-peer stablecoins." />
+      <H act={ACT4A} main='Ship the <span class="o">first compliant dollar.</span>' sub="A regulated dollar that settles peer-to-peer the moment the Receive Predicate is satisfied." />
       <div className="shrink-0 mt-7 rounded-xl p-6 lg:p-8" style={{ border: '1px solid rgba(255,106,31,0.4)', background: 'linear-gradient(180deg, rgba(255,106,31,0.06), transparent)' }}>
-        <div className="text-[#fefefe] text-2xl lg:text-4xl" style={{ fontFamily: anton }}><span className="text-orange-400">$5M Seed</span> · $25M cap / $50M token FDV · SAFE + token warrant</div>
-        <p className="text-[#D6D6D0] text-base lg:text-2xl mt-4 leading-relaxed max-w-[104ch]" dangerouslySetInnerHTML={{ __html: 'We will partner with a regulated issuer to ship a compliant dollar that settles peer-to-peer the moment the Receive Predicate is satisfied — binding <b style="color:#fefefe">identity, speed, and settlement</b> into one instrument.' }} />
+        <div className="text-[#fefefe] text-2xl lg:text-3xl" style={{ fontFamily: anton }}>Partner with a regulated issuer to bind <span className="text-orange-400">identity, speed, and settlement</span> into one instrument.</div>
+        <p className="text-[#D6D6D0] text-base lg:text-2xl mt-4 leading-relaxed max-w-[104ch]">The first asset where the proof of who you are — and what you may do — travels with the money itself.</p>
       </div>
       <p className="shrink-0 mt-7 text-[#fefefe] font-semibold text-xl lg:text-2xl">Institutions rely on walled gardens for compliance. <span className="text-orange-400">Unicity embeds that compliance directly into the dollar.</span></p>
     </Shell>

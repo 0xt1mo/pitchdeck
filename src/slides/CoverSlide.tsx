@@ -66,7 +66,7 @@ export function CoverSlide() {
           className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.32em] uppercase font-bold shrink-0 -mt-2"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Unicity Protocol · Seed Proposal · 2026
+          Unicity Protocol · Strategic Proposal · 2026
         </motion.p>
 
         {/* Headline */}
