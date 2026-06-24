@@ -368,7 +368,7 @@ export function GregDACSlide() {
 
 /* ════════ ACT IV — PROOF & ASK ════════ */
 const team = [
-  ['The team', "Founders built Guardtime's <b>KSI</b> — sovereign-grade verification, in production since 2012, eIDAS-grade. That lineage sustained <b>300,000 tx/sec</b> in Eesti Pank's 2021 test (heritage, not a live Unicity figure)."],
+  ['The team', "Founders built Guardtime's <b>KSI</b> — deployed with the <b>Estonian Government, Lockheed Martin, Boeing and NATO</b>. In production since 2012, eIDAS-grade; that lineage sustained <b>300,000 tx/sec</b> in Eesti Pank's 2021 test (heritage, not a live Unicity figure)."],
   ['The proof', 'Three mathematical papers prove the <b>privacy</b> and <b>no-double-spend</b> guarantees — public on github.com/unicitynetwork. Verifiable today, not asserted.'],
   ['The alignment', 'Identity, speed, and peer-to-peer settlement in one instrument — the fair-access infrastructure Hard Yaka has backed for a generation.'],
 ];
