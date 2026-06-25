@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { CasinoPhone, PHONE } from './CasinoPhone';
 
 export function CasinoRetentionSlide() {
   return (
@@ -83,12 +84,7 @@ export function CasinoRetentionSlide() {
             <span className="absolute bottom-0 left-0 w-5 h-5 border-l-2 border-b-2 border-orange-500" />
             <span className="absolute bottom-0 right-0 w-5 h-5 border-r-2 border-b-2 border-orange-500" />
 
-            <img
-              src="/images/casino-retention.png"
-              alt="Concierge applying the Friday reload bonus to the player's wallet"
-              className="block mx-auto w-full max-w-[340px] h-auto"
-              style={{ filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }}
-            />
+            <div className="mx-auto w-full max-w-[340px]" style={{ filter: 'drop-shadow(0 28px 55px rgba(0,0,0,0.55))' }}><CasinoPhone {...PHONE.retention} /></div>
           </motion.div>
 
         </div>

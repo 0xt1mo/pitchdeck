@@ -76,7 +76,7 @@ export function CasinoTitleSlide() {
           className="absolute bottom-10 text-[#fefefe]/35 text-[11px] tracking-[0.28em] uppercase"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          What we built for MagicCasino · Brazil&nbsp;&nbsp;·&nbsp;&nbsp;Confidential 2026
+          What we built for a major iGaming group in Latin America&nbsp;&nbsp;·&nbsp;&nbsp;Confidential 2026
         </motion.div>
       </div>
     </div>
