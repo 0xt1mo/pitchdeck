@@ -64,7 +64,7 @@ const ckCls = 'text-[#D6D6D0] text-sm lg:text-lg mt-2 leading-snug';
 export function GregShiftSlide() {
   return (
     <Shell>
-      <H main='The macro shift: <span class="o">machine commerce requires machine trust.</span>' sub="Autonomous agents now initiate high-frequency, micro-value transactions at scale." />
+      <H main='The macro shift: <span class="o">the counterparty is now a machine.</span>' sub="Autonomous agents now initiate high-frequency, micro-value transactions at scale." />
       <div className="shrink-0 flex items-start gap-10 lg:gap-14 mt-8">
         <div className="shrink-0">
           <div className="text-orange-400 leading-[0.8]" style={{ fontFamily: anton, fontSize: 'min(188px, 18vw)' }}>57.5%</div>

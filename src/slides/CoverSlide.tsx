@@ -27,15 +27,6 @@ export function CoverSlide() {
         </div>
       </div>
 
-      {/* Bottom HUD bar */}
-      <div className="absolute bottom-6 left-8 lg:left-12 right-8 lg:right-12 z-20 flex items-center justify-end">
-        <span
-          className="text-[#fefefe]/45 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em] uppercase font-bold"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          Unicity
-        </span>
-      </div>
 
       {/* Left vertical orange bar */}
       <motion.div
@@ -144,8 +135,8 @@ export function CoverSlide() {
             <img
               src="/hardyaka.svg"
               alt="Hard Yaka"
-              className="h-7 lg:h-9 w-auto shrink-0"
-              style={{ filter: 'brightness(0) invert(1)', opacity: 0.9 }}
+              className="h-4 lg:h-5 w-auto shrink-0"
+              style={{ filter: 'brightness(0) invert(1)', opacity: 0.85 }}
             />
           </motion.div>
         </div>
