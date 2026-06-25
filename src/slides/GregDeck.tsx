@@ -217,9 +217,9 @@ export function GregOracleSlide() {
 export function GregArchitectureSlide() {
   return (
     <Shell>
-      <H main='The architecture: <span class="o">a minimal chain, an economy off it.</span>' sub="Consensus stays minimal on-chain; everything an agent touches runs off-chain." />
+      <H main='The architecture: <span class="o">a minimal chain, an economy off it.</span>' sub="Consensus stays minimal on-chain — everything an agent touches runs off-chain." />
       <Two
-        left={<Core className="mt-0" html="Proof-of-work, BFT finality, and the ZK oracle keep the chain minimal. Everything an agent touches runs off-chain — the SDK and the agent execution layer. <b>The chain does one job; the economy runs beside it.</b>" />}
+        left={<Core className="mt-0" html="Proof-of-work, BFT finality, and the ZK oracle keep the chain minimal. Everything an agent touches runs off-chain — the SDK and the agent execution layer. <b>The chain does one job — the economy runs beside it.</b>" />}
         right={<Dia k="archstack" max="56vh" />}
       />
     </Shell>
