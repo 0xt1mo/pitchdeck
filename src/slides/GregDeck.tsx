@@ -67,7 +67,7 @@ export function GregShiftSlide() {
       <H main='The macro shift: <span class="o">machine commerce requires machine trust.</span>' sub="Autonomous agents now initiate high-frequency, micro-value transactions at scale." />
       <div className="shrink-0 flex items-start gap-10 lg:gap-14 mt-8">
         <div className="shrink-0">
-          <div className="text-orange-400 leading-[0.8]" style={{ fontFamily: anton, fontSize: 'min(150px, 15vw)' }}>57.5%</div>
+          <div className="text-orange-400 leading-[0.8]" style={{ fontFamily: anton, fontSize: 'min(188px, 18vw)' }}>57.5%</div>
           <div className="text-[#9E9E96] uppercase tracking-wide text-sm lg:text-base mt-3 max-w-[30ch] leading-snug">of global web traffic is now automated — Cloudflare, 2026</div>
         </div>
         <Core className="mt-0" html="Legacy networks cannot verify an AI agent's authority or enforce a budget without centralized bottlenecks. Unicity forces the cryptographic <b>proof of authority to travel natively with the money</b>." />
@@ -104,7 +104,7 @@ export function GregTrilemmaSlide() {
       <H main='The stablecoin trilemma: <span class="o">pick two.</span>' sub="Every digital-dollar design has been forced to sacrifice compliance, privacy, or throughput." />
       <Two
         left={<Core className="mt-0" html="A public ledger delivers compliance and throughput but exposes every balance and counterparty. Add zero-knowledge proofs and privacy returns, but throughput collapses under the proving cost. Unicity is the first protocol to solve <b>all three simultaneously</b> — because it never places the transaction on a shared ledger to begin with." />}
-        right={<Dia k="trilemma" max="40vh" />}
+        right={<Dia k="trilemma" max="48vh" />}
       />
     </Shell>
   );
@@ -181,7 +181,7 @@ export function GregBearerSlide() {
     <Shell>
       <H main='From ledger entries to <span class="o">bearer instruments.</span>' sub="Off-chain settlement restores the properties of physical cash to digital stablecoins." />
       <Core html="On-chain stablecoins are just ledger entries. Unicity converts them into <b>self-contained, self-proving bearer instruments</b>. The asset carries its own proof of validity, moving <b>peer-to-peer</b> across any transport layer (HTTP, QR, NOSTR) with zero ledger lookups." />
-      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="ledgerbearer" max="40vh" /></div></div>
+      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="ledgerbearer" max="46vh" /></div></div>
     </Shell>
   );
 }
@@ -198,14 +198,14 @@ export function GregOracleSlide() {
       <H main='The uniqueness oracle: <span class="o">unbundling consensus.</span>' sub="Removing correctness from the network to achieve horizontal scalability." />
       <Two
         left={<Core className="mt-0" html="Each generation of consensus removed work from the network. Bitcoin certified correctness and global ordering. Modern L1s certify correctness only. Unicity introduces the <b>Uniqueness Oracle</b>, which attests to one thing only: has this token been spent? Because the Oracle never re-executes transactions or reads payloads, throughput scales horizontally — <b>30,000 transactions per second per shard</b>." />}
-        right={<Dia k="oracle" max="34vh" />}
+        right={<Dia k="oracle" max="42vh" />}
       />
       <div className="shrink-0 flex gap-5 mt-6">
         {timeline.map(([yr, nm, ds, last]) => (
           <div key={yr as string} className={`flex-1 pt-3.5 border-t ${last ? 'border-orange-500' : 'border-[#2c2c2a]'}`}>
             <div className={`text-sm lg:text-base tracking-[0.08em] ${last ? 'text-orange-400' : 'text-[#9E9E96]'}`} style={{ fontFamily: anton }}>{yr}</div>
             <div className={`uppercase text-lg lg:text-2xl mt-1.5 ${last ? 'text-orange-400' : 'text-[#fefefe]'}`} style={{ fontFamily: anton }}>{nm}</div>
-            <div className="text-[#D6D6D0] text-sm lg:text-lg mt-1.5 leading-snug">{ds}</div>
+            <div className="text-[#D6D6D0] text-sm lg:text-base mt-1.5 leading-snug">{ds}</div>
           </div>
         ))}
       </div>
@@ -232,7 +232,7 @@ export function GregReceiveSlide() {
     <Shell>
       <H main='Protocol-enforced compliance: <span class="o">the receive predicate.</span>' sub="Cryptographically gating asset transfers without sacrificing peer-to-peer privacy." />
       <Core html="Compliance should not require a central facilitator. Unicity introduces the <b>Receive Predicate</b>. KYC, jurisdiction, and accreditation are programmed directly into the asset. If the recipient cannot satisfy the predicate locally, the transfer mathematically fails — <b>the asset enforces its own compliance.</b>" />
-      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="compliance" max="40vh" /></div></div>
+      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="compliance" max="46vh" /></div></div>
     </Shell>
   );
 }
@@ -278,7 +278,7 @@ export function GregSwapSlide() {
     <Shell>
       <H main='The atomic swap: <span class="o">settlement without an intermediary.</span>' sub="Trustless atomic swaps between self-contained bearer assets." />
       <Core html='The conventional fix for trustless exchange is a timed lock (HTLC), but the clock becomes an attack surface where one side can stall and walk away. Unicity removes the clock using <b style="white-space:nowrap">Predicate Swaps</b>. Both parties commit independently, and the swap forms for both at once or not at all. Settlement runs off-chain at machine speed with <b>no mempool and no MEV</b>.' />
-      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="swap" max="40vh" /></div></div>
+      <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="swap" max="48vh" /></div></div>
     </Shell>
   );
 }
@@ -352,7 +352,7 @@ export function GregDACSlide() {
     <Shell>
       <H main='What gets built: <span class="o">the agentic corporation.</span>' sub="Agents become the new smart contracts, executing verifiable logic directly on bearer assets." />
       <Core html="Unicity engineered a decentralized autonomous corporation for BlackRock: a <b>weather-based parametric insurer</b>. Capital provisioning, underwriting, and reinsurance cession all run as autonomous agents transacting in Unicity tokens. Settlement is only the entry point — <b>the same protocol orchestrates the entire corporation</b>." />
-      <div className="shrink-0 mt-4 flex justify-center"><div className="w-full max-w-[1280px]"><Dia k="dac" max="44vh" /></div></div>
+      <div className="shrink-0 mt-4 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="dac" max="50vh" /></div></div>
     </Shell>
   );
 }
