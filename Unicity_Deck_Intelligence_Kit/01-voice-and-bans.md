@@ -42,3 +42,12 @@ We converted every "The structural bottleneck: the shared ledger" → a claim th
 - *"They pay each other faster than anything built for people can stop to ask…"* → tortured, unreadable. Became *"Machines now pay each other directly — and nothing stops to ask who they are, or whether they should."*
 - *"Now applying that to the rails your agents transact on"* → banned word. Became *"…to the money your agents move."*
 - *"the first protocol to solve all three"* → overclaim. Became *"holds all three."*
+
+## Field-tested elevations (from the Padra deep-audit — apply these)
+A 5-lens voice audit against his real corpus surfaced the moves that separate "competent agency copy" from *him*:
+1. **Lead on the world-fact; never bury the inflection.** Don't open a slide on a soft trend-noun ("the patient journey is going agentic"). State the shift as a flat fact about the world — *"The clinic now runs before the patient arrives."* The sharpest beat goes FIRST, not stranded at the end of a paragraph.
+2. **The thing IS the boundary (architectural refusal), not a guardrail handed over.** *"The Policy Engine is the boundary the agent cannot cross"* beats *"gives every agent a boundary."* Control lives beneath the agent and enforces; it isn't "given."
+3. **Use his real signature lines verbatim when they fit.** *"You cannot prompt-inject past a kernel boundary."* / *"Agents run on top of it."* / *"The message is the payment."* — reach for the actual line, not a paraphrase.
+4. **His authentic declarative negation is allowed; the marketing foil is not.** Keep *"agents don't work that way"*, *"stop answering and start acting"*. Drop *"X, not Y"* / *"not just X"* — **even his own** *"below the agent, not beside it"* gets dropped per Alan's hard ban. Express the kernel idea without the foil (*"runs beneath the agent"*).
+5. **Bookend the spine verbatim.** Repeat the one mantra line at the cover and the close, word-for-word (*"Permission before every action. Proof after every one."*) — Peak-End + his repeated-mantra habit.
+6. **State the proven fact; drop the foil that sets it up.** *"is not a startup learning the problem today"* → just *"The platform is already built. … in production since 2012."* Let the fact carry; don't prop it with a negated strawman.
