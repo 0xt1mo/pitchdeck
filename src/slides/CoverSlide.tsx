@@ -129,15 +129,9 @@ export function CoverSlide() {
                 className="text-[#fefefe] text-[10px] sm:text-xs lg:text-sm tracking-[0.18em] uppercase font-bold"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                Greg Kidd
+                Greg Kidd <span className="text-orange-400">@</span> Hard Yaka
               </span>
             </div>
-            <img
-              src="/hardyaka.svg"
-              alt="Hard Yaka"
-              className="h-4 lg:h-5 w-auto shrink-0"
-              style={{ filter: 'brightness(0) invert(1)', opacity: 0.85 }}
-            />
           </motion.div>
         </div>
 
