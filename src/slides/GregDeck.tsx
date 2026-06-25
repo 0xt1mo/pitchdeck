@@ -23,7 +23,7 @@ function Shell({ children }: { children: React.ReactNode }) {
       <style>{SCOPE}</style>
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px)', backgroundSize: '64px 64px' }} />
       <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 58% 50% at 50% 48%, rgba(255,137,4,0.07), transparent 70%)' }} />
-      <div className="relative z-10 h-full flex flex-col justify-center px-12 sm:px-16 lg:px-24 py-14 lg:py-20">
+      <div className="relative z-10 h-full flex flex-col justify-start px-12 sm:px-16 lg:px-24 pt-20 lg:pt-[104px] pb-14 lg:pb-20">
         {children}
       </div>
     </div>
@@ -34,13 +34,13 @@ function H({ main, sub }: { main: string; sub: string }) {
   return (
     <div className="shrink-0">
       <h1 className="text-[#fefefe] uppercase text-[30px] sm:text-[40px] lg:text-[52px] leading-[1.06] tracking-tight" style={{ fontFamily: anton }} dangerouslySetInnerHTML={{ __html: main }} />
-      <p className="text-[#fefefe] font-medium text-base sm:text-lg lg:text-2xl mt-3 max-w-[98ch] leading-snug" dangerouslySetInnerHTML={{ __html: sub }} />
+      <p className="text-[#fefefe] font-medium text-base sm:text-lg lg:text-xl mt-3 max-w-[92ch] leading-snug" dangerouslySetInnerHTML={{ __html: sub }} />
     </div>
   );
 }
 
 function Core({ html, className = '' }: { html: string; className?: string }) {
-  return <p className={`text-[#D6D6D0] text-base sm:text-lg lg:text-2xl leading-[1.5] mt-5 ${className}`} dangerouslySetInnerHTML={{ __html: html }} />;
+  return <p className={`text-[#D6D6D0] text-base sm:text-lg lg:text-xl leading-[1.55] mt-5 ${className}`} dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
 function Dia({ k, max = '42vh' }: { k: string; max?: string }) {
@@ -104,7 +104,7 @@ export function GregTrilemmaSlide() {
       <H main='The stablecoin trilemma: <span class="o">pick two.</span>' sub="Every digital-dollar design has been forced to sacrifice compliance, privacy, or throughput." />
       <Two
         left={<Core className="mt-0" html="A public ledger delivers compliance and throughput but exposes every balance and counterparty. Add zero-knowledge proofs and privacy returns, but throughput collapses under the proving cost. Unicity is the first protocol to solve <b>all three simultaneously</b> — because it never places the transaction on a shared ledger to begin with." />}
-        right={<Dia k="trilemma" max="46vh" />}
+        right={<Dia k="trilemma" max="40vh" />}
       />
     </Shell>
   );
@@ -311,13 +311,13 @@ export function GregX402Slide() {
         <div className="flex-1 rounded-lg border border-[#2c2c2a] bg-[#101010] p-4 lg:p-5">
           <div className="flex justify-between items-baseline uppercase tracking-wide text-[#9E9E96] text-base lg:text-lg" style={{ fontFamily: anton }}><span>Traditional x402</span><span className="text-[#fefefe]">12 steps</span></div>
           {x402old.map(([i, t, gone]) => (
-            <div key={i as string} className={`flex gap-3 py-1.5 text-sm lg:text-lg border-t border-white/5 first:border-t-0 ${gone ? 'text-[#5a5a55] line-through' : 'text-[#D6D6D0]'}`}><span className="text-[#9E9E96] w-4 shrink-0 no-underline">{i}</span>{t}</div>
+            <div key={i as string} className={`flex gap-3 py-1 text-sm lg:text-base border-t border-white/5 first:border-t-0 ${gone ? 'text-[#5a5a55] line-through' : 'text-[#D6D6D0]'}`}><span className="text-[#9E9E96] w-4 shrink-0 no-underline">{i}</span>{t}</div>
           ))}
         </div>
         <div className="flex-1 rounded-lg p-4 lg:p-5" style={{ border: '1px solid rgba(255,137,4,0.4)', background: 'linear-gradient(180deg, rgba(255,137,4,0.06), transparent)' }}>
           <div className="flex justify-between items-baseline uppercase tracking-wide text-orange-400 text-base lg:text-lg" style={{ fontFamily: anton }}><span>Unicity x402</span><span>5 steps</span></div>
           {x402new.map(([i, t]) => (
-            <div key={i} className="flex gap-3 py-1.5 text-sm lg:text-lg border-t border-white/5 first:border-t-0 text-[#D6D6D0]"><span className="text-[#9E9E96] w-4 shrink-0">{i}</span>{t}</div>
+            <div key={i} className="flex gap-3 py-1 text-sm lg:text-base border-t border-white/5 first:border-t-0 text-[#D6D6D0]"><span className="text-[#9E9E96] w-4 shrink-0">{i}</span>{t}</div>
           ))}
           <div className="mt-3 uppercase tracking-wide text-orange-400 text-lg lg:text-2xl" style={{ fontFamily: anton }}>7 steps eliminated</div>
           <div className="text-[#D6D6D0] text-sm lg:text-lg mt-1.5">No facilitator. No shared ledger. No block wait.</div>
@@ -352,7 +352,7 @@ export function GregDACSlide() {
     <Shell>
       <H main='What gets built: <span class="o">the agentic corporation.</span>' sub="Agents become the new smart contracts, executing verifiable logic directly on bearer assets." />
       <Core html="Unicity engineered a decentralized autonomous corporation for BlackRock: a <b>weather-based parametric insurer</b>. Capital provisioning, underwriting, and reinsurance cession all run as autonomous agents transacting in Unicity tokens. Settlement is only the entry point — <b>the same protocol orchestrates the entire corporation</b>." />
-      <div className="shrink-0 mt-5 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="dac" max="56vh" /></div></div>
+      <div className="shrink-0 mt-4 flex justify-center"><div className="w-full max-w-[1280px]"><Dia k="dac" max="44vh" /></div></div>
     </Shell>
   );
 }

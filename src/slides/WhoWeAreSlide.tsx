@@ -94,24 +94,15 @@ function ClientLogo({ name, file, scale = 1 }: { name: string; file: string; sca
 export function WhoWeAreSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-12 lg:px-20 pt-6 pb-20 lg:pt-6 lg:pb-24 justify-center gap-3">
+      <div className="relative z-10 h-full flex flex-col px-12 lg:px-20 pt-20 lg:pt-[104px] pb-14 lg:pb-16 justify-start gap-3">
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            The Team
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[34px] sm:text-[50px] lg:text-[72px] xl:text-[84px] leading-[0.95] tracking-tight mt-2 uppercase"
+            className="text-[#fefefe] text-[30px] sm:text-[40px] lg:text-[52px] leading-[1.06] tracking-tight uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
             Built by{' '}
