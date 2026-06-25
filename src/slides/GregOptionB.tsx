@@ -65,16 +65,16 @@ export function GregPortfolioSlide() {
           <h1 className="text-[#fefefe] uppercase text-[30px] sm:text-[40px] lg:text-[52px] leading-[1.06] tracking-tight" style={{ fontFamily: anton }}>
             Hard Yaka funds the <span className="text-orange-400">infrastructure of fair access.</span>
           </h1>
-          <p className="text-[#fefefe] font-medium text-base sm:text-lg lg:text-xl mt-3 max-w-[92ch] leading-snug">250+ companies across payments, identity, and banking — the plumbing of an open financial system. <b>Unicity is the layer beneath them all.</b></p>
+          <p className="text-[#fefefe] font-medium text-base sm:text-lg lg:text-xl mt-3 max-w-[92ch] leading-snug">250+ companies across payments, identity, and banking — the open building blocks of an inclusive financial system.</p>
         </div>
-        <img src="/hardyaka.svg" alt="Hard Yaka" className="h-10 lg:h-14 w-auto shrink-0 mb-1" style={{ filter: 'brightness(0) invert(1)', opacity: 0.85 }} />
+        <img src="/hardyaka.svg" alt="Hard Yaka" className="h-5 lg:h-7 w-auto shrink-0 mb-1" style={{ filter: 'brightness(0) invert(1)', opacity: 0.85 }} />
       </div>
       <div className="shrink-0 mt-10 grid grid-cols-7 gap-x-6 gap-y-5">
         {portfolio.map((name) => (
           <span key={name} className="text-[#D6D6D0] text-base lg:text-2xl leading-none" style={{ fontFamily: anton, opacity: 0.9 }}>{name}</span>
         ))}
       </div>
-      <p className="shrink-0 mt-10 text-[#9E9E96] text-sm lg:text-base tracking-wide" style={{ fontFamily: mono }}>Ripple · GlobaliD · USBC — a decade spent putting identity and compliant dollars on open infrastructure. Unicity is the protocol that finishes the job.</p>
+      <p className="shrink-0 mt-10 text-[#9E9E96] text-sm lg:text-base tracking-wide leading-relaxed" style={{ fontFamily: mono }}>Identity and compliant value on open infrastructure — the thesis behind Ripple, GlobaliD, and USBC. <span className="text-[#D6D6D0]">Unicity shares it, focused on one frontier: trust between machines.</span></p>
     </Shell>
   );
 }
