@@ -11,34 +11,34 @@ type StackLayer = {
 const stack: StackLayer[] = [
   {
     product: 'AGENT FRAMEWORKS',
-    label: 'A CAMADA DE APLICAÇÃO',
-    detail: 'Traga o seu próprio agente — qualquer framework, qualquer modelo.',
+    label: 'THE APPLICATION LAYER',
+    detail: 'Bring your own agent — any framework, any model.',
     tags: 'LANGCHAIN · OPENCLAW · AUTOGEN · CUSTOM',
     variant: 'top',
   },
   {
     product: 'UNICITY AOS9',
     label: 'RUNTIME',
-    detail: 'Um runtime seguro que fica abaixo do agente. Cada saída de modelo, chamada de ferramenta e decisão passa por ele — interceptação de segurança, registro de auditoria e aplicação de orçamento acontecem aqui, onde as ferramentas não podem contorná-los.',
+    detail: 'A secure runtime that sits beneath the agent. Every model output, tool call and decision passes through it — security interception, audit logging and budget enforcement happen here, where the tools cannot route around them.',
     tags: 'KERNEL · POLICY · INTERCEPT',
     variant: 'mid',
   },
   {
     product: 'UNICITY L1',
-    label: 'LIQUIDAÇÃO E IDENTIDADE',
-    detail: 'O substrato. Tokenização de estado, transferência de valor, identidade criptográfica e delegação.',
+    label: 'SETTLEMENT AND IDENTITY',
+    detail: 'The substrate. State tokenization, value transfer, cryptographic identity and delegation.',
     tags: 'STATE TOKENS · IDENTITY · DELEGATION',
     variant: 'bottom',
   },
 ];
 
 const requirements = [
-  'Identidade',
-  'Delegação',
-  'Execução Verificável',
-  'Aplicação de Políticas',
-  'Liquidação',
-  'Interoperabilidade',
+  'Identity',
+  'Delegation',
+  'Verifiable Execution',
+  'Policy Enforcement',
+  'Settlement',
+  'Interoperability',
 ];
 
 export function CasinoAutonomyStackSlide() {
@@ -55,7 +55,7 @@ export function CasinoAutonomyStackSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 10 · A Stack
+            No. 10 · The Stack
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -64,8 +64,8 @@ export function CasinoAutonomyStackSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.05] tracking-tight mt-2 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Um sistema operacional para{' '}
-            <span className="text-orange-400">IA autônoma.</span>
+            An operating system for{' '}
+            <span className="text-orange-400">autonomous AI.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -74,7 +74,7 @@ export function CasinoAutonomyStackSlide() {
             className="mt-3 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Três camadas. <span className="text-orange-400 font-bold">Liquidação, runtime, frameworks.</span> Cada requisito que a autonomia exige, entregue como uma única stack de protocolo.
+            Three layers. <span className="text-orange-400 font-bold">Settlement, runtime, frameworks.</span> Every requirement autonomy demands, delivered as a single protocol stack.
           </motion.p>
         </div>
 
@@ -152,7 +152,7 @@ export function CasinoAutonomyStackSlide() {
             className="text-[#fefefe]/55 text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-2"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Cada Requisito de Autonomia, Entregue
+            Every Requirement For Autonomy, Delivered
           </p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             {requirements.map((r, i) => (
@@ -185,7 +185,7 @@ export function CasinoAutonomyStackSlide() {
             borderTop: '1px solid rgba(249,115,22,0.25)',
           }}
         >
-          SEIS REQUISITOS. UMA PLATAFORMA. CONSTRUÍDA A PARTIR DE PRIMEIROS PRINCÍPIOS.
+          SIX REQUIREMENTS. ONE PLATFORM. BUILT FROM FIRST PRINCIPLES.
         </motion.p>
 
       </div>
@@ -307,9 +307,9 @@ function IsoStackDiagram() {
 
       <rect x={0} y={0} width={W} height={H} fill="url(#iso-grid)" />
 
-      <Slab cy={layerY[2]} variant="bottom" centerLabel="PROVA" />
+      <Slab cy={layerY[2]} variant="bottom" centerLabel="PROOF" />
       <Slab cy={layerY[1]} variant="mid" centerLabel="AOS9" centerSub="KERNEL" />
-      <Slab cy={layerY[0]} variant="top" centerLabel="AGENTE" />
+      <Slab cy={layerY[0]} variant="top" centerLabel="AGENT" />
     </svg>
   );
 }

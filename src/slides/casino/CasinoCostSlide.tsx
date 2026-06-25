@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 
 const items = [
-  { name: 'Processamento de Cartão', today: '2.5–3.5% do volume de depósitos',          after: '0',        zero: true  },
-  { name: 'Chargebacks & Disputas',  today: '0.5–1.0% dos depósitos + por disputa',     after: '0',        zero: true  },
-  { name: 'Stack de Integração PSP', today: '5+ fornecedores por região',               after: '1 trilho', zero: false },
-  { name: 'Funil de Depósito',       today: '30% abandonam na primeira tentativa',       after: '0 funil',  zero: false },
+  { name: 'Card Processing',     today: '2.5–3.5% of deposit volume',           after: '0',       zero: true  },
+  { name: 'Chargebacks & Disputes', today: '0.5–1.0% of deposits + per dispute', after: '0',       zero: true  },
+  { name: 'PSP Integration Stack', today: '5+ providers per region',            after: '1 path',  zero: false },
+  { name: 'Deposit Funnel',      today: '30% drop on first attempt',            after: '0 funnel', zero: false },
 ];
 
 export function CasinoCostSlide() {
@@ -21,7 +21,7 @@ export function CasinoCostSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 07 · Custo
+            No. 07 · Cost
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -30,8 +30,8 @@ export function CasinoCostSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[60px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Agentes reduzem{' '}
-            <span className="text-orange-400">o atrito de pagamentos.</span>
+            Agents collapse{' '}
+            <span className="text-orange-400">payment friction.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -47,7 +47,7 @@ export function CasinoCostSlide() {
             className="mt-4 text-[#fefefe]/75 text-sm lg:text-base leading-relaxed max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Processamento de cartão, chargebacks, integrações com PSP, funis de depósito — o aparato que existe para colocar dinheiro na sua plataforma. Os agentes chegam com o dinheiro. Eles já passaram pelo KYC a montante.
+            Card processing, chargebacks, PSP integrations, deposit funnels — the apparatus that exists to move money onto your platform. Agents arrive with the money. They cleared KYC upstream.
           </motion.p>
         </div>
 

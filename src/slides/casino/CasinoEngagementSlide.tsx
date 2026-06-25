@@ -16,7 +16,7 @@ export function CasinoEngagementSlide() {
               className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Nº 04 · Engajamento
+              No. 04 · Engagement
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, x: -40 }}
@@ -25,8 +25,8 @@ export function CasinoEngagementSlide() {
               className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[64px] leading-[0.98] tracking-tight mt-3 uppercase"
               style={{ fontFamily: "'Anton', sans-serif" }}
             >
-              Agentes mantêm os jogadores{' '}
-              <span className="text-orange-400">no jogo.</span>
+              Agents keep players{' '}
+              <span className="text-orange-400">in play.</span>
             </motion.h1>
             <motion.div
               initial={{ scaleX: 0 }}
@@ -42,8 +42,8 @@ export function CasinoEngagementSlide() {
               className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl leading-relaxed max-w-xl mt-7"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Notificações push são ignoradas. O agente mantém um <span className="text-[#fefefe] font-semibold">fluxo de atividades ao vivo</span> — torneios, novos slots, jackpots, mesas em alta — e age sobre aqueles que importam ao jogador.{' '}
-              <span className="text-orange-400 font-semibold">Engajamento sempre ativo, a um toque de uma aposta.</span>
+              Push notifications get ignored. The agent keeps a <span className="text-[#fefefe] font-semibold">live activity stream</span> — tournaments, new slots, jackpots, hot tables — and acts on the ones that matter to the player.{' '}
+              <span className="text-orange-400 font-semibold">Always-on engagement, one tap from a bet.</span>
             </motion.p>
           </div>
 
@@ -62,7 +62,7 @@ export function CasinoEngagementSlide() {
 
             <img
               src="/images/casino-engagement.png"
-              alt="Fluxo de atividades ao vivo do Concierge com prompts de engajamento do MagicCasino"
+              alt="Concierge live activity stream with MagicCasino engagement prompts"
               className="block mx-auto w-full max-w-[340px] h-auto"
               style={{ filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }}
             />

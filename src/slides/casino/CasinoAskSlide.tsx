@@ -3,34 +3,34 @@ import { motion } from 'framer-motion';
 const movements = [
   {
     num: '01',
-    week: 'Semana 1–3',
-    title: 'Instalar.',
+    week: 'Week 1–3',
+    title: 'Install.',
     text: (
       <>
-        O Unicity AOS é implantado <strong className="text-[#fefefe] font-semibold">na sua plataforma</strong>, junto à sua carteira e motor de jogo existentes. Sem substituição, sem migração. Seus sistemas atuais continuam funcionando.
+        Unicity AOS deploys <strong className="text-[#fefefe] font-semibold">on your platform</strong>, alongside your existing wallet and game engine. No replacement, no migration. Your current systems keep running.
       </>
     ),
     production: false,
   },
   {
     num: '02',
-    week: 'Semana 4–6',
-    title: 'Integrar.',
+    week: 'Week 4–6',
+    title: 'Integrate.',
     text: (
       <>
-        Handshake em sandbox com agente de referência. Valide <strong className="text-[#fefefe] font-semibold">sessões assinadas, liquidação por aposta, trilha de auditoria</strong>. Revisões de conformidade e segurança ocorrem em paralelo.
+        Sandbox handshake with a reference agent. Validate <strong className="text-[#fefefe] font-semibold">signed sessions, per-bet settlement, audit trail</strong>. Compliance and security reviews run in parallel.
       </>
     ),
     production: false,
   },
   {
     num: '03',
-    week: 'Semana 7',
-    title: 'Produção.',
+    week: 'Week 7',
+    title: 'Production.',
     text: (
       <>
-        Tráfego de agentes ao vivo. A primeira sessão assinada é liquidada. Auditoria limpa.{' '}
-        <span className="text-orange-400 font-semibold">Você começa a integrar agentes em escala.</span>
+        Agent traffic goes live. The first signed session settles. Clean audit.{' '}
+        <span className="text-orange-400 font-semibold">You start onboarding agents at scale.</span>
       </>
     ),
     production: true,
@@ -51,7 +51,7 @@ export function CasinoAskSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 12 · O Pedido
+            No. 12 · The Ask
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -60,8 +60,8 @@ export function CasinoAskSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[60px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Quarenta e cinco dias para produção.{' '}
-            <span className="text-orange-400">Depois, comece a integrar agentes.</span>
+            Forty-five days to production.{' '}
+            <span className="text-orange-400">Then start onboarding agents.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -77,7 +77,7 @@ export function CasinoAskSlide() {
             className="mt-4 text-[#fefefe]/75 text-sm lg:text-base leading-relaxed max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Uma integração. Um sprint. Um operador regulado no rail ao vivo. Quarenta e cinco dias do kickoff até a implantação em produção do Unicity AOS dentro da sua stack — então você começa a receber agentes.
+            One integration. One sprint. One regulated operator live and taking agent traffic. Forty-five days from kickoff to Unicity AOS running in production inside your stack — then you start receiving agents.
           </motion.p>
         </div>
 

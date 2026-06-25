@@ -120,8 +120,8 @@ export function CasinoUnlocksSlide() {
             borderTop: '1px solid rgba(249,115,22,0.25)',
           }}
         >
-          NOT A BETTER FRONT DOOR.{' '}
-          <span className="text-[#fefefe]">A DIFFERENT BUILDING.</span>
+          THE FRONT DOOR STAYS.{' '}
+          <span className="text-[#fefefe]">THE BUILDING CHANGES.</span>
         </motion.p>
       </div>
     </div>

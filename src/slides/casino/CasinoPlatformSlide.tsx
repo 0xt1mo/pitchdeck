@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 
 const pillars = [
-  { num: '01', name: 'Segurança',   body: <>Execução verificável para <strong className="text-[#fefefe] font-semibold">cada agente</strong> Guardrails, sandboxing e aplicação no kernel do OS</> },
-  { num: '02', name: 'Conformidade', body: <>Atestações de KYC, limites de risco, limites de sessão, trilha de auditoria regulatória — <strong className="text-[#fefefe] font-semibold">vinculados ao agente</strong>, aplicados estruturalmente, apresentados por transação.</> },
-  { num: '03', name: 'Redes', body: <>Mensageria peer-to-peer entre agentes. <strong className="text-[#fefefe] font-semibold">Sem ledger compartilhado.</strong> Sem roteador central. Menos de um segundo entre contrapartes reguladas.</> },
-  { num: '04', name: 'Governança', body: <>Aplicação de políticas no nível do agente. Limites, exclusões, permissões — <strong className="text-[#fefefe] font-semibold">definidos uma vez</strong>, aplicados em cada interação.</> },
-  { num: '05', name: 'Pagamentos',    body: <>Transferência P2P de stablecoins reguladas. Privacidade perfeita <strong className="text-[#fefefe] font-semibold">Finalidade criptográfica.</strong> Sem rede de cartões, sem processadora de pagamentos.</> },
-  { num: '06', name: 'Auditoria',      body: <>Cada ação assinada e testemunhada. <strong className="text-[#fefefe] font-semibold">A evidência de conformidade é uma consulta</strong>, não um CSV. Reguladores verificam, não confiam.</> },
+  { num: '01', name: 'Security',   body: <>Verifiable execution for <strong className="text-[#fefefe] font-semibold">every agent</strong> — guardrails, sandboxing and enforcement at the OS kernel.</> },
+  { num: '02', name: 'Compliance', body: <>KYC attestations, risk limits, session limits, a regulatory audit trail — <strong className="text-[#fefefe] font-semibold">bound to the agent</strong>, enforced structurally, presented per transaction.</> },
+  { num: '03', name: 'Networking', body: <>Peer-to-peer messaging between agents. <strong className="text-[#fefefe] font-semibold">No shared ledger.</strong> No central router. Under a second between regulated counterparties.</> },
+  { num: '04', name: 'Governance', body: <>Policy enforcement at the agent level. Limits, exclusions, permissions — <strong className="text-[#fefefe] font-semibold">set once</strong>, applied on every interaction.</> },
+  { num: '05', name: 'Payments',    body: <>P2P transfer of regulated stablecoins. Perfect privacy. <strong className="text-[#fefefe] font-semibold">Cryptographic finality.</strong> No card network, no payment processor.</> },
+  { num: '06', name: 'Audit',      body: <>Every action signed and witnessed. <strong className="text-[#fefefe] font-semibold">Compliance evidence is a live query</strong>. Regulators verify it themselves.</> },
 ];
 
 export function CasinoPlatformSlide() {
@@ -23,7 +23,7 @@ export function CasinoPlatformSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Nº 09 · O Que É a Unicity
+            No. 09 · What Unicity Is
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -32,8 +32,8 @@ export function CasinoPlatformSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[60px] leading-[0.98] tracking-tight mt-3 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            O que isso significa{' '}
-            <span className="text-orange-400">para operadores de gaming.</span>
+            What this means{' '}
+            <span className="text-orange-400">for gaming operators.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -49,7 +49,7 @@ export function CasinoPlatformSlide() {
             className="mt-4 text-[#fefefe]/75 text-sm lg:text-base leading-relaxed max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Tudo o que uma empresa precisa para implantar agentes com segurança em escala — segurança, conformidade, redes, governança, valor, auditoria — em uma única plataforma.
+            Everything an operator needs to deploy agents safely at scale — security, compliance, networking, governance, payments, audit — on a single platform.
           </motion.p>
         </div>
 
@@ -105,8 +105,8 @@ export function CasinoPlatformSlide() {
             borderTop: '1px solid rgba(249,115,22,0.25)',
           }}
         >
-          Outros fornecedores resolvem uma peça.{' '}
-          <span className="text-orange-400">A Unicity é a plataforma.</span>
+          Other vendors solve one piece.{' '}
+          <span className="text-orange-400">Unicity is the platform.</span>
         </motion.p>
       </div>
     </div>

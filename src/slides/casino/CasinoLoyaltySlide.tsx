@@ -26,7 +26,7 @@ const movements = [
     title: 'What you do with it.',
     text: (
       <>
-        A reload bonus that arrives in <span className="text-[#fefefe] font-semibold">a live conversation</span>, not an unread inbox. Promotions delivered at moments of real attention.{' '}
+        A reload bonus that arrives in <span className="text-[#fefefe] font-semibold">a live conversation</span>. Delivered at the moment of real attention, where the player already is.{' '}
         <span className="text-orange-400 font-semibold">Personalization by timing — the only personalisation that has ever worked.</span>
       </>
     ),

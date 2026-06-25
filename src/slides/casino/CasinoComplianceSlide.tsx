@@ -36,7 +36,7 @@ const moats = [
     title: 'Cryptographic Proof of Compliance.',
     text: (
       <>
-        Every wager, every limit, every enforcement is signed and timestamped at the wallet. Compliance evidence becomes a query, not a CSV export.{' '}
+        Every wager, every limit, every enforcement is signed and timestamped at the wallet. Compliance evidence becomes a live query the regulator runs.{' '}
         <span className="text-orange-400 font-semibold">Offshore competitors cannot replicate this.</span>
       </>
     ),
@@ -67,7 +67,7 @@ export function CasinoComplianceSlide() {
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
             Your regulatory moat.{' '}
-            <span className="text-orange-400">Built into the rail.</span>
+            <span className="text-orange-400">Built into the wallet.</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}

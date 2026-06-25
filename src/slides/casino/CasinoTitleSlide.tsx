@@ -32,7 +32,7 @@ export function CasinoTitleSlide() {
             className="text-orange-400 text-[11px] sm:text-xs tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Para Operadores de Cassino
+            Prepared for Dan Andersson · Glitnor
           </span>
         </motion.div>
 
@@ -44,8 +44,8 @@ export function CasinoTitleSlide() {
           className="text-[#fefefe] text-[56px] sm:text-[88px] lg:text-[120px] leading-[0.9] tracking-tight uppercase max-w-6xl"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          Agentes na{' '}
-          <span className="text-orange-400">porta da frente.</span>
+          Agents at the{' '}
+          <span className="text-orange-400">front door.</span>
         </motion.h1>
 
         {/* Rule */}
@@ -65,7 +65,7 @@ export function CasinoTitleSlide() {
           className="text-[#fefefe]/75 text-lg sm:text-xl lg:text-2xl leading-relaxed max-w-3xl"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          O OS de AI Seguro para operadores de cassino.
+          The secure AI operating system for casino operators.
         </motion.p>
 
         {/* Footer */}
@@ -76,7 +76,7 @@ export function CasinoTitleSlide() {
           className="absolute bottom-10 text-[#fefefe]/35 text-[11px] tracking-[0.28em] uppercase"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Confidencial · 2026
+          What we built for MagicCasino · Brazil&nbsp;&nbsp;·&nbsp;&nbsp;Confidential 2026
         </motion.div>
       </div>
     </div>

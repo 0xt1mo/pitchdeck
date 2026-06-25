@@ -44,16 +44,6 @@ const slides = [
   // CasinoArchitectureSlide,   // hidden — Player wallet to operator wallet
   CasinoAskSlide,               // 13. The Ask — 45 days to production
   CasinoTeamSlide,              // 14. Who We Are — team + globe
-  SalesContactSlide,            // 13. See It In Action / Contact
-  SalesIntroSlide,              // 14. Intro
-  SalesAgentsComingSlide,       // 15. Agents are coming
-  SalesPilotPurgatorySlide,     // 16. Agentic AI not ready for production
-  SalesOverviewSlide,           // 17. Security, Safety, Verifiability — 3 products
-  SalesAgentHostSlide,          // 18. AgentHost / ASTRID OS
-  SalesInterceptFabricSlide,    // 19. Semantic Intercept Fabric
-  SalesAgentSphereSlide,        // 20. AgentSphere
-  SalesDeploymentSlide,         // 21. Deployment Models
-  SalesAboutSlide,              // 22. About Us
 ];
 
 export default function App() {

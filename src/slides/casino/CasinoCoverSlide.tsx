@@ -27,7 +27,7 @@ export function CasinoCoverSlide() {
                 className="text-orange-400 text-[11px] sm:text-xs tracking-[0.32em] uppercase font-semibold"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                Um Novo Agente VIP Entrou na Sala
+                A New VIP Agent Has Entered the Room
               </span>
             </motion.div>
 
@@ -38,8 +38,8 @@ export function CasinoCoverSlide() {
               className="text-[#fefefe] text-[34px] sm:text-[48px] lg:text-[64px] leading-[0.95] tracking-tight uppercase"
               style={{ fontFamily: "'Anton', sans-serif" }}
             >
-              Seus próximos milhões de clientes{' '}
-              <span className="text-orange-400">não vão usar web nem apps.</span>
+              Your next million players{' '}
+              <span className="text-orange-400">won't touch the web or an app.</span>
             </motion.h1>
 
             <motion.div
@@ -57,7 +57,7 @@ export function CasinoCoverSlide() {
               className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl leading-relaxed"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              O primeiro operador de cassino regulado a receber Agentes na porta da frente define a categoria.
+              The first regulated casino operator to greet Agents at the front door defines the category.
             </motion.p>
           </div>
 
@@ -77,7 +77,7 @@ export function CasinoCoverSlide() {
             {/* Phone screenshot */}
             <img
               src="/images/casino-concierge.png"
-              alt="Concierge — fluxo de atividades"
+              alt="Concierge — activity flow"
               className="block mx-auto w-full max-w-[340px] h-auto"
               style={{ filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }}
             />
