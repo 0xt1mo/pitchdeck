@@ -80,7 +80,7 @@ export function CoverSlide() {
           className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl tracking-wide shrink-0 -mt-2"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          The machine economy cannot run on human infrastructure.
+          When the counterparty is a machine, trust has to travel with the money.
         </motion.p>
 
         {/* Divider */}
