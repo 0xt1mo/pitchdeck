@@ -30,7 +30,7 @@ export function CoverSlide() {
 
       {/* Left vertical orange bar */}
       <motion.div
-        initial={{ scaleY: 0 }}
+        initial={false}
         animate={{ scaleY: 1 }}
         transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
         className="absolute left-12 lg:left-20 top-[12%] bottom-[12%] w-[2px] bg-orange-500 origin-top z-10"
@@ -43,7 +43,7 @@ export function CoverSlide() {
         <motion.img
           src="/UnicityLogo.svg"
           alt="Unicity"
-          initial={{ opacity: 0, y: 12 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="h-10 lg:h-14 w-auto shrink-0"
@@ -51,7 +51,7 @@ export function CoverSlide() {
 
         {/* Eyebrow */}
         <motion.p
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
           className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.32em] uppercase font-bold shrink-0 -mt-2"
@@ -62,7 +62,7 @@ export function CoverSlide() {
 
         {/* Headline */}
         <motion.h1
-          initial={{ opacity: 0, y: 16 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.55, duration: 0.8 }}
           className="text-[#fefefe] text-[48px] sm:text-[72px] lg:text-[112px] xl:text-[140px] leading-[0.95] tracking-tight uppercase shrink-0"
@@ -74,7 +74,7 @@ export function CoverSlide() {
 
         {/* Subtitle */}
         <motion.p
-          initial={{ opacity: 0, y: 8 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.85, duration: 0.6 }}
           className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl tracking-wide shrink-0 -mt-2"
@@ -85,7 +85,7 @@ export function CoverSlide() {
 
         {/* Divider */}
         <motion.div
-          initial={{ scaleX: 0 }}
+          initial={false}
           animate={{ scaleX: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
           className="h-[1px] w-40 sm:w-56 lg:w-72 bg-orange-500/60 origin-left shrink-0"
@@ -95,7 +95,7 @@ export function CoverSlide() {
         <div className="flex items-end justify-between gap-8 shrink-0 pr-4 lg:pr-8">
           {/* Credits */}
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.05, duration: 0.5 }}
             className="flex flex-col gap-1"
@@ -113,7 +113,7 @@ export function CoverSlide() {
 
           {/* Dedication — bottom right, baseline-aligned with credits */}
           <motion.div
-            initial={{ opacity: 0, x: 8 }}
+            initial={false}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.15, duration: 0.5 }}
             className="flex items-center gap-3 border-l border-orange-500/40 pl-3"
