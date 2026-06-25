@@ -275,31 +275,71 @@ export function PadraModule5Slide() {
   );
 }
 
-/* 14 · DEMO MODULE 1 + POC */
-const flow = [
-  ['Enter', 'Patient arrives on WhatsApp or the website'],
-  ['Capture', 'Name, country, age, phone, language, treatment interest'],
-  ['Consent', 'Explicit, withdrawable consent before anything is stored'],
-  ['Qualify', 'The agent answers FAQs and requests 4–6 photos'],
-  ['Govern', 'Unicity checks permissions and writes the lead to Odoo'],
-  ['Hand off', 'VIP or complex cases escalate to a human on XCALLY'],
+/* 14 · DEMO MODULE 1 — the WhatsApp lead-capture conversation (illustrative) */
+type Msg = { who: 'a' | 'p' | 'photo' | 'chip' | 'slots'; text: string };
+const convo: Msg[] = [
+  { who: 'a', text: "Hello — I'm Padra's assistant. Looking into a hair transplant?" },
+  { who: 'p', text: 'Yes. How much?' },
+  { who: 'a', text: 'I can set up a free consultation. May I save your details? Withdraw any time.' },
+  { who: 'chip', text: 'consent captured · before anything is stored' },
+  { who: 'a', text: 'Could you send 4–6 photos — front, top, sides, and back?' },
+  { who: 'photo', text: '3 photos' },
+  { who: 'a', text: 'Got them. A doctor reviews first — then your exact estimate. Dubai slots:' },
+  { who: 'chip', text: 'price withheld until the doctor approves' },
+  { who: 'slots', text: 'Tue 10:00 · Wed 14:00 · Thu 16:00' },
 ];
+function PhoneMockup() {
+  return (
+    <div className="w-[290px] sm:w-[300px] rounded-[34px] border border-[#2c2c2a] bg-[#0a0a0a] p-2.5 shrink-0" style={{ boxShadow: '0 30px 60px rgba(0,0,0,0.55)' }}>
+      <div className="rounded-[26px] bg-[#0d0d0c] overflow-hidden h-[558px] flex flex-col">
+        {/* header */}
+        <div className="flex items-center gap-2.5 px-3.5 py-3 border-b border-white/5 shrink-0">
+          <div className="w-7 h-7 rounded-full bg-orange-500 flex items-center justify-center text-[10px] text-[#0a0a0a] lblc">PA</div>
+          <div className="min-w-0">
+            <div className="text-[#fefefe] text-[12px] font-semibold leading-none">Padra · Concierge</div>
+            <div className="flex items-center gap-1 mt-1"><span className="w-1.5 h-1.5 rounded-full bg-green-400" /><span className="text-[#9E9E96] text-[9px]">online</span></div>
+          </div>
+        </div>
+        {/* body */}
+        <div className="flex-1 overflow-hidden px-3 py-3 flex flex-col gap-1.5">
+          {convo.map((m, i) => {
+            if (m.who === 'chip') return <div key={i} className="flex items-center gap-1.5 my-0.5 self-center"><span className="w-1.5 h-1.5 rounded-full bg-orange-400" /><span className="text-orange-300/90 text-[9px] tracking-wide uppercase" style={{ fontFamily: mono }}>{m.text}</span></div>;
+            if (m.who === 'photo') return <div key={i} className="self-end flex gap-1">{[0, 1, 2].map(k => <div key={k} className="w-9 h-9 rounded-md bg-orange-500/20 border border-orange-500/40" />)}</div>;
+            if (m.who === 'slots') return <div key={i} className="self-start flex flex-wrap gap-1.5">{m.text.split(' · ').map(s => <span key={s} className="rounded-full border border-orange-500/50 text-orange-300 text-[10px] px-2.5 py-1">{s}</span>)}</div>;
+            const mineP = m.who === 'p';
+            return <div key={i} className={`flex ${mineP ? 'justify-end' : 'justify-start'}`}><div className={`max-w-[80%] rounded-2xl px-3 py-2 text-[11.5px] leading-snug ${mineP ? 'bg-orange-500 text-[#0a0a0a] rounded-br-sm font-medium' : 'bg-[#1f1f1d] text-[#e8e8e4] rounded-bl-sm'}`}>{m.text}</div></div>;
+          })}
+        </div>
+        {/* input */}
+        <div className="px-3 py-2.5 border-t border-white/5 shrink-0"><div className="rounded-full bg-[#1a1a18] text-[#6a6a64] text-[11px] px-3.5 py-2">Type a message…</div></div>
+      </div>
+    </div>
+  );
+}
 export function PadraDemoSlide() {
   return (
     <Shell>
-      <H main='Start with Module 1. <span class="o">In 45 days.</span>' sub="The lowest-risk, highest-volume entry point — the WhatsApp lead-capture agent, end to end, on your Odoo and XCALLY." />
-      <div className="shrink-0 mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
-        {flow.map(([t, d], i) => (
-          <div key={t} className={cellCls}>
-            <div className="flex items-baseline gap-2.5">
-              <span className="text-orange-400 text-lg lblc">{String(i + 1).padStart(2, '0')}</span>
-              <span className={ctCls}>{t}</span>
-            </div>
-            <div className={ckCls}>{d}</div>
+      <H main='Start with Module 1. <span class="o">In 45 days.</span>' sub="The WhatsApp lead-capture agent, end to end, on your Odoo and XCALLY — the lowest-risk, highest-volume entry point." />
+      <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-14 mt-6">
+        <div className="lg:flex-1 min-w-0">
+          <Core className="mt-0" html="Watch the Policy Engine work inside the conversation: the agent captures <b>consent before it stores anything</b>, collects the photos, and <b>refuses to quote a price until a Padra doctor approves it</b> — then books from live availability." />
+          <div className="mt-5 space-y-2.5">
+            {[
+              ['Lead', 'captured and written to Odoo, scoped'],
+              ['Consent', 'explicit and withdrawable, before storage'],
+              ['Photos', '4–6 angles, kept inside the UAE boundary'],
+              ['Price', 'gated on the doctor — never invented'],
+            ].map(([t, d]) => (
+              <div key={t} className="flex items-baseline gap-3">
+                <span className="text-orange-400 uppercase text-sm lg:text-base w-[88px] shrink-0 lblc">{t}</span>
+                <span className="text-[#D6D6D0] text-sm lg:text-lg leading-snug">{d}</span>
+              </div>
+            ))}
           </div>
-        ))}
+          <p className="mt-5 text-[#9E9E96] text-xs lg:text-sm leading-snug" style={{ fontFamily: mono }}>Illustrative concept of the Module 1 flow — we build it live on your stack.</p>
+        </div>
+        <div className="flex justify-center lg:justify-end"><PhoneMockup /></div>
       </div>
-      <p className="shrink-0 mt-6 text-[#D6D6D0] text-sm lg:text-base leading-snug" style={{ fontFamily: mono }}>Live in the room: a governed agent taking a real action, and the console that controls it. The Padra flow is shown as an illustrative concept until we build it on your stack.</p>
     </Shell>
   );
 }
