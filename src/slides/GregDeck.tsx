@@ -403,7 +403,7 @@ export function GregAskSlide() {
       <H main='Ship the <span class="o">first compliant dollar.</span>' sub="A regulated dollar that settles peer-to-peer the moment the Receive Predicate is satisfied." />
       <div className="shrink-0 mt-7 rounded-xl p-6 lg:p-8" style={{ border: '1px solid rgba(255,137,4,0.4)', background: 'linear-gradient(180deg, rgba(255,137,4,0.06), transparent)' }}>
         <div className="text-[#fefefe] text-2xl lg:text-3xl" style={{ fontFamily: anton }}>Co-design the Receive Predicate with a bank-regulated deposit issuer — <span className="text-orange-400">the first dollar that settles the moment its counterparty clears.</span></div>
-        <p className="text-[#D6D6D0] text-base lg:text-2xl mt-4 leading-relaxed max-w-[104ch]">The machine economy cannot run on human infrastructure. Unicity embeds identity, permissions, and settlement directly into the digital asset.</p>
+        <p className="text-[#D6D6D0] text-base lg:text-2xl mt-4 leading-relaxed max-w-[104ch]">Machines don't transact the way we do. Unicity embeds identity, permissions, and settlement directly into the digital asset.</p>
       </div>
       <p className="shrink-0 mt-7 text-[#fefefe] font-semibold text-xl lg:text-2xl">Compliance has always lived in a walled garden. <span className="text-orange-400">Put it inside the dollar, and you own the layer the agentic economy settles on.</span></p>
     </Shell>
