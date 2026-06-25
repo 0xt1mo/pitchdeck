@@ -23,7 +23,7 @@ function Shell({ children }: { children: React.ReactNode }) {
       <style>{SCOPE}</style>
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px)', backgroundSize: '64px 64px' }} />
       <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 58% 50% at 50% 48%, rgba(255,137,4,0.07), transparent 70%)' }} />
-      <div className="relative z-10 h-full flex flex-col justify-start px-12 sm:px-16 lg:px-24 pt-20 lg:pt-[104px] pb-14 lg:pb-20">
+      <div className="relative z-10 h-full flex flex-col justify-center px-12 sm:px-16 lg:px-24 py-16 lg:py-20">
         {children}
       </div>
     </div>
