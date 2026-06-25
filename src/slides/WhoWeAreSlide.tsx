@@ -99,7 +99,7 @@ export function WhoWeAreSlide() {
         {/* Header */}
         <div className="shrink-0">
           <motion.h1
-            initial={{ opacity: 0, x: -40 }}
+            initial={false}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             className="text-[#fefefe] text-[30px] sm:text-[40px] lg:text-[52px] leading-[1.06] tracking-tight uppercase"
@@ -109,13 +109,13 @@ export function WhoWeAreSlide() {
             <span className="text-orange-400">infrastructure veterans.</span>
           </motion.h1>
           <motion.div
-            initial={{ scaleX: 0 }}
+            initial={false}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="h-[2px] w-20 lg:w-28 bg-orange-500 origin-left mt-3"
           />
           <motion.p
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
             className="mt-3 text-[#fefefe]/85 text-xs sm:text-sm lg:text-base leading-[1.55] max-w-5xl"
@@ -133,7 +133,7 @@ export function WhoWeAreSlide() {
             {founders.map((f, i) => (
               <motion.div
                 key={f.name}
-                initial={{ opacity: 0, y: 12 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 + i * 0.12 }}
                 className="flex items-start gap-5"
@@ -176,7 +176,7 @@ export function WhoWeAreSlide() {
 
           {/* Right — globe */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={false}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 0.7 }}
             className="flex flex-col items-center pl-0 lg:pl-10"
@@ -194,7 +194,7 @@ export function WhoWeAreSlide() {
 
         {/* Client logos strip */}
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9 }}
           className="shrink-0 pt-3"
