@@ -17,6 +17,7 @@
 | **[05-build-design-responsive.md](05-build-design-responsive.md)** | The React deck app: components, fonts, colour, diagrams, export, responsive, optimization. |
 | **[06-gotchas-and-lessons.md](06-gotchas-and-lessons.md)** | Every trap we hit and the fix — JSX quotes, flicker, the desktop regression, etc. |
 | **[07-working-with-alan.md](07-working-with-alan.md)** | How Alan wants the work done. Read this first. |
+| **[08-padra-agentic-call-center.md](08-padra-agentic-call-center.md)** | The governed-agentic-call-center play (Padra): the 5-module framework, the two-section deck, the Policy-Engine + phone-mockup visuals, the fleet/audit process, and the regulated-buyer fact-discipline. |
 
 ---
 
