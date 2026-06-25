@@ -64,13 +64,13 @@ const ckCls = 'text-[#D6D6D0] text-sm lg:text-lg mt-2 leading-snug';
 export function GregShiftSlide() {
   return (
     <Shell>
-      <H main='The macro shift: <span class="o">the counterparty is now a machine.</span>' sub="Autonomous agents now initiate high-frequency, micro-value transactions at scale." />
+      <H main='The macro shift: <span class="o">the counterparty is now a machine.</span>' sub="Agents now negotiate, sign, and settle on their own — no human in the loop." />
       <div className="shrink-0 flex items-start gap-10 lg:gap-14 mt-8">
         <div className="shrink-0">
           <div className="text-orange-400 leading-[0.8]" style={{ fontFamily: anton, fontSize: 'min(188px, 18vw)' }}>57.5%</div>
           <div className="text-[#9E9E96] uppercase tracking-wide text-sm lg:text-base mt-3 max-w-[30ch] leading-snug">of global web traffic is now automated — Cloudflare, 2026</div>
         </div>
-        <Core className="mt-0" html="Legacy networks cannot verify an AI agent's authority or enforce a budget without centralized bottlenecks. Unicity binds the <b>proof of authority to the money itself</b> — so it travels with every payment." />
+        <Core className="mt-0" html="Legacy networks were built for human finance — they cannot check an agent's authority or hold it to a budget without a central chokepoint. Unicity binds the <b>proof of authority to the money itself</b>. It travels with every payment." />
       </div>
     </Shell>
   );
@@ -86,8 +86,8 @@ const bottleneck = [
 export function GregBottleneckSlide() {
   return (
     <Shell>
-      <H main='The structural bottleneck: <span class="o">the shared ledger.</span>' sub="The shared ledger is a permanent ceiling on scale and privacy." />
-      <Core html="Traditional blockchains require every node to broadcast, order, validate, and record every transaction. Push billions of micro-transactions through that one global queue and you hit the ceiling — on scale and on privacy. True peer-to-peer settlement requires <b>removing the shared ledger entirely</b>." />
+      <H main='The structural bottleneck: <span class="o">the shared ledger.</span>' sub="Shared ledgers were designed for humans — slow, sequential, contested. A permanent ceiling on scale and privacy." />
+      <Core html="Every node broadcasts, orders, validates, and records every transaction — one global queue that machine-speed commerce will never clear. Assets have to live off-chain. <b>Remove the shared ledger entirely.</b>" />
       <div className="shrink-0 flex gap-4 mt-7">
         {bottleneck.map(([t, d]) => (
           <div key={t} className={cellCls}><div className={ctCls}>{t}</div><div className={ckCls}>{d}</div></div>
@@ -103,7 +103,7 @@ export function GregTrilemmaSlide() {
     <Shell>
       <H main='The stablecoin trilemma: <span class="o">pick two.</span>' sub="Every digital-dollar design has been forced to sacrifice compliance, privacy, or throughput." />
       <Two
-        left={<Core className="mt-0" html="A public ledger delivers compliance and throughput but exposes every balance and counterparty. Add zero-knowledge proofs and privacy returns, but throughput collapses under the proving cost. Unicity holds <b>all three at once</b> — because it never places the transaction on a shared ledger to begin with." />}
+        left={<Core className="mt-0" html="A public ledger gives you compliance and throughput — and exposes every balance. Add zero-knowledge and privacy returns, but the proving cost crushes throughput. Unicity holds <b>all three</b> — it never puts the transaction on a shared ledger to begin with." />}
         right={<Dia k="trilemma" max="48vh" />}
       />
     </Shell>
@@ -119,7 +119,7 @@ const gap = [
 export function GregGapSlide() {
   return (
     <Shell>
-      <H main='The final infrastructure gap: <span class="o">embedded identity.</span>' sub="We solved disintermediation and digital value. Counterparty verification remains unsolved." />
+      <H main='The final infrastructure gap: <span class="o">embedded identity.</span>' sub="We solved disintermediation. We solved digital value. We never solved knowing who is on the other end." />
       <div className="shrink-0 mt-6">
         {gap.map(([n, t, d, s, open], i) => (
           <div key={n as string} className={`flex items-baseline gap-6 py-4 border-t border-[#2c2c2a] ${i === gap.length - 1 ? 'border-b' : ''}`}>
@@ -160,8 +160,8 @@ const lbl = (v: string) => ({ v, cls: 'text-[#D6D6D0] uppercase lblc' });
 export function GregIncumbentsSlide() {
   return (
     <Shell>
-      <H main='The incumbents validate <span class="o">the diagnosis.</span>' sub="The market is spending billions to optimize the ledger. We eliminated it." />
-      <Core html="The largest payments and crypto players are spending billions to work around the ledger architecture they built. <b>Unicity keeps authorization, settlement, and the audit trail whole, inside the asset.</b>" />
+      <H main='The incumbents validate <span class="o">the diagnosis.</span>' sub="The market spends billions working around the ledger. We removed it." />
+      <Core html="Every incumbent is working around the ledger they built — authorize in one place, settle in another, reconcile the audit trail across both. <b>Unicity keeps authorization, settlement, and the audit trail whole — inside the asset.</b>" />
       <Table cols="1.1fr 2.4fr 1fr"
         head={['Player', 'Their move', 'Approach']}
         rows={[
@@ -179,8 +179,8 @@ export function GregIncumbentsSlide() {
 export function GregBearerSlide() {
   return (
     <Shell>
-      <H main='From ledger entries to <span class="o">bearer instruments.</span>' sub="Off-chain settlement restores the properties of physical cash to digital stablecoins." />
-      <Core html="On-chain stablecoins are just ledger entries. Unicity converts them into <b>self-contained, self-proving bearer instruments</b>. The asset carries its own proof of validity, moving <b>peer-to-peer</b> across any transport layer (HTTP, QR, NOSTR) with zero ledger lookups." />
+      <H main='From ledger entries to <span class="o">bearer instruments.</span>' sub="Off-chain settlement gives a digital dollar the properties of physical cash." />
+      <Core html="A stablecoin on a ledger is an entry someone else maintains. Unicity makes it a <b>bearer instrument</b> — self-contained, self-proving, carrying its own proof of validity. It moves <b>peer-to-peer</b> over any channel — HTTP, QR, NOSTR — with no ledger to call." />
       <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="ledgerbearer" max="46vh" /></div></div>
     </Shell>
   );
@@ -195,9 +195,9 @@ const timeline = [
 export function GregOracleSlide() {
   return (
     <Shell>
-      <H main='The uniqueness oracle: <span class="o">unbundling consensus.</span>' sub="Removing correctness from the network to achieve horizontal scalability." />
+      <H main='The uniqueness oracle: <span class="o">unbundling consensus.</span>' sub="Each generation of consensus removed work from the network. Unicity keeps only the irreducible function." />
       <Two
-        left={<Core className="mt-0" html="Each generation of consensus removed work from the network. Bitcoin certified correctness and global ordering. Modern L1s certify correctness only. Unicity introduces the <b>Uniqueness Oracle</b>, which attests to one thing only: has this token been spent? Because the Oracle never re-executes transactions or reads payloads, throughput scales horizontally — <b>30,000 transactions per second per shard</b>." />}
+        left={<Core className="mt-0" html="Everyone validating everything cannot scale. The <b>Uniqueness Oracle</b> attests to one thing — has this token been spent? It never re-runs a transaction or reads its contents. Add shards, add throughput: <b>30,000 transactions per second per shard, by design</b>." />}
         right={<Dia k="oracle" max="42vh" />}
       />
       <div className="shrink-0 flex gap-5 mt-6">
@@ -231,7 +231,7 @@ export function GregReceiveSlide() {
   return (
     <Shell>
       <H main='Protocol-enforced compliance: <span class="o">the receive predicate.</span>' sub="Cryptographically gating asset transfers without sacrificing peer-to-peer privacy." />
-      <Core html="Compliance should not require a central facilitator. Unicity introduces the <b>Receive Predicate</b>. KYC, jurisdiction, and accreditation are programmed directly into the asset. If the recipient cannot satisfy the predicate locally, the transfer mathematically fails — <b>the asset enforces its own compliance.</b>" />
+      <Core html="Compliance does not need a central facilitator. The <b>Receive Predicate</b> programs KYC, jurisdiction, and accreditation into the asset itself. If the recipient cannot satisfy it, the transfer does not form. <b>The asset enforces its own compliance — nothing routes around it.</b>" />
       <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="compliance" max="46vh" /></div></div>
     </Shell>
   );
@@ -246,8 +246,8 @@ const observers = [
 export function GregPrivacySlide() {
   return (
     <Shell>
-      <H main='Privacy by construction: <span class="o">proven against every observer.</span>' sub="Absolute confidentiality is the prerequisite for institutional capital flows." />
-      <Core html="Confidentiality is a founding property of the protocol, not an application-layer afterthought. Privacy is mathematically guaranteed against all three observers — the prerequisite for the institutional and machine-to-machine capital flows that public ledgers expose." />
+      <H main='Privacy by construction: <span class="o">proven against every observer.</span>' sub="Confidentiality is the floor for institutional capital." />
+      <Core html="Privacy is a founding property of the protocol — proven against all three observers: the network, the sender, anyone holding the address. Public ledgers expose all three. Unicity closes them by construction." />
       <div className="shrink-0 mt-5">
         {observers.map(([ol, od], i) => (
           <div key={ol} className={`flex items-baseline gap-7 py-3 border-t border-[#2c2c2a] ${i === observers.length - 1 ? 'border-b' : ''}`}>
@@ -277,7 +277,7 @@ export function GregSwapSlide() {
   return (
     <Shell>
       <H main='The atomic swap: <span class="o">settlement without an intermediary.</span>' sub="Trustless atomic swaps between self-contained bearer assets." />
-      <Core html='The conventional fix for trustless exchange is a timed lock (HTLC), but the clock becomes an attack surface where one side can stall and walk away. Unicity removes the clock using <b style="white-space:nowrap">Predicate Swaps</b>. Both parties commit independently, and the swap forms for both at once or not at all. Settlement runs off-chain at machine speed with <b>no mempool and no MEV</b>.' />
+      <Core html='The usual fix is a timed lock — and the clock becomes the attack surface, where one side stalls and walks. <b style="white-space:nowrap">Predicate Swaps</b> remove the clock: both sides commit independently, and the swap forms for both or for neither. Off-chain, at machine speed — <b>no mempool, no MEV</b>.' />
       <div className="shrink-0 mt-6 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="swap" max="48vh" /></div></div>
     </Shell>
   );
@@ -306,7 +306,7 @@ export function GregX402Slide() {
   return (
     <Shell>
       <H main='X402, rebuilt: <span class="o">twelve steps to five.</span>' sub="Eliminating the network friction that operators spend billions trying to solve." />
-      <Core html="The x402 standard enables machine payments over HTTP, but legacy models still route settlement through a slow facilitator and a public chain. By embedding authorization and proof directly into the bearer token, Unicity cuts the payment handshake <b>from 12 steps to 5</b> — eliminating the exact friction operators like Square spend billions to solve." />
+      <Core html="x402 moves payment over HTTP — then routes it back through a facilitator and a public chain. Unicity puts the authorization and the proof inside the token. <b>The message is the payment.</b> Twelve steps become five — the friction operators like Square spend billions to solve, gone." />
       <div className="shrink-0 flex gap-7 mt-5 items-stretch">
         <div className="flex-1 rounded-lg border border-[#2c2c2a] bg-[#101010] p-4 lg:p-5">
           <div className="flex justify-between items-baseline uppercase tracking-wide text-[#9E9E96] text-base lg:text-lg" style={{ fontFamily: anton }}><span>Traditional x402</span><span className="text-[#fefefe]">12 steps</span></div>
@@ -332,7 +332,7 @@ export function GregMarketSlide() {
   return (
     <Shell>
       <H main='The machine market: <span class="o">venue-free trading.</span>' sub="CEX speed, DEX custody, with native privacy and compliance." />
-      <Core html="Legacy venues force a compromise. Unicity delivers <b>exchange speed, self-custody, privacy, and compliance</b> — with <b>no venue at all</b>." />
+      <Core html="Every venue forces a trade. A CEX gives you speed and takes custody. A DEX gives you custody and takes privacy. Unicity gives you <b>all four — speed, custody, privacy, compliance</b> — with <b>no venue at all</b>." />
       <Table cols="1.3fr 1.2fr 1.2fr 1.2fr"
         head={['', 'Legacy CEX', 'Legacy DEX', 'Unicity']}
         rows={[
@@ -350,8 +350,8 @@ export function GregMarketSlide() {
 export function GregDACSlide() {
   return (
     <Shell>
-      <H main='What gets built: <span class="o">the agentic corporation.</span>' sub="Agents become the new smart contracts, executing verifiable logic directly on bearer assets." />
-      <Core html="Unicity built a <b>weather-based parametric insurer</b> that runs entirely on the protocol — its capital, underwriting, and reinsurance cession all execute as agents transacting in Unicity tokens. Settlement is only the entry point — <b>the same protocol orchestrates the whole company</b>." />
+      <H main='What gets built: <span class="o">the agentic corporation.</span>' sub="Agents are the new smart contracts — verifiable logic running on the asset itself." />
+      <Core html="Unicity built a <b>weather-based parametric insurer</b> with no company behind it — capital, underwriting, and cession all execute as agents transacting in Unicity tokens. Settlement is only the entry point. <b>The same protocol runs the whole firm.</b>" />
       <div className="shrink-0 mt-4 flex justify-center"><div className="w-full max-w-[1340px]"><Dia k="dac" max="50vh" /></div></div>
     </Shell>
   );
