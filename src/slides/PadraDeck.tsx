@@ -1,7 +1,11 @@
 /* ============================================================
-   Unicity → Padra Clinic. The secure control layer for the
-   clinic's AI call-center agents. 0xt1mo voice, our design
-   system. Hero = Padra; Guide = Unicity.
+   Unicity → Padra Clinic. Two sections:
+   I · THE PITCH (why governed agents)  ·  II · WHAT WE PROPOSE
+   (the 5 call-center modules + demo Module 1).
+   0xt1mo voice, our design system. Hero = Padra; Guide = Unicity.
+   Fact-disciplined: "Padra reports" for self-reported claims;
+   "designed for" sub-20ms (not benchmarked); demo mockups are
+   illustrative; stack = Odoo + XCALLY + HubSpot.
    ============================================================ */
 
 const mono = "'Geist Mono', monospace";
@@ -14,13 +18,13 @@ const SCOPE = `
 .px .lblc{font-family:'Anton',sans-serif}
 `;
 
-function Shell({ children }: { children: React.ReactNode }) {
+function Shell({ children, center = false }: { children: React.ReactNode; center?: boolean }) {
   return (
     <div className="px fixed inset-0 z-50 bg-[#060606] overflow-y-auto lg:overflow-hidden">
       <style>{SCOPE}</style>
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px)', backgroundSize: '64px 64px' }} />
       <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 58% 50% at 50% 48%, rgba(255,137,4,0.07), transparent 70%)' }} />
-      <div className="relative z-10 min-h-full lg:h-full flex flex-col justify-start lg:justify-center px-6 sm:px-12 lg:px-24 py-14 sm:py-16 lg:py-20">
+      <div className={`relative z-10 min-h-full lg:h-full flex flex-col justify-start lg:justify-center px-6 sm:px-12 lg:px-24 py-14 sm:py-16 lg:py-20 ${center ? 'items-center text-center' : ''}`}>
         {children}
       </div>
     </div>
@@ -44,49 +48,49 @@ const cellCls = 'rounded-lg border border-[#2c2c2a] border-t-2 border-t-orange-5
 const ctCls = 'text-orange-400 uppercase tracking-wide text-base lg:text-xl lblc';
 const ckCls = 'text-[#D6D6D0] text-sm lg:text-lg mt-2 leading-snug';
 
-function Table({ cols, head, rows }: { cols: string; head: string[]; rows: (string | { v: string; cls?: string })[][] }) {
-  const cell = (c: string | { v: string; cls?: string }, key: number, isHead = false) => {
-    const v = typeof c === 'string' ? c : c.v;
-    const cls = typeof c === 'string' ? '' : c.cls || '';
-    return <div key={key} className={`px-4 lg:px-5 py-2.5 lg:py-3 text-sm lg:text-lg leading-snug border-r border-[#2c2c2a] last:border-r-0 ${isHead ? 'uppercase tracking-wide text-[#9E9E96] text-xs lg:text-sm' : ''} ${cls}`} style={isHead ? { fontFamily: anton } : undefined}>{v}</div>;
-  };
-  return (
-    <div className="shrink-0 mt-5 -mx-6 sm:mx-0 overflow-x-auto">
-      <div className="border border-[#2c2c2a] rounded-lg overflow-hidden min-w-[680px] sm:min-w-0 mx-6 sm:mx-0">
-        <div className="grid border-b border-[#2c2c2a] bg-white/[0.025]" style={{ gridTemplateColumns: cols }}>{head.map((h, i) => cell(i === head.length - 1 ? { v: h, cls: 'text-orange-400' } : h, i, true))}</div>
-        {rows.map((r, ri) => (
-          <div key={ri} className="grid border-b border-[#2c2c2a] last:border-b-0" style={{ gridTemplateColumns: cols }}>{r.map((c, ci) => cell(c, ci))}</div>
-        ))}
-      </div>
-    </div>
-  );
-}
-const lbl = (v: string) => ({ v, cls: 'text-[#fefefe] uppercase lblc' });
-const mut = (v: string) => ({ v, cls: 'text-[#9E9E96]' });
-const win = (v: string) => ({ v, cls: 'text-orange-400' });
-
-/* ════════ 2 · THE SHIFT ════════ */
-export function PadraShiftSlide() {
+/* a reusable module slide: eyebrow + headline + 3 blocks (does / how / governs) */
+function ModuleSlide({ eyebrow, main, sub, does, how, govern }: { eyebrow: string; main: string; sub: string; does: string; how: string; govern: string }) {
+  const blocks: [string, string, boolean][] = [['What it does', does, false], ['How it works', how, false], ['What Unicity governs', govern, true]];
   return (
     <Shell>
-      <H main='The patient journey is <span class="o">going agentic.</span>' sub="Chatbots and voicebots now run lead capture, consultation, booking, and aftercare — across WhatsApp, web, Instagram, and voice." />
-      <div className="shrink-0 flex flex-col lg:flex-row lg:items-start gap-5 lg:gap-14 mt-6 lg:mt-8">
-        <div className="shrink-0">
-          <div className="text-orange-400 leading-[0.8]" style={{ fontFamily: anton, fontSize: 'min(168px, 17vw)' }}>20→3</div>
-          <div className="text-[#9E9E96] uppercase tracking-wide text-sm lg:text-base mt-3 max-w-[34ch] leading-snug">human agents per branch, as the AI takes the routine load</div>
-        </div>
-        <Core className="mt-0" html="Padra runs a million-case clinic across the UAE, Qatar, Kuwait, and Canada — on Odoo and XCALLY. The plan is an omnichannel AI layer that captures leads, qualifies patients, books surgery, and follows up. <b>The agents are about to start acting on real systems.</b>" />
+      <p className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.3em] uppercase mb-3" style={{ fontFamily: mono }}>{eyebrow}</p>
+      <H main={main} sub={sub} />
+      <div className="shrink-0 grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-5 mt-7">
+        {blocks.map(([t, d, hot]) => (
+          <div key={t} className={`rounded-lg border bg-[#101010] p-4 lg:p-5 ${hot ? 'border-orange-500 border-t-2' : 'border-[#2c2c2a]'}`}>
+            <div className={`uppercase tracking-wide text-sm lg:text-base lblc ${hot ? 'text-orange-400' : 'text-[#9E9E96]'}`}>{t}</div>
+            <div className="text-[#D6D6D0] text-sm lg:text-lg mt-2.5 leading-snug">{d}</div>
+          </div>
+        ))}
       </div>
     </Shell>
   );
 }
 
-/* ════════ 3 · THE DANGER ════════ */
+/* ══════════════ SECTION I — THE PITCH ══════════════ */
+
+/* 2 · THE SHIFT */
+export function PadraShiftSlide() {
+  return (
+    <Shell>
+      <H main='The patient journey is <span class="o">going agentic.</span>' sub="Padra reports over a million cases in 25 years — five markets, 40+ surgery rooms in Dubai, every patient arriving first by WhatsApp." />
+      <div className="shrink-0 flex flex-col lg:flex-row lg:items-start gap-5 lg:gap-14 mt-6 lg:mt-8">
+        <div className="shrink-0">
+          <div className="text-orange-400 leading-[0.8]" style={{ fontFamily: anton, fontSize: 'min(168px, 17vw)' }}>~20→3</div>
+          <div className="text-[#9E9E96] uppercase tracking-wide text-sm lg:text-base mt-3 max-w-[34ch] leading-snug">human agents per branch — Padra's own target as the AI takes the routine load</div>
+        </div>
+        <Core className="mt-0" html="A medical-tourism clinic runs on the phone before it runs in the chair — inquiry, photos, a price, travel, booking, aftercare, all remote, in Arabic and English, across four time zones. Padra is automating that journey on Odoo, XCALLY, and HubSpot. <b>The agents are about to start acting on real systems.</b>" />
+      </div>
+    </Shell>
+  );
+}
+
+/* 3 · THE DANGER */
 export function PadraDangerSlide() {
   return (
     <Shell>
-      <H main='The moment an agent acts, <span class="o">it becomes a liability.</span>' sub="Answering a question is safe. Quoting a graft price, booking surgery, holding a patient's photos — that is not." />
-      <Core html="An agent that writes to Odoo, sends a price, or moves a medical image is taking a regulated action no one approved and no one can replay. In a clinic, one wrong quote or one leaked photo is a complaint, a refund, or a regulator. <b>Automation without control is exposure.</b>" />
+      <H main='The moment an agent acts, <span class="o">it becomes a liability.</span>' sub="Answering a question is safe. Quoting a graft price, booking surgery, or holding a patient's photos is not." />
+      <Core html="An agent that writes to Odoo, sends a price, or moves a medical image is taking a regulated action no one approved and no one can replay. In the UAE, patient data cannot even leave the country. <b>This is why agentic projects stall</b> — Gartner expects more than 40% to be scrapped by 2027, with compliance the top blocker. The voicebot is the easy part. Control is the hard part." />
       <div className="shrink-0 grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-4 mt-7">
         {[
           ['Quotes a price', 'with no doctor behind it'],
@@ -100,17 +104,17 @@ export function PadraDangerSlide() {
   );
 }
 
-/* ════════ 4 · THE ANSWER ════════ */
+/* 4 · THE ANSWER */
 export function PadraAnswerSlide() {
   return (
     <Shell>
-      <H main='Unicity sits between the agent <span class="o">and the systems.</span>' sub="It runs between your AI agents, XCALLY, and Odoo — governing what each agent may see, say, update, and trigger." />
+      <H main='Unicity sits between the agent <span class="o">and the systems.</span>' sub="It runs between Padra's AI agents, XCALLY, and Odoo — governing what each agent may see, say, update, and trigger." />
       <Core html="Every agent asks permission <b>before</b> it acts, and leaves a tamper-evident record <b>after</b>. The doctor stays in the loop where it matters. XCALLY still runs the calls and Odoo still holds the records — Unicity makes the agents safe enough to operate across both." />
       <div className="shrink-0 grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-5 mt-8">
         {[
           ['XCALLY', 'Calls, WhatsApp, chat, queues, recordings, handover'],
           ['Unicity', 'Identity · permission · policy · approval · audit'],
-          ['Odoo', 'Patient records, cases, bookings, doctor review, pricing'],
+          ['Odoo · HubSpot', 'Patient records, cases, bookings, doctor review, pricing'],
         ].map(([t, d], i) => (
           <div key={t} className={`rounded-lg border bg-[#101010] p-4 lg:p-5 ${i === 1 ? 'border-orange-500 border-t-2' : 'border-[#2c2c2a]'}`}>
             <div className={`uppercase tracking-wide text-base lg:text-xl lblc ${i === 1 ? 'text-orange-400' : 'text-[#fefefe]'}`}>{t}</div>
@@ -122,7 +126,7 @@ export function PadraAnswerSlide() {
   );
 }
 
-/* ════════ 5 · THE POLICY ENGINE (the killer slide) ════════ */
+/* 5 · THE POLICY ENGINE (the killer slide) */
 const policy = [
   ['Collect consultation photos', 'allowed', false],
   ['Issue a medical diagnosis', 'never', true],
@@ -148,92 +152,142 @@ export function PadraPolicySlide() {
   );
 }
 
-/* ════════ 6 · AGENT REGISTRY ════════ */
-export function PadraRegistrySlide() {
+/* 6 · WHY UNICITY */
+export function PadraWhyUnicitySlide() {
   return (
     <Shell>
-      <H main='Every agent — <span class="o">a registered identity.</span>' sub="A live inventory of every AI agent in the call center: its role, the systems it may touch, and the actions it may take." />
-      <Table cols="1.3fr 1.2fr 1.1fr 1.6fr"
-        head={['Agent', 'Channel', 'System', 'Allowed actions']}
-        rows={[
-          [lbl('Lead Capture'), mut('WhatsApp · Web'), mut('Odoo CRM'), win('Create lead, update contact')],
-          [lbl('Consultation'), mut('WhatsApp'), mut('Odoo + files'), win('Collect photos, open case')],
-          [lbl('Booking'), mut('Voice · Chat'), mut('Odoo Calendar'), win('Offer slots, book appointment')],
-          [lbl('No-Show'), mut('Voicebot'), mut('Odoo · XCALLY'), win('Call patient, reschedule')],
-          [lbl('Aftercare'), mut('WhatsApp'), mut('Odoo record'), win('Send guidance, request photos')],
-          [lbl('QA Auditor'), mut('XCALLY rec.'), mut('Transcripts'), win('Score calls, flag errors')],
-        ]}
-      />
-    </Shell>
-  );
-}
-
-/* ════════ 7 · THE SIX MODULES ════════ */
-const modules = [
-  ['Agent Registry', 'Every agent registered — role, owner, allowed systems, data, and actions.'],
-  ['Policy Engine', 'What each agent can and cannot do — checked before every action.'],
-  ['Secure Tool Execution', 'Every read, write, and trigger to Odoo and XCALLY passes through enforcement.'],
-  ['Data Protection', 'PII and medical-image boundaries, consent capture, prompt-injection defence.'],
-  ['Human Approval', 'The agent pauses, routes to a doctor or supervisor, waits, then continues.'],
-  ['QA & Audit Cockpit', 'One audit-ready record of every action, across every agent and channel.'],
-];
-export function PadraModulesSlide() {
-  return (
-    <Shell>
-      <H main='The control layer, <span class="o">in six parts.</span>' sub="One runtime between your agents and your systems — identity, policy, execution, protection, approval, proof." />
-      <div className="shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-5 mt-7">
-        {modules.map(([t, d], i) => (
-          <div key={t} className={cellCls}>
-            <div className="flex items-baseline gap-2">
-              <span className="text-orange-400/70 text-sm lblc">{String(i + 1).padStart(2, '0')}</span>
-              <span className={ctCls}>{t}</span>
-            </div>
-            <div className={ckCls}>{d}</div>
-          </div>
+      <H main='Fifteen years of <span class="o">sovereign-grade cryptography.</span>' sub="Unicity is not a startup learning the problem today. The platform is already built — and the team built the cryptography behind it." />
+      <Core html="The founders built Guardtime's <b>KSI</b>, in production since 2012 with governments and global institutions. The runtime is real: agents run as sandboxed capsules <b>on top of</b> the Astrid microkernel, so a prompt injection cannot escape it, and the Semantic Intercept Fabric inspects every action — <b>designed for sub-20ms</b> inline classification before a command reaches your systems." />
+      <div className="shrink-0 grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-4 mt-8">
+        {[
+          ['Intercept', 'Every command checked beneath the app, before it touches Odoo or XCALLY'],
+          ['Resident', 'Swap in a UAE-hosted or local model — patient data never leaves the country'],
+          ['Provable', 'Tamper-evident audit of every action — verifiable, end to end'],
+        ].map(([t, d]) => (
+          <div key={t} className={cellCls}><div className={ctCls}>{t}</div><div className={ckCls}>{d}</div></div>
         ))}
       </div>
     </Shell>
   );
 }
 
-/* ════════ 8 · PROOF / AUDIT ════════ */
-const proofQs = [
-  'Who captured this lead, and in which language?',
-  'What did the patient consent to?',
-  'Who approved the graft estimate?',
-  'What exactly did the AI send back to the patient?',
-  'Was the case escalated to a human — and did they enter the right data into Odoo?',
-];
-export function PadraProofSlide() {
+/* ══════════════ DIVIDER ══════════════ */
+export function PadraProposeDividerSlide() {
   return (
-    <Shell>
-      <H main='Every action <span class="o">leaves a record.</span>' sub="One audit-ready record across XCALLY, Odoo, and the model — every action provable." />
-      <Core html="When a regulator, a complaint, or a refund arrives, Padra answers from one definitive record — every question, settled by the proof itself." />
-      <div className="shrink-0 mt-5">
-        {proofQs.map((q, i) => (
-          <div key={q} className={`flex items-baseline gap-4 py-3 border-t border-[#2c2c2a] ${i === proofQs.length - 1 ? 'border-b' : ''}`}>
-            <span className="text-orange-400 shrink-0 text-sm lg:text-base" style={{ fontFamily: mono }}>{String(i + 1).padStart(2, '0')}</span>
-            <span className="text-[#D6D6D0] text-base lg:text-xl leading-snug">{q}</span>
-          </div>
-        ))}
-      </div>
+    <Shell center>
+      <p className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.4em] uppercase" style={{ fontFamily: mono }}>Section II</p>
+      <h1 className="text-[#fefefe] uppercase text-[44px] sm:text-[72px] lg:text-[104px] leading-[0.92] tracking-tight mt-4" style={{ fontFamily: anton }}>
+        What we <span className="text-orange-400">propose.</span>
+      </h1>
+      <div className="h-[2px] w-40 lg:w-56 bg-gradient-to-r from-orange-500 to-transparent mt-6" />
+      <p className="text-[#D6D6D0] text-base sm:text-lg lg:text-2xl mt-6 max-w-[72ch] leading-snug" style={{ fontFamily: mono }}>The full AI call center — five modules, one governed control layer. We start by proving Module 1.</p>
     </Shell>
   );
 }
 
-/* ════════ 9 · THE POC WEDGE ════════ */
+/* ══════════════ SECTION II — THE PROPOSAL ══════════════ */
+
+/* 8 · SOLUTION OVERVIEW */
+const moduleList = [
+  ['01', 'Acquisition', 'Capture & qualify every lead, every channel, every language'],
+  ['02', 'Consultation & Booking', 'Photos, doctor-approved estimate, live booking'],
+  ['03', 'Outbound Voicebot', 'Telesales, no-show recovery, reminders'],
+  ['04', 'Aftercare', 'Day-by-day guidance, recovery photos at 1/3/6 months'],
+  ['05', 'Quality Assurance', 'Score 100% of calls, audit what the human typed'],
+];
+export function PadraOverviewSlide() {
+  return (
+    <Shell>
+      <H main='The full call center, <span class="o">in five modules.</span>' sub="One AI ecosystem across WhatsApp, web, and voice — in nine languages, Arabic dialects included — on Padra's own Odoo, XCALLY, and HubSpot." />
+      <div className="shrink-0 mt-6">
+        {moduleList.map(([n, t, d], i) => (
+          <div key={n} className={`flex items-baseline gap-5 py-3.5 border-t border-[#2c2c2a] ${i === moduleList.length - 1 ? 'border-b' : ''}`}>
+            <span className="text-orange-400 shrink-0 w-10 text-2xl lg:text-3xl" style={{ fontFamily: anton }}>{n}</span>
+            <span className="text-[#fefefe] uppercase text-lg lg:text-2xl shrink-0 w-[190px] lg:w-[320px]" style={{ fontFamily: anton }}>{t}</span>
+            <span className="text-[#D6D6D0] text-sm lg:text-lg leading-snug">{d}</span>
+          </div>
+        ))}
+      </div>
+      <p className="shrink-0 mt-6 text-[#fefefe] font-semibold text-lg lg:text-2xl">Every module is an agent under the same control layer — <span className="text-orange-400">identity, policy, proof.</span></p>
+    </Shell>
+  );
+}
+
+/* 9–13 · THE FIVE MODULES */
+export function PadraModule1Slide() {
+  return (
+    <ModuleSlide
+      eyebrow="Module 01 · Acquisition"
+      main='Every lead, every channel, <span class="o">captured the instant it lands.</span>'
+      sub="Speed-to-lead is the lever on a high-value procedure. The agent answers in seconds, in the patient's own language."
+      does="Captures and qualifies inbound from WhatsApp, web, Instagram, and Facebook — in nine languages, Arabic dialects included (Saudi, Hijazi, Najdi, Qatari) — logging name, contact, age, and country, and handing VIP or critical cases to a human."
+      how="A Lead Capture agent runs as a sandboxed capsule inside Astrid, scoped to create leads in Odoo and nothing more. Its model is swappable — run a UAE-resident or local model so patient data never leaves the country."
+      govern="A registered, revocable identity with least-privilege scope; controlled VIP handover; and a DLP scan on every message, so no patient data crosses the clinic boundary."
+    />
+  );
+}
+export function PadraModule2Slide() {
+  return (
+    <ModuleSlide
+      eyebrow="Module 02 · Consultation & Booking"
+      main='The doctor stays in the loop. <span class="o">The agent does the rest.</span>'
+      sub="The most regulated, highest-stakes flow — pricing and medical images — automated everywhere except the diagnosis itself."
+      does="Guides the patient through 4–6 diagnostic angles, opens the case for the doctor, relays the doctor's graft estimate the moment it is entered, and books from live Odoo availability."
+      how="Photos move through secure execution and stay UAE-resident. The estimate is gated on a real doctor entry in Odoo. The agent pauses for approval, then continues — no human keystroke needed to relay."
+      govern="The Policy Engine, live: collect photos yes, diagnose never, quote only after the doctor, book only from live availability — and explicit, withdrawable consent before any image is stored (UAE PDPL)."
+    />
+  );
+}
+export function PadraModule3Slide() {
+  return (
+    <ModuleSlide
+      eyebrow="Module 03 · Outbound Voicebot"
+      main='Recover the leads and the slots <span class="o">you lose today.</span>'
+      sub="Telesales follow-up, no-show recovery, and reminders — the workflows that leak revenue when humans run out of hours."
+      does="Calls leads who inquired but did not book, calls patients 1–2 hours after a missed slot to reschedule, and confirms appointments 24 hours and 3–4 hours ahead by voice or WhatsApp."
+      how="An outbound agent dials through XCALLY under strict rate and budget limits — it cannot exceed its granted authority or dial outside its allowlist, and a misbehaving campaign halts in-path."
+      govern="Time-bounded, rate-limited authority; angry or high-risk calls escalate by rule; no price beyond the doctor-set threshold; every contact, reschedule, and reason logged."
+    />
+  );
+}
+export function PadraModule4Slide() {
+  return (
+    <ModuleSlide
+      eyebrow="Module 04 · Aftercare"
+      main='Aftercare becomes a program, <span class="o">not an inbound flood.</span>'
+      sub="Proactive recovery guidance and structured follow-up — the standard of care, delivered on schedule."
+      does="Delivers Day 3 (donor) and Day 10 (transplant) washing guidance, then requests recovery photos at the 1-, 3-, and 6-month marks, onto the doctor's dashboard."
+      how="A scheduling engine fires each trigger; inbound photos move through secure execution and stay resident. Content-bound controls keep the agent on approved guidance and block out-of-scope medical advice."
+      govern="Approved content only and never a new diagnosis; separate consent before storing follow-up photos; every image encrypted, role-restricted, inside the boundary; every touchpoint audited."
+    />
+  );
+}
+export function PadraModule5Slide() {
+  return (
+    <ModuleSlide
+      eyebrow="Module 05 · Quality Assurance"
+      main='Score every call. <span class="o">Audit what the human typed.</span>'
+      sub="100% of interactions — not a sample — graded against the rubric, with the CRM entries checked against the conversation."
+      does="Transcribes every call, scores each human agent out of 5 (greeting, probing questions, script), verifies the dates, numbers, and complaint categories keyed into the CRM, and tracks sentiment and CSAT/NPS on one dashboard."
+      how="A QA agent reads XCALLY recordings and cross-checks the transcript against the CRM — scoped to transcripts, with no write access. The same audit substrate that logs the AI agents now grades the humans."
+      govern="One audit-ready record that answers the regulator's questions from one place: who captured, who consented, who approved, what was sent, what was entered."
+    />
+  );
+}
+
+/* 14 · DEMO MODULE 1 + POC */
 const flow = [
   ['Enter', 'Patient arrives on WhatsApp or the website'],
   ['Capture', 'Name, country, age, phone, language, treatment interest'],
-  ['Photos', 'The agent requests 4–6 diagnostic angles'],
-  ['Govern', 'Unicity checks permissions, opens the Odoo case'],
-  ['Doctor', 'The doctor reviews and enters the graft estimate'],
-  ['Close', 'The agent relays the estimate, books a live slot, escalates to a human on XCALLY when needed'],
+  ['Consent', 'Explicit, withdrawable consent before anything is stored'],
+  ['Qualify', 'The agent answers FAQs and requests 4–6 photos'],
+  ['Govern', 'Unicity checks permissions and writes the lead to Odoo'],
+  ['Hand off', 'VIP or complex cases escalate to a human on XCALLY'],
 ];
-export function PadraPOCSlide() {
+export function PadraDemoSlide() {
   return (
     <Shell>
-      <H main='One agent, end to end, <span class="o">in 45 days.</span>' sub="The hair-transplant WhatsApp agent — lead to booking — proves the whole architecture without building the whole clinic." />
+      <H main='Start with Module 1. <span class="o">In 45 days.</span>' sub="The lowest-risk, highest-volume entry point — the WhatsApp lead-capture agent, end to end, on your Odoo and XCALLY." />
       <div className="shrink-0 mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
         {flow.map(([t, d], i) => (
           <div key={t} className={cellCls}>
@@ -245,37 +299,19 @@ export function PadraPOCSlide() {
           </div>
         ))}
       </div>
+      <p className="shrink-0 mt-6 text-[#D6D6D0] text-sm lg:text-base leading-snug" style={{ fontFamily: mono }}>Live in the room: a governed agent taking a real action, and the console that controls it. The Padra flow is shown as an illustrative concept until we build it on your stack.</p>
     </Shell>
   );
 }
 
-/* ════════ 10 · WHY UNICITY ════════ */
-export function PadraWhyUnicitySlide() {
-  return (
-    <Shell>
-      <H main='Fifteen years of <span class="o">sovereign-grade cryptography.</span>' sub="Unicity is not a startup learning the problem today. The team built the cryptographic infrastructure trusted by the world's most demanding institutions." />
-      <Core html="The founders built Guardtime's <b>KSI</b> — deployed with the Estonian Government, NATO, Lockheed Martin, and Boeing, in production since 2012. That same engineering now intercepts every agent tool-call <b>beneath the application</b>, before it reaches your systems — enforced in milliseconds, recorded for good." />
-      <div className="shrink-0 grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-4 mt-8">
-        {[
-          ['Intercept', 'Every command checked beneath the app, before it touches Odoo or XCALLY'],
-          ['Multi-tenant', 'Runs inside your ecosystem — your data never leaves your boundary'],
-          ['Provable', 'eIDAS-grade, tamper-evident audit — verifiable, end to end'],
-        ].map(([t, d]) => (
-          <div key={t} className={cellCls}><div className={ctCls}>{t}</div><div className={ckCls}>{d}</div></div>
-        ))}
-      </div>
-    </Shell>
-  );
-}
-
-/* ════════ 12 · THE ASK ════════ */
+/* 16 · THE ASK */
 export function PadraAskSlide() {
   return (
     <Shell>
-      <H main='Bring us the workflows <span class="o">no one will approve.</span>' sub="The 45-day challenge — turn your agents into operators you can trust." />
+      <H main='Bring us the workflow <span class="o">no one will approve.</span>' sub="The 45-day challenge — turn your agents into operators you can trust." />
       <div className="shrink-0 mt-7 rounded-xl p-6 lg:p-8" style={{ border: '1px solid rgba(255,137,4,0.4)', background: 'linear-gradient(180deg, rgba(255,137,4,0.06), transparent)' }}>
-        <div className="text-[#fefefe] text-2xl lg:text-3xl" style={{ fontFamily: anton }}>Pick three of your highest-stakes agentic workflows — <span className="text-orange-400">the ones the security team keeps refusing to sign off.</span></div>
-        <p className="text-[#D6D6D0] text-base lg:text-2xl mt-4 leading-relaxed max-w-[104ch]">We stand up the hair-transplant agent end to end — lead, photos, doctor-approved estimate, booking, escalation — governed and audit-ready, on your Odoo and XCALLY.</p>
+        <div className="text-[#fefefe] text-2xl lg:text-3xl" style={{ fontFamily: anton }}>Pick the one workflow <span className="text-orange-400">the team keeps refusing to sign off.</span></div>
+        <p className="text-[#D6D6D0] text-base lg:text-2xl mt-4 leading-relaxed max-w-[104ch]">We stand up the hair-transplant lead-capture agent end to end — lead, consent, photos, doctor-approved estimate, booking, escalation — governed and audit-ready, on your Odoo and XCALLY.</p>
       </div>
       <p className="shrink-0 mt-7 text-[#fefefe] font-semibold text-xl lg:text-2xl">Permission before the agent acts. <span className="text-orange-400">Proof after every action.</span></p>
     </Shell>

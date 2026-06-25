@@ -2,7 +2,7 @@ import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
 import { IntroSlide } from './slides/IntroSlide';
 import { CoverSlide } from './slides/CoverSlide';
-import { PadraShiftSlide, PadraDangerSlide, PadraAnswerSlide, PadraPolicySlide, PadraRegistrySlide, PadraModulesSlide, PadraProofSlide, PadraPOCSlide, PadraWhyUnicitySlide, PadraAskSlide } from './slides/PadraDeck';
+import { PadraShiftSlide, PadraDangerSlide, PadraAnswerSlide, PadraPolicySlide, PadraWhyUnicitySlide, PadraProposeDividerSlide, PadraOverviewSlide, PadraModule1Slide, PadraModule2Slide, PadraModule3Slide, PadraModule4Slide, PadraModule5Slide, PadraDemoSlide, PadraAskSlide } from './slides/PadraDeck';
 import { WhoWeAreSlide } from './slides/WhoWeAreSlide';
 import { GregShiftSlide, GregBottleneckSlide, GregTrilemmaSlide, GregGapSlide, GregSidecarSlide, GregBearerSlide, GregOracleSlide, GregArchitectureSlide, GregReceiveSlide, GregPrivacySlide, GregNoBridgeSlide, GregSwapSlide, GregX402Slide, GregMarketSlide, GregDACSlide, GregIncumbentsSlide, GregTeamSlide, GregAskSlide } from './slides/GregDeck';
 import { DemoAgendaSlide } from './slides/DemoAgendaSlide';
@@ -81,18 +81,25 @@ import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  CoverSlide,                // 1 · Agents that act. Under control. (prepared for Padra Clinic)
-  PadraShiftSlide,           // 2 · the patient journey is going agentic (20->3)
-  PadraDangerSlide,          // 3 · the moment an agent acts, it's a liability
-  PadraAnswerSlide,          // 4 · Unicity sits between the agent and the systems
-  PadraPolicySlide,          // 5 · collect the photo, never the diagnosis (Policy Engine)
-  PadraRegistrySlide,        // 6 · every agent, a registered identity
-  PadraModulesSlide,         // 7 · the control layer in six parts
-  PadraProofSlide,           // 8 · every action leaves a record (audit)
-  PadraPOCSlide,             // 9 · one agent end to end in 45 days (POC)
-  PadraWhyUnicitySlide,      // 10 · fifteen years of sovereign-grade cryptography
-  WhoWeAreSlide,             // 11 · the team (Mike, Tony, Alan)
-  PadraAskSlide,             // 12 · bring us the workflows no one will approve
+  // ── SECTION I · THE PITCH ──
+  CoverSlide,                  // 1 · Agents that act. Under control.
+  PadraShiftSlide,             // 2 · the patient journey is going agentic
+  PadraDangerSlide,            // 3 · the moment an agent acts, it's a liability
+  PadraAnswerSlide,            // 4 · Unicity sits between the agent and the systems
+  PadraPolicySlide,            // 5 · collect the photo, never the diagnosis
+  PadraWhyUnicitySlide,        // 6 · fifteen years of sovereign-grade cryptography
+  // ── SECTION II · WHAT WE PROPOSE ──
+  PadraProposeDividerSlide,    // 7 · divider
+  PadraOverviewSlide,          // 8 · the full call center in five modules
+  PadraModule1Slide,           // 9 · Module 1 — Acquisition
+  PadraModule2Slide,           // 10 · Module 2 — Consultation & Booking
+  PadraModule3Slide,           // 11 · Module 3 — Outbound Voicebot
+  PadraModule4Slide,           // 12 · Module 4 — Aftercare
+  PadraModule5Slide,           // 13 · Module 5 — Quality Assurance
+  PadraDemoSlide,              // 14 · start with Module 1, in 45 days
+  // ── CLOSE ──
+  WhoWeAreSlide,               // 15 · team (Mike, Tony, Alan)
+  PadraAskSlide,               // 16 · the ask
 ];
 
 export default function App() {
