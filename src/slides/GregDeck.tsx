@@ -74,7 +74,7 @@ const ACT4A = 'Act IV · The next step';
 export function GregShiftSlide() {
   return (
     <Shell>
-      <H act={ACT1} main='The agents are here. <span class="o">Nothing vouches for them.</span>' sub="They pay each other faster than anything built for people can stop to ask <b>who they are</b> — or <b>whether they should</b>." />
+      <H act={ACT1} main='The agents are here. <span class="o">Nothing vouches for them.</span>' sub="Machines now pay each other directly — and nothing stops to ask <b>who they are</b>, or <b>whether they should</b>." />
       <div className="shrink-0 flex items-start gap-10 lg:gap-14 mt-8">
         <div className="shrink-0">
           <div className="text-orange-400 leading-[0.8]" style={{ fontFamily: anton, fontSize: 'min(150px, 15vw)' }}>57.5%</div>
