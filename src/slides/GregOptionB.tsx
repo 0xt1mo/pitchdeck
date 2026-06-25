@@ -60,14 +60,11 @@ const portfolio = [
 export function GregPortfolioSlide() {
   return (
     <Shell>
-      <div className="shrink-0 flex items-end justify-between gap-8">
-        <div>
-          <h1 className="text-[#fefefe] uppercase text-[30px] sm:text-[40px] lg:text-[52px] leading-[1.06] tracking-tight" style={{ fontFamily: anton }}>
-            Hard Yaka funds the <span className="text-orange-400">infrastructure of fair access.</span>
-          </h1>
-          <p className="text-[#fefefe] font-medium text-base sm:text-lg lg:text-xl mt-3 max-w-[92ch] leading-snug">250+ companies across payments, identity, and banking — the open building blocks of an inclusive financial system.</p>
-        </div>
-        <img src="/hardyaka.svg" alt="Hard Yaka" className="h-5 lg:h-7 w-auto shrink-0 mb-1" style={{ filter: 'brightness(0) invert(1)', opacity: 0.85 }} />
+      <div className="shrink-0">
+        <h1 className="text-[#fefefe] uppercase text-[30px] sm:text-[40px] lg:text-[52px] leading-[1.06] tracking-tight" style={{ fontFamily: anton }}>
+          Hard Yaka funds the <span className="text-orange-400">infrastructure of fair access.</span>
+        </h1>
+        <p className="text-[#fefefe] font-medium text-base sm:text-lg lg:text-xl mt-3 max-w-[92ch] leading-snug">250+ companies across payments, identity, and banking — the open building blocks of an inclusive financial system.</p>
       </div>
       <div className="shrink-0 mt-10 grid grid-cols-7 gap-x-6 gap-y-5">
         {portfolio.map((name) => (
