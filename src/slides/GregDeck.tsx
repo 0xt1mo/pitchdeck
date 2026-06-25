@@ -23,7 +23,7 @@ function Shell({ children }: { children: React.ReactNode }) {
       <style>{SCOPE}</style>
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px)', backgroundSize: '64px 64px' }} />
       <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 58% 50% at 50% 48%, rgba(255,137,4,0.07), transparent 70%)' }} />
-      <div className="relative z-10 min-h-full flex flex-col justify-start lg:justify-center px-6 sm:px-12 lg:px-24 py-14 sm:py-16 lg:py-20">
+      <div className="relative z-10 min-h-full lg:h-full flex flex-col justify-start lg:justify-center px-6 sm:px-12 lg:px-24 py-14 sm:py-16 lg:py-20">
         {children}
       </div>
     </div>
@@ -50,8 +50,8 @@ function Dia({ k, max = '42vh' }: { k: string; max?: string }) {
 function Two({ left, right }: { left: React.ReactNode; right: React.ReactNode }) {
   return (
     <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-12 mt-5">
-      <div className="lg:basis-[44%] lg:max-w-[44%]">{left}</div>
-      <div className="min-w-0 flex justify-center">{right}</div>
+      <div className="lg:shrink-0 lg:basis-[44%] lg:max-w-[44%]">{left}</div>
+      <div className="lg:flex-1 min-w-0 flex justify-center">{right}</div>
     </div>
   );
 }
