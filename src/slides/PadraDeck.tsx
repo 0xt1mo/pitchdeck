@@ -73,13 +73,13 @@ function ModuleSlide({ eyebrow, main, sub, does, how, govern }: { eyebrow: strin
 export function PadraShiftSlide() {
   return (
     <Shell>
-      <H main='The patient journey is <span class="o">going agentic.</span>' sub="Padra reports over a million cases in 25 years — Saudi Arabia, the UAE, Qatar, Kuwait, and Canada — every patient arriving first by WhatsApp." />
+      <H main='The clinic now runs <span class="o">before the patient arrives.</span>' sub="Padra reports over a million cases in 25 years — Saudi Arabia, the UAE, Qatar, Kuwait, and Canada — every patient arriving first by WhatsApp." />
       <div className="shrink-0 flex flex-col lg:flex-row lg:items-start gap-5 lg:gap-14 mt-6 lg:mt-8">
         <div className="shrink-0">
           <div className="text-orange-400 leading-[0.8]" style={{ fontFamily: anton, fontSize: 'min(168px, 17vw)' }}>~20→3</div>
           <div className="text-[#9E9E96] uppercase tracking-wide text-sm lg:text-base mt-3 max-w-[34ch] leading-snug">human agents per branch — Padra's own target as the AI takes the routine load</div>
         </div>
-        <Core className="mt-0" html="A medical-tourism clinic runs on the phone before it runs in the chair — inquiry, photos, a price, travel, booking, aftercare, all remote, in Arabic and English, across five markets. Padra is automating that journey on Odoo, XCALLY, and HubSpot. <b>The agents are about to start acting on real systems.</b>" />
+        <Core className="mt-0" html="A medical-tourism clinic runs on the phone before it runs in the chair — inquiry, photos, a price, travel, booking, aftercare, all remote, in Arabic and English, across five markets. Padra is automating that journey on Odoo, XCALLY, and HubSpot. <b>The agents are about to stop answering and start acting.</b>" />
       </div>
     </Shell>
   );
@@ -90,7 +90,7 @@ export function PadraDangerSlide() {
   return (
     <Shell>
       <H main='The moment an agent acts, <span class="o">it becomes a liability.</span>' sub="Answering a question is safe. Quoting a graft price, booking surgery, or holding a patient's photos is not." />
-      <Core html="An agent that writes to Odoo, sends a price, or moves a medical image is taking a regulated action no one approved and no one can replay. In Saudi Arabia and the UAE, patient data is barred from leaving the country. <b>This is why agentic projects stall</b> — Gartner expects more than 40% to be scrapped by 2027, with compliance the top blocker. The voicebot is the easy part. Control is the hard part." />
+      <Core html="An agent that writes to Odoo, sends a price, or moves a medical image is taking a regulated action no one approved and no one can replay. In Saudi Arabia and the UAE, patient data is barred from leaving the country. <b>This is why agentic projects stall</b> — Gartner expects more than 40% to be scrapped by 2027, with compliance the top blocker. Answering is the easy part. Acting is the part no one has governed." />
       <div className="shrink-0 grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-4 mt-7">
         {[
           ['Quotes a price', 'with no doctor behind it'],
@@ -109,7 +109,7 @@ export function PadraAnswerSlide() {
   return (
     <Shell>
       <H main='Unicity sits between the agent <span class="o">and the systems.</span>' sub="It runs between Padra's AI agents, XCALLY, and Odoo — governing what each agent may see, say, update, and trigger." />
-      <Core html="Every agent asks permission <b>before</b> it acts, and leaves a tamper-evident record <b>after</b>. The doctor stays in the loop where it matters. XCALLY still runs the calls and Odoo still holds the records — Unicity makes the agents safe enough to operate across both." />
+      <Core html="Every agent asks permission <b>before</b> it acts, and leaves a tamper-evident record <b>after</b>. The doctor stays in the loop where it matters. XCALLY still runs the calls and Odoo still holds the records — Unicity governs what the agents may do across both." />
       <div className="shrink-0 grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-5 mt-8">
         {[
           ['XCALLY', 'Calls, WhatsApp, chat, queues, recordings, handover'],
@@ -138,7 +138,7 @@ const policy = [
 export function PadraPolicySlide() {
   return (
     <Shell>
-      <H main='Collect the photo. <span class="o">Never the diagnosis.</span>' sub="The Policy Engine gives every agent a boundary — checked the instant before it acts." />
+      <H main='Collect the photo. <span class="o">Never the diagnosis.</span>' sub="The Policy Engine is the boundary the agent cannot cross — enforced the instant before it acts." />
       <div className="shrink-0 mt-6">
         {policy.map(([t, d, deny], i) => (
           <div key={t as string} className={`flex items-baseline gap-5 py-3.5 border-t border-[#2c2c2a] ${i === policy.length - 1 ? 'border-b' : ''}`}>
@@ -156,8 +156,8 @@ export function PadraPolicySlide() {
 export function PadraWhyUnicitySlide() {
   return (
     <Shell>
-      <H main='Fifteen years of <span class="o">sovereign-grade cryptography.</span>' sub="Unicity is not a startup learning the problem today. The platform is already built — and the team built the cryptography behind it." />
-      <Core html="The founders built Guardtime's <b>KSI</b>, in production since 2012 with governments and global institutions. The runtime is real: agents run as sandboxed capsules <b>on top of</b> the Astrid microkernel, so a prompt injection cannot escape it, and the Semantic Intercept Fabric inspects every action — <b>designed for sub-20ms</b> inline classification before a command reaches your systems." />
+      <H main='Fifteen years of <span class="o">sovereign-grade cryptography.</span>' sub="The platform is already built. The team built the cryptography it runs on — in production since 2012." />
+      <Core html="The founders built Guardtime's <b>KSI</b>, deployed with governments and global institutions. Agents run as sandboxed capsules <b>on top of</b> the Astrid microkernel — <b>you cannot prompt-inject past a kernel boundary</b>. The Semantic Intercept Fabric inspects every action inline, <b>designed for sub-20ms</b> classification before a command reaches your systems." />
       <div className="shrink-0 grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-4 mt-8">
         {[
           ['Intercept', 'Every command checked beneath the app, before it touches Odoo or XCALLY'],
@@ -319,7 +319,7 @@ function PhoneMockup() {
 export function PadraDemoSlide() {
   return (
     <Shell>
-      <H main='Start with Module 1. <span class="o">In 45 days.</span>' sub="The WhatsApp lead-capture agent, end to end, on your Odoo and XCALLY — the lowest-risk, highest-volume entry point." />
+      <H main='Start with Module 1. <span class="o">Live in 45 days.</span>' sub="The WhatsApp lead-capture agent, end to end, on your Odoo and XCALLY — the lowest-risk, highest-volume entry point." />
       <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-14 mt-6">
         <div className="lg:flex-1 min-w-0">
           <Core className="mt-0" html="Watch the Policy Engine work inside the conversation: the agent captures <b>consent before it stores anything</b>, collects the photos, and <b>refuses to quote a price until a Padra doctor approves it</b> — then books from live availability." />
@@ -348,12 +348,12 @@ export function PadraDemoSlide() {
 export function PadraAskSlide() {
   return (
     <Shell>
-      <H main='Ship the agent <span class="o">you cannot ship today.</span>' sub="The 45-day challenge — the one workflow your security team keeps blocking, made shippable." />
+      <H main='Ship the agent <span class="o">you cannot ship today.</span>' sub="The workflow your security team keeps blocking — shippable in 45 days, because the agent now asks permission and leaves proof." />
       <div className="shrink-0 mt-7 rounded-xl p-6 lg:p-8" style={{ border: '1px solid rgba(255,137,4,0.4)', background: 'linear-gradient(180deg, rgba(255,137,4,0.06), transparent)' }}>
         <div className="text-[#fefefe] text-2xl lg:text-3xl" style={{ fontFamily: anton }}>Pick the workflow the security team <span className="text-orange-400">keeps blocking.</span></div>
         <p className="text-[#D6D6D0] text-base lg:text-2xl mt-4 leading-relaxed max-w-[104ch]">We stand up the hair-transplant lead-capture agent end to end — lead, consent, photos, doctor-approved estimate, booking, escalation — governed and audit-ready, on your Odoo and XCALLY.</p>
       </div>
-      <p className="shrink-0 mt-7 text-[#fefefe] font-semibold text-xl lg:text-2xl">Permission before the agent acts. <span className="text-orange-400">Proof after every action.</span></p>
+      <p className="shrink-0 mt-7 text-[#fefefe] font-semibold text-xl lg:text-2xl">Permission before every action. <span className="text-orange-400">Proof after every one.</span></p>
     </Shell>
   );
 }
