@@ -94,7 +94,7 @@ function ClientLogo({ name, file, scale = 1 }: { name: string; file: string; sca
 export function WhoWeAreSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto lg:overflow-hidden">
-      <div className="relative z-10 min-h-full flex flex-col px-6 sm:px-12 lg:px-20 py-14 lg:py-16 justify-start lg:justify-center gap-6 lg:gap-4">
+      <div className="relative z-10 min-h-full lg:h-full flex flex-col px-6 sm:px-12 lg:px-20 py-14 lg:py-16 justify-start lg:justify-center gap-6 lg:gap-4">
 
         {/* Header */}
         <div className="shrink-0">
