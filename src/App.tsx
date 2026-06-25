@@ -86,8 +86,8 @@ const slides = [
   GregTrilemmaSlide,         // 4 · every digital dollar trades one away
   GregGapSlide,              // 5 · two are solved, one never was (folds the side-car point)
   GregIncumbentsSlide,       // 6 · the market is spending billions and still missing it
-  GregBearerSlide,           // 7 · take the dollar off the ledger (bearer-transform graphic)
-  GregArchitectureSlide,     // 8 · the chain does one job (folds the oracle: attests one thing, 30k/shard)
+  GregBearerSlide,           // 7 · from ledger entries to bearer instruments
+  GregOracleSlide,           // 8 · the uniqueness oracle — unbundling consensus
   GregReceiveSlide,          // 9 · compliance needs no middleman
   GregPrivacySlide,          // 10 · the open ledger goes dark
   GregSwapSlide,             // 11 · settle with no clock to attack (folds no-bridge)

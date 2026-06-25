@@ -89,7 +89,7 @@ export function CoverSlide() {
           className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl tracking-wide shrink-0 -mt-2"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Proof of identity and permission, bound to the payment itself.
+          The machine economy cannot run on human infrastructure.
         </motion.p>
 
         {/* Divider */}
