@@ -2,6 +2,7 @@ import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
 import { IntroSlide } from './slides/IntroSlide';
 import { CoverSlide } from './slides/CoverSlide';
+import { PadraShiftSlide, PadraDangerSlide, PadraAnswerSlide, PadraPolicySlide, PadraRegistrySlide, PadraModulesSlide, PadraProofSlide, PadraPOCSlide, PadraWhyUnicitySlide, PadraAskSlide } from './slides/PadraDeck';
 import { WhoWeAreSlide } from './slides/WhoWeAreSlide';
 import { GregShiftSlide, GregBottleneckSlide, GregTrilemmaSlide, GregGapSlide, GregSidecarSlide, GregBearerSlide, GregOracleSlide, GregArchitectureSlide, GregReceiveSlide, GregPrivacySlide, GregNoBridgeSlide, GregSwapSlide, GregX402Slide, GregMarketSlide, GregDACSlide, GregIncumbentsSlide, GregTeamSlide, GregAskSlide } from './slides/GregDeck';
 import { DemoAgendaSlide } from './slides/DemoAgendaSlide';
@@ -80,22 +81,18 @@ import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  CoverSlide,                // 1 · Securing the Agentic Economy
-  GregShiftSlide,            // 2 · the agents are here, nothing vouches for them
-  GregBottleneckSlide,       // 3 · a machine cannot wait for a shared ledger
-  GregTrilemmaSlide,         // 4 · every digital dollar trades one away
-  GregGapSlide,              // 5 · two are solved, one never was (folds the side-car point)
-  GregIncumbentsSlide,       // 6 · the market is spending billions and still missing it
-  GregBearerSlide,           // 7 · from ledger entries to bearer instruments
-  GregOracleSlide,           // 8 · the uniqueness oracle — unbundling consensus
-  GregReceiveSlide,          // 9 · compliance needs no middleman
-  GregPrivacySlide,          // 10 · the open ledger goes dark
-  GregSwapSlide,             // 11 · settle with no clock to attack (folds no-bridge)
-  GregX402Slide,             // 12 · twelve steps become five (peak)
-  GregMarketSlide,           // 13 · a market with no venue
-  GregDACSlide,              // 14 · a whole company run by agents
-  WhoWeAreSlide,             // 15 · the team (Tether slide, as-is)
-  GregAskSlide,              // 16 · ship the first compliant dollar
+  CoverSlide,                // 1 · Agents that act. Under control. (prepared for Padra Clinic)
+  PadraShiftSlide,           // 2 · the patient journey is going agentic (20->3)
+  PadraDangerSlide,          // 3 · the moment an agent acts, it's a liability
+  PadraAnswerSlide,          // 4 · Unicity sits between the agent and the systems
+  PadraPolicySlide,          // 5 · collect the photo, never the diagnosis (Policy Engine)
+  PadraRegistrySlide,        // 6 · every agent, a registered identity
+  PadraModulesSlide,         // 7 · the control layer in six parts
+  PadraProofSlide,           // 8 · every action leaves a record (audit)
+  PadraPOCSlide,             // 9 · one agent end to end in 45 days (POC)
+  PadraWhyUnicitySlide,      // 10 · fifteen years of sovereign-grade cryptography
+  WhoWeAreSlide,             // 11 · the team (Mike, Tony, Alan)
+  PadraAskSlide,             // 12 · bring us the workflows no one will approve
 ];
 
 export default function App() {

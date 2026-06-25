@@ -22,7 +22,7 @@ export function CoverSlide() {
             className="text-[#fefefe]/65 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Unicity · Securing the Agentic Economy
+            Unicity · Secure Agentic Call Center
           </span>
         </div>
       </div>
@@ -57,7 +57,7 @@ export function CoverSlide() {
           className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.32em] uppercase font-bold shrink-0 -mt-2"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Unicity Protocol · Strategic Proposal · 2026
+          Unicity Protocol · Proposal for Padra · 2026
         </motion.p>
 
         {/* Headline */}
@@ -68,8 +68,8 @@ export function CoverSlide() {
           className="text-[#fefefe] text-[48px] sm:text-[72px] lg:text-[112px] xl:text-[140px] leading-[0.95] tracking-tight uppercase shrink-0"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          SECURING THE{' '}
-          <span className="text-orange-400">AGENTIC ECONOMY.</span>
+          AGENTS THAT ACT.{' '}
+          <span className="text-orange-400">UNDER CONTROL.</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -80,7 +80,7 @@ export function CoverSlide() {
           className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl tracking-wide shrink-0 -mt-2"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          When the counterparty is a machine, trust has to travel with the money.
+          Permission before every action. Proof after every one.
         </motion.p>
 
         {/* Divider */}
@@ -129,7 +129,7 @@ export function CoverSlide() {
                 className="text-[#fefefe] text-[10px] sm:text-xs lg:text-sm tracking-[0.18em] uppercase font-bold"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                Greg Kidd <span className="text-orange-400">@</span> Hard Yaka
+                Padra Clinic
               </span>
             </div>
           </motion.div>
