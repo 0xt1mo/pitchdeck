@@ -26,11 +26,14 @@ const founders = [
     ],
   },
   {
-    name: 'Nitish Malik',
-    role: 'Senior Advisor',
-    photo: '',
+    name: 'Alan Radi',
+    role: 'Commercial',
+    photo: '/team/Alan Portrait.jpg',
+    photoStyle: { transform: 'translateY(-8%) scale(1.3)', transformOrigin: '50% 50%' },
+    linkedin: 'https://www.linkedin.com/in/alanradi/',
     lines: [
-      'Aleria · Etisalat',
+      '12 years implementing CX AI for Global B2C brands',
+      'Apple · Google · Verizon · Pepsi · DHL',
     ],
   },
 ];
