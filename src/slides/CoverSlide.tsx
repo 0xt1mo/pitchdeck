@@ -22,7 +22,7 @@ export function CoverSlide() {
             className="text-[#fefefe]/65 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Unicity · Secure Agentic Compute
+            Unicity · Securing the Agentic Economy
           </span>
         </div>
       </div>
@@ -66,7 +66,7 @@ export function CoverSlide() {
           className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.32em] uppercase font-bold shrink-0 -mt-2"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Astrid OS + QVAC · 2026
+          Unicity Protocol · Strategic Proposal · 2026
         </motion.p>
 
         {/* Headline */}
@@ -77,8 +77,8 @@ export function CoverSlide() {
           className="text-[#fefefe] text-[48px] sm:text-[72px] lg:text-[112px] xl:text-[140px] leading-[0.95] tracking-tight uppercase shrink-0"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          THE AGENT OS{' '}
-          <span className="text-orange-400">FOR TETHER AI.</span>
+          SECURING THE{' '}
+          <span className="text-orange-400">AGENTIC ECONOMY.</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -89,7 +89,7 @@ export function CoverSlide() {
           className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl tracking-wide shrink-0 -mt-2"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Secure execution for QVAC-powered agents.
+          The machine economy cannot run on human infrastructure.
         </motion.p>
 
         {/* Divider */}
@@ -100,7 +100,7 @@ export function CoverSlide() {
           className="h-[1px] w-40 sm:w-56 lg:w-72 bg-orange-500/60 origin-left shrink-0"
         />
 
-        {/* Bottom row — credits (from) on left, Tether dedication (to) on right */}
+        {/* Bottom row — credits (from) on left, dedication (to) on right */}
         <div className="flex items-end justify-between gap-8 shrink-0 pr-4 lg:pr-8">
           {/* Credits */}
           <motion.div
@@ -120,7 +120,7 @@ export function CoverSlide() {
             </p>
           </motion.div>
 
-          {/* Tether dedication — bottom right, baseline-aligned with credits */}
+          {/* Dedication — bottom right, baseline-aligned with credits */}
           <motion.div
             initial={{ opacity: 0, x: 8 }}
             animate={{ opacity: 1, x: 0 }}
@@ -138,14 +138,9 @@ export function CoverSlide() {
                 className="text-[#fefefe] text-[10px] sm:text-xs lg:text-sm tracking-[0.18em] uppercase font-bold"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                Paolo <span className="text-orange-400">@</span> Tether
+                Greg Kidd <span className="text-orange-400">@</span> Hard Yaka
               </span>
             </div>
-            <img
-              src="/logos/tether_logo.jpeg"
-              alt="Tether"
-              className="h-10 lg:h-12 w-auto rounded-md shadow-[0_0_20px_rgba(0,166,166,0.18)]"
-            />
           </motion.div>
         </div>
 

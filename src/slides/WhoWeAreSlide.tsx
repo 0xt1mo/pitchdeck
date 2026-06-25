@@ -26,14 +26,14 @@ const founders = [
     ],
   },
   {
-    name: 'Eric Leandri',
-    role: 'Chairman',
-    photo: '/team/eric.png',
-    linkedin: 'https://www.linkedin.com/in/ericleandri/',
+    name: 'Alan Radi',
+    role: 'Commercial',
+    photo: '/team/Alan Portrait.jpg',
+    photoStyle: { transform: 'translateY(-8%) scale(1.3)', transformOrigin: '50% 50%' },
+    linkedin: 'https://www.linkedin.com/in/alanradi/',
     lines: [
-      'AI Visionary',
-      'CEO, Aleria (UAE Sovereign AI)',
-      '1,000+ customers · 250K agents live',
+      '12 years implementing CX AI for Global B2C brands',
+      'Apple · Google · Verizon · Pepsi · DHL',
     ],
   },
 ];
@@ -94,24 +94,15 @@ function ClientLogo({ name, file, scale = 1 }: { name: string; file: string; sca
 export function WhoWeAreSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-12 lg:px-20 pt-6 pb-20 lg:pt-6 lg:pb-24 justify-center gap-3">
+      <div className="relative z-10 h-full flex flex-col px-12 lg:px-20 py-14 lg:py-16 justify-center gap-4">
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            The Team
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[34px] sm:text-[50px] lg:text-[72px] xl:text-[84px] leading-[0.95] tracking-tight mt-2 uppercase"
+            className="text-[#fefefe] text-[30px] sm:text-[40px] lg:text-[52px] leading-[1.06] tracking-tight uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
             Built by{' '}
@@ -130,7 +121,7 @@ export function WhoWeAreSlide() {
             className="mt-3 text-[#fefefe]/85 text-xs sm:text-sm lg:text-base leading-[1.55] max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs in machine learning and cryptography with fifteen years building nation-state-grade security infrastructure for <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed, Verizon, and Maersk</span>. Now applying that to the rails your agents transact on.
+            <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs in machine learning and cryptography, with fifteen years building security infrastructure for <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed, Verizon, and Maersk</span>. Now applying that to the money your agents move.
           </motion.p>
         </div>
 

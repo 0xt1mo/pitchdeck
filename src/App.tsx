@@ -2,6 +2,8 @@ import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
 import { IntroSlide } from './slides/IntroSlide';
 import { CoverSlide } from './slides/CoverSlide';
+import { GregShiftSlide, GregGapSlide, GregTrilemmaSlide, GregIncumbentsSlide, GregBearerSlide, GregOracleSlide, GregArchitectureSlide, GregReceiveSlide, GregPrivacySlide, GregNoBridgeSlide, GregSwapSlide, GregX402Slide, GregMarketSlide, GregDACSlide, GregAskSlide } from './slides/GregDeck';
+import { GregAnswerSlide, GregPortfolioSlide, GregHowDividerSlide } from './slides/GregOptionB';
 import { PromiseSlide } from './slides/PromiseSlide';
 import { SharedLedgerSlide } from './slides/SharedLedgerSlide';
 import { AgentsSlide } from './slides/AgentsSlide';
@@ -72,87 +74,28 @@ import { TechnicalAppendixDividerSlide } from './slides/TechnicalAppendixDivider
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  // ── ACT I — The Moment ──
-  CoverSlide,                // 1. Cover — The Agent OS for Tether AI
-  TetherOpportunitySlide,    // 2. The Opportunity — Every AI agent is about to get a wallet
-  TetherWhyNowSlide,         // 3. Why Now — The money is ready. The agents are not.
-  TetherMechanismSlide,      // 4. How It Works — QVAC runs locally. Astrid checks the action.
-
-  // ── ACT II — The Platform ──
-  AutonomyStackSlide,        // 5. Unicity: The Secure AI Compute Platform
-  WhyDifferentSlide,         // 6. The first secure, affordable, provable platform
-
-  // ── ACT III — The Story ──
-  // ConciergeSlide,         // removed for Tether — telecom-specific subscriber concierge
-  // OperatorPayoffSlide,    // removed for Tether — telecom operator's view
-  // TelecomUseCasesSlide,   // removed for Tether — telecom use cases
-
-  // ── ACT IV — The Proof ──
-  DeploymentModelHtmlSlide,  // 10. Deployment inside operator infrastructure
-  WhoWeAreSlide,             // 11. Team
-  TetherContactSlide,        // 9. Next Step — Build the first QVAC agent running on Astrid OS
-  // ThankYouChatSlide,      // hidden — Thank You (rolled into ContactSlide closer)
-
-  // ── APPENDIX — additional use case deep-dives ──
-  UseCasesAppendixSlide,   // 10. Appendix divider — Additional Use Cases
-  ShadowAISlide,           // 11. appendix — Agent Sprawl & Shadow AI
-  DLPSlide,                // 12. appendix — Data Loss Prevention
-  RunawayComputeSlide,     // 13. appendix — Cost Control
-  IntelligentRoutingSlide, // 14. appendix — Intelligent Routing
-
-  // ── TECHNICAL APPENDIX — under-the-hood architecture ──
-  TechnicalAppendixDividerSlide, // 15. Technical Appendix divider
-  AstridSlide,                   // 16. AOS: The Kernel
-  AstridComparisonSlide,         // 17. Why AOS — comparison table
-  AstridUseCasesSlide,           // 18. Swap a Capsule. Change Everything.
-  InterceptFabricSlide,          // 19. Security: Semantic Intercept Fabric
-
-  // ── Hidden (other) ──
-  // AstridSlide,            // AOS Kernel Architecture
-  // CompetitionMinimalSlide, // Competition / Everyone else watches the agent
-  // SemanticFirewallSlide,  // The Semantic Firewall
-  // DeploymentModelSlide,   // earlier all-SVG version
-  // EnterpriseDeploymentSlide, // older MSSP version
-  // UseCasesSlide,          // Enterprise Case Studies (replaced by TelecomUseCasesSlide)
-  // ── Hidden ──
-  // IntroSlide,             // Autonomous AI needs an internet built for machines
-  // SolutionIntroSlide,     // Unicity OS: A Secure OS for AI Agents
-  // CompleteAutonomyStackSlide, // The First Complete Stack Built For Machines
-  // GoToMarketSlide,        // Beachhead: The UAE
-  // TeamSlide,              // Founders Who've Done This Before (replaced by WhoWeAreSlide)
-  // ArchitectureStackSlide, // The Secure OS for Agents
-  // AgentsSlide,            // The Unicity L1
-  // EdgePayoffSlide,        // What This Unlocks
-  // CompetitiveLandscapeSlide, // We're Betting on a Different Architecture
-  // WedgeSlide,             // Wedge content folded into UseCasesSlide
-  // SecurityNetworkSlide,   // Zero Trust Enterprise Network
-  // ProtocolSlide,          // x402 Live Demo
-  // AgentSprawlSlide,       // Case Study: Agent Sprawl
-  // ThePathSlide,           // Current Status and How We Win
-  // RaiseSlide,             // From Mainnet Launch to Initial Scale
-  // IndirectInjectionSlide, // Stopping the Indirect Injection
-  // UnbundledPayoffSlide,   // merged Unbundling + Unlocks attempt
-  // ProjectionsSlide,       // The World If We Win
-  // BusinessModelSlide,     // Business Model — Four Surfaces. One Platform.
-  // ResourcesSlide,         // Essential Resources
-  // ── Appendix — all hidden ──
-  // AppendixDividerSlide,    // hidden — Appendix · Technology section break
-  // CompetitionSlide,        // hidden — Competition / architectural arc
-  // SharedLedgerSlide,       // hidden — Every blockchain from Bitcoin to MegaETH is the same 17-year-old design
-  // IntellectualArcSlide,    // hidden — Unbundling what the network has to do
-  // PromiseSlide,            // hidden — Satoshi: Peer-to-Peer Electronic Cash
-  // BlockchainArchSlide,     // hidden — Protocol Stack
-  // ZKOracleSlide,           // hidden — ZK Oracle
-  // PermissionlessSlide,     // hidden — Hierarchical Scaling
-  // SettlementSlide,         // hidden — Settlement
-  // ChainAgnosticSlide,      // hidden — Chain-Agnostic Operations
-  // AgentsSmartContractsSlide, // hidden — Agents-as-Smart-Contracts
-  // TokenSlide,              // hidden — Tokenomics
-  // AstridComparisonSlide,   // hidden — Why AOS
-  // AstridUseCasesSlide,     // hidden — Swap Capsule
-  // InterceptFabricSlide,    // hidden — Security Fabric
-  // AgentSphereDashboardSlide, // hidden — original 4-pillar enterprise dashboard
-  // RetrofitSlide,           // hidden — You Can't Retrofit an EVM into Autonomous AI
+  // ── THE PITCH (everything we want to say, by slide 9) ──
+  CoverSlide,                // 1 · Securing the Agentic Economy (for Greg Kidd / Hard Yaka)
+  GregShiftSlide,            // 2 · the macro shift — machine commerce requires machine trust
+  GregGapSlide,              // 3 · two are solved, one never was — identity is the permission to act
+  GregTrilemmaSlide,         // 4 · the stablecoin trilemma (protocol claim — front half per Greg)
+  GregIncumbentsSlide,       // 5 · the incumbents validate the diagnosis
+  GregAnswerSlide,           // 6 · the answer — identity, compliance, settlement inside the asset
+  GregPortfolioSlide,        // 7 · Hard Yaka funds the infrastructure of fair access
+  WhoWeAreSlide,             // 8 · the team
+  GregAskSlide,              // 9 · the next step — ship the first compliant dollar
+  // ── THE HOW (technical appendix — our protocol proposition) ──
+  GregHowDividerSlide,       // 10 · "The How" divider
+  GregBearerSlide,           // 11 · from ledger entries to bearer instruments
+  GregOracleSlide,           // 12 · the uniqueness oracle
+  GregArchitectureSlide,     // 13 · a minimal chain, an economy off it
+  GregReceiveSlide,          // 14 · protocol-enforced compliance — the receive predicate
+  GregPrivacySlide,          // 15 · privacy by construction
+  GregNoBridgeSlide,         // 16 · no bridge, nothing to hack
+  GregSwapSlide,             // 17 · the atomic swap
+  GregX402Slide,             // 18 · x402 — twelve steps to five
+  GregMarketSlide,           // 19 · the machine market
+  GregDACSlide,              // 20 · the agentic corporation
 ];
 
 export default function App() {
