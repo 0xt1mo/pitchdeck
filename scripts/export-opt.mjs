@@ -7,7 +7,8 @@ const URL = process.argv[2] || 'http://localhost:5174';
 const MAIN_SLIDES_ONLY = process.argv.includes('--main-only');
 const SKIP_TITLE = process.argv.includes('--skip-title');
 const OUTPUT = process.argv.find(a => a.endsWith('.pdf')) || 'pitchdeck.pdf';
-const VIEWPORT = { width: 1440, height: 900, deviceScaleFactor: 2 };
+const VIEWPORT = { width: 1440, height: 900, deviceScaleFactor: Number(process.env.DSF || 3) };
+const QJPEG = Number(process.env.QJPEG || 86);
 
 async function exportPDF() {
   console.log(`🚀 Launching browser...`);
@@ -102,7 +103,7 @@ async function exportPDF() {
     }
 
     const screenshotPath = path.join(tmpDir, `slide-${String(i).padStart(3, '0')}.jpg`);
-    await page.screenshot({ path: screenshotPath, type: 'jpeg', quality: 88 });
+    await page.screenshot({ path: screenshotPath, type: 'jpeg', quality: QJPEG });
     screenshots.push(screenshotPath);
   }
 
