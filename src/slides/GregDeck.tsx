@@ -19,11 +19,11 @@ const SCOPE = `
 
 function Shell({ children }: { children: React.ReactNode }) {
   return (
-    <div className="gx fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+    <div className="gx fixed inset-0 z-50 bg-[#060606] overflow-y-auto lg:overflow-hidden">
       <style>{SCOPE}</style>
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px)', backgroundSize: '64px 64px' }} />
       <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 58% 50% at 50% 48%, rgba(255,137,4,0.07), transparent 70%)' }} />
-      <div className="relative z-10 h-full flex flex-col justify-center px-12 sm:px-16 lg:px-24 py-16 lg:py-20">
+      <div className="relative z-10 min-h-full flex flex-col justify-start lg:justify-center px-6 sm:px-12 lg:px-24 py-14 sm:py-16 lg:py-20">
         {children}
       </div>
     </div>
@@ -49,9 +49,9 @@ function Dia({ k, max = '42vh' }: { k: string; max?: string }) {
 
 function Two({ left, right }: { left: React.ReactNode; right: React.ReactNode }) {
   return (
-    <div className="flex items-center gap-8 lg:gap-12 mt-5">
-      <div className="shrink-0 basis-[44%] max-w-[44%]">{left}</div>
-      <div className="flex-1 min-w-0 flex justify-center">{right}</div>
+    <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-12 mt-5">
+      <div className="lg:basis-[44%] lg:max-w-[44%]">{left}</div>
+      <div className="min-w-0 flex justify-center">{right}</div>
     </div>
   );
 }
@@ -65,7 +65,7 @@ export function GregShiftSlide() {
   return (
     <Shell>
       <H main='The counterparty is now <span class="o">a machine.</span>' sub="Agents now negotiate, sign, and settle on their own — no human in the loop." />
-      <div className="shrink-0 flex items-start gap-10 lg:gap-14 mt-8">
+      <div className="shrink-0 flex flex-col lg:flex-row lg:items-start gap-5 lg:gap-14 mt-6 lg:mt-8">
         <div className="shrink-0">
           <div className="text-orange-400 leading-[0.8]" style={{ fontFamily: anton, fontSize: 'min(188px, 18vw)' }}>57.5%</div>
           <div className="text-[#9E9E96] uppercase tracking-wide text-sm lg:text-base mt-3 max-w-[30ch] leading-snug">of global web traffic is now automated — Cloudflare, 2026</div>
@@ -88,7 +88,7 @@ export function GregBottleneckSlide() {
     <Shell>
       <H main='Machines cannot wait on <span class="o">a shared ledger.</span>' sub="Shared ledgers were designed for humans — slow, sequential, contested. A permanent ceiling on scale and privacy." />
       <Core html="Every node broadcasts, orders, validates, and records every transaction — one global queue that machine-speed commerce will never clear. Assets have to live off-chain. <b>Remove the shared ledger entirely.</b>" />
-      <div className="shrink-0 flex gap-4 mt-7">
+      <div className="shrink-0 grid grid-cols-2 lg:flex gap-3 lg:gap-4 mt-7">
         {bottleneck.map(([t, d]) => (
           <div key={t} className={cellCls}><div className={ctCls}>{t}</div><div className={ckCls}>{d}</div></div>
         ))}
@@ -145,11 +145,13 @@ function Table({ cols, head, rows }: { cols: string; head: string[]; rows: (stri
     return <div key={key} className={`px-4 lg:px-5 py-2.5 lg:py-3 text-base lg:text-xl leading-snug border-r border-[#2c2c2a] last:border-r-0 ${isHead ? 'uppercase tracking-wide text-[#9E9E96] text-sm lg:text-base' : ''} ${cls}`} style={isHead ? { fontFamily: anton } : undefined}>{v}</div>;
   };
   return (
-    <div className="shrink-0 mt-5 border border-[#2c2c2a] rounded-lg overflow-hidden">
-      <div className="grid border-b border-[#2c2c2a] bg-white/[0.025]" style={{ gridTemplateColumns: cols }}>{head.map((h, i) => cell(i === head.length - 1 ? { v: h, cls: 'text-orange-400' } : h, i, true))}</div>
-      {rows.map((r, ri) => (
-        <div key={ri} className="grid border-b border-[#2c2c2a] last:border-b-0" style={{ gridTemplateColumns: cols }}>{r.map((c, ci) => cell(c, ci))}</div>
-      ))}
+    <div className="shrink-0 mt-5 -mx-6 sm:mx-0 overflow-x-auto">
+      <div className="border border-[#2c2c2a] rounded-lg overflow-hidden min-w-[620px] sm:min-w-0 mx-6 sm:mx-0">
+        <div className="grid border-b border-[#2c2c2a] bg-white/[0.025]" style={{ gridTemplateColumns: cols }}>{head.map((h, i) => cell(i === head.length - 1 ? { v: h, cls: 'text-orange-400' } : h, i, true))}</div>
+        {rows.map((r, ri) => (
+          <div key={ri} className="grid border-b border-[#2c2c2a] last:border-b-0" style={{ gridTemplateColumns: cols }}>{r.map((c, ci) => cell(c, ci))}</div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -250,8 +252,8 @@ export function GregPrivacySlide() {
       <Core html="Privacy is a founding property of the protocol — proven against all three observers: the network, the sender, anyone holding the address. Public ledgers expose all three. Unicity closes them by construction." />
       <div className="shrink-0 mt-5">
         {observers.map(([ol, od], i) => (
-          <div key={ol} className={`flex items-baseline gap-7 py-3 border-t border-[#2c2c2a] ${i === observers.length - 1 ? 'border-b' : ''}`}>
-            <span className="uppercase text-[#fefefe] w-[300px] shrink-0 text-lg lg:text-2xl" style={{ fontFamily: anton }}>{ol}</span>
+          <div key={ol} className={`flex flex-col lg:flex-row lg:items-baseline gap-1 lg:gap-7 py-3 border-t border-[#2c2c2a] ${i === observers.length - 1 ? 'border-b' : ''}`}>
+            <span className="uppercase text-[#fefefe] w-full lg:w-[300px] shrink-0 text-lg lg:text-2xl" style={{ fontFamily: anton }}>{ol}</span>
             <span className="text-[#D6D6D0] text-base lg:text-xl leading-snug">{od}</span>
             <span className="ml-auto uppercase tracking-[0.14em] text-orange-400 text-sm lg:text-base" style={{ fontFamily: mono }}>proven</span>
           </div>
@@ -307,7 +309,7 @@ export function GregX402Slide() {
     <Shell>
       <H main='Twelve steps become <span class="o">five.</span>' sub="Eliminating the network friction that operators spend billions trying to solve." />
       <Core html="x402 moves payment over HTTP — then routes it back through a facilitator and a public chain. Unicity puts the authorization and the proof inside the token. <b>The message is the payment.</b> Twelve steps become five — the friction operators like Square spend billions to solve, gone." />
-      <div className="shrink-0 flex gap-7 mt-5 items-stretch">
+      <div className="shrink-0 flex flex-col lg:flex-row gap-5 lg:gap-7 mt-5 lg:items-stretch">
         <div className="flex-1 rounded-lg border border-[#2c2c2a] bg-[#101010] p-4 lg:p-5">
           <div className="flex justify-between items-baseline uppercase tracking-wide text-[#9E9E96] text-base lg:text-lg" style={{ fontFamily: anton }}><span>Traditional x402</span><span className="text-[#fefefe]">12 steps</span></div>
           {x402old.map(([i, t, gone]) => (

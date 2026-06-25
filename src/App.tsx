@@ -137,25 +137,7 @@ export default function App() {
 
   const CurrentSlideComponent = slides[currentSlide];
 
-  if (isMobile) {
-    return (
-      <div className="h-full w-full flex flex-col items-center justify-center px-8 bg-[#060606]">
-        <img src="/UnicityLogo.svg" alt="Unicity" className="h-8 mb-6 opacity-60" />
-        <h1
-          className="text-[#fefefe] text-2xl text-center leading-tight"
-          style={{ fontFamily: "'Anton', sans-serif" }}
-        >
-          DESKTOP <span className="text-orange-400">ONLY</span>
-        </h1>
-        <p
-          className="text-[#fefefe]/50 text-xs text-center mt-3 max-w-xs"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          This deck is optimized for desktop. Please open it on a larger screen.
-        </p>
-      </div>
-    );
-  }
+  void isMobile; // responsive: slides now reflow on phone/tablet — no desktop gate
 
   return (
     <div className="h-full w-full relative">

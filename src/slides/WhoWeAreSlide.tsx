@@ -93,8 +93,8 @@ function ClientLogo({ name, file, scale = 1 }: { name: string; file: string; sca
 
 export function WhoWeAreSlide() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-12 lg:px-20 py-14 lg:py-16 justify-center gap-4">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-y-auto lg:overflow-hidden">
+      <div className="relative z-10 min-h-full flex flex-col px-6 sm:px-12 lg:px-20 py-14 lg:py-16 justify-start lg:justify-center gap-6 lg:gap-4">
 
         {/* Header */}
         <div className="shrink-0">
@@ -126,7 +126,7 @@ export function WhoWeAreSlide() {
         </div>
 
         {/* Two columns: founders (left) + globe (right) */}
-        <div className="grid grid-cols-[1fr_1fr] gap-6 lg:gap-8 items-center shrink-0">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 lg:gap-8 items-center shrink-0">
 
           {/* Left — founders stacked */}
           <div className="flex flex-col gap-4 lg:gap-5">
@@ -179,7 +179,7 @@ export function WhoWeAreSlide() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 0.7 }}
-            className="flex flex-col items-center pl-8 lg:pl-10"
+            className="flex flex-col items-center pl-0 lg:pl-10"
             style={{ borderLeft: '1px solid rgba(255,255,255,0.10)' }}
           >
             <p
@@ -206,7 +206,7 @@ export function WhoWeAreSlide() {
           >
             Cryptographic infrastructure trusted by
           </p>
-          <div className="grid grid-cols-7 gap-2 lg:gap-4 items-center">
+          <div className="grid grid-cols-4 lg:grid-cols-7 gap-3 gap-y-5 lg:gap-4 items-center">
             {clients.map((c) => (
               <div key={c.name} className="flex items-center justify-center h-9 lg:h-10 overflow-hidden">
                 <ClientLogo name={c.name} file={c.file} scale={c.scale} />

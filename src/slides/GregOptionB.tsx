@@ -16,11 +16,11 @@ const SCOPE = `
 
 function Shell({ children, center = false }: { children: React.ReactNode; center?: boolean }) {
   return (
-    <div className="gxb fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+    <div className="gxb fixed inset-0 z-50 bg-[#060606] overflow-y-auto lg:overflow-hidden">
       <style>{SCOPE}</style>
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px)', backgroundSize: '64px 64px' }} />
       <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 58% 50% at 50% 48%, rgba(255,137,4,0.07), transparent 70%)' }} />
-      <div className={`relative z-10 h-full flex flex-col justify-center px-12 sm:px-16 lg:px-24 py-16 lg:py-20 ${center ? 'items-center text-center' : ''}`}>
+      <div className={`relative z-10 min-h-full flex flex-col justify-start lg:justify-center px-6 sm:px-12 lg:px-24 py-14 sm:py-16 lg:py-20 ${center ? 'items-center text-center' : ''}`}>
         {children}
       </div>
     </div>
@@ -35,7 +35,7 @@ export function GregAnswerSlide() {
         The answer: <span className="text-orange-400">identity, compliance, and settlement — inside the asset.</span>
       </h1>
       <p className="text-[#fefefe] font-medium text-base sm:text-lg lg:text-xl mt-3 max-w-[92ch] leading-snug">A digital dollar that carries its own proof of who may hold it, and settles peer-to-peer the moment that proof checks out.</p>
-      <div className="shrink-0 grid grid-cols-3 gap-5 lg:gap-7 mt-9">
+      <div className="shrink-0 grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-7 mt-7 lg:mt-9">
         {[
           ['Identity', 'The Receive Predicate decides who may receive — KYC, jurisdiction, and accreditation, programmed into the asset.'],
           ['Compliance', 'Enforced by the asset itself. If the recipient cannot satisfy the rule, the transfer simply does not form.'],
@@ -66,7 +66,7 @@ export function GregPortfolioSlide() {
         </h1>
         <p className="text-[#fefefe] font-medium text-base sm:text-lg lg:text-xl mt-3 max-w-[92ch] leading-snug">250+ companies across payments, identity, and banking — the open building blocks of an inclusive financial system.</p>
       </div>
-      <div className="shrink-0 mt-10 grid grid-cols-7 gap-x-6 gap-y-5">
+      <div className="shrink-0 mt-8 lg:mt-10 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-x-6 gap-y-5">
         {portfolio.map((name) => (
           <span key={name} className="text-[#D6D6D0] text-base lg:text-2xl leading-none" style={{ fontFamily: anton, opacity: 0.9 }}>{name}</span>
         ))}
