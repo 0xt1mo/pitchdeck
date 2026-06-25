@@ -73,13 +73,13 @@ function ModuleSlide({ eyebrow, main, sub, does, how, govern }: { eyebrow: strin
 export function PadraShiftSlide() {
   return (
     <Shell>
-      <H main='The patient journey is <span class="o">going agentic.</span>' sub="Padra reports over a million cases in 25 years — five markets, 40+ surgery rooms in Dubai, every patient arriving first by WhatsApp." />
+      <H main='The patient journey is <span class="o">going agentic.</span>' sub="Padra reports over a million cases in 25 years — Saudi Arabia, the UAE, Qatar, Kuwait, and Canada — every patient arriving first by WhatsApp." />
       <div className="shrink-0 flex flex-col lg:flex-row lg:items-start gap-5 lg:gap-14 mt-6 lg:mt-8">
         <div className="shrink-0">
           <div className="text-orange-400 leading-[0.8]" style={{ fontFamily: anton, fontSize: 'min(168px, 17vw)' }}>~20→3</div>
           <div className="text-[#9E9E96] uppercase tracking-wide text-sm lg:text-base mt-3 max-w-[34ch] leading-snug">human agents per branch — Padra's own target as the AI takes the routine load</div>
         </div>
-        <Core className="mt-0" html="A medical-tourism clinic runs on the phone before it runs in the chair — inquiry, photos, a price, travel, booking, aftercare, all remote, in Arabic and English, across four time zones. Padra is automating that journey on Odoo, XCALLY, and HubSpot. <b>The agents are about to start acting on real systems.</b>" />
+        <Core className="mt-0" html="A medical-tourism clinic runs on the phone before it runs in the chair — inquiry, photos, a price, travel, booking, aftercare, all remote, in Arabic and English, across five markets. Padra is automating that journey on Odoo, XCALLY, and HubSpot. <b>The agents are about to start acting on real systems.</b>" />
       </div>
     </Shell>
   );
@@ -90,7 +90,7 @@ export function PadraDangerSlide() {
   return (
     <Shell>
       <H main='The moment an agent acts, <span class="o">it becomes a liability.</span>' sub="Answering a question is safe. Quoting a graft price, booking surgery, or holding a patient's photos is not." />
-      <Core html="An agent that writes to Odoo, sends a price, or moves a medical image is taking a regulated action no one approved and no one can replay. In the UAE, patient data cannot even leave the country. <b>This is why agentic projects stall</b> — Gartner expects more than 40% to be scrapped by 2027, with compliance the top blocker. The voicebot is the easy part. Control is the hard part." />
+      <Core html="An agent that writes to Odoo, sends a price, or moves a medical image is taking a regulated action no one approved and no one can replay. In Saudi Arabia and the UAE, patient data is barred from leaving the country. <b>This is why agentic projects stall</b> — Gartner expects more than 40% to be scrapped by 2027, with compliance the top blocker. The voicebot is the easy part. Control is the hard part." />
       <div className="shrink-0 grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-4 mt-7">
         {[
           ['Quotes a price', 'with no doctor behind it'],
@@ -161,7 +161,7 @@ export function PadraWhyUnicitySlide() {
       <div className="shrink-0 grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-4 mt-8">
         {[
           ['Intercept', 'Every command checked beneath the app, before it touches Odoo or XCALLY'],
-          ['Resident', 'Swap in a UAE-hosted or local model — patient data never leaves the country'],
+          ['Resident', 'Run an in-country or local model — patient data stays resident in each market'],
           ['Provable', 'Tamper-evident audit of every action — verifiable, end to end'],
         ].map(([t, d]) => (
           <div key={t} className={cellCls}><div className={ctCls}>{t}</div><div className={ckCls}>{d}</div></div>
@@ -221,7 +221,7 @@ export function PadraModule1Slide() {
       main='Every lead, every channel, <span class="o">captured the instant it lands.</span>'
       sub="Speed-to-lead is the lever on a high-value procedure. The agent answers in seconds, in the patient's own language."
       does="Captures and qualifies inbound from WhatsApp, web, Instagram, and Facebook — in nine languages, Arabic dialects included (Saudi, Hijazi, Najdi, Qatari) — logging name, contact, age, and country, and handing VIP or critical cases to a human."
-      how="A Lead Capture agent runs as a sandboxed capsule inside Astrid, scoped to create leads in Odoo and nothing more. Its model is swappable — run a UAE-resident or local model so patient data never leaves the country."
+      how="A Lead Capture agent runs as a sandboxed capsule inside Astrid, scoped to create leads in Odoo and nothing more. Its model is swappable — run an in-country or local model so patient data stays resident in each market — Saudi Arabia, the UAE, and beyond."
       govern="A registered, revocable identity with least-privilege scope; controlled VIP handover; and a DLP scan on every message, so no patient data crosses the clinic boundary."
     />
   );
@@ -234,7 +234,7 @@ export function PadraModule2Slide() {
       sub="The most regulated, highest-stakes flow — pricing and medical images — automated everywhere except the diagnosis itself."
       does="Guides the patient through 4–6 diagnostic angles, opens the case for the doctor, relays the doctor's graft estimate the moment it is entered, and books from live Odoo availability."
       how="Photos move through secure execution and stay UAE-resident. The estimate is gated on a real doctor entry in Odoo. The agent pauses for approval, then continues — no human keystroke needed to relay."
-      govern="The Policy Engine, live: collect photos yes, diagnose never, quote only after the doctor, book only from live availability — and explicit, withdrawable consent before any image is stored (UAE PDPL)."
+      govern="The Policy Engine, live: collect photos yes, diagnose never, quote only after the doctor, book only from live availability — and explicit, withdrawable consent before any image is stored (UAE and Saudi data-protection law)."
     />
   );
 }
@@ -254,8 +254,8 @@ export function PadraModule4Slide() {
   return (
     <ModuleSlide
       eyebrow="Module 04 · Aftercare"
-      main='Aftercare becomes a program, <span class="o">not an inbound flood.</span>'
-      sub="Proactive recovery guidance and structured follow-up — the standard of care, delivered on schedule."
+      main='Aftercare that arrives <span class="o">before they ask.</span>'
+      sub="Recovery guidance and follow-up, delivered on schedule — the standard of care, every patient, every time."
       does="Delivers Day 3 (donor) and Day 10 (transplant) washing guidance, then requests recovery photos at the 1-, 3-, and 6-month marks, onto the doctor's dashboard."
       how="A scheduling engine fires each trigger; inbound photos move through secure execution and stay resident. Content-bound controls keep the agent on approved guidance and block out-of-scope medical advice."
       govern="Approved content only and never a new diagnosis; separate consent before storing follow-up photos; every image encrypted, role-restricted, inside the boundary; every touchpoint audited."
@@ -348,9 +348,9 @@ export function PadraDemoSlide() {
 export function PadraAskSlide() {
   return (
     <Shell>
-      <H main='Bring us the workflow <span class="o">no one will approve.</span>' sub="The 45-day challenge — turn your agents into operators you can trust." />
+      <H main='Ship the agent <span class="o">you cannot ship today.</span>' sub="The 45-day challenge — the one workflow your security team keeps blocking, made shippable." />
       <div className="shrink-0 mt-7 rounded-xl p-6 lg:p-8" style={{ border: '1px solid rgba(255,137,4,0.4)', background: 'linear-gradient(180deg, rgba(255,137,4,0.06), transparent)' }}>
-        <div className="text-[#fefefe] text-2xl lg:text-3xl" style={{ fontFamily: anton }}>Pick the one workflow <span className="text-orange-400">the team keeps refusing to sign off.</span></div>
+        <div className="text-[#fefefe] text-2xl lg:text-3xl" style={{ fontFamily: anton }}>Pick the workflow the security team <span className="text-orange-400">keeps blocking.</span></div>
         <p className="text-[#D6D6D0] text-base lg:text-2xl mt-4 leading-relaxed max-w-[104ch]">We stand up the hair-transplant lead-capture agent end to end — lead, consent, photos, doctor-approved estimate, booking, escalation — governed and audit-ready, on your Odoo and XCALLY.</p>
       </div>
       <p className="shrink-0 mt-7 text-[#fefefe] font-semibold text-xl lg:text-2xl">Permission before the agent acts. <span className="text-orange-400">Proof after every action.</span></p>
