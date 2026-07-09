@@ -52,8 +52,8 @@ export function RunawayComputeSlide() {
               className="text-[#fefefe]/90 text-sm sm:text-base lg:text-lg leading-snug"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              A poorly engineered agent stuck in a hallucination cycle can burn thousands in token costs.{' '}
-              <span className="text-orange-400">We provide the financial circuit breakers.</span>
+              On thin hospital margins, a poorly engineered agent stuck in a hallucination cycle can burn thousands in token costs.{' '}
+              <span className="text-orange-400">We provide the kernel-level circuit breakers.</span>
             </motion.p>
 
             <ul className="flex flex-col gap-3 lg:gap-4">

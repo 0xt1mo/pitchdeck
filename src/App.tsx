@@ -1,150 +1,65 @@
 import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
-import { IntroSlide } from './slides/IntroSlide';
 import { CoverSlide } from './slides/CoverSlide';
-import { PromiseSlide } from './slides/PromiseSlide';
-import { SharedLedgerSlide } from './slides/SharedLedgerSlide';
-import { AgentsSlide } from './slides/AgentsSlide';
-import { EdgePayoffSlide } from './slides/EdgePayoffSlide';
-import { UnbundledPayoffSlide } from './slides/UnbundledPayoffSlide';
-import { RetrofitSlide } from './slides/RetrofitSlide';
-import { CompetitionSlide } from './slides/CompetitionSlide';
-import { MarketSlide } from './slides/MarketSlide';
-import { ResourcesSlide } from './slides/ResourcesSlide';
-import { ProblemSlide } from './slides/ProblemSlide';
+import { WhyNowMagicAgentSlide } from './slides/WhyNowMagicAgentSlide';
+import { TheTrapSlide } from './slides/TheTrapSlide';
+import { FailureNarrativeSlide } from './slides/FailureNarrativeSlide';
+import { CostOfFailureSlide } from './slides/CostOfFailureSlide';
+import { KernelReframeSlide } from './slides/KernelReframeSlide';
 import { AutonomyStackSlide } from './slides/AutonomyStackSlide';
-import { CompleteAutonomyStackSlide } from './slides/CompleteAutonomyStackSlide';
-import { SolutionIntroSlide } from './slides/SolutionIntroSlide';
-import { ArchitectureStackSlide } from './slides/ArchitectureStackSlide';
-import { CompetitiveLandscapeSlide } from './slides/CompetitiveLandscapeSlide';
-import { SecurityNetworkSlide } from './slides/SecurityNetworkSlide';
-import { UseCasesSlide } from './slides/UseCasesSlide';
-import { SemanticFirewallSlide } from './slides/SemanticFirewallSlide';
-import { IndirectInjectionSlide } from './slides/IndirectInjectionSlide';
+import { DeploymentModelHtmlSlide } from './slides/DeploymentModelHtmlSlide';
+import { WhyDifferentSlide } from './slides/WhyDifferentSlide';
+import { EfficiencyPayoffSlide } from './slides/EfficiencyPayoffSlide';
+import { ComplianceConsoleSlide } from './slides/ComplianceConsoleSlide';
+import { WhoWeAreSlide } from './slides/WhoWeAreSlide';
+import { ContactSlide } from './slides/ContactSlide';
+// ── Appendix ──
+import { UseCasesAppendixSlide } from './slides/UseCasesAppendixSlide';
 import { ShadowAISlide } from './slides/ShadowAISlide';
 import { DLPSlide } from './slides/DLPSlide';
 import { RunawayComputeSlide } from './slides/RunawayComputeSlide';
 import { IntelligentRoutingSlide } from './slides/IntelligentRoutingSlide';
-import { AgentSphereDashboardSlide } from './slides/AgentSphereDashboardSlide';
-import { AgentSprawlSlide } from './slides/AgentSprawlSlide';
-import { WedgeSlide } from './slides/WedgeSlide';
-import { ProtocolSlide } from './slides/ProtocolSlide';
-import { GoToMarketSlide } from './slides/GoToMarketSlide';
-import { ProjectionsSlide } from './slides/ProjectionsSlide';
-import { TokenSlide } from './slides/TokenSlide';
-import { BusinessModelSlide } from './slides/BusinessModelSlide';
-import { IntellectualArcSlide } from './slides/IntellectualArcSlide';
-import { AppendixDividerSlide } from './slides/AppendixDividerSlide';
-import { ThePathSlide } from './slides/ThePathSlide';
-import { TeamSlide } from './slides/TeamSlide';
-import { RaiseSlide } from './slides/RaiseSlide';
-import { ThankYouChatSlide } from './slides/ThankYouChatSlide';
-import { AppendixSlide } from './slides/AppendixSlide';
 import { TechnicalAppendixDividerSlide } from './slides/TechnicalAppendixDividerSlide';
-import { KernelDividerSlide, BlockchainDividerSlide, ProductDividerSlide } from './slides/SectionDividerSlide';
 import { AstridSlide } from './slides/AstridSlide';
 import { AstridComparisonSlide } from './slides/AstridComparisonSlide';
 import { AstridUseCasesSlide } from './slides/AstridUseCasesSlide';
-import { BlockchainArchSlide } from './slides/BlockchainArchSlide';
-import { ZKOracleSlide } from './slides/ZKOracleSlide';
-import { PermissionlessSlide } from './slides/PermissionlessSlide';
-import { SettlementSlide } from './slides/SettlementSlide';
-import { AgentsSmartContractsSlide } from './slides/AgentsSmartContractsSlide';
-import { ChainAgnosticSlide } from './slides/ChainAgnosticSlide';
-import { DemoSlide } from './slides/DemoSlide';
 import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
-import { CompetitionMinimalSlide } from './slides/CompetitionMinimalSlide';
-import { EnterpriseDeploymentSlide } from './slides/EnterpriseDeploymentSlide';
-import { DeploymentModelSlide } from './slides/DeploymentModelSlide';
-import { DeploymentModelHtmlSlide } from './slides/DeploymentModelHtmlSlide';
-import { ConciergeSlide } from './slides/ConciergeSlide';
-import { OperatorPayoffSlide } from './slides/OperatorPayoffSlide';
-import { TelecomUseCasesSlide } from './slides/TelecomUseCasesSlide';
-import { UseCasesAppendixSlide } from './slides/UseCasesAppendixSlide';
-import { WhyDifferentSlide } from './slides/WhyDifferentSlide';
-import { TelecomOpportunitySlide } from './slides/TelecomOpportunitySlide';
-import { WhoWeAreSlide } from './slides/WhoWeAreSlide';
-import { ContactSlide } from './slides/ContactSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  // ── ACT I — The Moment ──
-  CoverSlide,                // 1. Cover — Unicity for Telecom
-  TelecomOpportunitySlide,   // 2. The Opportunity — Every subscriber gets a Personal AI Agent
-  ProblemSlide,              // 3. The Fourth Rebuild of Compute
-  MarketSlide,               // 4. Market Opportunity
+  // ══ HEALTHCARE DECK ══
+  // ── The tension (build it, don't resolve) ──
+  CoverSlide,                // 1. Cover — The Secure Agentic Compute Platform for Healthcare
+  WhyNowMagicAgentSlide,     // 2. Why now — The Magic Agent has arrived
+  TheTrapSlide,              // 3. The trap — the most regulated behaviors on earth
+  FailureNarrativeSlide,     // 4. How it breaks — It's 2AM. No one is on the line. (CENTERPIECE)
+  CostOfFailureSlide,        // 5. The cost of failure — Four regimes. Each with teeth.
 
-  // ── ACT II — The Platform ──
-  AutonomyStackSlide,        // 5. Unicity: The Secure AI Compute Platform
-  WhyDifferentSlide,         // 6. The first secure, affordable, provable platform
+  // ── The resolution (problem → platform) ──
+  KernelReframeSlide,        // 6. The opportunity — Prompts aren't a boundary. Kernels are.
+  AutonomyStackSlide,        // 7. The platform — Unicity: the secure AI compute platform
+  DeploymentModelHtmlSlide,  // 8. Deployment — Runs inside your infrastructure
+  WhyDifferentSlide,         // 9. Why we're different — securely, efficiently, provably
+  EfficiencyPayoffSlide,     // 10. The payoff — Now you can actually deploy it
+  ComplianceConsoleSlide,    // 11. The console — One pane of glass. Every regulated action.
 
-  // ── ACT III — The Story ──
-  ConciergeSlide,            // 7. Subscriber concierge — what subscribers see
-  OperatorPayoffSlide,       // 8. Every tap is revenue you own — the operator's view
-  TelecomUseCasesSlide,      // 9. New value-added services for enterprise + consumer
+  // ── The close ──
+  WhoWeAreSlide,             // 12. Team — Built by infrastructure veterans
+  ContactSlide,              // 13. CTA — See an agent hit a regulated boundary — and get stopped
 
-  // ── ACT IV — The Proof ──
-  DeploymentModelHtmlSlide,  // 10. Deployment inside operator infrastructure
-  WhoWeAreSlide,             // 11. Team
-  ContactSlide,              // 12. Get Started — Own the agent layer / Book a live demo
-  // ThankYouChatSlide,      // hidden — Thank You (rolled into ContactSlide closer)
-
-  // ── APPENDIX — additional use case deep-dives ──
-  UseCasesAppendixSlide,   // 13. Appendix divider — Additional Use Cases
-  ShadowAISlide,           // 14. appendix — Agent Sprawl & Shadow AI
-  DLPSlide,                // 15. appendix — Data Loss Prevention
-  RunawayComputeSlide,     // 16. appendix — Cost Control
-  IntelligentRoutingSlide, // 17. appendix — Intelligent Routing
+  // ── APPENDIX — additional use cases ──
+  UseCasesAppendixSlide,     // Appendix divider — Additional Use Cases
+  ShadowAISlide,             // Agent Sprawl & Shadow AI
+  DLPSlide,                  // PHI Exfiltration Prevention
+  RunawayComputeSlide,       // Cost Control
+  IntelligentRoutingSlide,   // Intelligent Routing
 
   // ── TECHNICAL APPENDIX — Kernel & Security deep-dives ──
-  TechnicalAppendixDividerSlide, // 18. Technical Appendix divider
-  AstridSlide,             // 19. AOS: The Kernel
-  AstridComparisonSlide,   // 20. Why AOS — comparison table
-  AstridUseCasesSlide,     // 21. Swap a Capsule. Change Everything.
-  InterceptFabricSlide,    // 22. Semantic Intercept Fabric
-
-  // ── Hidden (other) ──
-  // CompetitionMinimalSlide, // Competition / Everyone else watches the agent
-  // SemanticFirewallSlide,  // The Semantic Firewall
-  // DeploymentModelSlide,   // earlier all-SVG version
-  // EnterpriseDeploymentSlide, // older MSSP version
-  // UseCasesSlide,          // Enterprise Case Studies (replaced by TelecomUseCasesSlide)
-  // ── Hidden ──
-  // IntroSlide,             // Autonomous AI needs an internet built for machines
-  // SolutionIntroSlide,     // Unicity OS: A Secure OS for AI Agents
-  // CompleteAutonomyStackSlide, // The First Complete Stack Built For Machines
-  // GoToMarketSlide,        // Beachhead: The UAE
-  // TeamSlide,              // Founders Who've Done This Before (replaced by WhoWeAreSlide)
-  // ArchitectureStackSlide, // The Secure OS for Agents
-  // AgentsSlide,            // The Unicity L1
-  // EdgePayoffSlide,        // What This Unlocks
-  // CompetitiveLandscapeSlide, // We're Betting on a Different Architecture
-  // WedgeSlide,             // Wedge content folded into UseCasesSlide
-  // SecurityNetworkSlide,   // Zero Trust Enterprise Network
-  // ProtocolSlide,          // x402 Live Demo
-  // AgentSprawlSlide,       // Case Study: Agent Sprawl
-  // ThePathSlide,           // Current Status and How We Win
-  // RaiseSlide,             // From Mainnet Launch to Initial Scale
-  // IndirectInjectionSlide, // Stopping the Indirect Injection
-  // UnbundledPayoffSlide,   // merged Unbundling + Unlocks attempt
-  // ProjectionsSlide,       // The World If We Win
-  // BusinessModelSlide,     // Business Model — Four Surfaces. One Platform.
-  // ResourcesSlide,         // Essential Resources
-  // ── Appendix — all hidden ──
-  // AppendixDividerSlide,    // hidden — Appendix · Technology section break
-  // CompetitionSlide,        // hidden — Competition / architectural arc
-  // SharedLedgerSlide,       // hidden — Every blockchain from Bitcoin to MegaETH is the same 17-year-old design
-  // IntellectualArcSlide,    // hidden — Unbundling what the network has to do
-  // PromiseSlide,            // hidden — Satoshi: Peer-to-Peer Electronic Cash
-  // BlockchainArchSlide,     // hidden — Protocol Stack
-  // ZKOracleSlide,           // hidden — ZK Oracle
-  // PermissionlessSlide,     // hidden — Hierarchical Scaling
-  // SettlementSlide,         // hidden — Settlement
-  // ChainAgnosticSlide,      // hidden — Chain-Agnostic Operations
-  // AgentsSmartContractsSlide, // hidden — Agents-as-Smart-Contracts
-  // TokenSlide,              // hidden — Tokenomics
-  // AgentSphereDashboardSlide, // hidden — original 4-pillar enterprise dashboard
-  // RetrofitSlide,           // hidden — You Can't Retrofit an EVM into Autonomous AI
+  TechnicalAppendixDividerSlide, // Technical Appendix divider
+  AstridSlide,               // AOS: The Kernel
+  AstridComparisonSlide,     // Why AOS — comparison table
+  AstridUseCasesSlide,       // Swap a Capsule. Change Everything.
+  InterceptFabricSlide,      // Semantic Intercept Fabric
 ];
 
 export default function App() {
@@ -184,7 +99,10 @@ export default function App() {
     return () => window.removeEventListener('resize', check);
   }, []);
 
-  const CurrentSlideComponent = slides[currentSlide];
+  const CurrentSlideComponent = slides[currentSlide] as React.ComponentType<{
+    onNext?: () => void;
+    goToSlide?: (index: number) => void;
+  }>;
 
   if (isMobile) {
     return (

@@ -35,7 +35,7 @@ const properties = [
   },
   {
     name: 'CLEARANCE-AWARE',
-    body: 'Sensitive context is only ever routed to a target authorised to receive it.',
+    body: 'PHI is only ever routed to a PHI-authorized target — never to a model that isn\'t.',
   },
   {
     name: 'RECORDED',

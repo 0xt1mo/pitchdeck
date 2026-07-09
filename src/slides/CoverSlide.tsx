@@ -84,7 +84,7 @@ export function CoverSlide() {
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
           THE SECURE AGENTIC COMPUTE PLATFORM{' '}
-          <span className="text-orange-400">FOR TELECOM.</span>
+          <span className="text-orange-400">FOR HEALTHCARE.</span>
         </motion.h1>
 
         {/* Divider */}

@@ -49,8 +49,8 @@ export function ContactSlide() {
           className="text-[#fefefe] text-[36px] sm:text-[56px] lg:text-[80px] xl:text-[96px] leading-[0.96] tracking-tight uppercase shrink-0"
           style={{ fontFamily: display }}
         >
-          OWN THE AGENT LAYER{' '}
-          <span className="text-orange-400">BEFORE SOMEONE ELSE DOES.</span>
+          SEE AN AGENT HIT A REGULATED BOUNDARY —{' '}
+          <span className="text-orange-400">AND GET STOPPED.</span>
         </motion.h1>
 
         {/* Description */}
@@ -61,7 +61,7 @@ export function ContactSlide() {
           className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg leading-relaxed shrink-0 max-w-2xl"
           style={{ fontFamily: mono }}
         >
-          See an agent book, pay, and settle end-to-end — live, on your own infrastructure.
+          Watch an agent attempt a prescription, a cross-border transfer, an unconsented store — and get intercepted in-path, live, on your own infrastructure.
         </motion.p>
 
         {/* CTA button */}

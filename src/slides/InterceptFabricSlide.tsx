@@ -113,8 +113,8 @@ export function InterceptFabricSlide() {
               className="text-[#fefefe]/80 text-xs sm:text-sm lg:text-base leading-[1.55]"
               style={{ fontFamily: font }}
             >
-              Goes beyond <span className="text-orange-400 font-bold">action-based</span> policies to include{' '}
-              <span className="text-orange-400 font-bold">content-based</span> semantic security controls — prompt injection, indirect prompt injection, data leakage — with domain-specific ontologies.
+              The enforcement point for <span className="text-orange-400 font-bold">HIPAA, GDPR, and AI-Act</span> policy. Goes beyond <span className="text-orange-400 font-bold">action-based</span> controls to include{' '}
+              <span className="text-orange-400 font-bold">content-based</span> ones — prompt injection, indirect injection, PHI leakage — with domain-specific clinical ontologies.
             </p>
 
             <div>

@@ -19,7 +19,7 @@ const stack: StackLayer[] = [
   {
     product: 'UNICITY AOS',
     label: 'MULTI-TENANT SECURE OS',
-    detail: 'Executes the agents. Capsules provide multi-tenancy and isolation. Every prompt, tool call, and decision passes through it — proactive safety policy, goal focus and budget enforcement, with tokenized execution trace for analysis and compliance, with hard policy rules on tool interactions.',
+    detail: 'Executes the agents. Capsules provide multi-tenancy and isolation. Every prompt, tool call, and clinical decision passes through it — regulated actions are intercepted in-path, with hard policy rules and a tokenized execution trace for audit and compliance.',
     tags: 'KERNEL · POLICY · INTERCEPT',
     variant: 'mid',
   },
@@ -36,7 +36,7 @@ const requirements = [
   'Identity',
   'Execution',
   'Governance',
-  'Payments',
+  'Compliance',
 ];
 
 export function AutonomyStackSlide() {
@@ -71,7 +71,7 @@ export function AutonomyStackSlide() {
             className="mt-3 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Every requirement autonomy demands, delivered as one protocol stack.
+            Bring any agent. Every regulated clinical action passes through one enforcement stack.
           </motion.p>
         </div>
 

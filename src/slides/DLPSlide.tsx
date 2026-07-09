@@ -2,16 +2,16 @@ import { motion } from 'framer-motion';
 
 const bullets = [
   {
-    label: 'INLINE REDACTION',
-    body: 'Detect and mask PII, credentials, and corporate secrets in the prompt before inference.',
+    label: 'INLINE PHI REDACTION',
+    body: 'Detect and mask PHI, PII, and identifiers in the prompt before inference ever runs.',
   },
   {
-    label: 'INJECTION DEFENSE',
-    body: 'Blocks agents manipulated into leaking data via indirect prompt injections.',
+    label: 'GOVERNED PIPES',
+    body: 'Sanctioned, monitored routes replace personal ChatGPT accounts and unmanaged tools.',
   },
   {
     label: 'COMPLIANCE LOGS',
-    body: 'Cryptographic, tamper-evident logs of all data touched by agents for compliance audits.',
+    body: 'Cryptographic, tamper-evident logs of all patient data touched by agents, for HIPAA/GDPR audit.',
   },
 ];
 
@@ -28,7 +28,7 @@ export function DLPSlide() {
             className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.4em] uppercase font-bold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Use Case · Data Loss Prevention
+            Use Case · PHI Exfiltration Prevention
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -37,8 +37,8 @@ export function DLPSlide() {
             className="text-[#fefefe] text-[36px] sm:text-[52px] lg:text-[72px] xl:text-[84px] leading-[0.95] tracking-tight uppercase mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            DATA LOSS PREVENTION{' '}
-            <span className="text-orange-400">(DLP).</span>
+            PHI EXFILTRATION{' '}
+            <span className="text-orange-400">PREVENTION.</span>
           </motion.h1>
         </div>
 
@@ -52,7 +52,7 @@ export function DLPSlide() {
               className="text-[#fefefe]/90 text-sm sm:text-base lg:text-lg leading-snug"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Unicity sits directly in the transport flow, inspecting LLM payloads before they ever leave the corporate perimeter to prevent exfiltration.
+              Unicity sits directly in the transport flow, inspecting LLM payloads before they ever leave the hospital perimeter — so patient data can&apos;t be exfiltrated into an unauthorized model.
             </motion.p>
 
             <ul className="flex flex-col gap-3 lg:gap-4">

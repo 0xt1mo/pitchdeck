@@ -56,7 +56,7 @@ export function ShadowAISlide() {
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
               <span className="text-[#fefefe] font-bold">You cannot secure what you cannot see.</span>{' '}
-              Unicity acts as the mandatory registration and monitoring layer for all machine identity in the enterprise.
+              Shadow AI is present in <span className="text-orange-400">~40% of hospitals</span>, and <span className="text-orange-400">~57% of professionals</span> have used unauthorized tools — PHI pasted into a consumer LLM is an irreversible exposure legacy DLP and SIEM miss. Unicity is the mandatory registration and monitoring layer for all machine identity.
             </motion.p>
 
             <ul className="flex flex-col gap-3 lg:gap-4">

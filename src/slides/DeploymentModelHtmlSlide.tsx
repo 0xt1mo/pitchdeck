@@ -50,8 +50,9 @@ export function DeploymentModelHtmlSlide() {
             className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg xl:text-xl leading-[1.5] mt-3 lg:mt-5 max-w-5xl"
             style={{ fontFamily: mono }}
           >
-            QVAC on the user’s device. Astrid OS in your network.{' '}
-            <span className="text-[#fefefe] font-bold">Agent activity and user data never leave your boundary.</span>
+            The agent runs inside your network, behind a single egress gate.{' '}
+            <span className="text-[#fefefe] font-bold">Patient data and the clinical moment never leave your network</span>{' '}
+            — the GDPR, sovereignty, and cross-border-transfer answer, all at once.
           </motion.p>
         </div>
 

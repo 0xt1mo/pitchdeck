@@ -15,8 +15,8 @@ type Card = {
 const cards: Card[] = [
   {
     num: '01 · Securely',
-    benefit: 'Secure by architecture',
-    desc: "The agent runs inside your kernel, on your infrastructure. Every action is intercepted in-path — security can't be bypassed, and data never leaves your network.",
+    benefit: 'Prompt-proof boundaries',
+    desc: "The agent runs inside your kernel, on your infrastructure. Every regulated action is intercepted in-path — security can't be bypassed, and data never leaves your network.",
     feature: (
       <>
         <span className="text-[#cfcfcf] font-medium">AOS enforcement kernel</span>
@@ -32,7 +32,7 @@ const cards: Card[] = [
         works at scale
       </>
     ),
-    desc: "Intelligent routing sends each task to the cheapest model that can handle it, and multi-tenancy packs many agents onto the same hardware. Together they bring the cost per agent low enough to offer one to every subscriber — and still hold a margin when you resell.",
+    desc: "Intelligent routing sends each task to the cheapest model that can handle it, and multi-tenancy packs many agents onto the same hardware. Together they bring the cost per agent low enough to run one on every line — thin hospital margins included.",
     feature: (
       <>
         <span className="text-[#cfcfcf] font-medium">Intelligent routing + multi-tenancy</span>
@@ -44,11 +44,11 @@ const cards: Card[] = [
   {
     num: '03 · Provably',
     benefit: 'Provable, not just observed',
-    desc: "Every agent action lands in a tamper-evident record. You don't infer what an agent did from scattered logs — you have one definitive, audit-ready answer for regulators and customers.",
+    desc: "Every regulated action lands in a tamper-evident record. You don't infer what an agent did from scattered logs — you have one definitive, audit-ready answer. Exactly what an EU AI Act deployer is legally required to hold.",
     feature: (
       <>
         <span className="text-[#cfcfcf] font-medium">Tamper-evident audit</span>
-        {' · one definitive record'}
+        {' · AI Act deployer-ready'}
       </>
     ),
   },
@@ -98,7 +98,7 @@ export function WhyDifferentSlide() {
             style={{ fontFamily: sans }}
           >
             <span className="text-[#fefefe] font-medium">Unicity is the first secure, efficient, and provable agent compute platform</span>{' '}
-            — built for telecom from day one.
+            — the layer a hospital&apos;s compliance officer signs off on before an agent touches a patient.
           </motion.p>
         </div>
 
