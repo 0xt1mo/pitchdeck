@@ -54,27 +54,47 @@ import { DemoSlide } from './slides/DemoSlide';
 import { InterceptFabricSlide } from './slides/InterceptFabricSlide';
 import { CompetitionMinimalSlide } from './slides/CompetitionMinimalSlide';
 import { EnterpriseDeploymentSlide } from './slides/EnterpriseDeploymentSlide';
+import { DeploymentModelHtmlSlide } from './slides/DeploymentModelHtmlSlide';
+import { MSSPDeploymentSlide } from './slides/MSSPDeploymentSlide';
 import { WhoWeAreSlide } from './slides/WhoWeAreSlide';
 import { ContactSlide } from './slides/ContactSlide';
+import { AttackSurfaceSlide } from './slides/AttackSurfaceSlide';
+import { BlindSpotSlide } from './slides/BlindSpotSlide';
+import { NewServiceSlide } from './slides/NewServiceSlide';
+import { MSSPEconomicsSlide } from './slides/MSSPEconomicsSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  CoverSlide,                // 1. Cover — Unicity X CyberKnight
-  ProblemSlide,              // 2. The Fourth Rebuild of Compute
-  MarketSlide,               // 3. Market Opportunity
-  AutonomyStackSlide,        // 4. The Secure AI Compute Platform
-  AstridSlide,               // 5. AOS Kernel Architecture
-  CompetitionMinimalSlide,   // 6. Competition — Everyone else watches the agent
-  SemanticFirewallSlide,     // 7. The Semantic Firewall
-  EnterpriseDeploymentSlide, // 8. Enterprise Deployment — Inside the Firewall
-  UseCasesSlide,             // 9. Enterprise Case Studies (index)
-  ShadowAISlide,             // 10. Agent Sprawl & Shadow AI
-  DLPSlide,                  // 11. Data Loss Prevention
-  RunawayComputeSlide,       // 12. Cost Control
-  IntelligentRoutingSlide,   // 13. Intelligent Routing
-  WhoWeAreSlide,             // 14. Who We Are (globe + clients)
-  ContactSlide,              // 15. See It In Action — Contact
-  ThankYouChatSlide,         // 16. Thank You
+  // ══ MSSP DECK — the new managed service for the agentic era ══
+  CoverSlide,                // 1. Cover — Secure the agents your clients can't see
+  AttackSurfaceSlide,        // 2. The Shift — agents are the new attack surface
+  BlindSpotSlide,            // 3. The Blind Spot — your stack can't see them
+  NewServiceSlide,           // 4. The Opportunity — a new service only you can sell
+
+  // ── The platform that makes it deliverable ──
+  AutonomyStackSlide,        // 5. The Secure AI Compute Platform
+  AstridSlide,               // 6. AOS Kernel Architecture
+  SemanticFirewallSlide,     // 7. The Semantic Firewall — enforce, don't just watch
+  CompetitionMinimalSlide,   // 8. Competition — everyone else only watches the agent
+  MSSPDeploymentSlide,        // 9. Deployment — one console, every client sealed (multi-tenant hero)
+  DeploymentModelHtmlSlide,   // 9b. Deployment zoom-in — inside a single client's boundary
+
+  // ── The business ──
+  MSSPEconomicsSlide,        // 10. The Economics — recurring revenue per protected agent
+  // WhoWeAreSlide,          // dropped — Who We Are (globe + clients)
+  // ContactSlide,           // dropped — See It In Action — Contact
+  // ThankYouChatSlide,      // dropped — Thank You
+
+  // ── APPENDIX — service capability deep-dives ──
+  UseCasesSlide,             // Enterprise Case Studies (index)
+  ShadowAISlide,             // Agent Sprawl & Shadow AI
+  DLPSlide,                  // Data Loss Prevention
+  RunawayComputeSlide,       // Cost Control
+  IntelligentRoutingSlide,   // Intelligent Routing
+
+  // ── Hidden (generic Unicity narrative — replaced by MSSP arc) ──
+  // ProblemSlide,           // The Fourth Rebuild of Compute
+  // MarketSlide,            // Market Opportunity
   // ── Hidden ──
   // IntroSlide,             // Autonomous AI needs an internet built for machines
   // SolutionIntroSlide,     // Unicity OS: A Secure OS for AI Agents

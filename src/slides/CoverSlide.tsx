@@ -22,14 +22,14 @@ export function CoverSlide() {
             className="text-[#fefefe]/65 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Unicity X CyberKnight
+            Unicity · Secure Agentic Compute
           </span>
         </div>
         <span
           className="text-[#fefefe]/45 text-[10px] sm:text-xs lg:text-sm tracking-[0.32em]"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          01 / 9
+          For Managed Security Providers
         </span>
       </div>
 
@@ -68,8 +68,6 @@ export function CoverSlide() {
           className="flex items-center gap-6 lg:gap-8 shrink-0"
         >
           <img src="/UnicityLogo.svg" alt="Unicity" className="h-10 lg:h-14 w-auto" />
-          <span className="text-orange-400 text-base lg:text-xl font-light">×</span>
-          <img src="/cyberknight.svg" alt="CyberKnight" className="h-10 lg:h-14 w-auto" />
         </motion.div>
 
         {/* Eyebrow */}
@@ -80,7 +78,7 @@ export function CoverSlide() {
           className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.32em] uppercase font-bold shrink-0 -mt-2"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Product Overview · June 2026
+          The new managed service for the agentic era
         </motion.p>
 
         {/* Headline */}
@@ -91,8 +89,8 @@ export function CoverSlide() {
           className="text-[#fefefe] text-[48px] sm:text-[72px] lg:text-[112px] xl:text-[132px] leading-[0.95] tracking-tight uppercase shrink-0"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          A SECURE COMPUTE PLATFORM<br />
-          <span className="text-orange-400">FOR AI.</span>
+          SECURE THE AGENTS<br />
+          YOUR CLIENTS <span className="text-orange-400">CAN'T SEE.</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -103,7 +101,7 @@ export function CoverSlide() {
           className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg shrink-0"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Product overview for CyberKnight technical review.
+          A new managed service on the platform built to govern autonomous AI — identity, enforcement, and audit for every agent your clients deploy.
         </motion.p>
 
         {/* Divider */}
@@ -113,24 +111,6 @@ export function CoverSlide() {
           transition={{ delay: 1, duration: 0.6 }}
           className="h-[1px] w-40 sm:w-56 lg:w-72 bg-orange-500/60 origin-left shrink-0"
         />
-
-        {/* Credits */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.05, duration: 0.5 }}
-          className="flex flex-col gap-1 shrink-0"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          <p className="text-[#fefefe]/65 text-[10px] sm:text-xs lg:text-sm tracking-[0.24em] uppercase">
-            Mike Gault · CEO ·{' '}
-            <span className="text-orange-400/85 tracking-normal normal-case">mike@unicity-labs.com</span>
-          </p>
-          <p className="text-[#fefefe]/65 text-[10px] sm:text-xs lg:text-sm tracking-[0.24em] uppercase">
-            Alan Radi · Commercial ·{' '}
-            <span className="text-orange-400/85 tracking-normal normal-case">alan.radi@unicity-labs.com</span>
-          </p>
-        </motion.div>
 
       </div>
     </div>
