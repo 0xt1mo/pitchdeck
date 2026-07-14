@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 type StackLayer = {
@@ -10,34 +11,56 @@ type StackLayer = {
 
 const stack: StackLayer[] = [
   {
-    product: 'AGENT FRAMEWORKS',
-    label: 'THE APPLICATION LAYER',
-    detail: 'Bring your own agent — any framework, any model.',
-    tags: 'LANGCHAIN · OPENCLAW · AUTOGEN · CUSTOM',
+    product: 'AGENT HARNESSES',
+    label: '',
+    detail: 'Bring or build your own agent.',
+    tags: 'CLAUDE CODE · CODEX · GROK CODE',
     variant: 'top',
   },
   {
     product: 'UNICITY AOS',
     label: 'MULTI-TENANT SECURE OS',
-    detail: 'Executes the agents. Capsules provide multi-tenancy and isolation. Every prompt, tool call, and decision passes through it — proactive safety policy, goal focus and budget enforcement, with tokenized execution trace for analysis and compliance, with hard policy rules on tool interactions.',
+    detail: 'Executes every agent — multi-tenant and isolated. Every prompt, tool call, and decision passes through the kernel, where policy, budgets, and audit are enforced below the agent.',
     tags: 'KERNEL · POLICY · INTERCEPT',
     variant: 'mid',
   },
   {
-    product: 'UNICITY BLOCKCHAIN',
-    label: 'PROOF SYSTEM · FORMAL VERIFICATION',
-    detail: 'State tokenization. Verifiable execution. Cryptographic identity. Value transfer.',
+    product: 'UNICITY PROOF SYSTEM',
+    label: 'CRYPTOGRAPHIC PROOF OF EXECUTION',
+    detail: 'A purpose-built blockchain for verifiable execution, identity, and multi-agent coordination — the source of truth beneath the execution layer.',
     tags: '',
     variant: 'bottom',
   },
 ];
 
-const requirements = [
-  'Identity',
-  'Execution',
-  'Governance',
-  'Payments',
-];
+// Harness chips render their brand logo where we have one; others fall back to text.
+const HARNESS_LOGOS: Record<string, string> = {
+  'CLAUDE CODE': '/logos/claude.svg',
+  'CODEX': '/logos/openai-mark.webp',
+  'GROK CODE': '/logos/grok-code.svg',
+};
+
+function HarnessChip({ label, logo }: { label: string; logo?: string }) {
+  const [failed, setFailed] = useState(false);
+  return (
+    <span
+      className="rounded-md px-3 py-1.5 flex items-center text-[#fefefe] text-xs sm:text-sm lg:text-base tracking-[0.06em] uppercase"
+      style={{ fontFamily: "'Geist Mono', monospace", background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.22)' }}
+    >
+      {logo && !failed ? (
+        <img
+          src={logo}
+          alt={label}
+          onError={() => setFailed(true)}
+          className="h-4 lg:h-5 w-auto"
+          style={{ filter: 'brightness(0) invert(1)', opacity: 0.9 }}
+        />
+      ) : (
+        label
+      )}
+    </span>
+  );
+}
 
 export function AutonomyStackSlide() {
   return (
@@ -59,10 +82,10 @@ export function AutonomyStackSlide() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[28px] sm:text-[36px] lg:text-[52px] xl:text-[68px] 2xl:text-[80px] leading-[0.95] tracking-tight uppercase mt-2 whitespace-nowrap"
+            className="text-[#fefefe] text-[30px] sm:text-[44px] lg:text-[60px] xl:text-[74px] leading-[0.95] tracking-tight uppercase mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            UNICITY: THE SECURE AI <span className="text-orange-400">COMPUTE PLATFORM.</span>
+            AN OS BUILT FOR THE DAY WHEN <span className="text-orange-400">NO ONE IS WATCHING.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -71,7 +94,7 @@ export function AutonomyStackSlide() {
             className="mt-3 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Every requirement autonomy demands, delivered as one protocol stack.
+            Every OS until now assumed a human at the keyboard. This one is built for the day when no one is watching — with the identity, enforcement, and proof to earn that autonomy safely, one step at a time.
           </motion.p>
         </div>
 
@@ -99,79 +122,53 @@ export function AutonomyStackSlide() {
               >
                 <span
                   className="block w-6 h-[2px] mt-3 shrink-0"
-                  style={{
-                    background:
-                      layer.variant === 'mid'
-                        ? '#f97316'
-                        : layer.variant === 'bottom'
-                        ? 'rgba(249,115,22,0.7)'
-                        : 'rgba(254,254,254,0.7)',
-                  }}
+                  style={{ background: '#f97316' }}
                 />
                 <div className="flex flex-col">
-                  <p
-                    className="text-[#fefefe] text-[22px] sm:text-[26px] lg:text-[32px] leading-none tracking-tight"
-                    style={{ fontFamily: "'Anton', sans-serif" }}
-                  >
-                    {layer.product}
-                  </p>
-                  <p
-                    className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.28em] uppercase font-bold mt-1.5"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}
-                  >
-                    {layer.label}
-                  </p>
+                  {/* Product name + harness logos on the same row */}
+                  <div className="flex items-center gap-3 lg:gap-4 flex-wrap">
+                    <p
+                      className="text-[#fefefe] text-[22px] sm:text-[26px] lg:text-[32px] leading-none tracking-tight"
+                      style={{ fontFamily: "'Anton', sans-serif" }}
+                    >
+                      {layer.product}
+                    </p>
+                    {layer.variant === 'top' && layer.tags && (
+                      <div className="flex flex-wrap items-center gap-2">
+                        {layer.tags.split(' · ').map((t) => (
+                          <HarnessChip key={t} label={t} logo={HARNESS_LOGOS[t]} />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  {layer.label && (
+                    <p
+                      className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.28em] uppercase font-bold mt-1.5"
+                      style={{ fontFamily: "'Geist Mono', monospace" }}
+                    >
+                      {layer.label}
+                    </p>
+                  )}
                   <p
                     className="text-[#fefefe]/75 text-xs sm:text-sm lg:text-base leading-snug mt-1"
                     style={{ fontFamily: "'Geist Mono', monospace" }}
                   >
                     {layer.detail}
                   </p>
-                  <p
-                    className="text-[#fefefe]/45 text-[10px] sm:text-xs tracking-[0.18em] uppercase mt-1.5"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}
-                  >
-                    {layer.tags}
-                  </p>
+                  {layer.variant !== 'top' && layer.tags && (
+                    <p
+                      className="text-[#fefefe]/45 text-[10px] sm:text-xs tracking-[0.18em] uppercase mt-1.5"
+                      style={{ fontFamily: "'Geist Mono', monospace" }}
+                    >
+                      {layer.tags}
+                    </p>
+                  )}
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Requirements box */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.0, duration: 0.6 }}
-          className="rounded-md px-5 py-3 shrink-0"
-          style={{ border: '1px solid rgba(249,115,22,0.30)' }}
-        >
-          <p
-            className="text-[#fefefe]/55 text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-2"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            Every Autonomy Requirement, Delivered
-          </p>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            {requirements.map((r, i) => (
-              <span key={r} className="flex items-center">
-                <span className="flex items-center gap-2">
-                  <span className="text-orange-400 text-base lg:text-lg font-bold">✓</span>
-                  <span
-                    className="text-[#fefefe] text-sm lg:text-base tracking-[0.18em] uppercase font-bold"
-                    style={{ fontFamily: "'Geist Mono', monospace" }}
-                  >
-                    {r}
-                  </span>
-                </span>
-                {i < requirements.length - 1 && (
-                  <span className="text-[#fefefe]/30 ml-5 hidden lg:inline">·</span>
-                )}
-              </span>
-            ))}
-          </div>
-        </motion.div>
 
       </div>
     </div>
@@ -251,13 +248,13 @@ export function IsoStackDiagram() {
         {centerLabel && (
           <text
             x={cx}
-            y={cy + 5}
+            y={variant === 'mid' ? cy + (centerSub ? 4 : 12) : cy + 11}
             textAnchor="middle"
             fill="#fefefe"
-            fontSize="14"
-            fontWeight="bold"
+            fontSize={variant === 'mid' ? 38 : 30}
             letterSpacing="2"
-            fontFamily="Geist Mono, monospace"
+            fontFamily="Anton, sans-serif"
+            style={{ textTransform: 'uppercase' }}
           >
             {centerLabel}
           </text>
@@ -265,11 +262,11 @@ export function IsoStackDiagram() {
         {centerSub && (
           <text
             x={cx}
-            y={cy + 22}
+            y={variant === 'mid' ? cy + 30 : cy + 22}
             textAnchor="middle"
             fill="rgba(254,254,254,0.7)"
-            fontSize="9"
-            letterSpacing="1.5"
+            fontSize={variant === 'mid' ? 12 : 9}
+            letterSpacing="2"
             fontFamily="Geist Mono, monospace"
           >
             {centerSub}

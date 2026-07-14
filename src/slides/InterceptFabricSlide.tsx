@@ -24,8 +24,8 @@ function Box({
     red: { border: 'rgba(248,113,113,0.50)', bg: 'rgba(248,113,113,0.10)', text: '#f87171' },
   };
   const c = palettes[variant];
-  const pad = size === 'lg' ? 'px-4 py-3' : size === 'sm' ? 'px-2.5 py-2' : 'px-3.5 py-2.5';
-  const titleSize = size === 'lg' ? 'text-sm lg:text-base' : size === 'sm' ? 'text-[11px] lg:text-xs' : 'text-xs lg:text-sm';
+  const pad = size === 'lg' ? 'px-5 py-4' : size === 'sm' ? 'px-3 py-3' : 'px-4 py-3.5';
+  const titleSize = size === 'lg' ? 'text-lg lg:text-2xl' : size === 'sm' ? 'text-sm lg:text-lg' : 'text-base lg:text-xl';
   return (
     <div
       className={`${pad} rounded-lg text-center`}
@@ -36,8 +36,8 @@ function Box({
       </p>
       {sub && (
         <p
-          className="text-[9px] lg:text-[10px] mt-1 leading-snug"
-          style={{ fontFamily: font, color: 'rgba(254,254,254,0.55)' }}
+          className="text-xs lg:text-sm mt-1.5 leading-snug"
+          style={{ fontFamily: font, color: 'rgba(254,254,254,0.6)' }}
         >
           {sub}
         </p>
@@ -86,7 +86,7 @@ export function InterceptFabricSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[46px] lg:text-[62px] xl:text-[74px] leading-[0.95] tracking-tight uppercase mt-2"
             style={{ fontFamily: fontTitle }}
           >
-            SEMANTIC INTERCEPT <span className="text-orange-400">FABRIC.</span>
+            SEMANTIC INTERCEPT: <span className="text-orange-400">DOMAIN ONTOLOGIES.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -110,7 +110,7 @@ export function InterceptFabricSlide() {
             className="flex flex-col gap-4 lg:gap-5"
           >
             <p
-              className="text-[#fefefe]/80 text-xs sm:text-sm lg:text-base leading-[1.55]"
+              className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl leading-[1.5]"
               style={{ fontFamily: font }}
             >
               Goes beyond <span className="text-orange-400 font-bold">action-based</span> policies to include{' '}
@@ -119,12 +119,12 @@ export function InterceptFabricSlide() {
 
             <div>
               <p
-                className="text-[#fefefe] text-xs sm:text-sm lg:text-base font-bold mb-3 tracking-[0.18em] uppercase"
+                className="text-[#fefefe] text-sm sm:text-base lg:text-lg font-bold mb-3 tracking-[0.18em] uppercase"
                 style={{ fontFamily: font }}
               >
                 A layered model:
               </p>
-              <div className="flex flex-col gap-2.5">
+              <div className="flex flex-col gap-3.5">
                 {[
                   { n: '1', name: 'Rule engine', text: 'High-performance pattern matching, candidate identification, rule evaluation. Dynamic rule updates.' },
                   { n: '2', name: 'ML Detection', text: 'Low-latency inference and anomaly detection. Plugin-expandable (ONNX-compatible) model loading.' },
@@ -132,13 +132,13 @@ export function InterceptFabricSlide() {
                 ].map((item) => (
                   <div key={item.n} className="flex gap-3 items-start">
                     <span
-                      className="text-orange-400 text-xs sm:text-sm lg:text-base font-bold shrink-0 mt-px"
+                      className="text-orange-400 text-base sm:text-lg lg:text-xl font-bold shrink-0"
                       style={{ fontFamily: font }}
                     >
                       {item.n}.
                     </span>
                     <p
-                      className="text-[#fefefe]/70 text-[11px] sm:text-xs lg:text-sm leading-[1.55]"
+                      className="text-[#fefefe]/75 text-sm sm:text-base lg:text-lg leading-[1.5]"
                       style={{ fontFamily: font }}
                     >
                       <span className="text-[#fefefe] font-bold">{item.name}</span>{' '}
@@ -150,7 +150,7 @@ export function InterceptFabricSlide() {
             </div>
 
             <p
-              className="text-[#fefefe]/45 text-[10px] sm:text-[11px] lg:text-xs leading-[1.55] mt-1"
+              className="text-[#fefefe]/50 text-xs sm:text-sm lg:text-base leading-[1.5] mt-1"
               style={{ fontFamily: font }}
             >
               Rust-based implementation with optimised search and rule algos. Targets low-latency classification, depending on context (risk tolerance, industry sector), message type, and depth of content screening required.
@@ -182,7 +182,7 @@ export function InterceptFabricSlide() {
             {/* Outcomes — inline pill row below Decision Engine */}
             <div className="flex items-center justify-center gap-2 mt-3">
               <span
-                className="px-3 py-1 rounded-md text-[11px] lg:text-xs font-bold tracking-[0.12em]"
+                className="px-4 py-1.5 rounded-md text-sm lg:text-lg font-bold tracking-[0.12em]"
                 style={{
                   fontFamily: font,
                   color: '#10b981',
@@ -193,7 +193,7 @@ export function InterceptFabricSlide() {
                 ALLOW
               </span>
               <span
-                className="px-3 py-1 rounded-md text-[11px] lg:text-xs font-bold tracking-[0.12em]"
+                className="px-4 py-1.5 rounded-md text-sm lg:text-lg font-bold tracking-[0.12em]"
                 style={{
                   fontFamily: font,
                   color: '#f87171',
@@ -204,7 +204,7 @@ export function InterceptFabricSlide() {
                 BLOCK
               </span>
               <span
-                className="px-3 py-1 rounded-md text-[11px] lg:text-xs font-bold tracking-[0.12em]"
+                className="px-4 py-1.5 rounded-md text-sm lg:text-lg font-bold tracking-[0.12em]"
                 style={{
                   fontFamily: font,
                   color: '#eab308',

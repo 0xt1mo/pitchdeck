@@ -8,17 +8,28 @@ type Competitor = {
 };
 
 const competitors: Competitor[] = [
-  { name: 'NeMo', tag: 'dialog SDK', note: 'Nvidia', pos: 'top' },
-  { name: 'Lakera', tag: 'API gateway', note: '→ Check Point · ~$300M', pos: 'top-l' },
-  { name: 'Geordie', tag: 'observability', note: 'independent', pos: 'top-r' },
-  { name: 'Protect AI', tag: 'model layer', note: '→ Palo Alto · ~$500M', pos: 'mid-l' },
-  { name: 'CalypsoAI', tag: 'inference layer', note: '→ F5 · $180M', pos: 'mid-r' },
+  { name: 'NeMo', tag: 'guardrail SDK', note: 'watches prompts', pos: 'top' },
+  { name: 'Lakera', tag: 'API gateway', note: 'watches traffic', pos: 'top-l' },
+  { name: 'Geordie', tag: 'observability', note: 'watches logs', pos: 'top-r' },
+  { name: 'Protect AI', tag: 'model scanning', note: 'watches models', pos: 'mid-l' },
+  { name: 'CalypsoAI', tag: 'inference proxy', note: 'watches inference', pos: 'mid-r' },
 ];
 
 export function CompetitionMinimalSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
       <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-16 py-7 sm:py-9 lg:py-11 justify-center gap-5 lg:gap-7">
+
+        {/* Kicker */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.4em] uppercase font-bold shrink-0"
+          style={{ fontFamily: "'Geist Mono', monospace" }}
+        >
+          How it fits your stack
+        </motion.p>
 
         {/* Headline */}
         <motion.h1
@@ -28,9 +39,9 @@ export function CompetitionMinimalSlide() {
           className="text-[28px] sm:text-[40px] lg:text-[56px] xl:text-[64px] leading-[0.98] tracking-tight uppercase shrink-0"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          <span className="text-[#fefefe]">EVERYONE ELSE WATCHES THE AGENT.</span>
+          <span className="text-[#fefefe]">THEY WATCH THE TRAFFIC.</span>
           <br />
-          <span className="text-orange-400">WE RUN IT AND PROVE ITS EXECUTION.</span>
+          <span className="text-orange-400">WE ARE THE RUNTIME BENEATH THEM.</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -41,8 +52,8 @@ export function CompetitionMinimalSlide() {
           className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl leading-snug shrink-0 max-w-6xl"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Verifiable execution and cryptographic guarantees of security — not behavioral inference, not log signals.{' '}
-          <span className="text-orange-400 font-bold">Proof.</span>
+          Gateways and observability tools watch traffic from the outside. Unicity AOS is the runtime the agent actually executes on — it{' '}
+          <span className="text-orange-400 font-bold">works alongside what you've already bought and replaces nothing on day one.</span>
         </motion.p>
 
         {/* Diagram */}
@@ -138,10 +149,10 @@ export function CompetitionMinimalSlide() {
             }}
           >
             <p
-              className="text-orange-400 text-[32px] sm:text-[40px] lg:text-[48px] leading-none tracking-tight"
+              className="text-orange-400 text-[26px] sm:text-[34px] lg:text-[42px] leading-none tracking-tight uppercase"
               style={{ fontFamily: "'Anton', sans-serif" }}
             >
-              AOS
+              Unicity AOS
             </p>
             <div className="text-right">
               <p

@@ -23,7 +23,7 @@ export function UseCasesAppendixSlide() {
           className="text-orange-400 text-sm sm:text-base lg:text-lg tracking-[0.4em] uppercase font-bold"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Appendix
+          For the enterprise
         </motion.p>
 
         {/* Headline */}
@@ -34,8 +34,8 @@ export function UseCasesAppendixSlide() {
           className="text-[#fefefe] text-[44px] sm:text-[72px] lg:text-[108px] xl:text-[128px] leading-[0.95] tracking-tight uppercase text-center"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          ADDITIONAL{' '}
-          <span className="text-orange-400">USE CASES.</span>
+          AOS{' '}
+          <span className="text-orange-400">ENTERPRISE.</span>
         </motion.h1>
 
         {/* Accent line */}

@@ -50,8 +50,8 @@ export function DeploymentModelHtmlSlide() {
             className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg xl:text-xl leading-[1.5] mt-3 lg:mt-5 max-w-5xl"
             style={{ fontFamily: mono }}
           >
-            QVAC on the user’s device. Astrid OS in your network.{' '}
-            <span className="text-[#fefefe] font-bold">Agent activity and user data never leave your boundary.</span>
+            The whole OS runs inside your network, behind one egress gate.{' '}
+            <span className="text-[#fefefe] font-bold">Agent activity and data never leave your boundary.</span>
           </motion.p>
         </div>
 
@@ -214,7 +214,7 @@ export function DeploymentModelHtmlSlide() {
                 fontFamily: mono,
               }}
             >
-              A2A networking + payments
+              Agent-to-agent + external services
             </p>
           </div>
         </motion.div>
@@ -307,7 +307,7 @@ function AOSBox({
         className="text-orange-400 text-sm sm:text-base lg:text-lg uppercase leading-tight"
         style={{ fontFamily: display, letterSpacing: '0.01em' }}
       >
-        AOS · Hosting Environment
+        Unicity AOS · Hosting Environment
       </p>
       <p className="text-[#d59a6f] text-[10px] sm:text-xs lg:text-sm mt-1 leading-snug">
         Enforcement kernel · WASM sandbox · budgets

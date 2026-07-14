@@ -65,43 +65,88 @@ import { WhyDifferentSlide } from './slides/WhyDifferentSlide';
 import { TelecomOpportunitySlide } from './slides/TelecomOpportunitySlide';
 import { WhoWeAreSlide } from './slides/WhoWeAreSlide';
 import { ContactSlide } from './slides/ContactSlide';
+// ── AOS category deck ──
+import { AosCoverSlide } from './slides/AosCoverSlide';
+import { AosNoOsSlide } from './slides/AosNoOsSlide';
+import { AosHistorySlide } from './slides/AosHistorySlide';
+import { AosThesisSlide } from './slides/AosThesisSlide';
+import { AosResolutionSlide } from './slides/AosResolutionSlide';
+import { AosEngineSlide } from './slides/AosEngineSlide';
+import { AosCapsuleSlide } from './slides/AosCapsuleSlide';
+import { AosPowerNarrowsSlide } from './slides/AosPowerNarrowsSlide';
+import { AosProofSlide } from './slides/AosProofSlide';
+import { AosSwapSlide } from './slides/AosSwapSlide';
+import { AosSeatsSlide } from './slides/AosSeatsSlide';
+import { AosRealTodaySlide } from './slides/AosRealTodaySlide';
+import { AosRoadmapShippedSlide, AosRoadmapBuildingSlide, AosRoadmapHorizonSlide } from './slides/AosRoadmapSlides';
+import { AosEditionsSlide } from './slides/AosEditionsSlide';
+import { AosCtaSlide } from './slides/AosCtaSlide';
+import { AosExtensibilitySlide } from './slides/AosExtensibilitySlide';
+import { AosNotMetaphorSlide } from './slides/AosNotMetaphorSlide';
+import { AosVerifiedIdeSlide } from './slides/AosVerifiedIdeSlide';
+import { AosDefensibilitySlide } from './slides/AosDefensibilitySlide';
+import { AosLearningLoopSlide } from './slides/AosLearningLoopSlide';
+import { AosLearningLoopBehaviorSlide } from './slides/AosLearningLoopBehaviorSlide';
+import { AosAccountableEmployeesSlide } from './slides/AosAccountableEmployeesSlide';
+import { AosThankYouSlide } from './slides/AosThankYouSlide';
+import { AosProofSystemSlide } from './slides/AosProofSystemSlide';
+import { AosEnforcedSlide } from './slides/AosEnforcedSlide';
+import { AosCostControlSlide } from './slides/AosCostControlSlide';
+import { AosEarnAutonomySlide } from './slides/AosEarnAutonomySlide';
+import { AosSecuritySlide } from './slides/AosSecuritySlide';
+import { AosTractionSlide } from './slides/AosTractionSlide';
+import { AosBlockchainFaqSlide } from './slides/AosBlockchainFaqSlide';
+import { AosEngagementSlide } from './slides/AosEngagementSlide';
+import { AosIndustriesSlide } from './slides/AosIndustriesSlide';
+import { AosWhyOsSlide } from './slides/AosWhyOsSlide';
+import { AosEngineOsSlide } from './slides/AosEngineOsSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  // ── ACT I — The Moment ──
-  CoverSlide,                // 1. Cover — Unicity for Telecom
-  TelecomOpportunitySlide,   // 2. The Opportunity — Every subscriber gets a Personal AI Agent
-  ProblemSlide,              // 3. The Fourth Rebuild of Compute
-  MarketSlide,               // 4. Market Opportunity
+  // ══ WHY UNICITY AOS — the category deck ══
+  // ══ WHY UNICITY AOS — enterprise restructure (pain → product → proof → thesis) ══
 
-  // ── ACT II — The Platform ──
-  AutonomyStackSlide,        // 5. Unicity: The Secure AI Compute Platform
-  WhyDifferentSlide,         // 6. The first secure, affordable, provable platform
+  // ── CORE ──
+  AosCoverSlide,             // 1. Title
+  AosNoOsSlide,              // 2. The problem — you run agents, can't govern them
+  AutonomyStackSlide,        // 3. An OS built for the day no one is watching (what AOS is)
+  AosNotMetaphorSlide,       // 4. An actual OS — not just orchestration (the checklist)
+  AosThesisSlide,            // 5. Operating systems beat harnesses (full thesis table)
+  AosResolutionSlide,        // 5. Owned by no model vendor. Running all of them.
+  DeploymentModelHtmlSlide,  // 6. Runs inside your infrastructure
+  AosSecuritySlide,          // 6. Security & integration — boring on purpose
+  AosRoadmapShippedSlide,    // 7. Core functionality — shipped
+  // AosTractionSlide,       // hidden — design partner placeholder (industries slide carries traction)
+  // UseCasesAppendixSlide,  // removed — redundant "AOS Enterprise" divider (whole deck is enterprise)
+  ShadowAISlide,             // 9. Use case: Agent sprawl & shadow AI
+  DLPSlide,                  // 11. Use case: DLP
+  AosCostControlSlide,       // 12. Use case: Cost control + routing
+  AosIndustriesSlide,        // 13. Who this is for — high-stakes industries (real engagements)
+  AosProofSystemSlide,       // 14. Proof system — tokens, not ledger entries
+  AosEarnAutonomySlide,      // 14. The OS learns + agents earn autonomy
+  AosLearningLoopBehaviorSlide, // 15. Next, it learns behavior (per-agent flow graph, anomaly detection)
+  CompetitionMinimalSlide,   // 16. How it fits your stack — coexistence
+  AosRoadmapBuildingSlide,   // 16. Roadmap — compliance-led
+  AosEditionsSlide,          // 17. Editions — Community / Enterprise
+  AosCtaSlide,               // 18. How to start
+  WhoWeAreSlide,             // 19. Team
+  AosThankYouSlide,          // 20. Close — thank you
 
-  // ── ACT III — The Story ──
-  ConciergeSlide,            // 7. Subscriber concierge — what subscribers see
-  OperatorPayoffSlide,       // 8. Every tap is revenue you own — the operator's view
-  TelecomUseCasesSlide,      // 9. New value-added services for enterprise + consumer
+  // ── APPENDIX (deep-dive / reference) ──
+  AosExtensibilitySlide,        // A. Capsule shelf — what runs on the OS
+  AosEngineSlide,               // A. One microkernel, everything else a capsule
+  AosDefensibilitySlide,        // A. Defensibility — today & tomorrow (absorbed into core proof + roadmap)
+  InterceptFabricSlide,         // A. Semantic Intercept — domain ontologies
+  // AosBlockchainFaqSlide,     // removed
+  // AosEngagementSlide,        // removed
 
-  // ── ACT IV — The Proof ──
-  DeploymentModelHtmlSlide,  // 10. Deployment inside operator infrastructure
-  WhoWeAreSlide,             // 11. Team
-  ContactSlide,              // 12. Get Started — Own the agent layer / Book a live demo
-  // ThankYouChatSlide,      // hidden — Thank You (rolled into ContactSlide closer)
-
-  // ── APPENDIX — additional use case deep-dives ──
-  UseCasesAppendixSlide,   // 13. Appendix divider — Additional Use Cases
-  ShadowAISlide,           // 14. appendix — Agent Sprawl & Shadow AI
-  DLPSlide,                // 15. appendix — Data Loss Prevention
-  RunawayComputeSlide,     // 16. appendix — Cost Control
-  IntelligentRoutingSlide, // 17. appendix — Intelligent Routing
-
-  // ── TECHNICAL APPENDIX — Kernel & Security deep-dives ──
-  TechnicalAppendixDividerSlide, // 18. Technical Appendix divider
-  AstridSlide,             // 19. AOS: The Kernel
-  AstridComparisonSlide,   // 20. Why AOS — comparison table
-  AstridUseCasesSlide,     // 21. Swap a Capsule. Change Everything.
-  InterceptFabricSlide,    // 22. Semantic Intercept Fabric
+  // ── Dropped / merged (kept in source, out of deck) ──
+  // AosEnforcedSlide,             // retired — reverted to full AosThesisSlide + AosResolutionSlide
+  // AosLearningLoopSlide,         // merged into AosEarnAutonomySlide
+  // AosAccountableEmployeesSlide, // merged into AosEarnAutonomySlide
+  // RunawayComputeSlide,          // merged into AosCostControlSlide
+  // IntelligentRoutingSlide,      // merged into AosCostControlSlide
+  // AosRoadmapHorizonSlide,       // merged into roadmap
 
   // ── Hidden (other) ──
   // CompetitionMinimalSlide, // Competition / Everyone else watches the agent

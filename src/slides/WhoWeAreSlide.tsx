@@ -6,7 +6,7 @@ const founders = [
   {
     name: 'Mike Gault',
     role: 'CEO',
-    photo: '/team/mike.jpg',
+    photo: '/team/mike-bw.png',
     linkedin: 'https://www.linkedin.com/in/mikegault1/',
     lines: [
       'PhD Electrical Engineering',
@@ -17,7 +17,7 @@ const founders = [
   {
     name: 'Tony Kenyon',
     role: 'CTO',
-    photo: '/team/tony.png',
+    photo: '/team/tony-bw.png',
     linkedin: 'https://www.linkedin.com/in/tonykenyon/',
     lines: [
       'PhD Machine Learning',
@@ -26,14 +26,22 @@ const founders = [
     ],
   },
   {
+    name: 'Joshua J Buow',
+    role: 'OS Architect',
+    photo: '/team/jjb2-bw.png',
+    lines: [
+      'Inventor AOS',
+      'Ex-NEAR',
+    ],
+  },
+  {
     name: 'Eric Leandri',
     role: 'Chairman',
-    photo: '/team/eric.png',
+    photo: '/team/eric-bw.png',
     linkedin: 'https://www.linkedin.com/in/ericleandri/',
     lines: [
       'AI Visionary',
       'CEO, Aleria (UAE Sovereign AI)',
-      '1,000+ customers · 250K agents live',
     ],
   },
 ];
@@ -130,25 +138,25 @@ export function WhoWeAreSlide() {
             className="mt-3 text-[#fefefe]/85 text-xs sm:text-sm lg:text-base leading-[1.55] max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs in machine learning and cryptography with fifteen years building nation-state-grade security infrastructure for <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed, Verizon, and Maersk</span>. Now applying that to the rails your agents transact on.
+            <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs in machine learning and cryptography with fifteen years building nation-state-grade security infrastructure for <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed, Verizon, and Maersk</span>. Now applying that to AI infrastructure.
           </motion.p>
         </div>
 
         {/* Two columns: founders (left) + globe (right) */}
         <div className="grid grid-cols-[1fr_1fr] gap-6 lg:gap-8 items-center shrink-0">
 
-          {/* Left — founders stacked */}
-          <div className="flex flex-col gap-4 lg:gap-5">
+          {/* Left — founders in a 2×2 matrix */}
+          <div className="grid grid-cols-2 gap-x-5 lg:gap-x-7 gap-y-5 lg:gap-y-7">
             {founders.map((f, i) => (
               <motion.div
                 key={f.name}
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 + i * 0.12 }}
-                className="flex items-start gap-5"
+                transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+                className="flex items-start gap-4"
               >
                 <div className="relative shrink-0">
-                  <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden ring-2 ring-orange-500/30">
+                  <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden ring-2 ring-orange-500/30">
                     <img src={f.photo} alt={f.name} className="w-full h-full object-cover" style={(f as { photoStyle?: CSSProperties }).photoStyle} />
                   </div>
                   {f.linkedin && <LinkedInBadge href={f.linkedin} />}
