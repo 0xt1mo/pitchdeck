@@ -10,32 +10,23 @@ export function GoToMarketSlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            Strategic Distribution Partnership
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-2"
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[56px] xl:text-[64px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            DISTRIBUTION BEACHHEAD: <span className="text-orange-400">THE UAE</span>
+            CASE STUDY: <span className="text-orange-400">The agentic state</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            className="text-[#fefefe]/90 text-lg sm:text-xl lg:text-2xl mt-4 max-w-6xl leading-relaxed"
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl mt-3 max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            <span className="text-orange-400">50% of UAE government services on agents within two years.</span><br />
-            The path to 1M daily active agents starts here.
+            We've partnered with <span className="text-orange-400 font-bold">Aleria AI</span>, provider of sovereign AI solutions, to bring our OS to the UAE.
           </motion.p>
         </div>
 
@@ -188,32 +179,6 @@ export function GoToMarketSlide() {
 
           </motion.div>
         </div>
-
-        {/* Unicity direct pipeline — separate from Aleria */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
-          className="shrink-0 rounded-lg px-6 lg:px-8 py-4 lg:py-5 flex items-center gap-5 lg:gap-7"
-          style={{
-            background: 'rgba(255,255,255,0.025)',
-            border: '1px solid rgba(255,255,255,0.15)',
-          }}
-        >
-          <p
-            className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.3em] uppercase font-bold shrink-0"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            Unicity Direct Pipeline
-          </p>
-          <div className="h-6 w-px" style={{ background: 'rgba(255,255,255,0.20)' }} />
-          <p
-            className="text-[#fefefe]/90 text-sm sm:text-base lg:text-lg leading-snug"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            <span className="text-orange-400 font-bold">$20M+ active pipeline</span> across Government, Telecom, and Tier-1 Financial Institutions.
-          </p>
-        </motion.div>
 
       </div>
     </div>

@@ -31,8 +31,8 @@ export function ConciergeSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[56px] xl:text-[64px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: display }}
           >
-            CASE STUDY: TELECOM SUBSCRIBER{' '}
-            <span className="text-orange-400">AGENT FOR EVERY SIM.</span>
+            CASE STUDY: TELECOM,{' '}
+            <span className="text-orange-400">AN AGENT FOR EVERY SIM.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -41,7 +41,7 @@ export function ConciergeSlide() {
             className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl leading-snug mt-3 max-w-4xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            A personal AI concierge for every subscriber — running on the operator's own infrastructure.
+            A personal AI concierge: a secure personalized agent with integrated billing, identity and voice for telecom subscribers — running on the operator's own infrastructure.
           </motion.p>
         </div>
 

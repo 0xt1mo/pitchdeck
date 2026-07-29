@@ -6,13 +6,19 @@ import { PromiseSlide } from './slides/PromiseSlide';
 import { SharedLedgerSlide } from './slides/SharedLedgerSlide';
 import { AgentsSlide } from './slides/AgentsSlide';
 import { TokenObjectSlide } from './slides/TokenObjectSlide';
+import { BearerTokensSlide } from './slides/BearerTokensSlide';
+import { MedicalCaseSlide } from './slides/MedicalCaseSlide';
+import { GtmEditionsSlide } from './slides/GtmEditionsSlide';
+import { IGamingRetentionSlide } from './slides/IGamingRetentionSlide';
 // import { EdgePayoffSlide } from './slides/EdgePayoffSlide'; // hidden — appendix
 import { UnbundledPayoffSlide } from './slides/UnbundledPayoffSlide';
 import { RetrofitSlide } from './slides/RetrofitSlide';
 // import { CompetitionSlide } from './slides/CompetitionSlide'; // hidden — appendix
 import { MarketSlide } from './slides/MarketSlide';
 // import { BusinessModelPricingSlide } from './slides/BusinessModelPricingSlide'; // hidden
-// import { CompetitionMinimalSlide } from './slides/CompetitionMinimalSlide'; // hidden
+import { CompetitionMinimalSlide } from './slides/CompetitionMinimalSlide';
+import { AosThesisSlide } from './slides/AosThesisSlide';
+import { AosNotMetaphorSlide } from './slides/AosNotMetaphorSlide';
 // import { DefensibilitySlide } from './slides/DefensibilitySlide'; // hidden
 import { ResourcesSlide } from './slides/ResourcesSlide';
 // import { ProblemSlide } from './slides/ProblemSlide'; // hidden
@@ -68,9 +74,13 @@ const slides = [
   // ProblemSlide,         // hidden — What Autonomy Demands — The Fourth Rebuild
   // SolutionIntroSlide,   // hidden — Unicity OS: A Secure OS for AI Agents
   AutonomyStackSlide,      // 4. The Protocol Stack for the Agentic Internet
+  AosNotMetaphorSlide,     // An actual OS — not just orchestration
+  AosThesisSlide,          // Operating Systems Beat Harnesses (thesis table)
+  CompetitionMinimalSlide, // They Watch The Traffic
   // CompleteAutonomyStackSlide, // hidden — The First Complete Stack Built For Machines
-  TeamSlide,               // 6. Founders
+  BearerTokensSlide,       // Blockchain — Legacy blockchains weren't built for AI scale
   MarketSlide,             // Market Opportunity — trillion-dollar rebuild
+  GtmEditionsSlide,        // Go To Market — Community / Enterprise / Industry Solutions
   // ArchitectureStackSlide, // hidden — The Secure OS for Agents
   // AgentsSlide,          // appendix — The Unicity Blockchain: Why a Purpose Built Chain
   // EdgePayoffSlide,      // appendix — What This Unlocks
@@ -78,28 +88,32 @@ const slides = [
   // ── Commercial arc (9–14) ──
   // WedgeSlide,           // hidden — Wedge content folded into UseCasesSlide title
   // UseCasesSlide,        // hidden — Case Study: Enterprise Secure Compute Platform (pills)
-  DeploymentModelHtmlSlide, // Runs inside your infrastructure
-  ConciergeSlide,          // Case Study — Subscriber Concierge (Telco)
-  ProtocolSlide,           // Case Study — x402 Live Demo
-  AgentsSlide,             // The Unicity Blockchain — Why A Purpose Built Chain
-  TokenObjectSlide,        // Tokens are native data types, not ledger entries
+  // DeploymentModelHtmlSlide, // hidden — Case Study: Enterprise Secure Compute Platform
+  // AgentsSlide,          // hidden — The Unicity Blockchain — Why A Purpose Built Chain
+  // ── Case studies: Telecom · Medical · Government ──
+  ConciergeSlide,          // Case Study — Telecom (Subscriber Concierge)
+  MedicalCaseSlide,        // Case Study — Medical (Padra + AOS)
+  GoToMarketSlide,         // Use Case — Government (UAE beachhead)
+  IGamingRetentionSlide,   // Use Case — iGaming (retention becomes a conversation)
+  // ProtocolSlide,        // hidden — Case Study: x402 Live Demo
+  // TokenObjectSlide,     // hidden — Tokens are native data types, not ledger entries
   // CompetitionMinimalSlide, // hidden — Off-chain tokens can integrate into an OS. Ledger entries cannot.
   // DefensibilitySlide,   // hidden — Defensibility: today and tomorrow
   // BusinessModelPricingSlide, // hidden — Open Core / Per Agent Pricing
-  GoToMarketSlide,         // 13. Beachhead: The UAE
   // SecurityNetworkSlide, // hidden — Zero Trust Enterprise Network
   // AgentSprawlSlide,     // hidden — Case Study: Agent Sprawl
   // ThePathSlide,         // hidden — Current Status and How We Win
   TractionSlide,           // Traction — devs, testnet, pipeline, signed channel
-  InvestmentSlide,         // 15. The Investment — $5M seed, Q3 2026, 18 mo runway
-  TokenSlide,              // 16. Token Design and Tokenomics
+  TeamSlide,               // Founders — right before the ask
+  InvestmentSlide,         // The Investment — $2M seed extension
+  TokenSlide,              // Tokenomics — Token Demand Scales With Network Revenue
   ResourcesSlide,          // 17. Resources
   ThankYouChatSlide,       // 18. Thank You
-  // ── Appendix — additional use cases ──
-  ShadowAISlide,           // Appendix — Agent Sprawl & Shadow AI
-  DLPSlide,                // Appendix — Data Loss Prevention
-  RunawayComputeSlide,     // Appendix — Cost Control / Every Agent Gets a Budget
-  IntelligentRoutingSlide, // Appendix — Intelligent Routing
+  // ── Appendix — additional use cases (all hidden) ──
+  // ShadowAISlide,           // Appendix — Agent Sprawl & Shadow AI
+  // DLPSlide,                // Appendix — Data Loss Prevention
+  // RunawayComputeSlide,     // Appendix — Cost Control / Every Agent Gets a Budget
+  // IntelligentRoutingSlide, // Appendix — Intelligent Routing
   // ── Appendix — technical deep-dives (hidden) ──
   // AppendixDividerSlide,    // Appendix · Technology — section break
   // CompetitionSlide,        // Competition — Why It Is Different (architectural arc)

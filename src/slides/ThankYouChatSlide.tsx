@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 
+const mono = "'Geist Mono', monospace";
+
 export function ThankYouChatSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-8 sm:px-12 lg:px-20 py-12 lg:py-16 gap-10">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-8 sm:px-12 lg:px-20 py-10 lg:py-12 gap-7 lg:gap-8">
 
         {/* Heading */}
         <div className="text-center">
@@ -11,7 +13,7 @@ export function ThankYouChatSlide() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-[#fefefe] text-[64px] sm:text-[96px] lg:text-[140px] leading-none tracking-tight"
+            className="text-[#fefefe] text-[56px] sm:text-[84px] lg:text-[112px] leading-none tracking-tight"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
             THANK <span className="text-orange-400">YOU</span>
@@ -20,9 +22,43 @@ export function ThankYouChatSlide() {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-center mx-auto mt-5"
+            className="h-[2px] w-32 sm:w-48 bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-center mx-auto mt-4"
           />
         </div>
+
+        {/* Install the OS in 60 seconds */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
+          className="w-full max-w-2xl"
+        >
+          <p
+            className="text-orange-400 text-xs sm:text-sm tracking-[0.3em] uppercase font-bold text-center mb-3"
+            style={{ fontFamily: mono }}
+          >
+            Install the OS in 60 seconds
+          </p>
+          <div className="rounded-xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.14)', background: '#0c0c10' }}>
+            <div className="flex items-center gap-2 px-4 py-2.5" style={{ background: 'rgba(255,255,255,0.03)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+              <span className="w-3 h-3 rounded-full" style={{ background: '#ff5f56' }} />
+              <span className="w-3 h-3 rounded-full" style={{ background: '#ffbd2e' }} />
+              <span className="w-3 h-3 rounded-full" style={{ background: '#27c93f' }} />
+              <span className="ml-3 text-[#fefefe]/40 text-xs lg:text-sm" style={{ fontFamily: mono }}>unicity — community install</span>
+            </div>
+            <div className="p-5 lg:p-6 flex flex-col gap-2.5 overflow-x-auto">
+              <p className="text-[#5f6b7a] text-sm lg:text-base" style={{ fontFamily: mono }}># community edition — one command, any machine</p>
+              <p className="text-sm lg:text-lg whitespace-nowrap" style={{ fontFamily: mono }}>
+                <span className="text-orange-400">$ </span>
+                <span className="text-[#e8e8e8]">curl -fsSL https://aos.unicity.ai/install.sh | sh</span>
+              </p>
+              <p className="text-sm lg:text-lg whitespace-nowrap" style={{ fontFamily: mono }}>
+                <span className="text-orange-400">$ </span>
+                <span className="text-[#e8e8e8]">aos init</span>
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Contact details */}
         <motion.div

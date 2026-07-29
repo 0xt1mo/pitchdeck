@@ -4,10 +4,11 @@ const mono = "'Geist Mono', monospace";
 const anton = "'Anton', sans-serif";
 
 const stats = [
-  { value: '3,000+', label: 'DEVELOPER SIGNUPS', sub: 'EARLY ACCESS' },
-  { value: '50K+', label: 'LIVE TESTNET WALLETS' },
-  { value: '$20M+', label: 'QUALIFIED PIPELINE', sub: 'GOVERNMENT · TELECOM', highlight: true },
-  { value: "JUN '26", label: 'UNIQUENESS ORACLE', sub: 'MAINNET' },
+  { value: '3,500', label: 'DEVELOPER SIGN-UPS' },
+  { value: '1,500', label: 'COMMUNITY TESTNET APPS' },
+  { value: '80K+', label: 'LIVE TESTNET WALLETS' },
+  { value: '44K', label: 'DISCORD USERS' },
+  { value: 'LIVE', label: "SOFT LAUNCH · JUL '26", sub: "GA · AUG '26", highlight: true },
 ];
 
 const cards = [
@@ -19,29 +20,8 @@ const cards = [
     highlight: true,
     body: (
       <>
-        <strong className="text-[#fefefe] font-bold">50/50 revenue share</strong> into the UAE Sovereign
-        AI Lab — distribution reach across <strong className="text-[#fefefe] font-bold">1,000+</strong> AI customers.
-      </>
-    ),
-  },
-  {
-    eyebrow: 'GOVERNMENT',
-    title: '~$10M',
-    title2: 'IN PROCUREMENT',
-    body: (
-      <>
-        Proposals submitted to a sovereign authority,{' '}
-        <strong className="text-[#fefefe] font-bold">live in active procurement.</strong>
-      </>
-    ),
-  },
-  {
-    eyebrow: 'TELECOM',
-    title: '3',
-    title2: 'PARTNERS',
-    body: (
-      <>
-        Additional channel partners <strong className="text-[#fefefe] font-bold">engaged for distribution</strong> beyond Aleria.
+        <strong className="text-[#fefefe] font-bold">Revenue share</strong> with UAE Sovereign
+        AI provider — distribution reach across Middle East and Africa.
       </>
     ),
   },
@@ -76,8 +56,7 @@ export function TractionSlide() {
             className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl leading-snug mt-3 max-w-5xl"
             style={{ fontFamily: mono }}
           >
-            A growing developer base, a public testnet, a signed sovereign distribution channel, and a{' '}
-            <span className="text-orange-400">$20M+ qualified pipeline</span> — the round converts them into contracted revenue.
+            <span className="text-orange-400 font-bold">Soft-launched July '26, GA in August.</span> A growing developer base, a signed sovereign channel, and a commercial pipeline lined up for go-live.
           </motion.p>
         </div>
 
@@ -86,12 +65,12 @@ export function TractionSlide() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.6 }}
-          className="shrink-0 grid grid-cols-2 lg:grid-cols-4 border-y border-[#fefefe]/12"
+          className="shrink-0 grid grid-cols-2 lg:grid-cols-5 border-y border-[#fefefe]/12"
         >
           {stats.map((s, i) => (
             <div
               key={s.value}
-              className={`px-4 lg:px-7 py-5 lg:py-7 ${i % 4 !== 0 ? 'lg:border-l' : ''} ${i % 2 !== 0 ? 'border-l' : ''} border-[#fefefe]/12`}
+              className={`px-4 lg:px-6 py-5 lg:py-7 ${i % 5 !== 0 ? 'lg:border-l' : ''} ${i % 2 !== 0 ? 'border-l' : ''} border-[#fefefe]/12`}
             >
               <p
                 className="text-4xl lg:text-6xl leading-none"
@@ -116,25 +95,23 @@ export function TractionSlide() {
         </motion.div>
 
         {/* Cards */}
-        <div className="shrink-0 grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-5">
+        <div className="shrink-0 flex flex-col lg:flex-row gap-4 lg:gap-5">
           {cards.map((c, i) => (
             <motion.div
               key={c.title}
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 + i * 0.1, duration: 0.5 }}
-              className={`rounded-xl border p-5 lg:p-7 ${
-                c.highlight
-                  ? 'border-orange-500/70 bg-orange-500/[0.06]'
-                  : 'border-[#fefefe]/12 bg-[#fefefe]/[0.02]'
-              }`}
+              className={`rounded-xl border p-5 lg:p-7 w-full lg:max-w-[520px] ${c.highlight
+                ? 'border-orange-500/70 bg-orange-500/[0.06]'
+                : 'border-[#fefefe]/12 bg-[#fefefe]/[0.02]'
+                }`}
               style={c.highlight ? { boxShadow: '0 0 28px rgba(249,115,22,0.15)' } : undefined}
             >
               <div className="flex items-center justify-between gap-3">
                 <span
-                  className={`text-[11px] lg:text-xs tracking-[0.15em] uppercase ${
-                    c.highlight ? 'text-orange-400' : 'text-[#fefefe]/40'
-                  }`}
+                  className={`text-[11px] lg:text-xs tracking-[0.15em] uppercase ${c.highlight ? 'text-orange-400' : 'text-[#fefefe]/40'
+                    }`}
                   style={{ fontFamily: mono }}
                 >
                   {c.eyebrow}
@@ -164,6 +141,34 @@ export function TractionSlide() {
               </p>
             </motion.div>
           ))}
+
+          {/* Commercial pipeline */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.5 }}
+            className="rounded-xl border border-[#fefefe]/12 bg-[#fefefe]/[0.02] p-5 lg:p-7 w-full lg:max-w-[520px]"
+          >
+            <div className="flex items-center justify-between gap-3">
+              <span className="text-[#fefefe]/40 text-[11px] lg:text-xs tracking-[0.15em] uppercase" style={{ fontFamily: mono }}>
+                Commercial Pipeline
+              </span>
+              <span className="rounded border border-[#fefefe]/25 text-[#fefefe]/60 text-[10px] lg:text-xs px-2 py-0.5 tracking-[0.15em] uppercase" style={{ fontFamily: mono }}>
+                Awaiting GA
+              </span>
+            </div>
+            <div className="mt-4 flex flex-col gap-2.5">
+              {[['15', 'Telecom operators'], ['10', 'iGaming operators'], ['10', 'Clinics']].map(([n, l]) => (
+                <div key={l} className="flex items-baseline gap-3">
+                  <span className="text-orange-400 text-2xl lg:text-3xl leading-none w-10 lg:w-12 shrink-0" style={{ fontFamily: anton }}>{n}</span>
+                  <span className="text-[#fefefe]/85 text-sm lg:text-base" style={{ fontFamily: mono }}>{l}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-[#fefefe]/55 text-xs lg:text-sm leading-snug mt-4" style={{ fontFamily: mono }}>
+              Engaged — awaiting general availability.
+            </p>
+          </motion.div>
         </div>
 
       </div>

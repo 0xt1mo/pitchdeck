@@ -25,26 +25,6 @@ export function CoverSlide() {
         }}
       />
 
-      {/* Top-left HUD */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2, duration: 0.6 }}
-        className="absolute top-6 left-8 lg:top-10 lg:left-16 z-10 flex items-center gap-3"
-      >
-        <span className="relative flex w-2 h-2">
-          <span className="absolute inset-0 rounded-full bg-orange-400 opacity-50 animate-ping" />
-          <span className="relative w-2 h-2 rounded-full bg-orange-400" />
-        </span>
-        <span
-          className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.4em] uppercase font-bold"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          Confidential · Investor Deck
-        </span>
-      </motion.div>
-
-
       {/* Bottom HUD */}
       <motion.div
         initial={{ opacity: 0 }}

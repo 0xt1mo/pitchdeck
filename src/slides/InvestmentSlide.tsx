@@ -1,23 +1,5 @@
 import { motion } from 'framer-motion';
 
-const unlocks = [
-  {
-    label: 'CAPTURE',
-    primary: '50K hosted agent signups',
-    sub: 'convert to paid runtime',
-  },
-  {
-    label: 'PROVE',
-    primary: '30 enterprise logos',
-    sub: 'beyond Aleria channel',
-  },
-  {
-    label: 'SCALE',
-    primary: 'Strategic partnerships',
-    sub: 'AI Labs · Telcos · Finance',
-  },
-];
-
 const useOfFunds = [
   { pct: 40, label: 'Engineering', strong: 1.0 },
   { pct: 35, label: 'Sales & GTM', strong: 0.7 },
@@ -44,123 +26,93 @@ export function InvestmentSlide() {
 
       <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-16 py-8 sm:py-10 lg:py-12 justify-center gap-6 lg:gap-8">
 
-        {/* Eyebrow + headline */}
+        {/* Headline */}
         <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.4em] uppercase font-bold"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            The Ask
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[44px] sm:text-[64px] lg:text-[88px] xl:text-[100px] leading-[0.95] tracking-tight uppercase mt-2"
+            className="text-[44px] sm:text-[64px] lg:text-[88px] xl:text-[100px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
             <span className="text-[#fefefe]">THE</span>{' '}
             <span className="text-orange-400">INVESTMENT.</span>
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.25, duration: 0.6 }}
+            className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl mt-3 max-w-5xl leading-relaxed"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
+            An <span className="text-orange-400 font-bold">extension of our seed round</span> — revenue generation to prepare for Series A.
+          </motion.p>
         </div>
 
-        {/* Hero row: $5M · arrow · UNLOCKS list */}
+        {/* Hero: $3M + path to Series A */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.6 }}
-          className="grid items-center shrink-0 gap-6 lg:gap-12"
-          style={{ gridTemplateColumns: '0.85fr auto 1.15fr' }}
+          className="grid items-center shrink-0 gap-8 lg:gap-14"
+          style={{ gridTemplateColumns: '0.9fr 1.1fr' }}
         >
-          {/* $5M block */}
+          {/* $3M block */}
           <div>
             <p
               className="text-[#fefefe]/55 text-[10px] sm:text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-2 lg:mb-3"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Seed · Q3 2026
+              Q4 2026
             </p>
             <p
               className="text-[#fefefe] text-[68px] sm:text-[96px] lg:text-[120px] xl:text-[132px] leading-[0.88] tracking-[-0.04em]"
               style={{ fontFamily: "'Anton', sans-serif" }}
             >
-              $5M
+              $3M
             </p>
             <p
               className="text-[#fefefe]/70 text-xs sm:text-sm lg:text-base mt-3 lg:mt-4 leading-relaxed"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              SAFE + token warrants · 18 months runway
+              SAFE + token warrants · 24 months runway
             </p>
           </div>
 
-          {/* Arrow */}
-          <div className="self-center px-2 lg:px-4">
-            <svg
-              width="100"
-              height="20"
-              viewBox="0 0 100 20"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-[80px] sm:w-[90px] lg:w-[100px]"
-            >
-              <defs>
-                <linearGradient id="arrow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="rgba(255,255,255,0.30)" />
-                  <stop offset="100%" stopColor="#f97316" />
-                </linearGradient>
-              </defs>
-              <line x1="0" y1="10" x2="82" y2="10" stroke="url(#arrow-grad)" strokeWidth="2" />
-              <polygon points="82,3 100,10 82,17" fill="#f97316" />
-            </svg>
-          </div>
-
-          {/* What $5M unlocks */}
+          {/* Path to Series A */}
           <div>
             <p
               className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-3 lg:mb-4"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              What $5M Unlocks
+              The path to Series A
             </p>
             <div className="flex flex-col gap-3 lg:gap-4">
-              {unlocks.map((u, i) => (
-                <motion.div
-                  key={u.label}
-                  initial={{ opacity: 0, x: 10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 + i * 0.1, duration: 0.4 }}
+              {[
+                { label: 'LAUNCH', primary: 'GA in August', sub: 'mainnet live, product shipped' },
+                { label: 'REVENUE', primary: 'First paying deployments', sub: 'Aleria channel + paying clients in telecom, health & iGaming' },
+                { label: 'SERIES A', primary: 'Repeatable revenue', sub: 'the metrics for a priced round' },
+              ].map((m, i, arr) => (
+                <div
+                  key={m.label}
                   className="flex items-baseline gap-4 lg:gap-5 pb-3 lg:pb-3.5"
-                  style={{
-                    borderBottom:
-                      i < unlocks.length - 1
-                        ? '1px solid rgba(255,255,255,0.10)'
-                        : 'none',
-                  }}
+                  style={{ borderBottom: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.10)' : 'none' }}
                 >
                   <p
-                    className="text-orange-400 text-[24px] sm:text-[32px] lg:text-[40px] leading-none tracking-[-0.01em] min-w-[120px] lg:min-w-[150px] font-bold"
+                    className="text-orange-400 text-[22px] sm:text-[30px] lg:text-[38px] leading-none tracking-[-0.01em] min-w-[110px] lg:min-w-[140px] font-bold"
                     style={{ fontFamily: "'Anton', sans-serif" }}
                   >
-                    {u.label}
+                    {m.label}
                   </p>
                   <div className="flex flex-col gap-1">
-                    <p
-                      className="text-[#fefefe] text-base sm:text-lg lg:text-xl font-bold leading-snug"
-                      style={{ fontFamily: "'Geist Mono', monospace" }}
-                    >
-                      {u.primary}
+                    <p className="text-[#fefefe] text-base sm:text-lg lg:text-xl font-bold leading-snug" style={{ fontFamily: "'Geist Mono', monospace" }}>
+                      {m.primary}
                     </p>
-                    <p
-                      className="text-[#fefefe]/60 text-xs sm:text-sm lg:text-base leading-snug"
-                      style={{ fontFamily: "'Geist Mono', monospace" }}
-                    >
-                      {u.sub}
+                    <p className="text-[#fefefe]/60 text-xs sm:text-sm lg:text-base leading-snug" style={{ fontFamily: "'Geist Mono', monospace" }}>
+                      {m.sub}
                     </p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

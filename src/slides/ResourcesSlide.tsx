@@ -80,11 +80,7 @@ export function ResourcesSlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Resources
-          </p>
-          <h1 className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight mt-1"
+          <h1 className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight"
             style={{ fontFamily: "'Anton', sans-serif" }}>
             ESSENTIAL{' '}
             <span className="text-orange-400">RESOURCES</span>
@@ -145,6 +141,19 @@ export function ResourcesSlide() {
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             Follow Us
           </p>
+          <a
+            href="https://www.unicity.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 text-[#fefefe]/85 hover:text-orange-400 transition-colors cursor-pointer"
+            style={{ fontFamily: "'Geist Mono', monospace" }}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-8 h-8 lg:w-10 lg:h-10">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" />
+            </svg>
+            <span className="text-xl sm:text-2xl lg:text-3xl font-bold">unicity.ai</span>
+          </a>
           <a
             href="https://x.com/unicity_labs"
             target="_blank"

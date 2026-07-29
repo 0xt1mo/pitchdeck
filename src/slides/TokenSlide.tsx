@@ -20,38 +20,17 @@ const chain = [
   {
     num: '02',
     title: 'Validator yield',
-    desc: 'Subscription revenue flows to the validators and Oracle operators who secure the network.',
+    desc: 'pre-paid gas flows to Oracle operators who secure the network.',
   },
   {
     num: '03',
     title: 'Stake to operate',
-    desc: "Running a validator slot requires staked token; a slot's value rises with the revenue it earns.",
+    desc: "Running an Oracle node requires staked token; a node's value rises with the revenue it earns.",
   },
   {
     num: '04',
     title: 'Demand locks supply',
     desc: 'More subscribers → more revenue → more token staked and locked. Demand scales with subscriber count.',
-  },
-];
-
-const phases = [
-  {
-    label: 'PHASE 1 — PRE-TGE',
-    title: 'Centralized operation',
-    desc: 'Unicity Labs operates BFT validators and Oracle. Network is free to use. No token.',
-    active: false,
-  },
-  {
-    label: 'PHASE 2 — TGE @ ADOPTION THRESHOLDS',
-    title: 'Permissionless validators',
-    desc: 'Token launches. Validator slots open to permissionless operators. Subscription monetization activates.',
-    active: true,
-  },
-  {
-    label: 'PHASE 3 — POST-TGE',
-    title: 'Permissionless oracle',
-    desc: 'Oracle nodes decentralize. Foundation becomes one operator among many. Slashing live.',
-    active: false,
   },
 ];
 
@@ -111,19 +90,14 @@ export function TokenSlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-            className="text-orange-400 text-[10px] sm:text-xs tracking-[0.4em] uppercase"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Token Design and Tokenomics
-          </motion.p>
           <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[24px] sm:text-[32px] lg:text-[40px] leading-[1.05] tracking-tight mt-1"
+            className="text-[#fefefe] text-[30px] sm:text-[44px] lg:text-[56px] xl:text-[64px] leading-[0.98] tracking-tight uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}>
             TOKEN DEMAND SCALES WITH <span className="text-orange-400">NETWORK REVENUE</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="mt-2 text-[#fefefe]/85 text-xs sm:text-sm lg:text-base max-w-5xl leading-relaxed"
+            className="mt-3 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}>
             Every agent needs Unicity native currency tokens to transact. The token is gas, not a means of payment — so demand scales directly with network usage.
           </motion.p>
@@ -234,65 +208,16 @@ export function TokenSlide() {
           </div>
         </div>
 
-        {/* Path to decentralization */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.0, duration: 0.5 }}
-          className="shrink-0"
+        {/* Investor takeaway */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
+          className="shrink-0 text-[#fefefe]/85 text-base sm:text-lg lg:text-2xl leading-snug pt-5 mt-1"
+          style={{ fontFamily: "'Geist Mono', monospace", borderTop: '1px solid rgba(255,255,255,0.10)' }}
         >
-          <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.3em] uppercase font-bold mb-3"
-            style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Path to Decentralization
-          </p>
-
-          <div className="grid grid-cols-3 gap-4 lg:gap-5">
-            {phases.map((p, i) => (
-              <motion.div
-                key={p.label}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.1 + i * 0.1, duration: 0.4 }}
-                className="rounded-lg p-3 lg:p-4"
-                style={{
-                  background: p.active ? 'rgba(249,115,22,0.07)' : 'rgba(255,255,255,0.025)',
-                  border: p.active ? '1px solid rgba(249,115,22,0.5)' : '1px solid rgba(255,255,255,0.08)',
-                }}
-              >
-                <div className="flex items-center gap-2">
-                  <span
-                    className="w-2 h-2 rounded-full shrink-0"
-                    style={{
-                      background: p.active ? '#f97316' : 'rgba(254,254,254,0.3)',
-                      boxShadow: p.active ? '0 0 8px rgba(249,115,22,0.5)' : 'none',
-                    }}
-                  />
-                  <p
-                    className="text-[10px] sm:text-xs tracking-[0.18em] font-bold uppercase"
-                    style={{
-                      fontFamily: "'Geist Mono', monospace",
-                      color: p.active ? '#f97316' : 'rgba(254,254,254,0.5)',
-                    }}
-                  >
-                    {p.label}
-                  </p>
-                </div>
-                <p
-                  className="text-[#fefefe] text-base sm:text-lg lg:text-xl tracking-tight mt-1.5"
-                  style={{ fontFamily: "'Anton', sans-serif", letterSpacing: '0.02em' }}
-                >
-                  {p.title.toUpperCase()}
-                </p>
-                <p
-                  className="text-[#fefefe]/65 text-[11px] sm:text-xs leading-relaxed mt-1.5"
-                  style={{ fontFamily: "'Geist Mono', monospace" }}
-                >
-                  {p.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+          The result: token demand is a function of <span className="text-orange-400 font-bold">network revenue</span> — not speculation. More usage → more token staked and locked.
+        </motion.p>
 
       </div>
     </div>
