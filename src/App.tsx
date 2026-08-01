@@ -100,6 +100,12 @@ import { AosEngagementSlide } from './slides/AosEngagementSlide';
 import { AosIndustriesSlide } from './slides/AosIndustriesSlide';
 import { AosWhyOsSlide } from './slides/AosWhyOsSlide';
 import { AosEngineOsSlide } from './slides/AosEngineOsSlide';
+import { AgentFirewallSlide } from './slides/AgentFirewallSlide';
+import { FailClosedSlide } from './slides/FailClosedSlide';
+import { AosFirewallArchSlide } from './slides/AosFirewallArchSlide';
+import { FirewallPricingSlide } from './slides/FirewallPricingSlide';
+import { FirewallMoneyMomentSlide } from './slides/FirewallMoneyMomentSlide';
+import { FirewallProofSlide } from './slides/FirewallProofSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
@@ -121,6 +127,13 @@ const slides = [
   ShadowAISlide,             // 9. Use case: Agent sprawl & shadow AI
   DLPSlide,                  // 11. Use case: DLP
   AosCostControlSlide,       // 12. Use case: Cost control + routing
+  // ── Agent Firewall (developer / enterprise) ──
+  AgentFirewallSlide,        // Use case: The Agent Firewall (what it does)
+  FailClosedSlide,           // Why it wins: fail closed, not fail open
+  FirewallMoneyMomentSlide,  // The money moment: model said yes, OS said no
+  AosFirewallArchSlide,      // How it works: agentic security architecture
+  FirewallProofSlide,        // Proof & verifiable audit (attested identity, receipts)
+  FirewallPricingSlide,      // Pricing: free → team ($15) → enterprise
   AosIndustriesSlide,        // 13. Who this is for — high-stakes industries (real engagements)
   AosProofSystemSlide,       // 14. Proof system — tokens, not ledger entries
   AosEarnAutonomySlide,      // 14. The OS learns + agents earn autonomy
