@@ -54,7 +54,7 @@ export function ConciergeSlide() {
             initial={{ opacity: 0, rotate: -14 }}
             animate={{ opacity: 1, rotate: -7 }}
             transition={{ delay: 0.3, duration: 0.7 }}
-            className="h-[55vh] lg:h-[60vh] w-auto"
+            className="h-[46vh] lg:h-[50vh] w-auto"
             style={{
               filter: 'drop-shadow(0 24px 60px rgba(0,0,0,0.7))',
               borderRadius: '20px',
@@ -70,7 +70,7 @@ export function ConciergeSlide() {
             initial={{ opacity: 0, y: 30, rotate: 0 }}
             animate={{ opacity: 1, y: 0, rotate: 0 }}
             transition={{ delay: 0.6, duration: 0.7 }}
-            className="h-[55vh] lg:h-[60vh] w-auto"
+            className="h-[46vh] lg:h-[50vh] w-auto"
             style={{
               filter: 'drop-shadow(0 34px 90px rgba(0,0,0,0.85))',
               borderRadius: '24px',
@@ -86,7 +86,7 @@ export function ConciergeSlide() {
             initial={{ opacity: 0, rotate: 14 }}
             animate={{ opacity: 1, rotate: 7 }}
             transition={{ delay: 0.45, duration: 0.7 }}
-            className="h-[55vh] lg:h-[60vh] w-auto"
+            className="h-[46vh] lg:h-[50vh] w-auto"
             style={{
               filter: 'drop-shadow(0 24px 60px rgba(0,0,0,0.7))',
               borderRadius: '20px',
@@ -96,6 +96,21 @@ export function ConciergeSlide() {
           />
 
         </div>
+
+        {/* Economics footer */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
+          className="shrink-0 border-t border-white/[0.10] pt-4 text-center"
+        >
+          <p className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg leading-snug" style={{ fontFamily: "'Geist Mono', monospace" }}>
+            <span className="text-orange-400 font-bold">$5</span> / subscriber / month retail · 30% operator take · <span className="text-orange-400 font-bold">$3.50</span> to the stack · <span className="text-orange-400 font-bold">$1.75</span> net to Unicity in the Aleria channel
+          </p>
+          <p className="text-[#fefefe]/55 text-xs sm:text-sm lg:text-base mt-1.5 leading-snug" style={{ fontFamily: "'Geist Mono', monospace" }}>
+            Base case: <span className="text-[#fefefe]/80">190,000 subscribers at Month 18</span> — under 2% of a single 10M-subscriber operator base
+          </p>
+        </motion.div>
 
       </div>
     </div>

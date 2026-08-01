@@ -3,19 +3,22 @@ import { motion } from 'framer-motion';
 const mono = "'Geist Mono', monospace";
 const display = "'Anton', sans-serif";
 
-const columns = [
+type Item = { t: string; sub?: string };
+type Column = { title: string; sub: string; accent: boolean; marker: string; items: Item[] };
+
+const columns: Column[] = [
   {
     title: 'Community',
     sub: 'Free · open',
     accent: false,
     marker: '—',
     items: [
-      'Full OS on the open engine',
-      'Installers & distributions',
-      'Capsule marketplace',
-      'Developer bottom-up adoption',
-      'Payment rails opt-in $2 per 100k transactions',
-      'Pre-paid gas,sold as capacity '
+      { t: 'Full OS on the open engine' },
+      { t: 'Installers & distributions' },
+      { t: 'Capsule marketplace' },
+      { t: 'Developer bottom-up adoption' },
+      { t: 'Prepaid transaction batches', sub: '$0.00001 / txn · $2 per agent / mo minimum' },
+      { t: 'Pre-paid gas, sold as capacity' },
     ],
   },
   {
@@ -24,11 +27,12 @@ const columns = [
     accent: false,
     marker: '+',
     items: [
-      'The same engine — no fork',
-      'Guardrails Compliance, Security, Governance',
-      'RBAC, SSO, SIEM...', 
-      'VPC / on-prem · per-agent licensing',
-      '$250K average ARR per enterprise customer',
+      { t: 'The same engine — no fork' },
+      { t: 'Guardrails: Compliance, Security, Governance' },
+      { t: 'RBAC, SSO, SIEM…' },
+      { t: 'VPC / on-prem · per-agent licensing' },
+      { t: '$200K blended first-year account value', sub: '$100K platform contract + initial governed-agent metering' },
+      { t: '$250 per agent / month list', sub: 'blending toward $100 at fleet scale' },
     ],
   },
   {
@@ -37,11 +41,11 @@ const columns = [
     accent: true,
     marker: '+',
     items: [
-      'Channel partners build & ship on AOS',
-      'Revenue share on every deployment',
-      'Compliant agentic solutions',
-      'Telecom · medical · government',
-      'Signed: Aleria — UAE sovereign AI',
+      { t: 'Channel partners build & ship on AOS' },
+      { t: 'Revenue share on every deployment' },
+      { t: 'Telecom · medical · government' },
+      { t: 'Signed: Aleria — UAE sovereign AI' },
+      { t: '$3.50 per subscriber / month to the stack', sub: '50% retained where Aleria holds the contract' },
     ],
   },
 ];
@@ -88,10 +92,13 @@ export function GtmEditionsSlide() {
               </p>
               <div className="flex flex-col gap-2 mt-4">
                 {c.items.map((it) => (
-                  <p key={it} className="flex gap-2.5 text-[#fefefe]/85 text-sm lg:text-lg leading-snug" style={{ fontFamily: mono }}>
+                  <div key={it.t} className="flex gap-2.5 leading-snug" style={{ fontFamily: mono }}>
                     <span className={`shrink-0 ${c.accent ? 'text-orange-400' : 'text-[#fefefe]/40'}`}>{c.marker}</span>
-                    {it}
-                  </p>
+                    <div className="min-w-0">
+                      <p className="text-[#fefefe]/85 text-sm lg:text-base">{it.t}</p>
+                      {it.sub && <p className="text-[#fefefe]/45 text-xs lg:text-sm mt-0.5">{it.sub}</p>}
+                    </div>
+                  </div>
                 ))}
               </div>
             </motion.div>

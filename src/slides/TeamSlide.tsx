@@ -15,7 +15,7 @@ const founders = [
   },
   {
     name: 'Tony Kenyon',
-    role: 'CTO',
+    role: 'CPTO',
     photo: '/team/tony-bg.png',
     linkedin: 'https://www.linkedin.com/in/tonykenyon/',
     lines: [
@@ -23,16 +23,6 @@ const founders = [
       '25 years shipping enterprise AI & infra',
       'Former Vitruvian (applied ML, security)',
       'Principal Architect: BT, Nokia, A10',
-    ],
-  },
-  {
-    name: 'Eric Leandri',
-    role: 'Chairman',
-    photo: '/team/eric-bg.png',
-    linkedin: 'https://www.linkedin.com/in/ericleandri/',
-    lines: [
-      'AI Visionary',
-      'CEO, Aleria (UAE Sovereign AI)',
     ],
   },
 ];
@@ -54,18 +44,18 @@ const coreTeam = [
     photo: '/team/jamie-bg.png',
     linkedin: '',
     lines: [
-      'Head of AI, NEOM',
+      'Head of AI Delivery, NEOM',
       'JP Morgan',
     ],
   },
   {
-    name: 'Matt Law',
-    role: 'Growth',
-    photo: '/team/matt-bg.jpg',
-    linkedin: 'https://www.linkedin.com/in/mattlaw/',
+    name: 'Alan Radi',
+    role: 'VP Sales (incoming)',
+    photo: '/team/alan-bg.jpg',
+    linkedin: 'https://www.linkedin.com/in/alanradi/',
     lines: [
-      'Outlier Ventures, Boson',
-      'Fetch.ai',
+      'Zain · Etisalat · Dubai Gov',
+      '12 yrs CX AI, global B2C',
     ],
   },
 ];
@@ -73,6 +63,7 @@ const coreTeam = [
 const advisors = [
   { name: 'Carlos Domingo', company: 'Securitize', photo: '/team/carlos.jpg', linkedin: 'https://www.linkedin.com/in/carlosdomingo/' },
   { name: 'Arnold Lee', company: 'Sphere', photo: '/team/arnold.jpg', linkedin: 'https://www.linkedin.com/in/arnoldhlee/' },
+  { name: 'Eric Leandri', company: 'Aleria AI', photo: '/team/eric-bg.png', linkedin: 'https://www.linkedin.com/in/ericleandri/' },
 ];
 
 /** Advisor avatar: shows the photo, falls back to a gray initials circle until the file exists. */
@@ -109,6 +100,27 @@ const LinkedInBadge = ({ href, size = 5 }: { href: string; size?: number }) => (
     </svg>
   </a>
 );
+
+/** Team photo: shows the photo, falls back to a gray initials circle when missing. */
+const TeamPhoto = ({ name, photo }: { name: string; photo?: string }) => {
+  const [failed, setFailed] = useState(false);
+  const initials = name.split(' ').map((w) => w[0]).slice(0, 2).join('');
+  if (!photo || failed) {
+    return (
+      <div
+        className="w-24 h-24 lg:w-28 lg:h-28 rounded-full flex items-center justify-center ring-2 ring-orange-500/30"
+        style={{ background: '#d2d2d2' }}
+      >
+        <span className="text-[#3a3a3a] text-2xl lg:text-3xl font-bold" style={{ fontFamily: "'Geist Mono', monospace" }}>{initials}</span>
+      </div>
+    );
+  }
+  return (
+    <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden ring-2 ring-orange-500/30">
+      <img src={photo} alt={name} className="w-full h-full object-cover" onError={() => setFailed(true)} />
+    </div>
+  );
+};
 
 export function TeamSlide() {
   return (
@@ -191,9 +203,7 @@ export function TeamSlide() {
               className="flex items-start gap-5"
             >
               <div className="relative shrink-0">
-                <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden ring-2 ring-orange-500/30">
-                  <img src={f.photo} alt={f.name} className="w-full h-full object-cover" />
-                </div>
+                <TeamPhoto name={f.name} photo={f.photo} />
                 {f.linkedin && <LinkedInBadge href={f.linkedin} size={6} />}
               </div>
               <div className="min-w-0">

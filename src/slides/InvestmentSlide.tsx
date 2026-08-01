@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
 
 const useOfFunds = [
-  { pct: 40, label: 'Engineering', strong: 1.0 },
-  { pct: 35, label: 'Sales & GTM', strong: 0.7 },
-  { pct: 15, label: 'Hires', strong: 0.4 },
-  { pct: 10, label: 'Ops', strong: 0.25 },
+  { pct: 70, label: 'Engineering', strong: 1.0 },
+  { pct: 15, label: 'Sales & GTM', strong: 0.7 },
+  { pct: 15, label: 'Ops, corporate & legal', strong: 0.4 },
 ];
 
 const backers = ['Blockchange Capital', 'Outlier Ventures', 'Tawasal Al Khaleej'];
@@ -75,7 +74,7 @@ export function InvestmentSlide() {
               className="text-[#fefefe]/70 text-xs sm:text-sm lg:text-base mt-3 lg:mt-4 leading-relaxed"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              SAFE + token warrants · 24 months runway
+              SAFE + token warrants · 18 months runway
             </p>
           </div>
 
@@ -169,6 +168,12 @@ export function InvestmentSlide() {
                 </div>
               ))}
             </div>
+            <p
+              className="text-[#fefefe]/55 text-[11px] sm:text-xs lg:text-sm mt-3 leading-snug"
+              style={{ fontFamily: "'Geist Mono', monospace" }}
+            >
+              Existing engineering team carried flat — <span className="text-orange-400">100% of incremental spend is commercial.</span>
+            </p>
           </div>
 
           {/* Backed By */}

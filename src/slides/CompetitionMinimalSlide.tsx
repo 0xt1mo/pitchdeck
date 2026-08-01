@@ -9,10 +9,10 @@ type Competitor = {
 
 const competitors: Competitor[] = [
   { name: 'NeMo', tag: 'guardrail SDK', note: 'watches prompts', pos: 'top' },
-  { name: 'Lakera', tag: 'API gateway', note: 'watches traffic', pos: 'top-l' },
-  { name: 'Geordie', tag: 'observability', note: 'watches logs', pos: 'top-r' },
-  { name: 'Protect AI', tag: 'model scanning', note: 'watches models', pos: 'mid-l' },
-  { name: 'CalypsoAI', tag: 'inference proxy', note: 'watches inference', pos: 'mid-r' },
+  { name: 'Lakera', tag: 'prompt firewall', note: 'watches content', pos: 'top-l' },
+  { name: 'Kong', tag: 'API gateway', note: 'watches traffic', pos: 'top-r' },
+  { name: 'Palo Alto AIRS', tag: 'model scanning', note: 'watches models', pos: 'mid-l' },
+  { name: 'F5 · CalypsoAI', tag: 'inference proxy', note: 'watches inference', pos: 'mid-r' },
 ];
 
 export function CompetitionMinimalSlide() {

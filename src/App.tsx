@@ -10,6 +10,8 @@ import { BearerTokensSlide } from './slides/BearerTokensSlide';
 import { MedicalCaseSlide } from './slides/MedicalCaseSlide';
 import { GtmEditionsSlide } from './slides/GtmEditionsSlide';
 import { IGamingRetentionSlide } from './slides/IGamingRetentionSlide';
+import { AgentFirewallSlide } from './slides/AgentFirewallSlide';
+import { AosFirewallArchSlide } from './slides/AosFirewallArchSlide';
 // import { EdgePayoffSlide } from './slides/EdgePayoffSlide'; // hidden — appendix
 import { UnbundledPayoffSlide } from './slides/UnbundledPayoffSlide';
 import { RetrofitSlide } from './slides/RetrofitSlide';
@@ -95,6 +97,8 @@ const slides = [
   MedicalCaseSlide,        // Case Study — Medical (Padra + AOS)
   GoToMarketSlide,         // Use Case — Government (UAE beachhead)
   IGamingRetentionSlide,   // Use Case — iGaming (retention becomes a conversation)
+  AgentFirewallSlide,      // Use Case — Developer/Enterprise (Unicity Agent Firewall)
+  AosFirewallArchSlide,    // AOS-Firewall — agentic security architecture diagram
   // ProtocolSlide,        // hidden — Case Study: x402 Live Demo
   // TokenObjectSlide,     // hidden — Tokens are native data types, not ledger entries
   // CompetitionMinimalSlide, // hidden — Off-chain tokens can integrate into an OS. Ledger entries cannot.

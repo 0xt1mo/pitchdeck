@@ -7,7 +7,6 @@ const stats = [
   { value: '3,500', label: 'DEVELOPER SIGN-UPS' },
   { value: '1,500', label: 'COMMUNITY TESTNET APPS' },
   { value: '80K+', label: 'LIVE TESTNET WALLETS' },
-  { value: '44K', label: 'DISCORD USERS' },
   { value: 'LIVE', label: "SOFT LAUNCH · JUL '26", sub: "GA · AUG '26", highlight: true },
 ];
 
@@ -65,12 +64,12 @@ export function TractionSlide() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.6 }}
-          className="shrink-0 grid grid-cols-2 lg:grid-cols-5 border-y border-[#fefefe]/12"
+          className="shrink-0 grid grid-cols-2 lg:grid-cols-4 border-y border-[#fefefe]/12"
         >
           {stats.map((s, i) => (
             <div
               key={s.value}
-              className={`px-4 lg:px-6 py-5 lg:py-7 ${i % 5 !== 0 ? 'lg:border-l' : ''} ${i % 2 !== 0 ? 'border-l' : ''} border-[#fefefe]/12`}
+              className={`px-4 lg:px-7 py-5 lg:py-7 ${i % 4 !== 0 ? 'lg:border-l' : ''} ${i % 2 !== 0 ? 'border-l' : ''} border-[#fefefe]/12`}
             >
               <p
                 className="text-4xl lg:text-6xl leading-none"
