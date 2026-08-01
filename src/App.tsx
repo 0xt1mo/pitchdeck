@@ -11,6 +11,8 @@ import { MedicalCaseSlide } from './slides/MedicalCaseSlide';
 import { GtmEditionsSlide } from './slides/GtmEditionsSlide';
 import { IGamingRetentionSlide } from './slides/IGamingRetentionSlide';
 import { AgentFirewallSlide } from './slides/AgentFirewallSlide';
+import { FailClosedSlide } from './slides/FailClosedSlide';
+import { FirewallMoneyMomentSlide } from './slides/FirewallMoneyMomentSlide';
 import { AosFirewallArchSlide } from './slides/AosFirewallArchSlide';
 // import { EdgePayoffSlide } from './slides/EdgePayoffSlide'; // hidden — appendix
 import { UnbundledPayoffSlide } from './slides/UnbundledPayoffSlide';
@@ -98,6 +100,8 @@ const slides = [
   GoToMarketSlide,         // Use Case — Government (UAE beachhead)
   IGamingRetentionSlide,   // Use Case — iGaming (retention becomes a conversation)
   AgentFirewallSlide,      // Use Case — Developer/Enterprise (Unicity Agent Firewall)
+  FailClosedSlide,         // Why it wins — fail closed, not fail open
+  FirewallMoneyMomentSlide,// The money moment — model said yes, OS said no
   AosFirewallArchSlide,    // AOS-Firewall — agentic security architecture diagram
   // ProtocolSlide,        // hidden — Case Study: x402 Live Demo
   // TokenObjectSlide,     // hidden — Tokens are native data types, not ledger entries
