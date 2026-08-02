@@ -34,7 +34,7 @@ export function AppendixDividerSlide() {
           className="text-[#fefefe] text-[64px] sm:text-[96px] lg:text-[140px] xl:text-[160px] leading-[0.95] tracking-tight uppercase text-center"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          TECHNOLOGY
+          THE PLATFORM
         </motion.h1>
 
         {/* Accent line */}
@@ -54,7 +54,7 @@ export function AppendixDividerSlide() {
           className="text-[#fefefe]/70 text-base sm:text-lg lg:text-xl tracking-[0.18em] uppercase text-center"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Technical deep-dives
+          About Unicity · the operating system · verifiable AI
         </motion.p>
 
       </div>

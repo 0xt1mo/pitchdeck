@@ -35,6 +35,7 @@ import { TokenSlide } from './slides/TokenSlide';
 import { BusinessModelSlide } from './slides/BusinessModelSlide';
 import { IntellectualArcSlide } from './slides/IntellectualArcSlide';
 import { AppendixDividerSlide } from './slides/AppendixDividerSlide';
+import { VerifiableRoadmapSlide } from './slides/VerifiableRoadmapSlide';
 import { ThePathSlide } from './slides/ThePathSlide';
 import { TeamSlide } from './slides/TeamSlide';
 import { RaiseSlide } from './slides/RaiseSlide';
@@ -113,16 +114,24 @@ import { SlideNavigation } from './components/SlideNavigation';
 
 // ── AOS CODEWALL — product sales deck (active on this branch) ──
 const slides = [
+  // ── Main sales story ──
   CodewallCoverSlide,        // 1. Cover — AOS Codewall
   CodewallProblemSlide,      // 2. Problem — coding agents are the new attack surface
   AgentFirewallSlide,        // 3. What it does — IDE interception mockup
-  AosFirewallArchSlide,      // 4. How it works — agentic security architecture
+  AosFirewallArchSlide,      // 4. How it works — enforce locally, govern centrally
   FailClosedSlide,           // 5. Fail closed, not fail open
   FirewallMoneyMomentSlide,  // 6. The money moment — model said yes, OS said no
   FirewallProofSlide,        // 7. Proof & verifiable audit
   FirewallPricingSlide,      // 8. Pricing — free / team ($15) / enterprise
-  WhoWeAreSlide,             // 9. About — Unicity Labs (team, offices, clients)
-  AosCtaSlide,               // 10. How to start · contact
+  AosCtaSlide,               // 9. How to start · contact
+  // ── Appendix — the platform behind Codewall ──
+  AppendixDividerSlide,      // 10. Appendix divider — The Platform
+  WhoWeAreSlide,             // 11. About Unicity Labs
+  AutonomyStackSlide,        // 12. What is AOS — the OS for autonomous agents (main intro)
+  AosNotMetaphorSlide,       // 13. An actual OS — not just orchestration
+  AosMergedSlide,            // 14. Operating systems beat harnesses
+  CompetitionMinimalSlide,   // 15. They watch the traffic — we're the runtime beneath
+  VerifiableRoadmapSlide,    // 16. Where this goes — verifiable AI (close)
 ];
 
 // ── Full AOS deck (kept for reference; not active on this branch) ──
@@ -286,14 +295,7 @@ export default function App() {
   return (
     <div className="h-full w-full relative">
       <CurrentSlideComponent onNext={() => { goToSlide(currentSlide + 1); }} goToSlide={goToSlide} />
-      {currentSlide > 0 && (
-        <div
-          className="fixed bottom-4 left-6 sm:left-10 lg:left-16 z-[101] text-[#fefefe]/40 text-base sm:text-lg font-medium select-none pointer-events-none"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          {currentSlide} / {slides.length - 1}
-        </div>
-      )}
+      {/* Page number hidden — slides get reordered in the exported PDF */}
       <div
         className="fixed bottom-4 right-6 sm:right-10 lg:right-16 z-[101] text-[#fefefe]/40 text-[11px] sm:text-xs tracking-[0.18em] uppercase select-none pointer-events-none"
         style={{ fontFamily: "'Geist Mono', monospace" }}

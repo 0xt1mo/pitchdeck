@@ -10,8 +10,7 @@ const founders = [
     linkedin: 'https://www.linkedin.com/in/mikegault1/',
     lines: [
       'PhD Electrical Engineering',
-      'Built & exited Guardtime (ADX:IHC)',
-      'Ex-MD, Barclays Capital',
+      'Built & exited Guardtime',
     ],
   },
   {
@@ -22,7 +21,6 @@ const founders = [
     lines: [
       'PhD Machine Learning',
       '25 years shipping enterprise AI & infra',
-      'Principal Architect: BT, Nokia, A10',
     ],
   },
   {

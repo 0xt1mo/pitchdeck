@@ -86,10 +86,10 @@ export function AosCtaSlide() {
                 <span className="text-orange-400 shrink-0">→</span> Deploys in your VPC or on-prem
               </p>
               <p className="flex gap-2 text-[#fefefe]/85 text-sm lg:text-lg leading-snug" style={{ fontFamily: mono }}>
-                <span className="text-orange-400 shrink-0">→</span> Proof-of-concept in ~4 weeks
+                <span className="text-orange-400 shrink-0">→</span> Fleet rollout in days, not quarters
               </p>
               <p className="flex gap-2 text-[#fefefe]/85 text-sm lg:text-lg leading-snug" style={{ fontFamily: mono }}>
-                <span className="text-orange-400 shrink-0">→</span> Per-agent licensing
+                <span className="text-orange-400 shrink-0">→</span> Per-seat licensing
               </p>
             </div>
             <a

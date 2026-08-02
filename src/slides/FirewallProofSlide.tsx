@@ -80,7 +80,7 @@ export function FirewallProofSlide() {
             <div>
               <p className="text-[#fefefe] text-base lg:text-lg font-bold leading-snug" style={{ fontFamily: MONO }}>Receipts, not logs</p>
               <p className="text-[#fefefe]/65 text-sm lg:text-base leading-snug mt-1" style={{ fontFamily: MONO }}>
-                Every decision signed and hash-chained. An offline verifier confirms any exported event is untampered — the SOC & compliance story.
+                Every decision signed and hash-chained. An offline verifier confirms any exported event is untampered.
               </p>
             </div>
           </motion.div>
@@ -94,7 +94,7 @@ export function FirewallProofSlide() {
             <div>
               <p className="text-[#fefefe] text-base lg:text-lg font-bold leading-snug" style={{ fontFamily: MONO }}>Commit attestation</p>
               <p className="text-[#fefefe]/65 text-sm lg:text-base leading-snug mt-1" style={{ fontFamily: MONO }}>
-                Prove a commit passed through a governed agent — a small, verifiable, time-anchored claim. The Unicity / KSI proof heritage, exactly where it fits.
+                Prove a commit passed through a governed agent — a small, verifiable, time-anchored claim.
               </p>
             </div>
           </motion.div>

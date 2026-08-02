@@ -35,7 +35,7 @@ const tiers = [
     name: 'Enterprise',
     who: 'Eng leaders · 10+',
     price: 'Contact',
-    unit: 'us',
+    unit: '',
     accent: false,
     plus: 'Everything in Team, plus:',
     items: [
@@ -66,7 +66,7 @@ export function FirewallPricingSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[46px] lg:text-[64px] xl:text-[72px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: ANTON }}
           >
-            Land free. <span className="text-orange-400">Expand per seat.</span>
+            Start free. <span className="text-orange-400">Scale per developer.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -75,7 +75,7 @@ export function FirewallPricingSlide() {
             className="mt-2.5 text-[#fefefe]/80 text-base lg:text-lg"
             style={{ fontFamily: MONO }}
           >
-            The developer adopts it free. The team pays per seat. The enterprise buys governance.
+            Install it free on your own machine. Roll it out to the team per seat. Enterprise adds central policy, SSO and audit.
           </motion.p>
         </div>
 
@@ -130,7 +130,7 @@ export function FirewallPricingSlide() {
           className="shrink-0 text-[#fefefe]/85 text-base sm:text-lg lg:text-2xl leading-snug pt-4"
           style={{ fontFamily: MONO, borderTop: '1px solid rgba(255,255,255,0.10)' }}
         >
-          Even the free tier <span className="text-orange-400">fails closed</span> — enforcement no competitor can match, and the wedge into the enterprise.
+          Even the free tier <span className="text-orange-400">fails closed</span> — protection no other tool can match, from the first install.
         </motion.p>
 
       </div>
