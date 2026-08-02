@@ -14,6 +14,7 @@ import { AgentFirewallSlide } from './slides/AgentFirewallSlide';
 import { FailClosedSlide } from './slides/FailClosedSlide';
 import { FirewallMoneyMomentSlide } from './slides/FirewallMoneyMomentSlide';
 import { AosFirewallArchSlide } from './slides/AosFirewallArchSlide';
+import { VerifiableRoadmapSlide } from './slides/VerifiableRoadmapSlide';
 // import { EdgePayoffSlide } from './slides/EdgePayoffSlide'; // hidden — appendix
 import { UnbundledPayoffSlide } from './slides/UnbundledPayoffSlide';
 import { RetrofitSlide } from './slides/RetrofitSlide';
@@ -22,10 +23,11 @@ import { MarketSlide } from './slides/MarketSlide';
 // import { BusinessModelPricingSlide } from './slides/BusinessModelPricingSlide'; // hidden
 import { CompetitionMinimalSlide } from './slides/CompetitionMinimalSlide';
 import { AosThesisSlide } from './slides/AosThesisSlide';
+import { AosMergedSlide } from './slides/AosMergedSlide';
 import { AosNotMetaphorSlide } from './slides/AosNotMetaphorSlide';
 // import { DefensibilitySlide } from './slides/DefensibilitySlide'; // hidden
 import { ResourcesSlide } from './slides/ResourcesSlide';
-// import { ProblemSlide } from './slides/ProblemSlide'; // hidden
+import { ProblemSlide } from './slides/ProblemSlide';
 import { AutonomyStackSlide } from './slides/AutonomyStackSlide';
 import { CompleteAutonomyStackSlide } from './slides/CompleteAutonomyStackSlide';
 import { SolutionIntroSlide } from './slides/SolutionIntroSlide';
@@ -72,51 +74,33 @@ import { DemoSlide } from './slides/DemoSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  CoverSlide,              // 1. Cover — Unicity logo + Seed Round Extension
-  IntroSlide,              // 2. Thesis — Autonomous AI needs an internet built for machines
-  // ── Architecture arc (3–8) ──
-  // ProblemSlide,         // hidden — What Autonomy Demands — The Fourth Rebuild
-  // SolutionIntroSlide,   // hidden — Unicity OS: A Secure OS for AI Agents
-  AutonomyStackSlide,      // 4. The Protocol Stack for the Agentic Internet
-  AosNotMetaphorSlide,     // An actual OS — not just orchestration
-  AosThesisSlide,          // Operating Systems Beat Harnesses (thesis table)
-  CompetitionMinimalSlide, // They Watch The Traffic
-  // CompleteAutonomyStackSlide, // hidden — The First Complete Stack Built For Machines
-  BearerTokensSlide,       // Blockchain — Legacy blockchains weren't built for AI scale
-  MarketSlide,             // Market Opportunity — trillion-dollar rebuild
-  GtmEditionsSlide,        // Go To Market — Community / Enterprise / Industry Solutions
-  // ArchitectureStackSlide, // hidden — The Secure OS for Agents
-  // AgentsSlide,          // appendix — The Unicity Blockchain: Why a Purpose Built Chain
-  // EdgePayoffSlide,      // appendix — What This Unlocks
-  // CompetitiveLandscapeSlide, // appendix — We're Betting on a Different Architecture
-  // ── Commercial arc (9–14) ──
-  // WedgeSlide,           // hidden — Wedge content folded into UseCasesSlide title
-  // UseCasesSlide,        // hidden — Case Study: Enterprise Secure Compute Platform (pills)
-  // DeploymentModelHtmlSlide, // hidden — Case Study: Enterprise Secure Compute Platform
-  // AgentsSlide,          // hidden — The Unicity Blockchain — Why A Purpose Built Chain
-  // ── Case studies: Telecom · Medical · Government ──
-  ConciergeSlide,          // Case Study — Telecom (Subscriber Concierge)
-  MedicalCaseSlide,        // Case Study — Medical (Padra + AOS)
-  GoToMarketSlide,         // Use Case — Government (UAE beachhead)
-  IGamingRetentionSlide,   // Use Case — iGaming (retention becomes a conversation)
-  AgentFirewallSlide,      // Use Case — Developer/Enterprise (Unicity Agent Firewall)
-  FailClosedSlide,         // Why it wins — fail closed, not fail open
-  FirewallMoneyMomentSlide,// The money moment — model said yes, OS said no
-  AosFirewallArchSlide,    // AOS-Firewall — agentic security architecture diagram
-  // ProtocolSlide,        // hidden — Case Study: x402 Live Demo
-  // TokenObjectSlide,     // hidden — Tokens are native data types, not ledger entries
-  // CompetitionMinimalSlide, // hidden — Off-chain tokens can integrate into an OS. Ledger entries cannot.
-  // DefensibilitySlide,   // hidden — Defensibility: today and tomorrow
-  // BusinessModelPricingSlide, // hidden — Open Core / Per Agent Pricing
-  // SecurityNetworkSlide, // hidden — Zero Trust Enterprise Network
-  // AgentSprawlSlide,     // hidden — Case Study: Agent Sprawl
-  // ThePathSlide,         // hidden — Current Status and How We Win
-  TractionSlide,           // Traction — devs, testnet, pipeline, signed channel
-  TeamSlide,               // Founders — right before the ask
-  InvestmentSlide,         // The Investment — $2M seed extension
-  TokenSlide,              // Tokenomics — Token Demand Scales With Network Revenue
-  ResourcesSlide,          // 17. Resources
-  ThankYouChatSlide,       // 18. Thank You
+  CoverSlide,              // 1.  Title — Unicity cover
+  IntroSlide,              // 2.  Vision — autonomous AI needs an internet built for machines
+  // ProblemSlide,         // hidden — The Fourth Rebuild of Compute
+  MarketSlide,             // 3.  Market Opportunity
+  AutonomyStackSlide,      // 4.  Product Stack — Protocol Stack for the Agentic Internet
+  AosMergedSlide,          // 5.  OS beats harnesses (merged table + primitives footer)
+  CompetitionMinimalSlide, // 6.  Runtime beneath — we are the runtime beneath them
+  BearerTokensSlide,       // 7.  Blockchain — the OS has an integrated blockchain
+  GtmEditionsSlide,        // 8.  Go To Market — Community / Enterprise / Industry Solutions
+  ConciergeSlide,          // 9.  Telecom — subscriber concierge
+  AgentFirewallSlide,      // 10. Codewall — AOS Codewall (developer firewall)
+  GoToMarketSlide,         // 11. Agentic State — Government / Aleria (UAE)
+  // MedicalCaseSlide,     // hidden — Padra / autonomous patient journey
+  TractionSlide,           // 12. Traction — devs, testnet, pipeline, signed channel
+  TeamSlide,               // 14. Team — right before the ask
+  InvestmentSlide,         // 15. The Investment — seed extension
+  TokenSlide,              // 16. Tokenomics
+  VerifiableRoadmapSlide,  // 17. Where this goes — roadmap to Verifiable AI
+  ThankYouChatSlide,       // 18. Thank You — contact + X + LinkedIn
+  // ── Dropped from this order (kept for reference) ──
+  // AosNotMetaphorSlide,  // OS beats harnesses (6-card primitives grid)
+  // AosThesisSlide,       // OS beats harnesses (thesis table)
+  // IGamingRetentionSlide,// iGaming — agentic CRM
+  // FailClosedSlide,      // firewall — fail closed, not fail open
+  // FirewallMoneyMomentSlide, // firewall — model said yes, OS said no
+  // AosFirewallArchSlide, // firewall — architecture diagram
+  // ResourcesSlide,       // Essential Resources (social links moved to Thank You)
   // ── Appendix — additional use cases (all hidden) ──
   // ShadowAISlide,           // Appendix — Agent Sprawl & Shadow AI
   // DLPSlide,                // Appendix — Data Loss Prevention
@@ -210,6 +194,12 @@ export default function App() {
           {currentSlide} / {slides.length - 1}
         </div>
       )}
+      <div
+        className="fixed bottom-4 right-6 sm:right-10 lg:right-16 z-[101] text-[#fefefe]/40 text-[11px] sm:text-xs tracking-[0.18em] uppercase select-none pointer-events-none"
+        style={{ fontFamily: "'Geist Mono', monospace" }}
+      >
+        August 2026 · Unicity Labs — Confidential
+      </div>
       {slides.length > 1 && (
         <SlideNavigation
           current={currentSlide}

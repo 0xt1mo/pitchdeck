@@ -15,6 +15,8 @@ const competitors: Competitor[] = [
   { name: 'F5 · CalypsoAI', tag: 'inference proxy', note: 'watches inference', pos: 'mid-r' },
 ];
 
+const agents = ['Codex', 'Claude Code', 'OpenClaw'];
+
 export function CompetitionMinimalSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
@@ -41,8 +43,9 @@ export function CompetitionMinimalSlide() {
           className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl leading-snug shrink-0 max-w-6xl"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Gateways and observability tools watch traffic from the outside. Unicity AOS is the runtime the agent actually executes on — it{' '}
-          <span className="text-orange-400 font-bold">works alongside what you've already bought and replaces nothing on day one.</span>
+          Gateways and firewalls watch traffic from the outside. We are the runtime the agent executes on —{' '}
+          <span className="text-[#fefefe] font-bold">the layer everything else depends on and nothing can bypass.</span>{' '}
+          They see requests; <span className="text-orange-400 font-bold">we control execution.</span>
         </motion.p>
 
         {/* Diagram */}
@@ -58,12 +61,16 @@ export function CompetitionMinimalSlide() {
             viewBox="0 0 880 460"
             preserveAspectRatio="none"
           >
-            <line x1="440" y1="74" x2="440" y2="118" stroke="rgba(255,255,255,0.20)" strokeWidth="1.5" strokeDasharray="4 4" />
-            <line x1="190" y1="122" x2="320" y2="180" stroke="rgba(255,255,255,0.20)" strokeWidth="1.5" strokeDasharray="4 4" />
-            <line x1="690" y1="122" x2="560" y2="180" stroke="rgba(255,255,255,0.20)" strokeWidth="1.5" strokeDasharray="4 4" />
-            <line x1="190" y1="262" x2="320" y2="232" stroke="rgba(255,255,255,0.20)" strokeWidth="1.5" strokeDasharray="4 4" />
-            <line x1="690" y1="262" x2="560" y2="232" stroke="rgba(255,255,255,0.20)" strokeWidth="1.5" strokeDasharray="4 4" />
-            <line x1="440" y1="270" x2="440" y2="356" stroke="#f97316" strokeWidth="3" />
+            {/* competitors watching the agent cluster (dashed, from outside) */}
+            <line x1="440" y1="74" x2="440" y2="116" stroke="rgba(255,255,255,0.20)" strokeWidth="1.5" strokeDasharray="4 4" />
+            <line x1="190" y1="122" x2="252" y2="150" stroke="rgba(255,255,255,0.20)" strokeWidth="1.5" strokeDasharray="4 4" />
+            <line x1="690" y1="122" x2="628" y2="150" stroke="rgba(255,255,255,0.20)" strokeWidth="1.5" strokeDasharray="4 4" />
+            <line x1="190" y1="262" x2="252" y2="234" stroke="rgba(255,255,255,0.20)" strokeWidth="1.5" strokeDasharray="4 4" />
+            <line x1="690" y1="262" x2="628" y2="234" stroke="rgba(255,255,255,0.20)" strokeWidth="1.5" strokeDasharray="4 4" />
+            {/* each agent runs on AOS (solid orange, one per box) */}
+            <line x1="282" y1="266" x2="282" y2="356" stroke="#f97316" strokeWidth="3" />
+            <line x1="440" y1="266" x2="440" y2="356" stroke="#f97316" strokeWidth="3" />
+            <line x1="598" y1="266" x2="598" y2="356" stroke="#f97316" strokeWidth="3" />
           </svg>
 
           {/* Competitor pills */}
@@ -107,25 +114,34 @@ export function CompetitionMinimalSlide() {
             );
           })}
 
-          {/* AGENT box (center) */}
+          {/* Agent boxes (center) — any harness runs on the same runtime */}
           <div
-            className="absolute rounded-xl flex items-center justify-center"
+            className="absolute flex justify-center gap-3 lg:gap-4"
             style={{
               top: '26%',
               left: '50%',
               transform: 'translateX(-50%)',
-              width: '220px',
-              height: '150px',
-              background: 'rgba(255,255,255,0.04)',
-              border: '2px solid rgba(255,255,255,0.40)',
+              width: '480px',
             }}
           >
-            <p
-              className="text-[#fefefe] text-[28px] sm:text-[34px] lg:text-[40px] tracking-tight uppercase"
-              style={{ fontFamily: "'Anton', sans-serif" }}
-            >
-              AGENT
-            </p>
+            {agents.map((a) => (
+              <div
+                key={a}
+                className="flex-1 min-w-0 rounded-xl flex items-center justify-center text-center px-2"
+                style={{
+                  height: '150px',
+                  background: 'rgba(255,255,255,0.04)',
+                  border: '2px solid rgba(255,255,255,0.40)',
+                }}
+              >
+                <p
+                  className="text-[#fefefe] text-[20px] sm:text-[24px] lg:text-[30px] leading-[0.95] tracking-tight uppercase"
+                  style={{ fontFamily: "'Anton', sans-serif" }}
+                >
+                  {a}
+                </p>
+              </div>
+            ))}
           </div>
 
           {/* AOS bar (bottom) */}
@@ -148,7 +164,7 @@ export function CompetitionMinimalSlide() {
                 className="text-[#fefefe] text-base sm:text-lg lg:text-xl font-bold leading-tight"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                The kernel the agent runs on
+                The kernel every agent runs on
               </p>
               <p
                 className="text-[#fefefe]/65 text-xs sm:text-sm lg:text-base font-medium mt-1 leading-tight"

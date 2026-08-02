@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 
 const useOfFunds = [
-  { pct: 70, label: 'Engineering', strong: 1.0 },
-  { pct: 15, label: 'Sales & GTM', strong: 0.7 },
-  { pct: 15, label: 'Ops, corporate & legal', strong: 0.4 },
+  { pct: 59, label: 'Engineering & product', strong: 1.0 },
+  { pct: 31, label: 'Sales, GTM & deployment', strong: 0.7 },
+  { pct: 10, label: 'Operations & corporate', strong: 0.4 },
 ];
 
-const backers = ['Blockchange Capital', 'Outlier Ventures', 'Tawasal Al Khaleej'];
+const backers = ['Blockchange Capital', 'Outlier Ventures'];
 
 export function InvestmentSlide() {
   return (
@@ -172,7 +172,7 @@ export function InvestmentSlide() {
               className="text-[#fefefe]/55 text-[11px] sm:text-xs lg:text-sm mt-3 leading-snug"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Existing engineering team carried flat — <span className="text-orange-400">100% of incremental spend is commercial.</span>
+              Engineering headcount held broadly flat; the increase is weighted to <span className="text-orange-400">deployment, compliance certification, and mainnet operations.</span>
             </p>
           </div>
 

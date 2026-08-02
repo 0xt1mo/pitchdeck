@@ -26,7 +26,7 @@ export function AosNotMetaphorSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[48px] lg:text-[66px] xl:text-[76px] leading-[0.98] tracking-tight uppercase"
             style={{ fontFamily: display }}
           >
-            AN ACTUAL OS — <span className="text-orange-400">NOT JUST ORCHESTRATION.</span>
+            OPERATING SYSTEMS BEAT <span className="text-orange-400">HARNESSES.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -35,7 +35,7 @@ export function AosNotMetaphorSlide() {
             className="text-[#fefefe]/80 text-base lg:text-2xl leading-snug mt-3 max-w-5xl"
             style={{ fontFamily: mono }}
           >
-            An OS isn't marketing — it's <span className="text-orange-400">syscalls, IPC, permissions, quotas, drivers.</span> Everyone claims the label; here, every primitive is a real implementation.
+            An OS isn't marketing — it's <span className="text-orange-400">syscalls, IPC, permissions, quotas, drivers.</span> Everyone claims the label; here, every primitive is a real implementation. Agent harnesses rebuild the same stack — memory, storage, tools. An OS provides an <span className="text-orange-400">extensible kernel with multi-tenancy by design.</span>
           </motion.p>
         </div>
 

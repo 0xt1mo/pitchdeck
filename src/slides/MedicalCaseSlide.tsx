@@ -61,7 +61,7 @@ export function MedicalCaseSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[56px] xl:text-[64px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: ANTON }}
           >
-            Case Study: <span className="text-orange-400">Autonomous patient journey</span>
+            Example Solution: <span className="text-orange-400">Autonomous patient journey</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}

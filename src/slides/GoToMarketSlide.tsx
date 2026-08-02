@@ -17,7 +17,7 @@ export function GoToMarketSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[56px] xl:text-[64px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            CASE STUDY: <span className="text-orange-400">The agentic state</span>
+            EXAMPLE SOLUTION: <span className="text-orange-400">The agentic state</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -26,7 +26,7 @@ export function GoToMarketSlide() {
             className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl mt-3 max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            We've partnered with <span className="text-orange-400 font-bold">Aleria AI</span>, provider of sovereign AI solutions, to bring our OS to the UAE.
+            We've partnered with <span className="text-orange-400 font-bold">Aleria AI</span>, provider of sovereign AI solutions, to bring our OS to the Middle East.
           </motion.p>
         </div>
 
@@ -172,7 +172,7 @@ export function GoToMarketSlide() {
                   className="text-[#fefefe]/65 text-xs sm:text-sm lg:text-base tracking-[0.18em] uppercase"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
-                  Agents in production
+                  Aleria agents in production
                 </p>
               </div>
             </div>

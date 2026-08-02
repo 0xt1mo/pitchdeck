@@ -157,7 +157,7 @@ export function TractionSlide() {
               </span>
             </div>
             <div className="mt-4 flex flex-col gap-2.5">
-              {[['15', 'Telecom operators'], ['10', 'iGaming operators'], ['10', 'Clinics']].map(([n, l]) => (
+              {[['11', 'Telecom operators'], ['6', 'iGaming operators'], ['4', 'Healthcare providers']].map(([n, l]) => (
                 <div key={l} className="flex items-baseline gap-3">
                   <span className="text-orange-400 text-2xl lg:text-3xl leading-none w-10 lg:w-12 shrink-0" style={{ fontFamily: anton }}>{n}</span>
                   <span className="text-[#fefefe]/85 text-sm lg:text-base" style={{ fontFamily: mono }}>{l}</span>

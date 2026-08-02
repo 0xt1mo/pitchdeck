@@ -31,7 +31,7 @@ export function ConciergeSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[56px] xl:text-[64px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: display }}
           >
-            CASE STUDY: TELECOM,{' '}
+            EXAMPLE SOLUTION: TELECOM,{' '}
             <span className="text-orange-400">AN AGENT FOR EVERY SIM.</span>
           </motion.h1>
           <motion.p
@@ -96,21 +96,6 @@ export function ConciergeSlide() {
           />
 
         </div>
-
-        {/* Economics footer */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9, duration: 0.6 }}
-          className="shrink-0 border-t border-white/[0.10] pt-4 text-center"
-        >
-          <p className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg leading-snug" style={{ fontFamily: "'Geist Mono', monospace" }}>
-            <span className="text-orange-400 font-bold">$5</span> / subscriber / month retail · 30% operator take · <span className="text-orange-400 font-bold">$3.50</span> to the stack · <span className="text-orange-400 font-bold">$1.75</span> net to Unicity in the Aleria channel
-          </p>
-          <p className="text-[#fefefe]/55 text-xs sm:text-sm lg:text-base mt-1.5 leading-snug" style={{ fontFamily: "'Geist Mono', monospace" }}>
-            Base case: <span className="text-[#fefefe]/80">190,000 subscribers at Month 18</span> — under 2% of a single 10M-subscriber operator base
-          </p>
-        </motion.div>
 
       </div>
     </div>

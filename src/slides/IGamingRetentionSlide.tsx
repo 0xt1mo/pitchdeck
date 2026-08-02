@@ -19,7 +19,7 @@ export function IGamingRetentionSlide() {
               className="text-[#fefefe] text-[26px] sm:text-[36px] lg:text-[44px] xl:text-[50px] leading-[0.98] tracking-tight uppercase"
               style={{ fontFamily: display }}
             >
-              CASE STUDY: <span className="text-orange-400">iGaming agentic CRM.</span>
+              EXAMPLE SOLUTION: <span className="text-orange-400">iGaming agentic CRM.</span>
             </motion.h1>
             <motion.div
               initial={{ scaleX: 0 }}

@@ -45,7 +45,8 @@ const columns: Column[] = [
       { t: 'Revenue share on every deployment' },
       { t: 'Telecom · medical · government' },
       { t: 'Signed: Aleria — UAE sovereign AI' },
-      { t: '$3.50 per subscriber / month to the stack', sub: '50% retained where Aleria holds the contract' },
+      { t: 'Example 1: Concierge — $5 / sub / month' },
+      { t: 'Example 2: Codewall — $15 / dev / month' },
     ],
   },
 ];
@@ -66,6 +67,15 @@ export function GtmEditionsSlide() {
           >
             Go To <span className="text-orange-400">Market.</span>
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.25, duration: 0.5 }}
+            className="text-[#fefefe]/80 text-sm sm:text-base lg:text-xl leading-snug mt-3 max-w-6xl"
+            style={{ fontFamily: mono }}
+          >
+            <span className="text-orange-400 font-bold">Open Core fits a channel strategy.</span> Distribution is through partners in Europe, MEA, US and Brazil — targeting industries that struggle with <span className="text-[#fefefe] font-bold">security, compliance and governance for agents.</span> Our role is to deliver product — extensions to the OS with <span className="text-orange-400">cryptographic guarantees.</span>
+          </motion.p>
         </div>
 
         {/* Three columns */}

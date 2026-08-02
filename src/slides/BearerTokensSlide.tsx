@@ -129,9 +129,9 @@ export function BearerTokensSlide() {
             className="text-[#fefefe] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: ANTON, fontSize: 'clamp(2rem, 4.4vw, 3.6rem)' }}
           >
-            Legacy blockchains weren't
+            The OS has an
             <br />
-            built for AI scale. <span className="text-orange-400">Unicity is.</span>
+            <span className="text-orange-400">integrated blockchain.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -140,7 +140,7 @@ export function BearerTokensSlide() {
             className="mt-4 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl max-w-4xl leading-relaxed"
             style={{ fontFamily: MONO }}
           >
-            <span className="text-[#fefefe] font-bold">AOS governs how agents act.</span> This is how they <span className="text-orange-400">transact</span> — value that settles peer-to-peer, at machine scale.
+            <span className="text-[#fefefe] font-bold">Tokens are OS-native data types</span> that <span className="text-orange-400">verify execution.</span>
           </motion.p>
         </div>
 
