@@ -33,13 +33,12 @@ const founders = [
     ],
   },
   {
-    name: 'Eric Leandri',
-    role: 'Chairman',
-    photo: '/team/eric-bw.png',
-    linkedin: 'https://www.linkedin.com/in/ericleandri/',
+    name: 'Jamie Steiner',
+    role: 'Product',
+    photo: '/team/jamie-bw.png',
     lines: [
-      'AI Visionary',
-      'CEO, Aleria (UAE Sovereign AI)',
+      'Head of AI Delivery, NEOM',
+      'JP Morgan',
     ],
   },
 ];
