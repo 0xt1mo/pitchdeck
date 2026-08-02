@@ -15,7 +15,7 @@ const competitors: Competitor[] = [
   { name: 'F5 · CalypsoAI', tag: 'inference proxy', note: 'watches inference', pos: 'mid-r' },
 ];
 
-const agents = ['Codex', 'Claude Code', 'OpenClaw'];
+const agents = ['Codex', 'Claude Code', 'Cursor'];
 
 export function CompetitionMinimalSlide() {
   return (

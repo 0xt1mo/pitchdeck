@@ -28,7 +28,7 @@ export function VerifiableRoadmapSlide() {
           className="shrink-0 text-[#fefefe] text-[26px] sm:text-[38px] lg:text-[52px] leading-[0.98] tracking-tight uppercase"
           style={{ fontFamily: ANTON }}
         >
-          Where this goes: <span className="text-orange-400">verifiable AI.</span>
+          Our mission: <span className="text-orange-400">verifiable AI.</span>
         </motion.h1>
 
         {/* The equation */}
