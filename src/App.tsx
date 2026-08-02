@@ -70,6 +70,7 @@ import { AosCoverSlide } from './slides/AosCoverSlide';
 import { AosNoOsSlide } from './slides/AosNoOsSlide';
 import { AosHistorySlide } from './slides/AosHistorySlide';
 import { AosThesisSlide } from './slides/AosThesisSlide';
+import { AosMergedSlide } from './slides/AosMergedSlide';
 import { AosResolutionSlide } from './slides/AosResolutionSlide';
 import { AosEngineSlide } from './slides/AosEngineSlide';
 import { AosCapsuleSlide } from './slides/AosCapsuleSlide';
@@ -117,7 +118,8 @@ const slides = [
   AosNoOsSlide,              // 2. The problem — you run agents, can't govern them
   AutonomyStackSlide,        // 3. An OS built for the day no one is watching (what AOS is)
   AosNotMetaphorSlide,       // 4. An actual OS — not just orchestration (the checklist)
-  AosThesisSlide,            // 5. Operating systems beat harnesses (full thesis table)
+  AosMergedSlide,            // 5. Operating systems beat harnesses (merged table + primitives footer)
+  // AosThesisSlide,         // replaced by AosMergedSlide
   AosResolutionSlide,        // 5. Owned by no model vendor. Running all of them.
   DeploymentModelHtmlSlide,  // 6. Runs inside your infrastructure
   AosSecuritySlide,          // 6. Security & integration — boring on purpose
@@ -275,6 +277,12 @@ export default function App() {
           {currentSlide} / {slides.length - 1}
         </div>
       )}
+      <div
+        className="fixed bottom-4 right-6 sm:right-10 lg:right-16 z-[101] text-[#fefefe]/40 text-[11px] sm:text-xs tracking-[0.18em] uppercase select-none pointer-events-none"
+        style={{ fontFamily: "'Geist Mono', monospace" }}
+      >
+        August 2026 · Unicity Labs — Confidential
+      </div>
       {slides.length > 1 && (
         <SlideNavigation
           current={currentSlide}

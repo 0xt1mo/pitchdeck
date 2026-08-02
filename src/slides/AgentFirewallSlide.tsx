@@ -50,7 +50,7 @@ export function AgentFirewallSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[56px] xl:text-[64px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: ANTON }}
           >
-            Case Study: <span className="text-orange-400">The agent firewall</span>
+            AOS <span className="text-orange-400">Codewall.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -59,12 +59,12 @@ export function AgentFirewallSlide() {
             className="mt-2.5 text-[#fefefe]/80 text-base lg:text-lg max-w-6xl leading-relaxed"
             style={{ fontFamily: MONO }}
           >
-            Prompt injection · rogue MCP servers · “YOLO” execution · secret leakage. <span className="text-orange-400 font-bold">Unicity governs the coding agent at the kernel</span> — every action bounded, redacted, and proven.
+            The firewall for coding agents. <span className="text-[#fefefe] font-bold">Not a prompt asking nicely</span> — <span className="text-orange-400 font-bold">kernel-level permissions</span> that bound every action, redact every secret, and prove every step.
           </motion.p>
         </div>
 
         {/* Content */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row items-stretch gap-8 lg:gap-12">
 
           {/* Left — value */}
           <div className="lg:w-[40%] shrink-0 flex flex-col gap-4">
@@ -83,24 +83,22 @@ export function AgentFirewallSlide() {
                 </div>
               </motion.div>
             ))}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.75, duration: 0.5 }}
-              className="text-[#fefefe]/50 text-xs lg:text-sm mt-2 leading-snug"
-              style={{ fontFamily: MONO }}
-            >
-              Drops into Cursor · Claude Code · Copilot · CI/CD. Runs in your VPC or on-prem.
-            </motion.p>
 
+            {/* Price card — pinned to the bottom of the column */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.85, duration: 0.5 }}
-              className="mt-4 flex items-baseline gap-3 border-t border-white/[0.08] pt-4"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+              className="mt-auto flex items-center justify-between gap-4 rounded-xl px-5 py-4"
+              style={{ border: '1px solid rgba(249,115,22,0.35)', background: 'rgba(249,115,22,0.06)' }}
             >
-              <span className="text-orange-400 text-[40px] lg:text-[52px] leading-none" style={{ fontFamily: ANTON }}>$15</span>
-              <span className="text-[#fefefe]/70 text-sm lg:text-base" style={{ fontFamily: MONO }}>per developer<br />/ month</span>
+              <div className="flex items-baseline gap-2.5">
+                <span className="text-orange-400 text-[40px] lg:text-[52px] leading-none" style={{ fontFamily: ANTON }}>$15</span>
+                <span className="text-[#fefefe]/70 text-sm lg:text-base leading-tight" style={{ fontFamily: MONO }}>per dev<br />/ month</span>
+              </div>
+              <p className="text-[#fefefe]/55 text-[11px] lg:text-xs leading-snug text-right max-w-[210px]" style={{ fontFamily: MONO }}>
+                Drops into Cursor · Claude Code · Copilot · CI/CD — runs in your VPC or on-prem.
+              </p>
             </motion.div>
           </div>
 

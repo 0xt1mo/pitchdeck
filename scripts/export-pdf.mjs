@@ -51,28 +51,12 @@ async function exportPDF() {
     console.log(`📸 Capturing slide ${i - startSlide + 1}/${slideCount}...`);
     await new Promise(r => setTimeout(r, 3000));
 
-    // Hide nav bar and slide counter, then inject logo
+    // Hide the on-screen nav bar (dots/arrows). Keep the page counter and the
+    // "Unicity Labs — Confidential" footer — they are the intended PDF chrome.
     await page.evaluate(() => {
       document.querySelectorAll('.fixed.bottom-0').forEach(el => {
         el.style.display = 'none';
       });
-      const counter = [...document.querySelectorAll('*')].find(el =>
-        el.textContent?.match(/^\d+ \/ \d+$/) && el.children.length === 0
-      );
-      if (counter) counter.style.display = 'none';
-
-      // Inject Unicity logo bottom-right
-      const existing = document.getElementById('pdf-logo');
-      if (existing) existing.remove();
-      const logo = document.createElement('img');
-      logo.id = 'pdf-logo';
-      logo.src = '/UnicityLogo.svg';
-      Object.assign(logo.style, {
-        position: 'fixed', bottom: '24px', right: '48px',
-        height: '20px', opacity: '0.5', zIndex: '9999',
-        pointerEvents: 'none',
-      });
-      document.body.appendChild(logo);
     });
 
     // When --skip-title, boost video opacity on all slides for PDF
