@@ -2,6 +2,7 @@ import { useEffect, useCallback, useState } from 'react';
 import './sphereInit'; // Start SDK initialization eagerly on page load
 import { IntroSlide } from './slides/IntroSlide';
 import { CoverSlide } from './slides/CoverSlide';
+import { CompanyIntroCoverSlide } from './slides/CompanyIntroCoverSlide';
 import { PromiseSlide } from './slides/PromiseSlide';
 import { SharedLedgerSlide } from './slides/SharedLedgerSlide';
 import { AgentsSlide } from './slides/AgentsSlide';
@@ -74,20 +75,23 @@ import { DemoSlide } from './slides/DemoSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
 const slides = [
-  CoverSlide,              // 1.  Title — Unicity cover
+  CoverSlide,              // 1a. Cover — INVESTOR DECK  (delete one of the two covers per audience)
+  CompanyIntroCoverSlide,  // 1b. Cover — COMPANY INTRO · "Building verifiable AI"
   IntroSlide,              // 2.  Vision — autonomous AI needs an internet built for machines
-  // ProblemSlide,         // hidden — The Fourth Rebuild of Compute
-  MarketSlide,             // 3.  Market Opportunity
+  ProblemSlide,            // 3.  The Fourth Rebuild of Compute
+  MarketSlide,             // 4.  Market Opportunity
   AutonomyStackSlide,      // 4.  Product Stack — Protocol Stack for the Agentic Internet
   AosMergedSlide,          // 5.  OS beats harnesses (merged table + primitives footer)
   CompetitionMinimalSlide, // 6.  Runtime beneath — we are the runtime beneath them
   BearerTokensSlide,       // 7.  Blockchain — the OS has an integrated blockchain
   GtmEditionsSlide,        // 8.  Go To Market — Community / Enterprise / Industry Solutions
-  ConciergeSlide,          // 9.  Telecom — subscriber concierge
-  AgentFirewallSlide,      // 10. Codewall — AOS Codewall (developer firewall)
-  GoToMarketSlide,         // 11. Agentic State — Government / Aleria (UAE)
-  // MedicalCaseSlide,     // hidden — Padra / autonomous patient journey
-  TractionSlide,           // 12. Traction — devs, testnet, pipeline, signed channel
+  // ── Case studies ──
+  ConciergeSlide,          // Telecom — subscriber concierge
+  MedicalCaseSlide,        // Medical — Padra / autonomous patient journey
+  GoToMarketSlide,         // Agentic State — Government / Aleria (UAE)
+  IGamingRetentionSlide,   // iGaming — agentic CRM
+  AgentFirewallSlide,      // Codewall — AOS Codewall (developer firewall)
+  TractionSlide,           // Traction — devs, testnet, pipeline, signed channel
   TeamSlide,               // 14. Team — right before the ask
   InvestmentSlide,         // 15. The Investment — seed extension
   TokenSlide,              // 16. Tokenomics
@@ -96,7 +100,6 @@ const slides = [
   // ── Dropped from this order (kept for reference) ──
   // AosNotMetaphorSlide,  // OS beats harnesses (6-card primitives grid)
   // AosThesisSlide,       // OS beats harnesses (thesis table)
-  // IGamingRetentionSlide,// iGaming — agentic CRM
   // FailClosedSlide,      // firewall — fail closed, not fail open
   // FirewallMoneyMomentSlide, // firewall — model said yes, OS said no
   // AosFirewallArchSlide, // firewall — architecture diagram

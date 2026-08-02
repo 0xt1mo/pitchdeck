@@ -46,3 +46,4 @@ docs/TEST_*.md
 
 # Local Netlify folder
 .netlify
+public/case-medical/_orig/
