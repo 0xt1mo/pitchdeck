@@ -67,6 +67,8 @@ import { WhoWeAreSlide } from './slides/WhoWeAreSlide';
 import { ContactSlide } from './slides/ContactSlide';
 // ── AOS category deck ──
 import { AosCoverSlide } from './slides/AosCoverSlide';
+import { CodewallCoverSlide } from './slides/CodewallCoverSlide';
+import { CodewallProblemSlide } from './slides/CodewallProblemSlide';
 import { AosNoOsSlide } from './slides/AosNoOsSlide';
 import { AosHistorySlide } from './slides/AosHistorySlide';
 import { AosThesisSlide } from './slides/AosThesisSlide';
@@ -109,7 +111,21 @@ import { FirewallMoneyMomentSlide } from './slides/FirewallMoneyMomentSlide';
 import { FirewallProofSlide } from './slides/FirewallProofSlide';
 import { SlideNavigation } from './components/SlideNavigation';
 
+// ── AOS CODEWALL — product sales deck (active on this branch) ──
 const slides = [
+  CodewallCoverSlide,        // 1. Cover — AOS Codewall
+  CodewallProblemSlide,      // 2. Problem — coding agents are the new attack surface
+  AgentFirewallSlide,        // 3. What it does — IDE interception mockup
+  FailClosedSlide,           // 4. Fail closed, not fail open
+  FirewallMoneyMomentSlide,  // 5. The money moment — model said yes, OS said no
+  AosFirewallArchSlide,      // 6. How it works — agentic security architecture
+  FirewallProofSlide,        // 7. Proof & verifiable audit
+  FirewallPricingSlide,      // 8. Pricing — free / team ($15) / enterprise
+  AosCtaSlide,               // 9. How to start · contact
+];
+
+// ── Full AOS deck (kept for reference; not active on this branch) ──
+const _aosSlides = [
   // ══ WHY UNICITY AOS — the category deck ══
   // ══ WHY UNICITY AOS — enterprise restructure (pain → product → proof → thesis) ══
 
