@@ -1,4 +1,4 @@
-import { useState, useMemo, type CSSProperties } from 'react';
+import { useMemo, type CSSProperties } from 'react';
 import { motion } from 'framer-motion';
 import LANDDATA_LON_LAT from './landData.json';
 
@@ -46,16 +46,6 @@ const founders = [
   },
 ];
 
-const clients = [
-  { name: 'NATO',     file: 'nato.png',     scale: 0.95 },
-  { name: 'DARPA',    file: 'darpa.png',    scale: 1    },
-  { name: 'Lockheed', file: 'lockheed.png', scale: 0.85 },
-  { name: 'Verizon',  file: 'verizon.svg',  scale: 0.72 },
-  { name: 'BIS',      file: 'bis.png',      scale: 0.70 },
-  { name: 'Maersk',   file: 'maersk.png',   scale: 0.75 },
-  { name: 'ESA',      file: 'esa.png',      scale: 0.95 },
-];
-
 const offices = [
   { id: 'zug',      name: 'ZUG',       lat: 47.17, lon:  8.52, coords: '47.17°N · 8.52°E',  off: { x: -130, y: -90 }, an: 'end'   as const },
   { id: 'tallinn',  name: 'TALLINN',   lat: 59.44, lon: 24.75, coords: '59.44°N · 24.75°E', off: { x:  205, y: -25 }, an: 'start' as const },
@@ -75,29 +65,6 @@ const LinkedInBadge = ({ href }: { href: string }) => (
     </svg>
   </a>
 );
-
-function ClientLogo({ name, file, scale = 1 }: { name: string; file: string; scale?: number }) {
-  const [failed, setFailed] = useState(false);
-  if (failed) {
-    return (
-      <span
-        className="text-[#fefefe]/55 text-sm lg:text-base tracking-[0.32em] uppercase"
-        style={{ fontFamily: "'Anton', sans-serif" }}
-      >
-        {name}
-      </span>
-    );
-  }
-  return (
-    <img
-      src={`/logos/${file}`}
-      alt={name}
-      onError={() => setFailed(true)}
-      className="h-9 lg:h-11 w-auto"
-      style={{ filter: 'brightness(0) invert(1)', opacity: 0.7, transform: `scale(${scale})`, transformOrigin: 'center' }}
-    />
-  );
-}
 
 export function WhoWeAreSlide() {
   return (
@@ -138,7 +105,7 @@ export function WhoWeAreSlide() {
             className="mt-3 text-[#fefefe]/85 text-xs sm:text-sm lg:text-base leading-[1.55] max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs in machine learning and cryptography with fifteen years building nation-state-grade security infrastructure for <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed, Verizon, and Maersk</span>. Now applying that to AI infrastructure.
+            <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs in machine learning and cryptography with fifteen years building <span className="text-orange-400 font-bold">nation-state-grade security infrastructure</span> — now applied to AI.
           </motion.p>
         </div>
 
@@ -209,28 +176,6 @@ export function WhoWeAreSlide() {
           </motion.div>
         </div>
 
-        {/* Client logos strip */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9 }}
-          className="shrink-0 pt-3"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.10)' }}
-        >
-          <p
-            className="text-[#fefefe]/45 text-[10px] lg:text-xs tracking-[0.32em] uppercase font-semibold mb-2"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
-          >
-            Cryptographic infrastructure trusted by
-          </p>
-          <div className="grid grid-cols-7 gap-2 lg:gap-4 items-center">
-            {clients.map((c) => (
-              <div key={c.name} className="flex items-center justify-center h-9 lg:h-10 overflow-hidden">
-                <ClientLogo name={c.name} file={c.file} scale={c.scale} />
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </div>
   );

@@ -121,7 +121,8 @@ const slides = [
   FirewallMoneyMomentSlide,  // 6. The money moment — model said yes, OS said no
   FirewallProofSlide,        // 7. Proof & verifiable audit
   FirewallPricingSlide,      // 8. Pricing — free / team ($15) / enterprise
-  AosCtaSlide,               // 9. How to start · contact
+  WhoWeAreSlide,             // 9. About — Unicity Labs (team, offices, clients)
+  AosCtaSlide,               // 10. How to start · contact
 ];
 
 // ── Full AOS deck (kept for reference; not active on this branch) ──
