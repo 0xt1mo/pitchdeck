@@ -59,7 +59,7 @@ export function AosFirewallArchSlide() {
           className="shrink-0 text-[#fefefe] text-[24px] sm:text-[34px] lg:text-[46px] leading-[0.98] tracking-tight uppercase"
           style={{ fontFamily: ANTON }}
         >
-          AOS-Firewall: <span className="text-orange-400">Agentic security architecture</span>
+          How it works: <span className="text-orange-400">enforce locally, govern centrally</span>
         </motion.h1>
 
         {/* Diagram */}
@@ -77,15 +77,15 @@ export function AosFirewallArchSlide() {
 
             <Card title="IDE & AI Coding Agent" sub="Cursor · Claude Code · Copilot" color={BLUE} />
             <DownArrow label="Action / tool execution attempts" />
-            <Card title="AOS-Firewall Local Agent" sub="Execution hooks & file-config monitoring" color={ORANGE} emphasize>
+            <Card title="Codewall Local Agent" sub="Execution hooks & file-config monitoring" color={ORANGE} emphasize>
               <div className="grid grid-cols-2 gap-2 mt-2.5">
                 <div className="rounded-md px-2.5 py-1.5" style={{ border: `1px solid ${ORANGE}55`, background: `${ORANGE}10` }}>
                   <p className="text-[#fefefe] text-[11px] lg:text-sm font-bold leading-tight" style={{ fontFamily: MONO }}>Inline Guardrails</p>
                   <p className="text-[#fefefe]/50 text-[9px] lg:text-xs" style={{ fontFamily: MONO }}>Regex / fast blocks</p>
                 </div>
                 <div className="rounded-md px-2.5 py-1.5" style={{ border: `1px solid ${ORANGE}55`, background: `${ORANGE}10` }}>
-                  <p className="text-[#fefefe] text-[11px] lg:text-sm font-bold leading-tight" style={{ fontFamily: MONO }}>Fail-Open Engine</p>
-                  <p className="text-[#fefefe]/50 text-[9px] lg:text-xs" style={{ fontFamily: MONO }}>Async routing</p>
+                  <p className="text-[#fefefe] text-[11px] lg:text-sm font-bold leading-tight" style={{ fontFamily: MONO }}>Async Analysis</p>
+                  <p className="text-[#fefefe]/50 text-[9px] lg:text-xs" style={{ fontFamily: MONO }}>Advisory sync to central</p>
                 </div>
               </div>
             </Card>
@@ -130,7 +130,7 @@ export function AosFirewallArchSlide() {
         >
           <p className="text-[#fefefe]/85 text-sm lg:text-base font-bold" style={{ fontFamily: MONO }}>
             Git / CI Repository Hooks
-            <span className="text-[#fefefe]/45 font-normal"> — validates the AOS-Firewall agent is present before allowing commits</span>
+            <span className="text-[#fefefe]/45 font-normal"> — validates the Codewall agent is present before allowing commits</span>
           </p>
         </motion.div>
 

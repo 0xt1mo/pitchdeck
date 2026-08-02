@@ -84,22 +84,16 @@ export function AgentFirewallSlide() {
               </motion.div>
             ))}
 
-            {/* Price card — pinned to the bottom of the column */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+            {/* Deployment line — pinned to the bottom of the column */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.5 }}
-              className="mt-auto flex items-center justify-between gap-4 rounded-xl px-5 py-4"
-              style={{ border: '1px solid rgba(249,115,22,0.35)', background: 'rgba(249,115,22,0.06)' }}
+              className="mt-auto text-[#fefefe]/50 text-xs lg:text-sm leading-snug pt-2"
+              style={{ fontFamily: MONO }}
             >
-              <div className="flex items-baseline gap-2.5">
-                <span className="text-orange-400 text-[40px] lg:text-[52px] leading-none" style={{ fontFamily: ANTON }}>$15</span>
-                <span className="text-[#fefefe]/70 text-sm lg:text-base leading-tight" style={{ fontFamily: MONO }}>per dev<br />/ month</span>
-              </div>
-              <p className="text-[#fefefe]/55 text-[11px] lg:text-xs leading-snug text-right max-w-[210px]" style={{ fontFamily: MONO }}>
-                Drops into Cursor · Claude Code · Copilot · CI/CD — runs in your VPC or on-prem.
-              </p>
-            </motion.div>
+              Drops into Cursor · Claude Code · Copilot · CI/CD — runs in your VPC or on-prem.
+            </motion.p>
           </div>
 
           {/* Right — IDE interception mockup */}

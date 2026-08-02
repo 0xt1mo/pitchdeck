@@ -60,16 +60,6 @@ export function CodewallCoverSlide() {
           className="h-10 lg:h-14 w-auto shrink-0"
         />
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-orange-400 text-xs sm:text-sm lg:text-xl tracking-[0.32em] uppercase font-bold shrink-0 -mt-2"
-          style={{ fontFamily: mono }}
-        >
-          A Unicity AOS Product · 2026
-        </motion.p>
-
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -95,17 +85,6 @@ export function CodewallCoverSlide() {
           style={{ fontFamily: mono }}
         >
           The firewall for coding agents — <span className="text-orange-400">kernel-level permissions</span> that bound every action, redact every secret, and prove every step.
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.5 }}
-          className="text-[#fefefe]/55 text-xs sm:text-xs lg:text-lg tracking-[0.24em] uppercase shrink-0 mt-1"
-          style={{ fontFamily: mono }}
-        >
-          Mike Gault · CEO ·{' '}
-          <span className="text-orange-400/85 tracking-normal normal-case">mike@unicity-labs.com</span>
         </motion.p>
 
       </div>

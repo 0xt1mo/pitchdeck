@@ -4,15 +4,15 @@ const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
 
 const them = [
-  'Local layer is regex — it can’t be the last line of defence',
-  'So the cloud has to be',
-  'Cloud slow or unreachable? Traffic is waved through',
+  'Local checks are just regex — easy to bypass, not a real gate',
+  'So the real decision runs on a remote service',
+  'Remote service slow or unreachable? The action is waved through',
 ];
 
 const us = [
   'Signed, scoped, expiring capability grants',
   'No grant = no action — structural, not a string match',
-  'Enforced at the edge: zero latency, no cloud in the loop',
+  'Decided on the developer’s machine — nothing to wait on, nothing to bypass',
 ];
 
 export function FailClosedSlide() {
@@ -43,7 +43,7 @@ export function FailClosedSlide() {
             className="mt-3 text-[#fefefe]/85 text-base lg:text-xl max-w-5xl leading-relaxed"
             style={{ fontFamily: MONO }}
           >
-            When the cloud is slow, everyone else waves traffic through. We can’t — the edge enforces deterministically.
+            Other tools send each action to a remote service to be checked — and when it’s slow or unreachable, they wave it through rather than block the developer. Codewall enforces right where the code runs: <span className="text-orange-400 font-bold">no permission, no action.</span>
           </motion.p>
         </div>
 
@@ -81,7 +81,7 @@ export function FailClosedSlide() {
             className="rounded-2xl p-5 lg:p-7 flex flex-col"
             style={{ border: '2px solid #f97316', background: 'rgba(249,115,22,0.06)', boxShadow: '0 0 28px rgba(249,115,22,0.14)' }}
           >
-            <p className="text-orange-400 text-xs lg:text-sm tracking-[0.22em] uppercase font-bold" style={{ fontFamily: MONO }}>AOS-Firewall</p>
+            <p className="text-orange-400 text-xs lg:text-sm tracking-[0.22em] uppercase font-bold" style={{ fontFamily: MONO }}>AOS Codewall</p>
             <p className="text-[#fefefe]/50 text-[11px] lg:text-sm mb-4" style={{ fontFamily: MONO }}>Capability runtime</p>
             <div className="flex flex-col gap-2.5 flex-1">
               {us.map((t) => (
@@ -105,7 +105,7 @@ export function FailClosedSlide() {
           className="shrink-0 text-[#fefefe]/85 text-base sm:text-lg lg:text-2xl leading-snug pt-4"
           style={{ fontFamily: MONO, borderTop: '1px solid rgba(255,255,255,0.10)' }}
         >
-          The whole inversion: the centre can stay <span className="text-orange-400">advisory</span> because the edge is <span className="text-orange-400">already safe.</span>
+          The inversion: the remote service is only <span className="text-orange-400">advisory</span> — the machine is <span className="text-orange-400">already safe on its own.</span>
         </motion.p>
 
       </div>

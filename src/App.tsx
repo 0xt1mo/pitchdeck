@@ -116,9 +116,9 @@ const slides = [
   CodewallCoverSlide,        // 1. Cover — AOS Codewall
   CodewallProblemSlide,      // 2. Problem — coding agents are the new attack surface
   AgentFirewallSlide,        // 3. What it does — IDE interception mockup
-  FailClosedSlide,           // 4. Fail closed, not fail open
-  FirewallMoneyMomentSlide,  // 5. The money moment — model said yes, OS said no
-  AosFirewallArchSlide,      // 6. How it works — agentic security architecture
+  AosFirewallArchSlide,      // 4. How it works — agentic security architecture
+  FailClosedSlide,           // 5. Fail closed, not fail open
+  FirewallMoneyMomentSlide,  // 6. The money moment — model said yes, OS said no
   FirewallProofSlide,        // 7. Proof & verifiable audit
   FirewallPricingSlide,      // 8. Pricing — free / team ($15) / enterprise
   AosCtaSlide,               // 9. How to start · contact
