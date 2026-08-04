@@ -1,170 +1,106 @@
 import { motion } from 'framer-motion';
 
-type Card = {
-  source: string;
-  quote: string;
-  author: string;
-  bigNumber: string;
-  bigSub: string;
-  highlight?: boolean;
-};
+const ANTON = "'Anton', sans-serif";
+const MONO = "'Geist Mono', monospace";
 
-const cards: Card[] = [
+const cards = [
   {
-    source: 'NVIDIA',
-    quote: 'In ten years, we will have 75,000 employees working with 7.5 million agents.',
-    author: 'Jensen Huang, Nvidia GTC, March 2026',
-    bigNumber: '100:1',
-    bigSub: 'agents-to-humans ratio at scale',
+    org: 'NVIDIA',
+    quote: '“In ten years, we will have 75,000 employees working with 7.5 million agents.”',
+    cite: '— Jensen Huang, Nvidia GTC, March 2026',
+    stat: '100:1',
+    statLabel: 'agents-to-humans ratio at scale',
+    accent: false,
   },
   {
-    source: 'GARTNER',
-    quote: 'By 2028, the average Fortune 500 will run 150,000+ AI agents, up from fewer than 15 today. Only 13% have adequate governance.',
-    author: 'Max Goss, Gartner, April 2026',
-    bigNumber: '10,000×',
-    bigSub: 'agent growth in 3 years · 87% ungoverned',
-    highlight: true,
+    org: 'GARTNER',
+    quote: '“By 2028, the average Fortune 500 will run 150,000+ AI agents, up from fewer than 15 today. Only 13% have adequate governance.”',
+    cite: '— Max Goss, Gartner, April 2026',
+    stat: '10,000×',
+    statLabel: 'agent growth in 3 years · 87% ungoverned',
+    accent: true,
   },
   {
-    source: 'STRIPE',
-    quote: 'We will likely need blockchains that support more than one million — or even one billion — transactions per second.',
-    author: 'Patrick & John Collison, Stripe, 2026',
-    bigNumber: '1B TPS',
-    bigSub: 'the infrastructure thesis, validated',
+    org: 'McKINSEY',
+    quote: '“Agentic AI could add $4.4 trillion to global productivity by 2030.”',
+    cite: '— McKinsey Global Institute, 2025',
+    stat: '$4.4T',
+    statLabel: 'global agent economy by 2030',
+    accent: false,
   },
 ];
 
 export function MarketSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col justify-center gap-5 lg:gap-7 px-8 sm:px-12 lg:px-16 py-8 sm:py-10 lg:py-12">
+      <div className="relative z-10 h-full flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-10 lg:py-14 gap-8 lg:gap-10">
 
-        {/* Header */}
-        <div className="shrink-0">
-          <motion.h1
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight"
-            style={{ fontFamily: "'Anton', sans-serif" }}
-          >
-            MARKET OPPORTUNITY:{' '}
-            <span className="text-orange-400">A TRILLION-DOLLAR REBUILD.</span>
-          </motion.h1>
-        </div>
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: -18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="shrink-0 text-[#fefefe] text-[30px] sm:text-[44px] lg:text-[58px] xl:text-[64px] leading-[0.95] tracking-tight uppercase"
+          style={{ fontFamily: ANTON }}
+        >
+          Market Opportunity:{' '}
+          <span className="text-orange-400">A trillion-dollar rebuild.</span>
+        </motion.h1>
 
-        {/* Three citation cards */}
-        <div className="grid grid-cols-3 gap-4 lg:gap-5 shrink-0 items-stretch">
+        {/* Three source cards */}
+        <div className="shrink-0 grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6">
           {cards.map((c, i) => (
-            <CitationCard key={c.source} card={c} delay={0.4 + i * 0.12} />
+            <motion.div
+              key={c.org}
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 + i * 0.12, duration: 0.5 }}
+              className={`rounded-xl p-6 lg:p-8 flex flex-col min-h-[300px] lg:min-h-[360px] ${
+                c.accent
+                  ? 'border-2 border-orange-500/60 bg-orange-500/[0.05]'
+                  : 'border border-[#fefefe]/10 bg-[#fefefe]/[0.02]'
+              }`}
+              style={c.accent ? { boxShadow: '0 0 28px rgba(249,115,22,0.12)' } : undefined}
+            >
+              <p className="text-orange-400 text-2xl lg:text-3xl leading-none tracking-tight uppercase" style={{ fontFamily: ANTON }}>
+                {c.org}
+              </p>
+              <p className="text-[#fefefe]/90 text-sm lg:text-base italic leading-relaxed mt-5" style={{ fontFamily: MONO }}>
+                {c.quote}
+              </p>
+              <p className="text-[#fefefe]/50 text-xs lg:text-sm mt-3 mb-auto" style={{ fontFamily: MONO }}>
+                {c.cite}
+              </p>
+              <div
+                className="mt-6 pt-5"
+                style={{ borderTop: c.accent ? '1px solid rgba(249,115,22,0.28)' : '1px solid rgba(255,255,255,0.12)' }}
+              >
+                <p
+                  className={`text-[44px] sm:text-[52px] lg:text-[60px] leading-none tracking-[-0.02em] ${c.accent ? 'text-orange-400' : 'text-[#fefefe]'}`}
+                  style={{ fontFamily: ANTON }}
+                >
+                  {c.stat}
+                </p>
+                <p className="text-[#fefefe]/60 text-xs lg:text-sm mt-2.5" style={{ fontFamily: MONO }}>
+                  {c.statLabel}
+                </p>
+              </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* a16z pull-quote */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.85, duration: 0.5 }}
-          className="shrink-0 rounded-xl px-5 sm:px-6 lg:px-8 py-3 lg:py-4 flex items-start gap-4 lg:gap-5"
-          style={{
-            border: '1px solid rgba(249,115,22,0.5)',
-            background: 'rgba(249,115,22,0.06)',
-          }}
+        {/* Footer */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.75, duration: 0.6 }}
+          className="shrink-0 text-center text-[#fefefe]/50 text-xs lg:text-sm tracking-[0.3em] uppercase"
+          style={{ fontFamily: MONO }}
         >
-          <span
-            className="text-orange-400 text-[48px] sm:text-[64px] lg:text-[80px] leading-[0.7] shrink-0 -mt-1"
-            style={{ fontFamily: "'Anton', sans-serif" }}
-            aria-hidden="true"
-          >
-            "
-          </span>
-          <div className="flex-1">
-            <p
-              className="text-[#fefefe] text-sm sm:text-base lg:text-lg leading-snug"
-              style={{ fontFamily: "'Geist Mono', monospace" }}
-            >
-              If we want an internet where AI agents can operate without destroying trust,{' '}
-              <span className="text-orange-400">blockchains are not optional infrastructure</span>. They are the missing layer that makes an AI-native internet work.
-            </p>
-            <p
-              className="text-orange-400 text-[20px] sm:text-[26px] lg:text-[32px] mt-3 tracking-tight uppercase leading-none"
-              style={{ fontFamily: "'Anton', sans-serif" }}
-            >
-              — a16z, February 2026
-            </p>
-          </div>
-        </motion.div>
+          Scale · Gap · Size
+        </motion.p>
 
       </div>
     </div>
-  );
-}
-
-function CitationCard({ card, delay }: { card: Card; delay: number }) {
-  const border = card.highlight
-    ? '1px solid rgba(249,115,22,0.65)'
-    : '1px solid rgba(255,255,255,0.10)';
-  const background = card.highlight
-    ? 'linear-gradient(180deg, rgba(249,115,22,0.06) 0%, rgba(10,10,15,0.6) 100%)'
-    : '#0a0a0f';
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.6 }}
-      className="rounded-xl flex flex-col p-5 lg:p-6"
-      style={{ border, background }}
-    >
-      {/* Source */}
-      <p
-        className="text-orange-400 text-[22px] sm:text-[28px] lg:text-[36px] leading-none tracking-tight uppercase"
-        style={{ fontFamily: "'Anton', sans-serif" }}
-      >
-        {card.source}
-      </p>
-
-      {/* Quote */}
-      <p
-        className="text-[#fefefe]/95 text-sm sm:text-base lg:text-lg italic leading-snug mt-4 lg:mt-5"
-        style={{ fontFamily: "'Geist Mono', monospace" }}
-      >
-        "{card.quote}"
-      </p>
-
-      {/* Author */}
-      <p
-        className="text-[#fefefe]/55 text-[11px] sm:text-xs mt-4 leading-snug"
-        style={{ fontFamily: "'Geist Mono', monospace" }}
-      >
-        — {card.author}
-      </p>
-
-      {/* Divider */}
-      <div
-        className="mt-5 lg:mt-6"
-        style={{
-          borderTop: card.highlight
-            ? '1px solid rgba(249,115,22,0.65)'
-            : '1px solid rgba(255,255,255,0.10)',
-        }}
-      />
-
-      {/* Big number */}
-      <div className="mt-4 lg:mt-5 flex-1 flex flex-col justify-end">
-        <p
-          className={`${card.highlight ? 'text-orange-400' : 'text-[#fefefe]'} text-[40px] sm:text-[52px] lg:text-[64px] tracking-tight leading-[0.9]`}
-          style={{ fontFamily: "'Anton', sans-serif" }}
-        >
-          {card.bigNumber}
-        </p>
-        <p
-          className="text-[#fefefe]/70 text-[11px] sm:text-xs lg:text-sm mt-2 leading-snug"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          {card.bigSub}
-        </p>
-      </div>
-    </motion.div>
   );
 }

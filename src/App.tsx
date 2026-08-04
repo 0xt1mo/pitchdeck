@@ -189,14 +189,6 @@ export default function App() {
   return (
     <div className="h-full w-full relative">
       <CurrentSlideComponent onNext={() => { goToSlide(currentSlide + 1); }} goToSlide={goToSlide} />
-      {currentSlide > 0 && (
-        <div
-          className="fixed bottom-4 left-6 sm:left-10 lg:left-16 z-[101] text-[#fefefe]/40 text-base sm:text-lg font-medium select-none pointer-events-none"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          {currentSlide} / {slides.length - 1}
-        </div>
-      )}
       <div
         className="fixed bottom-4 right-6 sm:right-10 lg:right-16 z-[101] text-[#fefefe]/40 text-[11px] sm:text-xs tracking-[0.18em] uppercase select-none pointer-events-none"
         style={{ fontFamily: "'Geist Mono', monospace" }}

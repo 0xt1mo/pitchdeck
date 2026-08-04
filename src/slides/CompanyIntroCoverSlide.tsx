@@ -79,7 +79,7 @@ export function CompanyIntroCoverSlide() {
           className="text-[#fefefe]/70 text-lg sm:text-2xl lg:text-3xl tracking-[0.12em] uppercase text-center"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Building <span className="text-orange-400">verifiable AI.</span>
+          <span className="text-orange-400">AI Autonomy.</span>
         </motion.p>
 
       </div>
