@@ -1,12 +1,56 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
+// Percentages and intensities stay numeric; only labels swap by language.
 const useOfFunds = [
-  { pct: 59, label: 'Engineering & product', strong: 1.0 },
-  { pct: 31, label: 'Sales, GTM & deployment', strong: 0.7 },
-  { pct: 10, label: 'Operations & corporate', strong: 0.4 },
+  { pct: 59, strong: 1.0 },
+  { pct: 31, strong: 0.7 },
+  { pct: 10, strong: 0.4 },
 ];
 
 const backers = ['Blockchange Capital', 'Outlier Ventures'];
+
+// Only these strings swap by language — layout below is shared.
+const T = tr({
+  en: {
+    headLead: 'THE',
+    headAccent: 'INVESTMENT.',
+    subLead: 'An ',
+    subAccent: 'extension of our seed round',
+    subTail: ' — revenue generation to prepare for Series A.',
+    runway: 'SAFE + token warrants · 18 months runway',
+    pathTitle: 'The path to Series A',
+    milestones: [
+      { label: 'LAUNCH', primary: 'GA in August', sub: 'mainnet live, product shipped' },
+      { label: 'REVENUE', primary: 'First paying deployments', sub: 'Aleria channel + paying clients in telecom, health & iGaming' },
+      { label: 'SERIES A', primary: 'Repeatable revenue', sub: 'the metrics for a priced round' },
+    ],
+    useOfFundsTitle: 'Use of Funds',
+    useOfFundsLabels: ['Engineering & product', 'Sales, GTM & deployment', 'Operations & corporate'],
+    useOfFundsNoteLead: 'Engineering headcount held broadly flat; the increase is weighted to ',
+    useOfFundsNoteAccent: 'deployment, compliance certification, and mainnet operations.',
+    backedBy: 'Backed By',
+  },
+  pt: {
+    headLead: 'O',
+    headAccent: 'INVESTIMENTO.',
+    subLead: 'Uma ',
+    subAccent: 'extensão da nossa rodada seed',
+    subTail: ' — geração de receita para preparar a Série A.',
+    runway: 'SAFE + token warrants · 18 meses de runway',
+    pathTitle: 'O caminho até a Série A',
+    milestones: [
+      { label: 'LANÇAMENTO', primary: 'GA em agosto', sub: 'mainnet no ar, produto entregue' },
+      { label: 'RECEITA', primary: 'Primeiras implantações pagas', sub: 'canal Aleria + clientes pagantes em telecom, saúde e iGaming' },
+      { label: 'SÉRIE A', primary: 'Receita recorrente', sub: 'as métricas para uma rodada precificada' },
+    ],
+    useOfFundsTitle: 'Uso dos Recursos',
+    useOfFundsLabels: ['Engenharia e produto', 'Vendas, GTM e implantação', 'Operações e corporativo'],
+    useOfFundsNoteLead: 'Quadro de engenharia mantido praticamente estável; o aumento é direcionado para ',
+    useOfFundsNoteAccent: 'implantação, certificação de compliance e operação da mainnet.',
+    backedBy: 'Investidores',
+  },
+});
 
 export function InvestmentSlide() {
   return (
@@ -34,8 +78,8 @@ export function InvestmentSlide() {
             className="text-[44px] sm:text-[64px] lg:text-[88px] xl:text-[100px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            <span className="text-[#fefefe]">THE</span>{' '}
-            <span className="text-orange-400">INVESTMENT.</span>
+            <span className="text-[#fefefe]">{T.headLead}</span>{' '}
+            <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -44,7 +88,7 @@ export function InvestmentSlide() {
             className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl mt-3 max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            An <span className="text-orange-400 font-bold">extension of our seed round</span> — revenue generation to prepare for Series A.
+            {T.subLead}<span className="text-orange-400 font-bold">{T.subAccent}</span>{T.subTail}
           </motion.p>
         </div>
 
@@ -74,7 +118,7 @@ export function InvestmentSlide() {
               className="text-[#fefefe]/70 text-xs sm:text-sm lg:text-base mt-3 lg:mt-4 leading-relaxed"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              SAFE + token warrants · 18 months runway
+              {T.runway}
             </p>
           </div>
 
@@ -84,14 +128,10 @@ export function InvestmentSlide() {
               className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-3 lg:mb-4"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              The path to Series A
+              {T.pathTitle}
             </p>
             <div className="flex flex-col gap-3 lg:gap-4">
-              {[
-                { label: 'LAUNCH', primary: 'GA in August', sub: 'mainnet live, product shipped' },
-                { label: 'REVENUE', primary: 'First paying deployments', sub: 'Aleria channel + paying clients in telecom, health & iGaming' },
-                { label: 'SERIES A', primary: 'Repeatable revenue', sub: 'the metrics for a priced round' },
-              ].map((m, i, arr) => (
+              {T.milestones.map((m, i, arr) => (
                 <div
                   key={m.label}
                   className="flex items-baseline gap-4 lg:gap-5 pb-3 lg:pb-3.5"
@@ -134,7 +174,7 @@ export function InvestmentSlide() {
               className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-3 lg:mb-4"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Use of Funds
+              {T.useOfFundsTitle}
             </p>
             <div
               className="flex gap-[6px] rounded-[4px] overflow-hidden mb-2 lg:mb-3"
@@ -142,7 +182,7 @@ export function InvestmentSlide() {
             >
               {useOfFunds.map((f) => (
                 <div
-                  key={f.label}
+                  key={f.pct}
                   className="flex items-center justify-center text-xs lg:text-sm font-bold text-[#060606]"
                   style={{
                     flex: f.pct,
@@ -158,13 +198,13 @@ export function InvestmentSlide() {
               ))}
             </div>
             <div className="flex gap-[6px]">
-              {useOfFunds.map((f) => (
+              {useOfFunds.map((f, i) => (
                 <div
-                  key={f.label}
+                  key={f.pct}
                   className="text-[#fefefe]/80 text-[10px] sm:text-xs lg:text-sm"
                   style={{ flex: f.pct, fontFamily: "'Geist Mono', monospace" }}
                 >
-                  {f.label}
+                  {T.useOfFundsLabels[i]}
                 </div>
               ))}
             </div>
@@ -172,7 +212,7 @@ export function InvestmentSlide() {
               className="text-[#fefefe]/55 text-[11px] sm:text-xs lg:text-sm mt-3 leading-snug"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Engineering headcount held broadly flat; the increase is weighted to <span className="text-orange-400">deployment, compliance certification, and mainnet operations.</span>
+              {T.useOfFundsNoteLead}<span className="text-orange-400">{T.useOfFundsNoteAccent}</span>
             </p>
           </div>
 
@@ -182,7 +222,7 @@ export function InvestmentSlide() {
               className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-3 lg:mb-4"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Backed By
+              {T.backedBy}
             </p>
             <div className="flex flex-col gap-1.5">
               {backers.map((name) => (

@@ -1,6 +1,24 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const mono = "'Geist Mono', monospace";
+
+const T = tr({
+  en: {
+    thankLead: 'THANK',
+    thankAccent: 'YOU',
+    installLabel: 'Install the OS in 60 seconds',
+    terminalTitle: 'unicity — community install',
+    terminalComment: '# community edition — one command, any machine',
+  },
+  pt: {
+    thankLead: 'MUITO',
+    thankAccent: 'OBRIGADO',
+    installLabel: 'Instale o OS em 60 segundos',
+    terminalTitle: 'unicity — instalação da comunidade',
+    terminalComment: '# edição comunidade — um comando, qualquer máquina',
+  },
+});
 
 export function ThankYouChatSlide() {
   return (
@@ -16,7 +34,7 @@ export function ThankYouChatSlide() {
             className="text-[#fefefe] text-[56px] sm:text-[84px] lg:text-[112px] leading-none tracking-tight"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            THANK <span className="text-orange-400">YOU</span>
+            {T.thankLead} <span className="text-orange-400">{T.thankAccent}</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -37,17 +55,17 @@ export function ThankYouChatSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.3em] uppercase font-bold text-center mb-3"
             style={{ fontFamily: mono }}
           >
-            Install the OS in 60 seconds
+            {T.installLabel}
           </p>
           <div className="rounded-xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.14)', background: '#0c0c10' }}>
             <div className="flex items-center gap-2 px-4 py-2.5" style={{ background: 'rgba(255,255,255,0.03)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
               <span className="w-3 h-3 rounded-full" style={{ background: '#ff5f56' }} />
               <span className="w-3 h-3 rounded-full" style={{ background: '#ffbd2e' }} />
               <span className="w-3 h-3 rounded-full" style={{ background: '#27c93f' }} />
-              <span className="ml-3 text-[#fefefe]/40 text-xs lg:text-sm" style={{ fontFamily: mono }}>unicity — community install</span>
+              <span className="ml-3 text-[#fefefe]/40 text-xs lg:text-sm" style={{ fontFamily: mono }}>{T.terminalTitle}</span>
             </div>
             <div className="p-5 lg:p-6 flex flex-col gap-2.5 overflow-x-auto">
-              <p className="text-[#5f6b7a] text-sm lg:text-base" style={{ fontFamily: mono }}># community edition — one command, any machine</p>
+              <p className="text-[#5f6b7a] text-sm lg:text-base" style={{ fontFamily: mono }}>{T.terminalComment}</p>
               <p className="text-sm lg:text-lg whitespace-nowrap" style={{ fontFamily: mono }}>
                 <span className="text-orange-400">$ </span>
                 <span className="text-[#e8e8e8]">curl -fsSL https://aos.unicity.ai/install.sh | sh</span>

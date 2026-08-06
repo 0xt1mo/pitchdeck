@@ -1,5 +1,23 @@
 import { motion } from 'framer-motion';
 import splashVideoUrl from '/kling_20260226_VIDEO_Take_Image_1650_0.mp4';
+import { tr } from '../i18n';
+
+const T = tr({
+  en: {
+    titleLine1: 'AUTONOMOUS AI',
+    titleAccent: 'NEEDS AN INTERNET',
+    titleLine3: 'BUILT FOR MACHINES',
+    subLead: 'Billions of machine intelligences are coming.',
+    subAccent: "The internet they need doesn't exist yet.",
+  },
+  pt: {
+    titleLine1: 'IA AUTÔNOMA',
+    titleAccent: 'PRECISA DE UMA INTERNET',
+    titleLine3: 'FEITA PARA MÁQUINAS',
+    subLead: 'Bilhões de inteligências de máquina estão chegando.',
+    subAccent: 'A internet de que elas precisam ainda não existe.',
+  },
+});
 
 export function IntroSlide() {
   return (
@@ -29,11 +47,11 @@ export function IntroSlide() {
             className="text-[#fefefe] text-[48px] sm:text-[72px] lg:text-[100px] xl:text-[120px] leading-[0.9] tracking-[-0.02em]"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            AUTONOMOUS AI
+            {T.titleLine1}
             <br />
-            <span className="text-orange-400">NEEDS AN INTERNET</span>
+            <span className="text-orange-400">{T.titleAccent}</span>
             <br />
-            BUILT FOR MACHINES
+            {T.titleLine3}
           </h1>
         </motion.div>
 
@@ -53,9 +71,9 @@ export function IntroSlide() {
           className="mt-6 sm:mt-8 text-[#fefefe]/40 text-lg sm:text-xl lg:text-2xl text-center max-w-4xl leading-relaxed"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Billions of machine intelligences are coming.
+          {T.subLead}
           <br />
-          <span className="text-[#fefefe]/60">The internet they need doesn't exist yet.</span>
+          <span className="text-[#fefefe]/60">{T.subAccent}</span>
         </motion.p>
 
       </div>

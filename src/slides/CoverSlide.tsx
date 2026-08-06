@@ -1,4 +1,10 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
+
+const T = tr({
+  en: { heading: 'INVESTOR DECK.' },
+  pt: { heading: 'DECK PARA INVESTIDORES.' },
+});
 
 export function CoverSlide() {
   return (
@@ -60,7 +66,7 @@ export function CoverSlide() {
           className="text-[64px] sm:text-[96px] lg:text-[160px] xl:text-[180px] leading-[0.88] tracking-tight uppercase text-center"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          <span className="text-[#fefefe]">INVESTOR DECK.</span>
+          <span className="text-[#fefefe]">{T.heading}</span>
         </motion.h1>
 
         {/* Accent line */}

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const mono = "'Geist Mono', monospace";
 const display = "'Anton', sans-serif";
@@ -6,50 +7,126 @@ const display = "'Anton', sans-serif";
 type Item = { t: string; sub?: string };
 type Column = { title: string; sub: string; accent: boolean; marker: string; items: Item[] };
 
-const columns: Column[] = [
-  {
-    title: 'Community',
-    sub: 'Free · open',
-    accent: false,
-    marker: '—',
-    items: [
-      { t: 'Full OS on the open engine' },
-      { t: 'Installers & distributions' },
-      { t: 'Capsule marketplace' },
-      { t: 'Developer bottom-up adoption' },
-      { t: 'Prepaid transaction batches', sub: '$0.00001 / txn · $2 per agent / mo minimum' },
-      { t: 'Pre-paid gas, sold as capacity' },
-    ],
+const T = tr({
+  en: {
+    headLead: 'Go To',
+    headAccent: 'Market.',
+    subtitle: (
+      <>
+        <span className="text-orange-400 font-bold">Open Core fits a channel strategy.</span> Distribution is through partners in Europe, MEA, US and Brazil — targeting industries that struggle with <span className="text-[#fefefe] font-bold">security, compliance and governance for agents.</span> Our role is to deliver product — extensions to the OS with <span className="text-orange-400">cryptographic guarantees.</span>
+      </>
+    ),
+    columns: [
+      {
+        title: 'Community',
+        sub: 'Free · open',
+        accent: false,
+        marker: '—',
+        items: [
+          { t: 'Full OS on the open engine' },
+          { t: 'Installers & distributions' },
+          { t: 'Capsule marketplace' },
+          { t: 'Developer bottom-up adoption' },
+          { t: 'Prepaid transaction batches', sub: '$0.00001 / txn · $2 per agent / mo minimum' },
+          { t: 'Pre-paid gas, sold as capacity' },
+        ],
+      },
+      {
+        title: 'Enterprise',
+        sub: 'Licensed · governed',
+        accent: false,
+        marker: '+',
+        items: [
+          { t: 'The same engine — no fork' },
+          { t: 'Guardrails: Compliance, Security, Governance' },
+          { t: 'RBAC, SSO, SIEM…' },
+          { t: 'VPC / on-prem · per-agent licensing' },
+          { t: '$200K blended first-year account value', sub: '$100K platform contract + initial governed-agent metering' },
+          { t: '$250 per agent / month list', sub: 'blending toward $100 at fleet scale' },
+        ],
+      },
+      {
+        title: 'Industry Solutions',
+        sub: 'Partner-led · rev share',
+        accent: true,
+        marker: '+',
+        items: [
+          { t: 'Channel partners build & ship on AOS' },
+          { t: 'Revenue share on every deployment' },
+          { t: 'Telecom · medical · government' },
+          { t: 'Signed: Aleria — UAE sovereign AI' },
+          { t: 'Example 1: Concierge — $5 / sub / month' },
+          { t: 'Example 2: Codewall — $15 / dev / month' },
+        ],
+      },
+    ] as Column[],
+    trustLine: (
+      <>
+        One OS underneath — adopt it free, license it, or <span className="text-orange-400">buy a finished solution built on top.</span>
+      </>
+    ),
   },
-  {
-    title: 'Enterprise',
-    sub: 'Licensed · governed',
-    accent: false,
-    marker: '+',
-    items: [
-      { t: 'The same engine — no fork' },
-      { t: 'Guardrails: Compliance, Security, Governance' },
-      { t: 'RBAC, SSO, SIEM…' },
-      { t: 'VPC / on-prem · per-agent licensing' },
-      { t: '$200K blended first-year account value', sub: '$100K platform contract + initial governed-agent metering' },
-      { t: '$250 per agent / month list', sub: 'blending toward $100 at fleet scale' },
-    ],
+  pt: {
+    headLead: 'Go To',
+    headAccent: 'Market.',
+    subtitle: (
+      <>
+        <span className="text-orange-400 font-bold">O Open Core combina com uma estratégia de canal.</span> A distribuição é feita por parceiros na Europa, MEA, EUA e Brasil — mirando setores que enfrentam dificuldades com <span className="text-[#fefefe] font-bold">segurança, compliance e governança para agentes.</span> Nosso papel é entregar produto — extensões ao OS com <span className="text-orange-400">garantias criptográficas.</span>
+      </>
+    ),
+    columns: [
+      {
+        title: 'Comunidade',
+        sub: 'Gratuito · aberto',
+        accent: false,
+        marker: '—',
+        items: [
+          { t: 'OS completo sobre o motor aberto' },
+          { t: 'Instaladores e distribuições' },
+          { t: 'Marketplace de capsules' },
+          { t: 'Adoção bottom-up por desenvolvedores' },
+          { t: 'Lotes de transações pré-pagas', sub: '$0.00001 / txn · mínimo de $2 por agente / mês' },
+          { t: 'Gas pré-pago, vendido como capacidade' },
+        ],
+      },
+      {
+        title: 'Enterprise',
+        sub: 'Licenciado · governado',
+        accent: false,
+        marker: '+',
+        items: [
+          { t: 'O mesmo motor — sem fork' },
+          { t: 'Guardrails: Compliance, Segurança, Governança' },
+          { t: 'RBAC, SSO, SIEM…' },
+          { t: 'VPC / on-prem · licenciamento por agente' },
+          { t: 'Valor combinado de conta de $200K no primeiro ano', sub: 'Contrato de plataforma de $100K + medição inicial de agentes governados' },
+          { t: '$250 por agente / mês (preço de tabela)', sub: 'tendendo a $100 em escala de frota' },
+        ],
+      },
+      {
+        title: 'Soluções Setoriais',
+        sub: 'Liderado por parceiros · divisão de receita',
+        accent: true,
+        marker: '+',
+        items: [
+          { t: 'Parceiros de canal constroem e lançam no AOS' },
+          { t: 'Divisão de receita em cada implantação' },
+          { t: 'Telecom · saúde · governo' },
+          { t: 'Assinado: Aleria — IA soberana dos Emirados Árabes Unidos' },
+          { t: 'Exemplo 1: Concierge — $5 / assinante / mês' },
+          { t: 'Exemplo 2: Codewall — $15 / dev / mês' },
+        ],
+      },
+    ] as Column[],
+    trustLine: (
+      <>
+        Um único OS por baixo — adote-o gratuitamente, licencie-o ou <span className="text-orange-400">compre uma solução pronta construída em cima.</span>
+      </>
+    ),
   },
-  {
-    title: 'Industry Solutions',
-    sub: 'Partner-led · rev share',
-    accent: true,
-    marker: '+',
-    items: [
-      { t: 'Channel partners build & ship on AOS' },
-      { t: 'Revenue share on every deployment' },
-      { t: 'Telecom · medical · government' },
-      { t: 'Signed: Aleria — UAE sovereign AI' },
-      { t: 'Example 1: Concierge — $5 / sub / month' },
-      { t: 'Example 2: Codewall — $15 / dev / month' },
-    ],
-  },
-];
+});
+
+const columns = T.columns;
 
 export function GtmEditionsSlide() {
   return (
@@ -65,7 +142,7 @@ export function GtmEditionsSlide() {
             className="text-[#fefefe] text-[34px] sm:text-[52px] lg:text-[64px] xl:text-[72px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: display }}
           >
-            Go To <span className="text-orange-400">Market.</span>
+            {T.headLead} <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -74,7 +151,7 @@ export function GtmEditionsSlide() {
             className="text-[#fefefe]/80 text-sm sm:text-base lg:text-xl leading-snug mt-3 max-w-6xl"
             style={{ fontFamily: mono }}
           >
-            <span className="text-orange-400 font-bold">Open Core fits a channel strategy.</span> Distribution is through partners in Europe, MEA, US and Brazil — targeting industries that struggle with <span className="text-[#fefefe] font-bold">security, compliance and governance for agents.</span> Our role is to deliver product — extensions to the OS with <span className="text-orange-400">cryptographic guarantees.</span>
+            {T.subtitle}
           </motion.p>
         </div>
 
@@ -123,7 +200,7 @@ export function GtmEditionsSlide() {
           className="shrink-0 text-[#fefefe]/85 text-base sm:text-lg lg:text-2xl leading-snug pt-4"
           style={{ fontFamily: mono, borderTop: '1px solid rgba(255,255,255,0.10)' }}
         >
-          One OS underneath — adopt it free, license it, or <span className="text-orange-400">buy a finished solution built on top.</span>
+          {T.trustLine}
         </motion.p>
 
       </div>

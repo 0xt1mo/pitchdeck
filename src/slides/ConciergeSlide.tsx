@@ -1,6 +1,22 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const display = "'Anton', sans-serif";
+
+const T = tr({
+  en: {
+    headLead: 'EXAMPLE SOLUTION: TELECOM,',
+    headAccent: 'AN AGENT FOR EVERY SIM.',
+    subtitle:
+      "A personal AI concierge: a secure personalized agent with integrated billing, identity and voice for telecom subscribers — running on the operator's own infrastructure.",
+  },
+  pt: {
+    headLead: 'SOLUÇÃO DE EXEMPLO: TELECOM,',
+    headAccent: 'UM AGENTE PARA CADA SIM.',
+    subtitle:
+      'Um concierge de IA pessoal: um agente personalizado e seguro com faturamento, identidade e voz integrados para assinantes de telecom — rodando na própria infraestrutura da operadora.',
+  },
+});
 
 /**
  * Subscriber concierge slide — three phone screenshots arranged in a fan
@@ -31,8 +47,8 @@ export function ConciergeSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[56px] xl:text-[64px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: display }}
           >
-            EXAMPLE SOLUTION: TELECOM,{' '}
-            <span className="text-orange-400">AN AGENT FOR EVERY SIM.</span>
+            {T.headLead}{' '}
+            <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -41,7 +57,7 @@ export function ConciergeSlide() {
             className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl leading-snug mt-3 max-w-4xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            A personal AI concierge: a secure personalized agent with integrated billing, identity and voice for telecom subscribers — running on the operator's own infrastructure.
+            {T.subtitle}
           </motion.p>
         </div>
 

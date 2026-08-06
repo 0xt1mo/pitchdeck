@@ -1,33 +1,91 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
 
-const chain = [
-  {
-    n: '01',
-    title: 'Access',
-    body: 'Every agent carries prepaid gas for verifiable state proofs and settlement — monthly bundles, burst to 1 TPS.',
+const T = tr({
+  en: {
+    chain: [
+      {
+        n: '01',
+        title: 'Access',
+        body: 'Every agent carries prepaid gas for verifiable state proofs and settlement — monthly bundles, burst to 1 TPS.',
+      },
+      {
+        n: '02',
+        title: 'Burn',
+        body: 'Gas is fiat-quoted, UCT-settled, and burned.',
+      },
+      {
+        n: '03',
+        title: 'Operators',
+        body: 'Oracle operators stake to run nodes, paid from a declining issuance tail (5% → 2%), proportional to proofs served.',
+      },
+    ],
+    allocLabels: ['Foundation', 'Grants', 'Investors', 'Team', 'Community', 'Liquidity'],
+    donutGenesis: 'GENESIS',
+    headLead: 'Token demand scales with',
+    headAccent: 'agent count',
+    subhead: (
+      <>
+        Every agent needs prepaid gas for verifiable state proofs and settlement. The token is <span className="text-orange-400">gas, not a means of payment</span> — demand is a function of agents, not speculation.
+      </>
+    ),
+    chainLabel: 'The mechanical chain',
+    allocLabel: 'Allocation · Genesis 10B',
+    allocNote: 'Uncapped supply — 5% → 2% inflation tail funds validators. Cliffs and linear vesting for team and investors.',
+    takeaway: (
+      <>
+        Token demand is a function of <span className="text-orange-400 font-bold">agent count</span> — every agent added burns gas and locks operator stake. More agents → more burned and staked.
+      </>
+    ),
   },
-  {
-    n: '02',
-    title: 'Burn',
-    body: 'Gas is fiat-quoted, UCT-settled, and burned.',
+  pt: {
+    chain: [
+      {
+        n: '01',
+        title: 'Acesso',
+        body: 'Todo agente carrega gas pré-pago para provas de estado verificáveis e liquidação — pacotes mensais, pico de 1 TPS.',
+      },
+      {
+        n: '02',
+        title: 'Queima',
+        body: 'O gas é cotado em fiat, liquidado em UCT e queimado.',
+      },
+      {
+        n: '03',
+        title: 'Operadores',
+        body: 'Operadores de Oracle fazem stake para rodar nós, pagos por uma cauda de emissão decrescente (5% → 2%), proporcional às provas servidas.',
+      },
+    ],
+    allocLabels: ['Fundação', 'Grants', 'Investidores', 'Time', 'Comunidade', 'Liquidez'],
+    donutGenesis: 'GÊNESE',
+    headLead: 'A demanda por token escala com',
+    headAccent: 'a contagem de agentes',
+    subhead: (
+      <>
+        Todo agente precisa de gas pré-pago para provas de estado verificáveis e liquidação. O token é <span className="text-orange-400">gas, não um meio de pagamento</span> — a demanda é função dos agentes, não da especulação.
+      </>
+    ),
+    chainLabel: 'A cadeia mecânica',
+    allocLabel: 'Alocação · Gênese 10B',
+    allocNote: 'Oferta sem teto — cauda de inflação de 5% → 2% financia validadores. Cliffs e vesting linear para time e investidores.',
+    takeaway: (
+      <>
+        A demanda por token é função da <span className="text-orange-400 font-bold">contagem de agentes</span> — cada agente adicionado queima gas e trava o stake do operador. Mais agentes → mais queimado e travado.
+      </>
+    ),
   },
-  {
-    n: '03',
-    title: 'Operators',
-    body: 'Oracle operators stake to run nodes, paid from a declining issuance tail (5% → 2%), proportional to proofs served.',
-  },
-];
+});
 
 const alloc = [
-  { label: 'Foundation', pct: 23, color: '#f97316' },
-  { label: 'Grants', pct: 23, color: '#fbbf24' },
-  { label: 'Investors', pct: 20, color: '#fb923c' },
-  { label: 'Team', pct: 15, color: '#9ca3af' },
-  { label: 'Community', pct: 15, color: '#6b7280' },
-  { label: 'Liquidity', pct: 4, color: '#4b5563' },
+  { label: T.allocLabels[0], pct: 23, color: '#f97316' },
+  { label: T.allocLabels[1], pct: 23, color: '#fbbf24' },
+  { label: T.allocLabels[2], pct: 20, color: '#fb923c' },
+  { label: T.allocLabels[3], pct: 15, color: '#9ca3af' },
+  { label: T.allocLabels[4], pct: 15, color: '#6b7280' },
+  { label: T.allocLabels[5], pct: 4, color: '#4b5563' },
 ];
 
 function AllocationDonut() {
@@ -52,7 +110,7 @@ function AllocationDonut() {
         );
       })}
       <text x="75" y="71" textAnchor="middle" fill="#fefefe" fontFamily={ANTON} fontSize="22">10B</text>
-      <text x="75" y="88" textAnchor="middle" fill="rgba(254,254,254,0.5)" fontFamily={MONO} fontSize="8" letterSpacing="1">GENESIS</text>
+      <text x="75" y="88" textAnchor="middle" fill="rgba(254,254,254,0.5)" fontFamily={MONO} fontSize="8" letterSpacing="1">{T.donutGenesis}</text>
     </svg>
   );
 }
@@ -71,7 +129,7 @@ export function TokenRebuildSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] leading-[0.98] tracking-tight uppercase"
             style={{ fontFamily: ANTON }}
           >
-            Token demand scales with <span className="text-orange-400">agent count</span>
+            {T.headLead} <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -80,7 +138,7 @@ export function TokenRebuildSlide() {
             className="mt-3 text-[#fefefe]/75 text-base lg:text-xl max-w-5xl leading-relaxed"
             style={{ fontFamily: MONO }}
           >
-            Every agent needs prepaid gas for verifiable state proofs and settlement. The token is <span className="text-orange-400">gas, not a means of payment</span> — demand is a function of agents, not speculation.
+            {T.subhead}
           </motion.p>
         </div>
 
@@ -94,10 +152,10 @@ export function TokenRebuildSlide() {
             transition={{ delay: 0.32, duration: 0.5 }}
           >
             <p className="text-orange-400 text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-4" style={{ fontFamily: MONO }}>
-              The mechanical chain
+              {T.chainLabel}
             </p>
             <div className="flex flex-col gap-4">
-              {chain.map((c) => (
+              {T.chain.map((c) => (
                 <div key={c.n} className="border-l-2 border-orange-500 pl-4">
                   <p className="text-[#fefefe] text-base lg:text-lg font-bold" style={{ fontFamily: MONO }}>
                     <span className="text-orange-400">{c.n}</span> {c.title}
@@ -117,7 +175,7 @@ export function TokenRebuildSlide() {
             transition={{ delay: 0.42, duration: 0.5 }}
           >
             <p className="text-orange-400 text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-4" style={{ fontFamily: MONO }}>
-              Allocation · Genesis 10B
+              {T.allocLabel}
             </p>
             <div className="flex items-center gap-6 lg:gap-8">
               <AllocationDonut />
@@ -133,7 +191,7 @@ export function TokenRebuildSlide() {
               </div>
             </div>
             <p className="text-[#fefefe]/45 text-xs lg:text-sm leading-snug mt-4 max-w-md" style={{ fontFamily: MONO }}>
-              Uncapped supply — 5% → 2% inflation tail funds validators. Cliffs and linear vesting for team and investors.
+              {T.allocNote}
             </p>
           </motion.div>
         </div>
@@ -146,7 +204,7 @@ export function TokenRebuildSlide() {
           className="shrink-0 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl leading-snug pt-4"
           style={{ fontFamily: MONO, borderTop: '1px solid rgba(255,255,255,0.10)' }}
         >
-          Token demand is a function of <span className="text-orange-400 font-bold">agent count</span> — every agent added burns gas and locks operator stake. More agents → more burned and staked.
+          {T.takeaway}
         </motion.p>
 
       </div>

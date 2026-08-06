@@ -1,30 +1,90 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const mono = "'Geist Mono', monospace";
 const anton = "'Anton', sans-serif";
 
+// Numeric values, highlight flags and brand/product names stay identical across languages.
 const stats = [
-  { value: '3,500', label: 'DEVELOPER SIGN-UPS' },
-  { value: '1,500', label: 'COMMUNITY TESTNET APPS' },
-  { value: '80K+', label: 'LIVE TESTNET WALLETS' },
-  { value: 'LIVE', label: "SOFT LAUNCH · JUL '26", sub: "GA · AUG '26", highlight: true },
+  { value: '3,500' },
+  { value: '1,500' },
+  { value: '80K+' },
+  { value: 'LIVE', highlight: true },
 ];
 
 const cards = [
   {
-    eyebrow: 'SOVEREIGN CHANNEL',
-    badge: 'SIGNED',
     title: 'ALERIA',
     title2: 'OEM',
     highlight: true,
-    body: (
-      <>
-        <strong className="text-[#fefefe] font-bold">Revenue share</strong> with UAE Sovereign
-        AI provider — distribution reach across Middle East and Africa.
-      </>
-    ),
   },
 ];
+
+const pipelineCounts = ['11', '6', '4'];
+
+// Only these strings swap by language — layout below is shared.
+const T = tr({
+  en: {
+    headline: 'TRACTION',
+    subHead: (
+      <>
+        <span className="text-orange-400 font-bold">Soft-launched July '26, GA in August.</span> A growing developer base, a signed sovereign channel, and a commercial pipeline lined up for go-live.
+      </>
+    ),
+    statLabels: [
+      { label: 'DEVELOPER SIGN-UPS' },
+      { label: 'COMMUNITY TESTNET APPS' },
+      { label: 'LIVE TESTNET WALLETS' },
+      { label: "SOFT LAUNCH · JUL '26", sub: "GA · AUG '26" },
+    ],
+    cards: [
+      {
+        eyebrow: 'SOVEREIGN CHANNEL',
+        badge: 'SIGNED',
+        body: (
+          <>
+            <strong className="text-[#fefefe] font-bold">Revenue share</strong> with UAE Sovereign
+            AI provider — distribution reach across Middle East and Africa.
+          </>
+        ),
+      },
+    ],
+    pipelineTitle: 'Commercial Pipeline',
+    pipelineBadge: 'Awaiting GA',
+    pipelineRows: ['Telecom operators', 'iGaming operators', 'Healthcare providers'],
+    pipelineNote: 'Engaged — awaiting general availability.',
+  },
+  pt: {
+    headline: 'TRAÇÃO',
+    subHead: (
+      <>
+        <span className="text-orange-400 font-bold">Soft launch em julho de '26, GA em agosto.</span> Uma base de desenvolvedores em expansão, um canal soberano já assinado e um pipeline comercial pronto para o go-live.
+      </>
+    ),
+    statLabels: [
+      { label: 'CADASTROS DE DESENVOLVEDORES' },
+      { label: 'APPS NA TESTNET DA COMUNIDADE' },
+      { label: 'CARTEIRAS ATIVAS NA TESTNET' },
+      { label: "SOFT LAUNCH · JUL '26", sub: "GA · AGO '26" },
+    ],
+    cards: [
+      {
+        eyebrow: 'CANAL SOBERANO',
+        badge: 'ASSINADO',
+        body: (
+          <>
+            <strong className="text-[#fefefe] font-bold">Divisão de receita</strong> com o provedor
+            de IA soberano dos Emirados Árabes Unidos — alcance de distribuição por todo o Oriente Médio e a África.
+          </>
+        ),
+      },
+    ],
+    pipelineTitle: 'Pipeline Comercial',
+    pipelineBadge: 'Aguardando GA',
+    pipelineRows: ['Operadoras de telecom', 'Operadoras de iGaming', 'Provedores de saúde'],
+    pipelineNote: 'Em negociação — aguardando a disponibilidade geral.',
+  },
+});
 
 export function TractionSlide() {
   return (
@@ -46,7 +106,7 @@ export function TractionSlide() {
             className="text-[56px] sm:text-[80px] lg:text-[104px] leading-[0.9] tracking-tight uppercase"
             style={{ fontFamily: anton }}
           >
-            <span className="text-[#fefefe]">TRACTION</span><span className="text-orange-400">.</span>
+            <span className="text-[#fefefe]">{T.headline}</span><span className="text-orange-400">.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -55,7 +115,7 @@ export function TractionSlide() {
             className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl leading-snug mt-3 max-w-5xl"
             style={{ fontFamily: mono }}
           >
-            <span className="text-orange-400 font-bold">Soft-launched July '26, GA in August.</span> A growing developer base, a signed sovereign channel, and a commercial pipeline lined up for go-live.
+            {T.subHead}
           </motion.p>
         </div>
 
@@ -81,11 +141,11 @@ export function TractionSlide() {
                 className="text-[#fefefe]/45 text-[11px] lg:text-sm tracking-[0.12em] uppercase mt-3 leading-snug"
                 style={{ fontFamily: mono }}
               >
-                {s.label}
-                {s.sub && (
+                {T.statLabels[i].label}
+                {T.statLabels[i].sub && (
                   <>
                     <br />
-                    {s.sub}
+                    {T.statLabels[i].sub}
                   </>
                 )}
               </p>
@@ -113,14 +173,14 @@ export function TractionSlide() {
                     }`}
                   style={{ fontFamily: mono }}
                 >
-                  {c.eyebrow}
+                  {T.cards[i].eyebrow}
                 </span>
-                {c.badge && (
+                {T.cards[i].badge && (
                   <span
                     className="rounded border border-orange-500/70 text-orange-400 text-[10px] lg:text-xs px-2 py-0.5 tracking-[0.15em] uppercase"
                     style={{ fontFamily: mono }}
                   >
-                    {c.badge}
+                    {T.cards[i].badge}
                   </span>
                 )}
               </div>
@@ -136,7 +196,7 @@ export function TractionSlide() {
                 className="text-[#fefefe]/65 text-sm lg:text-base leading-snug mt-4"
                 style={{ fontFamily: mono }}
               >
-                {c.body}
+                {T.cards[i].body}
               </p>
             </motion.div>
           ))}
@@ -150,22 +210,22 @@ export function TractionSlide() {
           >
             <div className="flex items-center justify-between gap-3">
               <span className="text-[#fefefe]/40 text-[11px] lg:text-xs tracking-[0.15em] uppercase" style={{ fontFamily: mono }}>
-                Commercial Pipeline
+                {T.pipelineTitle}
               </span>
               <span className="rounded border border-[#fefefe]/25 text-[#fefefe]/60 text-[10px] lg:text-xs px-2 py-0.5 tracking-[0.15em] uppercase" style={{ fontFamily: mono }}>
-                Awaiting GA
+                {T.pipelineBadge}
               </span>
             </div>
             <div className="mt-4 flex flex-col gap-2.5">
-              {[['11', 'Telecom operators'], ['6', 'iGaming operators'], ['4', 'Healthcare providers']].map(([n, l]) => (
-                <div key={l} className="flex items-baseline gap-3">
+              {pipelineCounts.map((n, i) => (
+                <div key={T.pipelineRows[i]} className="flex items-baseline gap-3">
                   <span className="text-orange-400 text-2xl lg:text-3xl leading-none w-10 lg:w-12 shrink-0" style={{ fontFamily: anton }}>{n}</span>
-                  <span className="text-[#fefefe]/85 text-sm lg:text-base" style={{ fontFamily: mono }}>{l}</span>
+                  <span className="text-[#fefefe]/85 text-sm lg:text-base" style={{ fontFamily: mono }}>{T.pipelineRows[i]}</span>
                 </div>
               ))}
             </div>
             <p className="text-[#fefefe]/55 text-xs lg:text-sm leading-snug mt-4" style={{ fontFamily: mono }}>
-              Engaged — awaiting general availability.
+              {T.pipelineNote}
             </p>
           </motion.div>
         </div>

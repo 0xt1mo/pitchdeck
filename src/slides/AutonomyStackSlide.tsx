@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 type StackLayer = {
   product: string;
@@ -9,29 +10,70 @@ type StackLayer = {
   variant: 'top' | 'mid' | 'bottom';
 };
 
-const stack: StackLayer[] = [
-  {
-    product: 'AGENT HARNESSES',
-    label: '',
-    detail: 'Bring or build your own agent.',
-    tags: 'CLAUDE CODE · CODEX · GROK CODE',
-    variant: 'top',
+const T = tr({
+  en: {
+    headLead: 'AN OS BUILT FOR ',
+    headAccent: 'AUTONOMOUS AGENTS',
+    subtitle: 'Every OS until now assumed a human at the keyboard. This one is built for the day when no one is watching — with the identity, enforcement, and proof to earn that autonomy safely, one step at a time.',
+    ctaComment: '// operating systems beat harnesses',
+    ctaButton: 'try it now — aos.unicity.ai',
+    agentLabel: 'AGENT',
+    stack: [
+      {
+        product: 'AGENT HARNESSES',
+        label: '',
+        detail: 'Bring or build your own agent.',
+        tags: 'CLAUDE CODE · CODEX · GROK CODE',
+        variant: 'top',
+      },
+      {
+        product: 'UNICITY AOS',
+        label: 'MULTI-TENANT SECURE OS',
+        detail: 'Executes every agent — multi-tenant and isolated. Every prompt, tool call, and decision passes through the kernel, where policy, budgets, and audit are enforced below the agent.',
+        tags: 'KERNEL · POLICY · INTERCEPT',
+        variant: 'mid',
+      },
+      {
+        product: 'UNICITY PROOF SYSTEM',
+        label: 'CRYPTOGRAPHIC PROOF OF EXECUTION',
+        detail: 'A purpose-built blockchain for verifiable execution, identity, and multi-agent coordination — the source of truth beneath the execution layer.',
+        tags: '',
+        variant: 'bottom',
+      },
+    ] as StackLayer[],
   },
-  {
-    product: 'UNICITY AOS',
-    label: 'MULTI-TENANT SECURE OS',
-    detail: 'Executes every agent — multi-tenant and isolated. Every prompt, tool call, and decision passes through the kernel, where policy, budgets, and audit are enforced below the agent.',
-    tags: 'KERNEL · POLICY · INTERCEPT',
-    variant: 'mid',
+  pt: {
+    headLead: 'UM OS FEITO PARA ',
+    headAccent: 'AGENTES AUTÔNOMOS',
+    subtitle: 'Todo OS até hoje presumiu um humano ao teclado. Este foi feito para o dia em que ninguém está observando — com a identidade, a imposição e a prova para conquistar essa autonomia com segurança, um passo de cada vez.',
+    ctaComment: '// sistemas operacionais superam harnesses',
+    ctaButton: 'experimente agora — aos.unicity.ai',
+    agentLabel: 'AGENTE',
+    stack: [
+      {
+        product: 'HARNESSES DE AGENTES',
+        label: '',
+        detail: 'Traga ou construa o seu próprio agente.',
+        tags: 'CLAUDE CODE · CODEX · GROK CODE',
+        variant: 'top',
+      },
+      {
+        product: 'UNICITY AOS',
+        label: 'OS SEGURO MULTI-TENANT',
+        detail: 'Executa cada agente — multi-tenant e isolado. Cada prompt, chamada de ferramenta e decisão passa pelo kernel, onde política, orçamentos e auditoria são aplicados abaixo do agente.',
+        tags: 'KERNEL · POLÍTICA · INTERCEPTAÇÃO',
+        variant: 'mid',
+      },
+      {
+        product: 'UNICITY PROOF SYSTEM',
+        label: 'PROVA CRIPTOGRÁFICA DE EXECUÇÃO',
+        detail: 'Uma blockchain feita sob medida para execução verificável, identidade e coordenação multiagente — a fonte da verdade sob a camada de execução.',
+        tags: '',
+        variant: 'bottom',
+      },
+    ] as StackLayer[],
   },
-  {
-    product: 'UNICITY PROOF SYSTEM',
-    label: 'CRYPTOGRAPHIC PROOF OF EXECUTION',
-    detail: 'A purpose-built blockchain for verifiable execution, identity, and multi-agent coordination — the source of truth beneath the execution layer.',
-    tags: '',
-    variant: 'bottom',
-  },
-];
+});
 
 // Harness chips render their brand logo where we have one; others fall back to text.
 const HARNESS_LOGOS: Record<string, string> = {
@@ -76,7 +118,7 @@ export function AutonomyStackSlide() {
             className="text-[#fefefe] text-[30px] sm:text-[44px] lg:text-[60px] xl:text-[74px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            AN OS BUILT FOR <span className="text-orange-400">AUTONOMOUS AGENTS</span>
+            {T.headLead}<span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -85,7 +127,7 @@ export function AutonomyStackSlide() {
             className="mt-3 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Every OS until now assumed a human at the keyboard. This one is built for the day when no one is watching — with the identity, enforcement, and proof to earn that autonomy safely, one step at a time.
+            {T.subtitle}
           </motion.p>
         </div>
 
@@ -103,7 +145,7 @@ export function AutonomyStackSlide() {
 
           {/* Right-side annotations */}
           <div className="flex flex-col gap-3 lg:gap-4">
-            {stack.map((layer, i) => (
+            {T.stack.map((layer, i) => (
               <motion.div
                 key={layer.product}
                 initial={{ opacity: 0, x: 12 }}
@@ -171,9 +213,9 @@ export function AutonomyStackSlide() {
           className="shrink-0 self-start inline-flex items-center gap-3 lg:gap-4 group cursor-pointer"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          <span className="text-[#fefefe]/55 text-sm sm:text-base">// operating systems beat harnesses</span>
+          <span className="text-[#fefefe]/55 text-sm sm:text-base">{T.ctaComment}</span>
           <span className="inline-flex items-center gap-2 rounded-full border border-orange-500/60 text-orange-400 px-4 py-1.5 text-sm sm:text-base font-bold group-hover:bg-orange-500/10 transition-colors">
-            try it now — aos.unicity.ai <span aria-hidden>→</span>
+            {T.ctaButton} <span aria-hidden>→</span>
           </span>
         </motion.a>
 
@@ -303,7 +345,7 @@ export function IsoStackDiagram() {
       {/* Render bottom-up so upper layers sit visually in front */}
       <Slab cy={layerY[2]} variant="bottom" centerLabel="PROOF SYSTEM" />
       <Slab cy={layerY[1]} variant="mid" centerLabel="AOS" centerSub="KERNEL" />
-      <Slab cy={layerY[0]} variant="top" centerLabel="AGENT" />
+      <Slab cy={layerY[0]} variant="top" centerLabel={T.agentLabel} />
     </svg>
   );
 }

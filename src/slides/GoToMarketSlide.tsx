@@ -1,7 +1,43 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const SYSTEM_FONT = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
 
+// The Sheikh Mohammed tweet is an attributed quote — it stays English in both.
+const T = tr({
+  en: {
+    headLead: 'EXAMPLE SOLUTION:',
+    headAccent: 'The agentic state',
+    subHead: (
+      <>
+        We've partnered with <span className="text-orange-400 font-bold">Aleria AI</span>, provider of sovereign AI solutions, to bring our OS to the Middle East.
+      </>
+    ),
+    channelPartner: 'Channel Partner · Live Today',
+    now: 'Now',
+    h2Lead: 'ALERIA AI:',
+    h2Accent: 'UAE SOVEREIGN AI',
+    partnerDesc: 'Strategic distribution partner. Channels Unicity into regulated AI deployments in the UAE.',
+    statCustomers: 'AI customers',
+    statAgents: 'Aleria agents in production',
+  },
+  pt: {
+    headLead: 'SOLUÇÃO DE EXEMPLO:',
+    headAccent: 'O estado agêntico',
+    subHead: (
+      <>
+        Firmamos parceria com <span className="text-orange-400 font-bold">Aleria AI</span>, fornecedora de soluções de IA soberana, para levar nosso OS ao Oriente Médio.
+      </>
+    ),
+    channelPartner: 'Parceiro de Canal · Ativo Hoje',
+    now: 'Agora',
+    h2Lead: 'ALERIA AI:',
+    h2Accent: 'IA SOBERANA DOS EAU',
+    partnerDesc: 'Parceiro estratégico de distribuição. Direciona a Unicity para implantações de IA reguladas nos EAU.',
+    statCustomers: 'clientes de IA',
+    statAgents: 'agentes Aleria em produção',
+  },
+});
 
 export function GoToMarketSlide() {
   return (
@@ -17,7 +53,7 @@ export function GoToMarketSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[56px] xl:text-[64px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            EXAMPLE SOLUTION: <span className="text-orange-400">The agentic state</span>
+            {T.headLead} <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -26,7 +62,7 @@ export function GoToMarketSlide() {
             className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl mt-3 max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            We've partnered with <span className="text-orange-400 font-bold">Aleria AI</span>, provider of sovereign AI solutions, to bring our OS to the Middle East.
+            {T.subHead}
           </motion.p>
         </div>
 
@@ -112,7 +148,7 @@ export function GoToMarketSlide() {
                 className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.28em] uppercase font-bold"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                Channel Partner · Live Today
+                {T.channelPartner}
               </p>
               <span className="flex items-center gap-2">
                 <span className="relative flex w-2 h-2">
@@ -123,7 +159,7 @@ export function GoToMarketSlide() {
                   className="text-orange-400/80 text-[10px] sm:text-xs tracking-[0.2em] uppercase font-bold"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
-                  Now
+                  {T.now}
                 </span>
               </span>
             </div>
@@ -132,14 +168,14 @@ export function GoToMarketSlide() {
               className="text-[#fefefe] text-[28px] sm:text-[36px] lg:text-[44px] leading-none tracking-tight uppercase"
               style={{ fontFamily: "'Anton', sans-serif" }}
             >
-              ALERIA AI: <span className="text-orange-400">UAE SOVEREIGN AI</span>
+              {T.h2Lead} <span className="text-orange-400">{T.h2Accent}</span>
             </h2>
 
             <p
               className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg leading-snug"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Strategic distribution partner. Channels Unicity into regulated AI deployments in the UAE.
+              {T.partnerDesc}
             </p>
 
             {/* Big stats */}
@@ -158,7 +194,7 @@ export function GoToMarketSlide() {
                   className="text-[#fefefe]/65 text-xs sm:text-sm lg:text-base tracking-[0.18em] uppercase"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
-                  AI customers
+                  {T.statCustomers}
                 </p>
               </div>
               <div className="flex flex-col gap-1.5" style={{ borderLeft: '1px solid rgba(255,255,255,0.12)', paddingLeft: '24px' }}>
@@ -172,7 +208,7 @@ export function GoToMarketSlide() {
                   className="text-[#fefefe]/65 text-xs sm:text-sm lg:text-base tracking-[0.18em] uppercase"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
-                  Aleria agents in production
+                  {T.statAgents}
                 </p>
               </div>
             </div>

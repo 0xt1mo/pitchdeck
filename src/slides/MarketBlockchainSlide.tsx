@@ -1,28 +1,27 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 type Card = {
   source: string;
   quote: string;
   author: string;
   bigNumber: string;
-  bigSub: string;
   highlight?: boolean;
 };
 
+// Brand sources and attributed quotes stay identical across languages.
 const cards: Card[] = [
   {
     source: 'NVIDIA',
     quote: 'In ten years, we will have 75,000 employees working with 7.5 million agents.',
     author: 'Jensen Huang, Nvidia GTC, March 2026',
     bigNumber: '100:1',
-    bigSub: 'agents-to-humans ratio at scale',
   },
   {
     source: 'GARTNER',
     quote: 'By 2028, the average Fortune 500 will run 150,000+ AI agents, up from fewer than 15 today. Only 13% have adequate governance.',
     author: 'Max Goss, Gartner, April 2026',
     bigNumber: '10,000×',
-    bigSub: 'agent growth in 3 years · 87% ungoverned',
     highlight: true,
   },
   {
@@ -30,9 +29,30 @@ const cards: Card[] = [
     quote: 'We will likely need blockchains that support more than one million — or even one billion — transactions per second.',
     author: 'Patrick & John Collison, Stripe, 2026',
     bigNumber: '1B TPS',
-    bigSub: 'the infrastructure thesis, validated',
   },
 ];
+
+// Only these strings swap by language — layout below is shared.
+const T = tr({
+  en: {
+    headLead: 'MARKET OPPORTUNITY:',
+    headAccent: 'A TRILLION-DOLLAR REBUILD.',
+    bigSubs: [
+      'agents-to-humans ratio at scale',
+      'agent growth in 3 years · 87% ungoverned',
+      'the infrastructure thesis, validated',
+    ],
+  },
+  pt: {
+    headLead: 'OPORTUNIDADE DE MERCADO:',
+    headAccent: 'UMA RECONSTRUÇÃO DE TRILHÕES DE DÓLARES.',
+    bigSubs: [
+      'proporção de agentes para humanos em escala',
+      'crescimento de agentes em 3 anos · 87% sem governança',
+      'a tese de infraestrutura, validada',
+    ],
+  },
+});
 
 export function MarketBlockchainSlide() {
   return (
@@ -48,15 +68,15 @@ export function MarketBlockchainSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[56px] leading-[0.95] tracking-tight"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            MARKET OPPORTUNITY:{' '}
-            <span className="text-orange-400">A TRILLION-DOLLAR REBUILD.</span>
+            {T.headLead}{' '}
+            <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
         </div>
 
         {/* Three citation cards */}
         <div className="grid grid-cols-3 gap-4 lg:gap-5 shrink-0 items-stretch">
           {cards.map((c, i) => (
-            <CitationCard key={c.source} card={c} delay={0.4 + i * 0.12} />
+            <CitationCard key={c.source} card={c} bigSub={T.bigSubs[i]} delay={0.4 + i * 0.12} />
           ))}
         </div>
 
@@ -100,7 +120,7 @@ export function MarketBlockchainSlide() {
   );
 }
 
-function CitationCard({ card, delay }: { card: Card; delay: number }) {
+function CitationCard({ card, bigSub, delay }: { card: Card; bigSub: string; delay: number }) {
   const border = card.highlight
     ? '1px solid rgba(249,115,22,0.65)'
     : '1px solid rgba(255,255,255,0.10)';
@@ -162,7 +182,7 @@ function CitationCard({ card, delay }: { card: Card; delay: number }) {
           className="text-[#fefefe]/70 text-[11px] sm:text-xs lg:text-sm mt-2 leading-snug"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          {card.bigSub}
+          {bigSub}
         </p>
       </div>
     </motion.div>

@@ -1,14 +1,50 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
 
 const dims = [
-  { noun: 'State', mech: 'Blockchain', desc: 'testnet live · mainnet GA Aug 2026', tag: "GA AUG '26", shipped: true },
-  { noun: 'Code', mech: 'Formal methods', desc: 'proven correct, not tested', tag: 'ROADMAP' },
-  { noun: 'Reasoning', mech: 'Tensor logic', desc: 'conclusions follow from the facts', tag: 'ROADMAP' },
-  { noun: 'Learning', mech: 'Own records', desc: 'every rule traceable to evidence', tag: 'ROADMAP' },
+  { id: 'state', shipped: true },
+  { id: 'code' },
+  { id: 'reasoning' },
+  { id: 'learning' },
 ];
+
+const T = tr({
+  en: {
+    dims: [
+      { noun: 'State', mech: 'Blockchain', desc: 'testnet live · mainnet GA Aug 2026', tag: "GA AUG '26" },
+      { noun: 'Code', mech: 'Formal methods', desc: 'proven correct, not tested', tag: 'ROADMAP' },
+      { noun: 'Reasoning', mech: 'Tensor logic', desc: 'conclusions follow from the facts', tag: 'ROADMAP' },
+      { noun: 'Learning', mech: 'Own records', desc: 'every rule traceable to evidence', tag: 'ROADMAP' },
+    ],
+    headLead: 'Where this goes:',
+    headAccent: 'verifiable AI.',
+    verifiableLabel: 'Verifiable',
+    verifiableAI: 'Verifiable AI',
+    punchLead: 'Everyone else makes hallucination rarer.',
+    punchAccent: 'We make it impossible — by construction.',
+    closerLead: 'Don’t trust AI.',
+    closerAccent: 'Verify it.',
+  },
+  pt: {
+    dims: [
+      { noun: 'Estado', mech: 'Blockchain', desc: 'testnet no ar · mainnet GA ago 2026', tag: "GA AGO '26" },
+      { noun: 'Código', mech: 'Métodos formais', desc: 'comprovado correto, não testado', tag: 'ROADMAP' },
+      { noun: 'Raciocínio', mech: 'Lógica tensorial', desc: 'as conclusões decorrem dos fatos', tag: 'ROADMAP' },
+      { noun: 'Aprendizado', mech: 'Registros próprios', desc: 'toda regra rastreável até a evidência', tag: 'ROADMAP' },
+    ],
+    headLead: 'Onde isso chega:',
+    headAccent: 'IA verificável.',
+    verifiableLabel: 'Verificável',
+    verifiableAI: 'IA Verificável',
+    punchLead: 'Todos os outros tornam a alucinação mais rara.',
+    punchAccent: 'Nós a tornamos impossível — por construção.',
+    closerLead: 'Não confie na IA.',
+    closerAccent: 'Verifique-a.',
+  },
+});
 
 export function VerifiableRoadmapSlide() {
   return (
@@ -28,13 +64,13 @@ export function VerifiableRoadmapSlide() {
           className="shrink-0 text-[#fefefe] text-[26px] sm:text-[38px] lg:text-[52px] leading-[0.98] tracking-tight uppercase"
           style={{ fontFamily: ANTON }}
         >
-          Where this goes: <span className="text-orange-400">verifiable AI.</span>
+          {T.headLead} <span className="text-orange-400">{T.headAccent}</span>
         </motion.h1>
 
         {/* The equation */}
         <div className="shrink-0 flex items-stretch justify-center gap-2 lg:gap-3">
           {dims.map((d, i) => (
-            <div key={d.noun} className="contents">
+            <div key={d.id} className="contents">
               {i > 0 && (
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -56,10 +92,10 @@ export function VerifiableRoadmapSlide() {
                     : { border: '1px solid rgba(255,255,255,0.14)', background: 'rgba(255,255,255,0.02)' }
                 }
               >
-                <p className="text-[#fefefe]/45 text-[10px] lg:text-xs tracking-[0.28em] uppercase" style={{ fontFamily: MONO }}>Verifiable</p>
-                <p className={`text-[28px] sm:text-[34px] lg:text-[44px] leading-[0.95] uppercase ${d.shipped ? 'text-orange-400' : 'text-[#fefefe]'}`} style={{ fontFamily: ANTON }}>{d.noun}</p>
-                <p className="text-[#fefefe]/90 text-sm lg:text-base font-bold mt-3 leading-snug" style={{ fontFamily: MONO }}>{d.mech}</p>
-                <p className="text-[#fefefe]/50 text-xs lg:text-sm mt-1 leading-snug flex-1" style={{ fontFamily: MONO }}>{d.desc}</p>
+                <p className="text-[#fefefe]/45 text-[10px] lg:text-xs tracking-[0.28em] uppercase" style={{ fontFamily: MONO }}>{T.verifiableLabel}</p>
+                <p className={`text-[28px] sm:text-[34px] lg:text-[44px] leading-[0.95] uppercase ${d.shipped ? 'text-orange-400' : 'text-[#fefefe]'}`} style={{ fontFamily: ANTON }}>{T.dims[i].noun}</p>
+                <p className="text-[#fefefe]/90 text-sm lg:text-base font-bold mt-3 leading-snug" style={{ fontFamily: MONO }}>{T.dims[i].mech}</p>
+                <p className="text-[#fefefe]/50 text-xs lg:text-sm mt-1 leading-snug flex-1" style={{ fontFamily: MONO }}>{T.dims[i].desc}</p>
                 <div className="mt-4">
                   {d.shipped ? (
                     <span className="inline-flex items-center gap-2 rounded-full border border-orange-500/70 px-3 py-1 text-orange-400 text-[10px] lg:text-xs tracking-[0.18em] uppercase font-bold" style={{ fontFamily: MONO }}>
@@ -67,10 +103,10 @@ export function VerifiableRoadmapSlide() {
                         <span className="absolute inline-flex w-full h-full rounded-full bg-orange-400 opacity-60 animate-ping" />
                         <span className="relative inline-flex w-1.5 h-1.5 rounded-full bg-orange-400" />
                       </span>
-                      {d.tag}
+                      {T.dims[i].tag}
                     </span>
                   ) : (
-                    <span className="rounded-full border border-[#fefefe]/20 px-3 py-1 text-[#fefefe]/45 text-[10px] lg:text-xs tracking-[0.18em] uppercase" style={{ fontFamily: MONO }}>{d.tag}</span>
+                    <span className="rounded-full border border-[#fefefe]/20 px-3 py-1 text-[#fefefe]/45 text-[10px] lg:text-xs tracking-[0.18em] uppercase" style={{ fontFamily: MONO }}>{T.dims[i].tag}</span>
                   )}
                 </div>
               </motion.div>
@@ -90,7 +126,7 @@ export function VerifiableRoadmapSlide() {
             className="text-orange-400 text-[44px] sm:text-[64px] lg:text-[92px] leading-none uppercase"
             style={{ fontFamily: ANTON, textShadow: '0 0 34px rgba(249,115,22,0.45)' }}
           >
-            Verifiable AI
+            {T.verifiableAI}
           </span>
         </motion.div>
 
@@ -103,11 +139,11 @@ export function VerifiableRoadmapSlide() {
           style={{ borderTop: '1px solid rgba(255,255,255,0.10)' }}
         >
           <p className="text-[#fefefe] text-base sm:text-xl lg:text-[28px] leading-tight uppercase" style={{ fontFamily: ANTON }}>
-            Everyone else makes hallucination rarer.{' '}
-            <span className="text-orange-400">We make it impossible — by construction.</span>
+            {T.punchLead}{' '}
+            <span className="text-orange-400">{T.punchAccent}</span>
           </p>
           <p className="text-[#fefefe]/70 text-sm sm:text-base lg:text-lg mt-2" style={{ fontFamily: MONO }}>
-            Don’t trust AI. <span className="text-[#fefefe] font-bold">Verify it.</span>
+            {T.closerLead} <span className="text-[#fefefe] font-bold">{T.closerAccent}</span>
           </p>
         </motion.div>
 

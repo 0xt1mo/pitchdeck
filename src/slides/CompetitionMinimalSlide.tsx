@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 type Competitor = {
   name: string;
@@ -7,13 +8,50 @@ type Competitor = {
   pos: 'top' | 'top-l' | 'top-r' | 'mid-l' | 'mid-r';
 };
 
-const competitors: Competitor[] = [
-  { name: 'NeMo', tag: 'guardrail SDK', note: 'watches prompts', pos: 'top' },
-  { name: 'Lakera', tag: 'prompt firewall', note: 'watches content', pos: 'top-l' },
-  { name: 'Kong', tag: 'API gateway', note: 'watches traffic', pos: 'top-r' },
-  { name: 'Palo Alto AIRS', tag: 'model scanning', note: 'watches models', pos: 'mid-l' },
-  { name: 'F5 · CalypsoAI', tag: 'inference proxy', note: 'watches inference', pos: 'mid-r' },
-];
+const T = tr({
+  en: {
+    competitors: [
+      { name: 'NeMo', tag: 'guardrail SDK', note: 'watches prompts', pos: 'top' },
+      { name: 'Lakera', tag: 'prompt firewall', note: 'watches content', pos: 'top-l' },
+      { name: 'Kong', tag: 'API gateway', note: 'watches traffic', pos: 'top-r' },
+      { name: 'Palo Alto AIRS', tag: 'model scanning', note: 'watches models', pos: 'mid-l' },
+      { name: 'F5 · CalypsoAI', tag: 'inference proxy', note: 'watches inference', pos: 'mid-r' },
+    ] as Competitor[],
+    headLine1: 'THEY WATCH THE TRAFFIC.',
+    headLine2: 'WE ARE THE RUNTIME BENEATH THEM.',
+    subtitle: (
+      <>
+        Gateways and firewalls watch traffic from the outside. We are the runtime the agent executes on —{' '}
+        <span className="text-[#fefefe] font-bold">the layer everything else depends on and nothing can bypass.</span>{' '}
+        They see requests; <span className="text-orange-400 font-bold">we control execution.</span>
+      </>
+    ),
+    kernelLine: 'The kernel every agent runs on',
+    verifyLine: 'Cryptographic verification of execution',
+  },
+  pt: {
+    competitors: [
+      { name: 'NeMo', tag: 'SDK de guardrails', note: 'vigia prompts', pos: 'top' },
+      { name: 'Lakera', tag: 'firewall de prompts', note: 'vigia conteúdo', pos: 'top-l' },
+      { name: 'Kong', tag: 'gateway de API', note: 'vigia o tráfego', pos: 'top-r' },
+      { name: 'Palo Alto AIRS', tag: 'varredura de modelos', note: 'vigia modelos', pos: 'mid-l' },
+      { name: 'F5 · CalypsoAI', tag: 'proxy de inferência', note: 'vigia a inferência', pos: 'mid-r' },
+    ] as Competitor[],
+    headLine1: 'ELES VIGIAM O TRÁFEGO.',
+    headLine2: 'NÓS SOMOS O RUNTIME ABAIXO DELES.',
+    subtitle: (
+      <>
+        Gateways e firewalls vigiam o tráfego de fora. Nós somos o runtime onde o agente executa —{' '}
+        <span className="text-[#fefefe] font-bold">a camada da qual todo o resto depende e que nada pode contornar.</span>{' '}
+        Eles veem requisições; <span className="text-orange-400 font-bold">nós controlamos a execução.</span>
+      </>
+    ),
+    kernelLine: 'O kernel onde todo agente roda',
+    verifyLine: 'Verificação criptográfica da execução',
+  },
+});
+
+const competitors = T.competitors;
 
 const agents = ['Codex', 'Claude Code', 'OpenClaw'];
 
@@ -30,9 +68,9 @@ export function CompetitionMinimalSlide() {
           className="text-[28px] sm:text-[40px] lg:text-[56px] xl:text-[64px] leading-[0.98] tracking-tight uppercase shrink-0"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          <span className="text-[#fefefe]">THEY WATCH THE TRAFFIC.</span>
+          <span className="text-[#fefefe]">{T.headLine1}</span>
           <br />
-          <span className="text-orange-400">WE ARE THE RUNTIME BENEATH THEM.</span>
+          <span className="text-orange-400">{T.headLine2}</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -43,9 +81,7 @@ export function CompetitionMinimalSlide() {
           className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl leading-snug shrink-0 max-w-6xl"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Gateways and firewalls watch traffic from the outside. We are the runtime the agent executes on —{' '}
-          <span className="text-[#fefefe] font-bold">the layer everything else depends on and nothing can bypass.</span>{' '}
-          They see requests; <span className="text-orange-400 font-bold">we control execution.</span>
+          {T.subtitle}
         </motion.p>
 
         {/* Diagram */}
@@ -164,13 +200,13 @@ export function CompetitionMinimalSlide() {
                 className="text-[#fefefe] text-base sm:text-lg lg:text-xl font-bold leading-tight"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                The kernel every agent runs on
+                {T.kernelLine}
               </p>
               <p
                 className="text-[#fefefe]/65 text-xs sm:text-sm lg:text-base font-medium mt-1 leading-tight"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                Cryptographic verification of execution
+                {T.verifyLine}
               </p>
             </div>
           </div>

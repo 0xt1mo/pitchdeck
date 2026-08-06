@@ -1,69 +1,87 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
+// Names, photo paths and LinkedIn URLs stay identical across languages.
 const founders = [
   {
     name: 'Mike Gault',
-    role: 'CEO',
     photo: '/team/mike-bg.png',
     linkedin: 'https://www.linkedin.com/in/mikegault1/',
-    lines: [
-      'PhD EE',
-      'Built & exited Guardtime',
-      'Ex-MD, Barclays Capital',
-    ],
   },
   {
     name: 'Tony Kenyon',
-    role: 'CPTO',
     photo: '/team/tony-bg.png',
     linkedin: 'https://www.linkedin.com/in/tonykenyon/',
-    lines: [
-      'PhD Machine Learning',
-      '25 years shipping enterprise AI & infra (BT, Nokia, A10)',
-      'Former Vitruvian (applied ML, security)',
-    ],
   },
 ];
 
 const coreTeam = [
   {
     name: 'Joshua J. Bouw',
-    role: 'AI OS',
     photo: '/team/jjb2-bg.png',
     linkedin: 'https://www.linkedin.com/in/joshuajbouw/',
-    lines: [
-      'NEAR, Asimov, Blackcoin',
-      'Early Proof-of-Stake pioneer',
-    ],
   },
   {
     name: 'Jamie Steiner',
-    role: 'Product',
     photo: '/team/jamie-bg.png',
     linkedin: '',
-    lines: [
-      'Head of AI Delivery, NEOM',
-      'JP Morgan',
-    ],
   },
   {
     name: 'Alan Radi',
-    role: 'VP Sales (incoming)',
     photo: '/team/alan-bg.jpg',
     linkedin: 'https://www.linkedin.com/in/alanradi/',
-    lines: [
-      'Zain · Etisalat · Dubai Gov',
-      '12 yrs CX AI, global B2C',
-    ],
   },
 ];
 
+// Company names are brands — they stay identical across languages.
 const advisors = [
   { name: 'Carlos Domingo', company: 'Securitize', photo: '/team/carlos.jpg', linkedin: 'https://www.linkedin.com/in/carlosdomingo/' },
   { name: 'Arnold Lee', company: 'Sphere', photo: '/team/arnold.jpg', linkedin: 'https://www.linkedin.com/in/arnoldhlee/' },
   { name: 'Eric Leandri', company: 'Aleria AI', photo: '/team/eric-bg.png', linkedin: 'https://www.linkedin.com/in/ericleandri/' },
 ];
+
+// Roles and bio lines swap by language; brand/people names above stay put.
+const T = tr({
+  en: {
+    headLead: "FOUNDERS WHO'VE",
+    headAccent: 'DONE THIS BEFORE',
+    subHead: (
+      <>
+        15 years shipping cryptographic infrastructure to <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed</span>.<br />5 PhD cryptographers in the core team.
+      </>
+    ),
+    founders: [
+      { role: 'CEO', lines: ['PhD EE', 'Built & exited Guardtime', 'Ex-MD, Barclays Capital'] },
+      { role: 'CPTO', lines: ['PhD Machine Learning', '25 years shipping enterprise AI & infra (BT, Nokia, A10)', 'Former Vitruvian (applied ML, security)'] },
+    ],
+    coreTeam: [
+      { role: 'AI OS', lines: ['NEAR, Asimov, Blackcoin', 'Early Proof-of-Stake pioneer'] },
+      { role: 'Product', lines: ['Head of AI Delivery, NEOM', 'JP Morgan'] },
+      { role: 'VP Sales (incoming)', lines: ['Zain · Etisalat · Dubai Gov', '12 yrs CX AI, global B2C'] },
+    ],
+    advisorsLabel: 'Advisors',
+  },
+  pt: {
+    headLead: 'FUNDADORES QUE',
+    headAccent: 'JÁ FIZERAM ISSO ANTES',
+    subHead: (
+      <>
+        15 anos entregando infraestrutura criptográfica para <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed</span>.<br />5 criptógrafos PhD no time principal.
+      </>
+    ),
+    founders: [
+      { role: 'CEO', lines: ['PhD em Engenharia Elétrica', 'Fundou e vendeu a Guardtime', 'Ex-MD, Barclays Capital'] },
+      { role: 'CPTO', lines: ['PhD em Machine Learning', '25 anos entregando IA e infraestrutura corporativa (BT, Nokia, A10)', 'Ex-Vitruvian (ML aplicado, segurança)'] },
+    ],
+    coreTeam: [
+      { role: 'AI OS', lines: ['NEAR, Asimov, Blackcoin', 'Pioneiro do Proof-of-Stake'] },
+      { role: 'Produto', lines: ['Head de Entrega de IA, NEOM', 'JP Morgan'] },
+      { role: 'VP de Vendas (a chegar)', lines: ['Zain · Etisalat · Dubai Gov', '12 anos de CX IA, B2C global'] },
+    ],
+    advisorsLabel: 'Conselheiros',
+  },
+});
 
 /** Advisor avatar: shows the photo, falls back to a gray initials circle until the file exists. */
 const AdvisorAvatar = ({ name, photo }: { name: string; photo?: string }) => {
@@ -135,7 +153,7 @@ export function TeamSlide() {
             className="text-[#fefefe] text-[44px] sm:text-[60px] lg:text-[80px] xl:text-[92px] leading-[1.0] tracking-tight"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            FOUNDERS WHO'VE <span className="text-orange-400">DONE THIS BEFORE</span>
+            {T.headLead} <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -144,13 +162,13 @@ export function TeamSlide() {
             className="mt-3 text-[#fefefe]/85 text-base sm:text-lg max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            15 years shipping cryptographic infrastructure to <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed</span>.<br />5 PhD cryptographers in the core team.
+            {T.subHead}
           </motion.p>
         </div>
 
         {/* Founders */}
         <div className="grid grid-cols-3 gap-6 lg:gap-10 shrink-0">
-          {founders.map((f, i) => (
+          {founders.map((f, i) => { const info = T.founders[i]; return (
             <motion.div
               key={f.name}
               initial={{ opacity: 0, y: 15 }}
@@ -172,10 +190,10 @@ export function TeamSlide() {
                   className="text-orange-400 text-xs lg:text-sm font-bold tracking-[0.2em] uppercase mt-1"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
-                  {f.role}
+                  {info.role}
                 </p>
                 <div className="mt-2 space-y-1">
-                  {f.lines.map((line, j) => (
+                  {info.lines.map((line, j) => (
                     <p
                       key={j}
                       className="text-[#fefefe]/75 text-xs lg:text-sm leading-snug flex gap-2"
@@ -188,12 +206,12 @@ export function TeamSlide() {
                 </div>
               </div>
             </motion.div>
-          ))}
+          ); })}
         </div>
 
         {/* Core team — photo bios */}
         <div className="grid grid-cols-3 gap-6 lg:gap-10 shrink-0">
-          {coreTeam.map((f, i) => (
+          {coreTeam.map((f, i) => { const info = T.coreTeam[i]; return (
             <motion.div
               key={f.name}
               initial={{ opacity: 0, y: 15 }}
@@ -213,10 +231,10 @@ export function TeamSlide() {
                   className="text-orange-400 text-xs lg:text-sm font-bold tracking-[0.2em] uppercase mt-1"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
-                  {f.role}
+                  {info.role}
                 </p>
                 <div className="mt-2 space-y-1">
-                  {f.lines.map((line, j) => (
+                  {info.lines.map((line, j) => (
                     <p
                       key={j}
                       className="text-[#fefefe]/75 text-xs lg:text-sm leading-snug flex gap-2"
@@ -229,7 +247,7 @@ export function TeamSlide() {
                 </div>
               </div>
             </motion.div>
-          ))}
+          ); })}
         </div>
 
         {/* Advisors — compact photo row */}
@@ -243,7 +261,7 @@ export function TeamSlide() {
             className="text-orange-400 text-xs tracking-[0.3em] uppercase shrink-0"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Advisors
+            {T.advisorsLabel}
           </p>
           {advisors.map((a) => (
             <div key={a.name} className="flex items-center gap-3">

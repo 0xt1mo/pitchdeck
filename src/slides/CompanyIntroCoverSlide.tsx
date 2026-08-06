@@ -1,4 +1,10 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
+
+const T = tr({
+  en: { headLead: 'COMPANY ', headAccent: 'INTRO.', tagline: 'AI Autonomy.' },
+  pt: { headLead: 'APRESENTAÇÃO DA ', headAccent: 'EMPRESA.', tagline: 'Autonomia de IA.' },
+});
 
 export function CompanyIntroCoverSlide() {
   return (
@@ -60,7 +66,7 @@ export function CompanyIntroCoverSlide() {
           className="text-[64px] sm:text-[96px] lg:text-[160px] xl:text-[180px] leading-[0.88] tracking-tight uppercase text-center"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          <span className="text-[#fefefe]">COMPANY </span><span className="text-orange-400">INTRO.</span>
+          <span className="text-[#fefefe]">{T.headLead}</span><span className="text-orange-400">{T.headAccent}</span>
         </motion.h1>
 
         {/* Accent line */}
@@ -79,7 +85,7 @@ export function CompanyIntroCoverSlide() {
           className="text-[#fefefe]/70 text-lg sm:text-2xl lg:text-3xl tracking-[0.12em] uppercase text-center"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          <span className="text-orange-400">AI Autonomy.</span>
+          <span className="text-orange-400">{T.tagline}</span>
         </motion.p>
 
       </div>

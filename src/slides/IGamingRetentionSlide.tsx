@@ -1,7 +1,46 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const display = "'Anton', sans-serif";
 const mono = "'Geist Mono', monospace";
+
+// Only these strings swap by language — layout below is shared.
+const T = tr({
+  en: {
+    headLead: 'EXAMPLE SOLUTION:',
+    headAccent: 'iGaming agentic CRM.',
+    ignored: 'Ignored.',
+    body: (
+      <>
+        Operators spend <span className="text-[#fefefe] font-semibold">$5–10 per active player per year</span> on CRM platforms to send promotional emails that ninety-two per cent never open. The agent is the channel the player already uses — the Friday reload arrives in chat, when it matters.{' '}
+        <span className="text-orange-400 font-semibold">Delivered: one hundred per cent.</span>
+      </>
+    ),
+    tagline: (
+      <>
+        The CRM stack was a workaround.{' '}
+        <span className="text-orange-400">The agent makes the channel alive again.</span>
+      </>
+    ),
+  },
+  pt: {
+    headLead: 'SOLUÇÃO DE EXEMPLO:',
+    headAccent: 'CRM agêntico de iGaming.',
+    ignored: 'Ignorados.',
+    body: (
+      <>
+        As operadoras gastam <span className="text-[#fefefe] font-semibold">$5–10 por jogador ativo por ano</span> em plataformas de CRM para enviar e-mails promocionais que noventa e dois por cento nunca abrem. O agente é o canal que o jogador já usa — o reload de sexta-feira chega no chat, na hora que importa.{' '}
+        <span className="text-orange-400 font-semibold">Entregue: cem por cento.</span>
+      </>
+    ),
+    tagline: (
+      <>
+        A stack de CRM era um paliativo.{' '}
+        <span className="text-orange-400">O agente traz o canal de volta à vida.</span>
+      </>
+    ),
+  },
+});
 
 export function IGamingRetentionSlide() {
   return (
@@ -19,7 +58,7 @@ export function IGamingRetentionSlide() {
               className="text-[#fefefe] text-[26px] sm:text-[36px] lg:text-[44px] xl:text-[50px] leading-[0.98] tracking-tight uppercase"
               style={{ fontFamily: display }}
             >
-              EXAMPLE SOLUTION: <span className="text-orange-400">iGaming agentic CRM.</span>
+              {T.headLead} <span className="text-orange-400">{T.headAccent}</span>
             </motion.h1>
             <motion.div
               initial={{ scaleX: 0 }}
@@ -47,7 +86,7 @@ export function IGamingRetentionSlide() {
                 className="text-orange-400 text-[56px] lg:text-[84px] leading-[0.9] uppercase"
                 style={{ fontFamily: display }}
               >
-                Ignored.
+                {T.ignored}
               </motion.span>
             </div>
 
@@ -58,8 +97,7 @@ export function IGamingRetentionSlide() {
               className="text-[#fefefe]/75 text-base sm:text-lg leading-relaxed max-w-xl mt-6"
               style={{ fontFamily: mono }}
             >
-              Operators spend <span className="text-[#fefefe] font-semibold">$5–10 per active player per year</span> on CRM platforms to send promotional emails that ninety-two per cent never open. The agent is the channel the player already uses — the Friday reload arrives in chat, when it matters.{' '}
-              <span className="text-orange-400 font-semibold">Delivered: one hundred per cent.</span>
+              {T.body}
             </motion.p>
 
             <motion.p
@@ -69,8 +107,7 @@ export function IGamingRetentionSlide() {
               className="text-[#fefefe]/65 text-lg sm:text-xl lg:text-2xl leading-tight tracking-tight uppercase pt-5 mt-6"
               style={{ fontFamily: display, borderTop: '1px solid rgba(249,115,22,0.25)' }}
             >
-              The CRM stack was a workaround.{' '}
-              <span className="text-orange-400">The agent makes the channel alive again.</span>
+              {T.tagline}
             </motion.p>
           </div>
 
