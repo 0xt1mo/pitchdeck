@@ -20,6 +20,7 @@ import { AosMergedSlide } from '../slides/AosMergedSlide';
 import { DdnCloseSlide } from '../slides/ddn/DdnCloseSlide';
 import { DdnAskSlide } from '../slides/ddn/DdnAskSlide';
 import { DdnUpsideSlide } from '../slides/ddn/DdnUpsideSlide';
+import { DdnThankYouSlide } from '../slides/ddn/DdnThankYouSlide';
 
 export const ddnDeck = [
   // — The deal —
@@ -47,4 +48,5 @@ export const ddnDeck = [
   DdnCloseSlide,          // Close — "agents per node"
   DdnAskSlide,            // The ask — $2M + product partnership
   DdnUpsideSlide,         // The upside — infrastructure + OS pairs (inspire)
+  DdnThankYouSlide,       // Thank you + contact
 ];
