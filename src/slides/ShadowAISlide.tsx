@@ -1,19 +1,50 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
-const bullets = [
-  {
-    label: 'CRYPTOGRAPHIC IDENTITY',
-    body: 'Every agent is assigned a revocable identity bound to a human principal. Eliminates static API keys.',
+const T = tr({
+  en: {
+    eyebrow: 'Use Case · Visibility',
+    h1Lead: 'AGENT SPRAWL &',
+    h1Accent: 'SHADOW AI.',
+    introBold: 'You cannot secure what you cannot see.',
+    introRest: 'Unicity acts as the mandatory registration and monitoring layer for all machine identity in the enterprise.',
+    bullets: [
+      {
+        label: 'CRYPTOGRAPHIC IDENTITY',
+        body: 'Every agent is assigned a revocable identity bound to a human principal. Eliminates static API keys.',
+      },
+      {
+        label: 'GLOBAL INVENTORY',
+        body: 'Map every active agent and its authorized scopes across the organization.',
+      },
+      {
+        label: 'DRIFT CONTAINMENT',
+        body: 'Instantly quarantine rogue agents that deviate from baseline execution patterns.',
+      },
+    ],
   },
-  {
-    label: 'GLOBAL INVENTORY',
-    body: 'Map every active agent and its authorized scopes across the organization.',
+  pt: {
+    eyebrow: 'Caso de Uso · Visibilidade',
+    h1Lead: 'PROLIFERAÇÃO DE AGENTES E',
+    h1Accent: 'SHADOW IA.',
+    introBold: 'Você não pode proteger o que não consegue ver.',
+    introRest: 'O Unicity atua como a camada obrigatória de registro e monitoramento para toda identidade de máquina na empresa.',
+    bullets: [
+      {
+        label: 'IDENTIDADE CRIPTOGRÁFICA',
+        body: 'Todo agente recebe uma identidade revogável vinculada a um principal humano. Elimina chaves de API estáticas.',
+      },
+      {
+        label: 'INVENTÁRIO GLOBAL',
+        body: 'Mapeie todo agente ativo e seus escopos autorizados em toda a organização.',
+      },
+      {
+        label: 'CONTENÇÃO DE DESVIO',
+        body: 'Coloque instantaneamente em quarentena agentes descontrolados que se desviam dos padrões de execução de referência.',
+      },
+    ],
   },
-  {
-    label: 'DRIFT CONTAINMENT',
-    body: 'Instantly quarantine rogue agents that deviate from baseline execution patterns.',
-  },
-];
+});
 
 export function ShadowAISlide() {
   return (
@@ -29,7 +60,7 @@ export function ShadowAISlide() {
             className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.4em] uppercase font-bold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Use Case · Visibility
+            {T.eyebrow}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -38,8 +69,8 @@ export function ShadowAISlide() {
             className="text-[#fefefe] text-[36px] sm:text-[52px] lg:text-[72px] xl:text-[84px] leading-[0.95] tracking-tight uppercase mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            AGENT SPRAWL &{' '}
-            <span className="text-orange-400">SHADOW AI.</span>
+            {T.h1Lead}{' '}
+            <span className="text-orange-400">{T.h1Accent}</span>
           </motion.h1>
         </div>
 
@@ -55,12 +86,12 @@ export function ShadowAISlide() {
               className="text-[#fefefe]/90 text-sm sm:text-base lg:text-lg leading-snug"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              <span className="text-[#fefefe] font-bold">You cannot secure what you cannot see.</span>{' '}
-              Unicity acts as the mandatory registration and monitoring layer for all machine identity in the enterprise.
+              <span className="text-[#fefefe] font-bold">{T.introBold}</span>{' '}
+              {T.introRest}
             </motion.p>
 
             <ul className="flex flex-col gap-3 lg:gap-4">
-              {bullets.map((b, i) => (
+              {T.bullets.map((b, i) => (
                 <motion.li
                   key={b.label}
                   initial={{ opacity: 0, x: -12 }}

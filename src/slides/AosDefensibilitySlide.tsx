@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const mono = "'Geist Mono', monospace";
 const display = "'Anton', sans-serif";
@@ -11,37 +12,71 @@ type Column = {
   quoteLabel: string;
   quote: string;
   bullets: (string | { lead: string; bold: string; tail?: string })[];
-  accent: 'orange' | 'neutral';
 };
 
-const columns: Column[] = [
-  {
-    keyLead: 'Today',
-    keyRest: 'cryptographic proof of execution.',
-    headline: 'The agent trace, tokenized.',
-    quoteLabel: 'LIVE · UNICITY PROOF SYSTEM',
-    quote: 'Every decision becomes a signed, hash-linked token — proof, not a log.',
-    bullets: [
-      'Every prompt, tool call, and decision is tokenized into a tamper-evident chain',
-      { lead: 'Anchored on the ', bold: 'Unicity blockchain', tail: ' — verifiable by anyone, rewritable by no one' },
-      'Competitors infer behaviour from logs. Unicity AOS proves execution cryptographically.',
-    ],
-    accent: 'orange',
+// Non-text accent flags stay outside the translation map, indexed by column.
+const accents: ('orange' | 'neutral')[] = ['orange', 'neutral'];
+
+const T = tr({
+  en: {
+    headAccent: 'AGENTS VERIFIABLE BY CONSTRUCTION.',
+    columns: [
+      {
+        keyLead: 'Today',
+        keyRest: 'cryptographic proof of execution.',
+        headline: 'The agent trace, tokenized.',
+        quoteLabel: 'LIVE · UNICITY PROOF SYSTEM',
+        quote: 'Every decision becomes a signed, hash-linked token — proof, not a log.',
+        bullets: [
+          'Every prompt, tool call, and decision is tokenized into a tamper-evident chain',
+          { lead: 'Anchored on the ', bold: 'Unicity blockchain', tail: ' — verifiable by anyone, rewritable by no one' },
+          'Competitors infer behaviour from logs. Unicity AOS proves execution cryptographically.',
+        ],
+      },
+      {
+        keyLead: 'Tomorrow',
+        keyRest: 'agents verified by construction.',
+        badge: 'IN DEVELOPMENT',
+        headline: 'The IDE for verified agent development.',
+        quoteLabel: 'FULL DEV PIPELINE',
+        quote: 'Write → verify → deploy → prove. End-to-end.',
+        bullets: [
+          'Formal verification language and tooling — practical, not academic',
+          'Mathematical guarantees of agent behavior, not statistical detection',
+        ],
+      },
+    ] as Column[],
   },
-  {
-    keyLead: 'Tomorrow',
-    keyRest: 'agents verified by construction.',
-    badge: 'IN DEVELOPMENT',
-    headline: 'The IDE for verified agent development.',
-    quoteLabel: 'FULL DEV PIPELINE',
-    quote: 'Write → verify → deploy → prove. End-to-end.',
-    bullets: [
-      'Formal verification language and tooling — practical, not academic',
-      'Mathematical guarantees of agent behavior, not statistical detection',
-    ],
-    accent: 'neutral',
+  pt: {
+    headAccent: 'AGENTES VERIFICÁVEIS POR CONSTRUÇÃO.',
+    columns: [
+      {
+        keyLead: 'Hoje',
+        keyRest: 'prova criptográfica de execução.',
+        headline: 'O trace do agente, tokenizado.',
+        quoteLabel: 'AO VIVO · UNICITY PROOF SYSTEM',
+        quote: 'Cada decisão se torna um token assinado e encadeado por hash — prova, não um log.',
+        bullets: [
+          'Cada prompt, chamada de ferramenta e decisão é tokenizada em uma cadeia à prova de adulteração',
+          { lead: 'Ancorado na ', bold: 'blockchain Unicity', tail: ' — verificável por qualquer um, regravável por ninguém' },
+          'Concorrentes inferem comportamento a partir de logs. A Unicity AOS prova a execução criptograficamente.',
+        ],
+      },
+      {
+        keyLead: 'Amanhã',
+        keyRest: 'agentes verificados por construção.',
+        badge: 'EM DESENVOLVIMENTO',
+        headline: 'A IDE para desenvolvimento de agentes verificados.',
+        quoteLabel: 'PIPELINE DE DEV COMPLETO',
+        quote: 'Escreva → verifique → implante → prove. De ponta a ponta.',
+        bullets: [
+          'Linguagem e ferramental de verificação formal — prática, não acadêmica',
+          'Garantias matemáticas do comportamento do agente, não detecção estatística',
+        ],
+      },
+    ] as Column[],
   },
-];
+});
 
 export function AosDefensibilitySlide() {
   return (
@@ -67,17 +102,17 @@ export function AosDefensibilitySlide() {
             style={{ fontFamily: display }}
           >
             <span className="text-[#fefefe]">ROADMAP:</span>{' '}
-            <span className="text-orange-400">AGENTS VERIFIABLE BY CONSTRUCTION.</span>
+            <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
         </div>
 
         {/* Two columns, each with its key line above the box */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-8 shrink-0 items-start">
-          {columns.map((c, i) => {
-            const isOrange = c.accent === 'orange';
+          {T.columns.map((c, i) => {
+            const isOrange = accents[i] === 'orange';
             return (
               <motion.div
-                key={c.keyLead}
+                key={i}
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.12, duration: 0.5 }}

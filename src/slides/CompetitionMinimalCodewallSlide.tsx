@@ -1,21 +1,53 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 type Competitor = {
   name: string;
-  tag: string;
-  note: string;
   pos: 'top' | 'top-l' | 'top-r' | 'mid-l' | 'mid-r';
 };
 
 const competitors: Competitor[] = [
-  { name: 'NeMo', tag: 'guardrail SDK', note: 'watches prompts', pos: 'top' },
-  { name: 'Lakera', tag: 'prompt firewall', note: 'watches content', pos: 'top-l' },
-  { name: 'Kong', tag: 'API gateway', note: 'watches traffic', pos: 'top-r' },
-  { name: 'Palo Alto AIRS', tag: 'model scanning', note: 'watches models', pos: 'mid-l' },
-  { name: 'F5 · CalypsoAI', tag: 'inference proxy', note: 'watches inference', pos: 'mid-r' },
+  { name: 'NeMo', pos: 'top' },
+  { name: 'Lakera', pos: 'top-l' },
+  { name: 'Kong', pos: 'top-r' },
+  { name: 'Palo Alto AIRS', pos: 'mid-l' },
+  { name: 'F5 · CalypsoAI', pos: 'mid-r' },
 ];
 
 const agents = ['Codex', 'Claude Code', 'Cursor'];
+
+const T = tr({
+  en: {
+    head1: 'THEY WATCH THE TRAFFIC.',
+    head2: 'WE ARE THE RUNTIME BENEATH THEM.',
+    sub: (
+      <>
+        Gateways and firewalls watch traffic from the outside. We are the runtime the agent executes on —{' '}
+        <span className="text-[#fefefe] font-bold">the layer everything else depends on and nothing can bypass.</span>{' '}
+        They see requests; <span className="text-orange-400 font-bold">we control execution.</span>
+      </>
+    ),
+    tags: ['guardrail SDK', 'prompt firewall', 'API gateway', 'model scanning', 'inference proxy'],
+    notes: ['watches prompts', 'watches content', 'watches traffic', 'watches models', 'watches inference'],
+    aosKernel: 'The kernel every agent runs on',
+    aosVerify: 'Cryptographic verification of execution',
+  },
+  pt: {
+    head1: 'ELES OBSERVAM O TRÁFEGO.',
+    head2: 'NÓS SOMOS O RUNTIME ABAIXO DELES.',
+    sub: (
+      <>
+        Gateways e firewalls observam o tráfego de fora. Nós somos o runtime em que o agente executa —{' '}
+        <span className="text-[#fefefe] font-bold">a camada da qual todo o resto depende e que nada consegue burlar.</span>{' '}
+        Eles veem requisições; <span className="text-orange-400 font-bold">nós controlamos a execução.</span>
+      </>
+    ),
+    tags: ['SDK de guardrail', 'firewall de prompt', 'gateway de API', 'varredura de modelos', 'proxy de inferência'],
+    notes: ['observa prompts', 'observa conteúdo', 'observa tráfego', 'observa modelos', 'observa inferência'],
+    aosKernel: 'O kernel em que cada agente roda',
+    aosVerify: 'Verificação criptográfica da execução',
+  },
+});
 
 export function CompetitionMinimalCodewallSlide() {
   return (
@@ -30,9 +62,9 @@ export function CompetitionMinimalCodewallSlide() {
           className="text-[28px] sm:text-[40px] lg:text-[56px] xl:text-[64px] leading-[0.98] tracking-tight uppercase shrink-0"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          <span className="text-[#fefefe]">THEY WATCH THE TRAFFIC.</span>
+          <span className="text-[#fefefe]">{T.head1}</span>
           <br />
-          <span className="text-orange-400">WE ARE THE RUNTIME BENEATH THEM.</span>
+          <span className="text-orange-400">{T.head2}</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -43,9 +75,7 @@ export function CompetitionMinimalCodewallSlide() {
           className="text-[#fefefe]/85 text-base sm:text-lg lg:text-xl leading-snug shrink-0 max-w-6xl"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Gateways and firewalls watch traffic from the outside. We are the runtime the agent executes on —{' '}
-          <span className="text-[#fefefe] font-bold">the layer everything else depends on and nothing can bypass.</span>{' '}
-          They see requests; <span className="text-orange-400 font-bold">we control execution.</span>
+          {T.sub}
         </motion.p>
 
         {/* Diagram */}
@@ -74,7 +104,7 @@ export function CompetitionMinimalCodewallSlide() {
           </svg>
 
           {/* Competitor pills */}
-          {competitors.map((c) => {
+          {competitors.map((c, ci) => {
             const posStyle: Record<string, React.CSSProperties> = {
               top: { top: 0, left: '50%', transform: 'translateX(-50%)' },
               'top-l': { top: '18%', left: 0 },
@@ -102,13 +132,13 @@ export function CompetitionMinimalCodewallSlide() {
                   className="text-[#fefefe]/55 text-[11px] sm:text-xs lg:text-sm mt-0.5"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
-                  {c.tag}
+                  {T.tags[ci]}
                 </p>
                 <p
                   className="text-orange-400/85 text-[11px] sm:text-xs lg:text-sm font-bold mt-1.5"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
-                  {c.note}
+                  {T.notes[ci]}
                 </p>
               </div>
             );
@@ -164,13 +194,13 @@ export function CompetitionMinimalCodewallSlide() {
                 className="text-[#fefefe] text-base sm:text-lg lg:text-xl font-bold leading-tight"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                The kernel every agent runs on
+                {T.aosKernel}
               </p>
               <p
                 className="text-[#fefefe]/65 text-xs sm:text-sm lg:text-base font-medium mt-1 leading-tight"
                 style={{ fontFamily: "'Geist Mono', monospace" }}
               >
-                Cryptographic verification of execution
+                {T.aosVerify}
               </p>
             </div>
           </div>

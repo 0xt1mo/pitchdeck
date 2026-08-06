@@ -1,7 +1,25 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const mono = "'Geist Mono', monospace";
 const display = "'Anton', sans-serif";
+
+const T = tr({
+  en: {
+    topHud: 'Unicity AOS · The Operating System for Autonomous AI',
+    bottomHud: 'Platform Overview',
+    eyebrow: 'Unicity AOS · Platform Overview · 2026',
+    headLine1: 'THE OPERATING SYSTEM',
+    headAccent: 'FOR AUTONOMOUS AI.',
+  },
+  pt: {
+    topHud: 'Unicity AOS · O Sistema Operacional para IA Autônoma',
+    bottomHud: 'Visão Geral da Plataforma',
+    eyebrow: 'Unicity AOS · Visão Geral da Plataforma · 2026',
+    headLine1: 'O SISTEMA OPERACIONAL',
+    headAccent: 'PARA IA AUTÔNOMA.',
+  },
+});
 
 export function AosCoverSlide() {
   return (
@@ -22,7 +40,7 @@ export function AosCoverSlide() {
         <div className="flex items-center gap-3">
           <span className="w-1.5 h-1.5 rounded-full bg-orange-400" />
           <span className="text-[#fefefe]/65 text-xs sm:text-xs lg:text-lg tracking-[0.32em] uppercase" style={{ fontFamily: mono }}>
-            Unicity AOS · The Operating System for Autonomous AI
+            {T.topHud}
           </span>
         </div>
       </div>
@@ -30,7 +48,7 @@ export function AosCoverSlide() {
       {/* Bottom HUD bar */}
       <div className="absolute bottom-6 left-8 lg:left-12 right-8 lg:right-12 z-20 flex items-center">
         <span className="text-[#fefefe]/45 text-xs sm:text-xs lg:text-lg tracking-[0.32em] uppercase" style={{ fontFamily: mono }}>
-          Platform Overview
+          {T.bottomHud}
         </span>
       </div>
 
@@ -61,7 +79,7 @@ export function AosCoverSlide() {
           className="text-orange-400 text-xs sm:text-sm lg:text-xl tracking-[0.32em] uppercase font-bold shrink-0 -mt-2"
           style={{ fontFamily: mono }}
         >
-          Unicity AOS · Platform Overview · 2026
+          {T.eyebrow}
         </motion.p>
 
         <motion.h1
@@ -71,8 +89,8 @@ export function AosCoverSlide() {
           className="text-[#fefefe] text-[48px] sm:text-[72px] lg:text-[104px] xl:text-[124px] leading-[0.92] tracking-tight uppercase shrink-0"
           style={{ fontFamily: display }}
         >
-          THE OPERATING SYSTEM<br />
-          <span className="text-orange-400">FOR AUTONOMOUS AI.</span>
+          {T.headLine1}<br />
+          <span className="text-orange-400">{T.headAccent}</span>
         </motion.h1>
 
         <motion.div

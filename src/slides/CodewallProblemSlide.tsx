@@ -1,16 +1,59 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const mono = "'Geist Mono', monospace";
 const display = "'Anton', sans-serif";
 
-const threats = [
-  { h: 'Prompt injection', b: 'A poisoned file or web page hijacks the agent — now it works for the attacker, inside your repo.' },
-  { h: 'Secret exfiltration', b: '.env, API keys and customer data read straight into a prompt and posted to the outside.' },
-  { h: 'Rogue commands', b: '“rm -rf”, dropping a database, pushing to prod — one hallucinated step, real damage.' },
-  { h: 'Rogue MCP servers', b: 'Tools the agent connects to are unvetted code with your credentials and your network.' },
-  { h: '“YOLO” execution', b: 'Auto-approve is on. The agent acts faster than any human can review or intervene.' },
-  { h: 'Shadow AI', b: 'Every developer wires up their own agents and tools. Security has no boundary to enforce.' },
-];
+const T = tr({
+  en: {
+    headLead: 'Coding agents are the',
+    headAccent: 'new attack surface.',
+    sub: (
+      <>
+        Cursor, Claude Code and Copilot read your repo, your secrets, and run commands on your machine.{' '}
+        <span className="text-[#fefefe] font-bold">You gave an agent a shell</span> — and hoped it behaves.
+      </>
+    ),
+    threats: [
+      { h: 'Prompt injection', b: 'A poisoned file or web page hijacks the agent — now it works for the attacker, inside your repo.' },
+      { h: 'Secret exfiltration', b: '.env, API keys and customer data read straight into a prompt and posted to the outside.' },
+      { h: 'Rogue commands', b: '“rm -rf”, dropping a database, pushing to prod — one hallucinated step, real damage.' },
+      { h: 'Rogue MCP servers', b: 'Tools the agent connects to are unvetted code with your credentials and your network.' },
+      { h: '“YOLO” execution', b: 'Auto-approve is on. The agent acts faster than any human can review or intervene.' },
+      { h: 'Shadow AI', b: 'Every developer wires up their own agents and tools. Security has no boundary to enforce.' },
+    ],
+    bottom: (
+      <>
+        Today's tools flag it <span className="text-[#fefefe]/50">after the fact.</span>{' '}
+        <span className="text-orange-400 font-bold">Nothing stops the action before it runs.</span>
+      </>
+    ),
+  },
+  pt: {
+    headLead: 'Agentes de programação são a',
+    headAccent: 'nova superfície de ataque.',
+    sub: (
+      <>
+        Cursor, Claude Code e Copilot leem seu repositório, seus segredos e executam comandos na sua máquina.{' '}
+        <span className="text-[#fefefe] font-bold">Você deu um shell a um agente</span> — e torceu para que ele se comporte.
+      </>
+    ),
+    threats: [
+      { h: 'Injeção de prompt', b: 'Um arquivo ou página web envenenado sequestra o agente — agora ele trabalha para o atacante, dentro do seu repositório.' },
+      { h: 'Exfiltração de segredos', b: '.env, chaves de API e dados de clientes lidos direto para dentro de um prompt e enviados para fora.' },
+      { h: 'Comandos maliciosos', b: '“rm -rf”, apagar um banco de dados, enviar para produção — um passo alucinado, dano real.' },
+      { h: 'Servidores MCP maliciosos', b: 'As ferramentas às quais o agente se conecta são código não verificado com suas credenciais e sua rede.' },
+      { h: 'Execução “YOLO”', b: 'A aprovação automática está ligada. O agente age mais rápido do que qualquer humano pode revisar ou intervir.' },
+      { h: 'Shadow IA', b: 'Cada desenvolvedor conecta seus próprios agentes e ferramentas. A segurança não tem fronteira para impor.' },
+    ],
+    bottom: (
+      <>
+        As ferramentas de hoje sinalizam isso <span className="text-[#fefefe]/50">depois do fato.</span>{' '}
+        <span className="text-orange-400 font-bold">Nada impede a ação antes que ela seja executada.</span>
+      </>
+    ),
+  },
+});
 
 export function CodewallProblemSlide() {
   return (
@@ -40,7 +83,7 @@ export function CodewallProblemSlide() {
             className="text-[#fefefe] text-[30px] sm:text-[44px] lg:text-[60px] xl:text-[68px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: display }}
           >
-            Coding agents are the <span className="text-orange-400">new attack surface.</span>
+            {T.headLead} <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -49,16 +92,15 @@ export function CodewallProblemSlide() {
             className="mt-3 text-[#fefefe]/80 text-base lg:text-xl max-w-6xl leading-relaxed"
             style={{ fontFamily: mono }}
           >
-            Cursor, Claude Code and Copilot read your repo, your secrets, and run commands on your machine.{' '}
-            <span className="text-[#fefefe] font-bold">You gave an agent a shell</span> — and hoped it behaves.
+            {T.sub}
           </motion.p>
         </div>
 
         {/* Threat grid */}
         <div className="shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
-          {threats.map((t, i) => (
+          {T.threats.map((t, i) => (
             <motion.div
-              key={t.h}
+              key={i}
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 + i * 0.07, duration: 0.4 }}
@@ -83,8 +125,7 @@ export function CodewallProblemSlide() {
           className="shrink-0 text-[#fefefe]/85 text-base sm:text-lg lg:text-2xl leading-snug pt-4"
           style={{ fontFamily: mono, borderTop: '1px solid rgba(255,255,255,0.10)' }}
         >
-          Today's tools flag it <span className="text-[#fefefe]/50">after the fact.</span>{' '}
-          <span className="text-orange-400 font-bold">Nothing stops the action before it runs.</span>
+          {T.bottom}
         </motion.p>
 
       </div>

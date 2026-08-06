@@ -1,7 +1,63 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
+
+const T = tr({
+  en: {
+    titleAccent: 'Agentic security architecture',
+    leftHeader: 'Developer Endpoint',
+    leftSub: 'Workspace / cloud sandbox',
+    ideTitle: 'IDE & AI Coding Agent',
+    arrow1: 'Action / tool execution attempts',
+    localAgentSub: 'Execution hooks & file-config monitoring',
+    guardrailsTitle: 'Inline Guardrails',
+    guardrailsSub: 'Regex / fast blocks',
+    failOpenTitle: 'Fail-Open Engine',
+    failOpenSub: 'Async routing',
+    arrow2: 'Enforced access controls',
+    sysResourcesTitle: 'System Resources',
+    sysResourcesSub: 'MCP servers · Local files · Host CLI',
+    syncLabel: (<>Sync logic<br />updates</>),
+    asyncLabel: (<>Async traffic<br />analysis</>),
+    rightHeader: 'AOS Central Platform',
+    policiesTitle: 'Global Policies (MDM / Push)',
+    policiesSub: 'OWASP rules · custom best practices',
+    threatTitle: 'Deep AI Threat Analysis',
+    threatSub: 'Context validation & intent mismatches',
+    inventoryTitle: 'Inventory & Telemetry',
+    inventorySub: 'Monitors extensions, skills, anomalies',
+    gitTitle: 'Git / CI Repository Hooks',
+    gitSub: ' — validates the AOS-Firewall agent is present before allowing commits',
+  },
+  pt: {
+    titleAccent: 'Arquitetura de segurança agêntica',
+    leftHeader: 'Endpoint do Desenvolvedor',
+    leftSub: 'Workspace / sandbox na nuvem',
+    ideTitle: 'IDE & Agente de código IA',
+    arrow1: 'Tentativas de execução de ação / ferramenta',
+    localAgentSub: 'Hooks de execução & monitoramento de arquivos de config',
+    guardrailsTitle: 'Guardrails inline',
+    guardrailsSub: 'Regex / bloqueios rápidos',
+    failOpenTitle: 'Motor Fail-Open',
+    failOpenSub: 'Roteamento assíncrono',
+    arrow2: 'Controles de acesso impostos',
+    sysResourcesTitle: 'Recursos do Sistema',
+    sysResourcesSub: 'Servidores MCP · Arquivos locais · CLI do host',
+    syncLabel: (<>Atualizações de<br />lógica de sync</>),
+    asyncLabel: (<>Análise assíncrona<br />de tráfego</>),
+    rightHeader: 'Plataforma Central AOS',
+    policiesTitle: 'Políticas Globais (MDM / Push)',
+    policiesSub: 'Regras OWASP · boas práticas customizadas',
+    threatTitle: 'Análise Profunda de Ameaças com IA',
+    threatSub: 'Validação de contexto & divergências de intenção',
+    inventoryTitle: 'Inventário & Telemetria',
+    inventorySub: 'Monitora extensões, skills, anomalias',
+    gitTitle: 'Hooks de Repositório Git / CI',
+    gitSub: ' — valida que o agente AOS-Firewall está presente antes de permitir commits',
+  },
+});
 
 function Card({
   title,
@@ -59,7 +115,7 @@ export function AosFirewallArchSlide() {
           className="shrink-0 text-[#fefefe] text-[24px] sm:text-[34px] lg:text-[46px] leading-[0.98] tracking-tight uppercase"
           style={{ fontFamily: ANTON }}
         >
-          AOS-Firewall: <span className="text-orange-400">Agentic security architecture</span>
+          AOS-Firewall: <span className="text-orange-400">{T.titleAccent}</span>
         </motion.h1>
 
         {/* Diagram */}
@@ -72,25 +128,25 @@ export function AosFirewallArchSlide() {
         >
           {/* LEFT — Developer Endpoint */}
           <div className="rounded-xl p-3.5 lg:p-4" style={{ border: '1px solid rgba(255,255,255,0.14)', background: 'rgba(255,255,255,0.015)' }}>
-            <p className="text-[#fefefe]/80 text-xs lg:text-sm tracking-[0.2em] uppercase font-bold" style={{ fontFamily: MONO }}>Developer Endpoint</p>
-            <p className="text-[#fefefe]/40 text-[10px] lg:text-xs mb-2.5" style={{ fontFamily: MONO }}>Workspace / cloud sandbox</p>
+            <p className="text-[#fefefe]/80 text-xs lg:text-sm tracking-[0.2em] uppercase font-bold" style={{ fontFamily: MONO }}>{T.leftHeader}</p>
+            <p className="text-[#fefefe]/40 text-[10px] lg:text-xs mb-2.5" style={{ fontFamily: MONO }}>{T.leftSub}</p>
 
-            <Card title="IDE & AI Coding Agent" sub="Cursor · Claude Code · Copilot" color={BLUE} />
-            <DownArrow label="Action / tool execution attempts" />
-            <Card title="AOS-Firewall Local Agent" sub="Execution hooks & file-config monitoring" color={ORANGE} emphasize>
+            <Card title={T.ideTitle} sub="Cursor · Claude Code · Copilot" color={BLUE} />
+            <DownArrow label={T.arrow1} />
+            <Card title="AOS-Firewall Local Agent" sub={T.localAgentSub} color={ORANGE} emphasize>
               <div className="grid grid-cols-2 gap-2 mt-2.5">
                 <div className="rounded-md px-2.5 py-1.5" style={{ border: `1px solid ${ORANGE}55`, background: `${ORANGE}10` }}>
-                  <p className="text-[#fefefe] text-[11px] lg:text-sm font-bold leading-tight" style={{ fontFamily: MONO }}>Inline Guardrails</p>
-                  <p className="text-[#fefefe]/50 text-[9px] lg:text-xs" style={{ fontFamily: MONO }}>Regex / fast blocks</p>
+                  <p className="text-[#fefefe] text-[11px] lg:text-sm font-bold leading-tight" style={{ fontFamily: MONO }}>{T.guardrailsTitle}</p>
+                  <p className="text-[#fefefe]/50 text-[9px] lg:text-xs" style={{ fontFamily: MONO }}>{T.guardrailsSub}</p>
                 </div>
                 <div className="rounded-md px-2.5 py-1.5" style={{ border: `1px solid ${ORANGE}55`, background: `${ORANGE}10` }}>
-                  <p className="text-[#fefefe] text-[11px] lg:text-sm font-bold leading-tight" style={{ fontFamily: MONO }}>Fail-Open Engine</p>
-                  <p className="text-[#fefefe]/50 text-[9px] lg:text-xs" style={{ fontFamily: MONO }}>Async routing</p>
+                  <p className="text-[#fefefe] text-[11px] lg:text-sm font-bold leading-tight" style={{ fontFamily: MONO }}>{T.failOpenTitle}</p>
+                  <p className="text-[#fefefe]/50 text-[9px] lg:text-xs" style={{ fontFamily: MONO }}>{T.failOpenSub}</p>
                 </div>
               </div>
             </Card>
-            <DownArrow label="Enforced access controls" />
-            <Card title="System Resources" sub="MCP servers · Local files · Host CLI" color={PURPLE} />
+            <DownArrow label={T.arrow2} />
+            <Card title={T.sysResourcesTitle} sub={T.sysResourcesSub} color={PURPLE} />
           </div>
 
           {/* CENTER — cross links */}
@@ -100,23 +156,23 @@ export function AosFirewallArchSlide() {
                 <span style={{ color: GREEN }} className="text-lg leading-none">←</span>
                 <span className="h-px w-8" style={{ background: GREEN }} />
               </div>
-              <p className="text-[#fefefe]/50 text-[9px] lg:text-[11px] uppercase tracking-wide mt-1" style={{ fontFamily: MONO }}>Sync logic<br />updates</p>
+              <p className="text-[#fefefe]/50 text-[9px] lg:text-[11px] uppercase tracking-wide mt-1" style={{ fontFamily: MONO }}>{T.syncLabel}</p>
             </div>
             <div className="text-center">
               <div className="flex items-center gap-1.5">
                 <span className="h-px w-8" style={{ background: BLUE, opacity: 0.7, backgroundImage: `repeating-linear-gradient(90deg, ${BLUE}, ${BLUE} 3px, transparent 3px, transparent 6px)` }} />
                 <span style={{ color: BLUE }} className="text-lg leading-none">→</span>
               </div>
-              <p className="text-[#fefefe]/50 text-[9px] lg:text-[11px] uppercase tracking-wide mt-1" style={{ fontFamily: MONO }}>Async traffic<br />analysis</p>
+              <p className="text-[#fefefe]/50 text-[9px] lg:text-[11px] uppercase tracking-wide mt-1" style={{ fontFamily: MONO }}>{T.asyncLabel}</p>
             </div>
           </div>
 
           {/* RIGHT — AOS Central Platform */}
           <div className="rounded-xl p-3.5 lg:p-4 flex flex-col gap-2.5" style={{ border: `1px solid ${GREEN}55`, background: `${GREEN}0c` }}>
-            <p className="text-[#fefefe]/80 text-xs lg:text-sm tracking-[0.2em] uppercase font-bold mb-0.5" style={{ fontFamily: MONO }}>AOS Central Platform</p>
-            <Card title="Global Policies (MDM / Push)" sub="OWASP rules · custom best practices" color={GREEN} />
-            <Card title="Deep AI Threat Analysis" sub="Context validation & intent mismatches" color={GREEN} />
-            <Card title="Inventory & Telemetry" sub="Monitors extensions, skills, anomalies" color={GREEN} />
+            <p className="text-[#fefefe]/80 text-xs lg:text-sm tracking-[0.2em] uppercase font-bold mb-0.5" style={{ fontFamily: MONO }}>{T.rightHeader}</p>
+            <Card title={T.policiesTitle} sub={T.policiesSub} color={GREEN} />
+            <Card title={T.threatTitle} sub={T.threatSub} color={GREEN} />
+            <Card title={T.inventoryTitle} sub={T.inventorySub} color={GREEN} />
           </div>
         </motion.div>
 
@@ -129,8 +185,8 @@ export function AosFirewallArchSlide() {
           style={{ border: '1px dashed rgba(255,255,255,0.22)', background: 'rgba(255,255,255,0.02)' }}
         >
           <p className="text-[#fefefe]/85 text-sm lg:text-base font-bold" style={{ fontFamily: MONO }}>
-            Git / CI Repository Hooks
-            <span className="text-[#fefefe]/45 font-normal"> — validates the AOS-Firewall agent is present before allowing commits</span>
+            {T.gitTitle}
+            <span className="text-[#fefefe]/45 font-normal">{T.gitSub}</span>
           </p>
         </motion.div>
 

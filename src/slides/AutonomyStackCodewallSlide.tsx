@@ -1,37 +1,73 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 type StackLayer = {
   product: string;
   label: string;
   detail: string;
   tags: string;
-  variant: 'top' | 'mid' | 'bottom';
 };
 
-const stack: StackLayer[] = [
-  {
-    product: 'AGENT HARNESSES',
-    label: '',
-    detail: 'Bring or build your own agent.',
-    tags: 'CLAUDE CODE · CODEX · GROK CODE',
-    variant: 'top',
+// Non-text structure (layer order + variant) stays out of translation.
+const stackVariants = ['top', 'mid', 'bottom'] as const;
+
+const T = tr({
+  en: {
+    eyebrow: 'The Platform',
+    headLead: 'AN OS BUILT FOR THE DAY WHEN',
+    headAccent: 'NO ONE IS WATCHING.',
+    subtitle: 'Every OS until now assumed a human at the keyboard. This one is built for the day when no one is watching — with the identity, enforcement, and proof to earn that autonomy safely, one step at a time.',
+    agentLabel: 'AGENT',
+    stack: [
+      {
+        product: 'AGENT HARNESSES',
+        label: '',
+        detail: 'Bring or build your own agent.',
+        tags: 'CLAUDE CODE · CODEX · GROK CODE',
+      },
+      {
+        product: 'UNICITY AOS',
+        label: 'MULTI-TENANT SECURE OS',
+        detail: 'Executes every agent — multi-tenant and isolated. Every prompt, tool call, and decision passes through the kernel, where policy, budgets, and audit are enforced below the agent.',
+        tags: 'KERNEL · POLICY · INTERCEPT',
+      },
+      {
+        product: 'UNICITY PROOF SYSTEM',
+        label: 'CRYPTOGRAPHIC PROOF OF EXECUTION',
+        detail: 'A purpose-built blockchain for verifiable execution, identity, and multi-agent coordination — the source of truth beneath the execution layer.',
+        tags: '',
+      },
+    ] as StackLayer[],
   },
-  {
-    product: 'UNICITY AOS',
-    label: 'MULTI-TENANT SECURE OS',
-    detail: 'Executes every agent — multi-tenant and isolated. Every prompt, tool call, and decision passes through the kernel, where policy, budgets, and audit are enforced below the agent.',
-    tags: 'KERNEL · POLICY · INTERCEPT',
-    variant: 'mid',
+  pt: {
+    eyebrow: 'A Plataforma',
+    headLead: 'UM OS CONSTRUÍDO PARA O DIA EM QUE',
+    headAccent: 'NINGUÉM ESTÁ OLHANDO.',
+    subtitle: 'Todo OS até hoje presumia um humano ao teclado. Este foi construído para o dia em que ninguém está olhando — com a identidade, a imposição e a prova para conquistar essa autonomia com segurança, um passo de cada vez.',
+    agentLabel: 'AGENTE',
+    stack: [
+      {
+        product: 'HARNESSES DE AGENTE',
+        label: '',
+        detail: 'Traga ou construa seu próprio agente.',
+        tags: 'CLAUDE CODE · CODEX · GROK CODE',
+      },
+      {
+        product: 'UNICITY AOS',
+        label: 'OS SEGURO MULTI-TENANT',
+        detail: 'Executa cada agente — multi-tenant e isolado. Cada prompt, chamada de ferramenta e decisão passa pelo kernel, onde política, orçamentos e auditoria são impostos abaixo do agente.',
+        tags: 'KERNEL · POLÍTICA · INTERCEPTAÇÃO',
+      },
+      {
+        product: 'UNICITY PROOF SYSTEM',
+        label: 'PROVA CRIPTOGRÁFICA DE EXECUÇÃO',
+        detail: 'Uma blockchain feita sob medida para execução verificável, identidade e coordenação multi-agente — a fonte da verdade sob a camada de execução.',
+        tags: '',
+      },
+    ] as StackLayer[],
   },
-  {
-    product: 'UNICITY PROOF SYSTEM',
-    label: 'CRYPTOGRAPHIC PROOF OF EXECUTION',
-    detail: 'A purpose-built blockchain for verifiable execution, identity, and multi-agent coordination — the source of truth beneath the execution layer.',
-    tags: '',
-    variant: 'bottom',
-  },
-];
+});
 
 // Harness chips render their brand logo where we have one; others fall back to text.
 const HARNESS_LOGOS: Record<string, string> = {
@@ -76,7 +112,7 @@ export function AutonomyStackCodewallSlide() {
             className="text-orange-400 text-sm tracking-[0.4em] uppercase"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            The Platform
+            {T.eyebrow}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -85,7 +121,7 @@ export function AutonomyStackCodewallSlide() {
             className="text-[#fefefe] text-[30px] sm:text-[44px] lg:text-[60px] xl:text-[74px] leading-[0.95] tracking-tight uppercase mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            AN OS BUILT FOR THE DAY WHEN <span className="text-orange-400">NO ONE IS WATCHING.</span>
+            {T.headLead} <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -94,7 +130,7 @@ export function AutonomyStackCodewallSlide() {
             className="mt-3 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl max-w-5xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Every OS until now assumed a human at the keyboard. This one is built for the day when no one is watching — with the identity, enforcement, and proof to earn that autonomy safely, one step at a time.
+            {T.subtitle}
           </motion.p>
         </div>
 
@@ -112,7 +148,9 @@ export function AutonomyStackCodewallSlide() {
 
           {/* Right-side annotations */}
           <div className="flex flex-col gap-3 lg:gap-4">
-            {stack.map((layer, i) => (
+            {T.stack.map((layer, i) => {
+              const variant = stackVariants[i];
+              return (
               <motion.div
                 key={layer.product}
                 initial={{ opacity: 0, x: 12 }}
@@ -133,7 +171,7 @@ export function AutonomyStackCodewallSlide() {
                     >
                       {layer.product}
                     </p>
-                    {layer.variant === 'top' && layer.tags && (
+                    {variant === 'top' && layer.tags && (
                       <div className="flex flex-wrap items-center gap-2">
                         {layer.tags.split(' · ').map((t) => (
                           <HarnessChip key={t} label={t} logo={HARNESS_LOGOS[t]} />
@@ -155,7 +193,7 @@ export function AutonomyStackCodewallSlide() {
                   >
                     {layer.detail}
                   </p>
-                  {layer.variant !== 'top' && layer.tags && (
+                  {variant !== 'top' && layer.tags && (
                     <p
                       className="text-[#fefefe]/45 text-[10px] sm:text-xs tracking-[0.18em] uppercase mt-1.5"
                       style={{ fontFamily: "'Geist Mono', monospace" }}
@@ -165,7 +203,8 @@ export function AutonomyStackCodewallSlide() {
                   )}
                 </div>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -296,7 +335,7 @@ export function IsoStackDiagram() {
       {/* Render bottom-up so upper layers sit visually in front */}
       <Slab cy={layerY[2]} variant="bottom" centerLabel="PROOF SYSTEM" />
       <Slab cy={layerY[1]} variant="mid" centerLabel="AOS" centerSub="KERNEL" />
-      <Slab cy={layerY[0]} variant="top" centerLabel="AGENT" />
+      <Slab cy={layerY[0]} variant="top" centerLabel={T.agentLabel} />
     </svg>
   );
 }

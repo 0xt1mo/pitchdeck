@@ -1,47 +1,67 @@
 import { useMemo, type CSSProperties } from 'react';
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 import LANDDATA_LON_LAT from './landData.json';
 
 const founders = [
   {
     name: 'Mike Gault',
-    role: 'CEO',
     photo: '/team/mike-bw.png',
     linkedin: 'https://www.linkedin.com/in/mikegault1/',
-    lines: [
-      'PhD Electrical Engineering',
-      'Built & exited Guardtime',
-    ],
   },
   {
     name: 'Tony Kenyon',
-    role: 'CTO',
     photo: '/team/tony-bw.png',
     linkedin: 'https://www.linkedin.com/in/tonykenyon/',
-    lines: [
-      'PhD Machine Learning',
-      '25 years shipping enterprise AI & infra',
-    ],
   },
   {
     name: 'Joshua J Buow',
-    role: 'OS Architect',
     photo: '/team/jjb2-bw.png',
-    lines: [
-      'Inventor AOS',
-      'Ex-NEAR',
-    ],
   },
   {
     name: 'Jamie Steiner',
-    role: 'Product',
     photo: '/team/jamie-bw.png',
-    lines: [
-      'Head of AI Delivery, NEOM',
-      'JP Morgan',
-    ],
   },
 ];
+
+const T = tr({
+  en: {
+    eyebrow: 'The Team',
+    headLead: 'Built by',
+    headAccent: 'infrastructure veterans.',
+    intro: (
+      <>
+        <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs in machine learning and cryptography with fifteen years building <span className="text-orange-400 font-bold">nation-state-grade security infrastructure</span> — now applied to AI.
+      </>
+    ),
+    roles: ['CEO', 'CTO', 'OS Architect', 'Product'],
+    lines: [
+      ['PhD Electrical Engineering', 'Built & exited Guardtime'],
+      ['PhD Machine Learning', '25 years shipping enterprise AI & infra'],
+      ['Inventor AOS', 'Ex-NEAR'],
+      ['Head of AI Delivery, NEOM', 'JP Morgan'],
+    ],
+    whereLabel: 'Where We Operate',
+  },
+  pt: {
+    eyebrow: 'O Time',
+    headLead: 'Construído por',
+    headAccent: 'veteranos de infraestrutura.',
+    intro: (
+      <>
+        <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs em machine learning e criptografia com quinze anos construindo <span className="text-orange-400 font-bold">infraestrutura de segurança de nível nacional</span> — agora aplicada à IA.
+      </>
+    ),
+    roles: ['CEO', 'CTO', 'Arquiteto de OS', 'Produto'],
+    lines: [
+      ['PhD em Engenharia Elétrica', 'Fundou e vendeu a Guardtime'],
+      ['PhD em Machine Learning', '25 anos entregando IA e infra empresarial'],
+      ['Inventor do AOS', 'Ex-NEAR'],
+      ['Head of AI Delivery, NEOM', 'JP Morgan'],
+    ],
+    whereLabel: 'Onde Operamos',
+  },
+});
 
 const offices = [
   { id: 'zug',      name: 'ZUG',       lat: 47.17, lon:  8.52, coords: '47.17°N · 8.52°E',  off: { x: -130, y: -90 }, an: 'end'   as const },
@@ -77,7 +97,7 @@ export function WhoWeAreCodewallSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            The Team
+            {T.eyebrow}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -86,8 +106,8 @@ export function WhoWeAreCodewallSlide() {
             className="text-[#fefefe] text-[34px] sm:text-[50px] lg:text-[72px] xl:text-[84px] leading-[0.95] tracking-tight mt-2 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Built by{' '}
-            <span className="text-orange-400">infrastructure veterans.</span>
+            {T.headLead}{' '}
+            <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -102,7 +122,7 @@ export function WhoWeAreCodewallSlide() {
             className="mt-3 text-[#fefefe]/85 text-xs sm:text-sm lg:text-base leading-[1.55] max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs in machine learning and cryptography with fifteen years building <span className="text-orange-400 font-bold">nation-state-grade security infrastructure</span> — now applied to AI.
+            {T.intro}
           </motion.p>
         </div>
 
@@ -136,10 +156,10 @@ export function WhoWeAreCodewallSlide() {
                     className="text-orange-400 text-xs lg:text-sm font-bold tracking-[0.2em] uppercase mt-1"
                     style={{ fontFamily: "'Geist Mono', monospace" }}
                   >
-                    {f.role}
+                    {T.roles[i]}
                   </p>
                   <div className="mt-2 space-y-1">
-                    {f.lines.map((line, j) => (
+                    {T.lines[i].map((line, j) => (
                       <p
                         key={j}
                         className="text-[#fefefe]/75 text-xs lg:text-sm leading-snug flex gap-2"
@@ -167,7 +187,7 @@ export function WhoWeAreCodewallSlide() {
               className="text-orange-400 text-sm lg:text-base tracking-[0.32em] uppercase font-semibold mb-2 self-start"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Where We Operate
+              {T.whereLabel}
             </p>
             <Globe />
           </motion.div>

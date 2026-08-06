@@ -1,7 +1,73 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
+
+const T = tr({
+  en: {
+    titleLead: 'How it works:',
+    titleAccent: 'enforce locally, govern centrally',
+    devEndpoint: 'Developer Endpoint',
+    devEndpointSub: 'Workspace / cloud sandbox',
+    ideAgent: 'IDE & AI Coding Agent',
+    arrowActions: 'Action / tool execution attempts',
+    localAgentSub: 'Execution hooks & file-config monitoring',
+    inlineGuardrails: 'Inline Guardrails',
+    inlineGuardrailsSub: 'Regex / fast blocks',
+    asyncAnalysis: 'Async Analysis',
+    asyncAnalysisSub: 'Advisory sync to central',
+    arrowAccess: 'Enforced access controls',
+    sysResources: 'System Resources',
+    sysResourcesSub: 'MCP servers · Local files · Host CLI',
+    syncLogic: (<>Sync logic<br />updates</>),
+    asyncTraffic: (<>Async traffic<br />analysis</>),
+    centralPlatform: 'AOS Central Platform',
+    globalPolicies: 'Global Policies (MDM / Push)',
+    globalPoliciesSub: 'OWASP rules · custom best practices',
+    threatAnalysis: 'Deep AI Threat Analysis',
+    threatAnalysisSub: 'Context validation & intent mismatches',
+    inventory: 'Inventory & Telemetry',
+    inventorySub: 'Monitors extensions, skills, anomalies',
+    gitHooks: (
+      <>
+        Git / CI Repository Hooks
+        <span className="text-[#fefefe]/45 font-normal"> — validates the Codewall agent is present before allowing commits</span>
+      </>
+    ),
+  },
+  pt: {
+    titleLead: 'Como funciona:',
+    titleAccent: 'imponha localmente, governe centralmente',
+    devEndpoint: 'Endpoint do Desenvolvedor',
+    devEndpointSub: 'Workspace / sandbox na nuvem',
+    ideAgent: 'IDE & Agente de Programação de IA',
+    arrowActions: 'Tentativas de ação / execução de ferramenta',
+    localAgentSub: 'Hooks de execução & monitoramento de arquivos de config',
+    inlineGuardrails: 'Guardrails Inline',
+    inlineGuardrailsSub: 'Regex / bloqueios rápidos',
+    asyncAnalysis: 'Análise Assíncrona',
+    asyncAnalysisSub: 'Sincronização consultiva com o central',
+    arrowAccess: 'Controles de acesso impostos',
+    sysResources: 'Recursos do Sistema',
+    sysResourcesSub: 'Servidores MCP · Arquivos locais · CLI do host',
+    syncLogic: (<>Atualizações de<br />lógica de sync</>),
+    asyncTraffic: (<>Análise assíncrona<br />de tráfego</>),
+    centralPlatform: 'Plataforma Central AOS',
+    globalPolicies: 'Políticas Globais (MDM / Push)',
+    globalPoliciesSub: 'Regras OWASP · melhores práticas customizadas',
+    threatAnalysis: 'Análise Profunda de Ameaças por IA',
+    threatAnalysisSub: 'Validação de contexto & divergências de intenção',
+    inventory: 'Inventário & Telemetria',
+    inventorySub: 'Monitora extensões, skills, anomalias',
+    gitHooks: (
+      <>
+        Hooks de Repositório Git / CI
+        <span className="text-[#fefefe]/45 font-normal"> — valida que o agente Codewall está presente antes de permitir commits</span>
+      </>
+    ),
+  },
+});
 
 function Card({
   title,
@@ -59,7 +125,7 @@ export function AosFirewallArchCodewallSlide() {
           className="shrink-0 text-[#fefefe] text-[24px] sm:text-[34px] lg:text-[46px] leading-[0.98] tracking-tight uppercase"
           style={{ fontFamily: ANTON }}
         >
-          How it works: <span className="text-orange-400">enforce locally, govern centrally</span>
+          {T.titleLead} <span className="text-orange-400">{T.titleAccent}</span>
         </motion.h1>
 
         {/* Diagram */}
@@ -72,25 +138,25 @@ export function AosFirewallArchCodewallSlide() {
         >
           {/* LEFT — Developer Endpoint */}
           <div className="rounded-xl p-3.5 lg:p-4" style={{ border: '1px solid rgba(255,255,255,0.14)', background: 'rgba(255,255,255,0.015)' }}>
-            <p className="text-[#fefefe]/80 text-xs lg:text-sm tracking-[0.2em] uppercase font-bold" style={{ fontFamily: MONO }}>Developer Endpoint</p>
-            <p className="text-[#fefefe]/40 text-[10px] lg:text-xs mb-2.5" style={{ fontFamily: MONO }}>Workspace / cloud sandbox</p>
+            <p className="text-[#fefefe]/80 text-xs lg:text-sm tracking-[0.2em] uppercase font-bold" style={{ fontFamily: MONO }}>{T.devEndpoint}</p>
+            <p className="text-[#fefefe]/40 text-[10px] lg:text-xs mb-2.5" style={{ fontFamily: MONO }}>{T.devEndpointSub}</p>
 
-            <Card title="IDE & AI Coding Agent" sub="Cursor · Claude Code · Copilot" color={BLUE} />
-            <DownArrow label="Action / tool execution attempts" />
-            <Card title="Codewall Local Agent" sub="Execution hooks & file-config monitoring" color={ORANGE} emphasize>
+            <Card title={T.ideAgent} sub="Cursor · Claude Code · Copilot" color={BLUE} />
+            <DownArrow label={T.arrowActions} />
+            <Card title="Codewall Local Agent" sub={T.localAgentSub} color={ORANGE} emphasize>
               <div className="grid grid-cols-2 gap-2 mt-2.5">
                 <div className="rounded-md px-2.5 py-1.5" style={{ border: `1px solid ${ORANGE}55`, background: `${ORANGE}10` }}>
-                  <p className="text-[#fefefe] text-[11px] lg:text-sm font-bold leading-tight" style={{ fontFamily: MONO }}>Inline Guardrails</p>
-                  <p className="text-[#fefefe]/50 text-[9px] lg:text-xs" style={{ fontFamily: MONO }}>Regex / fast blocks</p>
+                  <p className="text-[#fefefe] text-[11px] lg:text-sm font-bold leading-tight" style={{ fontFamily: MONO }}>{T.inlineGuardrails}</p>
+                  <p className="text-[#fefefe]/50 text-[9px] lg:text-xs" style={{ fontFamily: MONO }}>{T.inlineGuardrailsSub}</p>
                 </div>
                 <div className="rounded-md px-2.5 py-1.5" style={{ border: `1px solid ${ORANGE}55`, background: `${ORANGE}10` }}>
-                  <p className="text-[#fefefe] text-[11px] lg:text-sm font-bold leading-tight" style={{ fontFamily: MONO }}>Async Analysis</p>
-                  <p className="text-[#fefefe]/50 text-[9px] lg:text-xs" style={{ fontFamily: MONO }}>Advisory sync to central</p>
+                  <p className="text-[#fefefe] text-[11px] lg:text-sm font-bold leading-tight" style={{ fontFamily: MONO }}>{T.asyncAnalysis}</p>
+                  <p className="text-[#fefefe]/50 text-[9px] lg:text-xs" style={{ fontFamily: MONO }}>{T.asyncAnalysisSub}</p>
                 </div>
               </div>
             </Card>
-            <DownArrow label="Enforced access controls" />
-            <Card title="System Resources" sub="MCP servers · Local files · Host CLI" color={PURPLE} />
+            <DownArrow label={T.arrowAccess} />
+            <Card title={T.sysResources} sub={T.sysResourcesSub} color={PURPLE} />
           </div>
 
           {/* CENTER — cross links */}
@@ -100,23 +166,23 @@ export function AosFirewallArchCodewallSlide() {
                 <span style={{ color: GREEN }} className="text-lg leading-none">←</span>
                 <span className="h-px w-8" style={{ background: GREEN }} />
               </div>
-              <p className="text-[#fefefe]/50 text-[9px] lg:text-[11px] uppercase tracking-wide mt-1" style={{ fontFamily: MONO }}>Sync logic<br />updates</p>
+              <p className="text-[#fefefe]/50 text-[9px] lg:text-[11px] uppercase tracking-wide mt-1" style={{ fontFamily: MONO }}>{T.syncLogic}</p>
             </div>
             <div className="text-center">
               <div className="flex items-center gap-1.5">
                 <span className="h-px w-8" style={{ background: BLUE, opacity: 0.7, backgroundImage: `repeating-linear-gradient(90deg, ${BLUE}, ${BLUE} 3px, transparent 3px, transparent 6px)` }} />
                 <span style={{ color: BLUE }} className="text-lg leading-none">→</span>
               </div>
-              <p className="text-[#fefefe]/50 text-[9px] lg:text-[11px] uppercase tracking-wide mt-1" style={{ fontFamily: MONO }}>Async traffic<br />analysis</p>
+              <p className="text-[#fefefe]/50 text-[9px] lg:text-[11px] uppercase tracking-wide mt-1" style={{ fontFamily: MONO }}>{T.asyncTraffic}</p>
             </div>
           </div>
 
           {/* RIGHT — AOS Central Platform */}
           <div className="rounded-xl p-3.5 lg:p-4 flex flex-col gap-2.5" style={{ border: `1px solid ${GREEN}55`, background: `${GREEN}0c` }}>
-            <p className="text-[#fefefe]/80 text-xs lg:text-sm tracking-[0.2em] uppercase font-bold mb-0.5" style={{ fontFamily: MONO }}>AOS Central Platform</p>
-            <Card title="Global Policies (MDM / Push)" sub="OWASP rules · custom best practices" color={GREEN} />
-            <Card title="Deep AI Threat Analysis" sub="Context validation & intent mismatches" color={GREEN} />
-            <Card title="Inventory & Telemetry" sub="Monitors extensions, skills, anomalies" color={GREEN} />
+            <p className="text-[#fefefe]/80 text-xs lg:text-sm tracking-[0.2em] uppercase font-bold mb-0.5" style={{ fontFamily: MONO }}>{T.centralPlatform}</p>
+            <Card title={T.globalPolicies} sub={T.globalPoliciesSub} color={GREEN} />
+            <Card title={T.threatAnalysis} sub={T.threatAnalysisSub} color={GREEN} />
+            <Card title={T.inventory} sub={T.inventorySub} color={GREEN} />
           </div>
         </motion.div>
 
@@ -129,8 +195,7 @@ export function AosFirewallArchCodewallSlide() {
           style={{ border: '1px dashed rgba(255,255,255,0.22)', background: 'rgba(255,255,255,0.02)' }}
         >
           <p className="text-[#fefefe]/85 text-sm lg:text-base font-bold" style={{ fontFamily: MONO }}>
-            Git / CI Repository Hooks
-            <span className="text-[#fefefe]/45 font-normal"> — validates the Codewall agent is present before allowing commits</span>
+            {T.gitHooks}
           </p>
         </motion.div>
 

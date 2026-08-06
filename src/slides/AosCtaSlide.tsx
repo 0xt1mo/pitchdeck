@@ -1,7 +1,35 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const mono = "'Geist Mono', monospace";
 const display = "'Anton', sans-serif";
+
+const T = tr({
+  en: {
+    eyebrow: 'Get started',
+    headLead: 'INSTALL THE OS',
+    headAccent: 'IN 60 SECONDS.',
+    terminalTitle: 'unicity — community install',
+    comment1: '# community edition — one command, any machine',
+    comment2: '# or on Claude Code — the plugin is shipped',
+    bullet1: 'Deploys in your VPC or on-prem',
+    bullet2: 'Proof-of-concept in ~4 weeks',
+    bullet3: 'Per-agent licensing',
+    cta: 'Book a live demo',
+  },
+  pt: {
+    eyebrow: 'Comece agora',
+    headLead: 'INSTALE O OS',
+    headAccent: 'EM 60 SEGUNDOS.',
+    terminalTitle: 'unicity — instalação community',
+    comment1: '# edição community — um comando, qualquer máquina',
+    comment2: '# ou no Claude Code — o plugin já está disponível',
+    bullet1: 'Implanta na sua VPC ou on-prem',
+    bullet2: 'Prova de conceito em ~4 semanas',
+    bullet3: 'Licenciamento por agente',
+    cta: 'Agende uma demo ao vivo',
+  },
+});
 
 export function AosCtaSlide() {
   return (
@@ -21,7 +49,7 @@ export function AosCtaSlide() {
             className="text-orange-400 text-xs lg:text-lg tracking-[0.4em] uppercase font-bold"
             style={{ fontFamily: mono }}
           >
-            Get started
+            {T.eyebrow}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -16 }}
@@ -30,7 +58,7 @@ export function AosCtaSlide() {
             className="text-[#fefefe] text-[34px] sm:text-[52px] lg:text-[76px] xl:text-[88px] leading-[0.95] tracking-tight uppercase mt-2"
             style={{ fontFamily: display }}
           >
-            INSTALL THE OS <span className="text-orange-400">IN 60 SECONDS.</span>
+            {T.headLead} <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
         </div>
 
@@ -50,17 +78,17 @@ export function AosCtaSlide() {
               <span className="w-3 h-3 rounded-full" style={{ background: '#ff5f56' }} />
               <span className="w-3 h-3 rounded-full" style={{ background: '#ffbd2e' }} />
               <span className="w-3 h-3 rounded-full" style={{ background: '#27c93f' }} />
-              <span className="ml-3 text-[#fefefe]/40 text-xs lg:text-sm" style={{ fontFamily: mono }}>unicity — community install</span>
+              <span className="ml-3 text-[#fefefe]/40 text-xs lg:text-sm" style={{ fontFamily: mono }}>{T.terminalTitle}</span>
             </div>
             {/* body */}
             <div className="p-5 lg:p-7 flex flex-col gap-2.5 lg:gap-3 flex-1 justify-center overflow-x-auto">
-              <p className="text-[#5f6b7a] text-sm lg:text-lg" style={{ fontFamily: mono }}># community edition — one command, any machine</p>
+              <p className="text-[#5f6b7a] text-sm lg:text-lg" style={{ fontFamily: mono }}>{T.comment1}</p>
               <p className="text-sm lg:text-xl whitespace-nowrap" style={{ fontFamily: mono }}>
                 <span className="text-orange-400">$ </span>
                 <span className="text-[#e8e8e8]">curl -fsSL unicity.ai/install.sh | sh</span>
               </p>
               <div className="h-2" />
-              <p className="text-[#5f6b7a] text-sm lg:text-lg" style={{ fontFamily: mono }}># or on Claude Code — the plugin is shipped</p>
+              <p className="text-[#5f6b7a] text-sm lg:text-lg" style={{ fontFamily: mono }}>{T.comment2}</p>
               <p className="text-sm lg:text-xl whitespace-nowrap" style={{ fontFamily: mono }}>
                 <span className="text-orange-400">$ </span>
                 <span className="text-[#e8e8e8]">/plugin marketplace add unicitynetwork/aos</span>
@@ -83,13 +111,13 @@ export function AosCtaSlide() {
             <p className="text-[#fefefe] text-2xl lg:text-4xl uppercase leading-none" style={{ fontFamily: display }}>Enterprise</p>
             <div className="flex flex-col gap-1.5">
               <p className="flex gap-2 text-[#fefefe]/85 text-sm lg:text-lg leading-snug" style={{ fontFamily: mono }}>
-                <span className="text-orange-400 shrink-0">→</span> Deploys in your VPC or on-prem
+                <span className="text-orange-400 shrink-0">→</span> {T.bullet1}
               </p>
               <p className="flex gap-2 text-[#fefefe]/85 text-sm lg:text-lg leading-snug" style={{ fontFamily: mono }}>
-                <span className="text-orange-400 shrink-0">→</span> Proof-of-concept in ~4 weeks
+                <span className="text-orange-400 shrink-0">→</span> {T.bullet2}
               </p>
               <p className="flex gap-2 text-[#fefefe]/85 text-sm lg:text-lg leading-snug" style={{ fontFamily: mono }}>
-                <span className="text-orange-400 shrink-0">→</span> Per-agent licensing
+                <span className="text-orange-400 shrink-0">→</span> {T.bullet3}
               </p>
             </div>
             <a
@@ -97,7 +125,7 @@ export function AosCtaSlide() {
               className="inline-flex items-center gap-3 self-start rounded-full px-6 py-3 lg:px-7 lg:py-3.5 text-[#060606] font-bold transition-transform hover:scale-[1.02]"
               style={{ background: '#FF6A00', fontFamily: mono }}
             >
-              <span className="text-sm lg:text-lg tracking-[0.14em] uppercase">Book a live demo</span>
+              <span className="text-sm lg:text-lg tracking-[0.14em] uppercase">{T.cta}</span>
               <span className="text-base lg:text-lg">→</span>
             </a>
           </motion.div>

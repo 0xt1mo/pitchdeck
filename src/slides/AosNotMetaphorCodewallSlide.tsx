@@ -1,16 +1,47 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const mono = "'Geist Mono', monospace";
 const display = "'Anton', sans-serif";
 
-const cards = [
-  { fn: 'Processes', term: 'Capsules', desc: 'Sealed WASM programs, isolated by construction — one job each.' },
-  { fn: 'Syscalls', term: 'The host ABI', desc: 'The only door out of the sandbox. A framework is a library you call; an OS is a boundary you can’t cross.' },
-  { fn: 'Users & permissions', term: 'Capability tokens', desc: 'Identity, groups, grants. Stricter than Unix — power only narrows.' },
-  { fn: 'IPC', term: 'The bus', desc: 'Every message routed, observable, governable.' },
-  { fn: 'Quotas', term: 'Budgets', desc: 'CPU and RAM — plus the two resources no OS ever had to meter: tokens and money.' },
-  { fn: 'Drivers', term: 'Provider capsules', desc: 'Models are the peripherals of the agent era. Swap one like a driver; nothing above notices.' },
-];
+const T = tr({
+  en: {
+    eyebrow: 'The architecture · the test',
+    headLead: 'AN ACTUAL OS —',
+    headAccent: 'NOT JUST ORCHESTRATION.',
+    subtitle: (
+      <>
+        An OS isn't marketing — it's <span className="text-orange-400">syscalls, IPC, permissions, quotas, drivers.</span> Everyone claims the label; here, every primitive is a real implementation.
+      </>
+    ),
+    cards: [
+      { fn: 'Processes', term: 'Capsules', desc: 'Sealed WASM programs, isolated by construction — one job each.' },
+      { fn: 'Syscalls', term: 'The host ABI', desc: 'The only door out of the sandbox. A framework is a library you call; an OS is a boundary you can’t cross.' },
+      { fn: 'Users & permissions', term: 'Capability tokens', desc: 'Identity, groups, grants. Stricter than Unix — power only narrows.' },
+      { fn: 'IPC', term: 'The bus', desc: 'Every message routed, observable, governable.' },
+      { fn: 'Quotas', term: 'Budgets', desc: 'CPU and RAM — plus the two resources no OS ever had to meter: tokens and money.' },
+      { fn: 'Drivers', term: 'Provider capsules', desc: 'Models are the peripherals of the agent era. Swap one like a driver; nothing above notices.' },
+    ],
+  },
+  pt: {
+    eyebrow: 'A arquitetura · o teste',
+    headLead: 'UM OS DE VERDADE —',
+    headAccent: 'NÃO APENAS ORQUESTRAÇÃO.',
+    subtitle: (
+      <>
+        Um OS não é marketing — é <span className="text-orange-400">syscalls, IPC, permissões, cotas, drivers.</span> Todo mundo reivindica o rótulo; aqui, cada primitiva é uma implementação real.
+      </>
+    ),
+    cards: [
+      { fn: 'Processos', term: 'Cápsulas', desc: 'Programas WASM selados, isolados por construção — um trabalho cada.' },
+      { fn: 'Syscalls', term: 'A ABI do host', desc: 'A única porta para fora do sandbox. Um framework é uma biblioteca que você chama; um OS é uma fronteira que você não pode cruzar.' },
+      { fn: 'Usuários & permissões', term: 'Tokens de capacidade', desc: 'Identidade, grupos, concessões. Mais rígido que o Unix — o poder só se estreita.' },
+      { fn: 'IPC', term: 'O barramento', desc: 'Cada mensagem roteada, observável, governável.' },
+      { fn: 'Cotas', term: 'Orçamentos', desc: 'CPU e RAM — mais os dois recursos que nenhum OS jamais precisou medir: tokens e dinheiro.' },
+      { fn: 'Drivers', term: 'Cápsulas de provedor', desc: 'Os modelos são os periféricos da era dos agentes. Troque um como um driver; nada acima percebe.' },
+    ],
+  },
+});
 
 export function AosNotMetaphorCodewallSlide() {
   return (
@@ -25,7 +56,7 @@ export function AosNotMetaphorCodewallSlide() {
             className="text-orange-400 text-xs lg:text-lg tracking-[0.4em] uppercase font-bold"
             style={{ fontFamily: mono }}
           >
-            The architecture · the test
+            {T.eyebrow}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -16 }}
@@ -34,7 +65,7 @@ export function AosNotMetaphorCodewallSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[48px] lg:text-[66px] xl:text-[76px] leading-[0.98] tracking-tight uppercase mt-2"
             style={{ fontFamily: display }}
           >
-            AN ACTUAL OS — <span className="text-orange-400">NOT JUST ORCHESTRATION.</span>
+            {T.headLead} <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -43,13 +74,13 @@ export function AosNotMetaphorCodewallSlide() {
             className="text-[#fefefe]/80 text-base lg:text-2xl leading-snug mt-3 max-w-5xl"
             style={{ fontFamily: mono }}
           >
-            An OS isn't marketing — it's <span className="text-orange-400">syscalls, IPC, permissions, quotas, drivers.</span> Everyone claims the label; here, every primitive is a real implementation.
+            {T.subtitle}
           </motion.p>
         </div>
 
         {/* Card grid */}
         <div className="shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
-          {cards.map((c, i) => (
+          {T.cards.map((c, i) => (
             <motion.div
               key={c.fn}
               initial={{ opacity: 0, y: 16 }}

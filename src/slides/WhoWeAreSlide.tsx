@@ -1,48 +1,28 @@
 import { useState, useMemo, type CSSProperties } from 'react';
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 import LANDDATA_LON_LAT from './landData.json';
 
+// Non-text founder data: names, photos and links stay identical across languages.
 const founders = [
   {
     name: 'Mike Gault',
-    role: 'CEO',
     photo: '/team/mike-bw.png',
     linkedin: 'https://www.linkedin.com/in/mikegault1/',
-    lines: [
-      'PhD Electrical Engineering',
-      'Built & exited Guardtime (ADX:IHC)',
-      'Ex-MD, Barclays Capital',
-    ],
   },
   {
     name: 'Tony Kenyon',
-    role: 'CTO',
     photo: '/team/tony-bw.png',
     linkedin: 'https://www.linkedin.com/in/tonykenyon/',
-    lines: [
-      'PhD Machine Learning',
-      '25 years shipping enterprise AI & infra',
-      'Principal Architect: BT, Nokia, A10',
-    ],
   },
   {
     name: 'Joshua J Buow',
-    role: 'OS Architect',
     photo: '/team/jjb2-bw.png',
-    lines: [
-      'Inventor AOS',
-      'Ex-NEAR',
-    ],
   },
   {
     name: 'Eric Leandri',
-    role: 'Chairman',
     photo: '/team/eric-bw.png',
     linkedin: 'https://www.linkedin.com/in/ericleandri/',
-    lines: [
-      'AI Visionary',
-      'CEO, Aleria (UAE Sovereign AI)',
-    ],
   },
 ];
 
@@ -61,6 +41,97 @@ const offices = [
   { id: 'tallinn',  name: 'TALLINN',   lat: 59.44, lon: 24.75, coords: '59.44°N · 24.75°E', off: { x:  205, y: -25 }, an: 'start' as const },
   { id: 'abudhabi', name: 'ABU DHABI', lat: 24.47, lon: 54.37, coords: '24.47°N · 54.37°E', off: { x:  165, y: 105 }, an: 'start' as const },
 ];
+
+const T = tr({
+  en: {
+    eyebrow: 'The Team',
+    headLead: 'Built by',
+    headAccent: 'infrastructure veterans.',
+    intro: (
+      <>
+        <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs in machine learning and cryptography with fifteen years building nation-state-grade security infrastructure for <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed, Verizon, and Maersk</span>. Now applying that to AI infrastructure.
+      </>
+    ),
+    whereWeOperate: 'Where We Operate',
+    trustedBy: 'Cryptographic infrastructure trusted by',
+    founders: [
+      {
+        role: 'CEO',
+        lines: [
+          'PhD Electrical Engineering',
+          'Built & exited Guardtime (ADX:IHC)',
+          'Ex-MD, Barclays Capital',
+        ],
+      },
+      {
+        role: 'CTO',
+        lines: [
+          'PhD Machine Learning',
+          '25 years shipping enterprise AI & infra',
+          'Principal Architect: BT, Nokia, A10',
+        ],
+      },
+      {
+        role: 'OS Architect',
+        lines: [
+          'Inventor AOS',
+          'Ex-NEAR',
+        ],
+      },
+      {
+        role: 'Chairman',
+        lines: [
+          'AI Visionary',
+          'CEO, Aleria (UAE Sovereign AI)',
+        ],
+      },
+    ],
+  },
+  pt: {
+    eyebrow: 'A Equipe',
+    headLead: 'Construído por',
+    headAccent: 'veteranos de infraestrutura.',
+    intro: (
+      <>
+        <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs em machine learning e criptografia com quinze anos construindo infraestrutura de segurança de nível nacional para <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed, Verizon e Maersk</span>. Agora aplicando isso à infraestrutura de IA.
+      </>
+    ),
+    whereWeOperate: 'Onde Operamos',
+    trustedBy: 'Infraestrutura criptográfica confiada por',
+    founders: [
+      {
+        role: 'CEO',
+        lines: [
+          'PhD em Engenharia Elétrica',
+          'Fundou e vendeu a Guardtime (ADX:IHC)',
+          'Ex-MD, Barclays Capital',
+        ],
+      },
+      {
+        role: 'CTO',
+        lines: [
+          'PhD em Machine Learning',
+          '25 anos entregando IA e infraestrutura corporativa',
+          'Arquiteto Principal: BT, Nokia, A10',
+        ],
+      },
+      {
+        role: 'Arquiteto de OS',
+        lines: [
+          'Inventor do AOS',
+          'Ex-NEAR',
+        ],
+      },
+      {
+        role: 'Presidente do Conselho',
+        lines: [
+          'Visionário de IA',
+          'CEO, Aleria (IA Soberana dos Emirados Árabes Unidos)',
+        ],
+      },
+    ],
+  },
+});
 
 const LinkedInBadge = ({ href }: { href: string }) => (
   <a
@@ -113,7 +184,7 @@ export function WhoWeAreSlide() {
             className="text-orange-400 text-xs sm:text-sm tracking-[0.32em] uppercase font-semibold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            The Team
+            {T.eyebrow}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -122,8 +193,8 @@ export function WhoWeAreSlide() {
             className="text-[#fefefe] text-[34px] sm:text-[50px] lg:text-[72px] xl:text-[84px] leading-[0.95] tracking-tight mt-2 uppercase"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            Built by{' '}
-            <span className="text-orange-400">infrastructure veterans.</span>
+            {T.headLead}{' '}
+            <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -138,7 +209,7 @@ export function WhoWeAreSlide() {
             className="mt-3 text-[#fefefe]/85 text-xs sm:text-sm lg:text-base leading-[1.55] max-w-5xl"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs in machine learning and cryptography with fifteen years building nation-state-grade security infrastructure for <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed, Verizon, and Maersk</span>. Now applying that to AI infrastructure.
+            {T.intro}
           </motion.p>
         </div>
 
@@ -172,10 +243,10 @@ export function WhoWeAreSlide() {
                     className="text-orange-400 text-xs lg:text-sm font-bold tracking-[0.2em] uppercase mt-1"
                     style={{ fontFamily: "'Geist Mono', monospace" }}
                   >
-                    {f.role}
+                    {T.founders[i].role}
                   </p>
                   <div className="mt-2 space-y-1">
-                    {f.lines.map((line, j) => (
+                    {T.founders[i].lines.map((line, j) => (
                       <p
                         key={j}
                         className="text-[#fefefe]/75 text-xs lg:text-sm leading-snug flex gap-2"
@@ -203,7 +274,7 @@ export function WhoWeAreSlide() {
               className="text-orange-400 text-sm lg:text-base tracking-[0.32em] uppercase font-semibold mb-2 self-start"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Where We Operate
+              {T.whereWeOperate}
             </p>
             <Globe />
           </motion.div>
@@ -221,7 +292,7 @@ export function WhoWeAreSlide() {
             className="text-[#fefefe]/45 text-[10px] lg:text-xs tracking-[0.32em] uppercase font-semibold mb-2"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Cryptographic infrastructure trusted by
+            {T.trustedBy}
           </p>
           <div className="grid grid-cols-7 gap-2 lg:gap-4 items-center">
             {clients.map((c) => (

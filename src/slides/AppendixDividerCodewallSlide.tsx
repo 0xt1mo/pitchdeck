@@ -1,4 +1,18 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
+
+const T = tr({
+  en: {
+    eyebrow: 'Appendix',
+    headline: 'THE PLATFORM',
+    subline: 'About Unicity · the operating system · verifiable AI',
+  },
+  pt: {
+    eyebrow: 'Apêndice',
+    headline: 'A PLATAFORMA',
+    subline: 'Sobre a Unicity · o sistema operacional · IA verificável',
+  },
+});
 
 export function AppendixDividerCodewallSlide() {
   return (
@@ -23,7 +37,7 @@ export function AppendixDividerCodewallSlide() {
           className="text-orange-400 text-sm sm:text-base lg:text-lg tracking-[0.4em] uppercase font-bold"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          Appendix
+          {T.eyebrow}
         </motion.p>
 
         {/* Headline */}
@@ -34,7 +48,7 @@ export function AppendixDividerCodewallSlide() {
           className="text-[#fefefe] text-[64px] sm:text-[96px] lg:text-[140px] xl:text-[160px] leading-[0.95] tracking-tight uppercase text-center"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          THE PLATFORM
+          {T.headline}
         </motion.h1>
 
         {/* Accent line */}
@@ -54,7 +68,7 @@ export function AppendixDividerCodewallSlide() {
           className="text-[#fefefe]/70 text-base sm:text-lg lg:text-xl tracking-[0.18em] uppercase text-center"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
-          About Unicity · the operating system · verifiable AI
+          {T.subline}
         </motion.p>
 
       </div>

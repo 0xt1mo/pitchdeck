@@ -1,15 +1,76 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const mono = "'Geist Mono', monospace";
 const display = "'Anton', sans-serif";
 
+// Colors stay outside the translation map; display text lives in T.caps.
 const caps = [
-  { label: 'DLP', detail: 'Semantic intercept blocks exfil before it leaves.', color: '255,80,80' },
-  { label: 'COST CONTROL', detail: 'Budget enforcement per agent and workflow.', color: '100,180,140' },
-  { label: 'INTELLIGENT ROUTING', detail: 'Right model, tool, capsule for every request.', color: '140,120,200' },
-  { label: 'PAYMENTS', detail: 'Compliant A2A settlement with audit trail.', color: '249,115,22' },
-  { label: 'PROMPT DETECTION DEFENSE', detail: 'Detects and blocks prompt injection.', color: '96,165,250' },
+  { color: '255,80,80' },
+  { color: '100,180,140' },
+  { color: '140,120,200' },
+  { color: '249,115,22' },
+  { color: '96,165,250' },
 ];
+
+const T = tr({
+  en: {
+    headLead: 'CASE STUDY: ENTERPRISE SECURE',
+    headAccent: 'COMPUTE PLATFORM.',
+    subLead: 'Security, governance and cost control are the wedge.',
+    subBold: 'Networking and payments will follow as the market develops.',
+    caps: [
+      { label: 'DLP', detail: 'Semantic intercept blocks exfil before it leaves.' },
+      { label: 'COST CONTROL', detail: 'Budget enforcement per agent and workflow.' },
+      { label: 'INTELLIGENT ROUTING', detail: 'Right model, tool, capsule for every request.' },
+      { label: 'PAYMENTS', detail: 'Compliant A2A settlement with audit trail.' },
+      { label: 'PROMPT DETECTION DEFENSE', detail: 'Detects and blocks prompt injection.' },
+    ],
+    zoneYour: 'Your environment',
+    zoneExternal: 'External world',
+    boxFrameworks: 'Frameworks',
+    boxInternalLLM: 'Internal LLM',
+    sifTitle: 'Semantic Intercept Fabric',
+    sifSub: 'One gate · single egress · allow / block / flag',
+    registryTitle: 'Agent Registry',
+    registrySub: 'Cryptographic identity · scoped, revocable',
+    boxExternalLLM: 'External LLM',
+    boxMobile: 'Mobile App (hosted)',
+    boxExternalAgent: 'External agent',
+    aosTitle: 'AOS · Hosting Environment',
+    aosSub: 'Enforcement kernel · WASM sandbox · budgets',
+    aosSandbox: 'Agent Sandbox',
+    a2aLabel: 'A2A networking + payments',
+  },
+  pt: {
+    headLead: 'ESTUDO DE CASO: COMPUTAÇÃO SEGURA',
+    headAccent: 'CORPORATIVA.',
+    subLead: 'Segurança, governança e controle de custos são a cunha.',
+    subBold: 'Rede e pagamentos virão à medida que o mercado se desenvolve.',
+    caps: [
+      { label: 'DLP', detail: 'Intercepção semântica bloqueia exfiltração antes que saia.' },
+      { label: 'CONTROLE DE CUSTOS', detail: 'Imposição de orçamento por agente e fluxo de trabalho.' },
+      { label: 'ROTEAMENTO INTELIGENTE', detail: 'Modelo, ferramenta e cápsula certos para cada requisição.' },
+      { label: 'PAGAMENTOS', detail: 'Liquidação A2A em conformidade com trilha de auditoria.' },
+      { label: 'DEFESA POR DETECÇÃO DE PROMPT', detail: 'Detecta e bloqueia injeção de prompt.' },
+    ],
+    zoneYour: 'Seu ambiente',
+    zoneExternal: 'Mundo externo',
+    boxFrameworks: 'Frameworks',
+    boxInternalLLM: 'LLM interno',
+    sifTitle: 'Semantic Intercept Fabric',
+    sifSub: 'Um único gate · saída única · permitir / bloquear / sinalizar',
+    registryTitle: 'Registro de Agentes',
+    registrySub: 'Identidade criptográfica · com escopo, revogável',
+    boxExternalLLM: 'LLM externo',
+    boxMobile: 'App Mobile (hospedado)',
+    boxExternalAgent: 'Agente externo',
+    aosTitle: 'AOS · Ambiente de Hospedagem',
+    aosSub: 'Kernel de imposição · sandbox WASM · orçamentos',
+    aosSandbox: 'Sandbox de Agente',
+    a2aLabel: 'Rede A2A + pagamentos',
+  },
+});
 
 /**
  * HTML-first deployment diagram with a tiny SVG overlay just for arrows.
@@ -41,8 +102,8 @@ export function DeploymentModelHtmlSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[56px] xl:text-[64px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: display }}
           >
-            <span className="text-[#fefefe]">CASE STUDY: ENTERPRISE SECURE</span>{' '}
-            <span className="text-orange-400">COMPUTE PLATFORM.</span>
+            <span className="text-[#fefefe]">{T.headLead}</span>{' '}
+            <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -51,8 +112,8 @@ export function DeploymentModelHtmlSlide() {
             className="text-[#fefefe]/85 text-sm sm:text-base lg:text-lg xl:text-xl leading-[1.5] mt-3 lg:mt-5 max-w-5xl"
             style={{ fontFamily: mono }}
           >
-            Security, governance and cost control are the wedge.{' '}
-            <span className="text-[#fefefe] font-bold">Networking and payments will follow as the market develops.</span>
+            {T.subLead}{' '}
+            <span className="text-[#fefefe] font-bold">{T.subBold}</span>
           </motion.p>
         </div>
 
@@ -63,9 +124,9 @@ export function DeploymentModelHtmlSlide() {
           transition={{ delay: 0.45, duration: 0.5 }}
           className="shrink-0 flex flex-wrap items-center justify-center gap-3 lg:gap-5"
         >
-          {caps.map((c) => (
+          {caps.map((c, i) => (
             <span
-              key={c.label}
+              key={i}
               className="rounded-full px-4 lg:px-6 py-2 lg:py-2.5 text-sm lg:text-xl font-bold tracking-[0.08em] uppercase"
               style={{
                 fontFamily: mono,
@@ -74,7 +135,7 @@ export function DeploymentModelHtmlSlide() {
                 border: `1px solid rgba(${c.color},${c.neutral ? 0.25 : 0.35})`,
               }}
             >
-              {c.label}
+              {T.caps[i].label}
             </span>
           ))}
         </motion.div>
@@ -96,13 +157,13 @@ export function DeploymentModelHtmlSlide() {
               className="absolute text-[#fefefe]/80 text-sm sm:text-base lg:text-xl xl:text-2xl tracking-[0.25em] uppercase font-bold text-center"
               style={{ left: '0.6%', top: '0%', width: '50%', fontFamily: mono }}
             >
-              Your environment
+              {T.zoneYour}
             </p>
             <p
               className="absolute text-[#fefefe]/55 text-sm sm:text-base lg:text-xl xl:text-2xl tracking-[0.25em] uppercase font-bold text-center"
               style={{ left: '65%', top: '0%', width: '34%', fontFamily: mono }}
             >
-              External world
+              {T.zoneExternal}
             </p>
 
             {/* Enclosures — matched heights, content centered vertically */}
@@ -131,21 +192,21 @@ export function DeploymentModelHtmlSlide() {
 
             {/* Entry: Frameworks */}
             <Box left="4%" top="10.8%" width="20.5%" height="8.5%" align="center"
-              title="Frameworks" />
+              title={T.boxFrameworks} />
 
             {/* Entry: Internal LLM */}
             <Box left="26.5%" top="10.8%" width="20.5%" height="8.5%" align="center"
-              title="Internal LLM" />
+              title={T.boxInternalLLM} />
 
             {/* Semantic Intercept Fabric (gate) */}
             <GateBox left="4%" top="24.1%" width="43%" height="10%"
-              title="Semantic Intercept Fabric"
-              subtitle="One gate · single egress · allow / block / flag" />
+              title={T.sifTitle}
+              subtitle={T.sifSub} />
 
             {/* Agent Registry (gate) */}
             <GateBox left="4%" top="38.9%" width="43%" height="9.5%"
-              title="Agent Registry"
-              subtitle="Cryptographic identity · scoped, revocable" />
+              title={T.registryTitle}
+              subtitle={T.registrySub} />
 
             {/* AOS hosting environment — taller to contain its sub-boxes */}
             <AOSBox left="4%" top="53.2%" width="43%" height="32%" />
@@ -154,13 +215,13 @@ export function DeploymentModelHtmlSlide() {
             {/* 3 × 11% boxes, 4 equal gaps of 12.75% across the 84% enclosure */}
 
             <Box left="74%" top="18.75%" width="23%" height="11%"
-              title="External LLM" />
+              title={T.boxExternalLLM} />
 
             <Box left="74%" top="42.5%" width="23%" height="11%"
-              title="Mobile App (hosted)" />
+              title={T.boxMobile} />
 
             <Box left="74%" top="66.25%" width="23%" height="11%"
-              title="External agent" />
+              title={T.boxExternalAgent} />
 
             {/* ────── SVG OVERLAY — only the connecting arrows ────── */}
             <svg
@@ -235,7 +296,7 @@ export function DeploymentModelHtmlSlide() {
                 fontFamily: mono,
               }}
             >
-              A2A networking + payments
+              {T.a2aLabel}
             </p>
           </div>
         </motion.div>
@@ -328,10 +389,10 @@ function AOSBox({
         className="text-orange-400 text-sm sm:text-base lg:text-lg uppercase leading-tight"
         style={{ fontFamily: display, letterSpacing: '0.01em' }}
       >
-        AOS · Hosting Environment
+        {T.aosTitle}
       </p>
       <p className="text-[#d59a6f] text-[10px] sm:text-xs lg:text-sm mt-1 leading-snug">
-        Enforcement kernel · WASM sandbox · budgets
+        {T.aosSub}
       </p>
       <div className="flex-1 flex gap-3 lg:gap-4 mt-3 min-h-0">
         {[0, 1, 2].map((i) => (
@@ -344,7 +405,7 @@ function AOSBox({
             }}
           >
             <p className="text-[#e0b893] text-[10px] sm:text-xs lg:text-sm font-medium whitespace-nowrap">
-              Agent Sandbox
+              {T.aosSandbox}
             </p>
           </div>
         ))}

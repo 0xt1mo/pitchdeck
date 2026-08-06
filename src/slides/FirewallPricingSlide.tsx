@@ -1,51 +1,114 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
 
+// Non-text tier structure: stable name key + accent flag. Display text lives in T.tiers.
 const tiers = [
-  {
-    name: 'Free',
-    who: 'Individual devs · 1–5',
-    price: '$0',
-    unit: 'forever',
-    accent: false,
-    items: [
-      'Fail-closed capability enforcement',
-      'Secret redaction + local content checks',
-      'Cursor · Claude Code · Copilot',
-      'MCP & extension scanning',
-    ],
-  },
-  {
-    name: 'Team',
-    who: 'Growing teams · 5+',
-    price: '$15',
-    unit: '/ user / month',
-    accent: true,
-    plus: 'Everything in Free, plus:',
-    items: [
-      'Fleet dashboard + org policy',
-      'Role-based access control',
-      'Verifiable audit log — provable offline',
-      'Priority support',
-    ],
-  },
-  {
-    name: 'Enterprise',
-    who: 'Eng leaders · 10+',
-    price: 'Contact',
-    unit: 'us',
-    accent: false,
-    plus: 'Everything in Team, plus:',
-    items: [
-      'SSO · SIEM · Slack',
-      'Commit attestation (GitOps)',
-      'Compliance reporting · VPC / on-prem',
-      'Dedicated support & SLAs',
-    ],
-  },
+  { name: 'Free', accent: false },
+  { name: 'Team', accent: true },
+  { name: 'Enterprise', accent: false },
 ];
+
+const T = tr({
+  en: {
+    headLead: 'Land free.',
+    headAccent: 'Expand per seat.',
+    sub: 'The developer adopts it free. The team pays per seat. The enterprise buys governance.',
+    popular: 'Popular',
+    footer: (
+      <>
+        Even the free tier <span className="text-orange-400">fails closed</span> — enforcement no competitor can match, and the wedge into the enterprise.
+      </>
+    ),
+    tiers: [
+      {
+        who: 'Individual devs · 1–5',
+        price: '$0',
+        unit: 'forever',
+        items: [
+          'Fail-closed capability enforcement',
+          'Secret redaction + local content checks',
+          'Cursor · Claude Code · Copilot',
+          'MCP & extension scanning',
+        ],
+      },
+      {
+        who: 'Growing teams · 5+',
+        price: '$15',
+        unit: '/ user / month',
+        plus: 'Everything in Free, plus:',
+        items: [
+          'Fleet dashboard + org policy',
+          'Role-based access control',
+          'Verifiable audit log — provable offline',
+          'Priority support',
+        ],
+      },
+      {
+        who: 'Eng leaders · 10+',
+        price: 'Contact',
+        unit: 'us',
+        plus: 'Everything in Team, plus:',
+        items: [
+          'SSO · SIEM · Slack',
+          'Commit attestation (GitOps)',
+          'Compliance reporting · VPC / on-prem',
+          'Dedicated support & SLAs',
+        ],
+      },
+    ] as { who: string; price: string; unit: string; plus?: string; items: string[] }[],
+  },
+  pt: {
+    headLead: 'Entre de graça.',
+    headAccent: 'Expanda por assento.',
+    sub: 'O desenvolvedor adota de graça. O time paga por assento. A empresa compra governança.',
+    popular: 'Popular',
+    footer: (
+      <>
+        Até o plano gratuito <span className="text-orange-400">falha fechado</span> — uma imposição que nenhum concorrente consegue igualar, e a porta de entrada para a empresa.
+      </>
+    ),
+    tiers: [
+      {
+        who: 'Devs individuais · 1–5',
+        price: '$0',
+        unit: 'para sempre',
+        items: [
+          'Imposição de capacidade fail-closed',
+          'Redação de segredos + verificação de conteúdo local',
+          'Cursor · Claude Code · Copilot',
+          'Varredura de MCP & extensões',
+        ],
+      },
+      {
+        who: 'Times em crescimento · 5+',
+        price: '$15',
+        unit: '/ usuário / mês',
+        plus: 'Tudo do Free, mais:',
+        items: [
+          'Dashboard de frota + política da organização',
+          'Controle de acesso baseado em papéis',
+          'Log de auditoria verificável — comprovável offline',
+          'Suporte prioritário',
+        ],
+      },
+      {
+        who: 'Líderes de eng · 10+',
+        price: 'Fale',
+        unit: 'conosco',
+        plus: 'Tudo do Team, mais:',
+        items: [
+          'SSO · SIEM · Slack',
+          'Atestação de commit (GitOps)',
+          'Relatórios de compliance · VPC / on-prem',
+          'Suporte dedicado & SLAs',
+        ],
+      },
+    ] as { who: string; price: string; unit: string; plus?: string; items: string[] }[],
+  },
+});
 
 export function FirewallPricingSlide() {
   return (
@@ -66,7 +129,7 @@ export function FirewallPricingSlide() {
             className="text-[#fefefe] text-[32px] sm:text-[46px] lg:text-[64px] xl:text-[72px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: ANTON }}
           >
-            Land free. <span className="text-orange-400">Expand per seat.</span>
+            {T.headLead} <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -75,7 +138,7 @@ export function FirewallPricingSlide() {
             className="mt-2.5 text-[#fefefe]/80 text-base lg:text-lg"
             style={{ fontFamily: MONO }}
           >
-            The developer adopts it free. The team pays per seat. The enterprise buys governance.
+            {T.sub}
           </motion.p>
         </div>
 
@@ -97,21 +160,21 @@ export function FirewallPricingSlide() {
               <div className="flex items-center justify-between gap-2">
                 <p className="text-[#fefefe] text-2xl lg:text-3xl leading-none uppercase" style={{ fontFamily: ANTON }}>{t.name}</p>
                 {t.accent && (
-                  <span className="rounded-full border border-orange-500/70 text-orange-400 text-[10px] lg:text-xs px-2.5 py-0.5 tracking-[0.14em] uppercase" style={{ fontFamily: MONO }}>Popular</span>
+                  <span className="rounded-full border border-orange-500/70 text-orange-400 text-[10px] lg:text-xs px-2.5 py-0.5 tracking-[0.14em] uppercase" style={{ fontFamily: MONO }}>{T.popular}</span>
                 )}
               </div>
-              <p className="text-[#fefefe]/45 text-[11px] lg:text-sm tracking-[0.14em] uppercase mt-1.5" style={{ fontFamily: MONO }}>{t.who}</p>
+              <p className="text-[#fefefe]/45 text-[11px] lg:text-sm tracking-[0.14em] uppercase mt-1.5" style={{ fontFamily: MONO }}>{T.tiers[i].who}</p>
 
               <div className="flex items-baseline gap-2 mt-4">
-                <span className={`text-[40px] lg:text-[56px] leading-none ${t.accent ? 'text-orange-400' : 'text-[#fefefe]'}`} style={{ fontFamily: ANTON }}>{t.price}</span>
-                <span className="text-[#fefefe]/55 text-xs lg:text-sm" style={{ fontFamily: MONO }}>{t.unit}</span>
+                <span className={`text-[40px] lg:text-[56px] leading-none ${t.accent ? 'text-orange-400' : 'text-[#fefefe]'}`} style={{ fontFamily: ANTON }}>{T.tiers[i].price}</span>
+                <span className="text-[#fefefe]/55 text-xs lg:text-sm" style={{ fontFamily: MONO }}>{T.tiers[i].unit}</span>
               </div>
 
-              {t.plus && (
-                <p className="text-[#fefefe]/50 text-xs lg:text-sm mt-4" style={{ fontFamily: MONO }}>{t.plus}</p>
+              {T.tiers[i].plus && (
+                <p className="text-[#fefefe]/50 text-xs lg:text-sm mt-4" style={{ fontFamily: MONO }}>{T.tiers[i].plus}</p>
               )}
-              <div className={`flex flex-col gap-2 ${t.plus ? 'mt-2' : 'mt-4'}`}>
-                {t.items.map((it) => (
+              <div className={`flex flex-col gap-2 ${T.tiers[i].plus ? 'mt-2' : 'mt-4'}`}>
+                {T.tiers[i].items.map((it) => (
                   <p key={it} className="flex gap-2.5 text-[#fefefe]/85 text-sm lg:text-base leading-snug" style={{ fontFamily: MONO }}>
                     <span className={`shrink-0 ${t.accent ? 'text-orange-400' : 'text-[#fefefe]/40'}`}>{t.accent ? '+' : '—'}</span>
                     {it}
@@ -130,7 +193,7 @@ export function FirewallPricingSlide() {
           className="shrink-0 text-[#fefefe]/85 text-base sm:text-lg lg:text-2xl leading-snug pt-4"
           style={{ fontFamily: MONO, borderTop: '1px solid rgba(255,255,255,0.10)' }}
         >
-          Even the free tier <span className="text-orange-400">fails closed</span> — enforcement no competitor can match, and the wedge into the enterprise.
+          {T.footer}
         </motion.p>
 
       </div>

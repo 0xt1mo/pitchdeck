@@ -1,7 +1,27 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const mono = "'Geist Mono', monospace";
 const display = "'Anton', sans-serif";
+
+const T = tr({
+  en: {
+    confidential: 'Product Overview · Confidential',
+    subtitle: (
+      <>
+        The firewall for coding agents — <span className="text-orange-400">kernel-level permissions</span> that bound every action, redact every secret, and prove every step.
+      </>
+    ),
+  },
+  pt: {
+    confidential: 'Visão Geral do Produto · Confidencial',
+    subtitle: (
+      <>
+        O firewall para agentes de programação — <span className="text-orange-400">permissões em nível de kernel</span> que limitam cada ação, redigem cada segredo e comprovam cada passo.
+      </>
+    ),
+  },
+});
 
 export function CodewallCoverSlide() {
   return (
@@ -36,7 +56,7 @@ export function CodewallCoverSlide() {
       {/* Bottom HUD bar */}
       <div className="absolute bottom-6 left-8 lg:left-12 right-8 lg:right-12 z-20 flex items-center">
         <span className="text-[#fefefe]/45 text-xs sm:text-xs lg:text-lg tracking-[0.32em] uppercase" style={{ fontFamily: mono }}>
-          Product Overview · Confidential
+          {T.confidential}
         </span>
       </div>
 
@@ -84,7 +104,7 @@ export function CodewallCoverSlide() {
           className="text-[#fefefe]/80 text-base sm:text-lg lg:text-2xl leading-snug max-w-4xl shrink-0"
           style={{ fontFamily: mono }}
         >
-          The firewall for coding agents — <span className="text-orange-400">kernel-level permissions</span> that bound every action, redact every secret, and prove every step.
+          {T.subtitle}
         </motion.p>
 
       </div>

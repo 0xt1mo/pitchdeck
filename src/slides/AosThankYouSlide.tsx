@@ -1,7 +1,21 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const mono = "'Geist Mono', monospace";
 const display = "'Anton', sans-serif";
+
+const T = tr({
+  en: {
+    kicker: 'Unicity AOS · The OS for Autonomous AI',
+    thankLead: 'Thank ',
+    thankAccent: 'you.',
+  },
+  pt: {
+    kicker: 'Unicity AOS · O OS para IA Autônoma',
+    thankLead: 'Muito ',
+    thankAccent: 'obrigado.',
+  },
+});
 
 export function AosThankYouSlide() {
   return (
@@ -21,7 +35,7 @@ export function AosThankYouSlide() {
           className="text-orange-400 text-sm sm:text-base lg:text-lg tracking-[0.4em] uppercase font-bold"
           style={{ fontFamily: mono }}
         >
-          Unicity AOS · The OS for Autonomous AI
+          {T.kicker}
         </motion.p>
 
         {/* Headline */}
@@ -32,7 +46,7 @@ export function AosThankYouSlide() {
           className="text-[#fefefe] text-[64px] sm:text-[108px] lg:text-[150px] xl:text-[168px] leading-[0.9] tracking-tight uppercase"
           style={{ fontFamily: display }}
         >
-          Thank <span className="text-orange-400">you.</span>
+          {T.thankLead}<span className="text-orange-400">{T.thankAccent}</span>
         </motion.h1>
 
         {/* Accent line */}

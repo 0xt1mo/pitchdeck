@@ -1,16 +1,51 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const mono = "'Geist Mono', monospace";
 const display = "'Anton', sans-serif";
 
-const capsules = [
-  { name: 'Model', desc: 'The brain — swap OpenAI, Anthropic, or a local model.' },
-  { name: 'Agent Loop', desc: 'The reasoning coordinator, driving thought and tool calls.' },
-  { name: 'Memory', desc: 'Persistence across sessions, injected into the prompt.' },
-  { name: 'Tools', desc: 'Everything the agent can do — each permission-scoped.' },
-  { name: 'Skills', desc: 'Packaged behaviours, installed on demand.' },
-  { name: 'Frontends', desc: 'How people reach the agent — CLI, chat, a bot.' },
-];
+const T = tr({
+  en: {
+    eyebrow: 'The architecture',
+    headLine1: 'ONE MICROKERNEL.',
+    headAccent: 'EVERYTHING ELSE IS A CAPSULE.',
+    intro: (
+      <>
+        The microkernel is <span className="text-orange-400 font-bold">dumb on purpose</span> — it routes events, enforces capabilities, and runs the sandbox. No business logic, no AI.
+        Everything above it is a capsule.
+      </>
+    ),
+    capsuleDef: '[ a sealed WebAssembly module — permissions declared up front, swap any part ]',
+    capsules: [
+      { name: 'Model', desc: 'The brain — swap OpenAI, Anthropic, or a local model.' },
+      { name: 'Agent Loop', desc: 'The reasoning coordinator, driving thought and tool calls.' },
+      { name: 'Memory', desc: 'Persistence across sessions, injected into the prompt.' },
+      { name: 'Tools', desc: 'Everything the agent can do — each permission-scoped.' },
+      { name: 'Skills', desc: 'Packaged behaviours, installed on demand.' },
+      { name: 'Frontends', desc: 'How people reach the agent — CLI, chat, a bot.' },
+    ],
+  },
+  pt: {
+    eyebrow: 'A arquitetura',
+    headLine1: 'UM MICROKERNEL.',
+    headAccent: 'TODO O RESTO É UM CAPSULE.',
+    intro: (
+      <>
+        O microkernel é <span className="text-orange-400 font-bold">burro de propósito</span> — ele roteia eventos, aplica permissões e executa o sandbox. Sem lógica de negócio, sem IA.
+        Tudo acima dele é um capsule.
+      </>
+    ),
+    capsuleDef: '[ um módulo WebAssembly selado — permissões declaradas de antemão, troque qualquer parte ]',
+    capsules: [
+      { name: 'Modelo', desc: 'O cérebro — troque OpenAI, Anthropic ou um modelo local.' },
+      { name: 'Loop do Agente', desc: 'O coordenador de raciocínio, conduzindo o pensamento e as chamadas de ferramentas.' },
+      { name: 'Memória', desc: 'Persistência entre sessões, injetada no prompt.' },
+      { name: 'Ferramentas', desc: 'Tudo o que o agente pode fazer — cada ação com escopo de permissão.' },
+      { name: 'Habilidades', desc: 'Comportamentos empacotados, instalados sob demanda.' },
+      { name: 'Frontends', desc: 'Como as pessoas chegam ao agente — CLI, chat, um bot.' },
+    ],
+  },
+});
 
 export function AosEngineSlide() {
   return (
@@ -25,7 +60,7 @@ export function AosEngineSlide() {
             className="text-orange-400 text-xs lg:text-lg tracking-[0.4em] uppercase font-bold"
             style={{ fontFamily: mono }}
           >
-            The architecture
+            {T.eyebrow}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -16 }}
@@ -34,8 +69,8 @@ export function AosEngineSlide() {
             className="text-[#fefefe] text-[28px] sm:text-[42px] lg:text-[58px] xl:text-[66px] leading-[0.98] tracking-tight uppercase mt-2"
             style={{ fontFamily: display }}
           >
-            ONE MICROKERNEL.<br />
-            <span className="text-orange-400">EVERYTHING ELSE IS A CAPSULE.</span>
+            {T.headLine1}<br />
+            <span className="text-orange-400">{T.headAccent}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -44,8 +79,7 @@ export function AosEngineSlide() {
             className="text-[#fefefe]/80 text-sm lg:text-2xl leading-snug mt-3 max-w-5xl"
             style={{ fontFamily: mono }}
           >
-            The microkernel is <span className="text-orange-400 font-bold">dumb on purpose</span> — it routes events, enforces capabilities, and runs the sandbox. No business logic, no AI.
-            Everything above it is a capsule.
+            {T.intro}
           </motion.p>
         </div>
 
@@ -58,14 +92,14 @@ export function AosEngineSlide() {
           style={{ fontFamily: mono }}
         >
           <span className="text-orange-400 font-bold uppercase tracking-[0.14em]">Capsule</span>
-          <span className="text-[#fefefe]/60">{' '}[ a sealed WebAssembly module — permissions declared up front, swap any part ]</span>
+          <span className="text-[#fefefe]/60">{' '}{T.capsuleDef}</span>
         </motion.p>
 
         {/* Capsule grid */}
         <div className="shrink-0 grid grid-cols-2 lg:grid-cols-3 gap-2.5 lg:gap-3.5">
-          {capsules.map((c, i) => (
+          {T.capsules.map((c, i) => (
             <motion.div
-              key={c.name}
+              key={i}
               initial={{ opacity: 0, y: 12, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ delay: 0.3 + i * 0.06, duration: 0.35 }}

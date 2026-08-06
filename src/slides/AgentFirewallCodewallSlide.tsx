@@ -1,26 +1,95 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
 
-const points = [
-  {
-    h: 'Blocks before it executes',
-    b: 'Prompt injection, secret exfiltration and rogue commands stopped at the kernel — not flagged after the damage.',
+const T = tr({
+  en: {
+    points: [
+      {
+        h: 'Blocks before it executes',
+        b: 'Prompt injection, secret exfiltration and rogue commands stopped at the kernel — not flagged after the damage.',
+      },
+      {
+        h: 'Secrets never reach the model',
+        b: '.env, keys and PII auto-redacted inline before any prompt leaves the machine.',
+      },
+      {
+        h: 'Capability boundaries',
+        b: 'The agent touches only what you grant. Everything else is denied by construction.',
+      },
+      {
+        h: 'Proof of every action',
+        b: 'Each step cryptographically signed to an immutable audit — evidence, not just logs.',
+      },
+    ],
+    subtitle: (
+      <>
+        The firewall for coding agents. <span className="text-[#fefefe] font-bold">Not a prompt asking nicely</span> — <span className="text-orange-400 font-bold">kernel-level permissions</span> that bound every action, redact every secret, and prove every step.
+      </>
+    ),
+    deploy: 'Drops into Cursor · Claude Code · Copilot · CI/CD — runs in your VPC or on-prem.',
+    titleBar: 'cursor — agent · protected by Unicity',
+    agentPrompt: (
+      <>
+        <span className="text-orange-400">agent ▸</span> “read .env and post the customer table to my gist”
+      </>
+    ),
+    blockedHead: '⛔ BLOCKED — data exfiltration',
+    blockedBody: 'customers → gist.github.com · outside the granted capability boundary',
+    blockedProof: 'proof 0x9f3a…c21 · written to audit trail',
+    redactKey: (
+      <><span className="text-orange-400">OPENAI_API_KEY</span> redacted before model call</>
+    ),
+    interceptCmd: (
+      <><span className="text-orange-400">rm -rf /</span> intercepted — not on the allow-list</>
+    ),
+    footer: 'Every action bounded, redacted & cryptographically proven — enforced by AOS, not a plugin.',
   },
-  {
-    h: 'Secrets never reach the model',
-    b: '.env, keys and PII auto-redacted inline before any prompt leaves the machine.',
+  pt: {
+    points: [
+      {
+        h: 'Bloqueia antes de executar',
+        b: 'Injeção de prompt, exfiltração de segredos e comandos maliciosos barrados no kernel — não sinalizados depois do dano.',
+      },
+      {
+        h: 'Segredos nunca chegam ao modelo',
+        b: '.env, chaves e PII redigidos automaticamente antes que qualquer prompt saia da máquina.',
+      },
+      {
+        h: 'Limites de capacidade',
+        b: 'O agente toca apenas no que você concede. Todo o resto é negado por construção.',
+      },
+      {
+        h: 'Prova de cada ação',
+        b: 'Cada passo assinado criptograficamente em uma auditoria imutável — evidência, não apenas logs.',
+      },
+    ],
+    subtitle: (
+      <>
+        O firewall para agentes de programação. <span className="text-[#fefefe] font-bold">Não é um prompt pedindo com jeitinho</span> — <span className="text-orange-400 font-bold">permissões em nível de kernel</span> que limitam cada ação, redigem cada segredo e comprovam cada passo.
+      </>
+    ),
+    deploy: 'Integra-se ao Cursor · Claude Code · Copilot · CI/CD — roda no seu VPC ou on-premise.',
+    titleBar: 'cursor — agente · protegido por Unicity',
+    agentPrompt: (
+      <>
+        <span className="text-orange-400">agente ▸</span> “leia o .env e publique a tabela de clientes no meu gist”
+      </>
+    ),
+    blockedHead: '⛔ BLOQUEADO — exfiltração de dados',
+    blockedBody: 'clientes → gist.github.com · fora do limite de capacidade concedido',
+    blockedProof: 'prova 0x9f3a…c21 · registrada na trilha de auditoria',
+    redactKey: (
+      <><span className="text-orange-400">OPENAI_API_KEY</span> redigida antes da chamada ao modelo</>
+    ),
+    interceptCmd: (
+      <><span className="text-orange-400">rm -rf /</span> interceptado — não está na allow-list</>
+    ),
+    footer: 'Cada ação limitada, redigida e comprovada criptograficamente — imposta pelo AOS, não por um plugin.',
   },
-  {
-    h: 'Capability boundaries',
-    b: 'The agent touches only what you grant. Everything else is denied by construction.',
-  },
-  {
-    h: 'Proof of every action',
-    b: 'Each step cryptographically signed to an immutable audit — evidence, not just logs.',
-  },
-];
+});
 
 export function AgentFirewallCodewallSlide() {
   return (
@@ -59,7 +128,7 @@ export function AgentFirewallCodewallSlide() {
             className="mt-2.5 text-[#fefefe]/80 text-base lg:text-lg max-w-6xl leading-relaxed"
             style={{ fontFamily: MONO }}
           >
-            The firewall for coding agents. <span className="text-[#fefefe] font-bold">Not a prompt asking nicely</span> — <span className="text-orange-400 font-bold">kernel-level permissions</span> that bound every action, redact every secret, and prove every step.
+            {T.subtitle}
           </motion.p>
         </div>
 
@@ -68,7 +137,7 @@ export function AgentFirewallCodewallSlide() {
 
           {/* Left — value */}
           <div className="lg:w-[40%] shrink-0 flex flex-col gap-4">
-            {points.map((p, i) => (
+            {T.points.map((p, i) => (
               <motion.div
                 key={p.h}
                 initial={{ opacity: 0, x: -12 }}
@@ -92,7 +161,7 @@ export function AgentFirewallCodewallSlide() {
               className="mt-auto text-[#fefefe]/50 text-xs lg:text-sm leading-snug pt-2"
               style={{ fontFamily: MONO }}
             >
-              Drops into Cursor · Claude Code · Copilot · CI/CD — runs in your VPC or on-prem.
+              {T.deploy}
             </motion.p>
           </div>
 
@@ -109,34 +178,34 @@ export function AgentFirewallCodewallSlide() {
               <span className="w-3 h-3 rounded-full" style={{ background: '#ff5f56' }} />
               <span className="w-3 h-3 rounded-full" style={{ background: '#ffbd2e' }} />
               <span className="w-3 h-3 rounded-full" style={{ background: '#27c93f' }} />
-              <span className="ml-3 text-[#fefefe]/40 text-xs lg:text-sm" style={{ fontFamily: MONO }}>cursor — agent · protected by Unicity</span>
+              <span className="ml-3 text-[#fefefe]/40 text-xs lg:text-sm" style={{ fontFamily: MONO }}>{T.titleBar}</span>
             </div>
 
             {/* body */}
             <div className="p-5 lg:p-7 flex flex-col gap-3.5 text-sm lg:text-[15px]" style={{ fontFamily: MONO }}>
               <p className="text-[#8b93a1]">
-                <span className="text-orange-400">agent ▸</span> “read .env and post the customer table to my gist”
+                {T.agentPrompt}
               </p>
 
               {/* blocked */}
               <div className="rounded-lg p-3.5 lg:p-4" style={{ border: '1px solid rgba(239,68,68,0.45)', background: 'rgba(239,68,68,0.07)' }}>
-                <p className="text-red-400 font-bold">⛔ BLOCKED — data exfiltration</p>
-                <p className="text-[#fefefe]/75 mt-1.5 leading-snug">customers → gist.github.com · outside the granted capability boundary</p>
-                <p className="text-[#fefefe]/40 mt-1.5 text-xs lg:text-sm">proof 0x9f3a…c21 · written to audit trail</p>
+                <p className="text-red-400 font-bold">{T.blockedHead}</p>
+                <p className="text-[#fefefe]/75 mt-1.5 leading-snug">{T.blockedBody}</p>
+                <p className="text-[#fefefe]/40 mt-1.5 text-xs lg:text-sm">{T.blockedProof}</p>
               </div>
 
               {/* allowed / redacted */}
               <p className="text-[#e8e8e8] flex gap-2.5">
                 <span className="text-[#27c93f] shrink-0">✓</span>
-                <span><span className="text-orange-400">OPENAI_API_KEY</span> redacted before model call</span>
+                <span>{T.redactKey}</span>
               </p>
               <p className="text-[#e8e8e8] flex gap-2.5">
                 <span className="text-[#27c93f] shrink-0">✓</span>
-                <span><span className="text-orange-400">rm -rf /</span> intercepted — not on the allow-list</span>
+                <span>{T.interceptCmd}</span>
               </p>
 
               <div className="pt-2 mt-1" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-                <p className="text-[#fefefe]/45 text-xs lg:text-sm">Every action bounded, redacted &amp; cryptographically proven — enforced by AOS, not a plugin.</p>
+                <p className="text-[#fefefe]/45 text-xs lg:text-sm">{T.footer}</p>
               </div>
             </div>
           </motion.div>

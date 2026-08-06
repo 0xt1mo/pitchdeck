@@ -1,19 +1,48 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
-const bullets = [
-  {
-    label: 'INLINE REDACTION',
-    body: 'Detect and mask PII, credentials, and corporate secrets in the prompt before inference.',
+const T = tr({
+  en: {
+    eyebrow: 'Use Case · Data Loss Prevention',
+    h1Lead: 'DATA LOSS PREVENTION',
+    h1Accent: '(DLP).',
+    intro: 'Unicity sits directly in the transport flow, inspecting LLM payloads before they ever leave the corporate perimeter to prevent exfiltration.',
+    bullets: [
+      {
+        label: 'INLINE REDACTION',
+        body: 'Detect and mask PII, credentials, and corporate secrets in the prompt before inference.',
+      },
+      {
+        label: 'INJECTION DEFENSE',
+        body: 'Blocks agents manipulated into leaking data via indirect prompt injections.',
+      },
+      {
+        label: 'COMPLIANCE LOGS',
+        body: 'Cryptographic, tamper-evident logs of all data touched by agents for compliance audits.',
+      },
+    ],
   },
-  {
-    label: 'INJECTION DEFENSE',
-    body: 'Blocks agents manipulated into leaking data via indirect prompt injections.',
+  pt: {
+    eyebrow: 'Caso de Uso · Prevenção de Perda de Dados',
+    h1Lead: 'PREVENÇÃO DE PERDA DE DADOS',
+    h1Accent: '(DLP).',
+    intro: 'O Unicity fica diretamente no fluxo de transporte, inspecionando payloads de LLM antes que eles saiam do perímetro corporativo, para prevenir exfiltração.',
+    bullets: [
+      {
+        label: 'REDAÇÃO INLINE',
+        body: 'Detecte e mascare PII, credenciais e segredos corporativos no prompt antes da inferência.',
+      },
+      {
+        label: 'DEFESA CONTRA INJEÇÃO',
+        body: 'Bloqueia agentes manipulados para vazar dados por meio de injeções de prompt indiretas.',
+      },
+      {
+        label: 'LOGS DE COMPLIANCE',
+        body: 'Logs criptográficos e à prova de adulteração de todos os dados tocados pelos agentes, para auditorias de compliance.',
+      },
+    ],
   },
-  {
-    label: 'COMPLIANCE LOGS',
-    body: 'Cryptographic, tamper-evident logs of all data touched by agents for compliance audits.',
-  },
-];
+});
 
 export function DLPSlide() {
   return (
@@ -28,7 +57,7 @@ export function DLPSlide() {
             className="text-orange-400 text-xs sm:text-sm lg:text-base tracking-[0.4em] uppercase font-bold"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
-            Use Case · Data Loss Prevention
+            {T.eyebrow}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -37,8 +66,8 @@ export function DLPSlide() {
             className="text-[#fefefe] text-[36px] sm:text-[52px] lg:text-[72px] xl:text-[84px] leading-[0.95] tracking-tight uppercase mt-2"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
-            DATA LOSS PREVENTION{' '}
-            <span className="text-orange-400">(DLP).</span>
+            {T.h1Lead}{' '}
+            <span className="text-orange-400">{T.h1Accent}</span>
           </motion.h1>
         </div>
 
@@ -52,11 +81,11 @@ export function DLPSlide() {
               className="text-[#fefefe]/90 text-sm sm:text-base lg:text-lg leading-snug"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              Unicity sits directly in the transport flow, inspecting LLM payloads before they ever leave the corporate perimeter to prevent exfiltration.
+              {T.intro}
             </motion.p>
 
             <ul className="flex flex-col gap-3 lg:gap-4">
-              {bullets.map((b, i) => (
+              {T.bullets.map((b, i) => (
                 <motion.li
                   key={b.label}
                   initial={{ opacity: 0, x: -12 }}
