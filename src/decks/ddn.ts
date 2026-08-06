@@ -2,7 +2,7 @@
 // technical proof, durability, team/momentum, and a deal-shaped ask. Bespoke slides
 // live under src/slides/ddn/; the rest are reused single-source AOS/company slides.
 import { DdnIntroSlide } from '../slides/ddn/DdnIntroSlide';
-import { DdnTitleSlide } from '../slides/ddn/DdnTitleSlide';
+// import { DdnTitleSlide } from '../slides/ddn/DdnTitleSlide'; // hidden — redundant with the intro cover tagline
 import { DdnGapSlide } from '../slides/ddn/DdnGapSlide';
 import { DdnEvolutionSlide } from '../slides/ddn/DdnEvolutionSlide';
 import { WhoWeAreSlide } from '../slides/WhoWeAreSlide';
@@ -24,8 +24,8 @@ import { DdnCloseSlide } from '../slides/ddn/DdnCloseSlide';
 export const ddnDeck = [
   // — The deal —
   DdnIntroSlide,          // 1. Co-branded intro cover
-  DdnTitleSlide,          // 2. Title / thesis
-  DdnGapSlide,            // 3. The gap
+  // DdnTitleSlide,       // hidden — redundant with the intro cover tagline
+  DdnGapSlide,            // 2. The gap
   DdnEvolutionSlide,      // 4. Why now — agents recapitulating computing history
   // — Who Unicity is —
   WhoWeAreSlide,          // 5. Built by infrastructure veterans
