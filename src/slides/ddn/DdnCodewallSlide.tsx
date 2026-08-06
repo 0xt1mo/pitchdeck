@@ -39,7 +39,7 @@ export function DdnCodewallSlide() {
             className="text-[#fefefe] text-[30px] sm:text-[42px] lg:text-[56px] xl:text-[64px] leading-[1.0] tracking-tight uppercase max-w-6xl"
             style={{ fontFamily: ANTON }}
           >
-            The firewall for <span className="text-orange-400">agents of code.</span>
+            Codewall: <span className="text-orange-400">a firewall for coding agents.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}

@@ -36,8 +36,8 @@ export const ddnDeck = [
   // — Secure & enterprise-ready —
   DdnSecureSlide,         // 12. Secure by construction
   DdnAgenticFirewallSlide, // 13. Product: Agentic Firewall (SIF egress gate)
-  AosSecuritySlide,       // 14. It uses the controls you have (RBAC / SSO / SIEM)
-  DdnCodewallSlide,       // 15. Product: AOS Codewall
+  DdnCodewallSlide,       // 14. Product: Codewall (right after the firewall)
+  AosSecuritySlide,       // 15. It uses the controls you have (RBAC / SSO / SIEM)
   // — Durability —
   AosMergedSlide,         // 16. Operating systems beat harnesses
   // — Team & momentum —
