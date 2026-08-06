@@ -18,6 +18,7 @@ import { AosSecuritySlide } from '../slides/AosSecuritySlide';
 import { DdnCodewallSlide } from '../slides/ddn/DdnCodewallSlide';
 import { AosMergedSlide } from '../slides/AosMergedSlide';
 import { DdnCloseSlide } from '../slides/ddn/DdnCloseSlide';
+import { DdnAskSlide } from '../slides/ddn/DdnAskSlide';
 
 export const ddnDeck = [
   // — The deal —
@@ -39,7 +40,8 @@ export const ddnDeck = [
   AosSecuritySlide,       // 15. It uses the controls you have (RBAC / SSO / SIEM)
   // — Durability —
   AosMergedSlide,         // 16. Operating systems beat harnesses
-  // — Team —
-  WhoWeAreSlide,          // The team (moved to the end)
-  DdnCloseSlide,          // Close
+  // — Team & ask —
+  WhoWeAreSlide,          // The team
+  DdnCloseSlide,          // Close — "agents per node"
+  DdnAskSlide,            // The ask — $2M + product partnership
 ];
