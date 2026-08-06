@@ -26,6 +26,7 @@ export const ddnDeck = [
   // DdnTitleSlide,       // hidden — redundant with the intro cover tagline
   // DdnGapSlide,         // hidden — "The AI factory stops at the GPU"
   DdnEvolutionSlide,      // 2. Why now — agents recapitulating computing history
+  DdnGapSlide,            // 3. The AI factory stops at the GPU
   // — What AOS is (technical proof) —
   AutonomyStackSlide,     // 4. An OS built for autonomous agents
   // ArchitectureStackSlide, // hidden — "The secure OS for agents"
@@ -44,5 +45,4 @@ export const ddnDeck = [
   WhoWeAreSlide,          // The team
   DdnCloseSlide,          // Close — "agents per node"
   DdnAskSlide,            // The ask — $2M + product partnership
-  DdnGapSlide,            // The AI factory stops at the GPU (moved to the end)
 ];
