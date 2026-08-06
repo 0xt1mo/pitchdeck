@@ -13,7 +13,7 @@ const asks: { big: string; label: string; detail: React.ReactNode }[] = [
   {
     big: 'Product',
     label: 'Partnership',
-    detail: <>Co-build and co-sell — <span className="text-[#fefefe] font-bold">Unicity AOS on Alerix / Aleria infrastructure</span>, one reference architecture.</>,
+    detail: <>Co-build and co-sell — <span className="text-[#fefefe] font-bold">Unicity AOS on Alerix infrastructure</span>, one reference architecture.</>,
   },
 ];
 
