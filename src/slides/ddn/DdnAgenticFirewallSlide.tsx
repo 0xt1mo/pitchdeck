@@ -16,7 +16,7 @@ const caps: { label: string; color: string }[] = [
 export function DdnAgenticFirewallSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      <div className="relative z-10 h-full flex flex-col px-8 sm:px-12 lg:px-16 py-8 lg:py-9 gap-4 lg:gap-5">
+      <div className="relative z-10 h-full flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-8 lg:py-9 gap-5 lg:gap-7">
 
         {/* Header */}
         <div className="shrink-0">
@@ -69,11 +69,11 @@ export function DdnAgenticFirewallSlide() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="flex-1 min-h-0 flex justify-center items-center"
+          className="shrink-0 flex justify-center"
         >
           <div
-            className="relative w-full max-w-[880px] max-h-[46vh]"
-            style={{ aspectRatio: '1400 / 760' }}
+            className="relative w-full max-w-[860px]"
+            style={{ aspectRatio: '1400 / 760', maxHeight: '52vh' }}
           >
             {/* Zone labels */}
             <p
