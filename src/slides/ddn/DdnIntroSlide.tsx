@@ -40,18 +40,7 @@ export function DdnIntroSlide() {
 
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-8 sm:px-12 lg:px-16 gap-9 lg:gap-11">
 
-        {/* Eyebrow */}
-        <motion.p
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-[#fefefe]/45 text-xs sm:text-sm lg:text-base tracking-[0.34em] uppercase"
-          style={{ fontFamily: MONO }}
-        >
-          A stack partnership
-        </motion.p>
-
-        {/* Co-brand lockup: Unicity × DDN */}
+        {/* Co-brand lockup: Unicity × Alerix */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,12 +51,12 @@ export function DdnIntroSlide() {
 
           <span className="text-[#fefefe]/30 text-4xl sm:text-5xl lg:text-7xl font-light leading-none" style={{ fontFamily: MONO }}>×</span>
 
-          {/* DDN wordmark — placeholder. Swap for <img src="/ddn-logo.svg" .../> when the asset is dropped in. */}
+          {/* Alerix wordmark — placeholder. Swap for <img src="/alerix-logo.svg" .../> when the asset is dropped in. */}
           <span
-            className="text-[#fefefe] text-[56px] sm:text-[80px] lg:text-[128px] leading-none tracking-tight"
+            className="text-[#fefefe] text-[52px] sm:text-[72px] lg:text-[112px] leading-none tracking-tight"
             style={{ fontFamily: ANTON }}
           >
-            DDN
+            ALERIX
           </span>
         </motion.div>
 
@@ -79,15 +68,15 @@ export function DdnIntroSlide() {
           className="h-[2px] w-40 sm:w-56 lg:w-72 bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-center"
         />
 
-        {/* Tagline */}
+        {/* Unicity Labs descriptor — the hero statement */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.9, duration: 0.6 }}
-          className="text-[#fefefe]/70 text-base sm:text-lg lg:text-2xl leading-snug text-center max-w-4xl"
+          transition={{ delay: 0.95, duration: 0.6 }}
+          className="text-[#fefefe]/80 text-xl sm:text-3xl lg:text-[40px] xl:text-[46px] leading-[1.25] text-center max-w-5xl"
           style={{ fontFamily: MONO }}
         >
-          The <span className="text-orange-400">operating system</span> for the agentic AI factory.
+          <span className="text-[#fefefe]">Unicity Labs</span>, the product factory for Aleria AI, is building the infrastructure for <span className="text-orange-400">Autonomous AI</span>.
         </motion.p>
       </div>
     </div>
