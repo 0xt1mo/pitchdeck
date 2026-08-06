@@ -56,7 +56,7 @@ export function DdnRoiSlide() {
             className="text-[#fefefe] text-[26px] sm:text-[38px] lg:text-[50px] xl:text-[56px] leading-[1.0] tracking-tight uppercase max-w-6xl"
             style={{ fontFamily: ANTON }}
           >
-            Three multipliers — <span className="text-orange-400">on infrastructure you already sell.</span>
+            The economics — <span className="text-orange-400">three multipliers.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -100,17 +100,6 @@ export function DdnRoiSlide() {
             <span className="text-[#fefefe] font-bold">Runtime attach on every AI factory sold</span> — a workload that hammers your storage around the clock. <span className="text-[#fefefe] font-bold">The OS sells the infrastructure; the infrastructure ships the OS.</span>
           </p>
         </motion.div>
-
-        {/* Kicker */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.78, duration: 0.5 }}
-          className="shrink-0 text-lg sm:text-2xl lg:text-[28px] leading-tight pt-3"
-          style={{ fontFamily: ANTON, borderTop: '1px solid rgba(255,255,255,0.10)' }}
-        >
-          <span className="text-[#fefefe]/60">The agent era hasn't picked its pair yet.</span> <span className="text-orange-400">Let's be it.</span>
-        </motion.p>
       </div>
     </div>
   );
