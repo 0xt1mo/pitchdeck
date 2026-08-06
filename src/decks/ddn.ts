@@ -13,6 +13,9 @@ import { AosDensitySlide } from '../slides/AosDensitySlide';
 import { DdnStorageSlide } from '../slides/ddn/DdnStorageSlide';
 import { AosProofSystemSlide } from '../slides/AosProofSystemSlide';
 import { DdnSecureSlide } from '../slides/ddn/DdnSecureSlide';
+import { DeploymentModelHtmlSlide } from '../slides/DeploymentModelHtmlSlide';
+import { AosSecuritySlide } from '../slides/AosSecuritySlide';
+import { DdnCodewallSlide } from '../slides/ddn/DdnCodewallSlide';
 import { AosMergedSlide } from '../slides/AosMergedSlide';
 import { TractionSlide } from '../slides/TractionSlide';
 import { TeamSlide } from '../slides/TeamSlide';
@@ -27,17 +30,21 @@ export const ddnDeck = [
   // — Who Unicity is —
   WhoWeAreSlide,          // 5. Built by infrastructure veterans
   // — What AOS is (technical proof) —
-  AutonomyStackSlide,     // 5. An OS built for autonomous agents
-  ArchitectureStackSlide, // 6. The secure OS — full architecture
-  AosEngineSlide,         // 7. Everything else is a capsule
-  AosDensitySlide,        // 8. What a multi-tenant agent OS buys
-  DdnStorageSlide,        // 9. Agent-native storage
-  AosProofSystemSlide,    // 10. Unicity Proof System — verifiable execution
-  DdnSecureSlide,         // 11. Secure by construction
+  AutonomyStackSlide,     // 6. An OS built for autonomous agents
+  ArchitectureStackSlide, // 7. The secure OS — full architecture
+  AosEngineSlide,         // 8. Everything else is a capsule
+  AosDensitySlide,        // 9. What a multi-tenant agent OS buys
+  DdnStorageSlide,        // 10. Agent-native storage
+  AosProofSystemSlide,    // 11. Unicity Proof System — verifiable execution
+  // — Secure & enterprise-ready —
+  DdnSecureSlide,         // 12. Secure by construction
+  DeploymentModelHtmlSlide, // 13. Works inside your infrastructure (SIF egress gate)
+  AosSecuritySlide,       // 14. It uses the controls you have (RBAC / SSO / SIEM)
+  DdnCodewallSlide,       // 15. Product: AOS Codewall
   // — Durability —
-  AosMergedSlide,         // 12. Operating systems beat harnesses
+  AosMergedSlide,         // 16. Operating systems beat harnesses
   // — Team & momentum —
-  TractionSlide,          // 13. Traction
-  TeamSlide,              // 14. Team
-  DdnCloseSlide,          // 15. Close
+  TractionSlide,          // 17. Traction
+  TeamSlide,              // 18. Team
+  DdnCloseSlide,          // 19. Close
 ];
