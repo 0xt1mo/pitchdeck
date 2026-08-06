@@ -6,7 +6,6 @@ const MONO = "'Geist Mono', monospace";
 const ease = [0.16, 1, 0.3, 1] as const;
 
 const status: { k: string; v: string }[] = [
-  { k: 'Mainnet', v: 'August 2026' },
   { k: 'AOS live', v: 'aos.unicity.ai' },
   { k: 'Soft-launched', v: 'July 2026' },
 ];
@@ -70,20 +69,6 @@ export function DdnCloseSlide() {
               <span className="text-[#fefefe] text-sm lg:text-base">{s.v}</span>
             </div>
           ))}
-        </motion.div>
-
-        {/* The ask */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.6, ease }}
-          className="rounded-xl px-6 py-5 flex items-center gap-4"
-          style={{ border: '1px solid rgba(249,115,22,0.4)', background: 'rgba(249,115,22,0.04)' }}
-        >
-          <span className="text-orange-400 text-sm lg:text-base tracking-[0.16em] uppercase shrink-0" style={{ fontFamily: MONO }}>The ask</span>
-          <span className="text-[#fefefe] text-base lg:text-xl leading-snug" style={{ fontFamily: MONO }}>
-            A <span className="text-orange-400 font-bold">90-minute technical session</span> with Sven's team.
-          </span>
         </motion.div>
       </div>
     </div>
