@@ -17,7 +17,6 @@ import { DdnAgenticFirewallSlide } from '../slides/ddn/DdnAgenticFirewallSlide';
 import { AosSecuritySlide } from '../slides/AosSecuritySlide';
 import { DdnCodewallSlide } from '../slides/ddn/DdnCodewallSlide';
 import { AosMergedSlide } from '../slides/AosMergedSlide';
-import { TractionSlide } from '../slides/TractionSlide';
 import { DdnCloseSlide } from '../slides/ddn/DdnCloseSlide';
 
 export const ddnDeck = [
@@ -40,8 +39,7 @@ export const ddnDeck = [
   AosSecuritySlide,       // 15. It uses the controls you have (RBAC / SSO / SIEM)
   // — Durability —
   AosMergedSlide,         // 16. Operating systems beat harnesses
-  // — Team & momentum —
-  TractionSlide,          // Traction
+  // — Team —
   WhoWeAreSlide,          // The team (moved to the end)
   DdnCloseSlide,          // Close
 ];
