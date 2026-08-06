@@ -79,7 +79,7 @@ const T = tr({
         ],
       },
       {
-        role: 'Advisor',
+        role: 'Investor',
         lines: [
           'AI Visionary',
           'CEO, Aleria (UAE Sovereign AI)',
@@ -123,7 +123,7 @@ const T = tr({
         ],
       },
       {
-        role: 'Consultor',
+        role: 'Investidor',
         lines: [
           'Visionário de IA',
           'CEO, Aleria (IA Soberana dos Emirados Árabes Unidos)',
