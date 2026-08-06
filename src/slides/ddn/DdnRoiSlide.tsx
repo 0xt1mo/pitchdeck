@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
 
-const rois: { num: React.ReactNode; label: string; text: React.ReactNode; tail: string }[] = [
+const rois: { num: React.ReactNode; size?: string; label: string; text: React.ReactNode; tail: string }[] = [
   {
     num: <>1000<span className="text-orange-400">×</span></>,
     label: 'Runtime cost collapse',
@@ -17,7 +17,8 @@ const rois: { num: React.ReactNode; label: string; text: React.ReactNode; tail: 
     tail: 'a different cost curve, not a discount',
   },
   {
-    num: <>10–100<span className="text-orange-400">×</span></>,
+    num: <>Enterprise <span className="text-orange-400">ACV</span></>,
+    size: 'clamp(24px, 3vw, 40px)',
     label: 'Contract size',
     text: <>Audit produced by construction clears regulated procurement — EU AI Act, SOC 2, FSI, healthcare. That's <span className="text-[#fefefe] font-bold">the ACV gap between selling agents to dev teams and selling them to banks, hospitals, and governments.</span></>,
     tail: 'compliance with zero margin penalty',
@@ -78,7 +79,7 @@ export function DdnRoiSlide() {
               transition={{ delay: 0.32 + i * 0.12, duration: 0.5 }}
               className="flex-1 rounded-xl border border-white/10 bg-white/[0.02] border-t-[3px] border-t-orange-500 px-5 py-4 lg:px-6 lg:py-5 flex flex-col"
             >
-              <p className="text-[#fefefe] leading-none whitespace-nowrap" style={{ fontFamily: ANTON, fontSize: 'clamp(34px, 4.2vw, 52px)' }}>{r.num}</p>
+              <p className="text-[#fefefe] leading-none whitespace-nowrap" style={{ fontFamily: ANTON, fontSize: r.size ?? 'clamp(34px, 4.2vw, 52px)' }}>{r.num}</p>
               <p className="text-orange-400 text-[10.5px] lg:text-xs tracking-[0.16em] uppercase mt-2.5 mb-2.5" style={{ fontFamily: MONO }}>{r.label}</p>
               <p className="text-[#fefefe]/65 text-[12.5px] lg:text-[13.5px] leading-snug flex-1" style={{ fontFamily: MONO }}>{r.text}</p>
               <p className="text-[#fefefe]/40 text-[10px] lg:text-[11px] leading-snug mt-3 pt-2.5" style={{ fontFamily: MONO, borderTop: '1px solid rgba(255,255,255,0.10)' }}>{r.tail}</p>
