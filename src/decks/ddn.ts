@@ -11,7 +11,7 @@ import { AutonomyStackSlide } from '../slides/AutonomyStackSlide';
 import { AosEngineSlide } from '../slides/AosEngineSlide';
 import { AosDensitySlide } from '../slides/AosDensitySlide';
 import { DdnStorageSlide } from '../slides/ddn/DdnStorageSlide';
-import { AosProofSystemSlide } from '../slides/AosProofSystemSlide';
+// import { AosProofSystemSlide } from '../slides/AosProofSystemSlide'; // hidden
 import { DdnSecureSlide } from '../slides/ddn/DdnSecureSlide';
 import { DdnAgenticFirewallSlide } from '../slides/ddn/DdnAgenticFirewallSlide';
 import { AosSecuritySlide } from '../slides/AosSecuritySlide';
@@ -32,7 +32,7 @@ export const ddnDeck = [
   AosDensitySlide,        // 5. What a multi-tenant agent OS buys
   AosEngineSlide,         // 6. Everything else is a capsule
   DdnStorageSlide,        // 7. Agent-native storage
-  AosProofSystemSlide,    // 11. Unicity Proof System — verifiable execution
+  // AosProofSystemSlide, // hidden — "Unicity Proof System — verifiable execution"
   // — Secure & enterprise-ready —
   DdnSecureSlide,         // 12. Secure by construction
   DdnAgenticFirewallSlide, // 13. Product: Agentic Firewall (SIF egress gate)
