@@ -4,6 +4,7 @@
 import { DdnIntroSlide } from '../slides/ddn/DdnIntroSlide';
 import { DdnTitleSlide } from '../slides/ddn/DdnTitleSlide';
 import { DdnGapSlide } from '../slides/ddn/DdnGapSlide';
+import { DdnEvolutionSlide } from '../slides/ddn/DdnEvolutionSlide';
 import { WhoWeAreSlide } from '../slides/WhoWeAreSlide';
 import { AutonomyStackSlide } from '../slides/AutonomyStackSlide';
 import { ArchitectureStackSlide } from '../slides/ArchitectureStackSlide';
@@ -22,8 +23,9 @@ export const ddnDeck = [
   DdnIntroSlide,          // 1. Co-branded intro cover
   DdnTitleSlide,          // 2. Title / thesis
   DdnGapSlide,            // 3. The gap
+  DdnEvolutionSlide,      // 4. Why now — agents recapitulating computing history
   // — Who Unicity is —
-  WhoWeAreSlide,          // 4. Built by infrastructure veterans
+  WhoWeAreSlide,          // 5. Built by infrastructure veterans
   // — What AOS is (technical proof) —
   AutonomyStackSlide,     // 5. An OS built for autonomous agents
   ArchitectureStackSlide, // 6. The secure OS — full architecture
