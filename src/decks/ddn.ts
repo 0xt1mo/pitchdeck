@@ -19,6 +19,7 @@ import { DdnCodewallSlide } from '../slides/ddn/DdnCodewallSlide';
 import { AosMergedSlide } from '../slides/AosMergedSlide';
 import { DdnCloseSlide } from '../slides/ddn/DdnCloseSlide';
 import { DdnAskSlide } from '../slides/ddn/DdnAskSlide';
+import { DdnRoiSlide } from '../slides/ddn/DdnRoiSlide';
 import { DdnUpsideSlide } from '../slides/ddn/DdnUpsideSlide';
 import { DdnThankYouSlide } from '../slides/ddn/DdnThankYouSlide';
 
@@ -47,6 +48,7 @@ export const ddnDeck = [
   WhoWeAreSlide,          // The team
   DdnCloseSlide,          // Close — "agents per node"
   DdnAskSlide,            // The ask — $2M + product partnership
+  DdnRoiSlide,            // The upside, in numbers (ROI multipliers)
   DdnUpsideSlide,         // The upside — infrastructure + OS pairs (inspire)
   DdnThankYouSlide,       // Thank you + contact
 ];

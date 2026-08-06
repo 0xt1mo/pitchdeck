@@ -1,0 +1,116 @@
+import { motion } from 'framer-motion';
+
+const ANTON = "'Anton', sans-serif";
+const MONO = "'Geist Mono', monospace";
+
+const rois: { num: React.ReactNode; label: string; text: React.ReactNode; tail: string }[] = [
+  {
+    num: <>1000<span className="text-orange-400">×</span></>,
+    label: 'Runtime cost collapse',
+    text: <>Capsules on a shared kernel replace one warm container per agent — <span className="text-[#fefefe] font-bold">cost per agent falls by orders of magnitude</span>, and event-driven wake takes idle burn to ~zero. In your units: <span className="text-[#fefefe] font-bold">lower cost per token, more tokens per watt.</span></>,
+    tail: 'measured: 54× faster launch than Docker · ms to first token, held at runtime',
+  },
+  {
+    num: <><span className="text-[0.72em]">TB→GB</span><span className="text-orange-400">/day</span></>,
+    label: 'Storage economics inverted',
+    text: <>Content-addressed dedup stores <span className="text-[#fefefe] font-bold">novel bytes, not gross bytes.</span> 10k runs/day checkpointing 500&nbsp;MB is 5&nbsp;TB written naively — gigabytes of actual new content. <span className="text-[#fefefe] font-bold">Unlimited snapshots, full history, instant rollback</span> ship as free features.</>,
+    tail: 'a different cost curve, not a discount',
+  },
+  {
+    num: <>10–100<span className="text-orange-400">×</span></>,
+    label: 'Contract size',
+    text: <>Audit produced by construction clears regulated procurement — EU AI Act, SOC 2, FSI, healthcare. That's <span className="text-[#fefefe] font-bold">the ACV gap between selling agents to dev teams and selling them to banks, hospitals, and governments.</span></>,
+    tail: 'compliance with zero margin penalty',
+  },
+];
+
+export function DdnRoiSlide() {
+  return (
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '64px 64px',
+        }}
+      />
+      <div className="relative z-10 h-full flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-8 lg:py-9 gap-4 lg:gap-5">
+
+        {/* Header */}
+        <div className="shrink-0">
+          <motion.p
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-orange-400 text-xs lg:text-sm tracking-[0.22em] uppercase mb-2.5"
+            style={{ fontFamily: MONO }}
+          >
+            Unicity AOS × Alerix · The upside, in numbers
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.06, duration: 0.6 }}
+            className="text-[#fefefe] text-[26px] sm:text-[38px] lg:text-[50px] xl:text-[56px] leading-[1.0] tracking-tight uppercase max-w-6xl"
+            style={{ fontFamily: ANTON }}
+          >
+            Three multipliers — <span className="text-orange-400">on infrastructure you already sell.</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="mt-2.5 text-[#fefefe]/65 text-sm lg:text-base leading-snug max-w-5xl"
+            style={{ fontFamily: MONO }}
+          >
+            The partnership economics aren't a new market bet — <span className="text-[#fefefe] font-bold">existing customers, existing hardware, existing deals, each one multiplied.</span>
+          </motion.p>
+        </div>
+
+        {/* ROI blocks */}
+        <div className="flex gap-4 lg:gap-5 items-stretch">
+          {rois.map((r, i) => (
+            <motion.div
+              key={r.label}
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.32 + i * 0.12, duration: 0.5 }}
+              className="flex-1 rounded-xl border border-white/10 bg-white/[0.02] border-t-[3px] border-t-orange-500 px-5 py-4 lg:px-6 lg:py-5 flex flex-col"
+            >
+              <p className="text-[#fefefe] leading-none whitespace-nowrap" style={{ fontFamily: ANTON, fontSize: 'clamp(34px, 4.2vw, 52px)' }}>{r.num}</p>
+              <p className="text-orange-400 text-[10.5px] lg:text-xs tracking-[0.16em] uppercase mt-2.5 mb-2.5" style={{ fontFamily: MONO }}>{r.label}</p>
+              <p className="text-[#fefefe]/65 text-[12.5px] lg:text-[13.5px] leading-snug flex-1" style={{ fontFamily: MONO }}>{r.text}</p>
+              <p className="text-[#fefefe]/40 text-[10px] lg:text-[11px] leading-snug mt-3 pt-2.5" style={{ fontFamily: MONO, borderTop: '1px solid rgba(255,255,255,0.10)' }}>{r.tail}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* What Alerix books */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.65, duration: 0.5 }}
+          className="shrink-0 rounded-xl px-6 py-3.5 flex items-center gap-5"
+          style={{ border: '1px solid rgba(249,115,22,0.4)', background: 'rgba(249,115,22,0.04)' }}
+        >
+          <p className="text-orange-400 text-[11px] lg:text-xs tracking-[0.16em] uppercase shrink-0 leading-snug" style={{ fontFamily: MONO }}>What Alerix<br />books</p>
+          <p className="text-[#fefefe]/80 text-[12.5px] lg:text-sm leading-snug" style={{ fontFamily: MONO }}>
+            <span className="text-[#fefefe] font-bold">Runtime attach on every AI factory sold</span> — a workload that consumes the data layer around the clock: checkpoint, provenance and state traffic all land on your storage. <span className="text-[#fefefe] font-bold">The OS sells the infrastructure; the infrastructure ships the OS.</span>
+          </p>
+        </motion.div>
+
+        {/* Kicker */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.78, duration: 0.5 }}
+          className="shrink-0 text-lg sm:text-2xl lg:text-[28px] leading-tight pt-3"
+          style={{ fontFamily: ANTON, borderTop: '1px solid rgba(255,255,255,0.10)' }}
+        >
+          <span className="text-[#fefefe]/60">The agent era hasn't picked its pair yet.</span> <span className="text-orange-400">Let's be it.</span>
+        </motion.p>
+      </div>
+    </div>
+  );
+}
