@@ -95,7 +95,7 @@ export function AosDensitySlide() {
             initial={{ opacity: 0, y: -14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-[#fefefe] text-[30px] sm:text-[42px] lg:text-[56px] leading-[1.0] tracking-tight uppercase max-w-6xl"
+            className="text-[#fefefe] text-[32px] sm:text-[44px] lg:text-[60px] xl:text-[70px] leading-[1.0] tracking-tight uppercase max-w-6xl"
             style={{ fontFamily: ANTON }}
           >
             {T.headLead} <span className="text-orange-400">{T.headAccent}</span> {T.headTail}
