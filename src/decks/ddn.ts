@@ -17,7 +17,7 @@ import { DdnAgenticFirewallSlide } from '../slides/ddn/DdnAgenticFirewallSlide';
 import { AosSecuritySlide } from '../slides/AosSecuritySlide';
 import { DdnCodewallSlide } from '../slides/ddn/DdnCodewallSlide';
 import { AosMergedSlide } from '../slides/AosMergedSlide';
-import { DdnCloseSlide } from '../slides/ddn/DdnCloseSlide';
+// import { DdnCloseSlide } from '../slides/ddn/DdnCloseSlide'; // hidden
 import { DdnAskSlide } from '../slides/ddn/DdnAskSlide';
 import { DdnRoiSlide } from '../slides/ddn/DdnRoiSlide';
 import { DdnUpsideSlide } from '../slides/ddn/DdnUpsideSlide';
@@ -46,7 +46,7 @@ export const ddnDeck = [
   AosMergedSlide,         // 16. Operating systems beat harnesses
   // — Team & ask —
   WhoWeAreSlide,          // The team
-  DdnCloseSlide,          // Close — "agents per node"
+  // DdnCloseSlide,       // hidden — Close "agents per node"
   DdnAskSlide,            // The ask — $2M + product partnership
   DdnRoiSlide,            // The upside, in numbers (ROI multipliers)
   DdnUpsideSlide,         // The upside — infrastructure + OS pairs (inspire)
