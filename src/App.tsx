@@ -21,6 +21,7 @@ import { UnbundledPayoffSlide } from './slides/UnbundledPayoffSlide';
 import { RetrofitSlide } from './slides/RetrofitSlide';
 // import { CompetitionSlide } from './slides/CompetitionSlide'; // hidden — appendix
 import { MarketSlide } from './slides/MarketSlide';
+import { MarketBlockchainSlide } from './slides/MarketBlockchainSlide';
 // import { BusinessModelPricingSlide } from './slides/BusinessModelPricingSlide'; // hidden
 import { CompetitionMinimalSlide } from './slides/CompetitionMinimalSlide';
 import { AosThesisSlide } from './slides/AosThesisSlide';
@@ -49,6 +50,7 @@ import { IntelligentRoutingSlide } from './slides/IntelligentRoutingSlide';
 import { GoToMarketSlide } from './slides/GoToMarketSlide';
 import { ProjectionsSlide } from './slides/ProjectionsSlide';
 import { TokenSlide } from './slides/TokenSlide';
+import { TokenRebuildSlide } from './slides/TokenRebuildSlide';
 import { BusinessModelSlide } from './slides/BusinessModelSlide';
 import { IntellectualArcSlide } from './slides/IntellectualArcSlide';
 // import { AppendixDividerSlide } from './slides/AppendixDividerSlide'; // hidden — appendix
@@ -79,7 +81,8 @@ const slides = [
   CompanyIntroCoverSlide,  // 1b. Cover — COMPANY INTRO · "Building verifiable AI"
   IntroSlide,              // 2.  Vision — autonomous AI needs an internet built for machines
   ProblemSlide,            // 3.  The Fourth Rebuild of Compute
-  MarketSlide,             // 4.  Market Opportunity
+  MarketSlide,             // 4.  Market Opportunity (agent economy — no blockchain)
+  MarketBlockchainSlide,   // 4b. Market Opportunity (blockchain framing)
   AutonomyStackSlide,      // 4.  Product Stack — Protocol Stack for the Agentic Internet
   AosMergedSlide,          // 5.  OS beats harnesses (merged table + primitives footer)
   CompetitionMinimalSlide, // 6.  Runtime beneath — we are the runtime beneath them
@@ -95,6 +98,7 @@ const slides = [
   TeamSlide,               // 14. Team — right before the ask
   InvestmentSlide,         // 15. The Investment — seed extension
   TokenSlide,              // 16. Tokenomics
+  TokenRebuildSlide,       // 16b. Tokenomics (rebuild — agent-count demand + allocation)
   VerifiableRoadmapSlide,  // 17. Where this goes — roadmap to Verifiable AI
   ThankYouChatSlide,       // 18. Thank You — contact + X + LinkedIn
   // ── Dropped from this order (kept for reference) ──
