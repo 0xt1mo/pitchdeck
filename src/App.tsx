@@ -26,6 +26,7 @@ import { MarketBlockchainSlide } from './slides/MarketBlockchainSlide';
 import { CompetitionMinimalSlide } from './slides/CompetitionMinimalSlide';
 import { AosThesisSlide } from './slides/AosThesisSlide';
 import { AosMergedSlide } from './slides/AosMergedSlide';
+import { AosDensitySlide } from './slides/AosDensitySlide';
 import { AosNotMetaphorSlide } from './slides/AosNotMetaphorSlide';
 // import { DefensibilitySlide } from './slides/DefensibilitySlide'; // hidden
 import { ResourcesSlide } from './slides/ResourcesSlide';
@@ -85,6 +86,7 @@ const slides = [
   MarketBlockchainSlide,   // 4b. Market Opportunity (blockchain framing)
   AutonomyStackSlide,      // 4.  Product Stack — Protocol Stack for the Agentic Internet
   AosMergedSlide,          // 5.  OS beats harnesses (merged table + primitives footer)
+  AosDensitySlide,         // 5b. Runtime economics — capsule density vs containers
   CompetitionMinimalSlide, // 6.  Runtime beneath — we are the runtime beneath them
   BearerTokensSlide,       // 7.  Blockchain — the OS has an integrated blockchain
   GtmEditionsSlide,        // 8.  Go To Market — Community / Enterprise / Industry Solutions
