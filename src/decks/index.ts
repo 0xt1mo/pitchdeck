@@ -1,5 +1,6 @@
 import { investorDeck } from './investor';
 import { corporateDeck } from './corporate';
+import { ddnDeck } from './ddn';
 import { aosDeck } from './aos';
 import { codewallDeck } from './codewall';
 import { salesdeckDeck } from './salesdeck';
@@ -13,6 +14,7 @@ import { tetherDeck } from './tether';
 export const decks = {
   investor: investorDeck,
   corporate: corporateDeck,
+  ddn: ddnDeck,
   aos: aosDeck,
   codewall: codewallDeck,
   salesdeck: salesdeckDeck,
