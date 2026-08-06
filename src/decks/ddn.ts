@@ -7,13 +7,13 @@ import { DdnGapSlide } from '../slides/ddn/DdnGapSlide';
 import { DdnEvolutionSlide } from '../slides/ddn/DdnEvolutionSlide';
 import { WhoWeAreSlide } from '../slides/WhoWeAreSlide';
 import { AutonomyStackSlide } from '../slides/AutonomyStackSlide';
-import { ArchitectureStackSlide } from '../slides/ArchitectureStackSlide';
+// import { ArchitectureStackSlide } from '../slides/ArchitectureStackSlide'; // hidden
 import { AosEngineSlide } from '../slides/AosEngineSlide';
 import { AosDensitySlide } from '../slides/AosDensitySlide';
 import { DdnStorageSlide } from '../slides/ddn/DdnStorageSlide';
 import { AosProofSystemSlide } from '../slides/AosProofSystemSlide';
 import { DdnSecureSlide } from '../slides/ddn/DdnSecureSlide';
-import { DeploymentModelHtmlSlide } from '../slides/DeploymentModelHtmlSlide';
+import { DdnAgenticFirewallSlide } from '../slides/ddn/DdnAgenticFirewallSlide';
 import { AosSecuritySlide } from '../slides/AosSecuritySlide';
 import { DdnCodewallSlide } from '../slides/ddn/DdnCodewallSlide';
 import { AosMergedSlide } from '../slides/AosMergedSlide';
@@ -31,14 +31,14 @@ export const ddnDeck = [
   WhoWeAreSlide,          // 5. Built by infrastructure veterans
   // — What AOS is (technical proof) —
   AutonomyStackSlide,     // 6. An OS built for autonomous agents
-  ArchitectureStackSlide, // 7. The secure OS — full architecture
+  // ArchitectureStackSlide, // hidden — "The secure OS for agents"
   AosEngineSlide,         // 8. Everything else is a capsule
   AosDensitySlide,        // 9. What a multi-tenant agent OS buys
   DdnStorageSlide,        // 10. Agent-native storage
   AosProofSystemSlide,    // 11. Unicity Proof System — verifiable execution
   // — Secure & enterprise-ready —
   DdnSecureSlide,         // 12. Secure by construction
-  DeploymentModelHtmlSlide, // 13. Works inside your infrastructure (SIF egress gate)
+  DdnAgenticFirewallSlide, // 13. Product: Agentic Firewall (SIF egress gate)
   AosSecuritySlide,       // 14. It uses the controls you have (RBAC / SSO / SIEM)
   DdnCodewallSlide,       // 15. Product: AOS Codewall
   // — Durability —
