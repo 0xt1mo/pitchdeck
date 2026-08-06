@@ -4,7 +4,6 @@ import { AosDensitySlide } from '../slides/AosDensitySlide';
 import { AosMergedSlide } from '../slides/AosMergedSlide';
 import { AutonomyStackSlide } from '../slides/AutonomyStackSlide';
 import { BearerTokensSlide } from '../slides/BearerTokensSlide';
-import { CompanyIntroCoverSlide } from '../slides/CompanyIntroCoverSlide';
 import { CompetitionMinimalSlide } from '../slides/CompetitionMinimalSlide';
 import { ConciergeSlide } from '../slides/ConciergeSlide';
 import { CoverSlide } from '../slides/CoverSlide';
@@ -26,7 +25,6 @@ import { VerifiableRoadmapSlide } from '../slides/VerifiableRoadmapSlide';
 
 export const investorDeck = [
   CoverSlide,
-  CompanyIntroCoverSlide,
   IntroSlide,
   ProblemSlide,
   MarketSlide,
