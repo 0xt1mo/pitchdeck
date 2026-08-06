@@ -29,9 +29,9 @@ export const ddnDeck = [
   // — What AOS is (technical proof) —
   AutonomyStackSlide,     // 4. An OS built for autonomous agents
   // ArchitectureStackSlide, // hidden — "The secure OS for agents"
-  AosEngineSlide,         // 8. Everything else is a capsule
-  AosDensitySlide,        // 9. What a multi-tenant agent OS buys
-  DdnStorageSlide,        // 10. Agent-native storage
+  AosDensitySlide,        // 5. What a multi-tenant agent OS buys
+  AosEngineSlide,         // 6. Everything else is a capsule
+  DdnStorageSlide,        // 7. Agent-native storage
   AosProofSystemSlide,    // 11. Unicity Proof System — verifiable execution
   // — Secure & enterprise-ready —
   DdnSecureSlide,         // 12. Secure by construction
