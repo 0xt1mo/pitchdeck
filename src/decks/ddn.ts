@@ -1,22 +1,41 @@
-// Deck config — DDN partnership. Bespoke 7-slide partnership pitch (partnership thesis
-// up front, then just enough proof, close on deal-shaped ask). New slides under
-// src/slides/ddn/; reuses AosDensitySlide (slide 4) and AosMergedSlide (slide 6).
+// Deck config — DDN partnership. Deal up front, then Unicity credibility, the AOS
+// technical proof, durability, team/momentum, and a deal-shaped ask. Bespoke slides
+// live under src/slides/ddn/; the rest are reused single-source AOS/company slides.
 import { DdnIntroSlide } from '../slides/ddn/DdnIntroSlide';
 import { DdnTitleSlide } from '../slides/ddn/DdnTitleSlide';
 import { DdnGapSlide } from '../slides/ddn/DdnGapSlide';
+import { WhoWeAreSlide } from '../slides/WhoWeAreSlide';
+import { AutonomyStackSlide } from '../slides/AutonomyStackSlide';
+import { ArchitectureStackSlide } from '../slides/ArchitectureStackSlide';
+import { AosEngineSlide } from '../slides/AosEngineSlide';
 import { AosDensitySlide } from '../slides/AosDensitySlide';
 import { DdnStorageSlide } from '../slides/ddn/DdnStorageSlide';
+import { AosProofSystemSlide } from '../slides/AosProofSystemSlide';
 import { DdnSecureSlide } from '../slides/ddn/DdnSecureSlide';
 import { AosMergedSlide } from '../slides/AosMergedSlide';
+import { TractionSlide } from '../slides/TractionSlide';
+import { TeamSlide } from '../slides/TeamSlide';
 import { DdnCloseSlide } from '../slides/ddn/DdnCloseSlide';
 
 export const ddnDeck = [
-  DdnIntroSlide,       // 1. Co-branded intro cover — Unicity Labs × DDN
-  DdnTitleSlide,       // 2. Title / thesis
-  DdnGapSlide,         // 3. The gap
-  AosDensitySlide,     // 4. What a multi-tenant agent OS buys (reused)
-  DdnStorageSlide,     // 5. Agent-native storage
-  DdnSecureSlide,      // 6. Secure by construction
-  AosMergedSlide,      // 7. Operating systems beat harnesses (reused)
-  DdnCloseSlide,       // 8. Close
+  // — The deal —
+  DdnIntroSlide,          // 1. Co-branded intro cover
+  DdnTitleSlide,          // 2. Title / thesis
+  DdnGapSlide,            // 3. The gap
+  // — Who Unicity is —
+  WhoWeAreSlide,          // 4. Built by infrastructure veterans
+  // — What AOS is (technical proof) —
+  AutonomyStackSlide,     // 5. An OS built for autonomous agents
+  ArchitectureStackSlide, // 6. The secure OS — full architecture
+  AosEngineSlide,         // 7. Everything else is a capsule
+  AosDensitySlide,        // 8. What a multi-tenant agent OS buys
+  DdnStorageSlide,        // 9. Agent-native storage
+  AosProofSystemSlide,    // 10. Unicity Proof System — verifiable execution
+  DdnSecureSlide,         // 11. Secure by construction
+  // — Durability —
+  AosMergedSlide,         // 12. Operating systems beat harnesses
+  // — Team & momentum —
+  TractionSlide,          // 13. Traction
+  TeamSlide,              // 14. Team
+  DdnCloseSlide,          // 15. Close
 ];
