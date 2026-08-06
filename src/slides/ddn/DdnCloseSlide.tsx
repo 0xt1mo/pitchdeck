@@ -53,7 +53,7 @@ export function DdnCloseSlide() {
           style={{ fontFamily: ANTON }}
         >
           The next benchmark isn't <span className="text-[#fefefe]/45">GB/s to the GPU.</span><br />
-          It's <span className="text-orange-400">agents per node.</span>
+          It's <span className="text-orange-400">agents per node & time to first token.</span>
         </motion.h1>
 
         {/* Status line */}

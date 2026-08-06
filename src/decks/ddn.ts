@@ -3,7 +3,7 @@
 // live under src/slides/ddn/; the rest are reused single-source AOS/company slides.
 import { DdnIntroSlide } from '../slides/ddn/DdnIntroSlide';
 // import { DdnTitleSlide } from '../slides/ddn/DdnTitleSlide'; // hidden — redundant with the intro cover tagline
-// import { DdnGapSlide } from '../slides/ddn/DdnGapSlide'; // hidden
+import { DdnGapSlide } from '../slides/ddn/DdnGapSlide';
 import { DdnEvolutionSlide } from '../slides/ddn/DdnEvolutionSlide';
 import { WhoWeAreSlide } from '../slides/WhoWeAreSlide';
 import { AutonomyStackSlide } from '../slides/AutonomyStackSlide';
@@ -44,4 +44,5 @@ export const ddnDeck = [
   WhoWeAreSlide,          // The team
   DdnCloseSlide,          // Close — "agents per node"
   DdnAskSlide,            // The ask — $2M + product partnership
+  DdnGapSlide,            // The AI factory stops at the GPU (moved to the end)
 ];
