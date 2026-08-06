@@ -40,7 +40,7 @@ export function DdnCloseSlide() {
         >
           <span className="text-orange-400">Unicity AOS</span>
           <span className="text-[#fefefe]/30 mx-2.5">×</span>
-          DDN
+          Alerix
         </motion.div>
 
         {/* Kicker */}

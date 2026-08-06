@@ -60,7 +60,7 @@ export function DdnSecureSlide() {
             className="text-orange-400 text-xs lg:text-sm tracking-[0.22em] uppercase mb-3"
             style={{ fontFamily: MONO }}
           >
-            Unicity AOS × DDN · Secure AI factories
+            Unicity AOS × Alerix · Secure AI factories
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -12 }}

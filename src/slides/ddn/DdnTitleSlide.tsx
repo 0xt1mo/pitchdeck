@@ -39,7 +39,7 @@ export function DdnTitleSlide() {
           >
             <span className="text-orange-400">Unicity AOS</span>
             <span className="text-[#fefefe]/30 mx-2.5">×</span>
-            DDN
+            Alerix
           </motion.div>
 
           <motion.h1
@@ -118,9 +118,9 @@ export function DdnTitleSlide() {
               <p className="text-[#fefefe]/35 text-[11px] lg:text-xs mt-1" style={{ fontFamily: MONO }}>accelerated infrastructure</p>
             </div>
 
-            {/* DDN base */}
+            {/* Alerix base */}
             <div className="rounded-lg px-5 py-4 border border-white/10 bg-white/[0.04]">
-              <p className="text-[#fefefe]/60 text-xs lg:text-[13px] tracking-[0.12em] uppercase" style={{ fontFamily: MONO }}>DDN data intelligence</p>
+              <p className="text-[#fefefe]/60 text-xs lg:text-[13px] tracking-[0.12em] uppercase" style={{ fontFamily: MONO }}>Alerix data intelligence</p>
               <p className="text-[#fefefe]/35 text-[11px] lg:text-xs mt-1" style={{ fontFamily: MONO }}>storage → GPU · data-to-compute, solved</p>
             </div>
 

@@ -45,7 +45,7 @@ const eras: Era[] = [
     now: true,
     fact: <><span className="text-[#fefefe] font-bold">10,000s of concurrent agents.</span> Needs an OS, not a box — density, isolation, audit by construction.</>,
     verdict: [
-      { tone: 'proved', text: 'this layer: Unicity AOS × DDN' },
+      { tone: 'proved', text: 'this layer: Unicity AOS × Alerix' },
       { tone: 'proved', text: 'the homebrew demand, made safe to sell' },
     ],
   },
@@ -110,7 +110,7 @@ export function DdnEvolutionSlide() {
             className="text-orange-400 text-xs lg:text-sm tracking-[0.22em] uppercase mb-3"
             style={{ fontFamily: MONO }}
           >
-            Unicity AOS × DDN · Why now
+            Unicity AOS × Alerix · Why now
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -10 }}

@@ -40,7 +40,7 @@ export function DdnStorageSlide() {
             className="text-orange-400 text-xs lg:text-sm tracking-[0.22em] uppercase mb-3"
             style={{ fontFamily: MONO }}
           >
-            Unicity AOS × DDN · Agent-native storage
+            Unicity AOS × Alerix · Agent-native storage
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -12 }}
@@ -122,7 +122,7 @@ export function DdnStorageSlide() {
           style={{ border: '1px solid rgba(249,115,22,0.4)', background: 'rgba(249,115,22,0.04)' }}
         >
           <p className="text-[#fefefe]/85 text-sm lg:text-base leading-snug" style={{ fontFamily: MONO }}>
-            <span className="text-orange-400 font-bold">Your category, extended:</span> the data-intelligence discipline you built for training data, now applied to agent runtime state — <span className="text-[#fefefe] font-bold">on top of DDN's layer, not beside it.</span>
+            <span className="text-orange-400 font-bold">Your category, extended:</span> the data-intelligence discipline you built for training data, now applied to agent runtime state — <span className="text-[#fefefe] font-bold">on top of Alerix's layer, not beside it.</span>
           </p>
         </motion.div>
       </div>

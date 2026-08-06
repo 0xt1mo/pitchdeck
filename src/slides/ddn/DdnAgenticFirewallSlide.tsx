@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const mono = "'Geist Mono', monospace";
 const display = "'Anton', sans-serif";
 
-// DDN variant of the deployment/SIF diagram — retitled "Product: Agentic Firewall"
+// Alerix variant of the deployment/SIF diagram — retitled "Product: Agentic Firewall"
 // and scaled down from the shared DeploymentModelHtmlSlide.
 const caps: { label: string; color: string }[] = [
   { label: 'DLP', color: '255,80,80' },

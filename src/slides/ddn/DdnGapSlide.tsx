@@ -10,7 +10,7 @@ const layers: { name: string; status: string; kind: 'workload' | 'gap' | 'solved
   { name: 'Workload: 10,000 production agents', status: 'concurrent · bursty · regulated', kind: 'workload' },
   { name: 'Agent runtime — ?', status: 'unowned layer', kind: 'gap' },
   { name: 'GPU compute', status: 'solved', kind: 'solved' },
-  { name: 'DDN data intelligence', status: 'solved', kind: 'solved' },
+  { name: 'Alerix data intelligence', status: 'solved', kind: 'solved' },
 ];
 
 const eras: { label: string; kind: 'old' | 'new'; body: React.ReactNode }[] = [
@@ -54,7 +54,7 @@ export function DdnGapSlide() {
             className="text-orange-400 text-xs lg:text-sm tracking-[0.22em] uppercase mb-3"
             style={{ fontFamily: MONO }}
           >
-            Unicity AOS × DDN · The gap
+            Unicity AOS × Alerix · The gap
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -12 }}
@@ -72,7 +72,7 @@ export function DdnGapSlide() {
             className="mt-3 text-[#fefefe]/70 text-base lg:text-lg leading-relaxed max-w-5xl"
             style={{ fontFamily: MONO }}
           >
-            Enterprises are moving from agent pilots to production. DDN solved data-to-GPU. <span className="text-[#fefefe] font-bold">Nobody has solved what runs on top of them when the workload is 10,000 agents, not one training job.</span>
+            Enterprises are moving from agent pilots to production. Alerix solved data-to-GPU. <span className="text-[#fefefe] font-bold">Nobody has solved what runs on top of them when the workload is 10,000 agents, not one training job.</span>
           </motion.p>
         </div>
 
