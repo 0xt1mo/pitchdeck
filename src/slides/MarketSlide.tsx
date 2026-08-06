@@ -1,15 +1,16 @@
 import { motion } from 'framer-motion';
+import { tr } from '../i18n';
 
 const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
 
+// Brand names, stats and attributed quotes stay identical across languages.
 const cards = [
   {
     org: 'NVIDIA',
     quote: '“In ten years, we will have 75,000 employees working with 7.5 million agents.”',
     cite: '— Jensen Huang, Nvidia GTC, March 2026',
     stat: '100:1',
-    statLabel: 'agents-to-humans ratio at scale',
     accent: false,
   },
   {
@@ -17,7 +18,6 @@ const cards = [
     quote: '“By 2028, the average Fortune 500 will run 150,000+ AI agents, up from fewer than 15 today. Only 13% have adequate governance.”',
     cite: '— Max Goss, Gartner, April 2026',
     stat: '10,000×',
-    statLabel: 'agent growth in 3 years · 87% ungoverned',
     accent: true,
   },
   {
@@ -25,10 +25,33 @@ const cards = [
     quote: '“Agentic AI could add $4.4 trillion to global productivity by 2030.”',
     cite: '— McKinsey Global Institute, 2025',
     stat: '$4.4T',
-    statLabel: 'global agent economy by 2030',
     accent: false,
   },
 ];
+
+// Only these strings swap by language — layout below is shared.
+const T = tr({
+  en: {
+    headLead: 'Market Opportunity:',
+    headAccent: 'A trillion-dollar rebuild.',
+    statLabels: [
+      'agents-to-humans ratio at scale',
+      'agent growth in 3 years · 87% ungoverned',
+      'global agent economy by 2030',
+    ],
+    footer: 'Scale · Gap · Size',
+  },
+  pt: {
+    headLead: 'Oportunidade de Mercado:',
+    headAccent: 'Uma reconstrução de trilhões de dólares.',
+    statLabels: [
+      'proporção de agentes para humanos em escala',
+      'crescimento de agentes em 3 anos · 87% sem governança',
+      'economia global de agentes até 2030',
+    ],
+    footer: 'Escala · Lacuna · Tamanho',
+  },
+});
 
 export function MarketSlide() {
   return (
@@ -43,8 +66,8 @@ export function MarketSlide() {
           className="shrink-0 text-[#fefefe] text-[30px] sm:text-[44px] lg:text-[58px] xl:text-[64px] leading-[0.95] tracking-tight uppercase"
           style={{ fontFamily: ANTON }}
         >
-          Market Opportunity:{' '}
-          <span className="text-orange-400">A trillion-dollar rebuild.</span>
+          {T.headLead}{' '}
+          <span className="text-orange-400">{T.headAccent}</span>
         </motion.h1>
 
         {/* Three source cards */}
@@ -82,7 +105,7 @@ export function MarketSlide() {
                   {c.stat}
                 </p>
                 <p className="text-[#fefefe]/60 text-xs lg:text-sm mt-2.5" style={{ fontFamily: MONO }}>
-                  {c.statLabel}
+                  {T.statLabels[i]}
                 </p>
               </div>
             </motion.div>
@@ -97,7 +120,7 @@ export function MarketSlide() {
           className="shrink-0 text-center text-[#fefefe]/50 text-xs lg:text-sm tracking-[0.3em] uppercase"
           style={{ fontFamily: MONO }}
         >
-          Scale · Gap · Size
+          {T.footer}
         </motion.p>
 
       </div>
