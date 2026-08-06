@@ -77,17 +77,6 @@ export function DdnAskSlide() {
             </motion.div>
           ))}
         </div>
-
-        {/* Next step */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-          className="text-[#fefefe]/60 text-sm lg:text-lg leading-snug pt-2"
-          style={{ fontFamily: MONO }}
-        >
-          <span className="text-orange-400">Next</span> — a 90-minute technical session with Sven's team. Mainnet August 2026 · live at <span className="text-[#fefefe]">aos.unicity.ai</span>.
-        </motion.p>
       </div>
     </div>
   );
