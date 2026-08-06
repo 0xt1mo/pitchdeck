@@ -59,7 +59,7 @@ const T = tr({
         role: 'CEO',
         lines: [
           'PhD Electrical Engineering',
-          'Built & exited Guardtime (ADX:IHC)',
+          'Built & exited Guardtime',
           'Ex-MD, Barclays Capital',
         ],
       },
@@ -79,7 +79,7 @@ const T = tr({
         ],
       },
       {
-        role: 'Chairman',
+        role: 'Advisor',
         lines: [
           'AI Visionary',
           'CEO, Aleria (UAE Sovereign AI)',
@@ -103,7 +103,7 @@ const T = tr({
         role: 'CEO',
         lines: [
           'PhD em Engenharia Elétrica',
-          'Fundou e vendeu a Guardtime (ADX:IHC)',
+          'Fundou e vendeu a Guardtime',
           'Ex-MD, Barclays Capital',
         ],
       },
@@ -123,7 +123,7 @@ const T = tr({
         ],
       },
       {
-        role: 'Presidente do Conselho',
+        role: 'Consultor',
         lines: [
           'Visionário de IA',
           'CEO, Aleria (IA Soberana dos Emirados Árabes Unidos)',

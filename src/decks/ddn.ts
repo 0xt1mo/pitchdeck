@@ -18,7 +18,6 @@ import { AosSecuritySlide } from '../slides/AosSecuritySlide';
 import { DdnCodewallSlide } from '../slides/ddn/DdnCodewallSlide';
 import { AosMergedSlide } from '../slides/AosMergedSlide';
 import { TractionSlide } from '../slides/TractionSlide';
-import { TeamSlide } from '../slides/TeamSlide';
 import { DdnCloseSlide } from '../slides/ddn/DdnCloseSlide';
 
 export const ddnDeck = [
@@ -26,11 +25,9 @@ export const ddnDeck = [
   DdnIntroSlide,          // 1. Co-branded intro cover
   // DdnTitleSlide,       // hidden — redundant with the intro cover tagline
   DdnGapSlide,            // 2. The gap
-  DdnEvolutionSlide,      // 4. Why now — agents recapitulating computing history
-  // — Who Unicity is —
-  WhoWeAreSlide,          // 5. Built by infrastructure veterans
+  DdnEvolutionSlide,      // 3. Why now — agents recapitulating computing history
   // — What AOS is (technical proof) —
-  AutonomyStackSlide,     // 6. An OS built for autonomous agents
+  AutonomyStackSlide,     // 4. An OS built for autonomous agents
   // ArchitectureStackSlide, // hidden — "The secure OS for agents"
   AosEngineSlide,         // 8. Everything else is a capsule
   AosDensitySlide,        // 9. What a multi-tenant agent OS buys
@@ -44,7 +41,7 @@ export const ddnDeck = [
   // — Durability —
   AosMergedSlide,         // 16. Operating systems beat harnesses
   // — Team & momentum —
-  TractionSlide,          // 17. Traction
-  TeamSlide,              // 18. Team
-  DdnCloseSlide,          // 19. Close
+  TractionSlide,          // Traction
+  WhoWeAreSlide,          // The team (moved to the end)
+  DdnCloseSlide,          // Close
 ];
