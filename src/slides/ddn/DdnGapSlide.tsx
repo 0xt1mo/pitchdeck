@@ -72,7 +72,7 @@ export function DdnGapSlide() {
             className="mt-3 text-[#fefefe]/70 text-base lg:text-lg leading-relaxed max-w-5xl"
             style={{ fontFamily: MONO }}
           >
-            Enterprises are moving from agent pilots to production. DDN solved data-to-GPU. <span className="text-[#fefefe] font-bold">Nobody has solved what runs on the GPUs when the workload is 10,000 agents, not one training job.</span>
+            Enterprises are moving from agent pilots to production. DDN solved data-to-GPU. <span className="text-[#fefefe] font-bold">Nobody has solved what runs on top of them when the workload is 10,000 agents, not one training job.</span>
           </motion.p>
         </div>
 
