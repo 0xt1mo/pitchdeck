@@ -19,15 +19,15 @@ const ups: { num: string; title: string; text: React.ReactNode; tail: string }[]
   },
   {
     num: '02',
-    title: 'We define the benchmark together',
-    text: <>The metric shifts from GB/s to <span className="text-[#fefefe] font-bold">agents per node</span> — and whoever defines it owns the category.</>,
-    tail: 'own the yardstick',
-  },
-  {
-    num: '03',
     title: 'The sovereign agent stack',
     text: <>Every government's AI factory needs agents it can <span className="text-[#fefefe] font-bold">prove things about.</span> Your sovereign accounts, our audited runtime — the stack nations standardize on.</>,
     tail: 'a category with two seats',
+  },
+  {
+    num: '03',
+    title: 'Industry solutions on top',
+    text: <>Codewall, the Agentic Firewall, compliance consoles — <span className="text-[#fefefe] font-bold">vertical products packaged on the OS.</span> Each lifts ACV with the regulated buyers — banks, hospitals, governments — you already sell to.</>,
+    tail: 'higher ACV in regulated accounts',
   },
 ];
 
@@ -46,24 +46,24 @@ export function DdnUpsideSlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-orange-400 text-xs lg:text-sm tracking-[0.22em] uppercase mb-2.5"
-            style={{ fontFamily: MONO }}
-          >
-            Unicity AOS × Alerix · The upside
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.06, duration: 0.6 }}
-            className="text-[#fefefe] text-[30px] sm:text-[42px] lg:text-[54px] xl:text-[62px] leading-[1.0] tracking-tight uppercase max-w-6xl"
+            transition={{ delay: 0.05, duration: 0.6 }}
+            className="text-[#fefefe] text-[32px] sm:text-[46px] lg:text-[58px] xl:text-[66px] leading-[1.0] tracking-tight uppercase"
             style={{ fontFamily: ANTON }}
           >
-            Every era of computing was won by an <span className="text-orange-400">infrastructure + OS pair.</span>
+            What a <span className="text-orange-400">partnership</span> looks like.
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="mt-2.5 text-[#fefefe]/70 text-sm sm:text-base lg:text-lg leading-snug max-w-5xl"
+            style={{ fontFamily: MONO }}
+          >
+            Every era of computing was won by an <span className="text-[#fefefe] font-bold">infrastructure + OS pair.</span>
+          </motion.p>
         </div>
 
         {/* Era pairs strip */}
