@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
 
-const layers: { noun: string; mech: string; live?: boolean }[] = [
+const layers: { noun: string; mech: string; live?: boolean; status?: string }[] = [
   { noun: 'State', mech: 'Proof System', live: true },
-  { noun: 'Code', mech: 'Formal methods' },
+  { noun: 'Code', mech: 'Formal methods', status: 'In development' },
   { noun: 'Reasoning', mech: 'Tensor logic' },
   { noun: 'Learning', mech: 'Own records' },
 ];
@@ -86,7 +86,7 @@ export function VisionSlide() {
                 </div>
                 <p className="text-[#fefefe]/80 text-sm lg:text-base font-bold mt-2.5" style={{ fontFamily: MONO }}>{l.mech}</p>
                 <p className="text-[#fefefe]/40 text-[10px] lg:text-xs tracking-[0.16em] uppercase mt-2" style={{ fontFamily: MONO }}>
-                  {l.live ? 'Live' : 'On the roadmap'}
+                  {l.status ?? (l.live ? 'Live' : 'On the roadmap')}
                 </p>
               </motion.div>
             ))}
