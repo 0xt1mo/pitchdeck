@@ -23,23 +23,14 @@ export function DdnCodewallSlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-orange-400 text-xs lg:text-sm tracking-[0.22em] uppercase mb-3"
-            style={{ fontFamily: MONO }}
-          >
-            Product · AOS Codewall
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.08, duration: 0.6 }}
-            className="text-[#fefefe] text-[30px] sm:text-[42px] lg:text-[56px] xl:text-[64px] leading-[1.0] tracking-tight uppercase max-w-6xl"
+            transition={{ delay: 0.05, duration: 0.6 }}
+            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[52px] xl:text-[60px] leading-[1.0] tracking-tight uppercase max-w-6xl"
             style={{ fontFamily: ANTON }}
           >
-            Codewall: <span className="text-orange-400">a firewall for coding agents.</span>
+            Product: Codewall, <span className="text-orange-400">firewall for coding agents.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
