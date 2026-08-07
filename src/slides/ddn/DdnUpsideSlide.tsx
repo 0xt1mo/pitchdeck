@@ -59,7 +59,7 @@ export function DdnUpsideSlide() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="mt-2.5 text-[#fefefe]/70 text-sm sm:text-base lg:text-lg leading-snug max-w-5xl"
+            className="mt-3 text-[#fefefe]/70 text-base sm:text-lg lg:text-xl leading-snug max-w-5xl"
             style={{ fontFamily: MONO }}
           >
             Every era of computing was won by an <span className="text-[#fefefe] font-bold">infrastructure + OS pair.</span>
@@ -85,7 +85,7 @@ export function DdnUpsideSlide() {
                 }
               >
                 <p className={`text-[10px] lg:text-xs tracking-[0.16em] uppercase mb-1.5 ${p.now ? 'text-orange-400' : 'text-[#fefefe]/40'}`} style={{ fontFamily: MONO }}>{p.era}</p>
-                <p className="text-[#fefefe]/75 text-sm lg:text-base" style={{ fontFamily: MONO }}>{p.name}</p>
+                <p className="text-[#fefefe]/80 text-base lg:text-lg" style={{ fontFamily: MONO }}>{p.name}</p>
               </div>
             </div>
           ))}
@@ -101,24 +101,13 @@ export function DdnUpsideSlide() {
               transition={{ delay: 0.35 + i * 0.12, duration: 0.5 }}
               className="flex-1 rounded-xl border border-white/10 bg-white/[0.02] border-t-[3px] border-t-orange-500 px-5 py-4 lg:px-6 lg:py-5 flex flex-col"
             >
-              <p className="text-orange-400 text-xs lg:text-sm tracking-[0.2em] mb-3" style={{ fontFamily: MONO }}>{u.num}</p>
-              <p className="text-[#fefefe] text-xl lg:text-[26px] uppercase leading-tight mb-3" style={{ fontFamily: ANTON }}>{u.title}</p>
-              <p className="text-[#fefefe]/70 text-sm lg:text-[17px] leading-snug flex-1" style={{ fontFamily: MONO }}>{u.text}</p>
-              <p className="text-orange-400 text-xs lg:text-sm mt-3 pt-3" style={{ fontFamily: MONO, borderTop: '1px solid rgba(255,255,255,0.10)' }}>{u.tail}</p>
+              <p className="text-orange-400 text-sm lg:text-base tracking-[0.2em] mb-3" style={{ fontFamily: MONO }}>{u.num}</p>
+              <p className="text-[#fefefe] text-2xl lg:text-[30px] uppercase leading-tight mb-3.5" style={{ fontFamily: ANTON }}>{u.title}</p>
+              <p className="text-[#fefefe]/75 text-base lg:text-[19px] leading-snug flex-1" style={{ fontFamily: MONO }}>{u.text}</p>
+              <p className="text-orange-400 text-sm lg:text-base mt-4 pt-3.5" style={{ fontFamily: MONO, borderTop: '1px solid rgba(255,255,255,0.10)' }}>{u.tail}</p>
             </motion.div>
           ))}
         </div>
-
-        {/* Kicker */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.75, duration: 0.5 }}
-          className="shrink-0 text-xl sm:text-3xl lg:text-[38px] leading-tight pt-4"
-          style={{ fontFamily: ANTON, borderTop: '1px solid rgba(255,255,255,0.10)' }}
-        >
-          <span className="text-[#fefefe]/60">The agent era hasn't picked its pair yet.</span> <span className="text-orange-400">Let's be it.</span>
-        </motion.p>
       </div>
     </div>
   );
