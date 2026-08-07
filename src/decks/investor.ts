@@ -27,10 +27,10 @@ export const investorDeck = [
   CoverSlide,
   IntroSlide,
   EvolutionSlide,         // Why now — agents recapitulating computing history (data center)
+  AutonomyStackSlide,     // Unicity AOS: an OS built for autonomous agents
   AosDensitySlide,        // What a multi-tenant agent OS buys
   MarketSlide,
   MarketBlockchainSlide,
-  AutonomyStackSlide,
   AosMergedSlide,
   CompetitionMinimalSlide,
   BearerTokensSlide,
