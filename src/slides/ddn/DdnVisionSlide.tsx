@@ -30,23 +30,14 @@ export function DdnVisionSlide() {
 
         {/* Header */}
         <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-orange-400 text-xs lg:text-sm tracking-[0.28em] uppercase mb-3"
-            style={{ fontFamily: MONO }}
-          >
-            Our vision
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.08, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[#fefefe] text-[40px] sm:text-[58px] lg:text-[76px] xl:text-[88px] leading-[0.95] tracking-tight uppercase max-w-6xl"
+            transition={{ delay: 0.05, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="text-[#fefefe] text-[34px] sm:text-[48px] lg:text-[62px] xl:text-[72px] leading-[0.96] tracking-tight uppercase max-w-6xl"
             style={{ fontFamily: ANTON }}
           >
-            Autonomous, verifiable AI — <span className="text-orange-400">secure by construction.</span>
+            Our vision: autonomous, verifiable AI, <span className="text-orange-400">secure by construction.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
