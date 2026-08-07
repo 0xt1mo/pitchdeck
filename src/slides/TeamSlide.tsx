@@ -48,7 +48,7 @@ const T = tr({
     headAccent: 'DONE THIS BEFORE',
     subHead: (
       <>
-        15 years shipping cryptographic infrastructure to <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed</span>.<br />5 PhD cryptographers in the core team.
+        15 years shipping cryptographic infrastructure to <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed</span>.
       </>
     ),
     founders: [
@@ -67,7 +67,7 @@ const T = tr({
     headAccent: 'JÁ FIZERAM ISSO ANTES',
     subHead: (
       <>
-        15 anos entregando infraestrutura criptográfica para <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed</span>.<br />5 criptógrafos PhD no time principal.
+        15 anos entregando infraestrutura criptográfica para <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed</span>.
       </>
     ),
     founders: [
