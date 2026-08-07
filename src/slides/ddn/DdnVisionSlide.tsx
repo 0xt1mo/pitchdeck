@@ -93,16 +93,6 @@ export function DdnVisionSlide() {
           </div>
         </div>
 
-        {/* Closer */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9, duration: 0.6 }}
-          className="shrink-0 text-2xl sm:text-3xl lg:text-[40px] leading-tight pt-5"
-          style={{ fontFamily: ANTON, borderTop: '1px solid rgba(255,255,255,0.10)' }}
-        >
-          <span className="text-[#fefefe]/60">Don't trust AI.</span> <span className="text-orange-400">Verify it.</span>
-        </motion.p>
       </div>
     </div>
   );
