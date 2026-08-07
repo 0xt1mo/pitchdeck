@@ -3,7 +3,7 @@
 // live under src/slides/ddn/; the rest are reused single-source AOS/company slides.
 import { DdnIntroSlide } from '../slides/ddn/DdnIntroSlide';
 // import { DdnTitleSlide } from '../slides/ddn/DdnTitleSlide'; // hidden — redundant with the intro cover tagline
-import { DdnGapSlide } from '../slides/ddn/DdnGapSlide';
+// import { DdnGapSlide } from '../slides/ddn/DdnGapSlide'; // hidden
 import { DdnEvolutionSlide } from '../slides/ddn/DdnEvolutionSlide';
 import { WhoWeAreSlide } from '../slides/WhoWeAreSlide';
 import { AutonomyStackSlide } from '../slides/AutonomyStackSlide';
@@ -28,9 +28,8 @@ export const ddnDeck = [
   // — The deal —
   DdnIntroSlide,          // 1. Co-branded intro cover
   // DdnTitleSlide,       // hidden — redundant with the intro cover tagline
-  // DdnGapSlide,         // hidden — "The AI factory stops at the GPU"
   DdnEvolutionSlide,      // 2. Why now — agents recapitulating computing history
-  DdnGapSlide,            // 3. The AI factory stops at the GPU
+  // DdnGapSlide,         // hidden — "The AI factory stops at the GPU"
   // — What AOS is (technical proof) —
   AutonomyStackSlide,     // 4. An OS built for autonomous agents
   // ArchitectureStackSlide, // hidden — "The secure OS for agents"
