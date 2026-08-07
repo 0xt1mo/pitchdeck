@@ -15,7 +15,7 @@ import { InvestmentSlide } from '../slides/InvestmentSlide';
 import { MarketBlockchainSlide } from '../slides/MarketBlockchainSlide';
 import { MarketSlide } from '../slides/MarketSlide';
 import { MedicalCaseSlide } from '../slides/MedicalCaseSlide';
-import { ProblemSlide } from '../slides/ProblemSlide';
+import { EvolutionSlide } from '../slides/EvolutionSlide';
 import { TeamSlide } from '../slides/TeamSlide';
 import { ThankYouChatSlide } from '../slides/ThankYouChatSlide';
 import { TokenRebuildSlide } from '../slides/TokenRebuildSlide';
@@ -26,12 +26,12 @@ import { VerifiableRoadmapSlide } from '../slides/VerifiableRoadmapSlide';
 export const investorDeck = [
   CoverSlide,
   IntroSlide,
-  ProblemSlide,
+  EvolutionSlide,         // Why now — agents recapitulating computing history (data center)
+  AosDensitySlide,        // What a multi-tenant agent OS buys
   MarketSlide,
   MarketBlockchainSlide,
   AutonomyStackSlide,
   AosMergedSlide,
-  AosDensitySlide,
   CompetitionMinimalSlide,
   BearerTokensSlide,
   GtmEditionsSlide,
