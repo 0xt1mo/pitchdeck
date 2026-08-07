@@ -4,7 +4,7 @@ const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
 
 const layers: { noun: string; mech: string; live?: boolean }[] = [
-  { noun: 'State', mech: 'Blockchain', live: true },
+  { noun: 'State', mech: 'Proof System', live: true },
   { noun: 'Code', mech: 'Formal methods' },
   { noun: 'Reasoning', mech: 'Tensor logic' },
   { noun: 'Learning', mech: 'Own records' },
@@ -86,7 +86,7 @@ export function DdnVisionSlide() {
                 </div>
                 <p className="text-[#fefefe]/80 text-sm lg:text-base font-bold mt-2.5" style={{ fontFamily: MONO }}>{l.mech}</p>
                 <p className="text-[#fefefe]/40 text-[10px] lg:text-xs tracking-[0.16em] uppercase mt-2" style={{ fontFamily: MONO }}>
-                  {l.live ? 'Live · mainnet GA Aug 2026' : 'On the roadmap'}
+                  {l.live ? 'Live' : 'On the roadmap'}
                 </p>
               </motion.div>
             ))}
