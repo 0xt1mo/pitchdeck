@@ -21,7 +21,7 @@ import { ThankYouChatSlide } from '../slides/ThankYouChatSlide';
 import { TokenRebuildSlide } from '../slides/TokenRebuildSlide';
 import { TokenSlide } from '../slides/TokenSlide';
 import { TractionSlide } from '../slides/TractionSlide';
-import { VerifiableRoadmapSlide } from '../slides/VerifiableRoadmapSlide';
+import { VisionSlide } from '../slides/VisionSlide';
 
 export const investorDeck = [
   CoverSlide,
@@ -45,6 +45,6 @@ export const investorDeck = [
   InvestmentSlide,
   TokenSlide,
   TokenRebuildSlide,
-  VerifiableRoadmapSlide,
+  VisionSlide,
   ThankYouChatSlide,
 ];
