@@ -76,7 +76,7 @@ export function DdnIntroSlide() {
           className="text-[#fefefe]/80 text-xl sm:text-3xl lg:text-[40px] xl:text-[46px] leading-[1.25] text-center max-w-5xl"
           style={{ fontFamily: MONO }}
         >
-          <span className="text-[#fefefe]">Unicity Labs</span>, the product factory for Aleria AI, is building the infrastructure for <span className="text-orange-400">Autonomous AI</span>.
+          <span className="text-[#fefefe]">Unicity Labs</span>, the product factory for Aleria AI, is building the infrastructure for <span className="text-orange-400">Autonomous, Verifiable AI</span>.
         </motion.p>
       </div>
     </div>
