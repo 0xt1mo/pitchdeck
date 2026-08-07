@@ -3,58 +3,24 @@ import { motion } from 'framer-motion';
 const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
 
-// Ambient agent field — a fleet of capsules, a shifting subset executing.
-const COLS = 22;
-const ROWS = 12;
-const CELLS = COLS * ROWS;
-const isLit = (i: number) => (i * 13 + 7) % 19 < 2; // ~10% executing
-
-/** Living background: a grid of agent capsules, faded away from the edges. */
-function AgentField() {
-  return (
-    <div
-      className="pointer-events-none absolute inset-0"
-      style={{
-        maskImage: 'radial-gradient(ellipse 62% 58% at 50% 48%, transparent 22%, #000 82%)',
-        WebkitMaskImage: 'radial-gradient(ellipse 62% 58% at 50% 48%, transparent 22%, #000 82%)',
-      }}
-    >
-      <div
-        className="grid w-full h-full"
-        style={{ gridTemplateColumns: `repeat(${COLS}, 1fr)`, gridAutoRows: '1fr' }}
-      >
-        {Array.from({ length: CELLS }).map((_, i) =>
-          isLit(i) ? (
-            <div key={i} className="flex items-center justify-center">
-              <motion.span
-                className="rounded-[2px]"
-                style={{ width: '9px', height: '6px', background: '#f97316' }}
-                initial={{ opacity: 0.25 }}
-                animate={{ opacity: [0.25, 0.95, 0.25] }}
-                transition={{ duration: 2.6 + (i % 5) * 0.5, repeat: Infinity, ease: 'easeInOut', delay: (i % 11) * 0.28 }}
-              />
-            </div>
-          ) : (
-            <div key={i} className="flex items-center justify-center">
-              <span className="rounded-[2px]" style={{ width: '9px', height: '6px', background: 'rgba(249,115,22,0.12)' }} />
-            </div>
-          )
-        )}
-      </div>
-    </div>
-  );
-}
-
 export function DdnIntroSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
-      {/* signature: living agent field */}
-      <AgentField />
-
-      {/* ambient glow */}
+      {/* radial glow */}
       <div
         className="pointer-events-none absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse 55% 50% at 50% 46%, rgba(249,115,22,0.12) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse 60% 55% at 50% 46%, rgba(249,115,22,0.09) 0%, transparent 70%)' }}
+      />
+      {/* faint grid, masked to center */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
+          backgroundSize: '64px 64px',
+          maskImage: 'radial-gradient(ellipse 72% 62% at 50% 48%, #000 30%, transparent 80%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 72% 62% at 50% 48%, #000 30%, transparent 80%)',
+        }}
       />
 
       {/* Bottom HUD */}
