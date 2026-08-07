@@ -21,7 +21,7 @@ const ups: { num: string; title: string; text: React.ReactNode; tail: string }[]
     num: '02',
     title: 'The sovereign agent stack',
     text: <>Every government's AI factory needs agents it can <span className="text-[#fefefe] font-bold">prove things about.</span> Your sovereign accounts, our audited runtime — the stack nations standardize on.</>,
-    tail: 'a category with two seats',
+    tail: 'your accounts, our runtime',
   },
   {
     num: '03',
