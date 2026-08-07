@@ -27,7 +27,7 @@ const phases: Phase[] = [
     name: 'OEM license',
     when: 'FY27 · pre-agreed terms',
     items: [
-      <>AOS embedded as the <span className="text-[#fefefe] font-bold">runtime layer of an Alerix SKU</span> — per-node royalty on every agentic deployment.</>,
+      <>AOS embedded as the <span className="text-[#fefefe] font-bold">runtime layer of an Alerix SKU</span>.</>,
     ],
   },
   {
