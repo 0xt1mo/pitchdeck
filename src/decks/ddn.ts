@@ -34,6 +34,7 @@ export const ddnDeck = [
   AutonomyStackSlide,     // 4. An OS built for autonomous agents
   // ArchitectureStackSlide, // hidden — "The secure OS for agents"
   AosDensitySlide,        // 5. What a multi-tenant agent OS buys
+  AosMergedSlide,         // Operating systems beat harnesses
   AosEngineSlide,         // 6. Everything else is a capsule
   DdnStorageSlide,        // 7. Agent-native storage
   // AosProofSystemSlide, // hidden — "Unicity Proof System — verifiable execution"
@@ -42,8 +43,7 @@ export const ddnDeck = [
   DdnAgenticFirewallSlide, // 13. Product: Agentic Firewall (SIF egress gate)
   DdnCodewallSlide,       // 14. Product: Codewall (right after the firewall)
   AosSecuritySlide,       // 15. It uses the controls you have (RBAC / SSO / SIEM)
-  // — Durability & vision —
-  AosMergedSlide,         // Operating systems beat harnesses
+  // — Vision —
   DdnVisionSlide,         // Our vision — autonomous, verifiable AI, secure by construction
   // — Team & ask —
   WhoWeAreSlide,          // The team
