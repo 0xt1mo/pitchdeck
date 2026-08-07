@@ -26,7 +26,7 @@ const ups: { num: string; title: string; text: React.ReactNode; tail: string }[]
   {
     num: '03',
     title: 'Industry solutions on top',
-    text: <>Codewall, the Agentic Firewall, compliance consoles — <span className="text-[#fefefe] font-bold">vertical products packaged on the OS.</span> Each lifts ACV with the regulated buyers — banks, hospitals, governments — you already sell to.</>,
+    text: <>Codewall, the Agentic Firewall, compliance consoles — <span className="text-[#fefefe] font-bold">vertical products packaged on the OS.</span> Each lifts ACV with regulated buyers.</>,
     tail: 'higher ACV in regulated accounts',
   },
 ];
