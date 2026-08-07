@@ -16,7 +16,7 @@ const cards = [
 const T = tr({
   en: {
     headLead: 'Example Solution:',
-    headAccent: 'Autonomous patient journey',
+    headAccent: 'Autonomous clinical compliance',
     subHead: (
       <>
         Healthcare's biggest blocker is compliance — and the fear of hallucinations. <span className="text-orange-400 font-bold">AOS enforces compliance at the kernel</span>, with proofs of every agent execution.
@@ -43,7 +43,7 @@ const T = tr({
   },
   pt: {
     headLead: 'Solução de Exemplo:',
-    headAccent: 'Jornada autônoma do paciente',
+    headAccent: 'Conformidade clínica autônoma',
     subHead: (
       <>
         O maior obstáculo da saúde é o compliance — e o medo das alucinações. <span className="text-orange-400 font-bold">O AOS impõe compliance no kernel</span>, com provas de toda execução de agente.
