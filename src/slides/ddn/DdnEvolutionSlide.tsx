@@ -46,7 +46,7 @@ const eras: Era[] = [
     fact: <><span className="text-[#fefefe] font-bold">10,000s of concurrent agents.</span> Needs an OS, not a box — density, isolation, audit by construction.</>,
     verdict: [
       { tone: 'proved', text: 'this layer: Unicity AOS × Alerix' },
-      { tone: 'proved', text: 'the homebrew demand, made safe to sell' },
+      { tone: 'proved', text: 'data center infrastructure made safe to consume' },
     ],
   },
 ];
