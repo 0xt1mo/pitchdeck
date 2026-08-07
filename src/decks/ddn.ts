@@ -48,8 +48,8 @@ export const ddnDeck = [
   // — Team & ask —
   WhoWeAreSlide,          // The team
   // DdnCloseSlide,       // hidden — Close "agents per node"
-  DdnAskSlide,            // The ask — $2M + product partnership
   DdnRoiSlide,            // The upside, in numbers (ROI multipliers)
   DdnUpsideSlide,         // The upside — infrastructure + OS pairs (inspire)
+  DdnAskSlide,            // The ask — $2M + product partnership (penultimate)
   DdnThankYouSlide,       // Thank you + contact
 ];
