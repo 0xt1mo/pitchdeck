@@ -7,10 +7,10 @@ const display = "'Anton', sans-serif";
 // and scaled down from the shared DeploymentModelHtmlSlide.
 const caps: { label: string; color: string }[] = [
   { label: 'DLP', color: '255,80,80' },
-  { label: 'COST CONTROL', color: '100,180,140' },
-  { label: 'INTELLIGENT ROUTING', color: '140,120,200' },
-  { label: 'PAYMENTS', color: '249,115,22' },
+  { label: 'PII REDACTION', color: '100,180,140' },
+  { label: 'SECRET SCANNING', color: '140,120,200' },
   { label: 'PROMPT DEFENSE', color: '96,165,250' },
+  { label: 'SOVEREIGN', color: '249,115,22' },
 ];
 
 export function DdnAgenticFirewallSlide() {
@@ -34,10 +34,10 @@ export function DdnAgenticFirewallSlide() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.25, duration: 0.5 }}
-            className="text-[#fefefe]/80 text-sm lg:text-base leading-[1.5] mt-2.5 max-w-5xl"
+            className="text-[#fefefe]/80 text-sm lg:text-base leading-[1.5] mt-2.5 max-w-6xl"
             style={{ fontFamily: mono }}
           >
-            One semantic gate for every agent — <span className="text-[#fefefe] font-bold">inspect, allow, block or flag</span> before anything leaves your environment.
+            One semantic gate on every agent — it reads meaning, not just strings. <span className="text-[#fefefe] font-bold">Data-loss prevention, PII and secret redaction, and prompt-injection defense</span> are enforced at the kernel, inspecting every payload <span className="text-[#fefefe] font-bold">before it leaves your perimeter.</span> Nothing an agent shouldn't send, gets sent.
           </motion.p>
         </div>
 
@@ -72,8 +72,8 @@ export function DdnAgenticFirewallSlide() {
           className="shrink-0 flex justify-center"
         >
           <div
-            className="relative w-full max-w-[860px]"
-            style={{ aspectRatio: '1400 / 760', maxHeight: '52vh' }}
+            className="relative w-full max-w-[740px]"
+            style={{ aspectRatio: '1400 / 760', maxHeight: '40vh' }}
           >
             {/* Zone labels */}
             <p
@@ -144,6 +144,20 @@ export function DdnAgenticFirewallSlide() {
               A2A networking + payments
             </p>
           </div>
+        </motion.div>
+
+        {/* Regulated & sovereign band */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+          className="shrink-0 rounded-xl px-6 py-3.5 flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-6"
+          style={{ border: '1px solid rgba(249,115,22,0.4)', background: 'rgba(249,115,22,0.04)' }}
+        >
+          <p className="text-orange-400 text-[11px] lg:text-xs tracking-[0.16em] uppercase shrink-0 leading-snug" style={{ fontFamily: mono }}>Regulated &<br />sovereign</p>
+          <p className="text-[#fefefe]/85 text-sm lg:text-base leading-snug" style={{ fontFamily: mono }}>
+            Agent activity <span className="text-[#fefefe] font-bold">never crosses your boundary</span>, and every decision is recorded by construction — the record and enforcement that clear <span className="text-orange-400 font-bold">EU AI Act, SOC 2, FSI and healthcare</span> procurement, and unlock defense and sovereign accounts.
+          </p>
         </motion.div>
       </div>
     </div>
