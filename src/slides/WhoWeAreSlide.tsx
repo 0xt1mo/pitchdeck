@@ -49,7 +49,7 @@ const T = tr({
     headAccent: 'infrastructure veterans.',
     intro: (
       <>
-        <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs in machine learning and cryptography with fifteen years building nation-state-grade security infrastructure for <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed, Verizon, and Maersk</span>. Now applying that to AI infrastructure.
+        <span className="text-[#fefefe] font-bold">Unicity Labs.</span> Fifteen years building nation-state-grade security infrastructure for <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed, Verizon, and Maersk</span>. Now applying that to AI infrastructure.
       </>
     ),
     whereWeOperate: 'Where We Operate',
@@ -93,7 +93,7 @@ const T = tr({
     headAccent: 'veteranos de infraestrutura.',
     intro: (
       <>
-        <span className="text-[#fefefe] font-bold">Unicity Labs.</span> PhDs em machine learning e criptografia com quinze anos construindo infraestrutura de segurança de nível nacional para <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed, Verizon e Maersk</span>. Agora aplicando isso à infraestrutura de IA.
+        <span className="text-[#fefefe] font-bold">Unicity Labs.</span> Quinze anos construindo infraestrutura de segurança de nível nacional para <span className="text-orange-400 font-bold">DARPA, NATO, Lockheed, Verizon e Maersk</span>. Agora aplicando isso à infraestrutura de IA.
       </>
     ),
     whereWeOperate: 'Onde Operamos',
