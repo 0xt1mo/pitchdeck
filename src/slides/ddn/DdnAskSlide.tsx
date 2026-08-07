@@ -28,8 +28,6 @@ const phases: Phase[] = [
     when: 'FY27 · pre-agreed terms',
     items: [
       <>AOS embedded as the <span className="text-[#fefefe] font-bold">runtime layer of an Alerix SKU</span> — per-node royalty on every agentic deployment.</>,
-      <><span className="text-[#fefefe] font-bold">Annual minimum commitment</span> with a prepaid advance against royalties.</>,
-      <>Segment exclusivity — <span className="text-[#fefefe] font-bold">narrow and time-boxed</span>, contingent on the minimum being met.</>,
     ],
   },
   {
@@ -37,9 +35,7 @@ const phases: Phase[] = [
     name: 'Co-sell industry solutions',
     when: 'FY27+ · account by account',
     items: [
-      <>Joint vertical offers — <span className="text-[#fefefe] font-bold">sovereign, FSI, healthcare, defense</span> — into accounts you already hold.</>,
-      <>One <span className="text-[#fefefe] font-bold">lighthouse account per vertical</span>: production agents, referenceable, on the joint stack.</>,
-      <>Unicity subscriptions + <span className="text-[#fefefe] font-bold">Alerix infrastructure pull-through</span> on every deployment.</>,
+      <>Joint vertical offers — <span className="text-[#fefefe] font-bold">sovereign, FSI, healthcare, defense.</span></>,
     ],
   },
 ];
@@ -97,14 +93,14 @@ export function DdnAskSlide() {
                     : { border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.02)' }
                 }
               >
-                <p className={`text-[10px] lg:text-[11px] tracking-[0.18em] uppercase mb-2 ${p.today ? 'text-orange-400' : 'text-[#fefefe]/40'}`} style={{ fontFamily: MONO }}>{p.label}</p>
-                <p className="text-[#fefefe] text-xl lg:text-[28px] uppercase leading-none" style={{ fontFamily: ANTON }}>{p.name}</p>
-                <p className="text-[#fefefe]/55 text-xs lg:text-sm mt-2 mb-4" style={{ fontFamily: MONO }}>{p.when}</p>
-                <div className="flex flex-col gap-3 flex-1">
+                <p className={`text-xs lg:text-sm tracking-[0.18em] uppercase mb-2.5 ${p.today ? 'text-orange-400' : 'text-[#fefefe]/40'}`} style={{ fontFamily: MONO }}>{p.label}</p>
+                <p className="text-[#fefefe] text-2xl lg:text-[38px] uppercase leading-none" style={{ fontFamily: ANTON }}>{p.name}</p>
+                <p className="text-[#fefefe]/55 text-sm lg:text-base mt-2.5 mb-5" style={{ fontFamily: MONO }}>{p.when}</p>
+                <div className="flex flex-col gap-4 flex-1">
                   {p.items.map((it, k) => (
-                    <div key={k} className="flex gap-2.5 leading-snug" style={{ fontFamily: MONO }}>
-                      <span className={`shrink-0 ${p.today ? 'text-orange-400' : 'text-[#fefefe]/40'}`}>→</span>
-                      <p className="text-[#fefefe]/75 text-sm lg:text-[15px]">{it}</p>
+                    <div key={k} className="flex gap-3 leading-snug" style={{ fontFamily: MONO }}>
+                      <span className={`shrink-0 text-lg ${p.today ? 'text-orange-400' : 'text-[#fefefe]/40'}`}>→</span>
+                      <p className="text-[#fefefe]/80 text-base lg:text-xl leading-snug">{it}</p>
                     </div>
                   ))}
                 </div>
