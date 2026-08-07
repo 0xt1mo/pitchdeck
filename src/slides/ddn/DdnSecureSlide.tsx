@@ -108,7 +108,7 @@ export function DdnSecureSlide() {
             ))}
           </div>
           <p className="text-[#fefefe]/85 text-sm lg:text-base leading-snug" style={{ fontFamily: MONO }}>
-            Procurement-clearing by default — maps to your <span className="text-orange-400 font-bold">Secure AI Factories</span> push and defense / sovereign accounts.
+            Maps to your <span className="text-orange-400 font-bold">Secure AI Factories</span> push and defense / sovereign accounts.
           </p>
         </motion.div>
       </div>
