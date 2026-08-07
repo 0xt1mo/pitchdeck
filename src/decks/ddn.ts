@@ -17,7 +17,7 @@ import { DdnAgenticFirewallSlide } from '../slides/ddn/DdnAgenticFirewallSlide';
 import { AosSecuritySlide } from '../slides/AosSecuritySlide';
 import { DdnCodewallSlide } from '../slides/ddn/DdnCodewallSlide';
 import { AosMergedSlide } from '../slides/AosMergedSlide';
-import { VerifiableRoadmapSlide } from '../slides/VerifiableRoadmapSlide';
+import { DdnVisionSlide } from '../slides/ddn/DdnVisionSlide';
 // import { DdnCloseSlide } from '../slides/ddn/DdnCloseSlide'; // hidden
 import { DdnAskSlide } from '../slides/ddn/DdnAskSlide';
 import { DdnRoiSlide } from '../slides/ddn/DdnRoiSlide';
@@ -45,7 +45,7 @@ export const ddnDeck = [
   AosSecuritySlide,       // 15. It uses the controls you have (RBAC / SSO / SIEM)
   // — Durability & vision —
   AosMergedSlide,         // Operating systems beat harnesses
-  VerifiableRoadmapSlide, // Our vision — towards verifiable AI
+  DdnVisionSlide,         // Our vision — autonomous, verifiable AI, secure by construction
   // — Team & ask —
   WhoWeAreSlide,          // The team
   // DdnCloseSlide,       // hidden — Close "agents per node"
