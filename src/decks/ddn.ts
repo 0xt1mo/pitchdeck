@@ -17,6 +17,7 @@ import { DdnAgenticFirewallSlide } from '../slides/ddn/DdnAgenticFirewallSlide';
 import { AosSecuritySlide } from '../slides/AosSecuritySlide';
 import { DdnCodewallSlide } from '../slides/ddn/DdnCodewallSlide';
 import { AosMergedSlide } from '../slides/AosMergedSlide';
+import { VerifiableRoadmapSlide } from '../slides/VerifiableRoadmapSlide';
 // import { DdnCloseSlide } from '../slides/ddn/DdnCloseSlide'; // hidden
 import { DdnAskSlide } from '../slides/ddn/DdnAskSlide';
 import { DdnRoiSlide } from '../slides/ddn/DdnRoiSlide';
@@ -42,8 +43,9 @@ export const ddnDeck = [
   DdnAgenticFirewallSlide, // 13. Product: Agentic Firewall (SIF egress gate)
   DdnCodewallSlide,       // 14. Product: Codewall (right after the firewall)
   AosSecuritySlide,       // 15. It uses the controls you have (RBAC / SSO / SIEM)
-  // — Durability —
-  AosMergedSlide,         // 16. Operating systems beat harnesses
+  // — Durability & vision —
+  AosMergedSlide,         // Operating systems beat harnesses
+  VerifiableRoadmapSlide, // Our vision — towards verifiable AI
   // — Team & ask —
   WhoWeAreSlide,          // The team
   // DdnCloseSlide,       // hidden — Close "agents per node"
