@@ -37,7 +37,7 @@ export function DdnAgenticFirewallSlide() {
             className="text-[#fefefe]/80 text-sm lg:text-base leading-[1.5] mt-2.5 max-w-6xl"
             style={{ fontFamily: mono }}
           >
-            One semantic gate on every agent — it reads meaning, not just strings. <span className="text-[#fefefe] font-bold">Data-loss prevention, PII and secret redaction, and prompt-injection defense</span> are enforced at the kernel, inspecting every payload <span className="text-[#fefefe] font-bold">before it leaves your perimeter.</span> Nothing an agent shouldn't send, gets sent.
+            One semantic gate on every agent — <span className="text-[#fefefe] font-bold">DLP, PII & secret redaction, and prompt-injection defense</span>, enforced at the kernel <span className="text-[#fefefe] font-bold">before anything leaves your perimeter.</span>
           </motion.p>
         </div>
 
@@ -72,8 +72,8 @@ export function DdnAgenticFirewallSlide() {
           className="shrink-0 flex justify-center"
         >
           <div
-            className="relative w-full max-w-[740px]"
-            style={{ aspectRatio: '1400 / 760', maxHeight: '40vh' }}
+            className="relative w-full max-w-[900px]"
+            style={{ aspectRatio: '1400 / 760', maxHeight: '50vh' }}
           >
             {/* Zone labels */}
             <p
@@ -102,7 +102,7 @@ export function DdnAgenticFirewallSlide() {
             {/* Internal boxes */}
             <Box left="4%" top="10.8%" width="20.5%" height="8.5%" align="center" title="Frameworks" />
             <Box left="26.5%" top="10.8%" width="20.5%" height="8.5%" align="center" title="Internal LLM" />
-            <GateBox left="4%" top="24.1%" width="43%" height="10%" title="Semantic Intercept Fabric" subtitle="One gate · single egress · allow / block / flag" />
+            <GateBox left="4%" top="24.1%" width="43%" height="10%" title="Semantic Intercept Fabric" subtitle="One gate · allow / block / flag" />
             <GateBox left="4%" top="38.9%" width="43%" height="9.5%" title="Agent Registry" subtitle="Cryptographic identity · scoped, revocable" />
             <AOSBox left="4%" top="53.2%" width="43%" height="32%" />
 
@@ -156,7 +156,7 @@ export function DdnAgenticFirewallSlide() {
         >
           <p className="text-orange-400 text-[11px] lg:text-xs tracking-[0.16em] uppercase shrink-0 leading-snug" style={{ fontFamily: mono }}>Regulated &<br />sovereign</p>
           <p className="text-[#fefefe]/85 text-sm lg:text-base leading-snug" style={{ fontFamily: mono }}>
-            Agent activity <span className="text-[#fefefe] font-bold">never crosses your boundary</span>, and every decision is recorded by construction — the record and enforcement that clear <span className="text-orange-400 font-bold">EU AI Act, SOC 2, FSI and healthcare</span> procurement, and unlock defense and sovereign accounts.
+            <span className="text-[#fefefe] font-bold">Never crosses your boundary</span>, recorded by construction — clears <span className="text-orange-400 font-bold">EU AI Act, SOC 2, FSI & healthcare</span> and unlocks defense & sovereign accounts.
           </p>
         </motion.div>
       </div>
