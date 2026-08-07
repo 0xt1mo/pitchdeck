@@ -18,8 +18,8 @@ const phases: Phase[] = [
     when: '90 days · starts on signature',
     today: true,
     items: [
-      <><span className="text-[#fefefe] font-bold">NRE-funded validation</span> of AOS on Alerix storage + GPU infrastructure.</>,
-      <>Deliverable: the co-published <span className="text-[#fefefe] font-bold">Agentic AI Factory reference architecture</span>, with jointly agreed benchmarks — agents per node, time-to-token, cost per token.</>,
+      <><span className="text-[#fefefe] font-bold">NRE-funded validation</span> of AOS on Alerix Infra.</>,
+      <>Deliverable: a <span className="text-[#fefefe] font-bold">joint technical validation</span>, with agreed benchmarks — agents per node, time-to-token, cost per token.</>,
     ],
   },
   {
