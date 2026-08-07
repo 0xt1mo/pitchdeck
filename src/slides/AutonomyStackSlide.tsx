@@ -36,7 +36,7 @@ const T = tr({
       {
         product: 'UNICITY PROOF SYSTEM',
         label: 'CRYPTOGRAPHIC PROOF OF EXECUTION',
-        detail: 'A purpose-built blockchain for verifiable execution, identity, and multi-agent coordination — the source of truth beneath the execution layer.',
+        detail: 'Purpose-built cryptographic infrastructure for verifiable execution, identity, and multi-agent coordination — the source of truth beneath the execution layer.',
         tags: '',
         variant: 'bottom',
       },
@@ -67,7 +67,7 @@ const T = tr({
       {
         product: 'UNICITY PROOF SYSTEM',
         label: 'PROVA CRIPTOGRÁFICA DE EXECUÇÃO',
-        detail: 'Uma blockchain feita sob medida para execução verificável, identidade e coordenação multiagente — a fonte da verdade sob a camada de execução.',
+        detail: 'Infraestrutura criptográfica feita sob medida para execução verificável, identidade e coordenação multiagente — a fonte da verdade sob a camada de execução.',
         tags: '',
         variant: 'bottom',
       },

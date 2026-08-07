@@ -14,13 +14,13 @@ import { DdnStorageSlide } from '../slides/ddn/DdnStorageSlide';
 // import { AosProofSystemSlide } from '../slides/AosProofSystemSlide'; // hidden
 import { DdnSecureSlide } from '../slides/ddn/DdnSecureSlide';
 import { DdnAgenticFirewallSlide } from '../slides/ddn/DdnAgenticFirewallSlide';
-import { AosSecuritySlide } from '../slides/AosSecuritySlide';
+// import { AosSecuritySlide } from '../slides/AosSecuritySlide'; // hidden
 import { DdnCodewallSlide } from '../slides/ddn/DdnCodewallSlide';
 import { AosMergedSlide } from '../slides/AosMergedSlide';
 import { DdnVisionSlide } from '../slides/ddn/DdnVisionSlide';
 // import { DdnCloseSlide } from '../slides/ddn/DdnCloseSlide'; // hidden
 import { DdnAskSlide } from '../slides/ddn/DdnAskSlide';
-import { DdnRoiSlide } from '../slides/ddn/DdnRoiSlide';
+// import { DdnRoiSlide } from '../slides/ddn/DdnRoiSlide'; // hidden
 import { DdnUpsideSlide } from '../slides/ddn/DdnUpsideSlide';
 import { DdnThankYouSlide } from '../slides/ddn/DdnThankYouSlide';
 
@@ -42,13 +42,13 @@ export const ddnDeck = [
   DdnSecureSlide,         // 12. Secure by construction
   DdnAgenticFirewallSlide, // 13. Product: Agentic Firewall (SIF egress gate)
   DdnCodewallSlide,       // 14. Product: Codewall (right after the firewall)
-  AosSecuritySlide,       // 15. It uses the controls you have (RBAC / SSO / SIEM)
+  // AosSecuritySlide,    // hidden — It uses the controls you have (RBAC / SSO / SIEM)
   // — Vision —
   DdnVisionSlide,         // Our vision — autonomous, verifiable AI, secure by construction
   // — Team & ask —
   WhoWeAreSlide,          // The team
   // DdnCloseSlide,       // hidden — Close "agents per node"
-  DdnRoiSlide,            // The upside, in numbers (ROI multipliers)
+  // DdnRoiSlide,         // hidden — The economics, three multipliers
   DdnUpsideSlide,         // The upside — infrastructure + OS pairs (inspire)
   DdnAskSlide,            // The ask — $2M + product partnership (penultimate)
   DdnThankYouSlide,       // Thank you + contact
