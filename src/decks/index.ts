@@ -11,6 +11,7 @@ import { enterpriseDeck } from './enterprise';
 import { msspDeck } from './mssp';
 import { telecomDeck } from './telecom';
 import { tetherDeck } from './tether';
+import { videoDeck } from './video';
 
 export const decks = {
   investor: investorDeck,
@@ -26,6 +27,7 @@ export const decks = {
   mssp: msspDeck,
   telecom: telecomDeck,
   tether: tetherDeck,
+  video: videoDeck,
 } as const;
 
 export type DeckName = keyof typeof decks;
