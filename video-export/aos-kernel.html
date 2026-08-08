@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Unicity AOS — Shared Kernel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #060606;
+    --ink: #fefefe;
+    --orange: #f97316;
+    --orange-400: #fb923c;
+    --anton: 'Anton', sans-serif;
+    --mono: 'Geist Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    overflow: hidden;
+    font-family: var(--mono);
+  }
+
+  /* Stage locks a 16:9 frame and scales to fit any window — ideal for screen capture. */
+  .stage {
+    position: fixed; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--bg);
+  }
+  .frame {
+    position: relative;
+    width: 100vw; height: 56.25vw;      /* 16:9 */
+    max-height: 100vh; max-width: 177.78vh;
+    display: flex; align-items: center; justify-content: center;
+    gap: 4%;
+    padding: 5% 5.5%;
+    overflow: hidden;
+  }
+
+  .glow {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 42% 60% at 74% 50%, rgba(249,115,22,0.14) 0%, transparent 70%);
+  }
+
+  .panel { position: relative; z-index: 10; display: flex; flex-direction: column; justify-content: center; }
+  .left  { flex: 1; max-width: 40%; }
+  .right { flex: 1; max-width: 52%; }
+
+  .head {
+    font-family: var(--anton);
+    text-transform: uppercase;
+    line-height: 0.92;
+    font-size: clamp(28px, 5vw, 80px);
+  }
+  .head.dim  { color: rgba(254,254,254,0.55); }
+  .head.accent { color: var(--orange-400); }
+
+  .sub {
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: clamp(13px, 2.1vw, 34px);
+    margin-top: 0.5vh;
+    margin-bottom: 3vh;
+  }
+  .sub.left-sub  { color: rgba(254,254,254,0.45); }
+  .sub.right-sub { color: rgba(254,254,254,0.55); }
+  .sub .em { color: var(--orange-400); }
+
+  /* Old way — three containers */
+  .containers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1vw; }
+  .container {
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.02);
+    border-radius: 10px;
+    padding: 0.9vw;
+    display: flex; flex-direction: column; gap: 0.7vw;
+  }
+  .agent {
+    background: #2a2a2a; border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px; text-align: center; color: var(--ink);
+    font-family: var(--mono);
+    font-size: clamp(13px, 1.5vw, 24px);
+    padding: 0.6vw 0;
+  }
+  .overhead {
+    border: 1px dashed rgba(255,255,255,0.15);
+    border-radius: 5px; text-align: center; color: rgba(254,254,254,0.35);
+    font-family: var(--mono);
+    font-size: clamp(11px, 1.1vw, 18px);
+    padding: 0.6vw 0;
+  }
+
+  /* Shared kernel — flashing field */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    gap: 0.45%;
+    max-height: 46vh;
+  }
+  .cell {
+    aspect-ratio: 1;
+    border-radius: 3px;
+    background: rgba(249,115,22,0.13);
+    will-change: background, box-shadow;
+  }
+  @keyframes agentFlash {
+    0%, 100% { background: rgba(249,115,22,0.13); box-shadow: none; }
+    6%   { background: #ffb066; box-shadow: 0 0 10px rgba(249,115,22,0.95); }
+    16%  { background: #f97316; box-shadow: 0 0 6px rgba(249,115,22,0.6); }
+    30%  { background: rgba(249,115,22,0.13); box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="frame">
+      <div class="glow"></div>
+
+      <!-- LEFT — the old way -->
+      <div class="panel left">
+        <p class="head dim">The old way</p>
+        <p class="sub left-sub">one container per agent</p>
+        <div class="containers">
+          <div class="container"><div class="agent">agent</div><div class="overhead">runtime</div><div class="overhead">guest OS</div></div>
+          <div class="container"><div class="agent">agent</div><div class="overhead">runtime</div><div class="overhead">guest OS</div></div>
+          <div class="container"><div class="agent">agent</div><div class="overhead">runtime</div><div class="overhead">guest OS</div></div>
+        </div>
+      </div>
+
+      <!-- RIGHT — Unicity AOS shared kernel -->
+      <div class="panel right">
+        <p class="head accent">Unicity AOS</p>
+        <p class="sub right-sub">one shared kernel · <span class="em">1000&times; density</span></p>
+        <div class="grid" id="grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Deterministic pseudo-random so the field looks the same every load.
+    function rnd(i, salt) {
+      const x = Math.sin(i * 12.9898 + salt * 78.233) * 43758.5453;
+      return x - Math.floor(x);
+    }
+    const COLS = 18, ROWS = 11, CELLS = COLS * ROWS;
+    const grid = document.getElementById('grid');
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < CELLS; i++) {
+      const dur = 2.4 + rnd(i, 1) * 4.0;
+      const delay = -rnd(i, 2) * dur;
+      const cell = document.createElement('span');
+      cell.className = 'cell';
+      cell.style.animation = `agentFlash ${dur}s ease-in-out ${delay}s infinite`;
+      frag.appendChild(cell);
+    }
+    grid.appendChild(frag);
+  </script>
+</body>
+</html>
