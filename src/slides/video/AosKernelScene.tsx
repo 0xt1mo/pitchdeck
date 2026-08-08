@@ -1,22 +1,31 @@
-import { motion } from 'framer-motion';
-
+const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
 
-// Full-bleed field of agent capsules on one shared kernel — squares flash as
-// agents wake and execute. Built to be screen-recorded for the launch video.
-const COLS = 34;
-const ROWS = 17;
+// AOS shared-kernel field — squares flash as agents execute.
+const COLS = 18;
+const ROWS = 11;
 const CELLS = COLS * ROWS;
 
-// deterministic-ish pseudo-random so it renders the same each load (no Math.random at module import)
 function rnd(i: number, salt: number) {
   const x = Math.sin(i * 12.9898 + salt * 78.233) * 43758.5453;
   return x - Math.floor(x);
 }
 
+/** The old way: one container per agent — an agent plus a whole OS of overhead. */
+function OldContainer() {
+  return (
+    <div className="rounded-lg border border-white/15 bg-white/[0.02] p-2.5 flex flex-col gap-2">
+      <div className="rounded bg-[#2a2a2a] border border-white/20 text-[#fefefe] text-base lg:text-2xl text-center py-2" style={{ fontFamily: MONO }}>agent</div>
+      {['runtime', 'guest OS'].map((o) => (
+        <div key={o} className="rounded border border-dashed border-white/15 text-[#fefefe]/35 text-sm lg:text-lg text-center py-2" style={{ fontFamily: MONO }}>{o}</div>
+      ))}
+    </div>
+  );
+}
+
 export function AosKernelScene() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden flex flex-col items-center justify-center">
+    <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden flex items-center justify-center gap-10 lg:gap-16 px-10 lg:px-16 py-12">
       <style>{`
         @keyframes agentFlash {
           0%, 100% { background: rgba(249,115,22,0.13); box-shadow: none; }
@@ -26,54 +35,39 @@ export function AosKernelScene() {
         }
       `}</style>
 
-      {/* ambient glow */}
+      {/* ambient glow behind the kernel */}
       <div
         className="pointer-events-none absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse 60% 55% at 50% 48%, rgba(249,115,22,0.12) 0%, transparent 72%)' }}
+        style={{ background: 'radial-gradient(ellipse 42% 60% at 74% 50%, rgba(249,115,22,0.14) 0%, transparent 70%)' }}
       />
 
-      {/* Agent field */}
-      <div
-        className="relative z-10 grid"
-        style={{
-          gridTemplateColumns: `repeat(${COLS}, 1fr)`,
-          gap: '7px',
-          width: 'min(88vw, 1400px)',
-          maxHeight: '62vh',
-        }}
-      >
-        {Array.from({ length: CELLS }).map((_, i) => {
-          const dur = 2.4 + rnd(i, 1) * 4.0;        // 2.4s – 6.4s
-          const delay = -rnd(i, 2) * dur;            // negative → mid-cycle start, lively immediately
-          return (
-            <span
-              key={i}
-              className="rounded-[3px]"
-              style={{
-                aspectRatio: '1',
-                background: 'rgba(249,115,22,0.13)',
-                animation: `agentFlash ${dur}s ease-in-out ${delay}s infinite`,
-                willChange: 'background, box-shadow',
-              }}
-            />
-          );
-        })}
+      {/* LEFT — the old way */}
+      <div className="relative z-10 flex-1 max-w-[40%] flex flex-col justify-center">
+        <p className="text-[#fefefe]/55 text-[40px] sm:text-[60px] lg:text-[80px] uppercase leading-[0.92]" style={{ fontFamily: ANTON }}>The old way</p>
+        <p className="text-[#fefefe]/45 text-xl sm:text-3xl lg:text-[34px] tracking-[0.06em] uppercase mt-2 mb-8" style={{ fontFamily: MONO }}>one container per agent</p>
+        <div className="grid grid-cols-3 gap-4">
+          {Array.from({ length: 3 }).map((_, i) => <OldContainer key={i} />)}
+        </div>
       </div>
 
-      {/* Shared-kernel label */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
-        className="relative z-10 mt-8 text-center"
-      >
-        <p className="text-orange-400 text-sm sm:text-base lg:text-lg tracking-[0.34em] uppercase" style={{ fontFamily: MONO }}>
-          One shared kernel
-        </p>
-        <p className="text-[#fefefe]/45 text-xs sm:text-sm lg:text-base tracking-[0.2em] uppercase mt-2" style={{ fontFamily: MONO }}>
-          thousands of agents · OS-enforced isolation
-        </p>
-      </motion.div>
+      {/* RIGHT — Unicity AOS shared kernel */}
+      <div className="relative z-10 flex-1 max-w-[52%] flex flex-col justify-center">
+        <p className="text-orange-400 text-[40px] sm:text-[60px] lg:text-[80px] uppercase leading-[0.92]" style={{ fontFamily: ANTON }}>Unicity AOS</p>
+        <p className="text-[#fefefe]/55 text-xl sm:text-3xl lg:text-[34px] tracking-[0.06em] uppercase mt-2 mb-8" style={{ fontFamily: MONO }}>one shared kernel · <span className="text-orange-400">1000× density</span></p>
+        <div className="grid" style={{ gridTemplateColumns: `repeat(${COLS}, 1fr)`, gap: '7px', maxHeight: '46vh' }}>
+          {Array.from({ length: CELLS }).map((_, i) => {
+            const dur = 2.4 + rnd(i, 1) * 4.0;
+            const delay = -rnd(i, 2) * dur;
+            return (
+              <span
+                key={i}
+                className="rounded-[3px]"
+                style={{ aspectRatio: '1', background: 'rgba(249,115,22,0.13)', animation: `agentFlash ${dur}s ease-in-out ${delay}s infinite`, willChange: 'background, box-shadow' }}
+              />
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
