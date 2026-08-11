@@ -16,7 +16,7 @@ const founders = [
   },
   {
     name: 'Ahto Buldas',
-    photo: '/people/ahto-buldas-dark.jpg',
+    photo: '/people/ahto-buldas-gray.jpg',
     linkedin: '',
   },
 ];
