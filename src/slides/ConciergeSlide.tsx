@@ -30,6 +30,7 @@ const T = tr({
     price: '$5/mo',
     priceNote: 'per subscriber — a price point only a multi-tenant OS makes possible.',
     watch: 'Watch the launch film',
+    pipeline: 'Pipeline',
   },
   pt: {
     headLead: 'TELCO:',
@@ -40,6 +41,7 @@ const T = tr({
     price: '$5/mês',
     priceNote: 'por assinante — um preço que só um OS multi-tenant torna possível.',
     watch: 'Ver o filme de lançamento',
+    pipeline: 'Pipeline',
   },
 });
 
@@ -159,8 +161,15 @@ export function ConciergeSlide() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.6 }}
-          className="shrink-0 flex flex-wrap items-center justify-center gap-x-8 lg:gap-x-10 gap-y-3"
+          className="shrink-0 flex flex-wrap items-center justify-center gap-x-6 lg:gap-x-8 gap-y-3"
         >
+          <span
+            className="text-orange-400/80 text-[10px] lg:text-xs tracking-[0.28em] uppercase pr-1"
+            style={{ fontFamily: MONO }}
+          >
+            {T.pipeline}
+          </span>
+          <span className="h-4 w-px bg-white/15" />
           {OPERATORS.map((f) => (
             <img
               key={f}
