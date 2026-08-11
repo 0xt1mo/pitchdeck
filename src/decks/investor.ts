@@ -1,5 +1,6 @@
 // Deck config — ordered list of slides. Edit membership/order here; slide source lives in ../slides.
 import { AgentFirewallSlide } from '../slides/AgentFirewallSlide';
+import { AiInfraSlide } from '../slides/AiInfraSlide';
 import { AosDensitySlide } from '../slides/AosDensitySlide';
 import { AosMergedSlide } from '../slides/AosMergedSlide';
 import { AutonomyStackSlide } from '../slides/AutonomyStackSlide';
@@ -38,6 +39,7 @@ export const investorDeck = [
   ConciergeSlide,
   MedicalCaseSlide,
   GoToMarketSlide,
+  AiInfraSlide,           // AI infra OEM channel — the OS inside sovereign AI data centers
   IGamingRetentionSlide,
   AgentFirewallSlide,
   TractionSlide,
