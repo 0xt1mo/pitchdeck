@@ -19,13 +19,15 @@ import { MarketSlide } from '../slides/MarketSlide';
 import { EvolutionSlide } from '../slides/EvolutionSlide';
 import { TeamSlide } from '../slides/TeamSlide';
 import { ThankYouChatSlide } from '../slides/ThankYouChatSlide';
+import { TitleSlide } from '../slides/TitleSlide';
 import { TokenRebuildSlide } from '../slides/TokenRebuildSlide';
 import { TokenSlide } from '../slides/TokenSlide';
 import { TractionSlide } from '../slides/TractionSlide';
 import { VisionSlide } from '../slides/VisionSlide';
 
 export const investorDeck = [
-  CoverSlide,
+  TitleSlide,             // Cover — logo + 'the operating system for autonomous AI'
+  CoverSlide,             // Thesis — machine intelligences / the internet they need doesn't exist yet
   // IntroSlide,          // folded into CoverSlide thesis
   EvolutionSlide,         // Why now — agents recapitulating computing history (data center)
   AutonomyStackSlide,     // Unicity AOS: an OS built for autonomous agents
