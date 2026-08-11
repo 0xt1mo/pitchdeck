@@ -2,8 +2,16 @@ import { motion } from 'framer-motion';
 import { tr } from '../i18n';
 
 const T = tr({
-  en: { heading: 'INVESTOR DECK.' },
-  pt: { heading: 'DECK PARA INVESTIDORES.' },
+  en: {
+    line1: 'Billions of machine intelligences.',
+    line2: 'The internet they need doesn’t exist yet.',
+    sub: 'Routing, compute, identity, settlement. The entire stack has to be rebuilt for machines, not people.',
+  },
+  pt: {
+    line1: 'Bilhões de inteligências de máquina.',
+    line2: 'A internet que elas precisam ainda não existe.',
+    sub: 'Roteamento, computação, identidade, liquidação. Toda a stack precisa ser reconstruída para máquinas, não pessoas.',
+  },
 });
 
 export function CoverSlide() {
@@ -46,7 +54,7 @@ export function CoverSlide() {
         </span>
       </motion.div>
 
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-8 sm:px-12 lg:px-16 gap-8 lg:gap-10">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-8 sm:px-12 lg:px-16 gap-7 lg:gap-9">
 
         {/* Logo */}
         <motion.img
@@ -55,18 +63,19 @@ export function CoverSlide() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
-          className="h-16 sm:h-20 lg:h-24 w-auto"
+          className="h-12 sm:h-14 lg:h-16 w-auto"
         />
 
-        {/* Massive headline */}
+        {/* Thesis headline */}
         <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-[64px] sm:text-[96px] lg:text-[160px] xl:text-[180px] leading-[0.88] tracking-tight uppercase text-center"
+          className="text-[26px] sm:text-[40px] lg:text-[54px] xl:text-[62px] leading-[0.98] tracking-tight uppercase text-center max-w-5xl"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          <span className="text-[#fefefe]">{T.heading}</span>
+          <span className="block text-[#fefefe]">{T.line1}</span>
+          <span className="block text-orange-400 mt-4 lg:mt-6">{T.line2}</span>
         </motion.h1>
 
         {/* Accent line */}
@@ -76,6 +85,17 @@ export function CoverSlide() {
           transition={{ duration: 1, delay: 0.9 }}
           className="h-[2px] w-40 sm:w-56 lg:w-72 bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-center"
         />
+
+        {/* Rebuild-the-stack subline */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.1, duration: 0.7 }}
+          className="text-[#fefefe]/60 text-base sm:text-lg lg:text-2xl leading-snug text-center max-w-3xl"
+          style={{ fontFamily: "'Geist Mono', monospace" }}
+        >
+          {T.sub}
+        </motion.p>
 
       </div>
     </div>
