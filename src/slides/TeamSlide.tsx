@@ -59,7 +59,7 @@ const T = tr({
     founders: [
       { role: 'CEO', lines: ['PhD EE', 'Built & exited Guardtime', 'Ex-MD, Barclays Capital'] },
       { role: 'CPTO', lines: ['PhD Machine Learning', '25 years shipping enterprise AI & infra (BT, Nokia, A10)', 'Former Vitruvian (applied ML, security)'] },
-      { role: 'Chief Scientist', lines: ['Inventor of the KSI blockchain', 'Co-founder, Guardtime', 'Professor of cryptography, TalTech'] },
+      { role: 'Chief Scientist', lines: ['World-renowned cryptographer', 'Inventor & researcher'] },
     ],
     coreTeam: [
       { role: 'AI OS', lines: ['NEAR, Asimov, Blackcoin', 'Early Proof-of-Stake pioneer'] },
@@ -79,7 +79,7 @@ const T = tr({
     founders: [
       { role: 'CEO', lines: ['PhD em Engenharia Elétrica', 'Fundou e vendeu a Guardtime', 'Ex-MD, Barclays Capital'] },
       { role: 'CPTO', lines: ['PhD em Machine Learning', '25 anos entregando IA e infraestrutura corporativa (BT, Nokia, A10)', 'Ex-Vitruvian (ML aplicado, segurança)'] },
-      { role: 'Cientista-Chefe', lines: ['Inventor do blockchain KSI', 'Cofundador da Guardtime', 'Professor de criptografia, TalTech'] },
+      { role: 'Cientista-Chefe', lines: ['Criptógrafo de renome mundial', 'Inventor e pesquisador'] },
     ],
     coreTeam: [
       { role: 'AI OS', lines: ['NEAR, Asimov, Blackcoin', 'Pioneiro do Proof-of-Stake'] },
