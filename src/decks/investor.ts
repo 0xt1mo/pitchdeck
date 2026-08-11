@@ -10,7 +10,7 @@ import { ConciergeSlide } from '../slides/ConciergeSlide';
 import { CoverSlide } from '../slides/CoverSlide';
 import { GoToMarketSlide } from '../slides/GoToMarketSlide';
 import { GtmEditionsSlide } from '../slides/GtmEditionsSlide';
-import { IGamingRetentionSlide } from '../slides/IGamingRetentionSlide';
+// import { IGamingRetentionSlide } from '../slides/IGamingRetentionSlide'; // hidden
 // import { IntroSlide } from '../slides/IntroSlide'; // folded into CoverSlide thesis
 import { InvestmentSlide } from '../slides/InvestmentSlide';
 import { MarketBlockchainSlide } from '../slides/MarketBlockchainSlide';
@@ -42,7 +42,7 @@ export const investorDeck = [
   // MedicalCaseSlide,    // removed — didn't fit
   GoToMarketSlide,
   AiInfraSlide,           // AI infra OEM channel — the OS inside sovereign AI data centers
-  IGamingRetentionSlide,
+  // IGamingRetentionSlide, // hidden
   AgentFirewallSlide,
   TractionSlide,
   TeamSlide,
