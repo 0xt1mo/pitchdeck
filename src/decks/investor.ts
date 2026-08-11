@@ -10,7 +10,7 @@ import { CoverSlide } from '../slides/CoverSlide';
 import { GoToMarketSlide } from '../slides/GoToMarketSlide';
 import { GtmEditionsSlide } from '../slides/GtmEditionsSlide';
 import { IGamingRetentionSlide } from '../slides/IGamingRetentionSlide';
-import { IntroSlide } from '../slides/IntroSlide';
+// import { IntroSlide } from '../slides/IntroSlide'; // folded into CoverSlide thesis
 import { InvestmentSlide } from '../slides/InvestmentSlide';
 import { MarketBlockchainSlide } from '../slides/MarketBlockchainSlide';
 import { MarketSlide } from '../slides/MarketSlide';
@@ -25,7 +25,7 @@ import { VisionSlide } from '../slides/VisionSlide';
 
 export const investorDeck = [
   CoverSlide,
-  IntroSlide,
+  // IntroSlide,          // folded into CoverSlide thesis
   EvolutionSlide,         // Why now — agents recapitulating computing history (data center)
   AutonomyStackSlide,     // Unicity AOS: an OS built for autonomous agents
   AosDensitySlide,        // What a multi-tenant agent OS buys
