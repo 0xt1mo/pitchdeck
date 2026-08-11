@@ -2,25 +2,50 @@ import { motion } from 'framer-motion';
 import { tr } from '../i18n';
 
 const display = "'Anton', sans-serif";
+const MONO = "'Geist Mono', monospace";
+
+const LAUNCH_VIDEO = 'https://www.youtube.com/watch?v=mXnQT5UL9kk';
+
+const OPERATORS = [
+  'airtel-africa.svg',
+  'mtn.svg',
+  'vodafone-qatar.svg',
+  'stc.svg',
+  'ooredoo.svg',
+  'zain.svg',
+  'eand.svg',
+  'omantel.svg',
+  'turkcell.svg',
+  'vi.svg',
+  'bsnl.png',
+];
 
 const T = tr({
   en: {
     headLead: 'EXAMPLE SOLUTION: TELECOM,',
     headAccent: 'AN AGENT FOR EVERY SIM.',
     subtitle:
-      "A personal AI concierge: a secure personalized agent with integrated billing, identity and voice for telecom subscribers — running on the operator's own infrastructure.",
+      "A personal AI concierge — billing, identity and voice for every subscriber, on the operator's own infrastructure.",
+    reach: ['11 operators', '70+ countries', '>1B subscribers addressable'],
+    price: '$5/mo',
+    priceNote: 'per subscriber — a price point only a multi-tenant OS makes possible.',
+    watch: 'Watch the launch film',
   },
   pt: {
     headLead: 'SOLUÇÃO DE EXEMPLO: TELECOM,',
     headAccent: 'UM AGENTE PARA CADA SIM.',
     subtitle:
-      'Um concierge de IA pessoal: um agente personalizado e seguro com faturamento, identidade e voz integrados para assinantes de telecom — rodando na própria infraestrutura da operadora.',
+      'Um concierge de IA pessoal — faturamento, identidade e voz para cada assinante, na própria infraestrutura da operadora.',
+    reach: ['11 operadoras', '70+ países', '>1B assinantes endereçáveis'],
+    price: '$5/mês',
+    priceNote: 'por assinante — um preço que só um OS multi-tenant torna possível.',
+    watch: 'Ver o filme de lançamento',
   },
 });
 
 /**
- * Subscriber concierge slide — three phone screenshots arranged in a fan
- * (left tilted back, right tilted back, center forward and largest).
+ * Telecom concierge slide — three phone screenshots in a fan, reach + unit-economics
+ * proof, an operator logo wall, and a launch-film link.
  */
 export function ConciergeSlide() {
   return (
@@ -36,7 +61,7 @@ export function ConciergeSlide() {
         }}
       />
 
-      <div className="relative z-10 h-full flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-8 lg:py-10 gap-6 lg:gap-8">
+      <div className="relative z-10 h-full flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-6 lg:py-8 gap-4 lg:gap-5">
 
         {/* Header */}
         <div className="shrink-0">
@@ -44,7 +69,7 @@ export function ConciergeSlide() {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-[#fefefe] text-[28px] sm:text-[40px] lg:text-[56px] xl:text-[64px] leading-[0.95] tracking-tight uppercase"
+            className="text-[#fefefe] text-[26px] sm:text-[38px] lg:text-[52px] xl:text-[58px] leading-[0.95] tracking-tight uppercase"
             style={{ fontFamily: display }}
           >
             {T.headLead}{' '}
@@ -54,64 +79,98 @@ export function ConciergeSlide() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl leading-snug mt-3 max-w-4xl"
-            style={{ fontFamily: "'Geist Mono', monospace" }}
+            className="text-[#fefefe]/75 text-sm sm:text-base lg:text-lg leading-snug mt-2.5 max-w-4xl"
+            style={{ fontFamily: MONO }}
           >
             {T.subtitle}
           </motion.p>
         </div>
 
-        {/* Phone fan — flexbox row, center bigger and on top with overlap via negative margins */}
-        <div className="flex items-center justify-center -mx-4">
-          {/* LEFT phone — tilted back-left, partially hidden behind center */}
+        {/* Phone fan */}
+        <div className="flex items-center justify-center -mx-4 shrink-0">
           <motion.img
             src="/concierge/Concierge6.png"
             alt="Subscriber concierge — stream"
             initial={{ opacity: 0, rotate: -14 }}
             animate={{ opacity: 1, rotate: -7 }}
             transition={{ delay: 0.3, duration: 0.7 }}
-            className="h-[46vh] lg:h-[50vh] w-auto"
-            style={{
-              filter: 'drop-shadow(0 24px 60px rgba(0,0,0,0.7))',
-              borderRadius: '20px',
-              marginRight: '2vw',
-              zIndex: 1,
-            }}
+            className="h-[32vh] lg:h-[38vh] w-auto"
+            style={{ filter: 'drop-shadow(0 24px 60px rgba(0,0,0,0.7))', borderRadius: '18px', marginRight: '2vw', zIndex: 1 }}
           />
-
-          {/* CENTER phone — forward, largest */}
           <motion.img
             src="/concierge/Concierge1.png"
             alt="Subscriber concierge — splash"
-            initial={{ opacity: 0, y: 30, rotate: 0 }}
-            animate={{ opacity: 1, y: 0, rotate: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.7 }}
-            className="h-[46vh] lg:h-[50vh] w-auto"
-            style={{
-              filter: 'drop-shadow(0 34px 90px rgba(0,0,0,0.85))',
-              borderRadius: '24px',
-              zIndex: 3,
-              rotate: '0deg',
-            }}
+            className="h-[32vh] lg:h-[38vh] w-auto"
+            style={{ filter: 'drop-shadow(0 34px 90px rgba(0,0,0,0.85))', borderRadius: '22px', zIndex: 3 }}
           />
-
-          {/* RIGHT phone — tilted back-right, partially hidden behind center */}
           <motion.img
             src="/concierge/Concierge5.png"
             alt="Subscriber concierge — heads-up"
             initial={{ opacity: 0, rotate: 14 }}
             animate={{ opacity: 1, rotate: 7 }}
             transition={{ delay: 0.45, duration: 0.7 }}
-            className="h-[46vh] lg:h-[50vh] w-auto"
-            style={{
-              filter: 'drop-shadow(0 24px 60px rgba(0,0,0,0.7))',
-              borderRadius: '20px',
-              marginLeft: '2vw',
-              zIndex: 1,
-            }}
+            className="h-[32vh] lg:h-[38vh] w-auto"
+            style={{ filter: 'drop-shadow(0 24px 60px rgba(0,0,0,0.7))', borderRadius: '18px', marginLeft: '2vw', zIndex: 1 }}
           />
-
         </div>
+
+        {/* Reach + price + launch film */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.6 }}
+          className="shrink-0 flex flex-wrap items-center justify-between gap-x-8 gap-y-3 pt-3"
+          style={{ borderTop: '1px solid rgba(255,255,255,0.10)' }}
+        >
+          {/* Reach stats */}
+          <div className="flex items-center gap-3 lg:gap-4 flex-wrap">
+            {T.reach.map((r, i) => (
+              <div key={r} className="flex items-center gap-3 lg:gap-4">
+                {i > 0 && <span className="text-orange-500/70 text-sm">•</span>}
+                <span className="text-[#fefefe] text-sm lg:text-base tracking-wide" style={{ fontFamily: MONO }}>{r}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Price callout */}
+          <div className="flex items-baseline gap-3">
+            <span className="text-orange-400 text-3xl lg:text-5xl leading-none" style={{ fontFamily: display }}>{T.price}</span>
+            <span className="text-[#fefefe]/55 text-xs lg:text-sm max-w-xs leading-snug" style={{ fontFamily: MONO }}>{T.priceNote}</span>
+          </div>
+
+          {/* Launch film */}
+          <a
+            href={LAUNCH_VIDEO}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2.5 rounded-full px-4 py-2 lg:px-5 lg:py-2.5 border border-orange-500/50 hover:border-orange-400 hover:bg-orange-500/10 transition-colors"
+            style={{ fontFamily: MONO }}
+          >
+            <span className="flex items-center justify-center h-5 w-5 rounded-full bg-orange-500 text-[#060606] text-[10px]">▶</span>
+            <span className="text-[#fefefe] text-xs lg:text-sm tracking-wide uppercase">{T.watch}</span>
+          </a>
+        </motion.div>
+
+        {/* Operator logo wall */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
+          className="shrink-0 flex flex-wrap items-center justify-center gap-x-8 lg:gap-x-10 gap-y-3"
+        >
+          {OPERATORS.map((f) => (
+            <img
+              key={f}
+              src={`/logos/telcos/${f}`}
+              alt=""
+              className="h-5 lg:h-6 w-auto object-contain opacity-70"
+              style={{ filter: 'brightness(0) invert(1)' }}
+            />
+          ))}
+        </motion.div>
 
       </div>
     </div>
