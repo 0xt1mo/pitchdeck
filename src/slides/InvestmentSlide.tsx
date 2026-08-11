@@ -15,8 +15,8 @@ const T = tr({
   en: {
     headLead: 'THE',
     headAccent: 'INVESTMENT.',
-    subLead: 'An ',
-    subAccent: 'extension of our seed round',
+    subLead: '',
+    subAccent: 'Seed round',
     subTail: ' — revenue generation to prepare for Series A.',
     runway: 'SAFE + token warrants · 18 months runway',
     pathTitle: 'The path to Series A',
@@ -34,8 +34,8 @@ const T = tr({
   pt: {
     headLead: 'O',
     headAccent: 'INVESTIMENTO.',
-    subLead: 'Uma ',
-    subAccent: 'extensão da nossa rodada seed',
+    subLead: '',
+    subAccent: 'Rodada seed',
     subTail: ' — geração de receita para preparar a Série A.',
     runway: 'SAFE + token warrants · 18 meses de runway',
     pathTitle: 'O caminho até a Série A',
@@ -92,7 +92,7 @@ export function InvestmentSlide() {
           </motion.p>
         </div>
 
-        {/* Hero: $3M + path to Series A */}
+        {/* Hero: $5M + path to Series A */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ export function InvestmentSlide() {
           className="grid items-center shrink-0 gap-8 lg:gap-14"
           style={{ gridTemplateColumns: '0.9fr 1.1fr' }}
         >
-          {/* $3M block */}
+          {/* $5M block */}
           <div>
             <p
               className="text-[#fefefe]/55 text-[10px] sm:text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-2 lg:mb-3"
@@ -112,7 +112,7 @@ export function InvestmentSlide() {
               className="text-[#fefefe] text-[68px] sm:text-[96px] lg:text-[120px] xl:text-[132px] leading-[0.88] tracking-[-0.04em]"
               style={{ fontFamily: "'Anton', sans-serif" }}
             >
-              $3M
+              $5M
             </p>
             <p
               className="text-[#fefefe]/70 text-xs sm:text-sm lg:text-base mt-3 lg:mt-4 leading-relaxed"
