@@ -13,7 +13,7 @@ const T = tr({
     headAccent: 'Market.',
     subtitle: (
       <>
-        <span className="text-orange-400 font-bold">Open Core fits a channel strategy.</span> Distribution is through partners in Europe, MEA, US and Brazil — targeting industries that struggle with <span className="text-[#fefefe] font-bold">security, compliance and governance for agents.</span> Our role is to deliver product — extensions to the OS with <span className="text-orange-400">cryptographic guarantees.</span>
+        Distribution is through <span className="text-[#fefefe] font-bold">channel partners</span> in Europe, MEA, US and Brazil — targeting regulated industries adopting agents. Our role is to deliver products — built on top of the OS with <span className="text-orange-400">cryptographic guarantees for compliance, security and governance.</span>
       </>
     ),
     columns: [
@@ -71,7 +71,7 @@ const T = tr({
     headAccent: 'Market.',
     subtitle: (
       <>
-        <span className="text-orange-400 font-bold">O Open Core combina com uma estratégia de canal.</span> A distribuição é feita por parceiros na Europa, MEA, EUA e Brasil — mirando setores que enfrentam dificuldades com <span className="text-[#fefefe] font-bold">segurança, compliance e governança para agentes.</span> Nosso papel é entregar produto — extensões ao OS com <span className="text-orange-400">garantias criptográficas.</span>
+        A distribuição é feita por <span className="text-[#fefefe] font-bold">parceiros de canal</span> na Europa, MEA, EUA e Brasil — mirando setores regulados que estão adotando agentes. Nosso papel é entregar produtos — construídos sobre o OS com <span className="text-orange-400">garantias criptográficas para compliance, segurança e governança.</span>
       </>
     ),
     columns: [
