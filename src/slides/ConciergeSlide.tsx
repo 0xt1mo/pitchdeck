@@ -25,7 +25,7 @@ const T = tr({
     headLead: 'TELCO:',
     headAccent: 'A PERSONAL AGENT FOR HIGH ARPU SUBSCRIBERS.',
     subtitle:
-      "A personal AI concierge — billing, identity and voice for every subscriber, on the operator's own infrastructure.",
+      "It books, pays and calls on the subscriber's behalf — on the operator's billing, identity and voice, running on their own infrastructure.",
     reach: ['11 operators', '70+ countries', '>1B subscribers addressable'],
     price: '$5/mo',
     priceNote: 'per subscriber — a price point only a multi-tenant OS makes possible.',
@@ -36,7 +36,7 @@ const T = tr({
     headLead: 'TELCO:',
     headAccent: 'UM AGENTE PESSOAL PARA ASSINANTES DE ALTO ARPU.',
     subtitle:
-      'Um concierge de IA pessoal — faturamento, identidade e voz para cada assinante, na própria infraestrutura da operadora.',
+      'Ele reserva, paga e liga em nome do assinante — no faturamento, identidade e voz da operadora, rodando na infraestrutura dela.',
     reach: ['11 operadoras', '70+ países', '>1B assinantes endereçáveis'],
     price: '$5/mês',
     priceNote: 'por assinante — um preço que só um OS multi-tenant torna possível.',
