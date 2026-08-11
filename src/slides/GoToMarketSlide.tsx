@@ -6,7 +6,7 @@ const SYSTEM_FONT = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helv
 // The Sheikh Mohammed tweet is an attributed quote — it stays English in both.
 const T = tr({
   en: {
-    headLead: 'EXAMPLE SOLUTION:',
+    headLead: 'GOVERNMENT:',
     headAccent: 'The agentic state',
     subHead: (
       <>
@@ -22,7 +22,7 @@ const T = tr({
     statAgents: 'Aleria agents in production',
   },
   pt: {
-    headLead: 'SOLUÇÃO DE EXEMPLO:',
+    headLead: 'GOVERNO:',
     headAccent: 'O estado agêntico',
     subHead: (
       <>
