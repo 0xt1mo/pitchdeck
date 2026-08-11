@@ -10,7 +10,7 @@ type Point = { k: string; d: string };
 const T = tr({
   en: {
     eyebrow: 'Go-to-market · AI infrastructure',
-    headLead: 'AI INFRASTRUCTURE:',
+    headLead: 'AI INFRA:',
     headAccent: 'the OS inside sovereign AI data centers.',
     subtitle:
       'Nations and enterprises are building sovereign AI factories. Unicity AOS ships as the agent runtime — embedded OEM in the infrastructure, licensed per node.',
@@ -27,7 +27,7 @@ const T = tr({
   },
   pt: {
     eyebrow: 'Go-to-market · Infraestrutura de IA',
-    headLead: 'INFRAESTRUTURA DE IA:',
+    headLead: 'INFRA DE IA:',
     headAccent: 'o OS dentro dos data centers de IA soberana.',
     subtitle:
       'Nações e empresas estão construindo fábricas de IA soberana. O Unicity AOS entra como o runtime dos agentes — embarcado em modelo OEM na infraestrutura, licenciado por nó.',
