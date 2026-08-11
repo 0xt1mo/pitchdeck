@@ -119,7 +119,7 @@ export function EvolutionSlide() {
             className="text-[#fefefe] text-[30px] sm:text-[44px] lg:text-[58px] xl:text-[66px] leading-[0.98] tracking-tight uppercase max-w-6xl"
             style={{ fontFamily: ANTON }}
           >
-            AI agents are speedrunning <span className="text-orange-400">computing history.</span>
+            AI agents are speedrunning <span className="text-orange-400">compute history.</span>
           </motion.h1>
         </div>
 
