@@ -51,7 +51,7 @@ const T = tr({
     ],
     pipelineTitle: 'Commercial Pipeline',
     pipelineBadge: 'Awaiting GA',
-    pipelineRows: ['Telecom operators', 'iGaming operators', 'Healthcare providers'],
+    pipelineRows: ['Telecom operators', 'Financial institutions', 'Healthcare providers'],
     pipelineNote: 'Engaged — awaiting general availability.',
   },
   pt: {
@@ -81,7 +81,7 @@ const T = tr({
     ],
     pipelineTitle: 'Pipeline Comercial',
     pipelineBadge: 'Aguardando GA',
-    pipelineRows: ['Operadoras de telecom', 'Operadoras de iGaming', 'Provedores de saúde'],
+    pipelineRows: ['Operadoras de telecom', 'Instituições financeiras', 'Provedores de saúde'],
     pipelineNote: 'Em negociação — aguardando a disponibilidade geral.',
   },
 });
