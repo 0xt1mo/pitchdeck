@@ -14,6 +14,11 @@ const founders = [
     photo: '/team/tony-bg.png',
     linkedin: 'https://www.linkedin.com/in/tonykenyon/',
   },
+  {
+    name: 'Ahto Buldas',
+    photo: '/team/ahto-bg.png',
+    linkedin: '',
+  },
 ];
 
 const coreTeam = [
@@ -54,6 +59,7 @@ const T = tr({
     founders: [
       { role: 'CEO', lines: ['PhD EE', 'Built & exited Guardtime', 'Ex-MD, Barclays Capital'] },
       { role: 'CPTO', lines: ['PhD Machine Learning', '25 years shipping enterprise AI & infra (BT, Nokia, A10)', 'Former Vitruvian (applied ML, security)'] },
+      { role: 'Chief Scientist', lines: ['Inventor of the KSI blockchain', 'Co-founder, Guardtime', 'Professor of cryptography, TalTech'] },
     ],
     coreTeam: [
       { role: 'AI OS', lines: ['NEAR, Asimov, Blackcoin', 'Early Proof-of-Stake pioneer'] },
@@ -73,6 +79,7 @@ const T = tr({
     founders: [
       { role: 'CEO', lines: ['PhD em Engenharia Elétrica', 'Fundou e vendeu a Guardtime', 'Ex-MD, Barclays Capital'] },
       { role: 'CPTO', lines: ['PhD em Machine Learning', '25 anos entregando IA e infraestrutura corporativa (BT, Nokia, A10)', 'Ex-Vitruvian (ML aplicado, segurança)'] },
+      { role: 'Cientista-Chefe', lines: ['Inventor do blockchain KSI', 'Cofundador da Guardtime', 'Professor de criptografia, TalTech'] },
     ],
     coreTeam: [
       { role: 'AI OS', lines: ['NEAR, Asimov, Blackcoin', 'Pioneiro do Proof-of-Stake'] },
@@ -177,9 +184,7 @@ export function TeamSlide() {
               className="flex items-start gap-5"
             >
               <div className="relative shrink-0">
-                <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden ring-2 ring-orange-500/30">
-                  <img src={f.photo} alt={f.name} className="w-full h-full object-cover" />
-                </div>
+                <TeamPhoto name={f.name} photo={f.photo} />
                 {f.linkedin && <LinkedInBadge href={f.linkedin} size={6} />}
               </div>
               <div className="min-w-0">
