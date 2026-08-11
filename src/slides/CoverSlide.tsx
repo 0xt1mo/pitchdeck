@@ -56,16 +56,6 @@ export function CoverSlide() {
 
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-8 sm:px-12 lg:px-16 gap-7 lg:gap-9">
 
-        {/* Logo */}
-        <motion.img
-          src="/UnicityLogo.svg"
-          alt="Unicity"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
-          className="h-12 sm:h-14 lg:h-16 w-auto"
-        />
-
         {/* Thesis headline */}
         <motion.h1
           initial={{ opacity: 0, y: 12 }}
