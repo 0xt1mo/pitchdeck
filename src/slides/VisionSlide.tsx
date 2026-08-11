@@ -4,10 +4,9 @@ const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
 
 const layers: { noun: string; mech: string; live?: boolean; status?: string }[] = [
-  { noun: 'State', mech: 'Proof System', live: true },
+  { noun: 'Execution', mech: 'Proof System', live: true },
   { noun: 'Code', mech: 'Formal methods', status: 'In development' },
-  { noun: 'Reasoning', mech: 'Tensor logic' },
-  { noun: 'Learning', mech: 'Own records' },
+  { noun: 'Reasoning', mech: 'Neurosymbolic' },
 ];
 
 export function VisionSlide() {
@@ -46,11 +45,11 @@ export function VisionSlide() {
             className="mt-5 lg:mt-6 text-[#fefefe]/75 text-base sm:text-lg lg:text-xl leading-relaxed max-w-5xl"
             style={{ fontFamily: MONO }}
           >
-            We're a team of <span className="text-[#fefefe] font-bold">PhDs in machine learning and cryptography</span>, on one mission: AI you don't have to trust — <span className="text-[#fefefe] font-bold">proven at every layer, not tested after the fact.</span>
+            Our team consists of <span className="text-[#fefefe] font-bold">PhDs in machine learning, cryptography, formal methods and semantics.</span> We're building the infrastructure for verifiable autonomous AI — <span className="text-[#fefefe] font-bold">AIs that are formally verified, secure by construction, with safety properties guaranteed.</span>
           </motion.p>
         </div>
 
-        {/* Four layers we prove */}
+        {/* Layers we prove */}
         <div className="shrink-0">
           <motion.p
             initial={{ opacity: 0 }}
@@ -86,7 +85,7 @@ export function VisionSlide() {
                 </div>
                 <p className="text-[#fefefe]/80 text-sm lg:text-base font-bold mt-2.5" style={{ fontFamily: MONO }}>{l.mech}</p>
                 <p className="text-[#fefefe]/40 text-[10px] lg:text-xs tracking-[0.16em] uppercase mt-2" style={{ fontFamily: MONO }}>
-                  {l.status ?? (l.live ? 'Live' : 'On the roadmap')}
+                  {l.status ?? (l.live ? 'Live' : 'Under research')}
                 </p>
               </motion.div>
             ))}
