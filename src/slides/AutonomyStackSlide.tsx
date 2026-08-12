@@ -12,7 +12,7 @@ type StackLayer = {
 
 const T = tr({
   en: {
-    headLead: 'UNICITY AOS: AN OS BUILT FOR ',
+    headLead: 'AOS: AN OS BUILT FOR ',
     headAccent: 'AUTONOMOUS AGENTS',
     subtitle: 'Every OS until now assumed a human at the keyboard. This one is built for the day when no one is watching — with the identity, enforcement, and proof to earn that autonomy safely, one step at a time.',
     ctaComment: '// operating systems beat harnesses',
@@ -43,7 +43,7 @@ const T = tr({
     ] as StackLayer[],
   },
   pt: {
-    headLead: 'UNICITY AOS: UM OS FEITO PARA ',
+    headLead: 'AOS: UM OS FEITO PARA ',
     headAccent: 'AGENTES AUTÔNOMOS',
     subtitle: 'Todo OS até hoje presumiu um humano ao teclado. Este foi feito para o dia em que ninguém está observando — com a identidade, a imposição e a prova para conquistar essa autonomia com segurança, um passo de cada vez.',
     ctaComment: '// sistemas operacionais superam harnesses',
