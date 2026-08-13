@@ -1,5 +1,5 @@
 import { investorDeck } from './investor';
-import { investorCryptoDeck } from './investorcrypto';
+import { investorCleanDeck } from './investorclean';
 import { corporateDeck } from './corporate';
 import { ddnDeck } from './ddn';
 import { ddnbrandDeck } from './ddnbrand';
@@ -16,7 +16,7 @@ import { videoDeck } from './video';
 
 export const decks = {
   investor: investorDeck,
-  investorcrypto: investorCryptoDeck,
+  investorclean: investorCleanDeck,
   corporate: corporateDeck,
   ddn: ddnDeck,
   ddnbrand: ddnbrandDeck,

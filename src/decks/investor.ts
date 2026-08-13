@@ -1,16 +1,52 @@
-// Deck config — general-audience investor deck. Derived from the crypto superset
-// (investorcrypto.ts): crypto-only slides are filtered out and the traction slide is
-// swapped to the crypto-free variant. Edit membership/order in investorcrypto.ts.
-import { investorCryptoDeck } from './investorcrypto';
+// Deck config — investor deck (full: includes the crypto slides). This is the
+// authoritative deck; edit membership/order here. The crypto-free `investorclean`
+// deck is derived from this one (see investorclean.ts).
+import { AgentFirewallSlide } from '../slides/AgentFirewallSlide';
+import { AiInfraSlide } from '../slides/AiInfraSlide';
+import { AosDensitySlide } from '../slides/AosDensitySlide';
+import { AosMergedSlide } from '../slides/AosMergedSlide';
+import { AutonomyStackSlide } from '../slides/AutonomyStackSlide';
+import { BearerTokensSlide } from '../slides/BearerTokensSlide';
+import { CompetitionMinimalSlide } from '../slides/CompetitionMinimalSlide';
+import { ConciergeSlide } from '../slides/ConciergeSlide';
+import { CoverSlide } from '../slides/CoverSlide';
+import { EvolutionSlide } from '../slides/EvolutionSlide';
+import { GoToMarketSlide } from '../slides/GoToMarketSlide';
+import { GtmEditionsSlide } from '../slides/GtmEditionsSlide';
+import { HealthGatewaySlide } from '../slides/HealthGatewaySlide';
+import { InvestmentSlide } from '../slides/InvestmentSlide';
 import { MarketBlockchainSlide } from '../slides/MarketBlockchainSlide';
+import { MarketSlide } from '../slides/MarketSlide';
+import { TeamSlide } from '../slides/TeamSlide';
+import { ThankYouChatSlide } from '../slides/ThankYouChatSlide';
+import { TitleSlide } from '../slides/TitleSlide';
+import { TokenRebuildSlide } from '../slides/TokenRebuildSlide';
+import { TokenSlide } from '../slides/TokenSlide';
 import { TractionSlide } from '../slides/TractionSlide';
-import { TractionCleanSlide } from '../slides/TractionCleanSlide';
+import { VisionSlide } from '../slides/VisionSlide';
 
-// Slides shown only to crypto-native audiences (kept in the investorcrypto deck).
-const CRYPTO_ONLY = new Set<unknown>([
-  MarketBlockchainSlide,
-]);
-
-export const investorDeck = investorCryptoDeck
-  .filter((slide) => !CRYPTO_ONLY.has(slide))
-  .map((slide) => (slide === TractionSlide ? TractionCleanSlide : slide));
+export const investorDeck = [
+  TitleSlide,             // Cover — the operating system for autonomous AI
+  CoverSlide,             // Thesis — the internet machines need doesn't exist yet
+  EvolutionSlide,         // Why now — AI agents speedrunning compute history
+  AutonomyStackSlide,     // AOS: an OS built for autonomous agents
+  AosDensitySlide,        // What a multi-tenant agent OS buys
+  MarketSlide,            // Market — AI infrastructure
+  MarketBlockchainSlide,  // Market — blockchain / crypto  [crypto-only]
+  AosMergedSlide,
+  CompetitionMinimalSlide,
+  BearerTokensSlide,      // Bearer tokens — integrated blockchain  [crypto-only]
+  GtmEditionsSlide,
+  ConciergeSlide,         // Telco
+  HealthGatewaySlide,     // Healthcare — the AI compliance gateway
+  GoToMarketSlide,        // Government
+  AiInfraSlide,           // AI infra OEM channel
+  AgentFirewallSlide,
+  TractionSlide,          // Traction — with testnet wallets/apps  [crypto]
+  TeamSlide,
+  InvestmentSlide,
+  TokenSlide,             // Token  [crypto-only]
+  TokenRebuildSlide,      // Token rebuild  [crypto-only]
+  VisionSlide,
+  ThankYouChatSlide,
+];
