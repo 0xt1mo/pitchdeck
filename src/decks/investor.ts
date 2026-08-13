@@ -10,6 +10,7 @@ import { ConciergeSlide } from '../slides/ConciergeSlide';
 import { CoverSlide } from '../slides/CoverSlide';
 import { GoToMarketSlide } from '../slides/GoToMarketSlide';
 import { GtmEditionsSlide } from '../slides/GtmEditionsSlide';
+import { HealthGatewaySlide } from '../slides/HealthGatewaySlide';
 // import { IGamingRetentionSlide } from '../slides/IGamingRetentionSlide'; // hidden
 // import { IntroSlide } from '../slides/IntroSlide'; // folded into CoverSlide thesis
 import { InvestmentSlide } from '../slides/InvestmentSlide';
@@ -39,7 +40,7 @@ export const investorDeck = [
   BearerTokensSlide,
   GtmEditionsSlide,
   ConciergeSlide,
-  // MedicalCaseSlide,    // removed — didn't fit
+  HealthGatewaySlide,     // Healthcare — the AI compliance gateway (PHI)
   GoToMarketSlide,
   AiInfraSlide,           // AI infra OEM channel — the OS inside sovereign AI data centers
   // IGamingRetentionSlide, // hidden
