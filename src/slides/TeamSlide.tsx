@@ -64,7 +64,7 @@ const T = tr({
     coreTeam: [
       { role: 'AI OS', lines: ['NEAR, Asimov, Blackcoin', 'Early Proof-of-Stake pioneer'] },
       { role: 'Product', lines: ['Head of AI Delivery, NEOM', 'JP Morgan'] },
-      { role: 'VP Sales (incoming)', lines: ['Zain · Etisalat · Dubai Gov', '12 yrs CX AI, global B2C'] },
+      { role: 'Commercial', lines: ['Google · Verizon · IKEA', '12 yrs CX AI, global B2C'] },
     ],
     advisorsLabel: 'Advisors',
   },
@@ -84,7 +84,7 @@ const T = tr({
     coreTeam: [
       { role: 'AI OS', lines: ['NEAR, Asimov, Blackcoin', 'Pioneiro do Proof-of-Stake'] },
       { role: 'Produto', lines: ['Head de Entrega de IA, NEOM', 'JP Morgan'] },
-      { role: 'VP de Vendas (a chegar)', lines: ['Zain · Etisalat · Dubai Gov', '12 anos de CX IA, B2C global'] },
+      { role: 'Comercial', lines: ['Google · Verizon · IKEA', '12 anos de CX IA, B2C global'] },
     ],
     advisorsLabel: 'Conselheiros',
   },
