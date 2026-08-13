@@ -9,6 +9,7 @@ import { EvolutionSlide } from '../slides/EvolutionSlide';
 import { AiInfraSlide } from '../slides/AiInfraSlide';
 import { ConciergeSlide } from '../slides/ConciergeSlide';
 import { GoToMarketSlide } from '../slides/GoToMarketSlide';
+import { HealthGatewaySlide } from '../slides/HealthGatewaySlide';
 import { VisionSlide } from '../slides/VisionSlide';
 
 // — Original AOS slides —
@@ -78,6 +79,7 @@ export const aosDeck = [
   AosIndustriesSlide,
   AiInfraSlide,           // new — the OS inside sovereign AI data centers
   ConciergeSlide,         // new — telco: a personal agent for high-ARPU subscribers
+  HealthGatewaySlide,     // new — healthcare: the AI compliance gateway (PHI)
   GoToMarketSlide,        // new — government: the agentic state
 
   // — Proof, behavior, durability —
