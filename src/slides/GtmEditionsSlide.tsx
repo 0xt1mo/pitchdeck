@@ -41,8 +41,6 @@ const T = tr({
           { t: 'Guardrails: Compliance, Security, Governance' },
           { t: 'RBAC, SSO, SIEM…' },
           { t: 'VPC / on-prem · per-agent licensing' },
-          { t: '$200K blended first-year account value', sub: '$100K platform contract + initial governed-agent metering' },
-          { t: '$250 per agent / month list', sub: 'blending toward $100 at fleet scale' },
         ],
       },
       {
@@ -99,8 +97,6 @@ const T = tr({
           { t: 'Guardrails: Compliance, Segurança, Governança' },
           { t: 'RBAC, SSO, SIEM…' },
           { t: 'VPC / on-prem · licenciamento por agente' },
-          { t: 'Valor combinado de conta de $200K no primeiro ano', sub: 'Contrato de plataforma de $100K + medição inicial de agentes governados' },
-          { t: '$250 por agente / mês (preço de tabela)', sub: 'tendendo a $100 em escala de frota' },
         ],
       },
       {
