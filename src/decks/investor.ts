@@ -1,55 +1,16 @@
-// Deck config — ordered list of slides. Edit membership/order here; slide source lives in ../slides.
-import { AgentFirewallSlide } from '../slides/AgentFirewallSlide';
-import { AiInfraSlide } from '../slides/AiInfraSlide';
-import { AosDensitySlide } from '../slides/AosDensitySlide';
-import { AosMergedSlide } from '../slides/AosMergedSlide';
-import { AutonomyStackSlide } from '../slides/AutonomyStackSlide';
-import { BearerTokensSlide } from '../slides/BearerTokensSlide';
-import { CompetitionMinimalSlide } from '../slides/CompetitionMinimalSlide';
-import { ConciergeSlide } from '../slides/ConciergeSlide';
-import { CoverSlide } from '../slides/CoverSlide';
-import { GoToMarketSlide } from '../slides/GoToMarketSlide';
-import { GtmEditionsSlide } from '../slides/GtmEditionsSlide';
-import { HealthGatewaySlide } from '../slides/HealthGatewaySlide';
-// import { IGamingRetentionSlide } from '../slides/IGamingRetentionSlide'; // hidden
-// import { IntroSlide } from '../slides/IntroSlide'; // folded into CoverSlide thesis
-import { InvestmentSlide } from '../slides/InvestmentSlide';
+// Deck config — general-audience investor deck. Derived from the crypto superset
+// (investorcrypto.ts): crypto-only slides are filtered out and the traction slide is
+// swapped to the crypto-free variant. Edit membership/order in investorcrypto.ts.
+import { investorCryptoDeck } from './investorcrypto';
 import { MarketBlockchainSlide } from '../slides/MarketBlockchainSlide';
-import { MarketSlide } from '../slides/MarketSlide';
-// import { MedicalCaseSlide } from '../slides/MedicalCaseSlide'; // removed — didn't fit
-import { EvolutionSlide } from '../slides/EvolutionSlide';
-import { TeamSlide } from '../slides/TeamSlide';
-import { ThankYouChatSlide } from '../slides/ThankYouChatSlide';
-import { TitleSlide } from '../slides/TitleSlide';
-import { TokenRebuildSlide } from '../slides/TokenRebuildSlide';
-import { TokenSlide } from '../slides/TokenSlide';
 import { TractionSlide } from '../slides/TractionSlide';
-import { VisionSlide } from '../slides/VisionSlide';
+import { TractionCleanSlide } from '../slides/TractionCleanSlide';
 
-export const investorDeck = [
-  TitleSlide,             // Cover — logo + 'the operating system for autonomous AI'
-  CoverSlide,             // Thesis — machine intelligences / the internet they need doesn't exist yet
-  // IntroSlide,          // folded into CoverSlide thesis
-  EvolutionSlide,         // Why now — agents recapitulating computing history (data center)
-  AutonomyStackSlide,     // Unicity AOS: an OS built for autonomous agents
-  AosDensitySlide,        // What a multi-tenant agent OS buys
-  MarketSlide,
+// Slides shown only to crypto-native audiences (kept in the investorcrypto deck).
+const CRYPTO_ONLY = new Set<unknown>([
   MarketBlockchainSlide,
-  AosMergedSlide,
-  CompetitionMinimalSlide,
-  BearerTokensSlide,
-  GtmEditionsSlide,
-  ConciergeSlide,
-  HealthGatewaySlide,     // Healthcare — the AI compliance gateway (PHI)
-  GoToMarketSlide,
-  AiInfraSlide,           // AI infra OEM channel — the OS inside sovereign AI data centers
-  // IGamingRetentionSlide, // hidden
-  AgentFirewallSlide,
-  TractionSlide,
-  TeamSlide,
-  InvestmentSlide,
-  TokenSlide,
-  TokenRebuildSlide,
-  VisionSlide,
-  ThankYouChatSlide,
-];
+]);
+
+export const investorDeck = investorCryptoDeck
+  .filter((slide) => !CRYPTO_ONLY.has(slide))
+  .map((slide) => (slide === TractionSlide ? TractionCleanSlide : slide));
