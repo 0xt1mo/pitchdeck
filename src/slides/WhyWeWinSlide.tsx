@@ -14,9 +14,9 @@ const T = tr({
     subtitle:
       'Everyone else watches agents from the outside with bolt-on guardrails that break at scale. We build safety and security into the OS the agents run on — so the guarantees hold at industrial scale, not just in a demo.',
     pillars: [
-      { k: 'Industrial scale', d: '10,000s of concurrent agents per node. Multi-tenant, isolated at the kernel — density no wrapper can reach.' },
-      { k: 'Safe by construction', d: 'Policy, budgets, DLP and prompt-defense enforced below the agent — impossible to bypass or prompt away.' },
-      { k: 'Verifiable', d: 'Every execution cryptographically signed. Audit by construction — evidence, not logs written after the fact.' },
+      { k: 'Industrial scale', d: '10,000s of agents per node — multi-tenant, isolated at the kernel.' },
+      { k: 'Safe by construction', d: 'Policy, DLP and prompt-defense enforced below the agent — can’t be bypassed. Every step cryptographically signed.' },
+      { k: 'Price rivals can’t match', d: 'Multi-tenant density → a fraction of the cost per agent. $5/sub · $15/dev.' },
     ] as Pillar[],
     kicker: 'Guardrails are a feature.',
     kickerAccent: 'An OS is a moat.',
@@ -28,9 +28,9 @@ const T = tr({
     subtitle:
       'Todos os outros vigiam os agentes de fora com guardrails acoplados que quebram em escala. Nós construímos a segurança dentro do OS onde os agentes rodam — então as garantias se mantêm em escala industrial, não só numa demo.',
     pillars: [
-      { k: 'Escala industrial', d: 'Milhares de agentes simultâneos por nó. Multi-tenant, isolados no kernel — densidade que nenhum wrapper alcança.' },
-      { k: 'Seguro por construção', d: 'Política, budgets, DLP e defesa contra prompt-injection impostos abaixo do agente — impossíveis de contornar.' },
-      { k: 'Verificável', d: 'Cada execução assinada criptograficamente. Auditoria por construção — evidência, não logs escritos depois.' },
+      { k: 'Escala industrial', d: 'Milhares de agentes por nó — multi-tenant, isolados no kernel.' },
+      { k: 'Seguro por construção', d: 'Política, DLP e defesa contra prompt-injection abaixo do agente — não dá para contornar. Cada passo assinado criptograficamente.' },
+      { k: 'Preço que rivais não alcançam', d: 'Densidade multi-tenant → uma fração do custo por agente. $5/assin. · $15/dev.' },
     ] as Pillar[],
     kicker: 'Guardrails são um recurso.',
     kickerAccent: 'Um OS é um moat.',
@@ -88,26 +88,29 @@ export function WhyWeWinSlide() {
 
         {/* Three pillars */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-5 shrink-0">
-          {T.pillars.map((p, i) => (
-            <motion.div
-              key={p.k}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 + i * 0.1, duration: 0.5 }}
-              className="rounded-xl border border-white/10 bg-white/[0.02] p-5 lg:p-7 flex flex-col"
-              style={i === 1 ? { borderColor: 'rgba(249,115,22,0.4)', borderLeft: '3px solid #f97316', background: 'rgba(249,115,22,0.05)' } : undefined}
-            >
-              <p
-                className={`text-2xl lg:text-4xl uppercase leading-none ${i === 1 ? 'text-orange-400' : 'text-[#fefefe]'}`}
-                style={{ fontFamily: ANTON }}
+          {T.pillars.map((p, i) => {
+            const hot = i === 2;
+            return (
+              <motion.div
+                key={p.k}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 + i * 0.1, duration: 0.5 }}
+                className="rounded-xl border border-white/10 bg-white/[0.02] p-5 lg:p-6 flex flex-col"
+                style={hot ? { borderColor: 'rgba(249,115,22,0.5)', borderLeft: '3px solid #f97316', background: 'rgba(249,115,22,0.06)' } : undefined}
               >
-                {p.k}
-              </p>
-              <p className="text-[#fefefe]/70 text-sm lg:text-lg leading-snug mt-3.5" style={{ fontFamily: MONO }}>
-                {p.d}
-              </p>
-            </motion.div>
-          ))}
+                <p
+                  className={`text-2xl lg:text-3xl uppercase leading-[0.95] ${hot ? 'text-orange-400' : 'text-[#fefefe]'}`}
+                  style={{ fontFamily: ANTON }}
+                >
+                  {p.k}
+                </p>
+                <p className="text-[#fefefe]/70 text-sm lg:text-base leading-snug mt-3.5" style={{ fontFamily: MONO }}>
+                  {p.d}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Kicker */}
