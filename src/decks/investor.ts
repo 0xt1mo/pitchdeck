@@ -42,12 +42,12 @@ export const investorDeck = [
   BearerTokensSlide,      // Bearer tokens — integrated blockchain  [crypto-only]
   GtmEditionsSlide,
   ConciergeSlide,         // Telco
+  FinancialModelSlide,    // Financial model — Concierge unit economics + ARR ramp
   // HealthGatewaySlide,  // removed from investor deck
   GoToMarketSlide,        // Government
   // AiInfraSlide,        // removed from investor deck
   // AgentFirewallSlide,  // removed — 'Example solution: AOS Codewall'
   TractionSlide,          // Traction — with testnet wallets/apps  [crypto]
-  FinancialModelSlide,    // Financial model — Concierge unit economics + ARR ramp
   TeamSlide,
   InvestmentSlide,
   TokenSlide,             // Token  [crypto-only]
