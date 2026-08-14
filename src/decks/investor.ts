@@ -34,8 +34,6 @@ export const investorDeck = [
   EvolutionSlide,         // Why now — AI agents speedrunning compute history
   AutonomyStackSlide,     // AOS: an OS built for autonomous agents
   AosDensitySlide,        // What a multi-tenant agent OS buys
-  MarketSlide,            // Market — AI infrastructure
-  MarketBlockchainSlide,  // Market — blockchain / crypto  [crypto-only]
   // AosMergedSlide,      // removed — 'operating systems beat harnesses'
   // CompetitionMinimalSlide, // removed — replaced by WhyWeWinSlide
   WhyWeWinSlide,          // Competition — industrial scale + safety/security baked into the OS
@@ -48,6 +46,8 @@ export const investorDeck = [
   // AiInfraSlide,        // removed from investor deck
   // AgentFirewallSlide,  // removed — 'Example solution: AOS Codewall'
   TractionSlide,          // Traction — with testnet wallets/apps  [crypto]
+  MarketSlide,            // Market opportunity — AI infrastructure
+  MarketBlockchainSlide,  // Market opportunity — blockchain / crypto  [crypto-only]
   TeamSlide,
   InvestmentSlide,
   TokenSlide,             // Token  [crypto-only]
