@@ -14,7 +14,7 @@ const T = tr({
   en: {
     headLead: 'AOS: AN OS BUILT FOR ',
     headAccent: 'AUTONOMOUS AGENTS',
-    subtitle: 'Every OS until now assumed a human at the keyboard. This one is built for the day when no one is watching — with the identity, enforcement, and proof to earn that autonomy safely, one step at a time.',
+    subtitle: 'A new runtime for autonomous agents — verifiable execution and safety guarantees built into the OS, not bolted on.',
     ctaComment: '// operating systems beat harnesses',
     ctaButton: 'try it now — aos.unicity.ai',
     agentLabel: 'AGENT',
@@ -45,7 +45,7 @@ const T = tr({
   pt: {
     headLead: 'AOS: UM OS FEITO PARA ',
     headAccent: 'AGENTES AUTÔNOMOS',
-    subtitle: 'Todo OS até hoje presumiu um humano ao teclado. Este foi feito para o dia em que ninguém está observando — com a identidade, a imposição e a prova para conquistar essa autonomia com segurança, um passo de cada vez.',
+    subtitle: 'Um novo runtime para agentes autônomos — execução verificável e garantias de segurança construídas dentro do OS, não acopladas por fora.',
     ctaComment: '// sistemas operacionais superam harnesses',
     ctaButton: 'experimente agora — aos.unicity.ai',
     agentLabel: 'AGENTE',

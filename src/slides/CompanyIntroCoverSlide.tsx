@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { tr } from '../i18n';
 
 const T = tr({
-  en: { headLead: 'COMPANY ', headAccent: 'INTRO.', tagline: 'AI Autonomy.' },
-  pt: { headLead: 'APRESENTAÇÃO DA ', headAccent: 'EMPRESA.', tagline: 'Autonomia de IA.' },
+  en: { headLead: 'VERIFIABLY ', headAccent: 'SAFE AI.', tagline: 'Secure by construction.' },
+  pt: { headLead: 'IA ', headAccent: 'COMPROVADAMENTE SEGURA.', tagline: 'Segura por construção.' },
 });
 
 export function CompanyIntroCoverSlide() {
@@ -63,7 +63,7 @@ export function CompanyIntroCoverSlide() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-[64px] sm:text-[96px] lg:text-[160px] xl:text-[180px] leading-[0.88] tracking-tight uppercase text-center"
+          className="text-[52px] sm:text-[84px] lg:text-[128px] xl:text-[148px] leading-[0.9] tracking-tight uppercase text-center max-w-[11ch]"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
           <span className="text-[#fefefe]">{T.headLead}</span><span className="text-orange-400">{T.headAccent}</span>
