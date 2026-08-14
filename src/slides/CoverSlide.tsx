@@ -3,20 +3,20 @@ import { tr } from '../i18n';
 
 const T = tr({
   en: {
-    eyebrow: 'The machine internet',
+    eyebrow: 'The safety gap',
     line1: 'Billions of machine intelligences.',
-    l2pre: 'The internet they need',
-    ghost: 'doesn’t exist',
+    l2pre: 'No one can run them',
+    ghost: 'safely at scale',
     yet: 'yet.',
-    sub: 'Routing, compute, identity, settlement. The entire stack has to be rebuilt for machines, not people.',
+    sub: 'Guardrails bolt on from the outside and break at scale. Safety and security have to be built into the OS they run on.',
   },
   pt: {
-    eyebrow: 'A internet das máquinas',
+    eyebrow: 'A lacuna de segurança',
     line1: 'Bilhões de inteligências de máquina.',
-    l2pre: 'A internet que elas precisam',
-    ghost: 'ainda não existe.',
-    yet: '',
-    sub: 'Roteamento, computação, identidade, liquidação. Toda a stack precisa ser reconstruída para máquinas, não pessoas.',
+    l2pre: 'Ninguém consegue rodá-las',
+    ghost: 'com segurança em escala',
+    yet: 'ainda.',
+    sub: 'Guardrails acoplados por fora quebram em escala. Segurança precisa ser construída dentro do OS onde elas rodam.',
   },
 });
 
