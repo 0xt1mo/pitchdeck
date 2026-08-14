@@ -4,10 +4,10 @@
 import { AgentFirewallSlide } from '../slides/AgentFirewallSlide';
 import { AiInfraSlide } from '../slides/AiInfraSlide';
 import { AosDensitySlide } from '../slides/AosDensitySlide';
-import { AosMergedSlide } from '../slides/AosMergedSlide';
+// import { AosMergedSlide } from '../slides/AosMergedSlide'; // removed — 'operating systems beat harnesses'
 import { AutonomyStackSlide } from '../slides/AutonomyStackSlide';
 import { BearerTokensSlide } from '../slides/BearerTokensSlide';
-import { CompetitionMinimalSlide } from '../slides/CompetitionMinimalSlide';
+// import { CompetitionMinimalSlide } from '../slides/CompetitionMinimalSlide'; // removed — replaced by WhyWeWinSlide
 import { ConciergeSlide } from '../slides/ConciergeSlide';
 import { CoverSlide } from '../slides/CoverSlide';
 import { EvolutionSlide } from '../slides/EvolutionSlide';
@@ -35,9 +35,9 @@ export const investorDeck = [
   AosDensitySlide,        // What a multi-tenant agent OS buys
   MarketSlide,            // Market — AI infrastructure
   MarketBlockchainSlide,  // Market — blockchain / crypto  [crypto-only]
-  AosMergedSlide,
-  CompetitionMinimalSlide,
-  WhyWeWinSlide,          // What it means — industrial scale + safety/security baked into the OS
+  // AosMergedSlide,      // removed — 'operating systems beat harnesses'
+  // CompetitionMinimalSlide, // removed — replaced by WhyWeWinSlide
+  WhyWeWinSlide,          // Competition — industrial scale + safety/security baked into the OS
   BearerTokensSlide,      // Bearer tokens — integrated blockchain  [crypto-only]
   GtmEditionsSlide,
   ConciergeSlide,         // Telco
