@@ -10,7 +10,7 @@ const T = tr({
     headAccent: 'The agentic state',
     subHead: (
       <>
-        We've partnered with <span className="text-orange-400 font-bold">Aleria AI</span>, provider of sovereign AI solutions, to bring our OS to the Middle East.
+        We've partnered with <span className="text-orange-400 font-bold">Aleria AI</span>, provider of sovereign AI solutions, to bring our OS to governments in sovereign AI data center rollouts.
       </>
     ),
     channelPartner: 'Channel Partner · Live Today',
@@ -26,7 +26,7 @@ const T = tr({
     headAccent: 'O estado agêntico',
     subHead: (
       <>
-        Firmamos parceria com <span className="text-orange-400 font-bold">Aleria AI</span>, fornecedora de soluções de IA soberana, para levar nosso OS ao Oriente Médio.
+        Firmamos parceria com <span className="text-orange-400 font-bold">Aleria AI</span>, fornecedora de soluções de IA soberana, para levar nosso OS a governos em implantações de data centers de IA soberana.
       </>
     ),
     channelPartner: 'Parceiro de Canal · Ativo Hoje',
