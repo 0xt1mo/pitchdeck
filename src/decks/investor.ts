@@ -18,6 +18,7 @@ import { HealthGatewaySlide } from '../slides/HealthGatewaySlide';
 import { InvestmentSlide } from '../slides/InvestmentSlide';
 import { MarketBlockchainSlide } from '../slides/MarketBlockchainSlide';
 import { MarketSlide } from '../slides/MarketSlide';
+import { ProductsSlide } from '../slides/ProductsSlide';
 import { TeamSlide } from '../slides/TeamSlide';
 import { ThankYouChatSlide } from '../slides/ThankYouChatSlide';
 import { TitleSlide } from '../slides/TitleSlide';
@@ -40,6 +41,7 @@ export const investorDeck = [
   WhyWeWinSlide,          // Competition — industrial scale + safety/security baked into the OS
   BearerTokensSlide,      // Bearer tokens — integrated blockchain  [crypto-only]
   GtmEditionsSlide,
+  ProductsSlide,          // Platform — one verifiable OS, products on top
   ConciergeSlide,         // Telco
   HealthGatewaySlide,     // Healthcare — the AI compliance gateway
   GoToMarketSlide,        // Government
