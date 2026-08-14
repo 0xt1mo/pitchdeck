@@ -12,7 +12,7 @@ const layers: { noun: string; mech: string; live?: boolean; status?: string }[] 
 const products: { name: string; tag: string; price?: string; ghost?: boolean }[] = [
   { name: 'Concierge', tag: 'Telco', price: '$5 / sub' },
   { name: 'Codewall', tag: 'Dev security', price: '$15 / dev' },
-  { name: 'Health Gateway', tag: 'Healthcare', price: 'HIPAA-safe' },
+  { name: 'Compliance Gateway', tag: 'Healthcare', price: '$TBD' },
 ];
 
 export function VisionSlide() {
