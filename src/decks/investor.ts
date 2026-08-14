@@ -2,7 +2,7 @@
 // authoritative deck; edit membership/order here. The crypto-free `investorclean`
 // deck is derived from this one (see investorclean.ts).
 import { AgentFirewallSlide } from '../slides/AgentFirewallSlide';
-import { AiInfraSlide } from '../slides/AiInfraSlide';
+// import { AiInfraSlide } from '../slides/AiInfraSlide'; // removed from investor deck
 import { AosDensitySlide } from '../slides/AosDensitySlide';
 // import { AosMergedSlide } from '../slides/AosMergedSlide'; // removed — 'operating systems beat harnesses'
 import { AutonomyStackSlide } from '../slides/AutonomyStackSlide';
@@ -43,7 +43,7 @@ export const investorDeck = [
   ConciergeSlide,         // Telco
   HealthGatewaySlide,     // Healthcare — the AI compliance gateway
   GoToMarketSlide,        // Government
-  AiInfraSlide,           // AI infra OEM channel
+  // AiInfraSlide,        // removed from investor deck
   AgentFirewallSlide,
   TractionSlide,          // Traction — with testnet wallets/apps  [crypto]
   FinancialModelSlide,    // Financial model — Concierge unit economics + ARR ramp
