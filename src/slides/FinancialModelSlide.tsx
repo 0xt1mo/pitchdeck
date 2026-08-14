@@ -9,10 +9,10 @@ const MONO = "'Geist Mono', monospace";
 const RAMP = [
   { y: '2027', subs: '1M', pen: '0.1%', arr: 9 },
   { y: '2028', subs: '5M', pen: '0.5%', arr: 45 },
-  { y: '2029', subs: '15M', pen: '1.5%', arr: 135 },
-  { y: '2030', subs: '40M', pen: '4%', arr: 360 },
+  { y: '2029', subs: '10M', pen: '1%', arr: 90 },
+  { y: '2030', subs: '20M', pen: '2%', arr: 180 },
 ];
-const MAX_ARR = 360;
+const MAX_ARR = 180;
 
 const T = tr({
   en: {
@@ -27,7 +27,7 @@ const T = tr({
     annual: 'Per subscriber, per year',
     rampTitle: 'Unicity ARR — base case',
     subsLabel: 'subs',
-    footnote: 'Concierge is one vertical on the OS. Base case tops out below 5% of the addressable base.',
+    footnote: 'Concierge is one vertical on the OS. Base case tops out at just 2% of the addressable base.',
   },
   pt: {
     eyebrow: 'Modelo financeiro · Concierge (telecom)',
@@ -41,7 +41,7 @@ const T = tr({
     annual: 'Por assinante, por ano',
     rampTitle: 'ARR da Unicity — cenário base',
     subsLabel: 'assin.',
-    footnote: 'Concierge é uma vertical no OS. O cenário base fica abaixo de 5% da base endereçável.',
+    footnote: 'Concierge é uma vertical no OS. O cenário base chega a apenas 2% da base endereçável.',
   },
 });
 
