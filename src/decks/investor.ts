@@ -11,6 +11,7 @@ import { CompetitionMinimalSlide } from '../slides/CompetitionMinimalSlide';
 import { ConciergeSlide } from '../slides/ConciergeSlide';
 import { CoverSlide } from '../slides/CoverSlide';
 import { EvolutionSlide } from '../slides/EvolutionSlide';
+import { FinancialModelSlide } from '../slides/FinancialModelSlide';
 import { GoToMarketSlide } from '../slides/GoToMarketSlide';
 import { GtmEditionsSlide } from '../slides/GtmEditionsSlide';
 import { HealthGatewaySlide } from '../slides/HealthGatewaySlide';
@@ -43,6 +44,7 @@ export const investorDeck = [
   AiInfraSlide,           // AI infra OEM channel
   AgentFirewallSlide,
   TractionSlide,          // Traction — with testnet wallets/apps  [crypto]
+  FinancialModelSlide,    // Financial model — Concierge unit economics + ARR ramp
   TeamSlide,
   InvestmentSlide,
   TokenSlide,             // Token  [crypto-only]
