@@ -1,7 +1,7 @@
 // Deck config — investor deck (full: includes the crypto slides). This is the
 // authoritative deck; edit membership/order here. The crypto-free `investorclean`
 // deck is derived from this one (see investorclean.ts).
-import { AgentFirewallSlide } from '../slides/AgentFirewallSlide';
+// import { AgentFirewallSlide } from '../slides/AgentFirewallSlide'; // removed — 'Example solution: AOS Codewall'
 // import { AiInfraSlide } from '../slides/AiInfraSlide'; // removed from investor deck
 import { AosDensitySlide } from '../slides/AosDensitySlide';
 // import { AosMergedSlide } from '../slides/AosMergedSlide'; // removed — 'operating systems beat harnesses'
@@ -14,7 +14,7 @@ import { EvolutionSlide } from '../slides/EvolutionSlide';
 import { FinancialModelSlide } from '../slides/FinancialModelSlide';
 import { GoToMarketSlide } from '../slides/GoToMarketSlide';
 import { GtmEditionsSlide } from '../slides/GtmEditionsSlide';
-import { HealthGatewaySlide } from '../slides/HealthGatewaySlide';
+// import { HealthGatewaySlide } from '../slides/HealthGatewaySlide'; // removed from investor deck
 import { InvestmentSlide } from '../slides/InvestmentSlide';
 import { MarketBlockchainSlide } from '../slides/MarketBlockchainSlide';
 import { MarketSlide } from '../slides/MarketSlide';
@@ -42,10 +42,10 @@ export const investorDeck = [
   BearerTokensSlide,      // Bearer tokens — integrated blockchain  [crypto-only]
   GtmEditionsSlide,
   ConciergeSlide,         // Telco
-  HealthGatewaySlide,     // Healthcare — the AI compliance gateway
+  // HealthGatewaySlide,  // removed from investor deck
   GoToMarketSlide,        // Government
   // AiInfraSlide,        // removed from investor deck
-  AgentFirewallSlide,
+  // AgentFirewallSlide,  // removed — 'Example solution: AOS Codewall'
   TractionSlide,          // Traction — with testnet wallets/apps  [crypto]
   FinancialModelSlide,    // Financial model — Concierge unit economics + ARR ramp
   TeamSlide,
