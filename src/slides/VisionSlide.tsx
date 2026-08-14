@@ -9,6 +9,12 @@ const layers: { noun: string; mech: string; live?: boolean; status?: string }[] 
   { noun: 'Reasoning', mech: 'Neurosymbolic' },
 ];
 
+const products: { name: string; tag: string; price?: string; ghost?: boolean }[] = [
+  { name: 'Concierge', tag: 'Telco', price: '$5 / sub' },
+  { name: 'Codewall', tag: 'Dev security', price: '$15 / dev' },
+  { name: 'Health Gateway', tag: 'Healthcare', price: 'HIPAA-safe' },
+];
+
 export function VisionSlide() {
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
@@ -90,6 +96,52 @@ export function VisionSlide() {
               </motion.div>
             ))}
           </div>
+        </div>
+
+        {/* Products on the OS */}
+        <div className="shrink-0">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.72, duration: 0.5 }}
+            className="text-[#fefefe]/40 text-[11px] lg:text-xs tracking-[0.22em] uppercase mb-3"
+            style={{ fontFamily: MONO }}
+          >
+            Products on the OS
+          </motion.p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-4">
+            {products.map((p, i) => (
+              <motion.div
+                key={p.name}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.78 + i * 0.08, duration: 0.4 }}
+                className="rounded-xl px-4 py-3 lg:px-5 lg:py-3.5 flex items-center justify-between gap-3"
+                style={
+                  p.ghost
+                    ? { border: '1px dashed rgba(255,255,255,0.22)' }
+                    : { border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.02)' }
+                }
+              >
+                <div className="min-w-0">
+                  <p className={`text-[9px] lg:text-[10px] tracking-[0.16em] uppercase ${p.ghost ? 'text-[#fefefe]/40' : 'text-orange-400'}`} style={{ fontFamily: MONO }}>{p.tag}</p>
+                  <p className={`text-base lg:text-2xl uppercase leading-none mt-1 ${p.ghost ? 'text-[#fefefe]/55' : 'text-[#fefefe]'}`} style={{ fontFamily: ANTON }}>{p.name}</p>
+                </div>
+                {p.price && <p className="text-[#fefefe]/75 text-xs lg:text-sm shrink-0" style={{ fontFamily: ANTON }}>{p.price}</p>}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Moat / distribution thesis */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.0, duration: 0.5 }}
+            className="text-xl sm:text-2xl lg:text-[30px] leading-tight mt-5 lg:mt-6"
+            style={{ fontFamily: ANTON }}
+          >
+            <span className="text-[#fefefe]/60">The OS is the moat. We own the distribution —</span> <span className="text-orange-400">product is where we iterate.</span>
+          </motion.p>
         </div>
 
       </div>
