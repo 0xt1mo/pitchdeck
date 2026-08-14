@@ -25,6 +25,7 @@ import { TokenRebuildSlide } from '../slides/TokenRebuildSlide';
 import { TokenSlide } from '../slides/TokenSlide';
 import { TractionSlide } from '../slides/TractionSlide';
 import { VisionSlide } from '../slides/VisionSlide';
+import { WhyWeWinSlide } from '../slides/WhyWeWinSlide';
 
 export const investorDeck = [
   TitleSlide,             // Cover — the operating system for autonomous AI
@@ -36,6 +37,7 @@ export const investorDeck = [
   MarketBlockchainSlide,  // Market — blockchain / crypto  [crypto-only]
   AosMergedSlide,
   CompetitionMinimalSlide,
+  WhyWeWinSlide,          // What it means — industrial scale + safety/security baked into the OS
   BearerTokensSlide,      // Bearer tokens — integrated blockchain  [crypto-only]
   GtmEditionsSlide,
   ConciergeSlide,         // Telco
