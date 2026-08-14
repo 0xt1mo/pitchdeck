@@ -38,7 +38,7 @@ const eras: Era[] = [
     ],
   },
   {
-    date: 'Now · industrial',
+    date: 'Unicity',
     name: 'The data center',
     tag: 'enterprise fleets · agents as infrastructure',
     motif: 'grid',
