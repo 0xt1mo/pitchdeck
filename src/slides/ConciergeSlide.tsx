@@ -88,35 +88,35 @@ export function ConciergeSlide() {
           </motion.p>
         </div>
 
-        {/* Phone fan */}
-        <div className="flex items-center justify-center -mx-4 shrink-0">
-          <motion.img
-            src="/concierge/Concierge6.png"
-            alt="Subscriber concierge — stream"
-            initial={{ opacity: 0, rotate: -14 }}
-            animate={{ opacity: 1, rotate: -7 }}
-            transition={{ delay: 0.3, duration: 0.7 }}
-            className="h-[32vh] lg:h-[38vh] w-auto"
-            style={{ filter: 'drop-shadow(0 24px 60px rgba(0,0,0,0.7))', borderRadius: '18px', marginRight: '2vw', zIndex: 1 }}
-          />
+        {/* Product (left) + launch film (right) */}
+        <div className="shrink-0 flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12">
+          {/* Phone */}
           <motion.img
             src="/concierge/Concierge1.png"
-            alt="Subscriber concierge — splash"
-            initial={{ opacity: 0, y: 30 }}
+            alt="Subscriber concierge"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.7 }}
-            className="h-[32vh] lg:h-[38vh] w-auto"
-            style={{ filter: 'drop-shadow(0 34px 90px rgba(0,0,0,0.85))', borderRadius: '22px', zIndex: 3 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="h-[26vh] lg:h-[40vh] w-auto shrink-0"
+            style={{ filter: 'drop-shadow(0 30px 70px rgba(0,0,0,0.8))', borderRadius: '22px' }}
           />
-          <motion.img
-            src="/concierge/Concierge5.png"
-            alt="Subscriber concierge — heads-up"
-            initial={{ opacity: 0, rotate: 14 }}
-            animate={{ opacity: 1, rotate: 7 }}
-            transition={{ delay: 0.45, duration: 0.7 }}
-            className="h-[32vh] lg:h-[38vh] w-auto"
-            style={{ filter: 'drop-shadow(0 24px 60px rgba(0,0,0,0.7))', borderRadius: '18px', marginLeft: '2vw', zIndex: 1 }}
-          />
+
+          {/* Launch film */}
+          <motion.div
+            initial={{ opacity: 0, x: 16 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.45, duration: 0.6 }}
+            className="relative rounded-xl overflow-hidden border border-white/10 shrink-0 w-[46vw] max-w-[560px]"
+            style={{ aspectRatio: '16 / 9', boxShadow: '0 30px 80px rgba(0,0,0,0.6)' }}
+          >
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/mXnQT5UL9kk?rel=0&modestbranding=1"
+              title="Concierge launch film"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </motion.div>
         </div>
 
         {/* Reach + price + launch film */}
