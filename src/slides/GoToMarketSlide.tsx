@@ -7,7 +7,7 @@ const SYSTEM_FONT = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helv
 const T = tr({
   en: {
     headLead: 'GOVERNMENT:',
-    headAccent: 'The agentic state',
+    headAccent: 'Sovereign verifiably safe AI',
     subHead: (
       <>
         We've partnered with <span className="text-orange-400 font-bold">Aleria AI</span>, provider of sovereign AI solutions, to bring our OS to governments in sovereign AI data center rollouts.
@@ -23,7 +23,7 @@ const T = tr({
   },
   pt: {
     headLead: 'GOVERNO:',
-    headAccent: 'O estado agêntico',
+    headAccent: 'IA soberana comprovadamente segura',
     subHead: (
       <>
         Firmamos parceria com <span className="text-orange-400 font-bold">Aleria AI</span>, fornecedora de soluções de IA soberana, para levar nosso OS a governos em implantações de data centers de IA soberana.
