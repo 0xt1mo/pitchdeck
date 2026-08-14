@@ -4,8 +4,8 @@ import { tr } from '../i18n';
 const ANTON = "'Anton', sans-serif";
 
 const T = tr({
-  en: { pre: 'Verifiably', accent: 'safe AI.', tagline: 'AI safety at industrial scale.' },
-  pt: { pre: 'IA', accent: 'comprovadamente segura.', tagline: 'Segurança de IA em escala industrial.' },
+  en: { pre: 'Verifiably', accent: 'safe AI.' },
+  pt: { pre: 'IA', accent: 'comprovadamente segura.' },
 });
 
 export function TitleSlide() {
@@ -61,17 +61,6 @@ export function TitleSlide() {
           transition={{ duration: 1, delay: 0.9 }}
           className="h-[2px] w-40 sm:w-56 lg:w-72 bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-center"
         />
-
-        {/* Tagline */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.05, duration: 0.6 }}
-          className="text-[#fefefe]/60 text-base sm:text-xl lg:text-2xl tracking-[0.1em] uppercase text-center"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-        >
-          {T.tagline}
-        </motion.p>
 
       </div>
     </div>

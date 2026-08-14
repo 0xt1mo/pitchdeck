@@ -188,17 +188,6 @@ export function GtmEditionsSlide() {
           ))}
         </div>
 
-        {/* Trust line */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.65, duration: 0.6 }}
-          className="shrink-0 text-[#fefefe]/85 text-base sm:text-lg lg:text-2xl leading-snug pt-4"
-          style={{ fontFamily: mono, borderTop: '1px solid rgba(255,255,255,0.10)' }}
-        >
-          {T.trustLine}
-        </motion.p>
-
       </div>
     </div>
   );
