@@ -4,8 +4,8 @@ import { tr } from '../i18n';
 const ANTON = "'Anton', sans-serif";
 
 const T = tr({
-  en: { pre: 'The operating system for', accent: 'autonomous AI.' },
-  pt: { pre: 'O sistema operacional para', accent: 'IA autônoma.' },
+  en: { pre: 'AI safety', accent: 'at industrial scale.' },
+  pt: { pre: 'Segurança de IA', accent: 'em escala industrial.' },
 });
 
 export function TitleSlide() {
