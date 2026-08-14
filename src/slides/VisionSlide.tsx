@@ -116,7 +116,7 @@ export function VisionSlide() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.78 + i * 0.08, duration: 0.4 }}
-                className="rounded-xl px-4 py-3 lg:px-5 lg:py-3.5 flex items-center justify-between gap-3"
+                className="rounded-xl px-5 py-4 lg:px-6 lg:py-5 flex items-center justify-between gap-3"
                 style={
                   p.ghost
                     ? { border: '1px dashed rgba(255,255,255,0.22)' }
@@ -124,10 +124,10 @@ export function VisionSlide() {
                 }
               >
                 <div className="min-w-0">
-                  <p className={`text-[9px] lg:text-[10px] tracking-[0.16em] uppercase ${p.ghost ? 'text-[#fefefe]/40' : 'text-orange-400'}`} style={{ fontFamily: MONO }}>{p.tag}</p>
-                  <p className={`text-base lg:text-2xl uppercase leading-none mt-1 ${p.ghost ? 'text-[#fefefe]/55' : 'text-[#fefefe]'}`} style={{ fontFamily: ANTON }}>{p.name}</p>
+                  <p className={`text-[10px] lg:text-xs tracking-[0.16em] uppercase ${p.ghost ? 'text-[#fefefe]/40' : 'text-orange-400'}`} style={{ fontFamily: MONO }}>{p.tag}</p>
+                  <p className={`text-lg lg:text-2xl uppercase leading-none mt-1.5 ${p.ghost ? 'text-[#fefefe]/55' : 'text-[#fefefe]'}`} style={{ fontFamily: ANTON }}>{p.name}</p>
                 </div>
-                {p.price && <p className="text-[#fefefe]/75 text-xs lg:text-sm shrink-0" style={{ fontFamily: ANTON }}>{p.price}</p>}
+                {p.price && <p className="text-orange-400 text-2xl lg:text-4xl leading-none shrink-0" style={{ fontFamily: ANTON }}>{p.price}</p>}
               </motion.div>
             ))}
           </div>
@@ -140,7 +140,7 @@ export function VisionSlide() {
             className="text-xl sm:text-2xl lg:text-[30px] leading-tight mt-5 lg:mt-6"
             style={{ fontFamily: ANTON }}
           >
-            <span className="text-[#fefefe]/60">The OS is the moat. We own the distribution —</span> <span className="text-orange-400">product is where we iterate.</span>
+            <span className="text-[#fefefe]/60">The OS is the moat. Channel distribution is in place —</span> <span className="text-orange-400">we deliver the product roadmap.</span>
           </motion.p>
         </div>
 
