@@ -184,7 +184,7 @@ export function FinancialModelSlide() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.5 }}
-          className="shrink-0 text-[#fefefe]/50 text-sm lg:text-lg leading-snug"
+          className="shrink-0 text-[#fefefe]/70 text-base lg:text-lg leading-snug"
           style={{ fontFamily: MONO }}
         >
           {T.footnote}
