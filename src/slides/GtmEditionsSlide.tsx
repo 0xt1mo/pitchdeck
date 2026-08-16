@@ -9,8 +9,8 @@ type Column = { title: string; sub: string; accent: boolean; marker: string; ite
 
 const T = tr({
   en: {
-    headLead: 'Go To',
-    headAccent: 'Market.',
+    headLead: 'Business',
+    headAccent: 'Model.',
     subtitle: (
       <>
         Distribution is through <span className="text-[#fefefe] font-bold">channel partners</span> in Europe, MEA, US and Brazil — targeting regulated industries adopting agents. Our role is to deliver products — built on top of the OS with <span className="text-orange-400">cryptographic guarantees for compliance, security and governance.</span>
@@ -64,8 +64,8 @@ const T = tr({
     ),
   },
   pt: {
-    headLead: 'Go To',
-    headAccent: 'Market.',
+    headLead: 'Modelo de',
+    headAccent: 'Negócio.',
     subtitle: (
       <>
         A distribuição é feita por <span className="text-[#fefefe] font-bold">parceiros de canal</span> na Europa, MEA, EUA e Brasil — mirando setores regulados que estão adotando agentes. Nosso papel é entregar produtos — construídos sobre o OS com <span className="text-orange-400">garantias criptográficas para compliance, segurança e governança.</span>
@@ -142,7 +142,7 @@ export function GtmEditionsSlide() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.25, duration: 0.5 }}
-            className="text-[#fefefe]/80 text-sm sm:text-base lg:text-xl leading-snug mt-3 max-w-6xl"
+            className="text-[#fefefe]/80 text-base sm:text-lg lg:text-2xl leading-snug mt-4 max-w-6xl"
             style={{ fontFamily: mono }}
           >
             {T.subtitle}
@@ -164,20 +164,20 @@ export function GtmEditionsSlide() {
               }
               style={c.accent ? { boxShadow: '0 0 28px rgba(249,115,22,0.14)' } : undefined}
             >
-              <p className="text-[#fefefe] text-2xl lg:text-3xl leading-none uppercase" style={{ fontFamily: display }}>{c.title}</p>
+              <p className="text-[#fefefe] text-3xl lg:text-4xl leading-none uppercase" style={{ fontFamily: display }}>{c.title}</p>
               <p
-                className={`text-xs lg:text-base tracking-[0.16em] uppercase mt-2 ${c.accent ? 'text-orange-400' : 'text-[#fefefe]/45'}`}
+                className={`text-sm lg:text-lg tracking-[0.16em] uppercase mt-2.5 ${c.accent ? 'text-orange-400' : 'text-[#fefefe]/45'}`}
                 style={{ fontFamily: mono }}
               >
                 {c.sub}
               </p>
-              <div className="flex flex-col gap-2 mt-4">
+              <div className="flex flex-col gap-2.5 mt-5">
                 {c.items.map((it) => (
                   <div key={it.t} className="flex gap-2.5 leading-snug" style={{ fontFamily: mono }}>
                     <span className={`shrink-0 ${c.accent ? 'text-orange-400' : 'text-[#fefefe]/40'}`}>{c.marker}</span>
                     <div className="min-w-0">
-                      <p className="text-[#fefefe]/85 text-sm lg:text-base">{it.t}</p>
-                      {it.sub && <p className="text-[#fefefe]/45 text-xs lg:text-sm mt-0.5">{it.sub}</p>}
+                      <p className="text-[#fefefe]/85 text-base lg:text-lg">{it.t}</p>
+                      {it.sub && <p className="text-[#fefefe]/45 text-sm lg:text-base mt-0.5">{it.sub}</p>}
                     </div>
                   </div>
                 ))}
