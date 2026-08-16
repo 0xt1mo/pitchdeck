@@ -16,7 +16,7 @@ import { FinancialModelSlide } from '../slides/FinancialModelSlide';
 import { GoToMarketSlide } from '../slides/GoToMarketSlide';
 import { GtmEditionsSlide } from '../slides/GtmEditionsSlide';
 import { GtmModelSlide } from '../slides/GtmModelSlide';
-import { MarketVerticalsSlide } from '../slides/MarketVerticalsSlide';
+// import { MarketVerticalsSlide } from '../slides/MarketVerticalsSlide'; // removed — 'One platform. Every vertical.' dropped
 // import { HealthGatewaySlide } from '../slides/HealthGatewaySlide'; // removed from investor deck
 import { InvestmentSlide } from '../slides/InvestmentSlide';
 import { MarketBlockchainSlide } from '../slides/MarketBlockchainSlide';
@@ -41,7 +41,7 @@ export const investorDeck = [
   // CompetitionMinimalSlide, // removed — replaced by WhyWeWinSlide
   WhyWeWinSlide,          // Competition — industrial scale + safety/security baked into the OS
   BearerTokensSlide,      // Bearer tokens — integrated blockchain  [crypto-only]
-  MarketVerticalsSlide,   // GTM — the opportunity, addressable market by vertical
+  // MarketVerticalsSlide, // removed — 'One platform. Every vertical.' dropped
   GtmModelSlide,          // GTM — our customers: safety buyers + personal-agent distribution
   GtmEditionsSlide,
   ConciergeSlide,         // Telco
