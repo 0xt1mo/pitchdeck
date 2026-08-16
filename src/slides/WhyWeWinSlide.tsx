@@ -8,28 +8,28 @@ type Pillar = { k: string; d: string };
 
 const T = tr({
   en: {
-    eyebrow: 'Competition · what it means',
-    headLead: 'We run agents at industrial scale —',
-    headAccent: 'safe & secure by construction.',
+    eyebrow: 'Competition · why it matters',
+    headLead: 'We prevent AI from',
+    headAccent: 'going rogue.',
     subtitle:
-      'Everyone else watches agents from the outside with bolt-on guardrails that break at scale. We build safety and security into the OS the agents run on — so the guarantees hold at industrial scale, not just in a demo.',
+      'Bolt-on guardrails ask the model nicely — and break at scale. AOS enforces every action at the kernel, so the kind of breach that has already hit OpenAI and Hugging Face can’t happen here.',
     pillars: [
-      { k: 'Industrial scale', d: '10,000s of agents per node — multi-tenant, isolated at the kernel.' },
-      { k: 'Safe by construction', d: 'Policy, DLP and prompt-defense enforced below the agent — can’t be bypassed. Every step cryptographically signed.' },
+      { k: 'Rogue-proof by design', d: 'Every action bounded, redacted and proven below the agent — impossible to bypass or prompt away.' },
+      { k: 'Build & distribute on it', d: 'Your customers run the platform — and ship secure-by-design agents to their own customers.' },
       { k: 'Price rivals can’t match', d: 'Multi-tenant density → a fraction of the cost per agent. $5/sub · $15/dev.' },
     ] as Pillar[],
     kicker: 'Guardrails are a feature.',
     kickerAccent: 'An OS is a moat.',
   },
   pt: {
-    eyebrow: 'Concorrência · o que isso significa',
-    headLead: 'Rodamos agentes em escala industrial —',
-    headAccent: 'seguros por construção.',
+    eyebrow: 'Concorrência · por que importa',
+    headLead: 'Impedimos a IA de',
+    headAccent: 'sair do controle.',
     subtitle:
-      'Todos os outros vigiam os agentes de fora com guardrails acoplados que quebram em escala. Nós construímos a segurança dentro do OS onde os agentes rodam — então as garantias se mantêm em escala industrial, não só numa demo.',
+      'Guardrails acoplados pedem com jeitinho ao modelo — e quebram em escala. O AOS impõe cada ação no kernel, então o tipo de brecha que já atingiu OpenAI e Hugging Face não acontece aqui.',
     pillars: [
-      { k: 'Escala industrial', d: 'Milhares de agentes por nó — multi-tenant, isolados no kernel.' },
-      { k: 'Seguro por construção', d: 'Política, DLP e defesa contra prompt-injection abaixo do agente — não dá para contornar. Cada passo assinado criptograficamente.' },
+      { k: 'À prova de descontrole', d: 'Cada ação limitada, redigida e comprovada abaixo do agente — impossível de contornar.' },
+      { k: 'Construa e distribua nele', d: 'Seus clientes usam a plataforma — e entregam agentes seguros por design aos clientes deles.' },
       { k: 'Preço que rivais não alcançam', d: 'Densidade multi-tenant → uma fração do custo por agente. $5/assin. · $15/dev.' },
     ] as Pillar[],
     kicker: 'Guardrails são um recurso.',
