@@ -176,21 +176,21 @@ export function AutonomyStackSlide() {
                   </div>
                   {layer.label && (
                     <p
-                      className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.28em] uppercase font-bold mt-1.5"
+                      className="text-orange-400 text-xs lg:text-sm tracking-[0.28em] uppercase font-bold mt-1.5"
                       style={{ fontFamily: "'Geist Mono', monospace" }}
                     >
                       {layer.label}
                     </p>
                   )}
                   <p
-                    className="text-[#fefefe]/75 text-xs sm:text-sm lg:text-base leading-snug mt-1"
+                    className="text-[#fefefe]/75 text-sm lg:text-lg leading-snug mt-1.5"
                     style={{ fontFamily: "'Geist Mono', monospace" }}
                   >
                     {layer.detail}
                   </p>
                   {layer.variant !== 'top' && layer.tags && (
                     <p
-                      className="text-[#fefefe]/45 text-[10px] sm:text-xs tracking-[0.18em] uppercase mt-1.5"
+                      className="text-[#fefefe]/45 text-xs lg:text-sm tracking-[0.18em] uppercase mt-1.5"
                       style={{ fontFamily: "'Geist Mono', monospace" }}
                     >
                       {layer.tags}
