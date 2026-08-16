@@ -81,7 +81,7 @@ export function ConciergeSlide() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-[#fefefe]/75 text-sm sm:text-base lg:text-lg leading-snug mt-2.5 max-w-4xl"
+            className="text-[#fefefe]/75 text-base sm:text-lg lg:text-xl leading-snug mt-3 max-w-5xl"
             style={{ fontFamily: MONO }}
           >
             {T.subtitle}
@@ -140,7 +140,7 @@ export function ConciergeSlide() {
           {/* Price callout */}
           <div className="flex items-baseline gap-3">
             <span className="text-orange-400 text-3xl lg:text-5xl leading-none" style={{ fontFamily: display }}>{T.price}</span>
-            <span className="text-[#fefefe]/55 text-xs lg:text-sm max-w-xs leading-snug" style={{ fontFamily: MONO }}>{T.priceNote}</span>
+            <span className="text-[#fefefe]/55 text-sm lg:text-base max-w-xs leading-snug" style={{ fontFamily: MONO }}>{T.priceNote}</span>
           </div>
 
           {/* Launch film */}
@@ -152,7 +152,7 @@ export function ConciergeSlide() {
             style={{ fontFamily: MONO }}
           >
             <span className="flex items-center justify-center h-5 w-5 rounded-full bg-orange-500 text-[#060606] text-[10px]">▶</span>
-            <span className="text-[#fefefe] text-xs lg:text-sm tracking-wide uppercase">{T.watch}</span>
+            <span className="text-[#fefefe] text-sm lg:text-base tracking-wide uppercase">{T.watch}</span>
           </a>
         </motion.div>
 
@@ -164,7 +164,7 @@ export function ConciergeSlide() {
           className="shrink-0 flex flex-wrap items-center justify-center gap-x-6 lg:gap-x-8 gap-y-3"
         >
           <span
-            className="text-orange-400/80 text-[10px] lg:text-xs tracking-[0.28em] uppercase pr-1"
+            className="text-orange-400/80 text-xs lg:text-sm tracking-[0.28em] uppercase pr-1"
             style={{ fontFamily: MONO }}
           >
             {T.pipeline}
