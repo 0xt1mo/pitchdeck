@@ -13,7 +13,7 @@ type StackLayer = {
 const T = tr({
   en: {
     headLead: 'AOS: AN OS BUILT FOR ',
-    headAccent: 'AUTONOMOUS AGENTS',
+    headAccent: 'PERFORMANCE AND SAFETY',
     subtitle: 'A new runtime for autonomous agents — verifiable execution and safety guarantees built into the OS, not bolted on.',
     ctaComment: '// operating systems beat harnesses',
     ctaButton: 'try it now — aos.unicity.ai',
@@ -44,7 +44,7 @@ const T = tr({
   },
   pt: {
     headLead: 'AOS: UM OS FEITO PARA ',
-    headAccent: 'AGENTES AUTÔNOMOS',
+    headAccent: 'PERFORMANCE E SEGURANÇA',
     subtitle: 'Um novo runtime para agentes autônomos — execução verificável e garantias de segurança construídas dentro do OS, não acopladas por fora.',
     ctaComment: '// sistemas operacionais superam harnesses',
     ctaButton: 'experimente agora — aos.unicity.ai',

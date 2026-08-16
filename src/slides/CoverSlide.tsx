@@ -200,7 +200,7 @@ export function CoverSlide() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.05, duration: 0.7 }}
-          className="text-[#fefefe]/60 text-base sm:text-lg lg:text-xl leading-snug max-w-2xl"
+          className="text-[#fefefe]/70 text-lg sm:text-2xl lg:text-3xl leading-snug max-w-4xl"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
           {T.sub}
