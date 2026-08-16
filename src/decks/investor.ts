@@ -34,8 +34,8 @@ import { WhyWeWinSlide } from '../slides/WhyWeWinSlide';
 export const investorDeck = [
   TitleSlide,             // Cover — the operating system for autonomous AI
   CoverSlide,             // Thesis — the internet machines need doesn't exist yet
-  EvolutionSlide,         // Why now — AI agents speedrunning compute history
   AutonomyStackSlide,     // AOS: an OS built for autonomous agents
+  EvolutionSlide,         // Why now — AI agents speedrunning compute history
   AosDensitySlide,        // What a multi-tenant agent OS buys
   // AosMergedSlide,      // removed — 'operating systems beat harnesses'
   // CompetitionMinimalSlide, // removed — replaced by WhyWeWinSlide
@@ -44,8 +44,8 @@ export const investorDeck = [
   MarketVerticalsSlide,   // GTM — the opportunity, addressable market by vertical
   GtmEditionsSlide,
   ConciergeSlide,         // Telco
-  FinancialModelSlide,    // Financial model — Concierge unit economics + ARR ramp
   BankingSlide,           // Banking — a better customer experience (video hero)
+  FinancialModelSlide,    // Financial model — Concierge unit economics + ARR ramp
   // HealthGatewaySlide,  // removed from investor deck
   GoToMarketSlide,        // Government
   // AiInfraSlide,        // removed from investor deck
