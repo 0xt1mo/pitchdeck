@@ -103,7 +103,7 @@ export function InvestmentSlide() {
           {/* $5M block */}
           <div>
             <p
-              className="text-[#fefefe]/55 text-[10px] sm:text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-2 lg:mb-3"
+              className="text-[#fefefe]/55 text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-2 lg:mb-3"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
               Q4 2026
@@ -125,7 +125,7 @@ export function InvestmentSlide() {
           {/* Path to Series A */}
           <div>
             <p
-              className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-3 lg:mb-4"
+              className="text-orange-400 text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-3 lg:mb-4"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
               {T.pathTitle}
@@ -171,7 +171,7 @@ export function InvestmentSlide() {
           {/* Use of funds */}
           <div>
             <p
-              className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-3 lg:mb-4"
+              className="text-orange-400 text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-3 lg:mb-4"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
               {T.useOfFundsTitle}
@@ -201,7 +201,7 @@ export function InvestmentSlide() {
               {useOfFunds.map((f, i) => (
                 <div
                   key={f.pct}
-                  className="text-[#fefefe]/80 text-[10px] sm:text-xs lg:text-sm"
+                  className="text-[#fefefe]/80 text-xs lg:text-sm"
                   style={{ flex: f.pct, fontFamily: "'Geist Mono', monospace" }}
                 >
                   {T.useOfFundsLabels[i]}
@@ -209,7 +209,7 @@ export function InvestmentSlide() {
               ))}
             </div>
             <p
-              className="text-[#fefefe]/55 text-[11px] sm:text-xs lg:text-sm mt-3 leading-snug"
+              className="text-[#fefefe]/55 text-xs lg:text-sm mt-3 leading-snug"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
               {T.useOfFundsNoteLead}<span className="text-orange-400">{T.useOfFundsNoteAccent}</span>
@@ -219,7 +219,7 @@ export function InvestmentSlide() {
           {/* Backed By */}
           <div className="text-right">
             <p
-              className="text-orange-400 text-[10px] sm:text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-3 lg:mb-4"
+              className="text-orange-400 text-xs lg:text-sm tracking-[0.25em] uppercase font-bold mb-3 lg:mb-4"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
               {T.backedBy}

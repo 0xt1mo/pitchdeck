@@ -154,7 +154,7 @@ function CitationCard({ card, bigSub, delay }: { card: Card; bigSub: string; del
 
       {/* Author */}
       <p
-        className="text-[#fefefe]/55 text-[11px] sm:text-xs mt-4 leading-snug"
+        className="text-[#fefefe]/55 text-xs sm:text-sm mt-4 leading-snug"
         style={{ fontFamily: "'Geist Mono', monospace" }}
       >
         — {card.author}
@@ -179,7 +179,7 @@ function CitationCard({ card, bigSub, delay }: { card: Card; bigSub: string; del
           {card.bigNumber}
         </p>
         <p
-          className="text-[#fefefe]/70 text-[11px] sm:text-xs lg:text-sm mt-2 leading-snug"
+          className="text-[#fefefe]/70 text-xs lg:text-sm mt-2 leading-snug"
           style={{ fontFamily: "'Geist Mono', monospace" }}
         >
           {bigSub}

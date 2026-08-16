@@ -62,7 +62,7 @@ export function VisionSlide() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.42, duration: 0.5 }}
-            className="text-[#fefefe]/40 text-[11px] lg:text-xs tracking-[0.22em] uppercase mb-3"
+            className="text-[#fefefe]/40 text-xs lg:text-sm tracking-[0.22em] uppercase mb-3"
             style={{ fontFamily: MONO }}
           >
             Proven at every layer
@@ -91,7 +91,7 @@ export function VisionSlide() {
                   )}
                 </div>
                 <p className="text-[#fefefe]/80 text-sm lg:text-base font-bold mt-2.5" style={{ fontFamily: MONO }}>{l.mech}</p>
-                <p className="text-[#fefefe]/40 text-[10px] lg:text-xs tracking-[0.16em] uppercase mt-2" style={{ fontFamily: MONO }}>
+                <p className="text-[#fefefe]/40 text-xs lg:text-sm tracking-[0.16em] uppercase mt-2" style={{ fontFamily: MONO }}>
                   {l.status ?? (l.live ? 'Live' : 'Under research')}
                 </p>
               </motion.div>
@@ -105,7 +105,7 @@ export function VisionSlide() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.72, duration: 0.5 }}
-            className="text-[#fefefe]/40 text-[11px] lg:text-xs tracking-[0.22em] uppercase mb-3"
+            className="text-[#fefefe]/40 text-xs lg:text-sm tracking-[0.22em] uppercase mb-3"
             style={{ fontFamily: MONO }}
           >
             Products on the OS
@@ -125,7 +125,7 @@ export function VisionSlide() {
                 }
               >
                 <div className="min-w-0">
-                  <p className={`text-[10px] lg:text-xs tracking-[0.16em] uppercase ${p.ghost ? 'text-[#fefefe]/40' : 'text-orange-400'}`} style={{ fontFamily: MONO }}>{p.tag}</p>
+                  <p className={`text-xs lg:text-sm tracking-[0.16em] uppercase ${p.ghost ? 'text-[#fefefe]/40' : 'text-orange-400'}`} style={{ fontFamily: MONO }}>{p.tag}</p>
                   <p className={`text-lg lg:text-2xl uppercase leading-none mt-1.5 ${p.ghost ? 'text-[#fefefe]/55' : 'text-[#fefefe]'}`} style={{ fontFamily: ANTON }}>{p.name}</p>
                 </div>
                 {p.price && <p className="text-orange-400 text-2xl lg:text-4xl leading-none shrink-0" style={{ fontFamily: ANTON }}>{p.price}</p>}

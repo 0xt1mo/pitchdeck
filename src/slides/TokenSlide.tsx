@@ -183,7 +183,7 @@ export function TokenSlide() {
 
           {/* Left — Mechanical chain */}
           <div className="flex flex-col gap-3">
-            <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.3em] uppercase font-bold"
+            <p className="text-orange-400 text-xs sm:text-sm tracking-[0.3em] uppercase font-bold"
               style={{ fontFamily: "'Geist Mono', monospace" }}>
               {T.chainLabel}
             </p>
@@ -217,7 +217,7 @@ export function TokenSlide() {
 
           {/* Right — Allocation + vesting */}
           <div className="flex flex-col gap-3">
-            <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.3em] uppercase font-bold"
+            <p className="text-orange-400 text-xs sm:text-sm tracking-[0.3em] uppercase font-bold"
               style={{ fontFamily: "'Geist Mono', monospace" }}>
               {T.allocationLabel}
             </p>
@@ -271,7 +271,7 @@ export function TokenSlide() {
               transition={{ delay: 0.9, duration: 0.5 }}
               className="pt-2 border-t border-white/[0.08]"
             >
-              <p className="text-orange-400 text-[10px] sm:text-xs tracking-[0.3em] uppercase font-bold"
+              <p className="text-orange-400 text-xs sm:text-sm tracking-[0.3em] uppercase font-bold"
                 style={{ fontFamily: "'Geist Mono', monospace" }}>
                 {T.vestingLabel}
               </p>
