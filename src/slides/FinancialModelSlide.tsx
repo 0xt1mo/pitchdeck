@@ -20,7 +20,7 @@ const T = tr({
     headLead: 'Every 1% of the base =',
     headAccent: '$90M ARR.',
     subtitle:
-      '$5/mo retail · $0.75 to Unicity · $9 per subscriber a year — recurring, at software margin. >1B subscribers addressable through established channels.',
+      'Commercials fixed up front: $5/mo retail · $0.75 to Unicity · $9 per subscriber a year — recurring, at software margin. >1B subscribers addressable through established channels.',
     econTitle: 'Unit economics',
     retail: 'Retail price',
     take: 'To Unicity · 15% rev-share',
@@ -34,7 +34,7 @@ const T = tr({
     headLead: 'Cada 1% da base =',
     headAccent: '$90M de ARR.',
     subtitle:
-      '$5/mês no varejo · $0.75 para a Unicity · $9 por assinante ao ano — recorrente, com margem de software. >1B de assinantes endereçáveis através de canais estabelecidos.',
+      'Termos comerciais fixados no início: $5/mês no varejo · $0.75 para a Unicity · $9 por assinante ao ano — recorrente, com margem de software. >1B de assinantes endereçáveis através de canais estabelecidos.',
     econTitle: 'Economia unitária',
     retail: 'Preço de varejo',
     take: 'Para a Unicity · 15% de receita',
