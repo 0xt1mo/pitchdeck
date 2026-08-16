@@ -61,8 +61,8 @@ const T = tr({
   },
 });
 
-const eyebrowCls = 'text-[11px] lg:text-xs tracking-[0.15em] uppercase';
-const badgeCls = 'rounded text-[10px] lg:text-xs px-2 py-0.5 tracking-[0.15em] uppercase';
+const eyebrowCls = 'text-xs lg:text-sm tracking-[0.15em] uppercase';
+const badgeCls = 'rounded text-xs lg:text-sm px-2 py-0.5 tracking-[0.15em] uppercase';
 
 export function TractionCleanSlide() {
   return (
@@ -109,7 +109,7 @@ export function TractionCleanSlide() {
           >
             <span className={`text-[#fefefe]/40 ${eyebrowCls}`} style={{ fontFamily: mono }}>{T.momentumEyebrow}</span>
             <p className="text-5xl lg:text-6xl leading-none text-[#fefefe] mt-4" style={{ fontFamily: anton }}>{SIGNUPS}</p>
-            <p className="text-[#fefefe]/45 text-[11px] lg:text-sm tracking-[0.12em] uppercase mt-2.5" style={{ fontFamily: mono }}>{T.signupsLabel}</p>
+            <p className="text-[#fefefe]/45 text-xs lg:text-sm tracking-[0.12em] uppercase mt-2.5" style={{ fontFamily: mono }}>{T.signupsLabel}</p>
             <div className="my-5 h-px bg-[#fefefe]/10" />
             <p className="text-3xl lg:text-4xl leading-none text-orange-400 uppercase" style={{ fontFamily: anton }}>{T.liveValue}</p>
             <p className="text-[#fefefe]/45 text-[11px] lg:text-sm tracking-[0.08em] uppercase mt-2.5" style={{ fontFamily: mono }}>{T.liveSub}</p>

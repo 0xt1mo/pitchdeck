@@ -58,7 +58,7 @@ function Motif({ kind }: { kind: Era['motif'] }) {
     return (
       <div className="h-12 flex items-center gap-2.5">
         <span className="w-3.5 h-3.5 rounded-[3px] bg-orange-500" style={{ boxShadow: '0 0 10px rgba(249,115,22,0.5)' }} />
-        <span className="text-[#fefefe]/45 text-[11px] lg:text-xs" style={{ fontFamily: MONO }}>↔ WhatsApp · Telegram · cron</span>
+        <span className="text-[#fefefe]/45 text-xs lg:text-sm" style={{ fontFamily: MONO }}>↔ WhatsApp · Telegram · cron</span>
       </div>
     );
   }

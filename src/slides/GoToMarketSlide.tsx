@@ -156,7 +156,7 @@ export function GoToMarketSlide() {
                   <span className="relative w-2 h-2 rounded-full bg-orange-400" />
                 </span>
                 <span
-                  className="text-orange-400/80 text-[10px] sm:text-xs tracking-[0.2em] uppercase font-bold"
+                  className="text-orange-400/80 text-xs sm:text-sm tracking-[0.2em] uppercase font-bold"
                   style={{ fontFamily: "'Geist Mono', monospace" }}
                 >
                   {T.now}

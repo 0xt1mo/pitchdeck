@@ -138,7 +138,7 @@ export function TractionSlide() {
                 {s.value}
               </p>
               <p
-                className="text-[#fefefe]/45 text-[11px] lg:text-sm tracking-[0.12em] uppercase mt-3 leading-snug"
+                className="text-[#fefefe]/45 text-xs lg:text-sm tracking-[0.12em] uppercase mt-3 leading-snug"
                 style={{ fontFamily: mono }}
               >
                 {T.statLabels[i].label}
@@ -169,7 +169,7 @@ export function TractionSlide() {
             >
               <div className="flex items-center justify-between gap-3">
                 <span
-                  className={`text-[11px] lg:text-xs tracking-[0.15em] uppercase ${c.highlight ? 'text-orange-400' : 'text-[#fefefe]/40'
+                  className={`text-xs lg:text-sm tracking-[0.15em] uppercase ${c.highlight ? 'text-orange-400' : 'text-[#fefefe]/40'
                     }`}
                   style={{ fontFamily: mono }}
                 >
@@ -177,7 +177,7 @@ export function TractionSlide() {
                 </span>
                 {T.cards[i].badge && (
                   <span
-                    className="rounded border border-orange-500/70 text-orange-400 text-[10px] lg:text-xs px-2 py-0.5 tracking-[0.15em] uppercase"
+                    className="rounded border border-orange-500/70 text-orange-400 text-xs lg:text-sm px-2 py-0.5 tracking-[0.15em] uppercase"
                     style={{ fontFamily: mono }}
                   >
                     {T.cards[i].badge}
@@ -209,10 +209,10 @@ export function TractionSlide() {
             className="rounded-xl border border-[#fefefe]/12 bg-[#fefefe]/[0.02] p-5 lg:p-7 w-full lg:max-w-[520px]"
           >
             <div className="flex items-center justify-between gap-3">
-              <span className="text-[#fefefe]/40 text-[11px] lg:text-xs tracking-[0.15em] uppercase" style={{ fontFamily: mono }}>
+              <span className="text-[#fefefe]/40 text-xs lg:text-sm tracking-[0.15em] uppercase" style={{ fontFamily: mono }}>
                 {T.pipelineTitle}
               </span>
-              <span className="rounded border border-[#fefefe]/25 text-[#fefefe]/60 text-[10px] lg:text-xs px-2 py-0.5 tracking-[0.15em] uppercase" style={{ fontFamily: mono }}>
+              <span className="rounded border border-[#fefefe]/25 text-[#fefefe]/60 text-xs lg:text-sm px-2 py-0.5 tracking-[0.15em] uppercase" style={{ fontFamily: mono }}>
                 {T.pipelineBadge}
               </span>
             </div>
