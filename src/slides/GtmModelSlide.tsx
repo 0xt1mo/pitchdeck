@@ -3,7 +3,6 @@ import { tr } from '../i18n';
 
 const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
-const ORANGE = 'linear-gradient(180deg, #fdba74 0%, #f97316 48%, #c2410c 100%)';
 
 const T = tr({
   en: {
@@ -62,10 +61,7 @@ export function GtmModelSlide() {
           style={{ fontFamily: ANTON }}
         >
           <span className="text-[#fefefe] block">{T.head1}</span>
-          <span
-            className="block"
-            style={{ background: ORANGE, WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}
-          >
+          <span className="block text-orange-500">
             {T.head2}
           </span>
         </motion.h1>
