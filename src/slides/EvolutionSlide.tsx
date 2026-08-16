@@ -132,6 +132,17 @@ export function EvolutionSlide() {
           </motion.p>
         </div>
 
+        {/* Kicker — moved up, oversized */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.35, duration: 0.5 }}
+          className="shrink-0 text-3xl sm:text-4xl lg:text-[46px] xl:text-[54px] leading-[1.02] tracking-tight uppercase"
+          style={{ fontFamily: ANTON }}
+        >
+          <span className="text-[#fefefe]/60">Every computing wave ends in a data center.</span> <span className="text-orange-400">Agents just got there faster.</span>
+        </motion.p>
+
         {/* Three eras */}
         <div className="flex items-stretch">
           {eras.map((e, i) => (
@@ -150,34 +161,23 @@ export function EvolutionSlide() {
                     : { border: '1px solid rgba(255,255,255,0.10)', background: 'rgba(255,255,255,0.02)' }
                 }
               >
-                <p className="text-[#fefefe]/40 text-[11px] lg:text-xs tracking-[0.16em] uppercase mb-2" style={{ fontFamily: MONO }}>{e.date}</p>
-                <p className={`text-2xl lg:text-4xl uppercase leading-none ${e.now ? 'text-orange-400' : 'text-[#fefefe]'}`} style={{ fontFamily: ANTON }}>{e.name}</p>
-                <p className="text-[#fefefe]/55 text-[12px] lg:text-sm mt-2 mb-4" style={{ fontFamily: MONO }}>{e.tag}</p>
+                <p className="text-[#fefefe]/45 text-xs lg:text-sm tracking-[0.16em] uppercase mb-2" style={{ fontFamily: MONO }}>{e.date}</p>
+                <p className={`text-3xl lg:text-5xl uppercase leading-none ${e.now ? 'text-orange-400' : 'text-[#fefefe]'}`} style={{ fontFamily: ANTON }}>{e.name}</p>
+                <p className="text-[#fefefe]/60 text-sm lg:text-base mt-2 mb-4" style={{ fontFamily: MONO }}>{e.tag}</p>
 
                 <Motif kind={e.motif} />
 
-                <p className="text-[#fefefe]/70 text-sm lg:text-base leading-snug flex-1 mt-3" style={{ fontFamily: MONO }}>{e.fact}</p>
+                <p className="text-[#fefefe]/75 text-base lg:text-lg leading-snug flex-1 mt-3" style={{ fontFamily: MONO }}>{e.fact}</p>
 
                 <div className="mt-4 pt-3 flex flex-col gap-1.5" style={{ borderTop: `1px solid ${e.now ? 'rgba(249,115,22,0.3)' : 'rgba(255,255,255,0.10)'}` }}>
                   {e.verdict.map((v, k) => (
-                    <p key={k} className="text-[11px] lg:text-[13px] leading-snug" style={{ fontFamily: MONO, color: v.tone === 'proved' ? '#f97316' : BROKE }}>{v.text}</p>
+                    <p key={k} className="text-[13px] lg:text-[15px] leading-snug" style={{ fontFamily: MONO, color: v.tone === 'proved' ? '#f97316' : BROKE }}>{v.text}</p>
                   ))}
                 </div>
               </motion.div>
             </div>
           ))}
         </div>
-
-        {/* Kicker */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.75, duration: 0.5 }}
-          className="shrink-0 text-xl sm:text-2xl lg:text-[30px] leading-tight pt-4"
-          style={{ fontFamily: ANTON, borderTop: '1px solid rgba(255,255,255,0.10)' }}
-        >
-          <span className="text-[#fefefe]/60">Every computing wave ends in a data center.</span> <span className="text-orange-400">Agents just got there faster.</span>
-        </motion.p>
       </div>
     </div>
   );
