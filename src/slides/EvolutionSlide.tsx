@@ -119,8 +119,17 @@ export function EvolutionSlide() {
             className="text-[#fefefe] text-[30px] sm:text-[44px] lg:text-[58px] xl:text-[66px] leading-[0.98] tracking-tight uppercase max-w-6xl"
             style={{ fontFamily: ANTON }}
           >
-            AI agents are speedrunning <span className="text-orange-400">compute history.</span>
+            Purpose built for <span className="text-orange-400">data center rollouts.</span>
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.25, duration: 0.6 }}
+            className="text-[#fefefe]/70 text-sm sm:text-base lg:text-xl leading-snug mt-4 max-w-5xl"
+            style={{ fontFamily: MONO }}
+          >
+            AI agents are speedrunning compute history. AOS gets them in data centers, running workloads at scale.
+          </motion.p>
         </div>
 
         {/* Three eras */}
