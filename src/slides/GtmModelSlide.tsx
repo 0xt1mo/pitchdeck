@@ -47,7 +47,7 @@ export function GtmModelSlide() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="shrink-0 tracking-[0.28em] uppercase text-sm lg:text-base"
-          style={{ fontFamily: MONO, color: '#f97316' }}
+          style={{ fontFamily: MONO, color: '#fb923c' }}
         >
           {T.eyebrow}
         </motion.p>
@@ -61,7 +61,7 @@ export function GtmModelSlide() {
           style={{ fontFamily: ANTON }}
         >
           <span className="text-[#fefefe] block">{T.head1}</span>
-          <span className="block text-orange-500">
+          <span className="block text-orange-400">
             {T.head2}
           </span>
         </motion.h1>
@@ -90,7 +90,7 @@ export function GtmModelSlide() {
                 style={{ fontFamily: ANTON }}
               >
                 {c}
-                <span className="text-orange-500/60">.</span>
+                <span className="text-orange-400/60">.</span>
               </span>
             ))}
           </motion.div>
