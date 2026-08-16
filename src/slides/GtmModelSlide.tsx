@@ -13,7 +13,7 @@ const T = tr({
     clients: ['Governments', 'Banks', 'Telcos', 'Healthcare', 'Military'],
     kicker: (
       <>
-        We sell the platform that lets them run agents at scale on behalf of their citizens, subscribers and users — <span className="text-orange-400">with safety guarantees.</span>
+        We sell the platform that lets them run agents at scale on behalf of their citizens, subscribers, patients and users — <span className="text-orange-400">with safety guarantees.</span>
       </>
     ),
   },
@@ -25,7 +25,7 @@ const T = tr({
     clients: ['Governos', 'Bancos', 'Telecoms', 'Saúde', 'Defesa'],
     kicker: (
       <>
-        Vendemos a plataforma que permite rodar agentes em escala em nome de seus cidadãos, assinantes e usuários — <span className="text-orange-400">com garantias de segurança.</span>
+        Vendemos a plataforma que permite rodar agentes em escala em nome de seus cidadãos, assinantes, pacientes e usuários — <span className="text-orange-400">com garantias de segurança.</span>
       </>
     ),
   },
