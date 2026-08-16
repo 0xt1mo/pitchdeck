@@ -104,7 +104,7 @@ export function AosDensitySlide() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="mt-3 text-[#fefefe]/70 text-base lg:text-lg leading-relaxed max-w-5xl"
+            className="mt-4 text-[#fefefe]/75 text-lg lg:text-2xl leading-relaxed max-w-6xl"
             style={{ fontFamily: MONO }}
           >
 {T.subtitle}
@@ -123,19 +123,19 @@ export function AosDensitySlide() {
           >
             {/* Container model */}
             <div className="flex-1 flex flex-col">
-              <p className="text-[#fefefe]/40 text-[10px] lg:text-[11px] tracking-[0.14em] uppercase mb-3" style={{ fontFamily: MONO }}>{T.containerModel}</p>
+              <p className="text-[#fefefe]/45 text-[11px] lg:text-[13px] tracking-[0.14em] uppercase mb-3" style={{ fontFamily: MONO }}>{T.containerModel}</p>
               <div className="flex flex-col gap-1.5">
-                <div className="rounded border border-[#3a4450] bg-[#1b222b] text-[#fefefe] text-xs lg:text-sm px-3 py-2.5" style={{ fontFamily: MONO }}>agent</div>
+                <div className="rounded border border-[#3a4450] bg-[#1b222b] text-[#fefefe] text-sm lg:text-base px-3 py-2.5" style={{ fontFamily: MONO }}>agent</div>
                 {overhead.map((o) => (
-                  <div key={o} className="rounded border border-dashed border-white/15 text-[#fefefe]/35 text-xs lg:text-sm px-3 py-2.5" style={{ fontFamily: MONO }}>{o}</div>
+                  <div key={o} className="rounded border border-dashed border-white/15 text-[#fefefe]/40 text-sm lg:text-base px-3 py-2.5" style={{ fontFamily: MONO }}>{o}</div>
                 ))}
               </div>
-              <p className="text-[#fefefe]/35 text-[11px] lg:text-sm leading-snug mt-2" style={{ fontFamily: MONO }}>{T.overheadCaption}</p>
+              <p className="text-[#fefefe]/40 text-xs lg:text-base leading-snug mt-2" style={{ fontFamily: MONO }}>{T.overheadCaption}</p>
             </div>
 
             {/* AOS capsule model */}
             <div className="flex-1 flex flex-col">
-              <p className="text-orange-400 text-[10px] lg:text-[11px] tracking-[0.14em] uppercase mb-3" style={{ fontFamily: MONO }}>{T.capsuleModel}</p>
+              <p className="text-orange-400 text-[11px] lg:text-[13px] tracking-[0.14em] uppercase mb-3" style={{ fontFamily: MONO }}>{T.capsuleModel}</p>
               <div className="flex flex-col gap-1.5">
                 <div className="grid grid-cols-10 gap-1 mb-1">
                   {Array.from({ length: 40 }).map((_, i) => (
@@ -150,11 +150,11 @@ export function AosDensitySlide() {
                     />
                   ))}
                 </div>
-                <div className="rounded text-center text-orange-400 text-xs lg:text-sm px-3 py-2.5" style={{ fontFamily: MONO, border: '1px solid rgba(249,115,22,0.4)', background: 'rgba(249,115,22,0.07)' }}>
+                <div className="rounded text-center text-orange-400 text-sm lg:text-base px-3 py-2.5" style={{ fontFamily: MONO, border: '1px solid rgba(249,115,22,0.4)', background: 'rgba(249,115,22,0.07)' }}>
                   {T.sharedKernel}
                 </div>
               </div>
-              <p className="text-[#fefefe]/35 text-[11px] lg:text-sm leading-snug mt-2" style={{ fontFamily: MONO }}>
+              <p className="text-[#fefefe]/40 text-xs lg:text-base leading-snug mt-2" style={{ fontFamily: MONO }}>
                 {T.capsuleCaption}
               </p>
             </div>
@@ -170,11 +170,11 @@ export function AosDensitySlide() {
                 transition={{ delay: 0.4 + i * 0.1, duration: 0.45 }}
                 className="flex-1 rounded-xl border border-white/10 bg-white/[0.02] border-l-[3px] border-l-orange-500 px-6 py-3 flex flex-col justify-center"
               >
-                <p className="text-[#fefefe] leading-none" style={{ fontFamily: ANTON, fontSize: (s as { size?: string }).size ?? 'clamp(32px, 3.6vw, 50px)' }}>
+                <p className="text-[#fefefe] leading-none" style={{ fontFamily: ANTON, fontSize: (s as { size?: string }).size ?? 'clamp(36px, 4vw, 56px)' }}>
                   {s.num}<span className="text-orange-400" style={{ fontSize: '0.95em' }}>{s.sup}</span>
                 </p>
-                <p className="text-orange-400 text-[11px] lg:text-sm tracking-[0.16em] uppercase mt-2 mb-1.5" style={{ fontFamily: MONO }}>{s.label}</p>
-                <p className="text-[#fefefe]/70 text-sm lg:text-base leading-snug" style={{ fontFamily: MONO }}>{s.why}</p>
+                <p className="text-orange-400 text-[13px] lg:text-base tracking-[0.16em] uppercase mt-2 mb-1.5" style={{ fontFamily: MONO }}>{s.label}</p>
+                <p className="text-[#fefefe]/75 text-base lg:text-lg leading-snug" style={{ fontFamily: MONO }}>{s.why}</p>
               </motion.div>
             ))}
           </div>
@@ -185,7 +185,7 @@ export function AosDensitySlide() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.5 }}
-          className="shrink-0 text-orange-400/80 text-[11px] lg:text-sm tracking-[0.06em] text-right"
+          className="shrink-0 text-orange-400/80 text-sm lg:text-base tracking-[0.06em] text-right"
           style={{ fontFamily: MONO }}
         >
           proof chain &nbsp; #a1f3…9c <span className="text-[#fefefe]/35">→</span> #c48d…1e <span className="text-[#fefefe]/35">→</span> #e02a…b7 &nbsp;✓ verified
