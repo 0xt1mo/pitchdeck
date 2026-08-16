@@ -13,7 +13,7 @@ const T = tr({
     clients: ['Governments', 'Banks', 'Telcos', 'Healthcare', 'Military'],
     kicker: (
       <>
-        We sell the guarantee. <span className="text-[#fefefe]/55">They give every customer a personal agent.</span>
+        We sell the platform that lets them run agents at scale on behalf of their citizens, subscribers and users — <span className="text-orange-400">with safety guarantees.</span>
       </>
     ),
   },
@@ -25,7 +25,7 @@ const T = tr({
     clients: ['Governos', 'Bancos', 'Telecoms', 'Saúde', 'Defesa'],
     kicker: (
       <>
-        Nós vendemos a garantia. <span className="text-[#fefefe]/55">Eles dão a cada cliente um agente pessoal.</span>
+        Vendemos a plataforma que permite rodar agentes em escala em nome de seus cidadãos, assinantes e usuários — <span className="text-orange-400">com garantias de segurança.</span>
       </>
     ),
   },
