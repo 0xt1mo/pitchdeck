@@ -11,6 +11,7 @@ const layers: { noun: string; mech: string; live?: boolean; status?: string }[] 
 
 const products: { name: string; tag: string; price?: string; ghost?: boolean }[] = [
   { name: 'Concierge', tag: 'Telco', price: '$5 / sub' },
+  { name: 'Ramukaka', tag: 'Banking', price: '$5 / cust.' },
   { name: 'Codewall', tag: 'Dev security', price: '$15 / dev' },
   { name: 'Compliance Gateway', tag: 'Healthcare', price: '$TBD' },
 ];
@@ -109,7 +110,7 @@ export function VisionSlide() {
           >
             Products on the OS
           </motion.p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
             {products.map((p, i) => (
               <motion.div
                 key={p.name}
