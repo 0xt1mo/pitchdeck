@@ -6,6 +6,7 @@
 import { AosDensitySlide } from '../slides/AosDensitySlide';
 // import { AosMergedSlide } from '../slides/AosMergedSlide'; // removed — 'operating systems beat harnesses'
 import { AutonomyStackSlide } from '../slides/AutonomyStackSlide';
+import { BankingSlide } from '../slides/BankingSlide';
 import { BearerTokensSlide } from '../slides/BearerTokensSlide';
 // import { CompetitionMinimalSlide } from '../slides/CompetitionMinimalSlide'; // removed — replaced by WhyWeWinSlide
 import { ConciergeSlide } from '../slides/ConciergeSlide';
@@ -41,6 +42,7 @@ export const investorDeck = [
   GtmEditionsSlide,
   ConciergeSlide,         // Telco
   FinancialModelSlide,    // Financial model — Concierge unit economics + ARR ramp
+  BankingSlide,           // Banking — a better customer experience (video hero)
   // HealthGatewaySlide,  // removed from investor deck
   GoToMarketSlide,        // Government
   // AiInfraSlide,        // removed from investor deck
