@@ -8,12 +8,12 @@ const LIT = new Set([0, 3, 7, 12, 15, 19, 21, 26, 28, 30, 33, 35]);
 
 const T = tr({
   en: {
-    headLead: 'What a multi-tenant',
-    headAccent: 'agent OS',
-    headTail: 'buys',
+    headLead: 'Extreme performance and',
+    headAccent: 'security.',
+    headTail: '',
     subtitle: (
       <>
-        <span className="text-[#fefefe] font-bold">AOS runs agents the way an operating system runs processes:</span> lightweight capsules on a shared kernel. Isolation is enforced by the OS, not by duplicating the machine.
+        <span className="text-[#fefefe] font-bold">We invented a cryptographic proof system that proves an agent's execution end to end</span> — every input, action and output content-addressed into a <span className="text-orange-400">verifiable provenance graph.</span> Trust the proof, not the operator: security with zero trust.
       </>
     ),
     overhead: ['app runtime', 'libraries + deps', 'guest userland', 'container engine'],
@@ -180,22 +180,16 @@ export function AosDensitySlide() {
           </div>
         </div>
 
-        {/* Verifiable execution band */}
-        <motion.div
+        {/* Proof-chain footnote — the provenance graph made concrete */}
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.5 }}
-          className="shrink-0 rounded-xl px-6 py-3.5 flex items-center gap-5 lg:gap-6"
-          style={{ border: '1px solid rgba(249,115,22,0.4)', background: 'rgba(249,115,22,0.04)' }}
+          className="shrink-0 text-orange-400/80 text-[11px] lg:text-sm tracking-[0.06em] text-right"
+          style={{ fontFamily: MONO }}
         >
-          <p className="text-orange-400 text-[11px] lg:text-sm tracking-[0.16em] uppercase leading-tight shrink-0" style={{ fontFamily: MONO }}>{T.verifiableLabel}</p>
-          <p className="text-[#fefefe]/75 text-sm lg:text-lg leading-snug flex-1" style={{ fontFamily: MONO }}>
-            {T.verifiableBody}
-          </p>
-          <p className="text-orange-400 text-[10px] lg:text-[11px] whitespace-nowrap shrink-0 hidden xl:block" style={{ fontFamily: MONO }}>
-            #a1f3…9c <span className="text-[#fefefe]/35">→</span> #c48d…1e <span className="text-[#fefefe]/35">→</span> #e02a…b7 ✓
-          </p>
-        </motion.div>
+          proof chain &nbsp; #a1f3…9c <span className="text-[#fefefe]/35">→</span> #c48d…1e <span className="text-[#fefefe]/35">→</span> #e02a…b7 &nbsp;✓ verified
+        </motion.p>
 
       </div>
     </div>
