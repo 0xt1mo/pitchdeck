@@ -15,6 +15,7 @@ import { EvolutionSlide } from '../slides/EvolutionSlide';
 import { FinancialModelSlide } from '../slides/FinancialModelSlide';
 import { GoToMarketSlide } from '../slides/GoToMarketSlide';
 import { GtmEditionsSlide } from '../slides/GtmEditionsSlide';
+import { GtmModelSlide } from '../slides/GtmModelSlide';
 // import { HealthGatewaySlide } from '../slides/HealthGatewaySlide'; // removed from investor deck
 import { InvestmentSlide } from '../slides/InvestmentSlide';
 import { MarketBlockchainSlide } from '../slides/MarketBlockchainSlide';
@@ -39,6 +40,7 @@ export const investorDeck = [
   // CompetitionMinimalSlide, // removed — replaced by WhyWeWinSlide
   WhyWeWinSlide,          // Competition — industrial scale + safety/security baked into the OS
   BearerTokensSlide,      // Bearer tokens — integrated blockchain  [crypto-only]
+  GtmModelSlide,          // GTM — the B2B2C model (sell to business, reach their customers)
   GtmEditionsSlide,
   ConciergeSlide,         // Telco
   FinancialModelSlide,    // Financial model — Concierge unit economics + ARR ramp
