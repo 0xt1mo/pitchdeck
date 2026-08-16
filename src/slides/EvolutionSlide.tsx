@@ -132,15 +132,15 @@ export function EvolutionSlide() {
           </motion.p>
         </div>
 
-        {/* Kicker — moved up, oversized */}
+        {/* Kicker — moved up, oversized, mono to contrast the Anton headline */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.35, duration: 0.5 }}
-          className="shrink-0 text-3xl sm:text-4xl lg:text-[46px] xl:text-[54px] leading-[1.02] tracking-tight uppercase"
-          style={{ fontFamily: ANTON }}
+          className="shrink-0 text-lg sm:text-2xl lg:text-3xl leading-snug"
+          style={{ fontFamily: MONO }}
         >
-          <span className="text-[#fefefe]/60">Every computing wave ends in a data center.</span> <span className="text-orange-400">Agents just got there faster.</span>
+          <span className="text-[#fefefe]/70">Every computing wave ends in a data center.</span> <span className="text-orange-400">Agents just got there faster.</span>
         </motion.p>
 
         {/* Three eras */}

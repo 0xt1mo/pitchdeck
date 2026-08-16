@@ -27,8 +27,6 @@ const T = tr({
           { t: 'Installers & distributions' },
           { t: 'Capsule marketplace' },
           { t: 'Developer bottom-up adoption' },
-          { t: 'Prepaid transaction batches', sub: '$0.00001 / txn · $2 per agent / mo minimum' },
-          { t: 'Pre-paid gas, sold as capacity' },
         ],
       },
       {
@@ -84,8 +82,6 @@ const T = tr({
           { t: 'Instaladores e distribuições' },
           { t: 'Marketplace de capsules' },
           { t: 'Adoção bottom-up por desenvolvedores' },
-          { t: 'Lotes de transações pré-pagas', sub: '$0.00001 / txn · mínimo de $2 por agente / mês' },
-          { t: 'Gas pré-pago, vendido como capacidade' },
         ],
       },
       {
