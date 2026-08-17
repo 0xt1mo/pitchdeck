@@ -47,7 +47,6 @@ const T = tr({
         accent: true,
         marker: '+',
         items: [
-          { t: 'Channel partners build & ship on AOS' },
           { t: 'Revenue share on every deployment' },
           { t: 'Telecom · banking · medical · government' },
           { t: 'Signed: Aleria — UAE sovereign AI' },
@@ -102,7 +101,6 @@ const T = tr({
         accent: true,
         marker: '+',
         items: [
-          { t: 'Parceiros de canal constroem e lançam no AOS' },
           { t: 'Divisão de receita em cada implantação' },
           { t: 'Telecom · bancos · saúde · governo' },
           { t: 'Assinado: Aleria — IA soberana dos Emirados Árabes Unidos' },
