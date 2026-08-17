@@ -180,11 +180,7 @@ export function CoverSlide() {
           <span className="block text-[#fefefe]">{T.line1}</span>
           <span className="block text-[#fefefe] mt-4 lg:mt-6">
             {T.l2pre}{' '}
-            <span
-              style={{ color: 'transparent', WebkitTextStroke: '1.5px rgba(254,254,254,0.5)' }}
-            >
-              {T.ghost}
-            </span>
+            <span className="text-orange-400">{T.ghost}</span>
             {T.yet ? <> <span className="text-orange-400">{T.yet}</span></> : null}
           </span>
         </motion.h1>

@@ -180,17 +180,6 @@ export function AosDensitySlide() {
           </div>
         </div>
 
-        {/* Proof-chain footnote — the provenance graph made concrete */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
-          className="shrink-0 text-orange-400/80 text-sm lg:text-base tracking-[0.06em] text-right"
-          style={{ fontFamily: MONO }}
-        >
-          proof chain &nbsp; #a1f3…9c <span className="text-[#fefefe]/35">→</span> #c48d…1e <span className="text-[#fefefe]/35">→</span> #e02a…b7 &nbsp;✓ verified
-        </motion.p>
-
       </div>
     </div>
   );
