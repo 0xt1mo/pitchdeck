@@ -84,7 +84,7 @@ export function BankingSlide() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.25, duration: 0.6 }}
-            className="text-[#fefefe]/70 text-sm sm:text-base lg:text-lg leading-snug mt-2.5 max-w-4xl"
+            className="text-[#fefefe]/75 text-base sm:text-lg lg:text-2xl leading-snug mt-3 max-w-5xl"
             style={{ fontFamily: MONO }}
           >
             {T.subtitle}
@@ -148,17 +148,17 @@ export function BankingSlide() {
                 <span className="text-orange-400 text-5xl lg:text-6xl leading-none" style={{ fontFamily: ANTON }}>{T.wedgeStat}</span>
                 <span className="text-[#fefefe] text-xl lg:text-2xl uppercase leading-none" style={{ fontFamily: ANTON }}>{T.wedgeLabel}</span>
               </div>
-              <p className="text-[#fefefe]/75 text-sm lg:text-base leading-snug mt-3" style={{ fontFamily: MONO }}>{T.wedgeSub}</p>
+              <p className="text-[#fefefe]/75 text-base lg:text-lg leading-snug mt-3" style={{ fontFamily: MONO }}>{T.wedgeSub}</p>
             </div>
 
             <div className="rounded-xl border border-white/10 bg-white/[0.02] px-5 py-4 lg:px-6 lg:py-4">
-              <p className="text-orange-400 text-xs lg:text-sm tracking-[0.18em] uppercase mb-1.5" style={{ fontFamily: MONO }}>{T.distTitle}</p>
-              <p className="text-[#fefefe]/80 text-sm lg:text-base leading-snug" style={{ fontFamily: MONO }}>{T.distBody}</p>
+              <p className="text-orange-400 text-sm lg:text-base tracking-[0.18em] uppercase mb-1.5" style={{ fontFamily: MONO }}>{T.distTitle}</p>
+              <p className="text-[#fefefe]/80 text-base lg:text-lg leading-snug" style={{ fontFamily: MONO }}>{T.distBody}</p>
             </div>
 
             <div className="rounded-xl border border-white/10 bg-white/[0.02] px-5 py-4 lg:px-6 lg:py-4">
-              <p className="text-orange-400 text-xs lg:text-sm tracking-[0.18em] uppercase mb-1.5" style={{ fontFamily: MONO }}>{T.engTitle}</p>
-              <p className="text-[#fefefe]/80 text-sm lg:text-base leading-snug" style={{ fontFamily: MONO }}>{T.engBody}</p>
+              <p className="text-orange-400 text-sm lg:text-base tracking-[0.18em] uppercase mb-1.5" style={{ fontFamily: MONO }}>{T.engTitle}</p>
+              <p className="text-[#fefefe]/80 text-base lg:text-lg leading-snug" style={{ fontFamily: MONO }}>{T.engBody}</p>
             </div>
           </motion.div>
         </div>
