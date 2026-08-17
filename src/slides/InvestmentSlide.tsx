@@ -138,7 +138,7 @@ export function InvestmentSlide() {
                   style={{ borderBottom: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.10)' : 'none' }}
                 >
                   <p
-                    className="text-orange-400 text-[22px] sm:text-[30px] lg:text-[38px] leading-none tracking-[-0.01em] min-w-[110px] lg:min-w-[140px] font-bold"
+                    className="text-orange-400 text-[22px] sm:text-[30px] lg:text-[38px] leading-none tracking-[-0.01em] min-w-[110px] lg:min-w-[140px]"
                     style={{ fontFamily: "'Anton', sans-serif" }}
                   >
                     {m.label}
