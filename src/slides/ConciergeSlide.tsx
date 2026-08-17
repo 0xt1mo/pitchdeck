@@ -131,8 +131,8 @@ export function ConciergeSlide() {
           <div className="flex items-center gap-3 lg:gap-4 flex-wrap">
             {T.reach.map((r, i) => (
               <div key={r} className="flex items-center gap-3 lg:gap-4">
-                {i > 0 && <span className="text-orange-500/70 text-sm">•</span>}
-                <span className="text-[#fefefe] text-sm lg:text-base tracking-wide" style={{ fontFamily: MONO }}>{r}</span>
+                {i > 0 && <span className="text-orange-500/70 text-base lg:text-lg">•</span>}
+                <span className="text-[#fefefe] text-base lg:text-xl tracking-wide" style={{ fontFamily: MONO }}>{r}</span>
               </div>
             ))}
           </div>
