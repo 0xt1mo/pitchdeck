@@ -4,16 +4,23 @@ import { tr } from '../i18n';
 const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
 
+type Pair = { client: string; user: string };
+
 const T = tr({
   en: {
     eyebrow: 'Go-to-market · our clients',
     head1: 'Agents',
     head2: 'cannot go rogue.',
-    clientsLabel: 'Our clients are the institutions that can’t afford one that does',
-    clients: ['Governments', 'Banks', 'Telcos', 'Healthcare', 'Military'],
+    clientsLabel: 'Our clients — and the end users they reach',
+    pairs: [
+      { client: 'Governments', user: 'Citizens' },
+      { client: 'Telecom operators', user: 'Subscribers' },
+      { client: 'Healthcare providers', user: 'Patients' },
+      { client: 'Banks', user: 'Customers' },
+    ] as Pair[],
     kicker: (
       <>
-        We sell the platform that lets them run agents at scale on behalf of their citizens, subscribers, patients and users — <span className="text-orange-400">with safety guarantees.</span>
+        Our platform lets our clients run agent fleets <span className="text-orange-400">safely and securely</span> — at a price point that lets them offer an <span className="text-orange-400">agentic experience</span> to their end users.
       </>
     ),
   },
@@ -21,11 +28,16 @@ const T = tr({
     eyebrow: 'Go-to-market · nossos clientes',
     head1: 'Agentes',
     head2: 'não saem do controle.',
-    clientsLabel: 'Nossos clientes são as instituições que não podem se dar ao luxo de um que saia',
-    clients: ['Governos', 'Bancos', 'Telecoms', 'Saúde', 'Defesa'],
+    clientsLabel: 'Nossos clientes — e os usuários finais que eles alcançam',
+    pairs: [
+      { client: 'Governos', user: 'Cidadãos' },
+      { client: 'Operadoras de telecom', user: 'Assinantes' },
+      { client: 'Provedores de saúde', user: 'Pacientes' },
+      { client: 'Bancos', user: 'Clientes' },
+    ] as Pair[],
     kicker: (
       <>
-        Vendemos a plataforma que permite rodar agentes em escala em nome de seus cidadãos, assinantes, pacientes e usuários — <span className="text-orange-400">com garantias de segurança.</span>
+        Nossa plataforma permite que nossos clientes rodem frotas de agentes <span className="text-orange-400">com segurança</span> — a um preço que lhes permite oferecer uma <span className="text-orange-400">experiência agêntica</span> aos seus usuários finais.
       </>
     ),
   },
@@ -81,17 +93,18 @@ export function GtmModelSlide() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="flex flex-wrap items-center gap-x-4 gap-y-3"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 lg:gap-x-16 gap-y-4 lg:gap-y-5"
           >
-            {T.clients.map((c) => (
-              <span
-                key={c}
-                className="text-[#fefefe] text-3xl sm:text-4xl lg:text-6xl uppercase leading-none"
-                style={{ fontFamily: ANTON }}
-              >
-                {c}
-                <span className="text-orange-400/60">.</span>
-              </span>
+            {T.pairs.map((p) => (
+              <div key={p.client} className="flex items-baseline gap-3 lg:gap-4">
+                <span className="text-[#fefefe] text-2xl sm:text-3xl lg:text-4xl uppercase leading-none" style={{ fontFamily: ANTON }}>
+                  {p.client}
+                </span>
+                <span className="text-[#fefefe]/30 text-xl lg:text-3xl leading-none shrink-0" style={{ fontFamily: ANTON }}>→</span>
+                <span className="text-orange-400 text-2xl sm:text-3xl lg:text-4xl uppercase leading-none" style={{ fontFamily: ANTON }}>
+                  {p.user}
+                </span>
+              </div>
             ))}
           </motion.div>
         </div>
