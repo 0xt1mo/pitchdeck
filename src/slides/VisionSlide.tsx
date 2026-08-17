@@ -141,7 +141,7 @@ export function VisionSlide() {
             className="text-xl sm:text-2xl lg:text-[30px] leading-tight mt-5 lg:mt-6"
             style={{ fontFamily: ANTON }}
           >
-            <span className="text-[#fefefe]/60">The OS is the moat. Channel distribution is in place —</span> <span className="text-orange-400">we deliver the product roadmap.</span>
+            <span className="text-[#fefefe]/60">The OS is the moat. Distribution is in place —</span> <span className="text-orange-400">we deliver the product.</span>
           </motion.p>
         </div>
 
