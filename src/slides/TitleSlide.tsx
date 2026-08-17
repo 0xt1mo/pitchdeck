@@ -4,7 +4,7 @@ import { tr } from '../i18n';
 const ANTON = "'Anton', sans-serif";
 
 const T = tr({
-  en: { pre: 'Verifiably', accent: 'safe AI.' },
+  en: { pre: 'Verifiable', accent: 'safe AI.' },
   pt: { pre: 'IA', accent: 'comprovadamente segura.' },
 });
 
