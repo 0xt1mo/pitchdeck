@@ -13,7 +13,7 @@ const T = tr({
     headAccent: 'Model.',
     subtitle: (
       <>
-        Distribution is through <span className="text-[#fefefe] font-bold">channel partners</span> in Europe, MEA, US and Brazil — targeting regulated industries adopting agents. Our role is to deliver products — built on top of the OS with <span className="text-orange-400">cryptographic guarantees for compliance, security and governance.</span>
+        Distribution is through <span className="text-[#fefefe] font-bold">channel partners</span> in Europe, MEA, US and Brazil — targeting regulated industries adopting agents. Our role is to deliver product — built on top of the OS with <span className="text-orange-400">cryptographic guarantees for compliance, security and governance.</span>
       </>
     ),
     columns: [
@@ -68,7 +68,7 @@ const T = tr({
     headAccent: 'Negócio.',
     subtitle: (
       <>
-        A distribuição é feita por <span className="text-[#fefefe] font-bold">parceiros de canal</span> na Europa, MEA, EUA e Brasil — mirando setores regulados que estão adotando agentes. Nosso papel é entregar produtos — construídos sobre o OS com <span className="text-orange-400">garantias criptográficas para compliance, segurança e governança.</span>
+        A distribuição é feita por <span className="text-[#fefefe] font-bold">parceiros de canal</span> na Europa, MEA, EUA e Brasil — mirando setores regulados que estão adotando agentes. Nosso papel é entregar produto — construído sobre o OS com <span className="text-orange-400">garantias criptográficas para compliance, segurança e governança.</span>
       </>
     ),
     columns: [
