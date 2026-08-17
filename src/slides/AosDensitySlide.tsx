@@ -13,7 +13,7 @@ const T = tr({
     headTail: '',
     subtitle: (
       <>
-        <span className="text-[#fefefe] font-bold">We invented a cryptographic proof system that proves an agent's execution end to end</span> — every input, action and output content-addressed into a <span className="text-orange-400">verifiable provenance graph.</span> Trust the proof, not the operator: security with zero trust.
+        <span className="text-[#fefefe] font-bold">We invented a cryptographic proof system that proves an agent's execution end to end</span> — every input, action and output content-addressed into a <span className="text-orange-400">verifiable provenance graph.</span>
       </>
     ),
     overhead: ['app runtime', 'libraries + deps', 'guest userland', 'container engine'],
