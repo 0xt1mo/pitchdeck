@@ -147,12 +147,12 @@ export function TractionCleanSlide() {
             <div className="mt-4 flex flex-col gap-2.5 flex-1">
               {pipelineCounts.map((n, i) => (
                 <div key={T.pipelineRows[i]} className="flex items-baseline gap-3">
-                  <span className="text-orange-400 text-2xl lg:text-3xl leading-none w-10 lg:w-12 shrink-0" style={{ fontFamily: anton }}>{n}</span>
-                  <span className="text-[#fefefe]/85 text-sm lg:text-base" style={{ fontFamily: mono }}>{T.pipelineRows[i]}</span>
+                  <span className="text-orange-400 text-3xl lg:text-4xl leading-none w-12 lg:w-14 shrink-0" style={{ fontFamily: anton }}>{n}</span>
+                  <span className="text-[#fefefe]/85 text-base lg:text-xl" style={{ fontFamily: mono }}>{T.pipelineRows[i]}</span>
                 </div>
               ))}
             </div>
-            <p className="text-[#fefefe]/55 text-xs lg:text-sm leading-snug mt-4" style={{ fontFamily: mono }}>{T.pipelineNote}</p>
+            <p className="text-[#fefefe]/60 text-sm lg:text-base leading-snug mt-4" style={{ fontFamily: mono }}>{T.pipelineNote}</p>
           </motion.div>
 
         </div>
