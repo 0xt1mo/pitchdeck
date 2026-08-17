@@ -124,7 +124,7 @@ export function AutonomyStackSlide() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="mt-3 text-[#fefefe]/85 text-base sm:text-lg lg:text-xl max-w-5xl leading-relaxed"
+            className="mt-4 text-[#fefefe]/85 text-lg sm:text-xl lg:text-2xl max-w-6xl leading-relaxed"
             style={{ fontFamily: "'Geist Mono', monospace" }}
           >
             {T.subtitle}
