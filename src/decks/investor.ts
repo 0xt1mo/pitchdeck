@@ -29,7 +29,7 @@ import { TokenRebuildSlide } from '../slides/TokenRebuildSlide';
 // import { TokenSlide } from '../slides/TokenSlide'; // removed — 'Token demand scales with network revenue'
 import { TractionSlide } from '../slides/TractionSlide';
 import { VisionSlide } from '../slides/VisionSlide';
-// import { WhyWeWinSlide } from '../slides/WhyWeWinSlide'; // removed — 'We prevent AI from going rogue' (absorbed by GtmModelSlide)
+import { WhyWeWinSlide } from '../slides/WhyWeWinSlide';
 
 export const investorDeck = [
   TitleSlide,             // Cover — the operating system for autonomous AI
@@ -39,7 +39,7 @@ export const investorDeck = [
   AosDensitySlide,        // What a multi-tenant agent OS buys
   // AosMergedSlide,      // removed — 'operating systems beat harnesses'
   // CompetitionMinimalSlide, // removed — replaced by WhyWeWinSlide
-  // WhyWeWinSlide,       // removed — 'We prevent AI from going rogue' (absorbed by GtmModelSlide)
+  WhyWeWinSlide,          // Competition — security · performance · price (3 axes)
   BearerTokensSlide,      // Bearer tokens — integrated blockchain  [crypto-only]
   // MarketVerticalsSlide, // removed — 'One platform. Every vertical.' dropped
   GtmModelSlide,          // GTM — our customers: safety buyers + personal-agent distribution
