@@ -57,7 +57,7 @@ const T = tr({
       </>
     ),
     founders: [
-      { role: 'CEO', lines: ['PhD EE', 'Built & exited Guardtime', 'Ex-MD, Barclays Capital'] },
+      { role: 'CEO', lines: ['PhD EE', 'Built & exited Guardtime'] },
       { role: 'CPTO', lines: ['PhD Machine Learning', '25 years shipping enterprise AI & infra (BT, Nokia, A10)', 'Former Vitruvian (applied ML, security)'] },
       { role: 'Cryptography', lines: ['World-renowned cryptographer', 'Inventor & researcher', 'Professor, TalTech'] },
     ],
@@ -77,7 +77,7 @@ const T = tr({
       </>
     ),
     founders: [
-      { role: 'CEO', lines: ['PhD em Engenharia Elétrica', 'Fundou e vendeu a Guardtime', 'Ex-MD, Barclays Capital'] },
+      { role: 'CEO', lines: ['PhD em Engenharia Elétrica', 'Fundou e vendeu a Guardtime'] },
       { role: 'CPTO', lines: ['PhD em Machine Learning', '25 anos entregando IA e infraestrutura corporativa (BT, Nokia, A10)', 'Ex-Vitruvian (ML aplicado, segurança)'] },
       { role: 'Criptografia', lines: ['Criptógrafo de renome mundial', 'Inventor e pesquisador', 'Professor, TalTech'] },
     ],
