@@ -26,7 +26,7 @@ import { TeamSlide } from '../slides/TeamSlide';
 import { ThankYouChatSlide } from '../slides/ThankYouChatSlide';
 import { TitleSlide } from '../slides/TitleSlide';
 import { TokenRebuildSlide } from '../slides/TokenRebuildSlide';
-import { TokenSlide } from '../slides/TokenSlide';
+// import { TokenSlide } from '../slides/TokenSlide'; // removed — 'Token demand scales with network revenue'
 import { TractionSlide } from '../slides/TractionSlide';
 import { VisionSlide } from '../slides/VisionSlide';
 // import { WhyWeWinSlide } from '../slides/WhyWeWinSlide'; // removed — 'We prevent AI from going rogue' (absorbed by GtmModelSlide)
@@ -56,7 +56,7 @@ export const investorDeck = [
   MarketBlockchainSlide,  // Market opportunity — blockchain / crypto  [crypto-only]
   TeamSlide,
   InvestmentSlide,
-  TokenSlide,             // Token  [crypto-only]
+  // TokenSlide,          // removed — 'Token demand scales with network revenue'
   TokenRebuildSlide,      // Token rebuild  [crypto-only]
   VisionSlide,
   ThankYouChatSlide,

@@ -5,7 +5,6 @@ import { investorDeck } from './investor';
 import { BearerTokensSlide } from '../slides/BearerTokensSlide';
 import { MarketBlockchainSlide } from '../slides/MarketBlockchainSlide';
 import { TokenRebuildSlide } from '../slides/TokenRebuildSlide';
-import { TokenSlide } from '../slides/TokenSlide';
 import { TractionSlide } from '../slides/TractionSlide';
 import { TractionCleanSlide } from '../slides/TractionCleanSlide';
 
@@ -13,7 +12,6 @@ import { TractionCleanSlide } from '../slides/TractionCleanSlide';
 const CRYPTO_ONLY = new Set<unknown>([
   MarketBlockchainSlide,
   BearerTokensSlide,
-  TokenSlide,
   TokenRebuildSlide,
 ]);
 
