@@ -20,6 +20,9 @@ const T = tr({
     partnerDesc: 'Strategic distribution partner. Channels Unicity into regulated AI deployments in the UAE.',
     statCustomers: 'AI customers',
     statAgents: 'Aleria agents in production',
+    pressLead: 'In the press',
+    pressText: 'Aleria expands sovereign AI infrastructure with NVIDIA across the UAE and US',
+    pressSource: 'itp.net',
   },
   pt: {
     headLead: 'GOVERNO:',
@@ -36,8 +39,13 @@ const T = tr({
     partnerDesc: 'Parceiro estratégico de distribuição. Direciona a Unicity para implantações de IA reguladas nos EAU.',
     statCustomers: 'clientes de IA',
     statAgents: 'agentes Aleria em produção',
+    pressLead: 'Na imprensa',
+    pressText: 'Aleria expande infraestrutura de IA soberana com a NVIDIA nos EAU e EUA',
+    pressSource: 'itp.net',
   },
 });
+
+const PRESS_URL = 'https://www.itp.net/ai-automation/aleria-expands-sovereign-ai-infrastructure-with-nvidia-across-uae-and-us';
 
 export function GoToMarketSlide() {
   return (
@@ -215,6 +223,23 @@ export function GoToMarketSlide() {
 
           </motion.div>
         </div>
+
+        {/* Press citation */}
+        <motion.a
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7, duration: 0.5 }}
+          href={PRESS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="shrink-0 group inline-flex items-center flex-wrap gap-x-3 gap-y-1"
+          style={{ fontFamily: "'Geist Mono', monospace" }}
+        >
+          <span className="text-orange-400 text-sm lg:text-lg tracking-[0.24em] uppercase font-bold">{T.pressLead}</span>
+          <span className="text-[#fefefe]/75 text-base lg:text-2xl leading-snug group-hover:text-[#fefefe] transition-colors">
+            “{T.pressText}” <span className="text-[#fefefe]/40">— {T.pressSource}</span> <span className="text-orange-400" aria-hidden>↗</span>
+          </span>
+        </motion.a>
 
       </div>
     </div>
