@@ -18,7 +18,7 @@ const T = tr({
     subLead: 'We spent the last year building product — ',
     subAccent: 'the OS and the integrated proof system are now GA.',
     subTail: ' We’re opening a round to convert pipeline and build scalable, repeatable revenue.',
-    runway: 'SAFE + token warrants · 18 months runway',
+    runway: 'SAFE · 18 months runway',
     pathTitle: 'The path to Series A',
     milestones: [
       { label: 'LAUNCH', primary: 'GA in August', sub: 'product shipped' },
@@ -37,7 +37,7 @@ const T = tr({
     subLead: 'Passamos o último ano construindo produto — ',
     subAccent: 'o OS e o proof system integrado agora estão em GA.',
     subTail: ' Estamos abrindo uma rodada para converter o pipeline e construir receita escalável e recorrente.',
-    runway: 'SAFE + token warrants · 18 meses de runway',
+    runway: 'SAFE · 18 meses de runway',
     pathTitle: 'O caminho até a Série A',
     milestones: [
       { label: 'LANÇAMENTO', primary: 'GA em agosto', sub: 'produto entregue' },
