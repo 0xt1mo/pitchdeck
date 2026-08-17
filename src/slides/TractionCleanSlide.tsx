@@ -27,7 +27,7 @@ const T = tr({
     channelBody: (
       <>
         <strong className="text-[#fefefe] font-bold">Revenue share</strong> with UAE Sovereign
-        AI provider — distribution reach across Middle East and Africa.
+        AI provider — global distribution for government data center rollouts.
       </>
     ),
     pipelineTitle: 'Commercial Pipeline',
@@ -51,7 +51,7 @@ const T = tr({
     channelBody: (
       <>
         <strong className="text-[#fefefe] font-bold">Divisão de receita</strong> com o provedor
-        de IA soberano dos Emirados Árabes Unidos — alcance de distribuição por todo o Oriente Médio e a África.
+        de IA soberano dos Emirados Árabes Unidos — distribuição global para rollouts de data centers governamentais.
       </>
     ),
     pipelineTitle: 'Pipeline Comercial',
@@ -130,7 +130,7 @@ export function TractionCleanSlide() {
             <p className="text-[#fefefe] text-3xl lg:text-4xl leading-[0.95] uppercase mt-4" style={{ fontFamily: anton }}>
               ALERIA<br />OEM
             </p>
-            <p className="text-[#fefefe]/65 text-sm lg:text-base leading-snug mt-4" style={{ fontFamily: mono }}>{T.channelBody}</p>
+            <p className="text-[#fefefe]/75 text-base lg:text-xl leading-snug mt-4" style={{ fontFamily: mono }}>{T.channelBody}</p>
           </motion.div>
 
           {/* Commercial pipeline */}
