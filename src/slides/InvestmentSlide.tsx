@@ -28,7 +28,7 @@ const T = tr({
     useOfFundsTitle: 'Use of Funds',
     useOfFundsLabels: ['Engineering & product', 'Sales, GTM & deployment', 'Operations & corporate'],
     useOfFundsNoteLead: 'Engineering headcount held broadly flat; the increase is weighted to ',
-    useOfFundsNoteAccent: 'deployment, compliance certification, and mainnet operations.',
+    useOfFundsNoteAccent: 'deployment, compliance certification, and network operations.',
     backedBy: 'Backed By',
   },
   pt: {
@@ -47,7 +47,7 @@ const T = tr({
     useOfFundsTitle: 'Uso dos Recursos',
     useOfFundsLabels: ['Engenharia e produto', 'Vendas, GTM e implantação', 'Operações e corporativo'],
     useOfFundsNoteLead: 'Quadro de engenharia mantido praticamente estável; o aumento é direcionado para ',
-    useOfFundsNoteAccent: 'implantação, certificação de compliance e operação da mainnet.',
+    useOfFundsNoteAccent: 'implantação, certificação de compliance e operação da rede.',
     backedBy: 'Investidores',
   },
 });
@@ -209,7 +209,7 @@ export function InvestmentSlide() {
               ))}
             </div>
             <p
-              className="text-[#fefefe]/55 text-xs lg:text-sm mt-3 leading-snug"
+              className="text-[#fefefe]/70 text-base lg:text-lg mt-3 leading-snug"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
               {T.useOfFundsNoteLead}<span className="text-orange-400">{T.useOfFundsNoteAccent}</span>
