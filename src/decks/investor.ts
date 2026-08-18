@@ -29,17 +29,17 @@ import { TokenRebuildSlide } from '../slides/TokenRebuildSlide';
 // import { TokenSlide } from '../slides/TokenSlide'; // removed — 'Token demand scales with network revenue'
 import { TractionSlide } from '../slides/TractionSlide';
 import { VisionSlide } from '../slides/VisionSlide';
-import { WhyWeWinSlide } from '../slides/WhyWeWinSlide';
+// import { WhyWeWinSlide } from '../slides/WhyWeWinSlide'; // competition folded into EvolutionSlide (era timeline + moat punchline)
 
 export const investorDeck = [
   TitleSlide,             // Cover — the operating system for autonomous AI
   CoverSlide,             // Thesis — the internet machines need doesn't exist yet
   AutonomyStackSlide,     // AOS: an OS built for autonomous agents
-  EvolutionSlide,         // Why now — AI agents speedrunning compute history
+  EvolutionSlide,         // Competition / why now — era timeline (rent-a-box → OS) + moat punchline
   AosDensitySlide,        // What a multi-tenant agent OS buys
   // AosMergedSlide,      // removed — 'operating systems beat harnesses'
-  // CompetitionMinimalSlide, // removed — replaced by WhyWeWinSlide
-  WhyWeWinSlide,          // Competition — security · performance · price (3 axes)
+  // CompetitionMinimalSlide, // removed — security-vendor framing
+  // WhyWeWinSlide,       // competition folded into EvolutionSlide
   BearerTokensSlide,      // Bearer tokens — integrated blockchain  [crypto-only]
   // MarketVerticalsSlide, // removed — 'One platform. Every vertical.' dropped
   GtmModelSlide,          // GTM — our customers: safety buyers + personal-agent distribution
