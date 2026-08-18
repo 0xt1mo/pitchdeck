@@ -18,7 +18,8 @@ const T = tr({
     subLead: 'We spent the last year building product — ',
     subAccent: 'the OS and the integrated proof system are now GA.',
     subTail: ' We’re opening a round to convert pipeline and build scalable, repeatable revenue.',
-    runway: 'SAFE · 18 months runway',
+    runway: 'SAFE + token warrants · 18 months runway',
+    runwayClean: 'SAFE · 18 months runway',
     pathTitle: 'The path to Series A',
     milestones: [
       { label: 'LAUNCH', primary: 'GA in August', sub: 'product shipped' },
@@ -37,7 +38,8 @@ const T = tr({
     subLead: 'Passamos o último ano construindo produto — ',
     subAccent: 'o OS e o proof system integrado agora estão em GA.',
     subTail: ' Estamos abrindo uma rodada para converter o pipeline e construir receita escalável e recorrente.',
-    runway: 'SAFE · 18 meses de runway',
+    runway: 'SAFE + token warrants · 18 meses de runway',
+    runwayClean: 'SAFE · 18 meses de runway',
     pathTitle: 'O caminho até a Série A',
     milestones: [
       { label: 'LANÇAMENTO', primary: 'GA em agosto', sub: 'produto entregue' },
@@ -52,7 +54,8 @@ const T = tr({
   },
 });
 
-export function InvestmentSlide() {
+export function InvestmentSlide({ clean = false }: { clean?: boolean } = {}) {
+  const runway = clean ? T.runwayClean : T.runway;
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
       {/* Top-right orange wash */}
@@ -118,7 +121,7 @@ export function InvestmentSlide() {
               className="text-[#fefefe]/70 text-xs sm:text-sm lg:text-base mt-3 lg:mt-4 leading-relaxed"
               style={{ fontFamily: "'Geist Mono', monospace" }}
             >
-              {T.runway}
+              {runway}
             </p>
           </div>
 

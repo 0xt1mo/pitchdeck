@@ -3,6 +3,8 @@
 // slide is swapped to the crypto-free variant. Edit membership/order in investor.ts.
 import { investorDeck } from './investor';
 import { BearerTokensSlide } from '../slides/BearerTokensSlide';
+import { InvestmentSlide } from '../slides/InvestmentSlide';
+import { InvestmentCleanSlide } from '../slides/InvestmentCleanSlide';
 import { MarketBlockchainSlide } from '../slides/MarketBlockchainSlide';
 import { TokenRebuildSlide } from '../slides/TokenRebuildSlide';
 import { TractionSlide } from '../slides/TractionSlide';
@@ -15,6 +17,12 @@ const CRYPTO_ONLY = new Set<unknown>([
   TokenRebuildSlide,
 ]);
 
+// Crypto-flavoured slides swapped for their crypto-free variants.
+const CLEAN_SWAP = new Map<unknown, unknown>([
+  [TractionSlide, TractionCleanSlide],
+  [InvestmentSlide, InvestmentCleanSlide],
+]);
+
 export const investorCleanDeck = investorDeck
   .filter((slide) => !CRYPTO_ONLY.has(slide))
-  .map((slide) => (slide === TractionSlide ? TractionCleanSlide : slide));
+  .map((slide) => (CLEAN_SWAP.get(slide) ?? slide) as typeof slide);
