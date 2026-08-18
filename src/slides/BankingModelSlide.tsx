@@ -5,51 +5,51 @@ const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
 
 // Base-case ramp — projected paying customers across the diaspora banking universe.
-// Unicity take = $0.75/customer/mo = $9/customer/yr (same commercials as telco).
+// Direct to consumer: the full monthly fee goes to Unicity Labs, easing as we scale.
 const RAMP = [
-  { y: '2027', cust: '1M', pen: '3%', arr: 60 },
-  { y: '2028', cust: '3M', pen: '9%', arr: 180 },
-  { y: '2029', cust: '5M', pen: '14%', arr: 300 },
-  { y: '2030', cust: '7M', pen: '20%', arr: 420 },
+  { y: '2027', cust: '1M', price: '$5', arr: 60 },
+  { y: '2028', cust: '2M', price: '$4', arr: 96 },
+  { y: '2029', cust: '3M', price: '$3.50', arr: 126 },
+  { y: '2030', cust: '4M', price: '$3', arr: 144 },
 ];
-const MAX_ARR = 420;
+const MAX_ARR = 144;
 
 const T = tr({
   en: {
     eyebrow: 'Financial model · Banking (NRI)',
-    headLead: 'Every 1M customers =',
-    headAccent: '$60M ARR.',
+    headLead: 'Sold through banks —',
+    headAccent: '$144M ARR by 2030.',
     subtitle:
-      'Direct to consumer — the full $5/mo goes to Unicity Labs. $60 per customer a year, recurring at software margin. A 35M Non-Resident Indian wedge that compounds across the diaspora.',
+      'Distributed by the banks on their own rails — the full monthly fee goes to Unicity Labs, easing from $5 to $3 as the base scales.',
     uniTitle: 'Addressable universe',
     nriValue: '35M',
     nriLabel: 'Non-Resident Indians',
     addValue: '+13M',
     addLabel: 'adjacent diaspora',
-    diaspora: ['Philippines', 'Pakistan', 'Sri Lanka', 'China'],
+    diaspora: ['Sri Lanka', 'Nepal', 'Pakistan', 'Philippines'],
     totalValue: '~48M',
-    totalLabel: 'households — and expanding',
+    totalLabel: 'households — going global',
     rampTitle: 'Unicity ARR — base case',
     custLabel: 'customers',
-    footnote: 'Ramukaka is the wedge. Every diaspora market added widens the universe — the base case only penetrates the NRI core.',
+    footnote: 'Ramukaka is the wedge. We will extend the same model to Sri Lanka, Nepal, Pakistan, the Philippines and others — going global.',
   },
   pt: {
     eyebrow: 'Modelo financeiro · Bancos (NRI)',
-    headLead: 'Cada 1M de clientes =',
-    headAccent: '$60M de ARR.',
+    headLead: 'Vendido através de bancos —',
+    headAccent: '$144M de ARR até 2030.',
     subtitle:
-      'Direto ao consumidor — os $5/mês inteiros vão para a Unicity Labs. $60 por cliente ao ano, recorrente com margem de software. Um wedge de 35M de indianos não residentes que se acumula por toda a diáspora.',
+      'Distribuído pelos bancos na própria infraestrutura deles — a mensalidade inteira vai para a Unicity Labs, caindo de $5 para $3 conforme a base cresce.',
     uniTitle: 'Universo endereçável',
     nriValue: '35M',
     nriLabel: 'Indianos não residentes',
     addValue: '+13M',
     addLabel: 'diáspora adjacente',
-    diaspora: ['Filipinas', 'Paquistão', 'Sri Lanka', 'China'],
+    diaspora: ['Sri Lanka', 'Nepal', 'Paquistão', 'Filipinas'],
     totalValue: '~48M',
-    totalLabel: 'famílias — e crescendo',
+    totalLabel: 'famílias — indo global',
     rampTitle: 'ARR da Unicity — cenário base',
     custLabel: 'clientes',
-    footnote: 'Ramukaka é o wedge. Cada mercado da diáspora adicionado amplia o universo — o cenário base penetra apenas o núcleo NRI.',
+    footnote: 'Ramukaka é o wedge. Vamos estender o mesmo modelo para Sri Lanka, Nepal, Paquistão, Filipinas e outros — indo global.',
   },
 });
 
@@ -182,7 +182,7 @@ export function BankingModelSlide() {
               {RAMP.map((r) => (
                 <div key={r.y} className="flex-1 text-center">
                   <p className="text-[#fefefe] text-xl lg:text-3xl leading-none" style={{ fontFamily: ANTON }}>{r.y}</p>
-                  <p className="text-[#fefefe]/55 text-sm lg:text-base mt-1.5" style={{ fontFamily: MONO }}>{r.cust} {T.custLabel} · {r.pen}</p>
+                  <p className="text-[#fefefe]/55 text-sm lg:text-base mt-1.5" style={{ fontFamily: MONO }}>{r.cust} {T.custLabel} · {r.price}/mo</p>
                 </div>
               ))}
             </div>
