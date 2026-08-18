@@ -45,7 +45,7 @@ export function VisionSlide() {
             className="mt-5 lg:mt-6 text-[#fefefe]/75 text-base sm:text-lg lg:text-xl leading-relaxed max-w-5xl"
             style={{ fontFamily: MONO }}
           >
-            Our team consists of <span className="text-[#fefefe] font-bold">PhDs in machine learning, cryptography, formal methods and semantics.</span> We're building the infrastructure for verifiable autonomous AI — <span className="text-[#fefefe] font-bold">AIs that are formally verified, secure by construction, with safety properties guaranteed.</span>
+            Our team consists of <span className="text-[#fefefe] font-bold">PhDs in machine learning, cryptography, formal methods and constructive logic.</span> We're building the infrastructure for verifiable autonomous AI — <span className="text-[#fefefe] font-bold">AIs that are formally verified, secure by construction, with safety properties guaranteed.</span>
           </motion.p>
         </div>
 
