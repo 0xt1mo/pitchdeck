@@ -92,19 +92,6 @@ export function VisionSlide() {
           </div>
         </div>
 
-        {/* Closing — moat / distribution thesis */}
-        <div className="shrink-0">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.0, duration: 0.5 }}
-            className="text-xl sm:text-2xl lg:text-[30px] leading-tight mt-5 lg:mt-6"
-            style={{ fontFamily: ANTON }}
-          >
-            <span className="text-[#fefefe]/60">The OS is the moat. Distribution is in place —</span> <span className="text-orange-400">we deliver the product.</span>
-          </motion.p>
-        </div>
-
       </div>
     </div>
   );
