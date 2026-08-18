@@ -35,8 +35,7 @@ export const investorDeck = [
   TitleSlide,             // Cover — the operating system for autonomous AI
   CoverSlide,             // Thesis — the internet machines need doesn't exist yet
   AutonomyStackSlide,     // AOS: an OS built for autonomous agents
-  EvolutionSlide,         // Competition / why now — era timeline (rent-a-box → OS) + moat punchline
-  AosDensitySlide,        // What a multi-tenant agent OS buys
+  AosDensitySlide,        // Extreme performance & security — density + proof system
   // AosMergedSlide,      // removed — 'operating systems beat harnesses'
   // CompetitionMinimalSlide, // removed — security-vendor framing
   // WhyWeWinSlide,       // competition folded into EvolutionSlide
@@ -51,6 +50,7 @@ export const investorDeck = [
   GoToMarketSlide,        // Government
   // AiInfraSlide,        // removed from investor deck
   // AgentFirewallSlide,  // removed — 'Example solution: AOS Codewall'
+  EvolutionSlide,         // Competition — era timeline (rent-a-box → OS) + moat punchline
   TractionSlide,          // Traction — with testnet wallets/apps  [crypto]
   MarketSlide,            // Market opportunity — AI infrastructure
   MarketBlockchainSlide,  // Market opportunity — blockchain / crypto  [crypto-only]

@@ -113,7 +113,7 @@ export function EvolutionSlide() {
           className="shrink-0 text-[26px] sm:text-[38px] lg:text-[50px] xl:text-[56px] leading-[0.98] tracking-tight uppercase max-w-6xl"
           style={{ fontFamily: ANTON }}
         >
-          <span className="text-[#fefefe]">Guardrails are a feature.</span> <span className="text-orange-400">An OS with a proprietary proof system is a moat.</span>
+          <span className="text-orange-400">Competition:</span> <span className="text-[#fefefe]">guardrails are a feature.</span> <span className="text-orange-400">An OS with a proprietary proof system is a moat.</span>
         </motion.h1>
 
         {/* Industry today vs Unicity — group labels sit outside the cards */}

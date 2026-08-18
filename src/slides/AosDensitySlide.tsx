@@ -28,7 +28,7 @@ const T = tr({
         why: <>Thousands of agents per node instead of a handful. <b className="text-[#fefefe] font-bold">The hardware you already own runs a fleet, not a pilot.</b></>,
       },
       {
-        num: '54', sup: '×', label: 'Faster launch than Docker',
+        num: '50', sup: '×', label: 'Faster launch than Docker',
         why: <>Capsule spawn vs. container cold start. Agents launch on demand — <b className="text-[#fefefe] font-bold">no warm pool, no idle burn.</b></>,
       },
       {
@@ -64,7 +64,7 @@ const T = tr({
         why: <>Milhares de agentes por nó em vez de um punhado. <b className="text-[#fefefe] font-bold">O hardware que você já tem roda uma frota, não um piloto.</b></>,
       },
       {
-        num: '54', sup: '×', label: 'Lançamento mais rápido que o Docker',
+        num: '50', sup: '×', label: 'Lançamento mais rápido que o Docker',
         why: <>Spawn de capsule vs. cold start de container. Agentes iniciam sob demanda — <b className="text-[#fefefe] font-bold">sem warm pool, sem queima ociosa.</b></>,
       },
       {

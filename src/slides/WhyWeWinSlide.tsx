@@ -23,7 +23,7 @@ const T = tr({
       {
         axis: 'Performance',
         claim: '1000× density.',
-        body: 'Thousands of agents per node · 54× faster launch than Docker · milliseconds to first token.',
+        body: 'Thousands of agents per node · 50× faster launch than Docker · milliseconds to first token.',
         vs: 'vs. ~20 hand-tended agents per container box.',
       },
       {
@@ -52,7 +52,7 @@ const T = tr({
       {
         axis: 'Performance',
         claim: '1000× de densidade.',
-        body: 'Milhares de agentes por nó · lançamento 54× mais rápido que o Docker · milissegundos até o primeiro token.',
+        body: 'Milhares de agentes por nó · lançamento 50× mais rápido que o Docker · milissegundos até o primeiro token.',
         vs: 'vs. ~20 agentes por caixa de container, um a um.',
       },
       {
