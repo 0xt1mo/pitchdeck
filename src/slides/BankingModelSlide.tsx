@@ -28,10 +28,10 @@ const T = tr({
     addLabel: 'adjacent diaspora',
     diaspora: ['Sri Lanka', 'Nepal', 'Pakistan', 'Philippines'],
     totalValue: '~48M',
-    totalLabel: 'households',
+    totalLabel: 'households — going global',
     rampTitle: 'Unicity ARR — base case',
     custLabel: 'customers',
-    footnote: 'Ramukaka is the wedge. We will extend the same model to Sri Lanka, Nepal, Pakistan, the Philippines and others — going global.',
+    footnote: 'Ramukaka is the wedge. We will extend the same model to Sri Lanka, Nepal, Pakistan, the Philippines and others.',
   },
   pt: {
     eyebrow: 'Modelo financeiro · Bancos (NRI)',
@@ -46,10 +46,10 @@ const T = tr({
     addLabel: 'diáspora adjacente',
     diaspora: ['Sri Lanka', 'Nepal', 'Paquistão', 'Filipinas'],
     totalValue: '~48M',
-    totalLabel: 'famílias',
+    totalLabel: 'famílias — indo global',
     rampTitle: 'ARR da Unicity — cenário base',
     custLabel: 'clientes',
-    footnote: 'Ramukaka é o wedge. Vamos estender o mesmo modelo para Sri Lanka, Nepal, Paquistão, Filipinas e outros — indo global.',
+    footnote: 'Ramukaka é o wedge. Vamos estender o mesmo modelo para Sri Lanka, Nepal, Paquistão, Filipinas e outros.',
   },
 });
 
