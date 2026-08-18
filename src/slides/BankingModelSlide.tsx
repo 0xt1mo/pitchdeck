@@ -7,20 +7,20 @@ const MONO = "'Geist Mono', monospace";
 // Base-case ramp — projected paying customers across the diaspora banking universe.
 // Unicity take = $0.75/customer/mo = $9/customer/yr (same commercials as telco).
 const RAMP = [
-  { y: '2027', cust: '1M', pen: '3%', arr: 9 },
-  { y: '2028', cust: '3M', pen: '9%', arr: 27 },
-  { y: '2029', cust: '5M', pen: '14%', arr: 45 },
-  { y: '2030', cust: '7M', pen: '20%', arr: 63 },
+  { y: '2027', cust: '1M', pen: '3%', arr: 60 },
+  { y: '2028', cust: '3M', pen: '9%', arr: 180 },
+  { y: '2029', cust: '5M', pen: '14%', arr: 300 },
+  { y: '2030', cust: '7M', pen: '20%', arr: 420 },
 ];
-const MAX_ARR = 63;
+const MAX_ARR = 420;
 
 const T = tr({
   en: {
     eyebrow: 'Financial model · Banking (NRI)',
     headLead: 'Every 1M customers =',
-    headAccent: '$9M ARR.',
+    headAccent: '$60M ARR.',
     subtitle:
-      'Same commercials as telco — $5/mo · $0.75 to Unicity · $9 per customer a year. A 35M Non-Resident Indian wedge that compounds across the diaspora.',
+      'Direct to consumer — the full $5/mo goes to Unicity Labs. $60 per customer a year, recurring at software margin. A 35M Non-Resident Indian wedge that compounds across the diaspora.',
     uniTitle: 'Addressable universe',
     nriValue: '35M',
     nriLabel: 'Non-Resident Indians',
@@ -36,9 +36,9 @@ const T = tr({
   pt: {
     eyebrow: 'Modelo financeiro · Bancos (NRI)',
     headLead: 'Cada 1M de clientes =',
-    headAccent: '$9M de ARR.',
+    headAccent: '$60M de ARR.',
     subtitle:
-      'Mesmos termos comerciais do telecom — $5/mês · $0.75 para a Unicity · $9 por cliente ao ano. Um wedge de 35M de indianos não residentes que se acumula por toda a diáspora.',
+      'Direto ao consumidor — os $5/mês inteiros vão para a Unicity Labs. $60 por cliente ao ano, recorrente com margem de software. Um wedge de 35M de indianos não residentes que se acumula por toda a diáspora.',
     uniTitle: 'Universo endereçável',
     nriValue: '35M',
     nriLabel: 'Indianos não residentes',
