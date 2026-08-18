@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { tr } from '../i18n';
 
@@ -41,8 +40,6 @@ const T = tr({
 });
 
 export function BankingSlide() {
-  const [play, setPlay] = useState(false);
-
   return (
     <div className="fixed inset-0 z-50 bg-[#060606] overflow-hidden">
       {/* Subtle dotted background */}
@@ -101,39 +98,30 @@ export function BankingSlide() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="flex-[0_0_58%] flex items-center"
           >
-            <div
-              className="relative w-full rounded-xl overflow-hidden border border-white/10"
-              style={{ aspectRatio: '16 / 9', boxShadow: '0 30px 90px rgba(0,0,0,0.7)' }}
+            <a
+              href={`https://www.youtube.com/watch?v=${VIDEO_ID}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Watch the Ramukaka film on YouTube"
+              className="group relative block w-full rounded-xl overflow-hidden border border-white/10"
+              style={{
+                aspectRatio: '16 / 9',
+                boxShadow: '0 30px 90px rgba(0,0,0,0.7)',
+                backgroundImage: `url(https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg)`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
             >
-              {play ? (
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0&modestbranding=1`}
-                  title="Banking agent"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => setPlay(true)}
-                  aria-label="Play the film"
-                  className="group absolute inset-0 w-full h-full flex items-center justify-center cursor-pointer"
-                  style={{
-                    backgroundImage: `url(https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg)`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }}
-                >
-                  <span className="absolute inset-0" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.35) 100%)' }} />
-                  <span className="relative flex items-center justify-center h-16 w-16 lg:h-20 lg:w-20 rounded-full bg-orange-500 transition-transform group-hover:scale-105" style={{ boxShadow: '0 8px 30px rgba(249,115,22,0.5)' }}>
-                    <svg viewBox="0 0 24 24" fill="#060606" className="h-7 w-7 lg:h-9 lg:w-9 ml-1">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </span>
-                </button>
-              )}
-            </div>
+              <span className="absolute inset-0" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.35) 100%)' }} />
+              <span className="absolute inset-0 flex items-center justify-center">
+                <span className="relative flex items-center justify-center h-16 w-16 lg:h-20 lg:w-20 rounded-full bg-orange-500 transition-transform group-hover:scale-105" style={{ boxShadow: '0 8px 30px rgba(249,115,22,0.5)' }}>
+                  <svg viewBox="0 0 24 24" fill="#060606" className="h-7 w-7 lg:h-9 lg:w-9 ml-1">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
+              </span>
+              <span className="absolute bottom-3 right-3 text-[#fefefe]/85 text-xs lg:text-sm px-2.5 py-1 rounded-md" style={{ fontFamily: MONO, background: 'rgba(0,0,0,0.55)' }}>Watch on YouTube ↗</span>
+            </a>
           </motion.div>
 
           {/* The wedge */}
