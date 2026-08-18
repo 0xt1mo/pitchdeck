@@ -30,7 +30,7 @@ const T = tr({
     ),
     whyBody: (
       <>
-        <span className="text-orange-400 font-bold">Why it matters:</span> crypto reaches scale when tokens become <span className="text-orange-400">native data types of the operating system</span>.
+        <span className="text-orange-400 font-bold">Why it matters:</span> tokens are no longer tethered to a chain — <span className="text-orange-400">unleashing the extreme throughput needed for billions of intelligences</span>.
       </>
     ),
     ctaProtocol: 'See the protocol',
@@ -59,7 +59,7 @@ const T = tr({
     ),
     whyBody: (
       <>
-        <span className="text-orange-400 font-bold">Por que isso importa:</span> cripto atinge escala quando os tokens se tornam <span className="text-orange-400">tipos de dados nativos do sistema operacional</span>.
+        <span className="text-orange-400 font-bold">Por que isso importa:</span> os tokens não estão mais presos a uma blockchain — <span className="text-orange-400">liberando a throughput extrema necessária para bilhões de inteligências</span>.
       </>
     ),
     ctaProtocol: 'Veja o protocolo',
