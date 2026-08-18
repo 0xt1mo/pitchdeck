@@ -6,13 +6,13 @@ import { BearerTokensSlide } from '../slides/BearerTokensSlide';
 import { InvestmentSlide } from '../slides/InvestmentSlide';
 import { InvestmentCleanSlide } from '../slides/InvestmentCleanSlide';
 import { MarketBlockchainSlide } from '../slides/MarketBlockchainSlide';
+import { MarketSlide } from '../slides/MarketSlide';
 import { TokenRebuildSlide } from '../slides/TokenRebuildSlide';
 import { TractionSlide } from '../slides/TractionSlide';
 import { TractionCleanSlide } from '../slides/TractionCleanSlide';
 
 // Slides shown only to crypto-native audiences (kept in the investor deck).
 const CRYPTO_ONLY = new Set<unknown>([
-  MarketBlockchainSlide,
   BearerTokensSlide,
   TokenRebuildSlide,
 ]);
@@ -21,6 +21,7 @@ const CRYPTO_ONLY = new Set<unknown>([
 const CLEAN_SWAP = new Map<unknown, unknown>([
   [TractionSlide, TractionCleanSlide],
   [InvestmentSlide, InvestmentCleanSlide],
+  [MarketBlockchainSlide, MarketSlide], // crypto Stripe market slide → AI-infra market slide
 ]);
 
 export const investorCleanDeck = investorDeck

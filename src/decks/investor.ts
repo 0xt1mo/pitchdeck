@@ -20,7 +20,7 @@ import { GtmModelSlide } from '../slides/GtmModelSlide';
 // import { HealthGatewaySlide } from '../slides/HealthGatewaySlide'; // removed from investor deck
 import { InvestmentSlide } from '../slides/InvestmentSlide';
 import { MarketBlockchainSlide } from '../slides/MarketBlockchainSlide';
-import { MarketSlide } from '../slides/MarketSlide';
+// import { MarketSlide } from '../slides/MarketSlide'; // crypto deck uses MarketBlockchainSlide (Stripe); investorclean swaps back to MarketSlide
 // import { ProductsSlide } from '../slides/ProductsSlide'; // folded into the bottom of VisionSlide
 import { TeamSlide } from '../slides/TeamSlide';
 import { ThankYouChatSlide } from '../slides/ThankYouChatSlide';
@@ -52,8 +52,7 @@ export const investorDeck = [
   // AgentFirewallSlide,  // removed — 'Example solution: AOS Codewall'
   EvolutionSlide,         // Competition — era timeline (rent-a-box → OS) + moat punchline
   TractionSlide,          // Traction — with testnet wallets/apps  [crypto]
-  MarketSlide,            // Market opportunity — AI infrastructure
-  MarketBlockchainSlide,  // Market opportunity — blockchain / crypto  [crypto-only]
+  MarketBlockchainSlide,  // Market opportunity — Stripe/blockchain framing (investorclean swaps to MarketSlide)
   TeamSlide,
   InvestmentSlide,
   // TokenSlide,          // removed — 'Token demand scales with network revenue'
