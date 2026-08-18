@@ -20,7 +20,7 @@ const T = tr({
     ] as Pair[],
     kicker: (
       <>
-        Our platform lets our clients run agent fleets <span className="text-orange-400">safely and securely</span> — at a price point that lets them offer an <span className="text-orange-400">agentic experience</span> to their end users.
+        Our platform lets our clients run agent fleets <span className="text-orange-400">safely and securely</span> — at a price point that enables a <span className="text-orange-400">trusted agentic experience</span> to their end users at scale.
       </>
     ),
   },
@@ -37,7 +37,7 @@ const T = tr({
     ] as Pair[],
     kicker: (
       <>
-        Nossa plataforma permite que nossos clientes rodem frotas de agentes <span className="text-orange-400">com segurança</span> — a um preço que lhes permite oferecer uma <span className="text-orange-400">experiência agêntica</span> aos seus usuários finais.
+        Nossa plataforma permite que nossos clientes rodem frotas de agentes <span className="text-orange-400">com segurança</span> — a um preço que viabiliza uma <span className="text-orange-400">experiência agêntica confiável</span> aos seus usuários finais em escala.
       </>
     ),
   },
