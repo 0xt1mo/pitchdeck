@@ -5,22 +5,22 @@ const ANTON = "'Anton', sans-serif";
 const MONO = "'Geist Mono', monospace";
 
 // Base-case ramp — projected paying customers across the diaspora banking universe.
-// Direct to consumer: the full monthly fee goes to Unicity Labs, easing as we scale.
+// Unicity take = $0.75/customer/mo = $9/customer/yr; retail eases $5 -> $3 as we scale.
 const RAMP = [
-  { y: '2027', cust: '1M', price: '$5', arr: 60 },
-  { y: '2028', cust: '2M', price: '$4', arr: 96 },
-  { y: '2029', cust: '3M', price: '$3.50', arr: 126 },
-  { y: '2030', cust: '4M', price: '$3', arr: 144 },
+  { y: '2027', cust: '1M', price: '$5', arr: 9 },
+  { y: '2028', cust: '2M', price: '$4', arr: 18 },
+  { y: '2029', cust: '3M', price: '$3.50', arr: 27 },
+  { y: '2030', cust: '4M', price: '$3', arr: 36 },
 ];
-const MAX_ARR = 144;
+const MAX_ARR = 36;
 
 const T = tr({
   en: {
     eyebrow: 'Financial model · Banking (NRI)',
-    headLead: 'Sold through banks —',
-    headAccent: '$144M ARR by 2030.',
+    headLead: 'Every 1M customers =',
+    headAccent: '$9M ARR.',
     subtitle:
-      'Distributed by the banks on their own rails — the full monthly fee goes to Unicity Labs, easing from $5 to $3 as the base scales.',
+      'Sold through the banks on their own rails. Unicity takes $0.75 per customer a month — $9 a year — while retail eases from $5 to $3 as the base scales.',
     uniTitle: 'Addressable universe',
     nriValue: '35M',
     nriLabel: 'Non-Resident Indians',
@@ -35,10 +35,10 @@ const T = tr({
   },
   pt: {
     eyebrow: 'Modelo financeiro · Bancos (NRI)',
-    headLead: 'Vendido através de bancos —',
-    headAccent: '$144M de ARR até 2030.',
+    headLead: 'Cada 1M de clientes =',
+    headAccent: '$9M de ARR.',
     subtitle:
-      'Distribuído pelos bancos na própria infraestrutura deles — a mensalidade inteira vai para a Unicity Labs, caindo de $5 para $3 conforme a base cresce.',
+      'Vendido pelos bancos na própria infraestrutura deles. A Unicity recebe $0.75 por cliente ao mês — $9 ao ano — enquanto o varejo cai de $5 para $3 conforme a base cresce.',
     uniTitle: 'Universo endereçável',
     nriValue: '35M',
     nriLabel: 'Indianos não residentes',
