@@ -38,10 +38,11 @@
 
   /* opportunity — vertical grid */
   .verticals{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:13px}
-  .vcard{border:1px solid var(--line);border-top:2px solid var(--ink);border-radius:9px;background:var(--card);padding:12px 15px 14px}
+  .vcard{border:1px solid var(--line);border-top:2px solid var(--ink);border-radius:9px;background:var(--card);padding:12px 15px 14px;display:flex;flex-direction:column}
   .vcard .vlabel{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);font-weight:700}
   .vcard h3{font-size:15.5px;font-weight:750;letter-spacing:-0.01em;margin:3px 0 5px}
   .vcard .vbody{font-size:12.5px;line-height:1.48;color:var(--body)}
+  .vcard .vlink{font-size:11.5px;font-weight:650;color:var(--ink);text-decoration:none;margin-top:8px;align-self:flex-start;border-bottom:1px solid var(--ink)}
 
   footer{margin-top:22px;border-top:1px solid var(--line);padding-top:13px;
          display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
@@ -69,12 +70,12 @@
 
   <section>
     <h2>What we invented</h2>
-    <p><strong>AOS</strong> runs thousands of agents per node on a shared, secure kernel — <strong>1000× the density</strong> of containers. Beneath it, a cryptographic proof system records every input, action and output into a verifiable provenance graph. <strong>Trust the proof, not the operator.</strong></p>
+    <p><strong>AOS</strong> runs thousands of agents per node on a shared, secure kernel — <strong>1000× the density</strong> of containers, 50× faster launch time, and millisecond latency to first token. Beneath it, a cryptographic proof system records every input, action and output into a content-addressable, verifiable provenance graph.</p>
   </section>
 
   <section>
     <h2>Why it matters</h2>
-    <p>Agents are speedrunning compute history — and every wave of computing ends in the data center. But there is no safe OS to run them on: guardrails bolt on and break at scale. AOS enforces policy and audit <strong>below the agent</strong>, clearing EU AI Act, SOC 2, HIPAA and sovereign requirements by construction.</p>
+    <p>Agents are speedrunning compute history — from laptops to rented boxes to data centers. They are becoming a data-center workload with no safe OS to run on; bolt-on guardrails break at scale. AOS enforces policy and audit <strong>below the agent</strong>, clearing EU AI Act, SOC 2, HIPAA and sovereign requirements by construction. <strong>Agents cannot go rogue.</strong></p>
     <div class="evo">
       <div class="evo-step">
         <div class="evo-motif">
@@ -107,17 +108,19 @@
 
   <section>
     <h2>The opportunity</h2>
-    <p>Every era of computing was won by an <strong>infrastructure + OS pair</strong> — x86 + Windows, servers + Linux, GPUs + CUDA. The agent era is next, and demand is already lined up across regulated verticals:</p>
+    <p>Every era of computing was won by an <strong>infrastructure + OS pair</strong> — x86 + Windows, servers + Linux, GPUs + CUDA. The agent era is next, and demand is already lined up across regulated verticals: telecom, banking, healthcare, government and defense.</p>
     <div class="verticals">
       <div class="vcard">
         <div class="vlabel">Telecom</div>
         <h3>Concierge</h3>
-        <div class="vbody">A personal agent for high-ARPU subscribers, on the operator's own rails. $5/mo · 11 operators · &gt;1B subscribers addressable.</div>
+        <div class="vbody">A personal agent for high-ARPU subscribers — books, pays and calls on their behalf at $5/mo. 11 operators, 70+ countries, &gt;1B subscribers addressable.</div>
+        <a class="vlink" href="https://www.youtube.com/watch?v=mXnQT5UL9kk" target="_blank" rel="noopener noreferrer">Watch the film ↗</a>
       </div>
       <div class="vcard">
         <div class="vlabel">Banking · India</div>
         <h3>Ramukaka</h3>
-        <div class="vbody">A personal agent for every customer — wedging in via 35M Non-Resident Indians, distributed by India's banks.</div>
+        <div class="vbody">A personal agent for every customer — it acts, not just answers. On India's banks' own rails.</div>
+        <a class="vlink" href="https://www.youtube.com/watch?v=B5XdSSfJjKQ" target="_blank" rel="noopener noreferrer">Watch the film ↗</a>
       </div>
       <div class="vcard">
         <div class="vlabel">Government</div>
@@ -134,12 +137,12 @@
 
   <section>
     <h2>Who we are</h2>
-    <p><strong>Unicity Labs</strong> — fifteen years building nation-state-grade security for DARPA, NATO, Lockheed and Verizon, now applied to AI. Led by Mike Gault (ex-Guardtime), Tony Kenyon, Joshua Buow, and Eric Leandri (Aleria).</p>
+    <p><strong>Unicity Labs</strong> — an AI-infrastructure startup founded in 2025 by five PhDs in machine learning, cryptography, distributed systems and constructive logic. Backed by Silicon Valley and Eric Leandri. The team previously spent fifteen years building nation-state-grade security for DARPA, NATO, Lockheed and Verizon.</p>
   </section>
 
   <section>
-    <h2>What we want</h2>
-    <p>A paid, <strong>90-day design partnership</strong>: validate AOS on your infrastructure against joint benchmarks — agents per node, time-to-token, cost per token — leading to an OEM license and co-sell.</p>
+    <h2>What is the ask</h2>
+    <p>A 90-day, funded design partnership: validate AOS against joint benchmarks — agents per node, time-to-token, cost per token — and explore the technical feasibility of a partnership focused on agentic workflows at scale for regulated industries.</p>
   </section>
 
   <footer>
