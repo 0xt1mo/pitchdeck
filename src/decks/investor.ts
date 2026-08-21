@@ -30,6 +30,7 @@ import { TokenRebuildSlide } from '../slides/TokenRebuildSlide';
 // import { TokenSlide } from '../slides/TokenSlide'; // removed — 'Token demand scales with network revenue'
 import { TractionSlide } from '../slides/TractionSlide';
 import { VisionSlide } from '../slides/VisionSlide';
+import { WhyUsSlide } from '../slides/WhyUsSlide';
 // import { WhyWeWinSlide } from '../slides/WhyWeWinSlide'; // competition folded into EvolutionSlide (era timeline + moat punchline)
 
 export const investorDeck = [
@@ -56,6 +57,7 @@ export const investorDeck = [
   TractionSlide,          // Traction — with testnet wallets/apps  [crypto]
   MarketBlockchainSlide,  // Market opportunity — Stripe/blockchain framing (investorclean swaps to MarketSlide)
   TeamSlide,
+  WhyUsSlide,             // Why us, why now — timing (safety window) · execution (8-figure OEM deals) · science (80+ patents)
   InvestmentSlide,
   // TokenSlide,          // removed — 'Token demand scales with network revenue'
   TokenRebuildSlide,      // Token rebuild  [crypto-only]
